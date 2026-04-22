@@ -146,8 +146,35 @@ hermes skills       # 管理 Skills
 |---|---|
 | Anthropic | Claude 系列 |
 | OpenAI | GPT-4o、o1 系列 |
-| Ollama | 本地模型（完全離線）|
+| Ollama | 本地模型（Gemma 4、Qwen 等，完全離線）|
 | OpenRouter | 統一接入多家模型 |
+
+---
+
+## 接上 Gemma 4（本地模型）
+
+> 詳細安裝步驟請見 [[AI 101 - Gemma 4 本地模型]]
+
+**快速設定：**
+
+```bash
+# 1. 啟動設定精靈，選 Ollama
+hermes setup
+# base URL: http://localhost:11434/v1
+# model:    gemma4:26b
+
+# 2. 或建立穩定版 Modelfile（推薦）
+cat > ~/Modelfile.gemma4 << 'EOF'
+FROM gemma4:26b
+PARAMETER num_ctx 32768
+EOF
+ollama create gemma4-hermes -f ~/Modelfile.gemma4
+# 然後在 hermes setup 填入 model: gemma4-hermes
+```
+
+> [!warning] Context 最低需求
+> Hermes 要求模型至少支援 **64K context**。
+> 若使用 Modelfile 將 context 設為 32K，啟動時需加 `--ctx-size 65536`。
 
 ---
 
@@ -165,3 +192,4 @@ hermes skills       # 管理 Skills
 - [[AI 101 - 核心概念]] — Agent 概念說明
 - [[AI 101 - OpenClaw]] — 類似定位的 AI Gateway 比較
 - [[AI 101 - Claude Code 生態系]] — Skills / Memory 概念對照
+- [[AI 101 - Gemma 4 本地模型]] — 本地模型完整設定指南

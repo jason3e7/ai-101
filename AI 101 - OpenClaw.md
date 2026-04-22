@@ -138,7 +138,31 @@ openclaw channels list
 |---|---|
 | Anthropic | Claude 系列（Opus、Sonnet、Haiku）|
 | OpenAI | GPT-4o、o1 系列 |
+| Ollama | 本地模型（Gemma 4、Qwen 等，完全離線）|
 | 其他 | 可透過相容 API 接入 |
+
+---
+
+## 接上 Gemma 4（本地模型）
+
+> 詳細安裝步驟請見 [[AI 101 - Gemma 4 本地模型]]
+
+**快速設定：** 修改 `~/.openclaw/openclaw.json`
+
+```json
+{
+  "model": {
+    "provider": "ollama",
+    "baseUrl": "http://127.0.0.1:11434",
+    "model": "gemma4:26b",
+    "contextWindow": 131072
+  }
+}
+```
+
+> [!warning]
+> URL 用 `http://127.0.0.1:11434`，**不加 `/v1`**，否則 tool calling 會失效。
+> 設定完後執行 `openclaw doctor` 驗證。
 
 ---
 
@@ -146,3 +170,4 @@ openclaw channels list
 
 - [[AI 101 - 核心概念]] — Agent 概念說明
 - [[AI 101 - Claude Code 生態系]] — Claude Code 的 MCP / Skills 對比
+- [[AI 101 - Gemma 4 本地模型]] — 本地模型完整設定指南
