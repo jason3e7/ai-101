@@ -59,26 +59,123 @@ Ollama 會在背景啟動 server，預設監聽 `http://localhost:11434`
 
 ---
 
-## 接上 OpenClaw
+## Step 1：確認遠端 Ollama 對外開放
 
-### 方法：修改 `~/.openclaw/openclaw.json`
+Ollama 預設只監聽 `127.0.0.1`，跑在另一台機器時需先開放對外連線。
+
+**在 Gemma 4 那台機器執行：**
+
+```bash
+# Linux（systemd）
+sudo systemctl edit ollama
+```
+
+加入以下內容後存檔：
+
+```ini
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+```
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart ollama
+```
+
+確認防火牆放行 port 11434：
+
+```bash
+sudo ufw allow 11434
+```
+
+---
+
+## Step 2：確認 Context 大小是否達到 64K
+
+Hermes Agent 要求模型至少支援 **64K（65536）tokens context**。
+在**你自己的機器**用以下方法遠端查詢：
+
+### 方法一：curl 查詢模型資訊（推薦）
+
+```bash
+curl http://<遠端IP>:11434/api/show \
+  -d '{"name": "gemma4:26b"}' | python3 -m json.tool | grep num_ctx
+```
+
+看到 `num_ctx` 的值，若 **≥ 65536** 就達標。
+
+### 方法二：curl 發一次 chat 看回傳的 context 資訊
+
+```bash
+curl http://<遠端IP>:11434/api/chat \
+  -d '{
+    "model": "gemma4:26b",
+    "messages": [{"role":"user","content":"hi"}],
+    "stream": false
+  }' | python3 -m json.tool | grep -E "eval_count|prompt_eval"
+```
+
+### 方法三：在遠端機器直接跑 `ollama ps`
+
+```bash
+ssh user@<遠端IP> "ollama ps"
+# 輸出的 CONTEXT 欄位顯示目前運行的 context 大小
+```
+
+### 方法四：在遠端機器跑 `ollama show`
+
+```bash
+ssh user@<遠端IP> "ollama show gemma4:26b --modelfile"
+# 找 PARAMETER num_ctx 那行
+```
+
+> [!tip] 預設值問題
+> Ollama 預設 `num_ctx` 只有 **2048**，遠低於 64K。
+> 就算模型架構支援更大的 context，如果沒有明確設定，實際能用的只有 2048。
+
+---
+
+## Step 3：若 Context 不足，在遠端機器調整
+
+**在 Gemma 4 那台機器建立 Modelfile：**
+
+```bash
+cat > ~/Modelfile.gemma4 << 'EOF'
+FROM gemma4:26b
+PARAMETER num_ctx 65536
+EOF
+
+ollama create gemma4-hermes -f ~/Modelfile.gemma4
+```
+
+驗證是否生效：
+
+```bash
+ollama show gemma4-hermes --modelfile | grep num_ctx
+# 應顯示：PARAMETER num_ctx 65536
+```
+
+---
+
+## Step 4：接上 OpenClaw（遠端 Ollama）
+
+修改 `~/.openclaw/openclaw.json`，把 `baseUrl` 改成遠端 IP：
 
 ```json
 {
   "model": {
     "provider": "ollama",
-    "baseUrl": "http://127.0.0.1:11434",
+    "baseUrl": "http://<遠端IP>:11434",
     "model": "gemma4:26b",
-    "contextWindow": 131072
+    "contextWindow": 65536
   }
 }
 ```
 
 > [!warning] 注意 URL 格式
-> OpenClaw 的 Ollama URL 用 `http://127.0.0.1:11434`，**不要加 `/v1`**。
-> 加了 `/v1` 會導致 tool calling 失效。
+> OpenClaw 的 Ollama URL **不加 `/v1`**，否則 tool calling 會失效。
 
-### 驗證設定
+驗證：
 
 ```bash
 openclaw doctor
@@ -86,40 +183,33 @@ openclaw doctor
 
 ---
 
-## 接上 Hermes Agent
-
-### 方法一：透過設定精靈（推薦新手）
+## Step 5：接上 Hermes Agent（遠端 Ollama）
 
 ```bash
 hermes setup
-# 選擇 Ollama 作為 provider
-# 輸入 base URL：http://localhost:11434/v1
-# 輸入 model：gemma4:26b
+# provider: ollama
+# base URL: http://<遠端IP>:11434/v1   ← Hermes 要加 /v1
+# model:    gemma4-hermes              ← 用上面建好的 Modelfile 版本
 ```
 
-### 方法二：直接執行時指定 context size
+或直接設定環境變數：
 
 ```bash
-# Hermes 要求最少 64K context
-ollama run gemma4:26b --ctx-size 65536
+export OLLAMA_HOST=http://<遠端IP>:11434
+hermes setup
 ```
 
-### 方法三：建立 Modelfile（穩定性最佳）
+---
 
-```bash
-cat > ~/Modelfile.gemma4 << 'EOF'
-FROM gemma4:26b
-PARAMETER num_ctx 32768
-EOF
+## 快速診斷指令一覽
 
-ollama create gemma4-hermes -f ~/Modelfile.gemma4
-```
-
-然後在 `hermes setup` 選模型時填 `gemma4-hermes`。
-
-> [!tip] 為何用 Modelfile？
-> 預設 context 設定在消費級硬體上可能不穩定。
-> Modelfile 把 context 鎖在 32K，跑起來更穩定，速度也更快。
+| 目的 | 指令（在你的機器執行）|
+|---|---|
+| 查遠端模型 context 大小 | `curl http://<IP>:11434/api/show -d '{"name":"gemma4:26b"}'` |
+| 確認遠端 Ollama 有在跑 | `curl http://<IP>:11434/api/tags` |
+| 列出遠端所有模型 | `curl http://<IP>:11434/api/tags \| python3 -m json.tool` |
+| 驗證 OpenClaw 設定 | `openclaw doctor` |
+| 重跑 Hermes 設定 | `hermes setup` |
 
 ---
 
@@ -132,16 +222,8 @@ ollama create gemma4-hermes -f ~/Modelfile.gemma4
 ip route show | grep default | awk '{print $3}'
 # 通常是 172.x.x.1
 
-# 設定 Ollama URL
+# 設定 Ollama URL（WSL2 內）
 http://172.x.x.1:11434
-```
-
-或設定環境變數讓 Ollama 對外開放：
-
-```powershell
-# Windows PowerShell
-$env:OLLAMA_HOST = "0.0.0.0"
-ollama serve
 ```
 
 ---
