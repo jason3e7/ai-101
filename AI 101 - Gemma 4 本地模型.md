@@ -247,6 +247,87 @@ http://172.x.x.1:11434
 
 ---
 
+## 進階：Gemma-4-31B-JANG（MLX 版，Apple Silicon 專用）
+
+> [!info] 模型來源
+> HuggingFace：[dealignai/Gemma-4-31B-JANG_4M-CRACK](https://huggingface.co/dealignai/Gemma-4-31B-JANG_4M-CRACK)
+> 格式：JANG v2（MLX-native safetensors）
+> 這是 **abliterated** 版本——移除了原始模型的安全限制，僅供研究用途，使用者自行負責法律合規。
+
+### 規格
+
+| 項目 | 詳情 |
+|---|---|
+| 參數量 | 31B（Dense 架構）|
+| 量化 | 平均 5.1 bits |
+| 模型大小 | 21 GB |
+| 下載大小 | 22.7 GB |
+| 最低硬體 | Apple Silicon Mac，**32GB+ 統一記憶體** |
+
+> [!warning] Ollama 不支援此模型
+> 此模型為 MLX 原生格式，**無法用 Ollama 跑**。
+> 需要 vMLX 或 mlx_lm，且只能在 Apple Silicon Mac 上執行。
+
+### 方法一：vMLX（推薦，最簡單）
+
+```bash
+# 1. 安裝 vMLX（到官網下載 App）
+# https://vmlx.net
+
+# 2. 下載模型
+pip install huggingface_hub
+python3 -c "
+from huggingface_hub import snapshot_download
+snapshot_download('dealignai/Gemma-4-31B-JANG_4M-CRACK')
+"
+
+# 3. 在 vMLX 中載入模型路徑即可
+```
+
+vMLX 原生支援：視覺模式（多模態）、思考模式（Chain of Thought）、所有推理參數設定。
+
+### 方法二：mlx_lm（命令列）
+
+> [!warning]
+> 標準 `mlx_lm` 截至 v0.31.2 尚未支援 Gemma 4，請先確認版本。
+
+```bash
+# 安裝
+pip install mlx-lm
+
+# 執行
+python3 -c "
+from mlx_lm import load, generate
+
+model, tokenizer = load('dealignai/Gemma-4-31B-JANG_4M-CRACK')
+response = generate(model, tokenizer, prompt='你好', max_tokens=1024)
+print(response)
+"
+```
+
+### 推薦推理參數
+
+| 模式 | Temperature | Repetition Penalty | Top P |
+|---|---|---|---|
+| 思考模式 OFF | 0.0 – 1.0 | 1.00 | 0.95 |
+| 思考模式 ON | **0.3 – 0.7** | **1.15 – 1.25** | 0.95 |
+
+> [!tip] 思考模式注意事項
+> - 避免 temperature=0 搭配思考模式（會增加迴圈風險）
+> - 建議 repetition penalty 1.2 防止規劃迴圈
+
+### 與標準 Gemma 4 的差異
+
+| | `gemma4:26b`（Ollama）| JANG 31B（MLX）|
+|---|---|---|
+| 執行平台 | Linux / Windows / macOS | Apple Silicon Mac 限定 |
+| 工具 | Ollama | vMLX / mlx_lm |
+| 安全限制 | 保留 | 移除（abliterated）|
+| 硬體需求 | 18GB VRAM | 32GB 統一記憶體 |
+| 接 OpenClaw / Hermes | 可以 | 需要額外轉接層 |
+
+---
+
 ## 三者比較（雲端 vs 本地）
 
 | | 雲端（Claude/GPT） | Gemma 4 本地 |
