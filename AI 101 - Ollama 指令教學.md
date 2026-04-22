@@ -199,6 +199,60 @@ ollama cp gemma4:latest gemma4-custom
 
 ---
 
+## 開放區網存取（Linux）
+
+Ollama 預設只監聽 `127.0.0.1`，其他機器連不到。需要改成監聽 `0.0.0.0`。
+
+### 方法：修改 systemd service
+
+```bash
+# 1. 建立 override 設定（不要直接改原始 service 檔）
+sudo systemctl edit ollama
+```
+
+編輯器會開啟，貼入以下內容後存檔：
+
+```ini
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+```
+
+```bash
+# 2. 套用設定並重啟
+sudo systemctl daemon-reload
+sudo systemctl restart ollama
+
+# 3. 確認現在監聽的位址
+sudo ss -tlnp | grep 11434
+# 應看到 0.0.0.0:11434 而非 127.0.0.1:11434
+```
+
+### 防火牆放行
+
+```bash
+# ufw
+sudo ufw allow 11434
+
+# 或 firewalld
+sudo firewall-cmd --add-port=11434/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+### 驗證從其他機器能連到
+
+在**另一台機器**執行：
+
+```bash
+curl http://<Ollama機器的IP>:11434/
+# 回傳 "Ollama is running" 就成功
+```
+
+> [!warning] 安全提醒
+> Ollama 沒有內建 API key 驗證，開放 `0.0.0.0` 後區網內任何人都能存取。
+> 若有安全顧慮，考慮用 SSH tunnel 或防火牆限制來源 IP。
+
+---
+
 ## 遠端存取
 
 ### 從另一台機器查詢
