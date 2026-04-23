@@ -493,6 +493,164 @@ print("labels:", example["mbert_bio_labels"][:10])
 
 ---
 
+## 整合 kw-filter：用 ai4privacy 自動產生關鍵字清單
+
+> [!info] 情境說明
+> [kw-filter](https://jason3e7.github.io/kw-filter/kw_tools.html) 是一個「帶著自己的關鍵字清單做替換」的隱私過濾工具。
+> 以往要手動列出哪些詞要過濾——用 ai4privacy 的 `observe()` 可以**自動從文字裡偵測 PII**，
+> 直接輸出 kw-filter 所需的格式，省去人工整理。
+
+### 流程
+
+```
+原始文字
+  → ai4privacy observe()   ← 自動偵測哪些詞是 PII
+  → 萃取關鍵字清單
+  → 匯入 kw-filter         ← 貼進關鍵字欄位 或 載入 JSON
+  → kw-filter 做替換、送 AI、還原
+```
+
+### 方法一：輸出純文字關鍵字清單（貼進 kw-filter 關鍵字欄位）
+
+```python
+from ai4privacy import observe
+
+def extract_keywords(text, score_threshold=0.5, multilingual=False):
+    """從文字中萃取 PII 關鍵字，輸出一行一個的純文字清單"""
+    report = observe(text, classify_pii=True)
+    
+    keywords = []
+    for entity in report.get("privacy_mask", []):
+        if entity["score"] >= score_threshold:
+            keywords.append(entity["value"])
+    
+    # 去重複、保留順序
+    seen = set()
+    unique = [kw for kw in keywords if not (kw in seen or seen.add(kw))]
+    return "\n".join(unique)
+
+
+# 使用
+text = """
+客戶：Alice Wang，電話 0912-345-678，email: alice@example.com
+聯絡人：Bob Chen，公司：台灣科技股份有限公司，身分證 A123456789
+"""
+
+result = extract_keywords(text)
+print(result)
+# Alice Wang
+# 0912-345-678
+# alice@example.com
+# Bob Chen
+# 台灣科技股份有限公司
+# A123456789
+```
+
+### 方法二：輸出 JSON 映射表（載入 kw-filter Mapping JSON）
+
+```python
+from ai4privacy import observe
+import json
+
+def extract_mapping_json(text, score_threshold=0.5):
+    """
+    輸出 kw-filter 可直接匯入的 JSON 映射表
+    格式：{ "原始值": "佔位符", ... }
+    """
+    report = observe(text, classify_pii=True)
+    
+    mapping = {}
+    counters = {}  # 同類型計數，避免佔位符重複
+    
+    for entity in report.get("privacy_mask", []):
+        if entity["score"] < score_threshold:
+            continue
+        
+        value = entity["value"]
+        label = entity["label"]
+        
+        if value in mapping:
+            continue  # 同一個值只建一次
+        
+        counters[label] = counters.get(label, 0) + 1
+        count = counters[label]
+        placeholder = f"[{label}_{count}]" if counters[label] > 1 else f"[{label}]"
+        mapping[value] = placeholder
+    
+    return json.dumps(mapping, ensure_ascii=False, indent=2)
+
+
+# 使用
+print(extract_mapping_json(text))
+```
+
+輸出範例：
+```json
+{
+  "Alice Wang": "[GIVENNAME]",
+  "0912-345-678": "[PHONE]",
+  "alice@example.com": "[EMAIL]",
+  "Bob Chen": "[GIVENNAME_2]",
+  "台灣科技股份有限公司": "[ORGANIZATION]",
+  "A123456789": "[ID_CARD]"
+}
+```
+
+### 方法三：批次處理多份文件
+
+```python
+from ai4privacy import observe
+import json
+from pathlib import Path
+
+def extract_from_files(file_paths: list[str], score_threshold=0.5) -> dict:
+    """從多份文件萃取所有 PII，合併去重後輸出統一映射表"""
+    all_entities = {}
+    counters = {}
+
+    for path in file_paths:
+        text = Path(path).read_text(encoding="utf-8")
+        report = observe(text, classify_pii=True)
+
+        for entity in report.get("privacy_mask", []):
+            if entity["score"] < score_threshold:
+                continue
+            value = entity["value"]
+            label = entity["label"]
+            if value in all_entities:
+                continue
+            counters[label] = counters.get(label, 0) + 1
+            n = counters[label]
+            all_entities[value] = f"[{label}]" if n == 1 else f"[{label}_{n}]"
+
+    return all_entities
+
+
+# 使用
+files = ["report_q1.txt", "customer_list.csv", "meeting_notes.txt"]
+mapping = extract_from_files(files)
+
+# 存成 JSON 供 kw-filter 匯入
+with open("kw_mapping.json", "w", encoding="utf-8") as f:
+    json.dump(mapping, f, ensure_ascii=False, indent=2)
+
+print(f"共偵測到 {len(mapping)} 個 PII 關鍵字")
+```
+
+### score_threshold 選擇建議
+
+| 情境 | 建議 threshold | 說明 |
+|---|---|---|
+| 機密合約、法律文件 | `0.3` | 寧可多抓，不漏掉 |
+| 一般客戶資料 | `0.5`（預設）| 平衡精確與召回 |
+| 只要非常確定的 PII | `0.8` | 誤報率低，但可能漏掉 |
+
+> [!tip] 先用 observe() 確認，再決定 threshold
+> 把幾份代表性文件跑過 `observe()`，看看各個 entity 的 score 分布，
+> 再決定 threshold 的值，比直接猜準確得多。
+
+---
+
 ## Sources
 
 - [ai4privacy/pii-masking-300k — Hugging Face](https://huggingface.co/datasets/ai4privacy/pii-masking-300k)
