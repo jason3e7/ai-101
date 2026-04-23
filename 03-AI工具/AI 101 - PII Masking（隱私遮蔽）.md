@@ -129,6 +129,59 @@ masked_sensitive = protect(text, score_threshold=0.001)
 
 ---
 
+## 資源需求
+
+ai4privacy 依模式載入不同模型，資源消耗差異明顯：
+
+| 模式 | 底層模型 | 參數量 | 磁碟大小 | 推論 RAM | CPU 延遲 |
+|---|---|---|---|---|---|
+| **英文**（預設）| DistilBERT fine-tuned | 66M | ~256 MB | ~700 MB | ~8 ms / 次 |
+| **多語言** | mDeBERTa-v3-base | 276M | ~1.1 GB | ~1.5 GB | 慢 2–3x |
+| **量化版**（自動）| DistilBERT quantized | 66M | **~43 MB** | ~300 MB | 略慢 |
+
+> [!tip] 一般筆電完全夠用
+> 英文模式只需 700 MB RAM，CPU 單次推論約 8ms。
+> 不需要 GPU——但若有 GPU 可加速約 5–10x。
+
+> [!info] 為什麼多語言差這麼多？
+> mDeBERTa 的詞彙表從 128K 擴展到 250K tokens（支援 100 種語言），
+> Embedding 層參數從 98M 暴增到 190M，導致整體大小接近 DistilBERT 的 4 倍。
+
+### GPU 加速（可選）
+
+```python
+from ai4privacy import protect
+
+# 預設 CPU
+masked = protect(text)
+
+# 指定用 GPU（需安裝 CUDA 版 PyTorch）
+masked = protect(text, use_gpu=True)
+```
+
+### 實際佔用確認
+
+```python
+import os, psutil, time
+from ai4privacy import protect
+
+process = psutil.Process(os.getpid())
+
+before = process.memory_info().rss / 1024 / 1024
+protect("warm up call to load model")   # 第一次呼叫才載入模型
+after = process.memory_info().rss / 1024 / 1024
+
+print(f"模型載入後增加：{after - before:.0f} MB")
+
+# 計算單次推論時間
+start = time.perf_counter()
+protect("Email me at test@example.com or call +886-912-345-678")
+elapsed = (time.perf_counter() - start) * 1000
+print(f"推論耗時：{elapsed:.1f} ms")
+```
+
+---
+
 ## 離線環境使用
 
 > [!info] 為什麼需要這一節？
