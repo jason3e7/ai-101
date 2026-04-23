@@ -1,6 +1,6 @@
 ---
 title: AI 101 - PII Masking（隱私遮蔽）
-tags: [ai, privacy, pii, dataset, nlp, gdpr, huggingface]
+tags: [ai, privacy, pii, dataset, nlp, gdpr, huggingface, offline]
 created: 2026-04-23
 updated: 2026-04-23
 ---
@@ -126,6 +126,68 @@ masked_sensitive = protect(text, score_threshold=0.001)
 > 值越低，越多文字會被判定為 PII（寧可錯殺）。
 > 值越高，只有非常確定的才會遮蔽（準確但可能漏掉）。
 > 隱私需求高的場景建議降低 threshold。
+
+---
+
+## 離線環境使用
+
+> [!info] 為什麼需要這一節？
+> `pip install ai4privacy` 只裝 Python 程式碼（幾 KB）。
+> **模型本體（幾百 MB）是第一次呼叫 `protect()` 時才從 HuggingFace 下載**，並快取到 `~/.cache/huggingface/`。
+> 若部署環境沒有網路，需要事先在有網路的機器預下載。
+
+### Step 1：找出 ai4privacy 使用的模型 ID
+
+```bash
+# 找安裝位置，看 source code 裡的 model name
+cat $(python3 -c "import ai4privacy; print(ai4privacy.__file__)")
+
+# 或者：在有網路時跑一次，看 cache 裡多了什麼
+ls ~/.cache/huggingface/hub/
+# 會出現類似 models--ai4privacy--XXXXXXX 的資料夾
+```
+
+### Step 2：主動預下載模型（不需要呼叫 protect）
+
+```bash
+# 方法 A：CLI（最直接）
+pip install huggingface_hub
+huggingface-cli download ai4privacy/<model-id>
+```
+
+```python
+# 方法 B：寫成 setup script，有網路時跑一次
+from huggingface_hub import snapshot_download
+
+snapshot_download(repo_id="ai4privacy/<model-id>")
+print("模型已下載，可離線使用")
+```
+
+### Step 3：離線環境鎖定不連網
+
+```bash
+# 設環境變數，強制只讀 cache，完全不嘗試連線
+export HF_HUB_OFFLINE=1
+python3 your_script.py
+```
+
+```python
+# 或在程式碼裡設定
+import os
+os.environ["HF_HUB_OFFLINE"] = "1"
+
+from ai4privacy import protect
+print(protect("Email: john@example.com"))
+# 直接讀 cache，不聯網
+```
+
+> [!tip] 搬移到隔離環境
+> `~/.cache/huggingface/` 整個目錄可以直接複製到沒有網路的機器。
+> 模型 cache 是可攜的，複製過去後設 `HF_HUB_OFFLINE=1` 即可。
+
+> [!warning] 不設 HF_HUB_OFFLINE 的風險
+> 即使 cache 存在，沒設這個變數時 HuggingFace 仍會嘗試連線確認版本。
+> 離線環境不設的話可能 timeout 卡住幾秒甚至報錯。
 
 ---
 
