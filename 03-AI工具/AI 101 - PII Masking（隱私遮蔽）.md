@@ -129,6 +129,117 @@ masked_sensitive = protect(text, score_threshold=0.001)
 
 ---
 
+## 遮蔽後還原（送 LLM 再拿回原文）
+
+> [!info] 套件沒有內建還原功能
+> `protect()` 只會單向替換，沒有 `unprotect()`。
+> 需要自己在遮蔽前建立「佔位符 → 原始值」的映射表，拿到 LLM 回應後再還原。
+
+### 核心流程
+
+```
+原始文字
+  → observe() 取得 PII 清單（位置 + 原始值）
+  → protect() 遮蔽（得到 [PII_1], [PII_2]...）
+  → 建立映射表：{[PII_1]: "Alice", [PII_2]: "alice@corp.com"}
+  → 送給 LLM
+  → 用映射表把 LLM 回應裡的佔位符換回原始值
+```
+
+### 完整實作
+
+```python
+import re
+from ai4privacy import protect, observe
+
+def mask_with_mapping(text, **kwargs):
+    """遮蔽文字並回傳映射表，供後續還原用"""
+    report = observe(text, classify_pii=True)
+    masked = protect(text, **kwargs)
+
+    # observe() 依出現位置排序，與 protect() 的編號一致
+    mapping = {}
+    for i, entity in enumerate(report.get("privacy_mask", []), start=1):
+        placeholder = f"[PII_{i}]"
+        mapping[placeholder] = entity["value"]
+
+    return masked, mapping
+
+
+def restore(text, mapping):
+    """把 LLM 回應裡的佔位符還原回原始值（大小寫不敏感）"""
+    result = text
+    for placeholder, original in mapping.items():
+        # 用 regex 做大小寫不敏感替換，避免 LLM 改變大小寫
+        result = re.sub(re.escape(placeholder), original, result, flags=re.IGNORECASE)
+    return result
+
+
+# ---- 使用範例 ----
+
+original = "請聯絡 Alice，她的 email 是 alice@corp.com，電話 +886-912-345-678"
+
+masked, mapping = mask_with_mapping(original)
+print("遮蔽後:", masked)
+# 遮蔽後: 請聯絡 [PII_1]，她的 email 是 [PII_2]，電話 [PII_3]
+
+print("映射表:", mapping)
+# 映射表: {'[PII_1]': 'Alice', '[PII_2]': 'alice@corp.com', '[PII_3]': '+886-912-345-678'}
+
+# 模擬 LLM 回應（回應裡保留了佔位符）
+llm_response = "已發送確認信至 [PII_2]，並以 [PII_3] 通知 [PII_1]。"
+
+restored = restore(llm_response, mapping)
+print("還原後:", restored)
+# 還原後: 已發送確認信至 alice@corp.com，並以 +886-912-345-678 通知 Alice。
+```
+
+### 搭配 LLM 的完整 Pipeline
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def privacy_safe_llm(user_input: str, system_prompt: str = "") -> str:
+    """遮蔽 PII → 送 LLM → 還原 PII"""
+
+    # 1. 遮蔽
+    masked_input, mapping = mask_with_mapping(user_input)
+
+    # 2. 送 LLM（LLM 只看到佔位符，不碰原始個資）
+    message = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1024,
+        system=system_prompt,
+        messages=[{"role": "user", "content": masked_input}]
+    )
+    llm_response = message.content[0].text
+
+    # 3. 還原
+    return restore(llm_response, mapping)
+
+
+# 使用
+reply = privacy_safe_llm(
+    "幫我寫一封信給 Alice（alice@corp.com），確認明天 3 點的會議",
+    system_prompt="你是一個商務助理，請用繁體中文回覆。"
+)
+print(reply)
+```
+
+> [!warning] 還原的前提：LLM 必須保留佔位符原樣
+> 如果 LLM 回應中沒有帶回佔位符（例如它自己改寫了完全不提），就無從還原。
+> 建議在 system prompt 加上：
+> `「回應中若引用使用者提到的資訊，請原樣保留 [PII_N] 格式的佔位符。」`
+
+> [!tip] 用 classify_pii=True 替換成語意標籤
+> 若改用 `protect(text, classify_pii=True)`，佔位符變成 `[EMAIL]`、`[PHONE]`。
+> 語意更清楚，但同一種類出現兩次時（兩個 EMAIL）無法區分，**不適合用來還原**。
+> 需要還原時請使用預設的數字格式 `[PII_1]`、`[PII_2]`。
+
+---
+
 ## 資源需求
 
 ai4privacy 依模式載入不同模型，資源消耗差異明顯：
