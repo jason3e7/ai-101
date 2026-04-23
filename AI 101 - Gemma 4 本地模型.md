@@ -340,6 +340,18 @@ print(response)
 
 ---
 
+## Sources
+
+- [Google DeepMind：Gemma 模型頁](https://deepmind.google/models/gemma/)
+- [Gemma 官方文件（ai.google.dev）](https://ai.google.dev/gemma)
+- [Ollama Gemma 模型頁](https://ollama.com/library/gemma3)
+- [Ollama FAQ：設定 OLLAMA_HOST 開放連線](https://github.com/ollama/ollama/blob/main/docs/faq.md)
+- [HuggingFace：dealignai/Gemma-4-31B-JANG_4M-CRACK](https://huggingface.co/dealignai/Gemma-4-31B-JANG_4M-CRACK)
+- [vMLX 官網](https://vmlx.net)
+- [mlx-lm GitHub](https://github.com/ml-explore/mlx-examples/tree/main/llms)
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - OpenClaw]] — OpenClaw 完整說明

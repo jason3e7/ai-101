@@ -166,6 +166,14 @@ openclaw channels list
 
 ---
 
+## Sources
+
+- [OpenClaw GitHub Repo](https://github.com/openclaw/openclaw)
+- [OpenClaw 官方文件](https://openclaw.com/docs)
+- [OpenClaw npm package](https://www.npmjs.com/package/openclaw)
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - 核心概念]] — Agent 概念說明

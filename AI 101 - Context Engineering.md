@@ -161,6 +161,15 @@ AI 自行判斷何時需要，適合**動態資訊**。
 
 ---
 
+## Sources
+
+- [Anthropic：Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [Anthropic：Context engineering for long-running agents](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- [LangChain Blog：The rise of Context Engineering](https://blog.langchain.com/the-rise-of-context-engineering/)
+- [Shopify Eng Blog：Context Engineering for AI Agents](https://shopify.engineering/context-engineering-ai-agents)
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - Claude Code 生態系]] — 工具的實際使用

@@ -295,6 +295,16 @@ ollama show gemma4:latest
 
 ---
 
+## Sources
+
+- [Ollama 官網](https://ollama.com)
+- [Ollama GitHub](https://github.com/ollama/ollama)
+- [Ollama CLI 參考文件](https://github.com/ollama/ollama/blob/main/docs/README.md)
+- [Ollama FAQ（含 OLLAMA_HOST 設定）](https://github.com/ollama/ollama/blob/main/docs/faq.md)
+- [Ollama Modelfile 規範](https://github.com/ollama/ollama/blob/main/docs/modelfile.md)
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - Gemma 4 本地模型]] — Gemma 4 完整設定，含遠端 Ollama 連線

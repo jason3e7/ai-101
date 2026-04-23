@@ -170,6 +170,13 @@ graph LR
 
 ---
 
+## Sources
+
+- [alchaincyf/nuwa-skill GitHub](https://github.com/alchaincyf/nuwa-skill)
+- [專案 README（Skill 運作流程、Phase 說明）](https://github.com/alchaincyf/nuwa-skill/blob/main/README.md)
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - Claude Code 生態系]] — Skills 概念說明

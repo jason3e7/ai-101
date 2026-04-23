@@ -186,14 +186,14 @@ Harness Engineering（最外層：基礎設施）
 
 ---
 
-## 學習資源
+## Sources
 
-| 資源 | 說明 |
-|---|---|
-| [Harness design for long-running apps - Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps) | Anthropic 官方深度文章 |
-| [Effective harnesses for long-running agents - Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) | 進階實踐指南 |
-| [The Anatomy of an Agent Harness](https://blog.dailydoseofds.com/p/the-anatomy-of-an-agent-harness) | 解剖 Harness 的各個組成 |
-| [Claude Code Agent Harness Architecture](https://wavespeed.ai/blog/posts/claude-code-agent-harness-architecture/) | Claude Code 架構深度分析 |
+- [Anthropic：Harness design for long-running apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- [Anthropic：Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+- [The Anatomy of an Agent Harness](https://blog.dailydoseofds.com/p/the-anatomy-of-an-agent-harness)
+- [Claude Code Agent Harness Architecture](https://wavespeed.ai/blog/posts/claude-code-agent-harness-architecture/)
+- [LangChain：How we built our coding agent harness](https://blog.langchain.com/)
+- [OpenAI Agent SDK：Guardrails 文件](https://platform.openai.com/docs/guides/agents)
 
 ---
 

@@ -180,6 +180,14 @@ bat-server --bind tailscale --port 3000 --token mytoken
 
 ---
 
+## Sources
+
+- [tony1223/better-agent-terminal GitHub](https://github.com/tony1223/better-agent-terminal)
+- [GitHub Releases（各平台下載）](https://github.com/tony1223/better-agent-terminal/releases)
+- [專案 README（功能、快捷鍵、slash 指令）](https://github.com/tony1223/better-agent-terminal/blob/main/README.md)
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - Claude Code 生態系]] — Claude Code 核心概念

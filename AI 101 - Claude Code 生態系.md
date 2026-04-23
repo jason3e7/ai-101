@@ -238,6 +238,16 @@ Anthropic 在 2024 年 11 月推出，已被 OpenAI、Google DeepMind 採用。
 
 ---
 
+## Sources
+
+- [Claude Code 官方文件](https://code.claude.com/docs)
+- [Model Context Protocol 規範](https://modelcontextprotocol.io)
+- [Anthropic：MCP 介紹](https://www.anthropic.com/news/model-context-protocol)
+- [Claude Code Plugin Marketplace](https://code.claude.com/docs/en/plugins)
+- [Claude Code Hooks 文件](https://docs.claude.com/en/docs/claude-code/hooks)
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - Context Engineering]] — 理解為何這些工具這麼重要

@@ -178,12 +178,14 @@ ollama create gemma4-hermes -f ~/Modelfile.gemma4
 
 ---
 
-## 相關資源
+## Sources
 
-- [官方文件](https://hermes-agent.nousresearch.com/docs/)
+- [Hermes Agent 官方文件](https://hermes-agent.nousresearch.com/docs/)
 - [Quickstart](https://hermes-agent.nousresearch.com/docs/getting-started/quickstart/)
 - [Skills Hub](https://hermes-agent.nousresearch.com/docs/skills)
+- [NousResearch/hermes-agent GitHub](https://github.com/nousresearch/hermes-agent)
 - [awesome-hermes-agent](https://github.com/0xNyk/awesome-hermes-agent)（社群整理的 Skills 與資源）
+- [Nous Research 官網](https://nousresearch.com)
 
 ---
 
