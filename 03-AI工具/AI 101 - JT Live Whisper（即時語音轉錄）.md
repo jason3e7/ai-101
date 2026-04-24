@@ -238,6 +238,48 @@ python remote_whisper_server.py
 
 ---
 
+## Linux 支援現況
+
+> [!warning] Linux 不支援作為主程式（client 端）
+> 安裝腳本只有 macOS（`install.sh`）和 Windows（`install.ps1`）兩個版本。
+> 音訊擷取依賴 BlackHole（macOS）和 WASAPI Loopback（Windows），
+> Linux 的 PipeWire / PulseAudio 架構尚未被整合。
+
+### Linux 能做的事：當遠端 GPU Server
+
+Linux 機器（Ubuntu + NVIDIA GPU）可以作為**語音識別後端**，讓 Mac/Windows 負責 UI 和音訊擷取：
+
+```bash
+# Linux 伺服器端：安裝 Python 依賴
+pip install faster-whisper torch
+
+# 啟動遠端 Whisper 服務
+python remote_whisper_server.py
+```
+
+```bash
+# Mac/Windows client 端：指定遠端伺服器 IP
+./start.sh --mode en2zh --server 192.168.1.100
+```
+
+| 角色 | 機器 | 負責什麼 |
+|---|---|---|
+| Client | Mac / Windows | 音訊擷取、UI、字幕顯示 |
+| Server | Linux + NVIDIA GPU | faster-whisper 語音識別、講者辨識 |
+| LLM | 任一台有跑 Ollama 的機器 | 翻譯、摘要 |
+
+### 想在 Linux 桌面用的替代方案
+
+如果你只有 Linux 桌面，可以考慮功能相近的替代工具：
+
+| 工具 | 特色 |
+|---|---|
+| [whisper-live](https://github.com/collabora/whisper-live) | 跨平台即時 Whisper，支援 Linux |
+| [buzz](https://github.com/chidiwilliams/buzz) | GUI 版 Whisper，支援 Linux/macOS/Windows |
+| [livestream-subtitles](https://github.com/sylvainpelissier/livestream-subtitles) | Linux 音訊截取 + Whisper 字幕 |
+
+---
+
 ## 進階功能
 
 ### 字幕轉發到通訊工具
