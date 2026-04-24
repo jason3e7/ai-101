@@ -268,9 +268,82 @@ python remote_whisper_server.py
 | Server | Linux + NVIDIA GPU | faster-whisper 語音識別、講者辨識 |
 | LLM | 任一台有跑 Ollama 的機器 | 翻譯、摘要 |
 
-### 想在 Linux 桌面用的替代方案
+### Linux 離線分析：可以用，手動安裝即可
 
-如果你只有 Linux 桌面，可以考慮功能相近的替代工具：
+> [!tip] 離線分析在 Linux 完全可行
+> 查閱 `translate_meeting.py` 原始碼後確認：
+> 離線模式的依賴（`faster-whisper`、`numpy`、`sentencepiece`、`opencc`）全部跨平台。
+> 只有即時音訊擷取才需要 BlackHole / WASAPI，離線處理音訊檔完全不需要。
+
+**Linux 手動安裝步驟：**
+
+```bash
+# 1. 建立虛擬環境
+python3 -m venv venv
+source venv/bin/activate
+
+# 2. 安裝核心依賴（離線分析必要）
+pip install faster-whisper ctranslate2 sentencepiece numpy sounddevice
+pip install opencc-python-reimplemented   # 簡繁轉換
+
+# 3. 講者辨識（--diarize）
+pip install resemblyzer spectralcluster
+
+# 4. 翻譯引擎（二選一）
+# 方法 A：用 Ollama（需先在 Linux 上跑 Ollama）
+#   → 安裝見 AI 101 - Ollama 指令教學
+# 方法 B：完全離線的 NLLB 模型
+pip install transformers torch
+
+# 5. Clone 專案
+git clone https://github.com/jasoncheng7115/jt-live-whisper.git
+cd jt-live-whisper
+```
+
+**執行離線分析：**
+
+```bash
+# 基本轉錄（不翻譯）
+python translate_meeting.py --input meeting.mp3 --mode transcribe
+
+# 轉錄 + 翻譯（接本地 Ollama）
+python translate_meeting.py --input meeting.mp3 --mode en2zh --engine llm
+
+# 完整：轉錄 + 講者辨識 + 摘要
+python translate_meeting.py --input meeting.mp3 --diarize --summarize
+
+# 批次處理多個檔案
+for f in recordings/*.mp3; do
+    python translate_meeting.py --input "$f" --diarize --summarize
+done
+```
+
+**可能遇到的問題：**
+
+```bash
+# sounddevice 需要 portaudio
+sudo apt install portaudio19-dev
+pip install sounddevice
+
+# ffmpeg（音訊轉檔用）
+sudo apt install ffmpeg
+
+# CUDA 加速（有 NVIDIA GPU 時）
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+pip install faster-whisper   # 自動偵測 CUDA
+```
+
+> [!info] 離線 vs 即時的依賴差異
+> | 功能 | Linux 支援 | 說明 |
+> |---|---|---|
+> | 離線分析（`--input`） | ✅ 完整支援 | 純 Python + ffmpeg |
+> | 講者辨識（`--diarize`）| ✅ 完整支援 | resemblyzer 跨平台 |
+> | LLM 翻譯 / 摘要 | ✅ 支援 | 接本地 Ollama |
+> | NLLB 離線翻譯 | ✅ 支援 | transformers 跨平台 |
+> | 即時音訊擷取 | ❌ 不支援 | 需要 BlackHole / WASAPI |
+> | 浮動字幕 | ❌ 不支援 | 僅 macOS / Windows |
+
+### 想在 Linux 桌面做即時字幕的替代方案
 
 | 工具 | 特色 |
 |---|---|
