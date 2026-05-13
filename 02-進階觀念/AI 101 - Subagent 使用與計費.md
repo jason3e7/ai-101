@@ -30,6 +30,21 @@ updated: 2026-05-13
 
 ---
 
+## 兩種入口：訂閱 vs API Key
+
+| | Claude Code 訂閱（Pro/Max）| API Key（pay-as-you-go）|
+|---|---|---|
+| **Subagent 支援** | ✅ 內建，直接用 | ✅ 自己寫 orchestrator |
+| **如何觸發** | Claude 自動判斷，或 prompt 要求 | 程式碼呼叫 `client.messages.create()` |
+| **計費** | 共用訂閱配額，大量使用觸發 rate limit | 每次 API call 獨立計費 |
+| **彈性** | 固定幾種 agent 類型 | 完全自訂 system prompt、模型、邏輯 |
+
+> [!info] 你現在就在用 subagent
+> 用 Claude Code 對話時，Claude 每次派出去搜尋或執行任務的就是 subagent。
+> 不需要 API key，訂閱就包含了。API key 的路線是給**自己開發 agent 系統**用的。
+
+---
+
 ## 一、Claude Code 中使用 Subagent（UI 層）
 
 在 Claude Code 對話裡，Claude 自己會決定何時派出 subagent。
