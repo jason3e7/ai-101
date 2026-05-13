@@ -280,6 +280,157 @@ run_subagent(
 
 ---
 
+## 六、跨平台 Agent 協作：Claude Code + Codex
+
+> [!info]
+> 如果你同時有 Claude 和 OpenAI 帳號，可以讓兩個 AI 工具協作。
+> 以下兩種方式最實用：Shell 呼叫（快速）和 MCP Bridge（深度整合）。
+
+### 方法一：Claude Code 透過 Shell 呼叫 Codex CLI
+
+**架構：**
+```
+你 → Claude Code（orchestrator）
+         ↓ bash 指令
+       Codex CLI（subagent，用 OpenAI 模型執行）
+         ↓ 輸出結果
+     Claude Code 整合回傳
+```
+
+**前置：安裝 Codex CLI**
+
+```bash
+# 安裝 OpenAI Codex CLI
+npm install -g @openai/codex
+
+# 設定 API key
+export OPENAI_API_KEY="sk-..."
+
+# 確認可用
+codex --version
+```
+
+**在 Claude Code 裡對 Claude 說：**
+
+```
+請用 Codex CLI 幫我把 utils.py 裡所有的 function 加上 type hints，
+執行以下指令並告訴我結果：
+codex --approval-mode full-auto "為 utils.py 的所有 function 加上 Python type hints"
+```
+
+Claude 會執行這條 shell 指令，Codex 拿 OpenAI 的模型去修改檔案，結果回到 Claude 手上再整合。
+
+**常用 Codex CLI 旗標：**
+
+| 旗標 | 說明 |
+|---|---|
+| `--approval-mode full-auto` | 全自動執行，不問確認 |
+| `--approval-mode suggest` | 顯示建議但需人工確認（預設）|
+| `--model gpt-4o` | 指定使用的模型 |
+| `--quiet` | 減少輸出，方便 Claude 解析結果 |
+
+> [!tip] 什麼時候用這個方式？
+> 某個任務 GPT 表現比 Claude 好（例如特定程式語言或格式轉換），
+> 就把那個子任務轉包給 Codex 跑，Claude 負責整體規劃與整合。
+
+> [!warning] Codex CLI 預設是互動模式
+> 加上 `--approval-mode full-auto` 才能讓 Claude 全程自動化，
+> 否則 Codex 會等待人工確認，卡住流程。
+
+---
+
+### 方法三：MCP Server 包住 OpenAI API（深度整合）
+
+把 OpenAI 的能力包成一個 MCP Server，加進 Claude Code 設定後，
+Claude 就能像呼叫任何 MCP 工具一樣直接呼叫 GPT，不需要手動執行 shell 指令。
+
+**架構：**
+```
+Claude Code
+    ↓ MCP tool call
+  openai-bridge MCP Server（本地執行）
+    ↓ OpenAI API
+  GPT-4o / o3 / ...
+    ↓ 回傳結果
+  Claude 整合使用
+```
+
+**第一步：寫 MCP Server（`openai_bridge.py`）**
+
+```python
+# openai_bridge.py
+# pip install mcp openai
+
+from mcp.server.fastmcp import FastMCP
+from openai import OpenAI
+
+mcp = FastMCP("openai-bridge")
+openai_client = OpenAI()  # 自動讀取 OPENAI_API_KEY 環境變數
+
+@mcp.tool()
+def ask_gpt(prompt: str, model: str = "gpt-4o-mini") -> str:
+    """把任務交給 GPT 模型處理，回傳文字結果"""
+    response = openai_client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return response.choices[0].message.content
+
+@mcp.tool()
+def ask_gpt_with_system(system: str, prompt: str, model: str = "gpt-4o") -> str:
+    """帶 system prompt 呼叫 GPT，適合指定角色或格式"""
+    response = openai_client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return response.choices[0].message.content
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+**第二步：加進 Claude Code 設定**
+
+在 `.claude/settings.json`（專案層）或 `~/.claude/settings.json`（全域）加入：
+
+```json
+{
+  "mcpServers": {
+    "openai-bridge": {
+      "command": "python",
+      "args": ["/path/to/openai_bridge.py"],
+      "env": {
+        "OPENAI_API_KEY": "sk-你的key"
+      }
+    }
+  }
+}
+```
+
+**第三步：重啟 Claude Code，直接對 Claude 說：**
+
+```
+用 ask_gpt 工具，請 GPT-4o 幫我把以下 SQL 轉換成 Python SQLAlchemy ORM 格式：
+SELECT * FROM users WHERE created_at > '2026-01-01'
+```
+
+Claude 透過 MCP 呼叫 GPT，把結果拿回來自己繼續處理。
+
+> [!tip] MCP 方式的優勢
+> - Claude 可以**自己決定**何時要呼叫 GPT，不需要你手動觸發
+> - 可以在同一個工作流裡**混用兩個模型**（Claude 規劃 + GPT 執行特定步驟）
+> - 比 shell 方式更穩定，不受終端機環境影響
+
+> [!warning] 注意 API 費用雙重計費
+> MCP 呼叫 GPT 的費用由你的 OpenAI 帳號支付，
+> Claude 處理整個工作流的費用由你的 Anthropic 帳號支付。
+> 兩邊都在計費，用之前評估一下是否划算。
+
+---
+
 ## 相關筆記
 
 - [[AI 101 - Claude Code 生態系]] — Subagent 在 Claude Code 的位置
