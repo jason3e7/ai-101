@@ -43,6 +43,36 @@ updated: 2026-05-13
 > 用 Claude Code 對話時，Claude 每次派出去搜尋或執行任務的就是 subagent。
 > 不需要 API key，訂閱就包含了。API key 的路線是給**自己開發 agent 系統**用的。
 
+### 實際發生了什麼（以這份筆記的建立過程為例）
+
+每次你叫我「幫我研究 X 並寫成 md」，背後的流程是：
+
+```
+你 → Claude（主 agent）
+         ↓ 派出 subagent
+       WebFetch subagent：抓 vLLM 文件
+         ↓ 回傳原始內容
+       WebFetch subagent：抓 Docker 部署說明
+         ↓ 回傳原始內容
+     Claude 整合所有結果 → 寫成筆記
+```
+
+具體例子：
+
+| 我做了什麼 | 背後的 subagent |
+|---|---|
+| 抓 vLLM 官方文件 | WebFetch subagent × 3（quickstart、server、docker）|
+| 讀 Facebook 貼文內容 | WebFetch subagent |
+| 搜尋筆記裡有沒有「OpenAI」字樣 | Explore subagent（grep）|
+| 確認檔案結構 | Bash subagent（ls、git status）|
+
+**你看到的是整合後的結果，subagent 的工作過程在背景發生。**
+
+> [!tip] 為什麼要用 subagent 而不是 Claude 直接做？
+> - **保護主 context**：大量搜尋結果若全塞進主對話，context 會爆炸，影響後續回應品質
+> - **平行執行**：多個 subagent 同時跑，比循序快
+> - **隔離任務**：subagent 冷啟動、不帶偏見，適合客觀分析
+
 ---
 
 ## 一、Claude Code 中使用 Subagent（UI 層）
