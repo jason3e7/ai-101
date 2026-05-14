@@ -339,6 +339,26 @@ Claude 會執行這條 shell 指令，Codex 拿 OpenAI 的模型去修改檔案�
 
 ---
 
+### 方法二：透過 API 互相呼叫
+
+Claude Code 可以寫並執行 Python，直接在腳本裡呼叫 OpenAI API 把子任務交給 GPT：
+
+```python
+from openai import OpenAI
+
+client = OpenAI(api_key="sk-...")
+result = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "幫我把這段 SQL 轉成 SQLAlchemy ORM..."}]
+)
+print(result.choices[0].message.content)
+```
+
+對 Claude 說「寫一個 Python 腳本呼叫 GPT-4o 做 X，然後執行它」即可。
+適合一次性任務，不需要額外安裝工具，但每次都要手動觸發。
+
+---
+
 ### 方法三：MCP Server 包住 OpenAI API（深度整合）
 
 把 OpenAI 的能力包成一個 MCP Server，加進 Claude Code 設定後，
