@@ -16,6 +16,8 @@ updated: 2026-05-15
 
 ## 實驗一：Claude 指揮 Codex 寫 Hello World（C）
 
+![Claude 指揮 Codex 執行 Hello World — JSON 原始輸出](assets/2026-05-15_11-37-53.png)
+
 ### Claude 下給 Codex 的指令
 
 ```bash
@@ -51,6 +53,8 @@ codex exec --skip-git-repo-check --json \
   "output_tokens":251}}
 ```
 
+![Claude 整理後的完整對話紀錄](assets/2026-05-15_11-38-39.png)
+
 **Codex JSON 的 item 類型：**
 
 | type | 說明 |
@@ -65,6 +69,8 @@ codex exec --skip-git-repo-check --json \
 ---
 
 ## 實驗一：Token 用量分析
+
+![Token 用量分析：Claude 單獨 vs 分工](assets/2026-05-15_11-41-26.png)
 
 ### Codex 實際用量（從 JSON 精確數值）
 
