@@ -36,6 +36,8 @@ created: 2026-05-18
 
 ## 六大核心功能
 
+![真正的 Claude Code 不是聊天機器人——六大核心功能視覺化](assets/claude-code-六大功能.jpg)
+
 ### 1. CLAUDE.md ＝ 專屬記憶本
 
 在碰你專案程式之前，Claude 會先讀這份檔案。
