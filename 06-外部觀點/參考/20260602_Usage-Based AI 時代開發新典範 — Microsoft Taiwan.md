@@ -3,7 +3,7 @@ title: "Usage-Based AI 時代開發新典範"
 tags: [ai, 外部觀點, github-copilot, usage-based, token-optimization, 計費, microsoft]
 source: https://www.youtube.com/watch?v=WktaQ6r2qDw
 author: Microsoft Taiwan
-created: 2026-05-26
+created: 2026-06-02
 ---
 
 # Usage-Based AI 時代開發新典範
