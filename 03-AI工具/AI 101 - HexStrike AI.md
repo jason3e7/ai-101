@@ -1,6 +1,6 @@
 ---
 title: AI 101 - HexStrike AI
-tags: [ai, 工具, 資安, 滲透測試, mcp, claude, 開源, python]
+tags: [ai, 工具, 資安, 滲透測試, mcp, claude, claude-code, 開源, python]
 created: 2026-06-02
 ---
 
@@ -100,6 +100,61 @@ curl http://localhost:8888/health
 ```
 
 重啟 Claude Desktop 後，即可在對話中直接呼叫資安工具。
+
+### 接上 Claude Code CLI
+
+Claude Code CLI 使用 `claude mcp add` 或 `.mcp.json`，不需要 Desktop。
+
+**前提：先啟動 hexstrike server**
+
+```bash
+cd hexstrike-ai
+source hexstrike-env/bin/activate
+python3 hexstrike_server.py   # 跑在 localhost:8888
+```
+
+**方法一：`claude mcp add`（快速一次性設定）**
+
+```bash
+claude mcp add --transport stdio hexstrike \
+  -- python3 /path/to/hexstrike-ai/hexstrike_mcp.py --server http://localhost:8888
+```
+
+驗證：
+
+```bash
+claude mcp list    # 看到 hexstrike 即成功
+# 或進 session 後執行 /mcp
+```
+
+**方法二：`.mcp.json`（推薦，跟著專案目錄走）**
+
+在 HTB / pentest 工作目錄建立 `.mcp.json`：
+
+```json
+{
+  "mcpServers": {
+    "hexstrike": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["/path/to/hexstrike-ai/hexstrike_mcp.py", "--server", "http://localhost:8888"],
+      "timeout": 600000
+    }
+  }
+}
+```
+
+> [!tip]
+> `timeout` 設 600000ms（10 分鐘）。掃描類工具執行時間長，預設值太短會中途 timeout。
+
+**Desktop 設定 vs CLI 設定對照**
+
+| | Claude Desktop | Claude Code CLI |
+|---|---|---|
+| 設定位置 | `~/.config/Claude/claude_desktop_config.json` | `claude mcp add` 或 `.mcp.json` |
+| Transport | stdio（`command` + `args`） | 同左，加 `--transport stdio` |
+| `alwaysAllow` | JSON 陣列（MCP config 內） | `settings.json` 的 `allowedTools`，或 session 內選「Always allow」 |
+| Scope | 全域 | `local`（只此 project）或 `user`（全域） |
 
 ### 支援的 MCP 客戶端
 
