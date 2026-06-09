@@ -3,7 +3,7 @@ title: "Claude Code Workflows 全域跨檔案修復實測"
 tags: [ai, 外部觀點, claude-code, workflows, 自動化, 跨檔案修復]
 source: https://www.facebook.com/photo/?fbid=10164845332329298&set=gm.1309553034076113&idorvanity=1224997379198346
 author: 何宗霖
-created: 2026-05-30
+created: 2026-06-09
 ---
 
 # Claude Code Workflows 全域跨檔案修復實測

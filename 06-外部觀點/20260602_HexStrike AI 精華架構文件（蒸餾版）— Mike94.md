@@ -3,7 +3,7 @@ title: "HexStrike AI 精華架構文件（蒸餾版）"
 tags: [ai, 外部觀點, 資安, hexstrike-ai, mcp, 架構分析, 滲透測試]
 source: https://hackmd.io/@Mike94/HyKEivulGg
 author: Mike94
-created: 2026-05-30
+created: 2026-06-02
 ---
 
 # HexStrike AI 精華架構文件（蒸餾版）
