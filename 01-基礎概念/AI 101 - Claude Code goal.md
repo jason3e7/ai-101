@@ -134,6 +134,62 @@ goal 達成後 process 自動結束。Ctrl+C 可中斷。
 
 ---
 
+## 第三方擴充：`jthack/claude-goal` Skill
+
+> [!info]
+> 你可能看過 `/goal --tokens 500K do deep research` 這種語法——這**不是**官方 Claude Code 的功能，而是 [jthack/claude-goal](https://github.com/jthack/claude-goal) 這個第三方 skill 新增的旗標。
+
+### 和官方 `/goal` 的差異
+
+| 項目 | 官方 `/goal` | `jthack/claude-goal` skill |
+|---|---|---|
+| 來源 | Anthropic（v2.1.139+）| 社群 skill（第三方）|
+| 狀態儲存 | Session 內存，session 結束就清除 | SQLite（`~/.claude/goal/goals.sqlite`），跨 session 持久 |
+| 停止機制 | 每個 turn 後 Haiku 評估 condition | Stop hook 攔截，條件未達成不讓 Claude 停下 |
+| `--tokens` 旗標 | 不支援 | 支援（顯示用的軟上限，不是硬性 API 限制）|
+| Resume | `--resume` 時 goal 自動還原 | 明確 `pause` / `resume` 指令 |
+
+### `jthack/claude-goal` 的旗標與指令
+
+```
+# 設定 goal，附 token 軟預算
+/goal --tokens 500K do deep research on X
+
+# 查看目前 goal 狀態
+/goal status
+
+# 暫停 / 繼續
+/goal pause
+/goal resume
+
+# 手動完成或清除
+/goal complete
+/goal clear
+```
+
+**`--tokens <amount>` 的行為：**
+- 接受 `250K`、`500K`、`1M` 等寫法
+- 是**顯示用的軟上限**——儲存在 SQLite 裡，讓你知道這個 goal 預計花多少 token
+- 不是 API 層的硬限制，超過了 Claude 還是會繼續跑
+
+### 機制說明
+
+1. 一個 Python 腳本把 goal 狀態寫進 SQLite
+2. 在 `~/.claude/settings.json` 加一個 user-level Stop hook
+3. 每次 Claude 想停下來，Stop hook 攔截，判斷 goal 是否達成；沒達成就強制繼續
+4. 預設最多允許 500 次 Stop hook 繼續（可用環境變數 `CLAUDE_GOAL_MAX_STOP_CONTINUES` 調整）
+
+### 什麼時候用這個 skill vs 官方 `/goal`？
+
+| 情境 | 建議 |
+|---|---|
+| 快速設條件、用完就結束 | 官方 `/goal`（設定最簡單）|
+| 需要 pause/resume 跨 session 追蹤進度 | `jthack/claude-goal`（SQLite 持久化）|
+| 想知道一個長任務大概花多少 token | `jthack/claude-goal`（`--tokens` 顯示用預算）|
+| CI / 腳本非互動執行 | 官方 `/goal`（`claude -p "/goal ..."` 直接支援）|
+
+---
+
 ## 常見問題
 
 **Q：Goal 設好之後我可以去做其他事嗎？**
@@ -155,3 +211,4 @@ Haiku 有時會誤判「已完成」（偽陽性）。高精度場景改用 Stop
 - [Claude Code 官方文件：/goal](https://code.claude.com/docs/en/goal)
 - [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices)
 - [The Complete Claude /goal Guide for AI Agents (2026)](https://linas.substack.com/p/the-complete-claude-goal-guide)
+- [jthack/claude-goal（第三方 skill）](https://github.com/jthack/claude-goal)
