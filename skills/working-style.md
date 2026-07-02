@@ -96,6 +96,23 @@ created: yyyy-mm-dd
 
 ## 各平台抓內容策略
 
+有無 Chrome 能力差異很大，分開列：
+
+### 有 Chrome（claude --chrome）
+
+| 來源 | 處理方式 | 工具 |
+|---|---|---|
+| Facebook 動態牆貼文 | ✅ 直接 navigate + `read_page`，accessibility tree 可讀到貼文文字與 hashtag；注意 tree 雜亂，`get_page_text` 效果較差 | `navigate` → `read_page` |
+| Facebook 粉專 / 公開頁面 | ✅ 已登入狀態可讀公開內容；私人貼文視隱私設定 | `navigate` → `get_page_text` |
+| Facebook 社群（groups/）| ✅ 已加入的社群可讀；未加入仍擋 | `navigate` → `read_page` |
+| YouTube | ✅ 等 ~7 秒讓 JS 渲染完畢，`get_page_text` 可讀標題、描述、頻道、相關影片；`read_page` 在 YouTube 有時回傳空值，優先用 `get_page_text` | `navigate` → wait 7s → `get_page_text` |
+| iThome | ✅ Chrome 直接繞過 403，`get_page_text` 取 `<article>` 全文 | `navigate` → `get_page_text` |
+| Medium 公開文章 | ✅ 可讀，但未登入 Medium 帳號時 member-only 仍截斷；用戶若有 Medium 帳號且已在瀏覽器登入則可讀完整 | `navigate` → `get_page_text` |
+| GitHub repo | ✅ 可讀，但 `gh` CLI 仍是首選（有 auth token、速度快、支援 API）| `gh` CLI 優先，Chrome 備用 |
+| Gemini Share | 未驗證，待測試 | — |
+
+### 無 Chrome（純 WebFetch / WebSearch）
+
 | 來源 | 處理方式 |
 |---|---|
 | Facebook 公開貼文 / 粉專 | WebFetch 幾乎都被擋，請用戶貼文字 |
