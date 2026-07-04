@@ -127,7 +127,9 @@ Commit message 格式（需包含 Co-Authored-By）：
 git commit -m "$(cat <<'EOF'
 簡短的變更描述
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude <當前型號> <noreply@anthropic.com>
 EOF
 )"
 ```
+
+`<當前型號>` 填**這個 session 實際使用的模型**（例：`Sonnet 4.6`、`Opus 4.8`），不要寫死。

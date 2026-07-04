@@ -135,11 +135,11 @@ created: yyyy-mm-dd
 # Push 固定用 deploy key
 GIT_SSH_COMMAND="ssh -i ~/.ssh/ai-101-deploy" git push
 
-# 每個 commit 必須包含 Co-Authored-By
+# 每個 commit 必須包含 Co-Authored-By（型號填 session 實際用的，別寫死）
 git commit -m "$(cat <<'EOF'
 簡短描述
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude <當前型號> <noreply@anthropic.com>
 EOF
 )"
 
