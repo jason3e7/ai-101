@@ -4,16 +4,18 @@ tags: [ai, claude-code, hooks, goal, enforcement, stop-hook, autonomous]
 created: 2026-06-11
 ---
 
-# Claude Code /goal 強制力 Hook
+# Claude Code /goal 強制力 Hook — Enforcing /goal with Hooks
 
 [← 回主頁](../../index.md)
 
-> [!info]
+> [!NOTE]
 > `/goal` 本身只是設定完成條件——它不能防止 Claude 中途放棄、跑偏或在 context 壓縮後忘記目標。這篇整理四種可以「強制」goal 行為的 hook 類型，含可直接執行的程式碼範例。
+
+> **TL;DR (EN):** `/goal` sets a completion condition but can't stop Claude from quitting early, drifting, or forgetting the goal after compaction. Four enforcement hooks fix that — **Stop** (block premature stop), **PreToolUse** (block out-of-scope actions), **PreCompact** (survive context compaction), **PostToolUse** (inject verification feedback) — each with runnable code.
 
 ---
 
-## 為什麼 /goal 需要 Hook 強化
+## 為什麼 /goal 需要 Hook 強化 — Why /goal Needs Hooks
 
 | 問題 | 沒有 hook 的狀況 | Hook 解法 |
 |---|---|---|
@@ -23,7 +25,7 @@ created: 2026-06-11
 
 ---
 
-## 反直覺重點：Stop Hook 用 exit 0，不是 exit 2
+## 反直覺重點：Stop Hook 用 exit 0，不是 exit 2 — Counterintuitive: Use exit 0
 
 ```
 # 常見誤解
@@ -298,7 +300,7 @@ if __name__ == "__main__":
 
 ---
 
-## 完整 settings.json
+## 完整 settings.json — Full Config
 
 ```json
 {
@@ -339,7 +341,7 @@ if __name__ == "__main__":
 
 ---
 
-## 各 Hook 強制力總覽
+## 各 Hook 強制力總覽 — Enforcement Overview
 
 | Hook | 可阻擋？ | 核心欄位 | 最適合用途 |
 |---|---|---|---|
@@ -351,7 +353,7 @@ if __name__ == "__main__":
 
 ---
 
-## jthack/claude-goal 的實作邏輯
+## jthack/claude-goal 的實作邏輯 — How It Works
 
 這個第三方 skill 就是靠 Stop hook 實作「不達標不停」：
 
@@ -362,7 +364,7 @@ if __name__ == "__main__":
 
 ---
 
-## 相關筆記
+## 相關筆記 — Related
 
 - [AI 101 - Claude Code goal](./goal.md) — `/goal` 完整說明（包含第三方 jthack/claude-goal skill）
 - [AI 101 - Claude Code 行為結構設計](./behavior-design.md) — Hook 設定格式的 Hello World 入門
