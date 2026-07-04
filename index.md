@@ -60,8 +60,7 @@ updated: 2026-07-04
 | [AI 101 - Claude Code 行為結構設計](./01-fundamentals/claude-code/behavior-design.md) | `/goal`、Sub-agents、Skills、Hooks 四層設計 AI 行為，含 Hello World 範例與驗證步驟 |
 | [AI 101 - Claude Code goal 強制力 Hook](./01-fundamentals/claude-code/goal-enforcement-hooks.md) | Stop / UserPromptSubmit / PreToolUse / PreCompact 五種 hook 讓 `/goal` 不達標不停手 |
 | [AI 101 - Claude Code Workflow × goal 混用](./01-fundamentals/claude-code/workflow-goal-combo.md) | Dynamic Workflows（廣度）和 `/goal`（深度）怎麼組合，五種實用 pattern 與陷阱 |
-| [AI 101 - Claude Code chrome 瀏覽器整合](./01-fundamentals/claude-code/chrome-integration.md) | `--chrome` 讓 Claude 直接控制瀏覽器（截圖、點擊、填表、讀 console），安裝與排查 |
-| [AI 101 - Claude Code chrome 進階操作](./01-fundamentals/claude-code/chrome-advanced.md) | 多瀏覽器管理、Tab Group 生命週期、`browser_batch` 效能優化、完整工具清單 |
+| [AI 101 - Claude Code chrome 瀏覽器整合](./01-fundamentals/claude-code/chrome-integration.md) | `--chrome` 讓 Claude 直接控制瀏覽器（截圖、點擊、填表、讀 console），安裝、排查與完整工具清單 |
 | [AI 101 - Claude Code 權限模式與設定層級](./01-fundamentals/claude-code/permissions.md) | 五種權限模式（Plan / Default / Accept edits / Auto / Don't ask）風險對照，四層設定誰蓋過誰，企業 policy 為何改不動 |
 
 ---

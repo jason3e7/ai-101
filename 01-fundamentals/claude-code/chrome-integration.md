@@ -115,9 +115,9 @@ claude --chrome
 
 ---
 
-## 可以做什麼（18 個 MCP 工具）
+## 可以做什麼（MCP 工具）
 
-extension 透過 MCP 協議對 Claude 暴露 18 個工具，涵蓋：
+extension 透過 MCP 協議對 Claude 暴露一組瀏覽器工具，依能力分類：
 
 | 類別 | 能力 |
 |---|---|
@@ -128,7 +128,34 @@ extension 透過 MCP 協議對 Claude 暴露 18 個工具，涵蓋：
 | **執行** | 在 console 跑 JavaScript |
 | **狀態** | 使用你的已登入 session，不需要另設 cookie 或 token |
 
-用 `/mcp` → 選 `claude-in-chrome` 可以看完整工具清單。
+### 完整工具清單
+
+用 `/mcp` → 選 `claude-in-chrome` 可在 session 內查看。以下是所有已知工具：
+
+| 工具 | 功能 |
+|---|---|
+| `tabs_context_mcp` | 取得目前 tab group 狀態，必須最先呼叫 |
+| `tabs_create_mcp` | 在 tab group 裡建立新分頁 |
+| `tabs_close_mcp` | 關閉指定分頁 |
+| `navigate` | 導航到 URL，或前進／後退 |
+| `computer` | 滑鼠點擊、鍵盤輸入、截圖、滾動、拖曳等 |
+| `read_page` | 讀取頁面 accessibility tree（比截圖更快取得文字內容）|
+| `get_page_text` | 取得頁面純文字 |
+| `find` | 在頁面中尋找元素 |
+| `form_input` | 填寫表單欄位 |
+| `javascript_tool` | 在 console 執行 JavaScript |
+| `read_console_messages` | 讀取 console 輸出（支援 regex pattern 過濾）|
+| `read_network_requests` | 讀取網路請求 |
+| `gif_creator` | 錄製互動過程為 GIF |
+| `list_connected_browsers` | 列出所有已連線的瀏覽器實例 |
+| `select_browser` | 選擇特定瀏覽器（by deviceId）|
+| `switch_browser` | 廣播配對請求，讓使用者在 extension 介面手動選擇 |
+| `resize_window` | 調整視窗大小 |
+| `upload_image` | 上傳圖片到頁面 |
+| `file_upload` | 觸發檔案上傳 |
+| `browser_batch` | 批次執行多個瀏覽器操作 |
+| `shortcuts_list` | 列出已儲存的 workflow shortcuts |
+| `shortcuts_execute` | 執行已儲存的 workflow shortcut |
 
 ---
 
