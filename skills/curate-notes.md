@@ -1,12 +1,12 @@
 ---
 name: curate-notes
-description: 判斷一篇外部觀點筆記該放根目錄還是 參考/ 子資料夾
+description: 判斷一篇外部觀點筆記該放根目錄還是 reference/ 子資料夾
 tags: [curation, note-management, triage]
 ---
 
 # /curate-notes
 
-給我一篇筆記的標題與摘要，我判斷它該放在 `06-外部觀點/` 根目錄，還是移入 `06-外部觀點/參考/`。
+給我一篇筆記的標題與摘要，我判斷它該放在 `06-external/` 根目錄，還是移入 `06-external/reference/`。
 
 ## 判斷標準 — Triage Criteria
 
@@ -20,7 +20,7 @@ tags: [curation, note-management, triage]
 4. **持久參考價值**：一年後仍然值得回來查，不會因模型更新或工具換代而失效
 5. **提供決策框架**：幫你在多個選項中做判斷（速查表、情境地圖、方法論）
 
-### 移入 `參考/`（知道就好）
+### 移入 `reference/`（知道就好）
 
 出現以下任一情況：
 
@@ -37,7 +37,7 @@ tags: [curation, note-management, triage]
 - 一到兩句描述（筆記在說什麼、作者是誰）
 
 我回傳：
-- **根目錄** 或 **參考/**
+- **根目錄** 或 **reference/**
 - 一句話說明理由
 - 如果邊界模糊，說明哪個條件讓我猶豫
 
@@ -53,4 +53,4 @@ tags: [curation, note-management, triage]
 > 標題：Is Grep All You Need：向量搜尋不如 grep 的 PwC 研究
 > 摘要：整理 PwC 論文的五個結論，Grep 在精確查找場景全面勝過向量搜尋
 
-→ **參考/**。轉述研究結論（一手是論文，這篇是摘要），讀完不會改變你今天怎麼架系統。
+→ **reference/**。轉述研究結論（一手是論文，這篇是摘要），讀完不會改變你今天怎麼架系統。
