@@ -103,10 +103,6 @@ Local overrides（settings.local.json）      ← 只在你本機、不進 git
 由組織管理者透過 Anthropic Console 設定，**強制套用到組織內所有成員**，使用者無法覆蓋。
 
 - **推送方式**：可能是本機 managed settings 檔，也可能綁在 OAuth token 上從後端雲端下推
-- **本機檔案路徑**（若走檔案推送）：
-  - macOS：`/Library/Application Support/ClaudeCode/managed-settings.json`
-  - Linux：`/etc/claude-code/managed-settings.json`
-  - Windows：`C:\ProgramData\ClaudeCode\managed-settings.json`
 - **典型用途**：鎖定模型、強制關閉遙測、限制可用 MCP server、**禁用 `bypassPermissions`**
 
 一個實際的 policy 片段長這樣：
