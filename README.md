@@ -1,4 +1,6 @@
-# AI 101 — 聰明使用 AI 的完整指南
+# AI 101 — 聰明使用 AI 的完整指南 · The Complete Guide to Using AI Well
+
+> **TL;DR (EN):** A from-scratch, practice-oriented **AI knowledge base** in Traditional Chinese. Every note targets two things — clear concepts and immediately actionable steps. Filenames/folders are English; note titles are bilingual. Browse by folder below, or follow a learning path.
 
 > 一份從零開始、面向實際使用的 **AI 知識庫**（繁體中文）。
 > 核心原則：**有清楚概念，又能快速上手。**
@@ -8,11 +10,11 @@
 1. **清楚概念** — 理解「這是什麼、為什麼重要」
 2. **快速上手** — 能立刻照著做，不需要再查其他資料
 
-📖 完整索引與學習路徑請見 [**AI 101 - 主頁**](./index.md)
+📖 完整索引與學習路徑請見 [**index.md**](./index.md)
 
 ---
 
-## 這份知識庫涵蓋什麼
+## 這份知識庫涵蓋什麼 — What's Inside
 
 | 分類 | 內容 | 篇數 |
 |---|---|---|
@@ -25,7 +27,7 @@
 
 ---
 
-## 從這裡開始
+## 從這裡開始 — Start Here
 
 不確定從哪讀？依你的目標挑一條路：
 
@@ -40,15 +42,16 @@
 
 ---
 
-## 主題關鍵字
+## 主題關鍵字 — Topics
 
-Claude Code · Context Engineering · Harness Engineering · LLM · Agent · RAG · MCP · Subagent · Ollama · vLLM · 本地 LLM · Prompt Engineering · AI 資安 · 繁體中文 AI 教學
+Claude Code · Context Engineering · Harness Engineering · LLM · Agent · RAG · MCP · Subagent · Ollama · vLLM · Local LLM · Prompt Engineering · AI Security · Traditional Chinese AI Guide · 本地 LLM · AI 資安 · 繁體中文 AI 教學
 
 ---
 
-## 寫作原則
+## 寫作原則 — Writing Conventions
 
-- **繁體中文**為主，技術名詞首次出現附英文原文
+- **繁體中文**為主，技術名詞首次出現附英文原文；標題採中英雙語（L2）
+- 檔名／資料夾用英文 kebab-case；callout 用 GitHub 原生 alert 語法
 - 每份筆記結構：是什麼 → 安裝 → 基本使用 → 進階 → 常見問題 → Sources
 - 有做 web research 的筆記一定附 **Sources** 區塊
 
@@ -56,6 +59,7 @@ Claude Code · Context Engineering · Harness Engineering · LLM · Agent · RAG
 
 ---
 
-## 授權與貢獻
+## 授權與貢獻 — License & Contributing
 
 這是個人持續維護的學習型知識庫。歡迎透過 Issue 指正錯誤或補充來源。
+A personal, continuously maintained learning knowledge base. Corrections and source suggestions are welcome via Issues.

@@ -8,7 +8,7 @@ tags: [curation, note-management, triage]
 
 給我一篇筆記的標題與摘要，我判斷它該放在 `06-外部觀點/` 根目錄，還是移入 `06-外部觀點/參考/`。
 
-## 判斷標準
+## 判斷標準 — Triage Criteria
 
 ### 放根目錄（值得反覆查閱）
 
@@ -30,7 +30,7 @@ tags: [curation, note-management, triage]
 - 觀點或評論（有趣但不影響你怎麼做事）
 - 短效觀察（模型版本評測、社群討論快照）
 
-## 使用方式
+## 使用方式 — How to Use
 
 提供：
 - 筆記標題
@@ -41,7 +41,7 @@ tags: [curation, note-management, triage]
 - 一句話說明理由
 - 如果邊界模糊，說明哪個條件讓我猶豫
 
-## 範例
+## 範例 — Examples
 
 > 標題：寫程式已被 AI 解完了 — Boris Cherny（Claude Code 之父）
 > 摘要：Claude Code 創辦人分享自己 2026 年起不再手動寫程式，每天跑 5-10 個 session，單日推 150 個 PR

@@ -2,14 +2,16 @@
 title: AI 101 主頁
 tags: [ai, index, 101]
 created: 2026-04-22
-updated: 2026-04-23
+updated: 2026-07-04
 ---
 
-# AI 101 — 聰明使用 AI 的完整指南
+# AI 101 — 聰明使用 AI 的完整指南 · The Complete Guide to Using AI Well
+
+> **TL;DR (EN):** A from-scratch, practice-oriented AI knowledge base (Traditional Chinese). Every note aims for two things: clear concepts + immediately actionable steps. Use the learning paths below to pick where to start.
 
 > "Prompt engineering 只是開始，2026 年真正的技能叫做 **Context Engineering**。"
 
-## 這份筆記是什麼
+## 這份筆記是什麼 — What This Is
 
 一份**從零開始、面向實際使用**的 AI 知識地圖。
 核心原則：**有清楚概念，又能快速上手。**
@@ -21,7 +23,7 @@ updated: 2026-04-23
 
 ---
 
-## 🎯 從這裡開始
+## 🎯 從這裡開始 — Start Here
 
 > [!TIP] 不確定從哪讀？
 > 依照你的目標挑一條路：
@@ -37,7 +39,7 @@ updated: 2026-04-23
 
 ---
 
-## 📚 基礎概念（建議先讀）
+## 📚 基礎概念（建議先讀）— Fundamentals
 
 建立對 AI 的正確心智模型，後面所有內容都建立在這裡。
 
@@ -59,7 +61,7 @@ updated: 2026-04-23
 
 ---
 
-## 🧠 進階觀念（想把 AI 用到極致）
+## 🧠 進階觀念（想把 AI 用到極致）— Advanced Concepts
 
 從「會用」進化到「用得好」的關鍵思維。
 
@@ -73,24 +75,24 @@ updated: 2026-04-23
 
 ---
 
-## 🛠️ AI 工具（選你需要的）
+## 🛠️ AI 工具（選你需要的）— AI Tools
 
 具體可以馬上安裝使用的工具。按用途分類：
 
-### AI 模型平台
+### AI 模型平台 — AI Platforms
 
 | 工具 | 特色 |
 |---|---|
 | [AI 101 - Mistral AI](./03-tools/mistral-ai.md) | 法國開源 AI 平台，MoE 架構、Apache 2.0、雲端 + 自架皆支援 |
 
-### 個人 AI Agent
+### 個人 AI Agent — Personal AI Agents
 
 | 工具 | 特色 |
 |---|---|
 | [AI 101 - OpenClaw](./03-tools/openclaw.md) | 自架式 AI 閘道器，串接 LINE/Discord/Slack 等通訊平台 |
 | [AI 101 - Hermes Agent](./03-tools/hermes-agent.md) | 開源個人 AI 助理，持久記憶 + 自我進化 Skills |
 
-### Claude Code 擴充
+### Claude Code 擴充 — Claude Code Extensions
 
 | 工具 | 特色 |
 |---|---|
@@ -102,7 +104,7 @@ updated: 2026-04-23
 | [AI 101 - JT Live Whisper（即時語音轉錄）](./03-tools/jt-live-whisper.md) | 本地即時語音轉錄、翻譯、講者辨識、會議摘要，完全不上雲 |
 | [AI 101 - OpenCode.ai](./03-tools/opencode-ai.md) | Claude Code 的開源替代，支援 75+ 模型，可接 Ollama 完全免費 |
 
-### AI 資安工具
+### AI 資安工具 — AI Security Tools
 
 | 工具 | 特色 |
 |---|---|
@@ -114,7 +116,7 @@ updated: 2026-04-23
 
 ---
 
-## 🤖 本地 LLM 模型（離線、隱私、免費）
+## 🤖 本地 LLM 模型（離線、隱私、免費）— Local LLM
 
 想讓 AI 跑在自己機器上、不上雲端，從這條路線開始。
 
@@ -129,7 +131,7 @@ updated: 2026-04-23
 
 ---
 
-## 快速概念地圖
+## 快速概念地圖 — Concept Map
 
 ```mermaid
 graph TD
@@ -147,7 +149,7 @@ graph TD
 
 ---
 
-## 2026 年最值得關注的趨勢
+## 2026 年最值得關注的趨勢 — Key Trends for 2026
 
 > [!TIP] 重點趨勢
 > 1. **Context Engineering** 取代 Prompt Engineering 成為核心技能
@@ -158,7 +160,7 @@ graph TD
 
 ---
 
-## 相關資源
+## 相關資源 — Resources
 
 - [Anthropic Engineering Blog](https://www.anthropic.com/engineering)
 - [Claude Code 官方文件](https://code.claude.com/docs)

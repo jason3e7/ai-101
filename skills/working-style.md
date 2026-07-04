@@ -10,7 +10,7 @@ tags: [meta, workflow, onboarding]
 
 ---
 
-## 知識庫結構
+## 知識庫結構 — Repo Structure
 
 ```
 ai-101/
@@ -32,9 +32,9 @@ ai-101/
 
 ---
 
-## 兩種工作模式
+## 兩種工作模式 — Two Working Modes
 
-### 模式一：研究筆記（01–05）
+### 模式一：研究筆記（Research Notes, 01–05）
 
 用戶指定一個主題，Claude 研究後寫成英文 kebab-case 檔名的 `.md`。
 
@@ -59,7 +59,7 @@ ai-101/
 
 ---
 
-### 模式二：外部觀點收錄（06）
+### 模式二：外部觀點收錄（External Views, 06）
 
 用戶給一到多個 URL，每個 URL 一篇 MD，放入 `06-外部觀點/`。
 
@@ -98,7 +98,7 @@ created: yyyy-mm-dd
 
 ---
 
-## 各平台抓內容策略
+## 各平台抓內容策略 — Content Fetching by Platform
 
 有無 Chrome 能力差異很大，分開列：
 
@@ -129,7 +129,7 @@ created: yyyy-mm-dd
 
 ---
 
-## Git 工作流
+## Git 工作流 — Git Workflow
 
 ```bash
 # Push 固定用 deploy key
@@ -149,7 +149,7 @@ git mv "舊路徑/檔案.md" "新路徑/"
 
 ---
 
-## Skills 建立邏輯
+## Skills 建立邏輯 — Building Skills
 
 Skills 放在 `skills/` 資料夾，commit + push 進 repo。
 
@@ -163,7 +163,7 @@ Skills 放在 `skills/` 資料夾，commit + push 進 repo。
 
 ---
 
-## 呈現與語言規範（GitHub 為主）
+## 呈現與語言規範（Presentation & Language, GitHub-first）
 
 視覺呈現以 **GitHub 為主、Obsidian 為輔**；語言採 **中英雙讀者友善（L2）**。完整規則在 `CLAUDE.md`，重點：
 
@@ -176,7 +176,7 @@ Skills 放在 `skills/` 資料夾，commit + push 進 repo。
 
 ---
 
-## 溝通偏好
+## 溝通偏好 — Communication Preferences
 
 - **回應要短**，不要結尾摘要（用戶可以自己讀）
 - **繁體中文**為主，技術名詞首次出現附英文
