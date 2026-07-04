@@ -48,6 +48,7 @@ updated: 2026-07-04
 | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) | Agent、LLM、RAG、幻覺、MCP、Subagents 等基礎詞彙 |
 | [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) | 提升效率的具體方法與工作流 |
 | [AI 101 - 模型費用與效果比較](./01-fundamentals/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
+| [AI 101 - AI 模型名稱怎麼唸](./01-fundamentals/model-name-pronunciation.md) | Claude 家族與開源模型的正確發音，附中文近似音、常見錯誤與 YouTube 示範 |
 | [AI 101 - v1 chat completions curl Cheatsheet](./01-fundamentals/chat-completions-curl-cheatsheet.md) | 業界通用 LLM API 格式的 curl 完全指南：streaming、tool use、vision、JSON mode、各大供應商切換 |
 | [AI 101 - OpenAI API 完整端點速查](./01-fundamentals/openai-api-endpoints.md) | `/v1/chat/completions` 之外的所有重要端點：Embeddings、Batch（省 50%）、Whisper、TTS、Images、Moderations、Responses API |
 
