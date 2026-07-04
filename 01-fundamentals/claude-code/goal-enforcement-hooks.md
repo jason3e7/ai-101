@@ -9,7 +9,7 @@ created: 2026-06-11
 [← 回主頁](../../index.md)
 
 > [!info]
-> `/goal` 本身只是設定完成條件——它不能防止 Claude 中途放棄、跑偏或在 context 壓縮後忘記目標。這篇整理五種可以「強制」goal 行為的 hook 類型，含可直接執行的程式碼範例。
+> `/goal` 本身只是設定完成條件——它不能防止 Claude 中途放棄、跑偏或在 context 壓縮後忘記目標。這篇整理四種可以「強制」goal 行為的 hook 類型，含可直接執行的程式碼範例。
 
 ---
 
@@ -20,7 +20,6 @@ created: 2026-06-11
 | Claude 認為自己「差不多完成了」就停 | Goal evaluator 偶爾誤判為已達成 | Stop hook 攔截，強制驗證後才放行 |
 | Context 壓縮後忘記目標 | 壓縮完 Claude 不知道自己在幹嘛 | PreCompact hook 在壓縮前注入 goal 摘要 |
 | Claude 開始做 goal 以外的事 | 沒有範圍限制 | PreToolUse hook 封鎖不相關工具 |
-| 每個 turn 目標焦點漂移 | 長 session 後規則被稀釋 | UserPromptSubmit hook 每 turn 重新注入目標 |
 
 ---
 
@@ -134,73 +133,7 @@ rm .goal_active
 
 ---
 
-## Hook 2：UserPromptSubmit — 每個 Turn 注入 Goal 狀態
-
-Claude 開始處理每個 turn 前觸發。用來在每輪開始時補充 goal 上下文，防止長 session 後目標焦點漂移。
-
-> [!warning]
-> 注入給 Claude 要用 `additionalContext`，不是 `systemMessage`。
-> `systemMessage` 只是顯示給**使用者**看的 banner，Claude 看不到。
-
-### 程式碼
-
-`.claude/hooks/goal_inject.py`
-
-```python
-#!/usr/bin/env python3
-"""UserPromptSubmit hook: inject goal state into each turn."""
-import json, sys, time
-
-def main():
-    try:
-        json.load(sys.stdin)
-    except (json.JSONDecodeError, ValueError):
-        sys.exit(0)
-
-    try:
-        with open(".goal_active") as f:
-            if f.read().strip() != "1":
-                sys.exit(0)
-        with open(".goal_objective") as f:
-            objective = f.read().strip()
-    except FileNotFoundError:
-        sys.exit(0)
-
-    print(json.dumps({
-        "hookSpecificOutput": {
-            "hookEventName": "UserPromptSubmit",
-            "additionalContext": (
-                f"[Goal 提醒] 進行中的目標：{objective}\n"
-                "每個動作都要服務於這個目標。"
-                "完成後把結果寫進 goal_result.txt 並刪除 .goal_active。"
-            )
-        }
-    }))
-    sys.exit(0)
-
-if __name__ == "__main__":
-    main()
-```
-
-### 設定
-
-```json
-{
-  "hooks": {
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          { "type": "command", "command": "python3 .claude/hooks/goal_inject.py" }
-        ]
-      }
-    ]
-  }
-}
-```
-
----
-
-## Hook 3：PreToolUse — 封鎖 Goal 範圍外的操作
+## Hook 2：PreToolUse — 封鎖 Goal 範圍外的操作
 
 Claude 呼叫工具前觸發，可以拒絕不符合 goal 範圍的工具呼叫。
 
@@ -261,7 +194,7 @@ if __name__ == "__main__":
 
 ---
 
-## Hook 4：PreCompact — Goal 跨越 Context 壓縮存活
+## Hook 3：PreCompact — Goal 跨越 Context 壓縮存活
 
 Context 快滿時，Claude Code 會自動壓縮對話。壓縮後如果沒有 goal 摘要，Claude 可能不知道自己在幹嘛。
 
@@ -315,7 +248,7 @@ if __name__ == "__main__":
 
 ---
 
-## Hook 5：PostToolUse — 工具執行後注入進度反饋
+## Hook 4：PostToolUse — 工具執行後注入進度反饋
 
 工具跑完後觸發，不能阻擋，但可以把驗證結果塞進 Claude 下一個 turn 的 context。
 
@@ -377,13 +310,6 @@ if __name__ == "__main__":
         ]
       }
     ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          { "type": "command", "command": "python3 .claude/hooks/goal_inject.py" }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "Bash",
@@ -418,7 +344,6 @@ if __name__ == "__main__":
 | Hook | 可阻擋？ | 核心欄位 | 最適合用途 |
 |---|---|---|---|
 | `Stop` | ✅ | `decision: "block"` | 防止 Claude 在達成前停止 |
-| `UserPromptSubmit` | ✅ | `additionalContext` | 每 turn 重新注入目標狀態 |
 | `PreToolUse` | ✅ | `permissionDecision: "deny"` | 封鎖 goal 範圍外的操作 |
 | `PreCompact` | ✅ | `additionalContext` | Goal 跨壓縮存活 |
 | `PostToolUse` | ❌ | `additionalContext` | 注入工具執行後的驗證結果 |
