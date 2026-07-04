@@ -400,6 +400,6 @@ jobs:
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code-ecosystem.md) — MCP、Skills、Hooks 概念
+- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — MCP、Skills、Hooks 概念
 - [AI 101 - Harness Engineering](../02-advanced/harness-engineering.md) — AI Agent 執行基礎設施
 - [AI 101 - Context Engineering](../02-advanced/context-engineering.md) — 如何設計 CLAUDE.md 讓 AI 更懂專案

@@ -7,7 +7,7 @@ updated: 2026-04-22
 
 # OpenClaw
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > 目前版本：**2026.4.15**（活躍維護中）
@@ -145,7 +145,7 @@ openclaw channels list
 
 ## 接上 Gemma 4（本地模型）
 
-> 詳細安裝步驟請見 [AI 101 - Gemma 4 本地模型](../04-local-llm/gemma-4-local-model.md)
+> 詳細安裝步驟請見 [AI 101 - Gemma 4 本地模型](../../04-local-llm/gemma-4-local-model.md)
 
 **快速設定：** 修改 `~/.openclaw/openclaw.json`
 
@@ -176,6 +176,6 @@ openclaw channels list
 
 ## 相關筆記
 
-- [AI 101 - 核心概念](../01-fundamentals/core-concepts.md) — Agent 概念說明
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code-ecosystem.md) — Claude Code 的 MCP / Skills 對比
-- [AI 101 - Gemma 4 本地模型](../04-local-llm/gemma-4-local-model.md) — 本地模型完整設定指南
+- [AI 101 - 核心概念](../../01-fundamentals/core-concepts.md) — Agent 概念說明
+- [AI 101 - Claude Code 生態系](../../01-fundamentals/claude-code/ecosystem.md) — Claude Code 的 MCP / Skills 對比
+- [AI 101 - Gemma 4 本地模型](../../04-local-llm/gemma-4-local-model.md) — 本地模型完整設定指南

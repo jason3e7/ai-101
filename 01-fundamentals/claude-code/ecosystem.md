@@ -7,7 +7,7 @@ updated: 2026-04-22
 
 # Claude Code 生態系
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 ---
 
@@ -250,5 +250,5 @@ Anthropic 在 2024 年 11 月推出，已被 OpenAI、Google DeepMind 採用。
 
 ## 相關筆記
 
-- [AI 101 - Context Engineering](../02-advanced/context-engineering.md) — 理解為何這些工具這麼重要
-- [AI 101 - 實用技巧與最佳實踐](./tips-and-best-practices.md) — 具體的使用技巧
+- [AI 101 - Context Engineering](../../02-advanced/context-engineering.md) — 理解為何這些工具這麼重要
+- [AI 101 - 實用技巧與最佳實踐](../tips-and-best-practices.md) — 具體的使用技巧

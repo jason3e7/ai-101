@@ -141,4 +141,4 @@ AI 以自信的語氣說出**不存在或錯誤的事實**。
 ## 相關筆記
 
 - [AI 101 - Context Engineering](../02-advanced/context-engineering.md) — 比 Prompt Engineering 更重要的技能
-- [AI 101 - Claude Code 生態系](./claude-code-ecosystem.md) — 實際工具使用
+- [AI 101 - Claude Code 生態系](./claude-code/ecosystem.md) — 實際工具使用

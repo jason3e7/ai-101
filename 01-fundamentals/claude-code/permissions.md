@@ -6,7 +6,7 @@ created: 2026-07-03
 
 # Claude Code 權限模式與設定層級
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > 這篇講清楚兩件常被搞混的事：**（1）五種權限模式**分別讓 Claude 能做什麼、把關到哪、風險多高；**（2）四層設定層級**誰蓋過誰，為什麼企業帳號有些設定你改不動。
@@ -198,8 +198,8 @@ Project Settings 優先於 User Settings。若還有 `settings.local.json`，它
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](./claude-code-ecosystem.md) — Skills、Hooks、MCP 的關係
-- [AI 101 - Claude Code goal 強制力 Hook](./claude-code-goal-enforcement-hooks.md) — 用 Hook 在權限之外再加一層行為控制
+- [AI 101 - Claude Code 生態系](./ecosystem.md) — Skills、Hooks、MCP 的關係
+- [AI 101 - Claude Code goal 強制力 Hook](./goal-enforcement-hooks.md) — 用 Hook 在權限之外再加一層行為控制
 
 ## Sources
 

@@ -354,6 +354,6 @@ print(response)
 
 ## 相關筆記
 
-- [AI 101 - OpenClaw](../03-tools/openclaw.md) — OpenClaw 完整說明
-- [AI 101 - Hermes Agent](../03-tools/hermes-agent.md) — Hermes Agent 完整說明
+- [AI 101 - OpenClaw](../03-tools/agents-platforms/openclaw.md) — OpenClaw 完整說明
+- [AI 101 - Hermes Agent](../03-tools/agents-platforms/hermes-agent.md) — Hermes Agent 完整說明
 - [AI 101 - 核心概念](../01-fundamentals/core-concepts.md) — LLM 基礎概念

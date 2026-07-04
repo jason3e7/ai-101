@@ -190,6 +190,6 @@ bat-server --bind tailscale --port 3000 --token mytoken
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code-ecosystem.md) — Claude Code 核心概念
+- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — Claude Code 核心概念
 - [AI 101 - Harness Engineering](../02-advanced/harness-engineering.md) — Agent 執行基礎設施
 - [AI 101 - Context Engineering](../02-advanced/context-engineering.md) — Context / session 管理原理

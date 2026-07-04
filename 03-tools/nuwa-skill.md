@@ -179,5 +179,5 @@ graph LR
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code-ecosystem.md) — Skills 概念說明
+- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — Skills 概念說明
 - [AI 101 - Harness Engineering](../02-advanced/harness-engineering.md) — 多 Agent 並行架構原理

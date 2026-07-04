@@ -49,11 +49,13 @@ ai-101/
 6. Sources
 
 **放置規則**：
-- 基礎概念 → `01-fundamentals/`
+- 基礎概念 → `01-fundamentals/`；**Claude Code 相關** → `01-fundamentals/claude-code/`
 - 進階思維框架 → `02-advanced/`
-- 可安裝工具 → `03-tools/`
+- 可安裝工具 → `03-tools/`；**資安工具** → `03-tools/security/`；**模型平台 / 個人 agent** → `03-tools/agents-platforms/`
 - 本地模型 → `04-local-llm/`
 - 個人實驗 → `05-notes/`
+
+> 子資料夾依 `refactor-note` 原則建立（單層 ≤ 10、理想 7）。放筆記前先看該層是否已接近上限。
 
 **完成後必須更新 `index.md`**，把新筆記加到對應分類的表格。
 

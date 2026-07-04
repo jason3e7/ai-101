@@ -6,7 +6,7 @@ created: 2026-06-14
 
 # Claude Code Workflow × goal 混用
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > `/goal`（深度迴圈）和 Dynamic Workflows（廣度編排）是兩個正交的機制，可以組合但只能「鬆散」組合——關鍵限制是 goal 的評估器看不到 workflow 內部。這篇說明各自是什麼、怎麼混用、以及五種實用 pattern。
@@ -147,7 +147,7 @@ description: 多步驟資安稽核流程
 
 當你需要迴圈根據**腳本對 workflow 步驟的確定性檢查**（而不是模型讀 transcript）來把關時，自己寫 Stop hook 跑腳本。這是評估器「只看 transcript」不夠用時的官方逃生出口。
 
-詳見 [AI 101 - Claude Code goal 強制力 Hook](./claude-code-goal-enforcement-hooks.md)。
+詳見 [AI 101 - Claude Code goal 強制力 Hook](./goal-enforcement-hooks.md)。
 
 ---
 
@@ -197,9 +197,9 @@ description: 多步驟資安稽核流程
 
 ## 相關筆記
 
-- [AI 101 - Claude Code goal](./claude-code-goal.md) — `/goal` 完整說明
-- [AI 101 - Claude Code goal 強制力 Hook](./claude-code-goal-enforcement-hooks.md) — Pattern E 的 Stop hook 實作
-- [AI 101 - Claude Code 行為結構設計](./claude-code-behavior-design.md) — Skill / Sub-agent / Hook 的 Hello World
+- [AI 101 - Claude Code goal](./goal.md) — `/goal` 完整說明
+- [AI 101 - Claude Code goal 強制力 Hook](./goal-enforcement-hooks.md) — Pattern E 的 Stop hook 實作
+- [AI 101 - Claude Code 行為結構設計](./behavior-design.md) — Skill / Sub-agent / Hook 的 Hello World
 
 ## Sources
 

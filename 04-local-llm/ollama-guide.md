@@ -308,5 +308,5 @@ ollama show gemma4:latest
 ## 相關筆記
 
 - [AI 101 - Gemma 4 本地模型](./gemma-4-local-model.md) — Gemma 4 完整設定，含遠端 Ollama 連線
-- [AI 101 - OpenClaw](../03-tools/openclaw.md) — 接上 OpenClaw
-- [AI 101 - Hermes Agent](../03-tools/hermes-agent.md) — 接上 Hermes Agent
+- [AI 101 - OpenClaw](../03-tools/agents-platforms/openclaw.md) — 接上 OpenClaw
+- [AI 101 - Hermes Agent](../03-tools/agents-platforms/hermes-agent.md) — 接上 Hermes Agent

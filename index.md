@@ -31,10 +31,10 @@ updated: 2026-07-04
 | 我想⋯ | 建議閱讀順序 |
 |---|---|
 | **理解基本名詞** | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) → [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) |
-| **開始用 Claude Code** | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) → [AI 101 - Claude Code 生態系](./01-fundamentals/claude-code-ecosystem.md) → [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) |
+| **開始用 Claude Code** | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) → [AI 101 - Claude Code 生態系](./01-fundamentals/claude-code/ecosystem.md) → [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) |
 | **學 2026 最關鍵技能** | [AI 101 - Context Engineering](./02-advanced/context-engineering.md) → [AI 101 - Harness Engineering](./02-advanced/harness-engineering.md) |
 | **跑本地模型（離線、隱私）** | [AI 101 - Ollama 指令教學](./04-local-llm/ollama-guide.md) → [AI 101 - 輕量模型推薦](./04-local-llm/lightweight-models.md) → [AI 101 - Gemma 4 本地模型](./04-local-llm/gemma-4-local-model.md) |
-| **架自己的 AI Agent** | [AI 101 - OpenClaw](./03-tools/openclaw.md) 或 [AI 101 - Hermes Agent](./03-tools/hermes-agent.md) |
+| **架自己的 AI Agent** | [AI 101 - OpenClaw](./03-tools/agents-platforms/openclaw.md) 或 [AI 101 - Hermes Agent](./03-tools/agents-platforms/hermes-agent.md) |
 | **挑最划算的 AI 模型** | [AI 101 - 模型費用與效果比較](./01-fundamentals/model-cost-comparison.md) |
 
 ---
@@ -46,18 +46,23 @@ updated: 2026-07-04
 | 筆記 | 你會學到 |
 |---|---|
 | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) | Agent、LLM、RAG、幻覺、MCP、Subagents 等基礎詞彙 |
-| [AI 101 - Claude Code 生態系](./01-fundamentals/claude-code-ecosystem.md) | Skills、Hooks、MCP、Plugins、Subagents 的關係與差異 |
-| [AI 101 - Claude Code goal](./01-fundamentals/claude-code-goal.md) | `/goal` 設定完成條件讓 Claude 自動執行到達成，無人值守的關鍵功能 |
-| [AI 101 - Claude Code 行為結構設計](./01-fundamentals/claude-code-behavior-design.md) | `/goal`、Sub-agents、Skills、Hooks 四層設計 AI 行為，含 Hello World 範例與驗證步驟 |
-| [AI 101 - Claude Code goal 強制力 Hook](./01-fundamentals/claude-code-goal-enforcement-hooks.md) | Stop / UserPromptSubmit / PreToolUse / PreCompact 五種 hook 讓 `/goal` 不達標不停手 |
-| [AI 101 - Claude Code Workflow × goal 混用](./01-fundamentals/claude-code-workflow-goal-combo.md) | Dynamic Workflows（廣度）和 `/goal`（深度）怎麼組合，五種實用 pattern 與陷阱 |
-| [AI 101 - Claude Code chrome 瀏覽器整合](./01-fundamentals/claude-code-chrome-integration.md) | `--chrome` 讓 Claude 直接控制瀏覽器（截圖、點擊、填表、讀 console），安裝與排查 |
-| [AI 101 - Claude Code chrome 進階操作](./01-fundamentals/claude-code-chrome-advanced.md) | 多瀏覽器管理、Tab Group 生命週期、`browser_batch` 效能優化、完整工具清單 |
-| [AI 101 - Claude Code 權限模式與設定層級](./01-fundamentals/claude-code-permissions.md) | 五種權限模式（Plan / Default / Accept edits / Auto / Don't ask）風險對照，四層設定誰蓋過誰，企業 policy 為何改不動 |
 | [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) | 提升效率的具體方法與工作流 |
 | [AI 101 - 模型費用與效果比較](./01-fundamentals/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
 | [AI 101 - v1 chat completions curl Cheatsheet](./01-fundamentals/chat-completions-curl-cheatsheet.md) | 業界通用 LLM API 格式的 curl 完全指南：streaming、tool use、vision、JSON mode、各大供應商切換 |
 | [AI 101 - OpenAI API 完整端點速查](./01-fundamentals/openai-api-endpoints.md) | `/v1/chat/completions` 之外的所有重要端點：Embeddings、Batch（省 50%）、Whisper、TTS、Images、Moderations、Responses API |
+
+### Claude Code — `claude-code/`
+
+| 筆記 | 你會學到 |
+|---|---|
+| [AI 101 - Claude Code 生態系](./01-fundamentals/claude-code/ecosystem.md) | Skills、Hooks、MCP、Plugins、Subagents 的關係與差異 |
+| [AI 101 - Claude Code goal](./01-fundamentals/claude-code/goal.md) | `/goal` 設定完成條件讓 Claude 自動執行到達成，無人值守的關鍵功能 |
+| [AI 101 - Claude Code 行為結構設計](./01-fundamentals/claude-code/behavior-design.md) | `/goal`、Sub-agents、Skills、Hooks 四層設計 AI 行為，含 Hello World 範例與驗證步驟 |
+| [AI 101 - Claude Code goal 強制力 Hook](./01-fundamentals/claude-code/goal-enforcement-hooks.md) | Stop / UserPromptSubmit / PreToolUse / PreCompact 五種 hook 讓 `/goal` 不達標不停手 |
+| [AI 101 - Claude Code Workflow × goal 混用](./01-fundamentals/claude-code/workflow-goal-combo.md) | Dynamic Workflows（廣度）和 `/goal`（深度）怎麼組合，五種實用 pattern 與陷阱 |
+| [AI 101 - Claude Code chrome 瀏覽器整合](./01-fundamentals/claude-code/chrome-integration.md) | `--chrome` 讓 Claude 直接控制瀏覽器（截圖、點擊、填表、讀 console），安裝與排查 |
+| [AI 101 - Claude Code chrome 進階操作](./01-fundamentals/claude-code/chrome-advanced.md) | 多瀏覽器管理、Tab Group 生命週期、`browser_batch` 效能優化、完整工具清單 |
+| [AI 101 - Claude Code 權限模式與設定層級](./01-fundamentals/claude-code/permissions.md) | 五種權限模式（Plan / Default / Accept edits / Auto / Don't ask）風險對照，四層設定誰蓋過誰，企業 policy 為何改不動 |
 
 ---
 
@@ -80,20 +85,15 @@ updated: 2026-07-04
 
 具體可以馬上安裝使用的工具。按用途分類：
 
-### AI 模型平台 — AI Platforms
+### 模型平台 / 個人 Agent — `agents-platforms/`
 
 | 工具 | 特色 |
 |---|---|
-| [AI 101 - Mistral AI](./03-tools/mistral-ai.md) | 法國開源 AI 平台，MoE 架構、Apache 2.0、雲端 + 自架皆支援 |
+| [AI 101 - Mistral AI](./03-tools/agents-platforms/mistral-ai.md) | 法國開源 AI 平台，MoE 架構、Apache 2.0、雲端 + 自架皆支援 |
+| [AI 101 - OpenClaw](./03-tools/agents-platforms/openclaw.md) | 自架式 AI 閘道器，串接 LINE/Discord/Slack 等通訊平台 |
+| [AI 101 - Hermes Agent](./03-tools/agents-platforms/hermes-agent.md) | 開源個人 AI 助理，持久記憶 + 自我進化 Skills |
 
-### 個人 AI Agent — Personal AI Agents
-
-| 工具 | 特色 |
-|---|---|
-| [AI 101 - OpenClaw](./03-tools/openclaw.md) | 自架式 AI 閘道器，串接 LINE/Discord/Slack 等通訊平台 |
-| [AI 101 - Hermes Agent](./03-tools/hermes-agent.md) | 開源個人 AI 助理，持久記憶 + 自我進化 Skills |
-
-### Claude Code 擴充 — Claude Code Extensions
+### Claude Code 擴充 / 周邊 — Extensions
 
 | 工具 | 特色 |
 |---|---|
@@ -105,15 +105,15 @@ updated: 2026-07-04
 | [AI 101 - JT Live Whisper（即時語音轉錄）](./03-tools/jt-live-whisper.md) | 本地即時語音轉錄、翻譯、講者辨識、會議摘要，完全不上雲 |
 | [AI 101 - OpenCode.ai](./03-tools/opencode-ai.md) | Claude Code 的開源替代，支援 75+ 模型，可接 Ollama 完全免費 |
 
-### AI 資安工具 — AI Security Tools
+### AI 資安工具 — `security/`
 
 | 工具 | 特色 |
 |---|---|
-| [AI 101 - BoxPwnr](./03-tools/boxpwnr.md) | AI 自動化 CTF/HTB 解題框架，Docker + 多 LLM，支援 15+ 平台、進度中斷續跑 |
-| [AI 101 - AI 自主滲透測試工具比較](./03-tools/autonomous-pentest-tools-comparison.md) | BoxPwnr / PentestGPT / CTF-Agent / FlagForge 比較，含哪些工具 Claude Max 可用 |
-| [AI 101 - Pentest Swarm AI](./03-tools/pentest-swarm-ai.md) | 群體智慧架構的自主滲透測試平台，Go + Claude API，AGPL-3.0 |
-| [AI 101 - HexStrike AI](./03-tools/hexstrike-ai.md) | MCP Server 橋接 150+ 資安工具，讓 Claude / GPT 直接執行滲透測試 |
-| [AI 101 - Viper](./03-tools/viper.md) | 開源紅隊 C2 框架，內建 LLM Agent，Cobalt Strike 免費替代方案 |
+| [AI 101 - BoxPwnr](./03-tools/security/boxpwnr.md) | AI 自動化 CTF/HTB 解題框架，Docker + 多 LLM，支援 15+ 平台、進度中斷續跑 |
+| [AI 101 - AI 自主滲透測試工具比較](./03-tools/security/autonomous-pentest-tools-comparison.md) | BoxPwnr / PentestGPT / CTF-Agent / FlagForge 比較，含哪些工具 Claude Max 可用 |
+| [AI 101 - Pentest Swarm AI](./03-tools/security/pentest-swarm-ai.md) | 群體智慧架構的自主滲透測試平台，Go + Claude API，AGPL-3.0 |
+| [AI 101 - HexStrike AI](./03-tools/security/hexstrike-ai.md) | MCP Server 橋接 150+ 資安工具，讓 Claude / GPT 直接執行滲透測試 |
+| [AI 101 - Viper](./03-tools/security/viper.md) | 開源紅隊 C2 框架，內建 LLM Agent，Cobalt Strike 免費替代方案 |
 
 ---
 

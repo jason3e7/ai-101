@@ -6,7 +6,7 @@ created: 2026-06-11
 
 # Claude Code /goal 強制力 Hook
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > `/goal` 本身只是設定完成條件——它不能防止 Claude 中途放棄、跑偏或在 context 壓縮後忘記目標。這篇整理五種可以「強制」goal 行為的 hook 類型，含可直接執行的程式碼範例。
@@ -439,8 +439,8 @@ if __name__ == "__main__":
 
 ## 相關筆記
 
-- [AI 101 - Claude Code goal](./claude-code-goal.md) — `/goal` 完整說明（包含第三方 jthack/claude-goal skill）
-- [AI 101 - Claude Code 行為結構設計](./claude-code-behavior-design.md) — Hook 設定格式的 Hello World 入門
+- [AI 101 - Claude Code goal](./goal.md) — `/goal` 完整說明（包含第三方 jthack/claude-goal skill）
+- [AI 101 - Claude Code 行為結構設計](./behavior-design.md) — Hook 設定格式的 Hello World 入門
 
 ## Sources
 

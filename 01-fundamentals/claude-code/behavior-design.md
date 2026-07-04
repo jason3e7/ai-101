@@ -6,7 +6,7 @@ created: 2026-06-11
 
 # Claude Code 行為結構設計
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > `/goal`、Sub-agents、Skills、Hooks 是 Claude Code 四個讓你「設計 AI 行為」而不只是「下指令給 AI」的核心功能。這篇從為什麼到怎麼做，每個功能都附可直接貼上執行的 Hello World 範例。
@@ -579,9 +579,9 @@ sys.exit(0)
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](./claude-code-ecosystem.md) — 各功能關係概覽（MCP、Plugins 等）
-- [AI 101 - Claude Code goal](./claude-code-goal.md) — `/goal` 的完整說明
-- [AI 101 - HTB Goal Prompt 設計指南](../05-notes/htb-goal-prompt-guide.md) — 把這四層用在 HTB 滲透測試的實例
+- [AI 101 - Claude Code 生態系](./ecosystem.md) — 各功能關係概覽（MCP、Plugins 等）
+- [AI 101 - Claude Code goal](./goal.md) — `/goal` 的完整說明
+- [AI 101 - HTB Goal Prompt 設計指南](../../05-notes/htb-goal-prompt-guide.md) — 把這四層用在 HTB 滲透測試的實例
 
 ## Sources
 

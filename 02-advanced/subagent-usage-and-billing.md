@@ -483,7 +483,7 @@ Claude 透過 MCP 呼叫 GPT，把結果拿回來自己繼續處理。
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code-ecosystem.md) — Subagent 在 Claude Code 的位置
+- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — Subagent 在 Claude Code 的位置
 - [AI 101 - Harness Engineering](./harness-engineering.md) — Agent 執行框架設計
 - [AI 101 - Context Engineering](./context-engineering.md) — 如何設計傳給 subagent 的 context
 - [AI 101 - 模型費用與效果比較](../01-fundamentals/model-cost-comparison.md) — 各模型定價，選哪個當 subagent

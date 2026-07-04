@@ -6,10 +6,10 @@ created: 2026-07-02
 
 # Claude Code chrome 進階操作
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
-> 這篇是 [AI 101 - Claude Code chrome 瀏覽器整合](./claude-code-chrome-integration.md) 的進階篇，專注在「開始執行瀏覽器任務之後」Claude 實際怎麼工作：工具怎麼載入、多瀏覽器怎麼選、Tab Group 怎麼管理、怎麼用 `browser_batch` 加速。
+> 這篇是 [AI 101 - Claude Code chrome 瀏覽器整合](./chrome-integration.md) 的進階篇，專注在「開始執行瀏覽器任務之後」Claude 實際怎麼工作：工具怎麼載入、多瀏覽器怎麼選、Tab Group 怎麼管理、怎麼用 `browser_batch` 加速。
 
 ---
 
@@ -225,8 +225,8 @@ computer { action: "zoom", region: [x0, y0, x1, y1], tabId: ... }
 
 ## 相關筆記
 
-- [AI 101 - Claude Code chrome 瀏覽器整合](./claude-code-chrome-integration.md) — 基礎安裝、架構、初始設定
-- [AI 101 - Claude Code 生態系](./claude-code-ecosystem.md) — Skills、Hooks、MCP 的關係
+- [AI 101 - Claude Code chrome 瀏覽器整合](./chrome-integration.md) — 基礎安裝、架構、初始設定
+- [AI 101 - Claude Code 生態系](./ecosystem.md) — Skills、Hooks、MCP 的關係
 
 ## Sources
 

@@ -6,7 +6,7 @@ created: 2026-06-24
 
 # Claude Code chrome 瀏覽器整合
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > `claude --chrome` 讓 Claude Code CLI 直接控制你的 Chrome 瀏覽器——截圖、點擊、填表、讀 console——而且全程用你自己已登入的帳號，不需要任何 API 金鑰或額外服務。這篇說明怎麼裝、怎麼用、會踩到什麼坑。
@@ -232,8 +232,8 @@ Claude Code CLI 的登入帳號和 Chrome extension 的帳號必須相同，不�
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](./claude-code-ecosystem.md) — Skills、Hooks、MCP、Plugins、Subagents 的關係
-- [AI 101 - Claude Code 行為結構設計](./claude-code-behavior-design.md) — Hook 等行為結構設計入門
+- [AI 101 - Claude Code 生態系](./ecosystem.md) — Skills、Hooks、MCP、Plugins、Subagents 的關係
+- [AI 101 - Claude Code 行為結構設計](./behavior-design.md) — Hook 等行為結構設計入門
 
 ## Sources
 

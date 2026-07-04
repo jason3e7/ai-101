@@ -200,5 +200,5 @@ Harness Engineering（最外層：基礎設施）
 ## 相關筆記
 
 - [AI 101 - Context Engineering](./context-engineering.md) — Harness 中的 Context 管理層
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code-ecosystem.md) — Hooks、Subagents 是 Harness 的實作
+- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — Hooks、Subagents 是 Harness 的實作
 - [AI 101 - 核心概念](../01-fundamentals/core-concepts.md) — Agent 基礎概念

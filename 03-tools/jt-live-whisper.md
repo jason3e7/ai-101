@@ -401,4 +401,4 @@ PyQt6 半透明視窗疊在任何 App 上方，可拖移、自動縮放、滑鼠
 
 - [AI 101 - 輕量模型推薦](../04-local-llm/lightweight-models.md) — 翻譯 / 摘要用的本地 LLM 選型
 - [AI 101 - Ollama 指令教學](../04-local-llm/ollama-guide.md) — 設定本地 LLM 給翻譯引擎用
-- [AI 101 - Hermes Agent](./hermes-agent.md) — 把轉錄結果接進 AI Agent 做後續處理
+- [AI 101 - Hermes Agent](./agents-platforms/hermes-agent.md) — 把轉錄結果接進 AI Agent 做後續處理
