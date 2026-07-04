@@ -1,8 +1,8 @@
 # AI 101 — 聰明使用 AI 的完整指南 · The Complete Guide to Using AI Well
 
-> **TL;DR (EN):** A from-scratch, practice-oriented **AI knowledge base** in Traditional Chinese. Every note targets two things — clear concepts and immediately actionable steps. Filenames/folders are English; note titles are bilingual. Browse by folder below, or follow a learning path.
+> **TL;DR (EN):** A from-scratch, practice-oriented **AI knowledge base**. Every note targets two things — clear concepts and immediately actionable steps. Filenames/folders are English; note titles are bilingual. Browse by folder below, or follow a learning path.
 
-> 一份從零開始、面向實際使用的 **AI 知識庫**（繁體中文）。
+> 一份從零開始、面向實際使用的 **AI 知識庫**。
 > 核心原則：**有清楚概念，又能快速上手。**
 
 每一份筆記都確保你讀完能做到兩件事：
@@ -44,7 +44,7 @@
 
 ## 主題關鍵字 — Topics
 
-Claude Code · Context Engineering · Harness Engineering · LLM · Agent · RAG · MCP · Subagent · Ollama · vLLM · Local LLM · Prompt Engineering · AI Security · Traditional Chinese AI Guide · 本地 LLM · AI 資安 · 繁體中文 AI 教學
+Claude Code · Context Engineering · Harness Engineering · LLM · Agent · RAG · MCP · Subagent · Ollama · vLLM · Local LLM · Prompt Engineering · AI Security · 本地 LLM · AI 資安
 
 ---
 

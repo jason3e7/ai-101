@@ -7,7 +7,7 @@ updated: 2026-07-04
 
 # AI 101 — 聰明使用 AI 的完整指南 · The Complete Guide to Using AI Well
 
-> **TL;DR (EN):** A from-scratch, practice-oriented AI knowledge base (Traditional Chinese). Every note aims for two things: clear concepts + immediately actionable steps. Use the learning paths below to pick where to start.
+> **TL;DR (EN):** A from-scratch, practice-oriented AI knowledge base. Every note aims for two things: clear concepts + immediately actionable steps. Use the learning paths below to pick where to start.
 
 > "Prompt engineering 只是開始，2026 年真正的技能叫做 **Context Engineering**。"
 
