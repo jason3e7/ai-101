@@ -68,6 +68,7 @@ updated: 2026-07-04
 | 筆記 | 你會學到 |
 |---|---|
 | [AI 101 - AI 能力全景圖](./02-advanced/ai-capability-landscape.md) | 用「資訊流向 × 認知深度」兩軸把 AI 能力攤成一張圖，看出忠實度梯度與自己的使用盲區 |
+| [AI 101 - 四種能力執行手冊](./02-advanced/four-capabilities-playbook.md) | 摘要／解釋／發想／重構筆記，各給「最省 token」與「最有成效」兩套打法，含模型選型表與可複製 prompt |
 | [AI 101 - Context Engineering](./02-advanced/context-engineering.md) | 2026 最重要的技能：Prompt 只是 5%，Context 才是 95% |
 | [AI 101 - Harness Engineering](./02-advanced/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
 | [AI 101 - ML 演算法精要](./02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |

@@ -19,7 +19,7 @@
 | 分類 | 內容 | 篇數 |
 |---|---|---|
 | [**01 基礎概念 / Fundamentals**](./01-fundamentals/) | Claude Code 生態系、核心概念、權限模式、模型比較、實用技巧 | 13 |
-| [**02 進階觀念 / Advanced**](./02-advanced/) | Context Engineering、Harness Engineering、AI 能力全景圖、Subagent | 5 |
+| [**02 進階觀念 / Advanced**](./02-advanced/) | Context Engineering、Harness Engineering、AI 能力全景圖、四種能力執行手冊、Subagent | 6 |
 | [**03 AI 工具 / Tools**](./03-tools/) | OpenClaw、Hermes、OpenCode、資安工具等可安裝工具筆記 | 15 |
 | [**04 本地 LLM / Local LLM**](./04-local-llm/) | Ollama、vLLM、Gemma、輕量模型選型 | 4 |
 | [**05 個人筆記 / Notes**](./05-notes/) | 個人實驗與隨筆 | 6 |
