@@ -90,12 +90,16 @@
 
 ---
 
-## 檔案與目錄
+## 檔案與目錄（英文命名）
 
-- 所有筆記放在 repo 根目錄
-- 檔名格式：`AI 101 - 主題.md`
-- 索引檔：`AI 101 - 主頁.md`
+**檔名與資料夾名一律用英文 kebab-case（全小寫、連字號）。** 檔案內的 `# 標題` 維持中英雙語（L2），只有檔名/路徑是英文。
+
+- **檔名格式**：`主題-slug.md`（全小寫、連字號、**不加** `ai-101-` 前綴、無空格）
+  - 例：`core-concepts.md`、`claude-code-ecosystem.md`、`ai-capability-landscape.md`
+- **資料夾**：`01-fundamentals` / `02-advanced` / `03-tools` / `04-local-llm` / `05-notes` / `06-external` / `skills`
+- **索引檔**：`index.md`（repo 根目錄；未來架 MkDocs 剛好是首頁）
 - 索引按「**學習路徑**」分類，不要扁平化平行列表
+- **遷移狀態**：01–05 已改英文名；`06-external` 的 64 篇檔名仍為舊格式，待單獨一輪處理
 
 ---
 
@@ -104,7 +108,7 @@
 1. **研究**：web search + web fetch，確保資訊是最新的（注意今年）
 2. **撰寫**：符合上述風格指南
 3. **補 Sources**：底部列出參考來源
-4. **更新主頁**：把新筆記歸到合適的分類下
+4. **更新索引**：把新筆記歸到 `index.md` 合適的分類下
 5. **Commit & Push**：用有 `Co-Authored-By: Claude` 的 commit message
 
 ---

@@ -8,7 +8,7 @@
 1. **清楚概念** — 理解「這是什麼、為什麼重要」
 2. **快速上手** — 能立刻照著做，不需要再查其他資料
 
-📖 完整索引與學習路徑請見 [**AI 101 - 主頁**](./AI%20101%20-%20主頁.md)
+📖 完整索引與學習路徑請見 [**AI 101 - 主頁**](./index.md)
 
 ---
 
@@ -16,12 +16,12 @@
 
 | 分類 | 內容 | 篇數 |
 |---|---|---|
-| [**01 基礎概念**](./01-基礎概念/) | Claude Code 生態系、核心概念、權限模式、模型比較、實用技巧 | 13 |
-| [**02 進階觀念**](./02-進階觀念/) | Context Engineering、Harness Engineering、AI 能力全景圖、Subagent | 5 |
-| [**03 AI 工具**](./03-AI工具/) | OpenClaw、Hermes、OpenCode、資安工具等可安裝工具筆記 | 15 |
-| [**04 本地 LLM**](./04-本地LLM/) | Ollama、vLLM、Gemma、輕量模型選型 | 4 |
-| [**05 個人筆記**](./05-個人筆記/) | 個人實驗與隨筆 | 6 |
-| [**06 外部觀點**](./06-外部觀點/) | 外部文章、貼文、研究的整理筆記 | 64 |
+| [**01 基礎概念 / Fundamentals**](./01-fundamentals/) | Claude Code 生態系、核心概念、權限模式、模型比較、實用技巧 | 13 |
+| [**02 進階觀念 / Advanced**](./02-advanced/) | Context Engineering、Harness Engineering、AI 能力全景圖、Subagent | 5 |
+| [**03 AI 工具 / Tools**](./03-tools/) | OpenClaw、Hermes、OpenCode、資安工具等可安裝工具筆記 | 15 |
+| [**04 本地 LLM / Local LLM**](./04-local-llm/) | Ollama、vLLM、Gemma、輕量模型選型 | 4 |
+| [**05 個人筆記 / Notes**](./05-notes/) | 個人實驗與隨筆 | 6 |
+| [**06 外部觀點 / External**](./06-外部觀點/) | 外部文章、貼文、研究的整理筆記 | 64 |
 
 ---
 
