@@ -52,6 +52,37 @@ status: draft
 
 ---
 
+## 借鏡《提問的智慧》— Borrowing from ESR's "Smart Questions"
+
+> [!NOTE]
+> jason3e7 的觀察：好 prompt 和「怎麼問人才問得到好答案」本質相同——**問法決定答案品質**。ESR 2001 年寫給 hacker 社群的經典 [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html) 有一半原則可直接搬到 prompt AI，另一半不行。
+
+### 可直接借鏡（對人、對 AI 都成立）
+
+| ESR 原則 | 搬到 prompt | 對應本篇特性 |
+|---|---|---|
+| **描述目標，不是卡住的那一步（XY Problem）** | 講你真正想達成的，而非你以為的做法 | 對齊成功標準 / 訪談範本 B |
+| **精確、資訊充分** | 具體、給足脈絡 | 明確無歧義 / 有脈絡 |
+| **展示研究、環境、症狀** | 給背景、已試過什麼、輸入資料 | 有脈絡 |
+| **精確優先於冗長**（別倒一大坨） | 給「對的」資訊，不是給「多」 | 具體可驗證 |
+
+### 不能照搬（那些是「人際」的部分）
+
+ESR 有一大半是**社群禮儀**，對 AI 不適用：
+
+- 禮貌、別宣稱緊急、選對論壇、事後回報解法 → AI 沒有自尊、無限耐心，不會因你沒禮貌而不理你
+- 「先自己 RTFM 再問」→ 對 AI 幾乎相反：**問 AI 常常就是最快的 RTFM**（呼應 [知識壁壘那篇](./ai-and-knowledge-barriers.md) 的「門檻下降」）
+
+### 一個關鍵差異 — The Key Difference
+
+- 對**人**：對方會用常識與經驗**幫你補上沒講清楚的**，還會主動反問
+- 對**AI**：除非你叫它反問（訪談範本 B），它多半直接照字面做——所以 prompt 要比問人**更明確地把隱含前提寫出來**
+
+> [!TIP]
+> （jason3e7）最值得搬的一條是 **XY Problem**：人與 AI 都常敗在「問了你以為的解法，而不是你真正的目標」。訪談式範本（B）本質上就是在強迫破解 XY Problem。
+
+---
+
 ## 三個層次 — Three Tiers
 
 | 層次 | 做法 | 適合 |
@@ -153,6 +184,8 @@ status: draft
 - [Prompt engineering overview — Anthropic 官方（先有成功標準與 eval）](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
 - [General Tips for Designing Prompts — Prompt Engineering Guide](https://www.promptingguide.ai/introduction/tips)
 - [Understanding Prompt Structure: Key Parts of a Prompt — Learn Prompting](https://learnprompting.org/docs/basics/prompt_structure)
+- [How To Ask Questions The Smart Way — Eric S. Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
+- [The XY Problem](https://xyproblem.info/)
 - [A Complete Guide to Meta Prompting — PromptHub](https://www.prompthub.us/blog/a-complete-guide-to-meta-prompting)
 - [Meta-Prompting: LLMs Crafting Their Own Prompts — IntuitionLabs](https://intuitionlabs.ai/articles/meta-prompting-llm-self-optimization)
 - [Exploring Prompt Optimization（reflection、text gradients）— LangChain](https://www.langchain.com/blog/exploring-prompt-optimization)
