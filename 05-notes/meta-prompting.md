@@ -24,6 +24,34 @@ status: draft
 
 ---
 
+## 好 prompt 的特性 — What Makes a Prompt Good
+
+> [!IMPORTANT]
+> Anthropic 官方的第一課不是技巧，而是前提：**先有「成功標準」和「能測試的方法」，再談 prompt。** 沒有「怎樣算好」的定義，就無從判斷一個 prompt 到底好不好——這也是為什麼自動優化要有 eval（見下方）。
+
+一個好 prompt 通常同時具備這些特性，可當檢查表用：
+
+| 特性 | 說明 | 壞 → 好 |
+|---|---|---|
+| **明確無歧義** | 只有一種解讀 | 「幫我看看這個」→「指出這段程式碼的 3 個效能瓶頸」|
+| **具體可驗證** | 限制能被檢查，不用模糊詞 | 「詳細一點」→「每點至少含一個程式碼範例」|
+| **有脈絡** | 給角色、受眾、背景 | 「解釋 API」→「向沒寫過程式的 PM 解釋這個 REST API」|
+| **指定輸出格式** | 格式、長度、語氣 | 「列一下」→「markdown 表格，≤ 5 列，每格 ≤ 20 字」|
+| **有邊界** | 說明不要做什麼、缺資料怎麼辦 | （無）→「原文沒提到就別臆測，標記『未知』」|
+| **有示範**（需要時） | few-shot 範例，格式類任務特別有效 | （無）→ 附 1–2 個輸入／輸出範例 |
+| **給思考空間**（難任務） | 要求先推理再結論 | 「答案是？」→「先列步驟，再給結論」|
+| **對齊成功標準** | 你知道怎樣算好、而且測得出來 | 憑感覺 → 有可檢查的驗收條件 |
+
+### 最小骨架 — The Minimal Skeleton
+
+多數指南同意一個 prompt 的四個核心元件：**指令（instruction）＋脈絡（context）＋輸入資料（data）＋輸出格式（output format）**。把這四塊分清楚、用分隔符或 XML 標籤隔開，就已經勝過大多數隨手寫的 prompt。
+
+> [!NOTE]
+> **一句話總結：好 prompt = 把「模糊」換成「具體可驗證」，並對齊一個你測得出來的成功標準。**
+> 其餘技巧（XML 標籤分區、system prompt 設角色、few-shot 示範、prefill、prompt chaining、chain-of-thought）都只是**達成上面特性的手段**，不是目的。
+
+---
+
 ## 三個層次 — Three Tiers
 
 | 層次 | 做法 | 適合 |
@@ -122,6 +150,9 @@ status: draft
 
 ## Sources
 
+- [Prompt engineering overview — Anthropic 官方（先有成功標準與 eval）](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+- [General Tips for Designing Prompts — Prompt Engineering Guide](https://www.promptingguide.ai/introduction/tips)
+- [Understanding Prompt Structure: Key Parts of a Prompt — Learn Prompting](https://learnprompting.org/docs/basics/prompt_structure)
 - [A Complete Guide to Meta Prompting — PromptHub](https://www.prompthub.us/blog/a-complete-guide-to-meta-prompting)
 - [Meta-Prompting: LLMs Crafting Their Own Prompts — IntuitionLabs](https://intuitionlabs.ai/articles/meta-prompting-llm-self-optimization)
 - [Exploring Prompt Optimization（reflection、text gradients）— LangChain](https://www.langchain.com/blog/exploring-prompt-optimization)
