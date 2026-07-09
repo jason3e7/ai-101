@@ -1,9 +1,8 @@
 ---
 title: 用 Prompt 生成好 Prompt（Meta-Prompting）
-tags: [ai, 個人筆記, prompt, meta-prompting, dspy, ape, 草稿]
+tags: [ai, 個人筆記, prompt, meta-prompting, dspy, ape]
 created: 2026-07-08
 updated: 2026-07-09
-status: draft
 ---
 
 # 用 Prompt 生成好 Prompt（Meta-Prompting）— Prompting to Generate Better Prompts
@@ -205,21 +204,12 @@ E Context
 
 ---
 
-## 常見陷阱與 jason3e7 的想法 — Pitfalls & My Take
-
-### 常見陷阱
+## 常見陷阱 — Pitfalls
 
 - **沒有評分就談優化**：手感不是指標；要能量測才談自動優化
 - **一次到位的迷思**：好 prompt 幾乎都是「生成 → 測 → 改」迭代出來的，範本 C 的反思循環要反覆跑
 - **過度結構化**：meta-prompt 產出的 prompt 有時過長，簡單任務反而累贅——用完人工瘦身
 - **跨模型不通用**：為 Claude 優化的 prompt 不保證在別的模型一樣好，換模型要重測
-
-### jason3e7 的想法（待補）
-
-> 留給 jason3e7。可以想的角度：
-> - 你最常用哪一種（手寫？官方生成器？）？效果如何？
-> - 範本 0 / A / B / C 哪個對你最有用？有沒有你自己的第四種？
-> - 「先訪談再產出」是不是你偏好的模式？
 
 ---
 
