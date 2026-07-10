@@ -55,6 +55,9 @@ created: 2026-07-10
 
 6. **空跑驗證** —— 叫 Claude Code 導到目標網站首頁並 snapshot；若顯示**登入後**內容，代表 session 沾成功。
 
+    > [!TIP]
+    > 想先驗證上傳工具本身通不通、又不想動到真正目標網站？用公開測試頁 <https://the-internet.herokuapp.com/upload> 走一次步驟 7 的流程即可——它就是一個純 `<input type="file">` + 上傳按鈕的範例頁，不需登入。
+
 7. **完整上傳流程**
 
     1. `browser_navigate` → 上傳頁
