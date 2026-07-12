@@ -581,7 +581,7 @@ sys.exit(0)
 
 - [AI 101 - Claude Code 生態系](./ecosystem.md) — 各功能關係概覽（MCP、Plugins 等）
 - [AI 101 - Claude Code goal](./goal.md) — `/goal` 的完整說明
-- [AI 101 - HTB Goal Prompt 設計指南](../../05-notes/htb-goal-prompt-guide.md) — 把這四層用在 HTB 滲透測試的實例
+- [AI 101 - HTB Goal Prompt 設計指南](../../05-notes/htb/htb-goal-prompt-guide.md) — 把這四層用在 HTB 滲透測試的實例
 
 ## Sources
 

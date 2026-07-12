@@ -349,8 +349,8 @@ Report and STOP.
 ## 相關筆記
 
 - [AI 101 - HTB Abducted — goal 實戰案例](./htb-abducted-goal-case.md) — 第一次成功的完整紀錄（舊 prompt 版本）
-- [AI 101 - BoxPwnr](../03-tools/security/boxpwnr.md) — progress.md 注入模式的出處
-- [AI 101 - AI 自主滲透測試工具比較](../03-tools/security/autonomous-pentest-tools-comparison.md) — PentestGPT 等框架的 prompt 設計參考
+- [AI 101 - BoxPwnr](../../03-tools/security/boxpwnr.md) — progress.md 注入模式的出處
+- [AI 101 - AI 自主滲透測試工具比較](../../03-tools/security/autonomous-pentest-tools-comparison.md) — PentestGPT 等框架的 prompt 設計參考
 
 ## Sources
 

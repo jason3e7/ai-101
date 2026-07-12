@@ -127,4 +127,4 @@ Playwright 的 `browser_file_upload` 是**先點「選擇檔案」按鈕觸發�
 - [anthropics/claude-code #31210 — `file_upload` 未透過 MCP 暴露](https://github.com/anthropics/claude-code/issues/31210)
 - [Playwright MCP 官方 repo — `--cdp-endpoint`、headed 預設、file access 限制](https://github.com/microsoft/playwright-mcp)
 - [browser_file_upload 工具文件](https://playwright.dev/mcp/tools/file-upload)
-- 相關：[Claude in Chrome 疑難排解、權限與已知問題（含 #73161 上傳工具全壞）](../06-external/20260704_Claude%20in%20Chrome%20%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3%E3%80%81%E6%AC%8A%E9%99%90%E8%88%87%E5%B7%B2%E7%9F%A5%E5%95%8F%E9%A1%8C%20%E2%80%94%20Anthropic%20%E5%AE%98%E6%96%B9%EF%BC%8BIssue.md)
+- 相關：[Claude in Chrome 疑難排解、權限與已知問題（含 #73161 上傳工具全壞）](../06-external/20260704_Claude%20in%20Chrome%20疑難排解、權限與已知問題%20—%20Anthropic%20官方＋Issue.md)
