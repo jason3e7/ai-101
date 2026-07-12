@@ -1,9 +1,8 @@
 ---
-title: AI 與未來：先驗證，再用它突破自己（Draft）
-tags: [ai, 個人筆記, 驗證, 判斷力, 拓展, 學習, 觀點, 草稿]
+title: AI 與未來：先驗證，再用它突破自己
+tags: [ai, 個人筆記, 驗證, 判斷力, 拓展, 學習, 觀點]
 created: 2026-07-11
 updated: 2026-07-12
-status: draft
 ---
 
 # AI 與未來：先驗證，再用它突破自己 — Verify AI First, Then Break Past Yourself
@@ -11,7 +10,7 @@ status: draft
 [← 回主頁](../index.md)
 
 > [!NOTE]
-> 草稿 · jason3e7 的思考。AI 最核心的特性，是它會**產出超出你給它的東西**——超出輸入、超出你已知的範圍。這件事有兩面：當你要真相，它是**風險**（可能超出事實 = 幻覺）；當你要成長，它是**禮物**（能超出你的想像天花板）。這篇分兩線談：**先學會驗證（基本功），再用它拓展自己**。
+> jason3e7 的思考。AI 最核心的特性，是它會**產出超出你給它的東西**——超出輸入、超出你已知的範圍。這件事有兩面：當你要真相，它是**風險**（可能超出事實 = 幻覺）；當你要成長，它是**禮物**（能超出你的想像天花板）。這篇分兩線談：**先學會驗證（基本功），再用它拓展自己**。
 
 > **TL;DR (EN):** AI's core trait is going beyond what you give it. Two faces: a risk when you want truth (verify it), a gift when you want to grow (use it to expand). Verification comes first — it's the safety rope that lets you venture into domains you don't yet understand. And AI is a multiplier, not an adder: it amplifies the capability you already have (experts +45% vs generalists +20%), so 0 × AI is still 0 — the path to new earning power is *learn enough to judge, then amplify*.
 
@@ -82,6 +81,18 @@ status: draft
 
 ---
 
+## 研究與專家怎麼說 — Evidence & Experts
+
+放大器不是一個人的猜想，實證與專家都指同一方向：
+
+- **兩個大型田野實驗，同一結論**：5,179 名客服 AI +14%、最低技能者 +34%；另一組客服實驗 +15%、新手約 +36%。AI 拉平基礎——但（下一點）拉不到專家層。
+- **HBS／BCG：AI 拉高產能，但「無法把新手變專家」**（研究標題就這麼寫）。前沿任務新手掉 19 分，專家能識破 AI 錯誤反而勝。
+- **「鄰近」才轉得動**（直接支持 `0 × AI = 0`）：研究發現與你能力**相鄰**的技能，AI 幫得上；**太遠**的幫不上——因為你缺乏理解、無法有效使用它，達不到專家品質。
+- **Ethan Mollick（《Co-Intelligence》）**：專業的功能正從「生產」轉向「評估」（from creation to curation & critique）；老手能有效評估 AI 產出，因為他們「知道自己不知道什麼」。他一句話同時點出兩線：好的 AI 產出需要一個人去 **validate（驗證）**、**expand the ideation（拓展）**、並 **apply judgment（判斷）**。
+- **反面警訊——直覺生鏽（intuition rust）**：一項追蹤專科醫師一年的研究發現，AI 決策支援初期提升產能，但專家判斷力**逐漸鈍化**。這是「把成長外包出去」的實證代價，正對應線二的陷阱。
+
+---
+
 ## 收尾：驗證是拓展的前提 — The Loop
 
 兩條線在這裡接起來：
@@ -108,6 +119,11 @@ status: draft
 
 ## Sources
 
+- [Gen AI Boosts Productivity, But Can't Turn Novices Into Experts — HBS Working Knowledge](https://www.library.hbs.edu/working-knowledge/gen-ai-boosts-productivity-but-cant-turn-novices-into-experts)
+- [Co-Intelligence: Living and Working with AI — Ethan Mollick](https://inigomedina.co/library/work/mollick-co-intelligence)
+- [AI as Equalizer or Amplifier? Task Complexity as Moderating Factor — arXiv](https://arxiv.org/html/2512.10961)
+- [The Augmentation Trap: AI Productivity and the Cost of Cognitive Offloading — arXiv](https://arxiv.org/html/2604.03501)
+- [AI, Productivity, and Labor Markets: A Review of the Empirical Evidence — ICLE](https://laweconcenter.org/resources/ai-productivity-and-labor-markets-a-review-of-the-empirical-evidence/)
 - [AI Skills Multiplier: Expert Developers Know — SquaredTech](https://www.squaredtech.co/ai-skills-multiplier-the-shocking-truth-about-developer-productivity)
 - [The Knowledge Paradox: Why AI Without Domain Knowledge Is Worthless — Carlo Alberto Cuman](https://medium.com/@carlo.cuman/the-knowledge-paradox-why-ai-expertise-without-domain-knowledge-is-worthless-f1867fea16a0)
 - [AI as Cognitive Amplifier: Rethinking Human Judgment — arXiv](https://arxiv.org/html/2512.10961v1)
