@@ -82,4 +82,4 @@ jason3e7 實際把整條攻擊鏈重現了一次：
 - 原文：[Threat Actors Abuse claude.ai Shared Chat for ClickFix Malvertising Campaign — Trend Micro](https://www.trendmicro.com/en_us/research/26/f/claudeai-shared-chat-abused-in-malvertising.html)
 - [Malvertising Campaign Abuses Claude.ai Shared Chat Feature — CyberPress](https://cyberpress.org/malvertising-campaign-claude-ai-shared-chat-feature/)
 - [Hackers Abuse Claude.ai Shared Chat Feature to Host ClickFix Instructions — Cyber Security News](https://cybersecuritynews.com/claude-ai-shared-chat-feature-abused/)
-- jason3e7 的相關貼文：[Facebook](https://www.facebook.com/jason.cheng.9615/posts/pfbid02kkCtrr8i5YhXQ84YSDJAAYChQx7T2RMsHdiNdwtcJpFteQAyECT5A8tkuFg6AAT1l)
+- 相關貼文（Jason Cheng）：[Facebook](https://www.facebook.com/jason.cheng.9615/posts/pfbid02kkCtrr8i5YhXQ84YSDJAAYChQx7T2RMsHdiNdwtcJpFteQAyECT5A8tkuFg6AAT1l)
