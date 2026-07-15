@@ -1,10 +1,9 @@
 ---
-title: "Claude 分享對話被濫用於 ClickFix 惡意廣告（Draft）"
-tags: [ai, 外部觀點, 資安, malvertising, clickfix, claude, social-engineering, 草稿]
+title: "Claude 分享對話被濫用於 ClickFix 惡意廣告"
+tags: [ai, 外部觀點, 資安, malvertising, clickfix, claude, social-engineering]
 source: https://www.trendmicro.com/en_us/research/26/f/claudeai-shared-chat-abused-in-malvertising.html
-author: Trend Micro（TrendAI Research）
+author: Trend Micro（TrendAI Research）+ jason3e7 實測
 created: 2026-07-15
-status: draft
 ---
 
 # Claude 分享對話被濫用於 ClickFix 惡意廣告 — Claude Shared Chat Abused in ClickFix Malvertising
@@ -12,7 +11,7 @@ status: draft
 [← 回主頁](../index.md)
 
 > [!NOTE]
-> 草稿 · 待補 jason3e7 的實測截圖。原文：[Trend Micro — Threat Actors Abuse claude.ai Shared Chat for ClickFix Malvertising](https://www.trendmicro.com/en_us/research/26/f/claudeai-shared-chat-abused-in-malvertising.html)
+> 原文：[Trend Micro — Threat Actors Abuse claude.ai Shared Chat for ClickFix Malvertising](https://www.trendmicro.com/en_us/research/26/f/claudeai-shared-chat-abused-in-malvertising.html)（含 jason3e7 實測重現）
 > **一句話：** 攻擊者用 Google 廣告假冒 AI 開發工具，把受害者導到**真的 claude.ai 分享對話頁面**，頁面裡是假的客服對話，一步步騙你打開終端機貼上指令、下載惡意程式。台灣是重災區。
 
 > **TL;DR (EN):** A malvertising campaign (Apr 8–Jun 14 2026, tracked by Trend Micro) used Google Ads impersonating AI dev tools, then hosted its ClickFix social-engineering script inside **legitimate claude.ai shared-chat URLs** — bypassing browser and Safe Browsing warnings. Fake "support" chats walked victims through opening a terminal and running a base64 command that fetched malware. APAC = 67.2% of victims; Taiwan alone = 30.5% of traffic.
@@ -45,17 +44,24 @@ status: draft
 
 ## 我的實測 — My Test
 
-> [!NOTE]
-> 🚧 jason3e7 的實測截圖待補。圖放進 `06-external/assets/`，再把連結接上這一節。
->
-> 建議補的內容：
-> - 實際看到的假廣告 / 假分享對話長什麼樣（截圖）
-> - 那個 claude.ai 分享頁面的網址與外觀
-> - 為什麼一般人會信（哪些細節做得像）
+jason3e7 實際把整條攻擊鏈重現了一次：
 
-<!-- 圖片範例（補圖後改成實際檔名）：
-![假分享對話截圖](./assets/待補檔名.png)
--->
+**① 搜尋看到假廣告** —— Google 搜「mac claude code」，最上面「贊助商搜尋結果」就是假廣告。顯示的網域寫著 `claude.ai`，看起來完全正常，一般人不會起疑。
+
+![Google 搜尋結果最上方的假贊助商廣告，顯示網域為 claude.ai](./assets/clickfix-01-fake-google-ad.png)
+
+**② 落在真的 claude.ai 分享頁** —— 點下去落在一個**真的** `claude.ai/share/...` 頁面，標題「Running Claude Code on Mac」、右上角掛「Shared by Apple Support」，一步步教你「開 Terminal → 貼上下面這行指令」。那行指令是用 base64 包起來的。
+
+![假冒 Apple Support 的 claude.ai 分享頁，教你在終端機貼上 base64 指令（已遮罩）](./assets/clickfix-02-fake-share-page.png)
+
+**③ 解碼露出真面目** —— 把那段 base64 丟進 CyberChef 解開，露出真正的惡意網址 `hxxp://malwareaudit[.]com/curl/...`（此處 defang）——那行 `curl` 會去這個網址抓下一階段的東西。
+
+![CyberChef 把 base64 解碼出惡意網址（已遮罩）](./assets/clickfix-03-decoded-payload.png)
+
+> [!TIP]
+> 兩個實測心得：
+> - **那個分享頁頂端其實有灰字警告**（"This is a copy of a chat… may include unverified or unsafe content… does not represent the views of Anthropic"）——但一般人根本不會細看，攻擊者就是賭這一點。
+> - 惡意網址與 base64 指令**我在截圖上打碼了**（黑框），因為這是公開 repo，不散布可用的惡意 IOC。
 
 ---
 
@@ -76,3 +82,4 @@ status: draft
 - 原文：[Threat Actors Abuse claude.ai Shared Chat for ClickFix Malvertising Campaign — Trend Micro](https://www.trendmicro.com/en_us/research/26/f/claudeai-shared-chat-abused-in-malvertising.html)
 - [Malvertising Campaign Abuses Claude.ai Shared Chat Feature — CyberPress](https://cyberpress.org/malvertising-campaign-claude-ai-shared-chat-feature/)
 - [Hackers Abuse Claude.ai Shared Chat Feature to Host ClickFix Instructions — Cyber Security News](https://cybersecuritynews.com/claude-ai-shared-chat-feature-abused/)
+- jason3e7 的相關貼文：[Facebook](https://www.facebook.com/jason.cheng.9615/posts/pfbid02kkCtrr8i5YhXQ84YSDJAAYChQx7T2RMsHdiNdwtcJpFteQAyECT5A8tkuFg6AAT1l)
