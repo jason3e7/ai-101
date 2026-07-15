@@ -52,11 +52,11 @@ jason3e7 實際把整條攻擊鏈重現了一次：
 
 **② 落在真的 claude.ai 分享頁** —— 點下去落在一個**真的** `claude.ai/share/...` 頁面，標題「Running Claude Code on Mac」、右上角掛「Shared by Apple Support」，一步步教你「開 Terminal → 貼上下面這行指令」。那行指令是用 base64 包起來的。
 
-![假冒 Apple Support 的 claude.ai 分享頁，教你在終端機貼上 base64 指令（已遮罩）](./assets/clickfix-02-fake-share-page.png)
+![假冒 Apple Support 的 claude.ai 分享頁，教你在終端機貼上 base64 指令（已部分遮罩）](./assets/clickfix-02-fake-share-page-redacted.png)
 
 **③ 解碼露出真面目** —— 把那段 base64 丟進 CyberChef 解開，露出真正的惡意網址 `hxxp://malwareaudit[.]com/curl/...`（此處 defang）——那行 `curl` 會去這個網址抓下一階段的東西。
 
-![CyberChef 把 base64 解碼出惡意網址（已遮罩）](./assets/clickfix-03-decoded-payload.png)
+![CyberChef 把 base64 解碼出惡意網址（已部分遮罩）](./assets/clickfix-03-decoded-payload-redacted.png)
 
 > [!TIP]
 > 兩個實測心得：
