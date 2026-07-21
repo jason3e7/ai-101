@@ -96,6 +96,9 @@ Claude Code 內建了迴圈工程的關鍵零件：
 
 ## 是真突破，還是新瓶裝舊酒？— Breakthrough or Rebrand?
 
+> [!TIP]
+> （jason3e7 的觀察）第一眼就覺得「這跟原本的技術差不多啊」——這個直覺是對的。
+
 老實說：**Loop Engineering 沒有技術突破，零件全是舊的。**
 
 - act → observe → decide → repeat 的迴圈，就是 2022 年的 **ReAct**
