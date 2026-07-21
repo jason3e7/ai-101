@@ -94,6 +94,24 @@ Claude Code 內建了迴圈工程的關鍵零件：
 
 ---
 
+## 是真突破，還是新瓶裝舊酒？— Breakthrough or Rebrand?
+
+老實說：**Loop Engineering 沒有技術突破，零件全是舊的。**
+
+- act → observe → decide → repeat 的迴圈，就是 2022 年的 **ReAct**
+- `/goal`、`/loop`、sub-agent、worktree、skills、MCP —— 全是現成工具
+- 上下文管理、外層框架 —— 就是 [Context](./context-engineering.md) 和 [Harness Engineering](./harness-engineering.md)
+
+沒有新演算法、新模型能力、新原語。那它到底新在哪？只有兩件事：
+
+1. **命名 + 重點轉移**：像「DevOps」——沒發明任何技術，只是幫一種做法取名。一旦「迴圈」成為你思考的單位，你才會開始問對的問題（verifier 是什麼？停止規則？狀態怎麼存？）。這是心智重構，不是新能力。
+2. **一個門檻被跨過**：早期 agent 跑幾步就漂移，你非盯著不可。2026 因為自動壓縮 + `CLAUDE.md` 重注入、worktree 安全並行、長時自主更穩，**「設好迴圈、走人」第一次變得實際可行**——不是新原語，是舊零件終於穩到能組成「你能放著不管」的系統。
+
+> [!NOTE]
+> 誠實的結論：Loop Engineering 比較像「**DevOps 時刻**」（幫一種實踐命名），不是「發明」。覺得它「跟原本差不多」是準確的判斷——差別在**可靠度跨過了能無人值守的門檻**，再加上一個讓大家對齊注意力的名字。值不值得叫一個新「XX Engineering」，見仁見智。
+
+---
+
 ## 相關筆記 — Related
 
 - [Context Engineering](./context-engineering.md)、[Harness Engineering](./harness-engineering.md) —— 演進線的前兩棒
