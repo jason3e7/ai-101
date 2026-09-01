@@ -9,7 +9,7 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 依照 [參賽規劃](./plan.md) 的「承 6 / 轉 16 / 合 8」骨架，把三十篇的標題定出來，並標上每篇用哪份現成筆記、還缺什麼。**這是草案，等 jason3e7 過目後再定稿。**
+> 完成的草稿放在 [`drafts/`](./drafts/)。依照 [參賽規劃](./plan.md) 的「承 6 / 轉 16 / 合 8」骨架，把三十篇的標題定出來，並標上每篇用哪份現成筆記、還缺什麼。**這是草案，等 jason3e7 過目後再定稿。**
 
 > **TL;DR (EN):** Thirty working titles for the Claude AI group, mapped to existing notes in this repo. Twenty-two are rewrites of material that already exists; eight need new writing. Five articles carry a first-hand experiment — those are placed early, where readers decide whether to follow the series.
 
@@ -38,7 +38,7 @@ created: 2026-08-31
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
-| 01 | 開場：三十天的地圖，和一個讓我改掉用法的失敗實測 | — | 新寫 |
+| 01 | 它只是在猜下一個字：LLM 的原理，決定了後面 29 天的所有心法 | [core-concepts](../../01-fundamentals/core-concepts.md) + 新研究 | ✅ [已完成](./drafts/day01-llm-is-statistics.md) |
 | 02 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | 改寫 |
 | 03 | 摘要與解釋：最省 token 的做法，和最有成效的做法 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
 | 04 | 發想與重構：為什麼 AI 給你十個點子，有九個是同一個 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
