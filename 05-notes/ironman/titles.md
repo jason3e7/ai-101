@@ -9,7 +9,7 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 完成的草稿放在 [`drafts/`](./drafts/)。依照 [參賽規劃](./plan.md) 的「承 6 / 轉 16 / 合 8」骨架，把三十篇的標題定出來，並標上每篇用哪份現成筆記、還缺什麼。**這是草案，等 jason3e7 過目後再定稿。**
+> 完成的草稿放在 [`drafts/`](./drafts/)。依照 [參賽規劃](./plan.md) 的骨架（實際排成 **承 7 / 轉 16 / 合 7**），把三十篇的標題定出來，並標上每篇用哪份現成筆記、還缺什麼。**這是草案，等 jason3e7 過目後再定稿。**
 
 > **TL;DR (EN):** Thirty working titles for the Claude AI group, mapped to existing notes in this repo. Twenty-two are rewrites of material that already exists; eight need new writing. Five articles carry a first-hand experiment — those are placed early, where readers decide whether to follow the series.
 
@@ -34,62 +34,62 @@ created: 2026-08-31
 
 狀態欄：**改寫** = 現成筆記改寫即可；**新寫** = 沒有現成素材；**補實測** = 有內容但要補自己的實驗才有份量。
 
-### 承：基礎與定位（Day 1–6）
+### 承：基礎與定位（Day 1–7）
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
 | 01 | 它只是在猜下一個字：LLM 的原理，決定了後面 29 天的所有心法 | [core-concepts](../../01-fundamentals/core-concepts.md) + 新研究 | ✅ [已完成](./drafts/day01-llm-is-statistics.md) |
-| 02 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | 改寫 |
-| 03 | 摘要與解釋：最省 token 的做法，和最有成效的做法 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
-| 04 | 發想與重構：為什麼 AI 給你十個點子，有九個是同一個 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
-| 05 | 選模型與省錢：同一件事，成本可以差十倍 | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md)、[subagent 計費](../../02-advanced/subagent-usage-and-billing.md) | 改寫 |
-| 06 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
+| 02 | 不是它突然變強，是它跨過了你的門檻 | 新研究（METR、scaling laws、MCP 採用曲線） | ✅ [已完成](./drafts/day02-why-it-got-strong.md) |
+| 03 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | 改寫 |
+| 04 | 摘要與解釋：最省 token 的做法，和最有成效的做法 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
+| 05 | 發想與重構：為什麼 AI 給你十個點子，有九個是同一個 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
+| 06 | 選模型與省錢：同一件事，成本可以差十倍 | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md)、[subagent 計費](../../02-advanced/subagent-usage-and-billing.md) | 改寫 |
+| 07 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
 
-### 轉·提問：問得準（Day 7–10）
-
-| Day | 標題 | 素材 | 狀態 |
-|---|---|---|---|
-| 07 | 一個好的 prompt 長什麼樣？先把「詳細一點」這種話戒掉 | [meta-prompting](../meta-prompting.md) | 改寫 |
-| 08 | XY Problem：你問的問題，通常不是你真正的問題 | [meta-prompting](../meta-prompting.md) | 改寫 |
-| 09 | 用 prompt 生 prompt：一個可以直接複製的 MVP 模板 | [meta-prompting](../meta-prompting.md) | 改寫 |
-| 10 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 |
-
-### 轉·脈絡與目標：讓它自己跑（Day 11–16）
+### 轉·提問：問得準（Day 8–11）
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
-| 11 | Context Engineering：餵什麼，比怎麼問更重要 | [context-engineering](../../02-advanced/context-engineering.md) | 補實測 |
-| 12 | Harness Engineering：模型動不了，但外面那層可以 | [harness-engineering](../../02-advanced/harness-engineering.md) | 補實測 |
-| 13 | Loop Engineering：從「我提示 AI」到「我設計那個提示 AI 的系統」 | [loop-engineering](../../02-advanced/loop-engineering.md) | 補實測 |
-| 14 | `/goal`：給它一個能驗證的終點，它才知道什麼時候該停 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
-| 15 | 光有目標還不夠：用 Hook 逼它別中途放棄（含一個我實測失敗的 Hook） | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
-| 16 | Workflow × Goal：讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 改寫 |
+| 08 | 一個好的 prompt 長什麼樣？先把「詳細一點」這種話戒掉 | [meta-prompting](../meta-prompting.md) | 改寫 |
+| 09 | XY Problem：你問的問題，通常不是你真正的問題 | [meta-prompting](../meta-prompting.md) | 改寫 |
+| 10 | 用 prompt 生 prompt：一個可以直接複製的 MVP 模板 | [meta-prompting](../meta-prompting.md) | 改寫 |
+| 11 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 |
 
-### 轉·驗證與擴展：驗得出、想得遠（Day 17–22）
+### 轉·脈絡與目標：讓它自己跑（Day 12–17）
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
-| 17 | 人要怎麼驗證 AI？跟數學借六種驗算法 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
-| 18 | 獨立驗算為什麼最強：別讓它改自己的考卷 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
-| 19 | 實測：Claude Code 在 HTB 靶機上，目標是怎麼被綁架的 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 改寫 |
-| 20 | 人做不到想像之外的事：用 AI 拓展視野的五個手段 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
-| 21 | 知識金字塔：AI 打掉的到底是哪一層壁壘 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 改寫 |
-| 22 | 為什麼專家用 AI 賺更多，新手卻只快了一點 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 改寫 |
+| 12 | Context Engineering：餵什麼，比怎麼問更重要 | [context-engineering](../../02-advanced/context-engineering.md) | 補實測 |
+| 13 | Harness Engineering：模型動不了，但外面那層可以 | [harness-engineering](../../02-advanced/harness-engineering.md) | 補實測 |
+| 14 | Loop Engineering：從「我提示 AI」到「我設計那個提示 AI 的系統」 | [loop-engineering](../../02-advanced/loop-engineering.md) | 補實測 |
+| 15 | `/goal`：給它一個能驗證的終點，它才知道什麼時候該停 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
+| 16 | 光有目標還不夠：用 Hook 逼它別中途放棄（含一個我實測失敗的 Hook） | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
+| 17 | Workflow × Goal：讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 改寫 |
 
-### 合：已經在發生的事，怎麼接（Day 23–30）
+### 轉·驗證與擴展：驗得出、想得遠（Day 18–23）
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
-| 23 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
-| 24 | 送出去之前：把個資遮掉的幾種做法 | [pii-masking](../../03-tools/pii-masking.md)、[openai-privacy-filter](../../03-tools/openai-privacy-filter.md) | 改寫 |
-| 25 | AI 已經會自己打靶了：自主滲透工具的現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 改寫 |
-| 26 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 改寫 |
-| 27 | 什麼時候該把模型搬回自己的機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[lightweight-models](../../04-local-llm/lightweight-models.md) | 改寫 |
+| 18 | 人要怎麼驗證 AI？跟數學借六種驗算法 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
+| 19 | 獨立驗算為什麼最強：別讓它改自己的考卷 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
+| 20 | 實測：Claude Code 在 HTB 靶機上，目標是怎麼被綁架的 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 改寫 |
+| 21 | 人做不到想像之外的事：用 AI 拓展視野的五個手段 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
+| 22 | 知識金字塔：AI 打掉的到底是哪一層壁壘 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 改寫 |
+| 23 | 為什麼專家用 AI 賺更多，新手卻只快了一點 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 改寫 |
+
+### 合：已經在發生的事，怎麼接（Day 24–30）
+
+| Day | 標題 | 素材 | 狀態 |
+|---|---|---|---|
+| 24 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
+| 25 | 送出去之前：把敏感的東西留在自己手上 | [pii-masking](../../03-tools/pii-masking.md)、[openai-privacy-filter](../../03-tools/openai-privacy-filter.md)、[ollama-guide](../../04-local-llm/ollama-guide.md) | 改寫 |
+| 26 | AI 已經會自己打靶了：自主滲透工具的現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 改寫 |
+| 27 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 改寫 |
 | 28 | 知識中產：這一次被擠壓的是誰 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 補實測 |
 | 29 | 是真突破，還是新瓶裝舊酒？對熱詞的誠實評估 | [loop-engineering](../../02-advanced/loop-engineering.md) 末節 | 改寫 |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | — | 新寫 |
 
-**盤點：改寫 24 篇、補實測 4 篇、新寫 2 篇。** 帶第一手實測的有 Day 01、15、19、26，加上 11–13 補完後共 7 篇——其中三篇落在前十五天，正好是讀者決定要不要追下去的區間。
+**盤點：已完成 2 篇、改寫 22 篇、補實測 4 篇、新寫 2 篇。** 帶第一手實測的有 Day 16、20、27，加上 12–14 補完後共 6 篇——其中三篇落在前二十天，正好是讀者決定要不要追下去的區間。
 
 ---
 
