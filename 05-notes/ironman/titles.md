@@ -41,7 +41,7 @@ created: 2026-08-31
 | 01 | 它只是在猜下一個字：LLM 的原理，決定了後面 29 天的所有心法 | [core-concepts](../../01-fundamentals/core-concepts.md) + 新研究 | ✅ [已完成](./drafts/day01-llm-is-statistics.md) |
 | 02 | 不是它突然變強，是它跨過了你的門檻 | 新研究（METR、scaling laws、MCP 採用曲線） | ✅ [已完成](./drafts/day02-why-it-got-strong.md) |
 | 03 | 它做不到什麼：三種極限，和最危險的那一種 | 新研究（自我修正、反轉詛咒、context rot、鋸齒狀前沿） | ✅ [已完成](./drafts/day03-what-it-cannot-do.md) |
-| 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | 改寫 |
+| 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | ✅ [已完成](./drafts/day04-capability-landscape.md) |
 | 05 | 四種能力怎麼用：摘要、解釋、發想、重構的實戰配方 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
 | 06 | 選模型與省錢：同一件事，成本可以差十倍 | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md)、[subagent 計費](../../02-advanced/subagent-usage-and-billing.md) | 改寫 |
 | 07 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
