@@ -129,6 +129,7 @@ updated: 2026-07-04
 | [AI 101 - 輕量模型推薦](./04-local-llm/lightweight-models.md) | 8GB / 16GB / 32GB VRAM 分級選型 |
 | [AI 101 - Gemma 4 本地模型](./04-local-llm/gemma-4-local-model.md) | Google 最新開源模型，接 OpenClaw / Hermes 完全離線 |
 | [AI 101 - vLLM](./04-local-llm/vllm.md) | 高吞吐量推論伺服器，OpenAI 相容 API，比 HF Transformers 快 14–24x |
+| [AI 101 - Qwen3.6 27B 原版 vs Uncensored](./04-local-llm/qwen3-6-27b-uncensored.md) | abliteration 是什麼、拿掉拒絕的真正代價（能力掉分 ＋ 判斷傾向偏移） |
 
 **建議順序：** 先把 Ollama 裝好 → 挑一個適合你硬體的模型 → 需要對外提供 API 再看 vLLM。
 
