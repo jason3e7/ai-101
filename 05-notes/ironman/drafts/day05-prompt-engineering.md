@@ -121,9 +121,7 @@ Wharton 的 Prompting Science Report 3（2025，標題直白得可愛：*I'll pa
 
 最後留一個更大的：**prompt 只是它看到的東西的一小部分。** 你以為你在調的是那句話，但真正決定輸出的，是它這一輪看到的**全部內容**——系統提示、前幾輪對話、你貼的檔案、工具回傳的結果。
 
-所以這個系列不會停在 prompt engineering。Day 12 開始講 Context Engineering：**餵什麼，比怎麼問更重要。**
-
-明天先回到基本功：把 Day 04 那張圖上最常用的四格——摘要、解釋、發想、重構——各給一套配方。
+所以這個系列不會停在 prompt engineering。明天直接跳到這條路的終點——Loop Engineering，看看「不用再一句一句下指令」長什麼樣；Day 12 再回頭補 Context Engineering：**餵什麼，比怎麼問更重要。**
 
 ---
 

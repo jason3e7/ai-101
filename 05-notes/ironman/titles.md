@@ -9,7 +9,7 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 完成的草稿放在 [`drafts/`](./drafts/)。依照 [參賽規劃](./plan.md) 的骨架（實際排成 **承 7 / 轉 16 / 合 7**；Day 29「新瓶裝舊酒」已併入 Day 30），把三十篇的標題定出來，並標上每篇用哪份現成筆記、還缺什麼。**這是草案，等 jason3e7 過目後再定稿。**
+> 完成的草稿放在 [`drafts/`](./drafts/)。依照 [參賽規劃](./plan.md) 的骨架（實際排成 **承 7 / 轉 16 / 合 7**；Loop Engineering 提前到 Day 06 當「先看終點」，Day 29「新瓶裝舊酒」併入 Day 30），把三十篇的標題定出來，並標上每篇用哪份現成筆記、還缺什麼。**這是草案，等 jason3e7 過目後再定稿。**
 
 > **TL;DR (EN):** Thirty working titles for the Claude AI group, mapped to existing notes in this repo. Twenty-two are rewrites of material that already exists; eight need new writing. Five articles carry a first-hand experiment — those are placed early, where readers decide whether to follow the series.
 
@@ -43,8 +43,8 @@ created: 2026-08-31
 | 03 | 它做不到什麼：三種極限，和最危險的那一種 | 新研究（自我修正、反轉詛咒、context rot、鋸齒狀前沿） | ✅ [已完成](./drafts/day03-what-it-cannot-do.md) |
 | 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | ✅ [已完成](./drafts/day04-capability-landscape.md) |
 | 05 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md) + 新研究 | ✅ [已完成](./drafts/day05-prompt-engineering.md) |
-| 06 | 四種能力怎麼用：摘要、解釋、發想、重構的實戰配方 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
-| 07 | 選模型與省錢：同一件事，成本可以差十倍 | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md)、[subagent 計費](../../02-advanced/subagent-usage-and-billing.md) | 改寫 |
+| 06 | 先看終點：Loop Engineering——你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day06-loop-engineering.md) |
+| 07 | 四種能力怎麼用：摘要、解釋、發想、重構的實戰配方 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
 
 ### 轉·提問：問得準（Day 8–11）
 
@@ -55,18 +55,18 @@ created: 2026-08-31
 | 10 | 用 prompt 生 prompt：一個可以直接複製的 MVP 模板 | [meta-prompting](../meta-prompting.md) | 改寫 |
 | 11 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 |
 
-### 轉·脈絡：餵什麼比怎麼問更重要（Day 12–14）
+### 轉·脈絡：走回頭路補上跳過的兩級（Day 12–13）
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
 | 12 | Context Engineering：餵什麼，比怎麼問更重要 | [context-engineering](../../02-advanced/context-engineering.md) | 補實測 |
 | 13 | Harness Engineering：模型動不了，但外面那層可以 | [harness-engineering](../../02-advanced/harness-engineering.md) | 補實測 |
-| 14 | Loop Engineering：從「我提示 AI」到「我設計那個提示 AI 的系統」 | [loop-engineering](../../02-advanced/loop-engineering.md) | 補實測 |
 
-### 轉·目標：讓它自己跑（Day 15–18）
+### 轉·目標與成本：讓它自己跑（Day 14–18）
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
+| 14 | 選模型與省錢：同一件事，成本可以差十倍 | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md)、[subagent 計費](../../02-advanced/subagent-usage-and-billing.md) | 改寫 |
 | 15 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
 | 16 | `/goal`：給它一個能驗證的終點，它才知道什麼時候該停 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
 | 17 | 光有目標還不夠：用 Hook 逼它別中途放棄（含一個我實測失敗的 Hook） | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
@@ -104,12 +104,12 @@ created: 2026-08-31
 
 | 期間 | 天數 | 目標 | 內容 |
 |---|---:|---|---|
-| 08/31 – 09/07 | 8 天 | 寫完 Day 01–10 | 承段 6 篇 + 提問段 4 篇（素材最完整，先清掉） |
-| 09/08 – 09/14 | 7 天 | 寫完 Day 11–19 | 脈絡／目標／驗證段，**補實測的三篇排在這裡**，需要實際跑一輪並截圖 |
+| 08/31 – 09/07 | 8 天 | 寫完 Day 01–11 | 承段 7 篇 ＋ 提問段 4 篇（素材最完整，先清掉） |
+| 09/08 – 09/14 | 7 天 | 寫完 Day 12–21 | 脈絡／目標／驗證段，**補實測的幾篇排在這裡**，需要實際跑一輪並截圖 |
 | 09/15 – 10/14 | 30 天 | 每天發 1 篇 + 寫 1 篇 | 庫存維持 10 篇以上；Day 28–30 留到最後寫，可以回收賽期中的讀者回饋 |
 
 > [!WARNING]
-> Day 26 的 ClickFix 那篇涉及惡意網址與 payload，發到公開站台時要**沿用 repo 既有的做法**：文字用防禦式寫法（`hxxp://` 與 `[.]`）、截圖只遮中段保留前綴。原始未遮蔽的圖不要上傳。
+> Day 29 的 ClickFix 那篇涉及惡意網址與 payload，發到公開站台時要**沿用 repo 既有的做法**：文字用防禦式寫法（`hxxp://` 與 `[.]`）、截圖只遮中段保留前綴。原始未遮蔽的圖不要上傳。
 
 ---
 
