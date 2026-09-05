@@ -86,7 +86,7 @@ created: 2026-08-31
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
-| 24 | AI 可能會取代什麼，目前不會取代什麼 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) ＋ 06 的「三件事別交給 AI」「知識工作 Uberization」「Spotify 工程師不寫程式碼了」＋ jagged frontier | 新寫 |
+| 24 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ 06 的三篇 ＋ [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day24-what-ai-replaces.md) |
 | 25 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
 | 26 | 送出去之前：把敏感的東西留在自己手上 | [pii-masking](../../03-tools/pii-masking.md)、[ollama-guide](../../04-local-llm/ollama-guide.md) | 改寫 |
 | 27 | 拿掉「拒絕」的真正代價：無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 改寫 |
