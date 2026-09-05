@@ -80,13 +80,13 @@ created: 2026-08-31
 | 20 | 獨立驗算為什麼最強：別讓它改自己的考卷 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
 | 21 | 實測：Claude Code 在 HTB 靶機上，目標是怎麼被綁架的 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 改寫 |
 | 22 | 人做不到想像之外的事：用 AI 拓展視野的五個手段 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
-| 23 | 知識金字塔：AI 打掉哪一層壁壘，誰被擠壓了 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 改寫 |
+| 23 | 知識金字塔：AI 打掉哪一層壁壘，為什麼專家反而賺更多 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md)（原 23＋24 合併） | 改寫 |
 
 ### 合：已經在發生的事，怎麼接（Day 24–30）
 
 | Day | 標題 | 素材 | 狀態 |
 |---|---|---|---|
-| 24 | 為什麼專家用 AI 賺更多，新手卻只快了一點 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 改寫 |
+| 24 | AI 可能會取代什麼，目前不會取代什麼 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) ＋ 06 的「三件事別交給 AI」「知識工作 Uberization」「Spotify 工程師不寫程式碼了」＋ jagged frontier | 新寫 |
 | 25 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
 | 26 | 送出去之前：把敏感的東西留在自己手上 | [pii-masking](../../03-tools/pii-masking.md)、[ollama-guide](../../04-local-llm/ollama-guide.md) | 改寫 |
 | 27 | 拿掉「拒絕」的真正代價：無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 改寫 |
