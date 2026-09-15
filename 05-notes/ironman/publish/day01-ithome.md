@@ -1,26 +1,9 @@
-> 這是三十天的第一篇。在講任何「怎麼用」之前，先把地基講清楚：**LLM 到底在做什麼**。後面 29 天的每一條心法，都是從這一篇推出來的。
+title : Day 01｜它只是在猜下一個字：LLM 的原理，決定了後面 29 天的所有心法
 
-> **TL;DR (EN):** An LLM does one thing: read everything so far, output a probability distribution over the next token, sample one, repeat. Shannon was already doing this by hand in 1948. That single fact explains why it sounds fluent, why it is confidently wrong, and why every technique in this series exists. But "it can't do what it never learned" is only half true — it recombines rather than recites, and it builds internal models of the process behind the data.
 
----
+## 它在做的，是 1948 年就有人做過的事 — An Old Idea
 
-## 一張圖看完這篇
-
-```
-它只是在猜下一個字
-├── 這招 1948 年就有了 —— Shannon 手翻書做統計
-├── 為什麼講得順？「順」就是它被訓練的目標
-├── 為什麼會自信地錯？猜比說「不知道」划算
-├── 沒學過的，真的不會 —— 所以要把資料餵給它
-├── 但它會重組，不是背誦 —— 只餵棋步也能長出棋盤
-└── 所以這 30 天：驗證、餵脈絡、給終點、拓展想像
-```
-
----
-
-## 它在做的，是 1948 年就有人做過的事
-
-> 「LLM 就是統計學。」
+> （jason3e7 的直覺）LLM 就是統計學。
 
 這句話是對的，而且比多數人以為的更「字面」。
 
@@ -51,9 +34,9 @@
 
 ---
 
-## 「沒學過的就不會」——對了一半
+## 「沒學過的就不會」——對了一半 — Half Right
 
-> 「沒學過的，是不會的。」
+> （jason3e7 的直覺）沒學過的，是不會的。
 
 **對的那一半：** 訓練資料裡沒有的事實，它真的不知道。知識截止日（knowledge cutoff）是一道硬邊界——問它昨天發生的事，它只能編。這也是 RAG（檢索增強生成）存在的唯一理由：把它沒學過的東西，塞進當下的脈絡裡給它看。
 
@@ -77,33 +60,18 @@
 
 ---
 
-## 為什麼這篇要放 Day 01
-
-因為接下來 29 天的每一條心法，都是從這個原理直接推出來的：
-
-| 因為它…… | 所以…… |
-|---|---|
-| 目標是「看起來合理」，不是「正確」 | 你必須有一套自己的驗證方法 |
-| 下一個字的機率由前面**全部**內容決定 | 餵什麼，比怎麼問更重要 |
-| 沒有內建「該停了」的概念，只會一直往下接 | 要給它可驗證的終點與護欄 |
-| 擅長重組，不擅長無中生有 | 能帶你跨出自己的舒適圈，但跨不出人類知識的邊界 |
-| 模糊的問題只會得到模糊分布下的抽樣 | 提問本身就要能被檢查 |
-| 產出會留下可偵測的統計痕跡 | 標記與辨識做得到，但都不算證據 |
-
 今天只要記住一句話：
 
 > **你不是在跟一個知道答案的人講話，你是在跟一個非常會接話的機率機器講話。**
 
-接下來的 29 天，講的都是怎麼跟這種東西合作。明天講一件很多人以為理所當然、其實不成立的事：**LLM 又不是昨天才有的，為什麼感覺上是最近才突然爆發？**
-
 ---
 
-## 參考資料
+## Sources
 
-- [A Mathematical Theory of Communication — Claude E. Shannon, 1948](https://monoskop.org/images/a/ae/Shannon_Claude_E_A_Mathematical_Theory_of_Communication_1957.pdf)
+- [A Mathematical Theory of Communication — Claude E. Shannon, 1948（PDF）](https://monoskop.org/images/a/ae/Shannon_Claude_E_A_Mathematical_Theory_of_Communication_1957.pdf)
 - [Why Language Models Hallucinate — Kalai, Nachum, Vempala & Zhang, OpenAI, 2025](https://arxiv.org/abs/2509.04664)
-- [Emergent World Representations（Othello-GPT）— Li et al., 2022](https://arxiv.org/abs/2210.13382)
+- [Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task（Othello-GPT）— Li et al., 2022](https://arxiv.org/abs/2210.13382)
 - [Actually, Othello-GPT Has A Linear Emergent World Representation — Neel Nanda](https://www.neelnanda.io/mechanistic-interpretability/othello)
 - [On the Biology of a Large Language Model — Anthropic, 2025](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)
-- [On the Dangers of Stochastic Parrots — Bender et al., 2021](https://dl.acm.org/doi/10.1145/3442188.3445922)
-- [Are Emergent Abilities of Large Language Models a Mirage? — Schaeffer et al., 2023](https://arxiv.org/abs/2304.15004)
+- [On the Dangers of Stochastic Parrots — Bender, Gebru, McMillan-Major & Shmitchell, 2021](https://dl.acm.org/doi/10.1145/3442188.3445922)
+- [Are Emergent Abilities of Large Language Models a Mirage? — Schaeffer, Miranda & Koyejo, 2023](https://arxiv.org/abs/2304.15004)
