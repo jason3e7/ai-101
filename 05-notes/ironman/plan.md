@@ -83,7 +83,7 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 「AI 發展史」是全網最廉價的內容，容易被讀成灌水；而且 Day 1–5 決定讀者要不要追下去。
 
-> 改法：**把「承先」拆散。** 每篇心法開頭兩三句交代它的來歷（Guilford 1956 的收斂／發散思考、Bloom 認知層次、2022 年的 ReAct、Ackoff 1989 的 DIKW 金字塔）。這本來就是這個 repo 的寫法，直接沿用。基礎壓到 4–6 篇，Day 1 放「全系列地圖 + 一個吸睛的實測結果」。
+> 改法：**把「承先」拆散。** 每篇心法開頭兩三句交代它的來歷（Guilford 1956 的收斂／發散思考、Bloom 認知層次、2022 年的 ReAct、Ackoff 1989 的 DIKW 金字塔）。這本來就是這個 repo 的寫法，直接沿用。**實際做法**：承段收在 7 篇，Day 1 直接從「它只是在猜下一個字」這個原理切入，把全系列的地圖收進文末一張表。
 
 ### 二、每篇心法都要綁一個實測
 
@@ -95,7 +95,7 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 預測會變成空話，也無法驗證。
 
-> 改法：寫**「已經在發生、現在該怎麼接」**——[AI 內容標記與辨識](../../01-fundamentals/ai-content-watermark.md)、隱私遮蔽、agent 已經會自己打靶、ClickFix 被濫用、[知識中產的處境](../ai-and-knowledge-barriers.md)。最後用 [Loop Engineering](../../02-advanced/loop-engineering.md) 那節「是真突破，還是新瓶裝舊酒」收尾——誠實比預言值錢。
+> 改法：寫**「已經在發生、現在該怎麼接」**——[AI 內容標記與辨識](../../01-fundamentals/ai-content-watermark.md)、隱私遮蔽、agent 已經會自己打靶、ClickFix 被濫用、[知識中產的處境](../ai-and-knowledge-barriers.md)。最後把 [Loop Engineering](../../02-advanced/loop-engineering.md) 那節「是真突破，還是新瓶裝舊酒」併進 Day 30 收尾——誠實比預言值錢。
 
 ---
 
@@ -103,22 +103,26 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 承 7 篇、轉 16 篇、合 7 篇。逐篇標題見 [三十篇標題與素材對照](./titles.md)。
 
-| 段 | Day | 主題 | 現成素材 |
+| 段 | Day | 主題 | 素材 |
 |---|---|---|---|
-| **承** | 1 | 三十天要證明什麼：全系列地圖 + 一個實測結果 | 新寫 |
-| | 2 | AI 能力全景圖：收斂／發散 × 認知層次 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) |
-| | 3–4 | 四種能力的實戰配方（摘要／解釋／發想／重構），最省 token 與最有成效 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) |
-| | 5 | 模型怎麼選、token 怎麼省 | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md)、[subagent 計費](../../02-advanced/subagent-usage-and-billing.md) |
-| | 6 | 權限與邊界：你願意讓它動到哪 | [permissions](../../01-fundamentals/claude-code/permissions.md) |
-| **轉·提問** | 7–10 | 好 prompt 的特性 → XY Problem → MVP 元提示模板 → 讓 prompt 自我驗證 | [meta-prompting](../meta-prompting.md)（2079 字，可拆四篇） |
-| **轉·脈絡** | 11–13 | Context → Harness → Loop 三棒接力 | 三篇現成，但要加自己的實測以避開撞題 |
-| **轉·目標** | 14–16 | `/goal` → 強制力 Hook → workflow × goal 組合技 | [goal](../../01-fundamentals/claude-code/goal.md)、[goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md)、[workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) |
-| **轉·驗證** | 17–19 | 數學式六種驗證法 → 獨立驗算為什麼最強 → **HTB 目標綁架實測** | [ai-verify-then-expand](../ai-verify-then-expand.md)、[htb/](../htb/htb-goal-prompt-guide.md) |
-| **轉·擴展** | 20–22 | 突破想像的邊界 → 知識壁壘與 DIKW → 專家 +45%／新手 +20% 的放大器效應 | [ai-verify-then-expand](../ai-verify-then-expand.md)、[ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) |
-| **合** | 23–26 | AI 內容標記與辨識 → 隱私遮蔽 → agent 自主滲透 → ClickFix 被濫用實測 | [watermark](../../01-fundamentals/ai-content-watermark.md)、[pii-masking](../../03-tools/pii-masking.md)、[自主滲透工具比較](../../03-tools/security/autonomous-pentest-tools-comparison.md)、06 的 ClickFix 筆記 |
-| | 27–28 | 什麼時候該離線跑 → 知識中產被擠壓的處境 | [04-local-llm](../../04-local-llm/ollama-guide.md)、[ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) |
-| | 29 | 是真突破，還是新瓶裝舊酒：對熱詞的誠實評估 | [loop-engineering](../../02-advanced/loop-engineering.md) |
-| | 30 | 三十天蒸餾出來的幾條心法 | 新寫 |
+| **承** | 1 | 它只是在猜下一個字：LLM 的原理 | ✅ 已完成（新研究） |
+| | 2 | 不是它突然變強，是它跨過了你的門檻 | ✅ 已完成（METR、scaling laws、MCP） |
+| | 3 | 它做不到什麼：三種極限 | ✅ 已完成（自我修正、反轉詛咒、鋸齒狀前沿） |
+| | 4 | AI 能力全景圖：收斂／發散 × 認知層次 | ✅ [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) |
+| | 5 | Prompt Engineering：哪些技巧真的有效 | ✅ 已完成（The Prompt Report、Wharton） |
+| | 6 | 先看終點：Loop Engineering | ✅ [loop-engineering](../../02-advanced/loop-engineering.md) |
+| | 7 | 四種能力的實戰配方 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) |
+| **轉·提問** | 8–11 | 好 prompt 的特性 → XY Problem → MVP 模板 → 自我驗證 | [meta-prompting](../meta-prompting.md)（拆四篇） |
+| **轉·脈絡** | 12–13 | Context → Harness（Loop 已提前到 Day 6） | [context](../../02-advanced/context-engineering.md)、[harness](../../02-advanced/harness-engineering.md)，需補實測 |
+| **轉·目標與成本** | 14–18 | 選模型省錢 → 權限 → `/goal` → 強制力 Hook → workflow × goal | [model-cost](../../01-fundamentals/model-cost-comparison.md)、[permissions](../../01-fundamentals/claude-code/permissions.md)、[goal](../../01-fundamentals/claude-code/goal.md) 等 |
+| **轉·驗證與擴展** | 19–23 | 六種驗算法 → 獨立驗算 → **HTB 目標綁架實測** → 拓展視野五手段 → 知識金字塔 | [ai-verify-then-expand](../ai-verify-then-expand.md)、[htb/](../htb/htb-abducted-goal-case.md)、[knowledge-barriers](../ai-and-knowledge-barriers.md) |
+| **合** | 24 | AI 可能會取代什麼，目前不會取代什麼 | ✅ 已完成（Stanford Canaries、Anthropic Economic Index） |
+| | 25–26 | 浮水印與辨識 → 自架本地 LLM | [watermark](../../01-fundamentals/ai-content-watermark.md)、✅ [ollama](../../04-local-llm/ollama-guide.md) |
+| | 27–29 | 無審查模型的代價 → agent 自主滲透 → ClickFix 實測 | [uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md)、[pentest](../../03-tools/security/autonomous-pentest-tools-comparison.md)、06 的 ClickFix |
+| | 30 | 三十天蒸餾：跟著 AI 持續成長（含「新瓶裝舊酒」的誠實評估） | 新寫 |
+
+> [!NOTE]
+> 這張表只看段落配比；**逐篇標題、素材與完成狀態以 [titles.md](./titles.md) 為準**，那份會隨寫作進度更新。
 
 素材盤點：01–05 共約 30 篇原創筆記，多數 600–2500 中文字，可直接改寫成參賽文章。
 
