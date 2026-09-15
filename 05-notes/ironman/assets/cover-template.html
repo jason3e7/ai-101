@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC","Noto Sans CJK SC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:82px;font-weight:900;line-height:1.16;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:20px;font-size:25px;color:#a8aebd;letter-spacing:.03em}
+.demo{display:flex;align-items:center;gap:36px;margin-top:6px}
+.frag{font-family:"Noto Sans Mono CJK TC",monospace;font-size:31px;color:#e7e4dc;
+  background:#ffffff0d;border:1px solid #ffffff1c;border-radius:12px;padding:17px 24px;white-space:nowrap}
+.caret{display:inline-block;width:15px;height:33px;background:#e8a13c;vertical-align:-6px;margin-left:8px}
+.cands{display:flex;flex-direction:column;gap:11px}
+.row{display:flex;align-items:center;gap:13px;font-size:20px;color:#c3c8d4}
+.tok{width:34px;text-align:center;font-weight:700}
+.meter{height:13px;border-radius:7px;background:#ffffff14;width:260px;overflow:hidden;display:block}
+.fill{display:block;height:100%;border-radius:7px}
+.p{width:56px;font-family:"Noto Sans Mono CJK TC",monospace;font-size:17px;color:#7f8695}
+.hit .tok,.hit .p{color:#e8a13c}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 01</span></div>
+  <div>
+    <h1>它只是在<em>猜下一個字</em></h1>
+    <div class="sub">LLM 的原理，決定了後面 29 天的所有心法</div>
+  </div>
+  <div class="demo">
+    <div class="frag">今天天氣很<span class="caret"></span></div>
+    <div class="cands">
+      <div class="row hit"><span class="tok">好</span><span class="meter"><span class="fill" style="width:82%;background:linear-gradient(90deg,#e8a13c,#f0c070)"></span></span><span class="p">0.41</span></div>
+      <div class="row"><span class="tok">熱</span><span class="meter"><span class="fill" style="width:49%;background:#5a6275"></span></span><span class="p">0.24</span></div>
+      <div class="row"><span class="tok">冷</span><span class="meter"><span class="fill" style="width:27%;background:#4a5164"></span></span><span class="p">0.13</span></div>
+      <div class="row"><span class="tok">差</span><span class="meter"><span class="fill" style="width:14%;background:#3e4457"></span></span><span class="p">0.07</span></div>
+    </div>
+  </div>
+  <div class="foot">機率機器 · 不是知道答案的人</div>
+</div></body></html>
