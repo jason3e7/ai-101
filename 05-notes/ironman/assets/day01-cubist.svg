@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+ <style>
+  .ln{fill:none;stroke:#1B1B1E;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+  .lnt{fill:none;stroke:#1B1B1E;stroke-width:2;opacity:.75}
+  .gz{font-family:"Noto Serif CJK TC",serif;font-weight:700;fill:#1B1B1E}
+ </style>
+</defs>
+
+<rect width="1200" height="630" fill="#E8DCC4"/>
+
+<!-- 背景大切面 -->
+<polygon points="0,0 470,0 300,300 0,250" fill="#2C4A7C" opacity=".92"/>
+<polygon points="470,0 1200,0 1200,170 620,150" fill="#D9A441" opacity=".85"/>
+<polygon points="0,250 300,300 250,630 0,630" fill="#4E7A6A" opacity=".8"/>
+<polygon points="1200,170 1200,630 820,630 900,300" fill="#C25B3E" opacity=".62"/>
+<polygon points="620,150 1200,170 900,300 610,280" fill="#E8DCC4"/>
+
+<!-- 頭部切面 -->
+<polygon points="300,300 360,150 470,110 520,190 430,300" fill="#C25B3E"/>
+<polygon points="470,110 620,150 610,280 520,190" fill="#D9A441"/>
+<polygon points="300,300 430,300 450,440 350,470" fill="#EDE3D0"/>
+<polygon points="430,300 520,190 610,280 590,430 450,440" fill="#7FA3C9"/>
+<polygon points="350,470 450,440 590,430 520,520 390,520" fill="#2C4A7C"/>
+<polygon points="390,520 520,520 566,630 336,630" fill="#4E7A6A"/>
+
+<!-- 鼻樑：把正面與側面切開的那道稜 -->
+<polygon points="430,300 520,190 505,332 468,352" fill="#EDE3D0" opacity=".95"/>
+<polyline class="ln" points="520,190 430,300 468,352 505,332"/>
+
+<!-- 正面的眼（右）與側面的眼（左）—— 同時存在 -->
+<polygon points="512,238 578,222 592,262 522,272" fill="#EDE3D0"/>
+<polygon points="512,238 578,222 592,262 522,272" class="ln"/>
+<circle cx="551" cy="248" r="14" fill="#1B1B1E"/>
+<circle cx="556" cy="243" r="4" fill="#E8DCC4"/>
+
+<polygon points="356,232 410,218 418,252 362,262" fill="#EDE3D0"/>
+<polygon points="356,232 410,218 418,252 362,262" class="ln"/>
+<polygon points="392,228 418,240 400,256" fill="#1B1B1E"/>
+
+<!-- 眉 -->
+<polyline class="ln" points="500,206 592,192"/>
+<polyline class="ln" points="348,208 408,196"/>
+
+<!-- 口：說出來的那一格 -->
+<polygon points="448,392 546,378 552,414 452,424" fill="#C25B3E"/>
+<polygon points="448,392 546,378 552,414 452,424" class="ln"/>
+<polyline class="lnt" points="452,406 548,394"/>
+
+<!-- 頭部輪廓稜線 -->
+<polyline class="ln" points="300,300 360,150 470,110 620,150 610,280 590,430 520,520 390,520 350,470 300,300"/>
+<polyline class="ln" points="470,110 520,190 610,280"/>
+<polyline class="ln" points="300,300 430,300 450,440 590,430"/>
+<polyline class="ln" points="350,470 450,440"/>
+<polyline class="ln" points="390,520 336,630"/>
+<polyline class="ln" points="520,520 566,630"/>
+
+<!-- 語言從口中裂解出去：不是卡片，是碎在切面上的字 -->
+<g class="gz">
+  <!-- 從口部放射出的角錐 -->
+  <polygon points="552,396 1180,214 1200,330 1160,404 560,418" fill="#EDE3D0" opacity=".55"/>
+  <polyline class="lnt" points="552,396 1180,214"/>
+  <polyline class="lnt" points="560,418 1160,404"/>
+
+  <!-- 第一個字：完整、壓在切面交界上 -->
+  <polygon points="626,330 714,312 726,392 636,410" fill="#D9A441"/>
+  <polyline class="ln" points="626,330 714,312 726,392 636,410 626,330"/>
+  <text x="646" y="382" font-size="62" transform="rotate(-7 675,362)">今</text>
+
+  <!-- 第二個字：被一道稜切過，兩半不同底色 -->
+  <polygon points="754,306 842,292 850,344 762,358" fill="#7FA3C9"/>
+  <polygon points="762,358 850,344 856,376 768,390" fill="#C25B3E" opacity=".85"/>
+  <polyline class="ln" points="754,306 842,292 856,376 768,390 754,306"/>
+  <polyline class="ln" points="762,358 850,344"/>
+  <text x="772" y="360" font-size="62" transform="rotate(5 802,340)">天</text>
+
+  <!-- 第三個字：只剩一半，另一半被切面吃掉 -->
+  <polygon points="884,276 954,268 966,352 896,364" fill="#2C4A7C"/>
+  <polyline class="ln" points="884,276 954,268 966,352 896,364 884,276"/>
+  <clipPath id="c3"><polygon points="884,276 954,268 966,352 896,364"/></clipPath>
+  <g clip-path="url(#c3)"><text x="892" y="342" font-size="62" fill="#EDE3D0" transform="rotate(-4 924,320)">氣</text></g>
+
+  <!-- 第四個字：淡出，只剩筆畫的影子 -->
+  <polygon points="994,252 1056,248 1066,330 1002,338" fill="none" class="lnt"/>
+  <text x="1000" y="318" font-size="62" opacity=".26" transform="rotate(7 1030,296)">很</text>
+</g>
+
+<!-- 下一個字：還沒定形 -->
+<polygon points="1094,232 1176,228 1186,312 1100,320" fill="none" stroke="#1B1B1E" stroke-width="3" stroke-dasharray="12 10"/>
+<rect x="1130" y="248" width="14" height="48" fill="#C25B3E" transform="rotate(6 1137,272)"/>
+
+<!-- 散落的碎片 -->
+<polygon points="700,206 742,196 736,232 696,238" fill="#C25B3E" opacity=".5"/>
+<polygon points="806,190 850,206 828,236" fill="#2C4A7C" opacity=".45"/>
+<polygon points="930,214 968,208 964,238 928,242" fill="#4E7A6A" opacity=".45"/>
+<polygon points="678,470 730,458 742,496 686,508" fill="#2C4A7C" opacity=".35"/>
+<polygon points="790,486 846,478 850,512 796,520" fill="#D9A441" opacity=".45"/>
+</svg>
