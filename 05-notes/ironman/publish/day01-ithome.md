@@ -3,7 +3,7 @@ title : Day 01｜它只是在猜下一個字：LLM 的原理，決定了後面 2
 
 ## 它在做的，是 1948 年就有人做過的事 — An Old Idea
 
-> （jason3e7 的直覺）LLM 就是統計學。
+> （直覺）LLM 就是統計學。
 
 這句話是對的，而且比多數人以為的更「字面」。
 
@@ -36,7 +36,7 @@ title : Day 01｜它只是在猜下一個字：LLM 的原理，決定了後面 2
 
 ## 「沒學過的就不會」——對了一半 — Half Right
 
-> （jason3e7 的直覺）沒學過的，是不會的。
+> （直覺）沒學過的，是不會的。
 
 **對的那一半：** 訓練資料裡沒有的事實，它真的不知道。知識截止日（knowledge cutoff）是一道硬邊界——問它昨天發生的事，它只能編。這也是 RAG（檢索增強生成）存在的唯一理由：把它沒學過的東西，塞進當下的脈絡裡給它看。
 
@@ -75,3 +75,7 @@ title : Day 01｜它只是在猜下一個字：LLM 的原理，決定了後面 2
 - [On the Biology of a Large Language Model — Anthropic, 2025](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)
 - [On the Dangers of Stochastic Parrots — Bender, Gebru, McMillan-Major & Shmitchell, 2021](https://dl.acm.org/doi/10.1145/3442188.3445922)
 - [Are Emergent Abilities of Large Language Models a Mirage? — Schaeffer, Miranda & Koyejo, 2023](https://arxiv.org/abs/2304.15004)
+
+---
+
+<!-- 已發布：https://ithelp.ithome.com.tw/articles/10411345 -->
