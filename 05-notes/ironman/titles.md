@@ -88,7 +88,7 @@ created: 2026-08-31
 |---|---|---|---|
 | 24 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ 06 的三篇 ＋ [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day24-what-ai-replaces.md) |
 | 25 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
-| 26 | 送出去之前：把敏感的東西留在自己手上 | [pii-masking](../../03-tools/pii-masking.md)、[ollama-guide](../../04-local-llm/ollama-guide.md) | 改寫 |
+| 26 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[lightweight-models](../../04-local-llm/lightweight-models.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day26-self-hosted-llm.md) |
 | 27 | 拿掉「拒絕」的真正代價：無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 改寫 |
 | 28 | AI 已經會自己打靶了：自主滲透工具的現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 改寫 |
 | 29 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 改寫 |
