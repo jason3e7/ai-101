@@ -64,9 +64,13 @@ created: 2026-09-16
 **六、從對話視窗貼過來的句子，標點會變半形。**
 `,` `;` `:` 在中文之間會看起來很突兀。上稿前掃一次。
 
-```bash
-# 揪出中文之間的半形標點
-grep -oP '(?<=[\x{4e00}-\x{9fff}])[,;:!?](?=[\x{4e00}-\x{9fff}])' 檔名.md
+```
+python3 -c "
+import re,sys
+s=open(sys.argv[1],encoding='utf-8').read()
+hits=re.findall(r'.{8}(?<=[\u4e00-\u9fff])[,;:!?](?=[\u4e00-\u9fff]).{8}', s)
+print(len(hits),'處'); [print(' …'+h+'…') for h in hits]
+" 檔名.md
 ```
 
 ---
