@@ -19,7 +19,7 @@ created: 2026-09-16
 
 | 檔案 | 角色 | 什麼時候改 |
 |---|---|---|
-| `drafts/dayNN-*.md` | **正典。** 結構完整（導言、TL;DR、心智圖、系列對照表），文字永遠採用目前最好的版本。**未來出版以這份為底稿。** | 隨時。`[fixButNotPublish]` 一律改這裡 |
+| `drafts/dayNN-*.md` | **正典。** 結構完整（導言、TL;DR、系列對照表），文字永遠採用目前最好的版本。**未來出版以這份為底稿。** | 隨時。`[fixButNotPublish]` 一律改這裡 |
 | `publish/dayNN-ithome.md` | **線上快照。** 精簡結構，必須跟 iThome 上看到的一字不差 | **只有真的去改了 iThome 才動** |
 | `fix-log.md`（本檔） | 記錄兩者的落差與原因 | 每次 `[fixButNotPublish]` 都補一列 |
 
