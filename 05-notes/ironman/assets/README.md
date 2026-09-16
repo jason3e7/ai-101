@@ -27,4 +27,14 @@ google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars \
 | 字體 | Noto Sans CJK TC／Noto Sans Mono CJK TC |
 | 固定元素 | 左上角「AI 心法 ｜ Day NN」、右下角一句 tagline |
 
+### 一張圖最多三句話
+
+圖表內的標籤（座標說明、刻度、門檻線）不算。Day 02 的三句是：
+
+1. 大標 - 不是它突然變強／是它跨過了你的門檻
+2. 副標 - 能力一路在指數成長，你只是現在才有感
+3. 底部 - 縱軸：它能自己做完多久的工作
+
+超過三句，封面就變成投影片了。
+
 **每篇只換內容，不換配色與版型** - 三十天下來讀者會認得這個系列。
