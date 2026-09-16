@@ -12,10 +12,11 @@ body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
 .mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
 .bar{width:2px;height:24px;background:#ffffff2e}
 .day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
-h1{font-size:76px;font-weight:900;line-height:1.18;letter-spacing:.01em}
+h1{font-size:70px;font-weight:900;line-height:1.18;letter-spacing:.01em}
 h1 em{font-style:normal;color:#e8a13c}
-.sub{margin-top:18px;font-size:25px;color:#a8aebd;letter-spacing:.03em}
-.chartwrap{margin-top:4px;margin-bottom:14px}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:10px;margin-top:10px}
+.axis{font-size:20px;color:#8b93a5;margin-bottom:10px}
 .foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
 text{font-family:"Noto Sans CJK TC",sans-serif}
 </style></head><body>
@@ -27,17 +28,29 @@ text{font-family:"Noto Sans CJK TC",sans-serif}
     <div class="sub">能力一路在指數成長，你只是現在才有感</div>
   </div>
   <div class="chartwrap">
-  <svg width="1056" height="176" viewBox="0 0 1056 176">
-    <line x1="0" y1="74" x2="1056" y2="74" stroke="#5a6275" stroke-width="2" stroke-dasharray="9 8"/>
-    <text x="0" y="64" fill="#8b93a5" font-size="19">你開始覺得「有用」的門檻</text>
-    <path d="M6,160 C 430,157 640,145 790,114 C 878,95 926,64 1002,12"
+  <div class="axis">縱軸：它能自己做完多久的工作</div>
+  <svg width="1056" height="196" viewBox="0 0 1056 196">
+    <!-- 門檻線 -->
+    <line x1="0" y1="112" x2="1056" y2="112" stroke="#5a6275" stroke-width="2" stroke-dasharray="9 8"/>
+    <text x="0" y="104" fill="#8b93a5" font-size="19">你開始覺得「它真的能幫上忙」的門檻</text>
+
+    <!-- 指數曲線 -->
+    <path d="M6,190 C 430,188 640,178 790,150 C 874,134 922,108 996,62"
           fill="none" stroke="#e8a13c" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="866" cy="74" r="11" fill="#14161f" stroke="#e8a13c" stroke-width="5"/>
-    <g font-size="18">
-      <circle cx="150" cy="159" r="5" fill="#5a6275"/><text x="122" y="148" fill="#7f8695">2 秒</text>
-      <circle cx="700" cy="132" r="5" fill="#5a6275"/><text x="662" y="121" fill="#7f8695">50 分鐘</text>
-      <circle cx="974" cy="32" r="5" fill="#e8a13c"/><text x="922" y="21" fill="#e8a13c">2 小時</text>
-    </g>
+    <circle cx="880" cy="112" r="11" fill="#14161f" stroke="#e8a13c" stroke-width="5"/>
+
+    <!-- 刻度：模型名在上、時間在下，都在曲線上方留白處 -->
+    <circle cx="150" cy="190" r="5" fill="#5a6275"/>
+    <text x="150" y="152" fill="#6b7080" font-size="17" text-anchor="middle">GPT-2</text>
+    <text x="150" y="176" fill="#a8aebd" font-size="22" text-anchor="middle">2 秒</text>
+
+    <circle cx="700" cy="167" r="5" fill="#5a6275"/>
+    <text x="700" y="128" fill="#6b7080" font-size="17" text-anchor="middle">Claude 3.7 Sonnet</text>
+    <text x="700" y="152" fill="#a8aebd" font-size="22" text-anchor="middle">50 分鐘</text>
+
+    <circle cx="962" cy="76" r="5" fill="#e8a13c"/>
+    <text x="938" y="52" fill="#a08050" font-size="17" text-anchor="end">o3</text>
+    <text x="938" y="78" fill="#e8a13c" font-size="23" text-anchor="end">2 小時</text>
   </svg>
   </div>
   <div class="foot">曲線沒變 · 是你的門檻被跨過了</div>
