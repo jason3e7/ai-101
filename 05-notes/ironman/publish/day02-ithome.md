@@ -117,3 +117,7 @@ GPT-3 在 2020 年就存在了，但很難用 - 你得用很技巧的方式去�
 - [The Model Context Protocol's impact on 2025 — Thoughtworks](https://www.thoughtworks.com/en-us/insights/blog/generative-ai/model-context-protocol-mcp-impact-2025)
 - [10 Things Developers Want from their Agentic IDEs in 2025 — RedMonk](https://redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
 - [Introducing SWE-bench Verified — OpenAI](https://openai.com/index/introducing-swe-bench-verified/)
+
+---
+
+<!-- 已發布：https://ithelp.ithome.com.tw/articles/10411919 -->
