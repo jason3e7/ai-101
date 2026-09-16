@@ -87,20 +87,6 @@ title : [Day 01] 它只是在猜下一個字：LLM 的原理，決定了後面 2
 - [On the Dangers of Stochastic Parrots — Bender, Gebru, McMillan-Major & Shmitchell, 2021](https://dl.acm.org/doi/10.1145/3442188.3445922)
 - [Are Emergent Abilities of Large Language Models a Mirage? — Schaeffer, Miranda & Koyejo, 2023](https://arxiv.org/abs/2304.15004)
 
-- [
-                留言            ](#reply)
-- [
-		追蹤
-	](https://ithelp.ithome.com.tw/users/login)
-
-> [IT邦幫忙](https://www.facebook.com/ithelpfans/)
-
-- [刊登廣告](https://www.ithome.com.tw/aboutus/)
-- [授權服務](https://www.ithome.com.tw/aboutus/)
-- [服務信箱](mailto:ithelp@mail.ithome.com.tw)
-- [隱私權聲明與會員使用條款](https://www.ithome.com.tw/terms)
-- [iT邦幫忙使用說明](https://ithelp.ithome.com.tw/guide)
-
 ---
 
 <!-- 已發布：https://ithelp.ithome.com.tw/articles/10411345 -->
