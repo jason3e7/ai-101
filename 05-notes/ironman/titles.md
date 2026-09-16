@@ -39,7 +39,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 完賽日 | 2026-10-14 |
 
 > [!NOTE]
-> 簡介刻意不寫「可重現的測試」——LLM 是機率機器，同一題跑兩次結果就可能不同，宣稱可重現等於打自己臉。改成「可以自己動手試一次」。
+> 簡介刻意不寫「可重現的測試」 - LLM 是機率機器，同一題跑兩次結果就可能不同，宣稱可重現等於打自己臉。改成「可以自己動手試一次」。
 
 ---
 
@@ -56,7 +56,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 03 | 它做不到什麼：三種極限，和最危險的那一種 | 新研究（自我修正、反轉詛咒、context rot、鋸齒狀前沿） | ✅ [已完成](./drafts/day03-what-it-cannot-do.md) |
 | 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | ✅ [已完成](./drafts/day04-capability-landscape.md) |
 | 05 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md) + 新研究 | ✅ [已完成](./drafts/day05-prompt-engineering.md) |
-| 06 | 先看終點：Loop Engineering——你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day06-loop-engineering.md) |
+| 06 | 先看終點：Loop Engineering - 你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day06-loop-engineering.md) |
 | 07 | 四種能力怎麼用：摘要、解釋、發想、重構的實戰配方 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
 
 ### 轉·提問：問得準（Day 8–11）
@@ -107,7 +107,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 29 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 改寫 |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
-**盤點：已完成 2 篇、改寫 22 篇、補實測 4 篇、新寫 2 篇。** 帶第一手實測的有 Day 16、20、27，加上 12–14 補完後共 6 篇——其中三篇落在前二十天，正好是讀者決定要不要追下去的區間。
+**盤點：已完成 2 篇、改寫 22 篇、補實測 4 篇、新寫 2 篇。** 帶第一手實測的有 Day 16、20、27，加上 12–14 補完後共 6 篇 - 其中三篇落在前二十天，正好是讀者決定要不要追下去的區間。
 
 ---
 

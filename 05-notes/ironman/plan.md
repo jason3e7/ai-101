@@ -9,7 +9,7 @@ created: 2026-08-31
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> jason3e7 想用這個知識庫去參加 2026 iThome 鐵人賽，題目《AI 心法》，結構是「**承先啟後**」——前面基礎與概念，中間心法，最後未來與應對。這篇記錄查證後的賽制事實、其他選手的實際狀況、以及三十篇的排法。
+> jason3e7 想用這個知識庫去參加 2026 iThome 鐵人賽，題目《AI 心法》，結構是「**承先啟後**」 - 前面基礎與概念，中間心法，最後未來與應對。這篇記錄查證後的賽制事實、其他選手的實際狀況、以及三十篇的排法。
 
 > **TL;DR (EN):** Sign up now, pick 2026-09-15 as the start date, and bank 12–15 drafts during the two weeks before. The "承先啟後" arc is sound — structure is an explicit judging criterion — but the history-first opening needs to be broken up, every mindset piece needs a real experiment attached, and the closing section should describe what to do now rather than predict the future. Recommended group: Claude AI (27 entrants) over AI Engineering (59, and someone is already writing the same four-layer framework).
 
@@ -33,7 +33,7 @@ created: 2026-08-31
 **評審四個要點**：主題切題 / **結構（三十篇組織良好、能引導讀者理解）** / 內容專業深入 / 表達清楚。
 
 > [!IMPORTANT]
-> 「結構」是明文評分項目。這代表 jason3e7 想做的**承先啟後本身就是加分項**——不是自我要求而已，是直接對到評分表。
+> 「結構」是明文評分項目。這代表 jason3e7 想做的**承先啟後本身就是加分項** - 不是自我要求而已，是直接對到評分表。
 
 **開賽日建議 09/15**：晚開賽不影響評審（評審不看開賽早晚），但多出來的每一天都能拿來存稿。目標是開賽前手上有 12–15 篇成品。
 
@@ -52,7 +52,7 @@ created: 2026-08-31
 | Build on Google AI | 24 | IT Operation / AI Security | 各 14 |
 | Vibe Coding / AI 自動化 | 各 22 | 佛心分享各組 | 1–12 |
 
-**最大的發現：幾乎全部是實作型系列。** 標題清一色「30 天打造 X」「從零到一做 Y」。純方法論、講心法的系列是個位數——**差異化是真的存在的**。
+**最大的發現：幾乎全部是實作型系列。** 標題清一色「30 天打造 X」「從零到一做 Y」。純方法論、講心法的系列是個位數 - **差異化是真的存在的**。
 
 但有兩個系列跟這個 repo 直接撞題，要正面處理：
 
@@ -89,13 +89,13 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 純觀念文對上「我做了一個會賺錢的 SaaS」，在「內容專業性、豐富性、深入性」這項會吃虧。
 
-> 改法：**心法是骨，實測是肉。** 最強的武器是 [HTB 目標綁架三案例](../htb/htb-abducted-goal-case.md)——Claude Code 在真實靶機上目標被綁架的完整記錄，全場沒有第二個人有，而且是 repo 裡最長的三篇（4573／2911／2638 中文字）。
+> 改法：**心法是骨，實測是肉。** 最強的武器是 [HTB 目標綁架三案例](../htb/htb-abducted-goal-case.md) - Claude Code 在真實靶機上目標被綁架的完整記錄，全場沒有第二個人有，而且是 repo 裡最長的三篇（4573／2911／2638 中文字）。
 
 ### 三、結尾不要預測未來
 
 預測會變成空話，也無法驗證。
 
-> 改法：寫**「已經在發生、現在該怎麼接」**——[AI 內容標記與辨識](../../01-fundamentals/ai-content-watermark.md)、隱私遮蔽、agent 已經會自己打靶、ClickFix 被濫用、[知識中產的處境](../ai-and-knowledge-barriers.md)。最後把 [Loop Engineering](../../02-advanced/loop-engineering.md) 那節「是真突破，還是新瓶裝舊酒」併進 Day 30 收尾——誠實比預言值錢。
+> 改法：寫**「已經在發生、現在該怎麼接」** - [AI 內容標記與辨識](../../01-fundamentals/ai-content-watermark.md)、隱私遮蔽、agent 已經會自己打靶、ClickFix 被濫用、[知識中產的處境](../ai-and-knowledge-barriers.md)。最後把 [Loop Engineering](../../02-advanced/loop-engineering.md) 那節「是真突破，還是新瓶裝舊酒」併進 Day 30 收尾 - 誠實比預言值錢。
 
 ---
 
@@ -136,7 +136,7 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 **其他要注意的：**
 
 - **標題已定案。** 參賽題目《AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展自己的想像》，組別 **Claude AI**，開賽日 **2026-09-15**。完整題目與題目簡介見 [三十篇標題](./titles.md) 的「報名定案」。
-- **repo 沒有 LICENSE。** 參賽等於授予博碩文化 5 年優先出版權，內容同時公開在 GitHub 上——不衝突，但要先知道。
+- **repo 沒有 LICENSE。** 參賽等於授予博碩文化 5 年優先出版權，內容同時公開在 GitHub 上 - 不衝突，但要先知道。
 - **存稿節奏。** 08/31–09/14 每天寫 1 篇，開賽時手上 12–15 篇；開賽後維持每天寫 1 篇，庫存始終不見底。
 - **每篇的固定骨架**：一句話結論 → 來歷（兩三句） → 心法 → **我自己的實測** → 你可以怎麼做。有實測的篇章優先排在讀者還在觀望的前十天。
 

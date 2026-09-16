@@ -10,7 +10,7 @@ status: draft
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
-> 大家講「AI 會什麼」，習慣列一長串：摘要、翻譯、分類、發想……。清單看不出彼此的關係，也看不出你漏用了哪些。這篇用兩條有學術依據的軸，把 AI 的能力攤成一張二維地圖——**看完你會知道自己一直在用哪兩格，又有哪幾格從來沒碰過。**
+> 大家講「AI 會什麼」，習慣列一長串：摘要、翻譯、分類、發想……。清單看不出彼此的關係，也看不出你漏用了哪些。這篇用兩條有學術依據的軸，把 AI 的能力攤成一張二維地圖 - **看完你會知道自己一直在用哪兩格，又有哪幾格從來沒碰過。**
 
 > **TL;DR (EN):** Two independent axes place any AI task on one map. Horizontal: does information shrink (convergent), keep its size (transformation), or grow (divergent)? — Guilford, 1956. Vertical: how much thinking does it take? — Bloom's taxonomy. The horizontal axis doubles as a faithfulness gradient, which tells you when hallucination is a bug and when it is the entire point. Most people live in two corners and never touch the calmest column in the middle.
 
@@ -33,7 +33,7 @@ status: draft
 
 ## 橫軸：資訊往哪個方向流 — Axis 1: Information Flow
 
-這條軸的兩端，是心理學家 J.P. Guilford 在 **1956 年**提出的兩種思考模式——比 LLM 早了六十幾年：
+這條軸的兩端，是心理學家 J.P. Guilford 在 **1956 年**提出的兩種思考模式 - 比 LLM 早了六十幾年：
 
 | | 在做什麼 | 本質 |
 |---|---|---|
@@ -42,7 +42,7 @@ status: draft
 
 Guilford 自己的話很精簡：發散是製造變化（variation），收斂是做評估（evaluation）。
 
-中間還有一段他沒特別命名、但實務上最重要的區帶：**轉換**（Transformation）。OpenAI 官方的 prompt 指南把摘要、改寫、翻譯、抽取歸成同一大類，理由是它們有一個共同性質——**必須忠於輸入內容**（must remain faithful to the input content）。
+中間還有一段他沒特別命名、但實務上最重要的區帶：**轉換**（Transformation）。OpenAI 官方的 prompt 指南把摘要、改寫、翻譯、抽取歸成同一大類，理由是它們有一個共同性質 - **必須忠於輸入內容**（must remain faithful to the input content）。
 
 ### 這條軸真正的用處：一條忠實度梯度
 
@@ -68,7 +68,7 @@ Guilford 自己的話很精簡：發散是製造變化（variation），收斂�
 | 「整理成三點重點」 | 收斂 | 每一點都回原文對一次，**多出來的就是錯** |
 | 「這場會議還有什麼沒被討論到的風險？」 | 發散 | 不必對原文，要挑的是**有沒有用** |
 
-同一份資料、同一個模型，驗法卻相反——因為它們不在同一區。
+同一份資料、同一個模型，驗法卻相反 - 因為它們不在同一區。
 
 ---
 
@@ -111,14 +111,14 @@ Guilford 自己的話很精簡：發散是製造變化（variation），收斂�
 
 現在回答標題那個問題。多數人重度使用的其實只有**兩個角落**：左上的**摘要**，和右下的**發想**。
 
-而中間那一整欄「轉換」——翻譯、改寫、換格式、**把難懂的東西解釋成簡單的**——是全圖**最穩、幻覺最少**的一區，因為它的定義本身就是「不准加東西」。它偏偏也是最常被忽略的一區。
+而中間那一整欄「轉換」 - 翻譯、改寫、換格式、**把難懂的東西解釋成簡單的** - 是全圖**最穩、幻覺最少**的一區，因為它的定義本身就是「不准加東西」。它偏偏也是最常被忽略的一區。
 
 > [!TIP]
 > （jason3e7 的狀況）我一開始就只用兩件事：把一大堆資料整理出重點、還有發想。剛好就是左上跟右下那兩個角落。中間整欄幾乎沒碰過。
 
 **看著這張圖問自己：哪幾格我幾乎沒用過？** 那通常不是因為 AI 做不好，而是你沒想到可以這樣用。
 
-接下來兩天：明天先盤點 prompt engineering 到底哪些技巧真的有效（Day 05）；之後把圖上最常用的四格——摘要、解釋、發想、重構——各給一套配方（Day 07）。
+接下來兩天：明天先盤點 prompt engineering 到底哪些技巧真的有效（Day 05）；之後把圖上最常用的四格 - 摘要、解釋、發想、重構 - 各給一套配方（Day 07）。
 
 ---
 

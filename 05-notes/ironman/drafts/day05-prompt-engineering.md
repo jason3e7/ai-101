@@ -10,7 +10,7 @@ status: draft
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
-> 這題大概是 AI 主題裡被寫最多次的。所以這篇**不列「10 個必學技巧」**——那種清單網路上有一萬份，而且彼此矛盾。這篇只做一件事：**把常見技巧拿去對證據**，然後用 [Day 01](./day01-llm-is-statistics.md) 的原理解釋為什麼。
+> 這題大概是 AI 主題裡被寫最多次的。所以這篇**不列「10 個必學技巧」** - 那種清單網路上有一萬份，而且彼此矛盾。這篇只做一件事：**把常見技巧拿去對證據**，然後用 [Day 01](./day01-llm-is-statistics.md) 的原理解釋為什麼。
 
 > **TL;DR (EN):** Four elements cover most of it: instruction, context, input data, output format. Beyond that, the evidence is unkind to popular tricks. Personas don't improve objective tasks (162 roles, 4 model families, 2,410 questions). Tipping and threats do nothing (Wharton, 5 models). Chain-of-thought is now near-zero gain on reasoning models at 20–80% more time. What survives — examples, explicit formats, structural separation — all works for the same reason: it narrows the probability distribution. Nothing works by making the model "try harder", because there is no such setting.
 
@@ -27,7 +27,7 @@ status: draft
 | **輸入資料**（input data） | 要處理的東西 |
 | **輸出格式**（output format） | 希望長什麼樣回來 |
 
-**這四格填滿，你就已經贏過八成的人。** 剩下的全是邊際優化——而且有些邊際優化，根本不存在。
+**這四格填滿，你就已經贏過八成的人。** 剩下的全是邊際優化 - 而且有些邊際優化，根本不存在。
 
 想看全貌可以讀《The Prompt Report》（Schulhoff et al., 2024）：用 PRISMA 流程篩了 **1,565 篇論文**，整理出 **58 種**文字提示技巧。
 
@@ -38,11 +38,11 @@ status: draft
 
 ## 有證據撐得住的 — What Holds Up
 
-**一、給範例（few-shot）——最穩的一招。**
+**一、給範例（few-shot） - 最穩的一招。**
 當你要的格式很難用文字描述時，直接給一到三個範例，比寫五百字說明有效得多。原因很直接：**它做的事情就是接續模式**，給它模式就是最短的溝通路徑。
 
 **二、明確的輸出格式與長度。**
-「用 JSON」「三點，每點不超過 30 字」——可驗證的約束，它照做的機率高很多。反過來，「詳細一點」這種模糊詞幾乎沒有效果（Day 08 展開）。
+「用 JSON」「三點，每點不超過 30 字」 - 可驗證的約束，它照做的機率高很多。反過來，「詳細一點」這種模糊詞幾乎沒有效果（Day 08 展開）。
 
 **三、把「指令」和「資料」分開。**
 用標籤或明確標題隔開，避免資料裡的文字被當成指令讀。這同時是防 prompt injection 的第一層：
@@ -65,12 +65,12 @@ status: draft
 
 ### 角色扮演：在客觀任務上沒有用
 
-「你是一個有 10 年經驗的資深工程師」——大概是最多人用、也最少人查證的一招。
+「你是一個有 10 年經驗的資深工程師」 - 大概是最多人用、也最少人查證的一招。
 
 EMNLP 2024 的研究（Zheng et al.）做得很徹底：整理 **162 種角色**（涵蓋 6 種人際關係、8 個專業領域），在 **4 個模型家族**上測 **2,410 道事實題**。結論是：**加角色並沒有讓表現變好。**
 
 > [!IMPORTANT]
-> 注意範圍——這測的是**客觀任務**（有標準答案的）。在主觀任務上，角色設定仍然有用，因為你要的本來就是「換一種說法」。用 [Day 04](./day04-capability-landscape.md) 那張圖看：**角色設定在「轉換」那一欄有用，在「收斂」那一欄沒用。**
+> 注意範圍 - 這測的是**客觀任務**（有標準答案的）。在主觀任務上，角色設定仍然有用，因為你要的本來就是「換一種說法」。用 [Day 04](./day04-capability-landscape.md) 那張圖看：**角色設定在「轉換」那一欄有用，在「收斂」那一欄沒用。**
 
 （誠實補一句：我自己四月寫的筆記裡，好 prompt 的結構第一行就是「角色設定」。這條要修。）
 
@@ -80,7 +80,7 @@ EMNLP 2024 的研究（Zheng et al.）做得很徹底：整理 **162 種角色**
 
 Wharton 的 Prompting Science Report 3（2025，標題直白得可愛：*I'll pay you or I'll kill you — but will you care?*）在 **5 個模型**上用博士級題目測了給錢與威脅，**沒有可觀察到的效果**。
 
-那 2023 年那篇「情緒提示提升 10.9%」的研究呢？問題出在算法——那個數字是**每題挑表現最好的那個情緒句**算出來的。改成把所有情緒句平均，提升掉到 BIG-Bench 上 4.42%、整體 2.58%，而且方向並不穩定。
+那 2023 年那篇「情緒提示提升 10.9%」的研究呢？問題出在算法 - 那個數字是**每題挑表現最好的那個情緒句**算出來的。改成把所有情緒句平均，提升掉到 BIG-Bench 上 4.42%、整體 2.58%，而且方向並不穩定。
 
 > [!TIP]
 > 一個好用的判準：**任何「咒語型」技巧，先問它是不是挑最好的那一次算出來的。** 這是 Day 19 驗證方法的預告。
@@ -117,11 +117,11 @@ Wharton 的 Prompting Science Report 3（2025，標題直白得可愛：*I'll pa
 
 > **有效的技巧，都是在幫它把機率分布縮到你要的那一區；沒效的技巧，是在對一台機率機器講人話。**
 
-它不會因為你說「這很重要」就更努力——**它沒有「努力」這個檔位。**
+它不會因為你說「這很重要」就更努力 - **它沒有「努力」這個檔位。**
 
-最後留一個更大的：**prompt 只是它看到的東西的一小部分。** 你以為你在調的是那句話，但真正決定輸出的，是它這一輪看到的**全部內容**——系統提示、前幾輪對話、你貼的檔案、工具回傳的結果。
+最後留一個更大的：**prompt 只是它看到的東西的一小部分。** 你以為你在調的是那句話，但真正決定輸出的，是它這一輪看到的**全部內容** - 系統提示、前幾輪對話、你貼的檔案、工具回傳的結果。
 
-所以這個系列不會停在 prompt engineering。明天直接跳到這條路的終點——Loop Engineering，看看「不用再一句一句下指令」長什麼樣；Day 12 再回頭補 Context Engineering：**餵什麼，比怎麼問更重要。**
+所以這個系列不會停在 prompt engineering。明天直接跳到這條路的終點 - Loop Engineering，看看「不用再一句一句下指令」長什麼樣；Day 12 再回頭補 Context Engineering：**餵什麼，比怎麼問更重要。**
 
 ---
 

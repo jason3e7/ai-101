@@ -27,4 +27,4 @@ google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars \
 | 字體 | Noto Sans CJK TC／Noto Sans Mono CJK TC |
 | 固定元素 | 左上角「AI 心法 ｜ Day NN」、右下角一句 tagline |
 
-**每篇只換內容，不換配色與版型**——三十天下來讀者會認得這個系列。
+**每篇只換內容，不換配色與版型** - 三十天下來讀者會認得這個系列。
