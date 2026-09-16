@@ -1,11 +1,11 @@
 ---
-title: AI 101 - 鐵人賽 Day 03：它做不到的有三種
+title: AI 101 - 鐵人賽 Day 03：它做不到的事分三類
 tags: [ai, 鐵人賽, ironman, llm, 極限, 限制, jagged-frontier, 草稿]
 created: 2026-09-03
 status: draft
 ---
 
-# Day 03｜它做不到的有三種，最危險的那種你看不見
+# Day 03｜它做不到的事分三類，最危險的那類你看不見
 
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 

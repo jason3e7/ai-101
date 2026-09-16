@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:70px;font-weight:900;line-height:1.18;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:10px;margin-top:10px}
+.axis{height:30px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 03</span></div>
+  <div>
+    <h1>它做不到的事分三類<br>最危險的那類<em>你看不見</em></h1>
+    <div class="sub">結構性、暫時、鋸齒狀 - 只有第三類你事先看不出來</div>
+  </div>
+  <div class="chartwrap">
+  <div class="axis"></div>
+  <svg width="1056" height="208" viewBox="0 0 1056 208">
+    <text x="0" y="22" fill="#8b93a5" font-size="19">它實際的能力邊界</text>
+
+    <polyline points="0,62 100,40 200,76 300,44 400,70 480,46 540,44 598,102 650,150 700,168 764,104 840,128 920,52 1000,82 1056,58"
+      fill="none" stroke="#e8a13c" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+
+    <line x1="552" y1="112" x2="688" y2="112" stroke="#5a6275" stroke-width="2" stroke-dasharray="7 7"/>
+    <circle cx="540" cy="112" r="12" fill="#14161f" stroke="#7fb08a" stroke-width="5"/>
+    <circle cx="700" cy="112" r="12" fill="#14161f" stroke="#d1634a" stroke-width="5"/>
+
+    <text x="540" y="154" fill="#7fb08a" font-size="21" text-anchor="middle">做得漂亮</text>
+    <text x="700" y="84" fill="#d1634a" font-size="21" text-anchor="middle">做得離譜</text>
+
+    <text x="620" y="204" fill="#8b93a5" font-size="19" text-anchor="middle">這兩題，在你看來一樣難</text>
+  </svg>
+  </div>
+  <div class="foot">橫軸：你感覺到的任務難度　|　資料：Dell'Acqua et al.（HBS × BCG）</div>
+</div></body></html>
