@@ -47,7 +47,7 @@ ICLR 2024 的《Large Language Models Cannot Self-Correct Reasoning Yet》測了
 
 ### 學過的東西，反過來問就不會
 
-《The Reversal Curse》（Berglund et al., NeurIPS 2023）發現：模型學過「A 是 B」，不會自動學會「B 是 A」。研究者拿 1000 位名人測 GPT-4 - 問「湯姆克魯斯的媽媽是誰」答得出來；反過來問「Mary Lee Pfeiffer 的兒子是誰」就答不出來，而且正確答案的機率並不比隨便一個名字高。
+《The Reversal Curse》（Berglund et al., NeurIPS 2023）發現：模型學過「A 是 B」，不會自動學會「B 是 A」。研究者拿 1000 位名人測 GPT-4 - 問「湯姆克魯斯的媽媽是誰」答得出來；反過來問「Mary Lee Pfeiffer 的兒子是誰」就答不出來。而且不是「一時想不起來」那種答不出來 - 它給「湯姆克魯斯」這個答案的機率，跟隨便講一個名字一樣低。
 
 **自己試：** 挑一組不太有名的事實（越冷門越明顯）：
 
