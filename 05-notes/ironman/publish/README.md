@@ -18,6 +18,9 @@ iThome 編輯器採 Markdown 並明示「請勿使用 HTML Code」，而且**不
 | `## Sources` | 看情況保留 | Day 01 實際保留了 `Sources` |
 | `（jason3e7 的觀點／直覺）` | **原樣保留** | 冠名規則在 iThome 一樣適用。作者欄雖然已經是本人，但冠名能讓讀者一眼分辨「這句是我的主觀判斷」還是「這是有依據的事實」——這個區別比省幾個字重要 |
 
+> [!WARNING]
+> 這個資料夾是**線上快照**，必須跟 iThome 上看到的一字不差。標了 `[fixButNotPublish]` 的修正**不要進這裡**，只改 `drafts/`，並登記到 [fix-log.md](../fix-log.md)。
+
 ## 文章標題格式
 
 ```
