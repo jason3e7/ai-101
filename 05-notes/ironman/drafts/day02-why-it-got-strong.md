@@ -12,7 +12,7 @@ status: draft
 > [!NOTE]
 > LLM 又不是昨天才有的東西，為什麼「感覺上」是最近才突然爆發？這篇把三個引擎和一條指數曲線攤開來看 - 你會發現，每一次「突然」，拆開來都不突然。
 
-> **TL;DR (EN):** Capability didn't spike — it has been growing exponentially the whole time. METR measured it: the length of task an agent can finish (at 50% success) doubled every 7 months from 2019, and every 4 months during 2024–2025. Two seconds for GPT-2, fifty minutes for Claude 3.7 Sonnet, nearly two hours for o3. An exponential looks like nothing is happening until it crosses your threshold. Late 2025 is simply when that curve met a mature tool ecosystem, and delegating real work became possible for the first time.
+> **TL;DR (EN):** Capability didn't spike — it has been growing exponentially the whole time. METR measured it: the length of task an agent can finish (at 50% success) doubled every 6.2 months on average, and every 4.2 months since 2023. Three seconds for GPT-2, four minutes for GPT-4, one hour for Claude 3.7 Sonnet, about five hours for Claude Opus 4.5. An exponential looks like nothing is happening until it crosses your threshold. Late 2025 is simply when that curve met a mature tool ecosystem, and delegating real work became possible for the first time.
 
 ---
 
@@ -22,15 +22,18 @@ status: draft
 
 答案有點反直覺：**能力沒有突然爆發，它一路都在指數成長。爆發的是「它跨過了對你有用的那條線」。**
 
-研究機構 METR 把這件事量化得很漂亮。他們拿 2019 到 2026 年最強的 agent，測了約 230 個任務（多數是寫程式），問一個很實際的問題：**這個 agent 能穩定完成多長的任務？** 標準訂在成功率 50%。
+研究機構 METR 把這件事量化得很漂亮。他們拿 2019 到 2026 年最強的 agent，測了一批任務（多數是寫程式與機器學習研究工程），問一個很實際的問題：**這個 agent 能穩定完成多長的任務？** 標準訂在成功率 50%。
 
-| 模型世代 | 能撐住的任務長度 |
+| 模型（發布年） | 它能自己做完多久的工作 |
 |---|---|
-| GPT-2 | 約 2 秒 |
-| Claude 3.7 Sonnet | 約 50 分鐘 |
-| o3 | 將近 2 小時 |
+| GPT-2（2019） | 3 秒 |
+| GPT-4（2023） | 4 分鐘 |
+| Claude 3.7 Sonnet（2025-02） | 1 小時 |
+| Claude Opus 4.5（2025-11） | 約 5 小時 |
 
-這條線在 2019–2025 年間**每 7 個月翻一倍**；而 2024–2025 這一段更快，**每 4 個月就翻一倍**。
+這條線全期平均**每 6.2 個月翻一倍**；而 2023 年之後更快，**每 4.2 個月就翻一倍**。
+
+更新的資料還顯示一件事：2026 年的模型已經衝到 12 小時以上，但**信賴區間從 5 小時橫跨到 60 小時**——METR 自己也講明，超過 16 小時就超出這套題庫能測的範圍了。**量尺已經跟不上被量的東西。**
 
 指數曲線的特性就是這樣 - **在跨過你的門檻之前，看起來什麼都沒發生：**
 
@@ -96,7 +99,7 @@ GPT-3 在 2020 年就存在了，但很難用 - 你得用很技巧的方式去�
 三條可以直接拿去用的心法：
 
 **一、「現在不行」的保存期限很短。**
-如果曲線 4 到 7 個月翻一倍，那你半年前試過、覺得「AI 做不到」的事，現在很可能做得到。**把失敗過的嘗試記下來，每季重試一次**，比每天追新聞有用得多。
+如果曲線 4 到 6 個月翻一倍，那你半年前試過、覺得「AI 做不到」的事，現在很可能做得到。**把失敗過的嘗試記下來，每季重試一次**，比每天追新聞有用得多。
 
 **二、你能施力的地方不是模型。**
 爆發來自「模型能力 × 工具接得好不好 × 任務切得夠不夠準」這個乘積。模型你改不了，但另外兩項完全在你手上 - 那正是 Day 06 要先看的 Loop，以及 Day 12–13 要回頭補的 Context 與 Harness。
@@ -114,6 +117,7 @@ METR 的門檻訂在 50%。換句話說，**在能力邊界上，它有一半機
 
 - [Measuring AI Ability to Complete Long Software Tasks — METR, 2025](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
 - [A new Moore's Law for AI agents — AI Digest](https://theaidigest.org/time-horizons)
+- [Task-Completion Time Horizons of Frontier AI Models（原始資料）— METR](https://metr.org/time-horizons/)
 - [Attention Is All You Need — Vaswani et al., 2017](https://arxiv.org/abs/1706.03762)
 - [Scaling Laws for Neural Language Models — Kaplan et al., 2020](https://arxiv.org/abs/2001.08361)
 - [Training Compute-Optimal Large Language Models（Chinchilla）— Hoffmann et al., 2022](https://arxiv.org/abs/2203.15556)
