@@ -170,5 +170,6 @@ Sonnet 5 在 arXiv 那題主動說「我不確定」，在 Pfeiffer 那題卻連
 ## 相關筆記 — Related
 
 - [LLM 極限實測（一）](./llm-limitations-field-test.md) —— 工具沒關乾淨的那一輪
+- [LLM 極限實測（三）](./llm-limitations-field-test-3.md) —— 同樣零工具，換 Sonnet 5 與 Haiku 4.5 再比一次
 - [LLM 的極限](../02-advanced/llm-limitations.md) —— 理論來源
 - [先驗證，再用它突破自己](./ai-verify-then-expand.md) —— 獨立驗算
