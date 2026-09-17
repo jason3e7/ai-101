@@ -1,11 +1,11 @@
 ---
-title: AI 101 - 鐵人賽 Day 04：你只用了兩種能力，最穩的那一區沒碰過
+title: AI 101 - 鐵人賽 Day 04：你其實只用了 AI 的兩種能力
 tags: [ai, 鐵人賽, ironman, 能力地圖, convergent, divergent, bloom, 草稿]
 created: 2026-09-03
 status: draft
 ---
 
-# Day 04｜你其實只用了兩種能力，最穩的那一區從來沒碰過
+# Day 04｜你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼
 
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
