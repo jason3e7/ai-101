@@ -191,3 +191,7 @@ Day 01 說它是一台機率機器，Day 02 說這台機器跨過了實用門檻
 - [The Illusion of Thinking — Apple Machine Learning Research, 2025](https://machinelearning.apple.com/research/illusion-of-thinking)
 - [The Illusion of the Illusion of Thinking（回應）— 2025](https://arxiv.org/abs/2507.01231)
 - [Navigating the Jagged Technological Frontier — Dell'Acqua et al., HBS Working Paper 24-013](https://www.hbs.edu/faculty/Pages/item.aspx?num=64700)
+
+---
+
+<!-- 已發布：https://ithelp.ithome.com.tw/articles/10412787 -->
