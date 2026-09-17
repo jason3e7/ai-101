@@ -170,6 +170,7 @@ python3 05-notes/ironman/hanoi_check.py 10 < 05-notes/assets/llm-limits-test/han
 
 ## 相關筆記 — Related
 
+- [LLM 極限實測（二）](./llm-limitations-field-test-2.md) —— 把工具**真的**關掉之後再測一次，結論有變
 - [LLM 的極限](../02-advanced/llm-limitations.md) —— 這次實測的理論來源
 - [先驗證，再用它突破自己](./ai-verify-then-expand.md) —— 獨立驗算為什麼最強
 - [AI 能力全景圖](../02-advanced/ai-capability-landscape.md) —— 哪些任務該擔心幻覺
