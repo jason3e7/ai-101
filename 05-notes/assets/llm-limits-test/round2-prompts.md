@@ -1,10 +1,31 @@
 # 第二輪測試題組 — 關掉工具的純模型測試
 
-執行方式：
+## 怎麼真的把工具關掉
+
+> [!WARNING]
+> `--disallowedTools WebSearch WebFetch Bash` **不夠**。它只處理 built-in 工具，而且是「拒絕」不是「移除」；如果 session 載入了瀏覽器類 MCP（`mcp__playwright__*`、`mcp__claude-in-chrome__*`），模型照樣上得了網，而且**介面不會顯示成 WebSearch**。
 
 ```bash
-claude --disallowedTools WebSearch WebFetch Bash
+echo '{"mcpServers":{}}' > /tmp/empty-mcp.json
+
+claude --tools "" --strict-mcp-config --mcp-config /tmp/empty-mcp.json
 ```
+
+| 旗標 | 擋掉什麼 |
+|---|---|
+| `--tools ""` | 清空所有 built-in 工具 |
+| `--strict-mcp-config` | 忽略所有其他來源的 MCP 設定 |
+| `--mcp-config <空檔>` | 給它一份空的 MCP 清單 |
+
+**驗證真的關掉了：**
+
+```bash
+claude -p --tools "" --strict-mcp-config --mcp-config /tmp/empty-mcp.json \
+  --output-format stream-json --verbose "hi" 2>&1 \
+  | python3 -c "import sys,json;[print('可用工具數:',len(d.get('tools',[]))) for l in sys.stdin if (d:=json.loads(l)) and d.get('type')=='system' and 'tools' in d]"
+```
+
+看到 `可用工具數: 0` 才算成功。
 
 每一題**開一個新 session**（反轉詛咒的正反向尤其重要，否則前文會洩答案）。
 
