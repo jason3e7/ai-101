@@ -67,11 +67,15 @@ Haiku  9904578206305937
 
 | N | 最少步數 | Sonnet 5 | Haiku 4.5 |
 |---|---|---|---|
-| 7 | 127 | ✅ 127 步 | ✅ 127 步 |
-| 9 | 511 | ✅ 511 步 | ⚠️ 幻覺工具後輸出 511 步 |
+| 7 | 127 | 步數正確（127） | 步數正確（127） |
+| 9 | 511 | 步數正確（511） | 步數正確（511），但**先幻覺了一段工具呼叫** |
 | 10 | 1023 | ❌ **沒有輸出** | — |
 
-N=9 還撐得住：
+> [!WARNING]
+> **這一輪只驗證了「步數」，沒有驗證「每一步合不合法」。** 第一輪的河內塔有留下完整文字檔，可以餵給 [`hanoi_check.py`](./ironman/hanoi_check.py) 逐步檢查；這一輪只有截圖，511 步沒辦法可靠地轉錄。
+> 所以上表的「步數正確」**不等於「解對了」** - 步數對但中間有違規步驟，是完全可能的。要補的話，得把原始輸出重新導成檔案再跑一次驗證。
+
+N=9 的步數是對的：
 
 ![Sonnet N=9](./assets/llm-limits-test-r3/hanoi-n9-sonnet.jpg)
 
@@ -148,7 +152,7 @@ Haiku 在難題上誠實拒絕、在簡單題上自信答錯。所以「它有�
 | `a0-mult6-haiku-run1/2.jpg` | Haiku 六位數乘法，兩次都對 |
 | `a1-mult10-sonnet.jpg` / `a1-mult10-haiku-declined.jpg` | 十位數乘法：Sonnet 過、Haiku 拒絕 |
 | `a3-power-sonnet.jpg` / `a3-power-haiku-wrong.jpg` | `17^13`：Sonnet 過、**Haiku 錯** |
-| `hanoi-n7-sonnet.jpg` / `hanoi-n9-sonnet.jpg` | Sonnet 撐住的兩次 |
+| `hanoi-n7-sonnet.jpg` / `hanoi-n9-sonnet.jpg` | Sonnet 步數正確的兩次（步驟未驗證） |
 | `hanoi-n10-sonnet-no-output.jpg` | **邊界：31k thinking tokens，零輸出** |
 | `hanoi-n7-haiku.jpg` / `hanoi-n9-haiku-faked-tool.jpg` | Haiku，含幻覺工具呼叫那次 |
 
