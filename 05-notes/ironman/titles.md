@@ -53,7 +53,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |---|---|---|---|
 | 01 | 它只是在猜下一個字：LLM 的原理，決定了後面 29 天的所有心法 | [core-concepts](../../01-fundamentals/core-concepts.md) + 新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10411345) |
 | 02 | 不是它突然變強，是它跨過了你的門檻 | 新研究（METR、scaling laws、MCP 採用曲線） | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10411919) |
-| 03 | 它做不到的事分三類，最危險的那類你看不見 | 新研究（自我修正、反轉詛咒、context rot、鋸齒狀前沿） | ✅ [已完成](./drafts/day03-what-it-cannot-do.md) |
+| 03 | 它做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/llm-limitations.md) ＋ [實測](../llm-limitations-field-test.md) | ✅ [已完成](./drafts/day03-what-it-cannot-do.md) |
 | 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | ✅ [已完成](./drafts/day04-capability-landscape.md) |
 | 05 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md) + 新研究 | ✅ [已完成](./drafts/day05-prompt-engineering.md) |
 | 06 | 先看終點：Loop Engineering - 你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day06-loop-engineering.md) |

@@ -6,11 +6,16 @@ def main():
     n = int(sys.argv[1])
     raw = sys.stdin.read()
     moves = []
+    numbered = re.compile(r'(\d+)\s*[.、)]\s*(?:盤\s*)?(\d+)\s*(?:號)?\s*[:：]?\s*([ABC])\s*(?:->|→|➔|=>|to)\s*([ABC])', re.I)
+    bare     = re.compile(r'^\s*(?:盤\s*)?(\d+)\s*(?:號)?\s*[:：]?\s*([ABC])\s*(?:->|→|➔|=>|to)\s*([ABC])', re.I)
     for line in raw.splitlines():
-        m = re.search(r'(\d+)\s*[.、)]?\s*(?:盤\s*)?(\d+)\s*(?:號)?\s*[:：]?\s*([ABC])\s*(?:->|→|➔|=>|to)\s*([ABC])',
-                      line, re.I)
+        m = numbered.search(line)
         if m:
             moves.append((int(m.group(1)), int(m.group(2)), m.group(3).upper(), m.group(4).upper()))
+            continue
+        m = bare.search(line)          # 沒有步數前綴的格式：盤號 起點→終點
+        if m:
+            moves.append((len(moves)+1, int(m.group(1)), m.group(2).upper(), m.group(3).upper()))
 
     pegs = {'A': list(range(n, 0, -1)), 'B': [], 'C': []}
     errs = []
