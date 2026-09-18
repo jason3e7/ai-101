@@ -1,11 +1,11 @@
 ---
-title: AI 101 - 鐵人賽 Day 06：先看終點，Loop Engineering
+title: AI 101 - 鐵人賽 Day 07：先看終點，Loop Engineering
 tags: [ai, 鐵人賽, ironman, loop-engineering, agent, 自動化, 草稿]
 created: 2026-09-06
 status: draft
 ---
 
-# Day 06｜先看終點：Loop Engineering - 你不再是提示 AI 的那個人
+# Day 07｜先看終點：Loop Engineering - 你不再是提示 AI 的那個人
 
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
@@ -22,7 +22,7 @@ status: draft
 
 > **Prompt（怎麼問）→ Context（餵什麼）→ Harness（外層框架）→ Loop（自主迴圈）**
 
-Day 05 講完了第一級。照理說今天該講第二級，但我想先把最後一級攤開來看 - 因為**只看前三級，你不會知道自己在爬什麼。**
+Day 06 講完了第一級。照理說今天該講第二級，但我想先把最後一級攤開來看 - 因為**只看前三級，你不會知道自己在爬什麼。**
 
 爬到第四級的時候，身分會換一次：
 
@@ -73,9 +73,9 @@ Addy Osmani 進一步把「一個完整的迴圈系統」拆成六塊積木：
 
 內建零件其實都在：
 
-- **`/goal`** - 設一個可驗證的完成條件，讓它自己跑到達成（Day 16 展開）
+- **`/goal`** - 設一個可驗證的完成條件，讓它自己跑到達成（Day 17 展開）
 - **`/loop`** - 讓它按節奏反覆執行某個任務
-- **強制力 Hook** - 防止它中途放棄、跑偏、忘記目標（Day 17 展開，包含一個我實測失敗的 Hook）
+- **強制力 Hook** - 防止它中途放棄、跑偏、忘記目標（Day 18 展開，包含一個我實測失敗的 Hook）
 - **Worktree ＋ Sub-agent** - 並行多個 agent，寫的和驗的分開
 
 一個完整的迴圈長這樣（Addy 的範例）：
@@ -113,7 +113,7 @@ Loop Engineering **沒有技術突破，零件全是舊的**：act → observe �
 
 值不值得叫一個新的「XX Engineering」，見仁見智。這個問題 Day 30 會再回來收。
 
-接下來兩天回到基本功。然後 Day 12–13 會走回頭路，把跳過的那兩級 - Context 和 Harness - 一級一級補上。
+接下來兩天回到基本功。然後 Day 13–14 會走回頭路，把跳過的那兩級 - Context 和 Harness - 一級一級補上。
 
 ---
 
