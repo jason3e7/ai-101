@@ -122,6 +122,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 題目 | 來源／素材 | 備註 |
 |:---|:---|:---|
 | 怎麼把 AI 的能力，變成自己的能力 | 待補 | **jason3e7 提（2026-09-18）**。跟 Day 30「跟著 AI 持續成長」是同一條線上的，可能是它的前一棒 |
+| 把對話紀錄變成筆記本：匯出、自動分類、收整成可長期用的東西 | [curate-notes](../../skills/curate-notes.md)、[refactor-note](../../skills/refactor-note.md)、[note-lifecycle（待啟用）](../../skills/tmp/note-lifecycle.md) | **jason3e7 提（2026-09-18）**。這個 repo 本身就是這條流程的產物，可以拿實際的 `.jsonl` 與 skill 當案例。要注意匯出檔會夾帶路徑與環境資訊，公開前得先清 |
 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 原 Day 29，被新 Day 05 擠出編號。發文時要沿用防禦式寫法 |
 
 ---
