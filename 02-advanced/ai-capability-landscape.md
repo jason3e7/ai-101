@@ -129,6 +129,24 @@ created: 2026-07-04
 > | 規劃的發散→收斂 | ✅ 形狀與英國設計協會 2005 年的 **Double Diamond** 一致:兩輪「發散探索 → 收斂決定」 |
 > | 規劃的三段切法 | ❌ Double Diamond 分四階段（Discover / Define / Develop / Deliver）,不是三段。**本文的切法是為了對上這張圖而簡化的** |
 
+**Anderson & Krathwohl 對 Analyze 的完整定義:**
+
+> Breaking materials or concepts into parts, determining how the parts relate to one another or how they interrelate, or how the parts relate to an overall structure or purpose. Mental actions included in this function are **differentiating, organizing, and attributing**.
+
+三個子歷程完整列出來(括號內是原表列出的別名):
+
+| 子歷程 | 別名 | 在做什麼 | 對應這張圖 |
+|---|---|---|---|
+| **4.1 區辨** Differentiating | discriminating、distinguishing、focusing、selecting | 從材料裡分出**相關 vs 不相關、重要 vs 不重要** | ≈ 抽取(低階收斂) |
+| **4.2 組織** Organizing | finding coherence、integrating、outlining、parsing、structuring | 判斷各元素**如何組成一個結構、彼此怎麼配合** | ≈ 統整(高階收斂) |
+| **4.3 歸因** Attributing | deconstructing | 看出材料背後的**立場、偏見、價值觀或意圖** | **這張圖沒有對應的格子** |
+
+> [!NOTE]
+> 第三個子歷程「歸因」值得單獨記一筆。它要問的是「寫這份東西的人想幹嘛」- 判斷立場與意圖。以本文的兩軸來看,它應該落在**高階收斂**(多份線索 → 一個判斷,而且高度需要推理),但上面的全景圖沒有單獨列它。
+>
+> 這也正是為什麼本文把分析的第三步寫成「評估」而不是「歸因」:**評估在這張圖上有位置,歸因沒有。** 這是為了對上圖而做的取捨,不是 Bloom 的原意。
+
+
 其他兩個常見的複合能力:
 
 - **推論 Reasoning** —— 從已知推未知,橫跨理解到創造
