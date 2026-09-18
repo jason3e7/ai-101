@@ -116,3 +116,7 @@ Guilford 自己的話很精簡：發散是製造變化（variation），收斂�
 - [Best practices for prompt engineering with the OpenAI API — OpenAI（Transformation 須忠於輸入）](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api)
 - [Bloom's Revised Taxonomy — Colorado College](https://www.coloradocollege.edu/other/assessment/how-to-assess-learning/learning-outcomes/blooms-revised-taxonomy.html)
 - [Bloom's Taxonomy of Learning — Simply Psychology](https://www.simplypsychology.org/blooms-taxonomy.html)
+
+---
+
+<!-- 已發布：https://ithelp.ithome.com.tw/articles/10413054 -->
