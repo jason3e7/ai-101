@@ -1,85 +1,137 @@
 ---
-title: AI 101 - 四種能力執行手冊：省 token vs 最有成效
-tags: [ai, 能力地圖, token優化, 模型選型, prompt, cost, 進階]
+title: AI 101 - 六種能力執行手冊：省 token vs 最有成效
+tags: [ai, 能力地圖, token優化, 模型選型, prompt, cost, effort, 進階]
 created: 2026-07-05
+updated: 2026-09-18
 ---
 
-# 四種能力執行手冊：省 token vs 最有成效 — Four Capabilities: Cheapest vs Best Execution
+# 六種能力執行手冊：省 token vs 最有成效 — Capabilities Playbook: Cheapest vs Best
 
 [← 回主頁](../index.md)
 
 > [!NOTE]
-> 承接 [AI 能力全景圖](./ai-capability-landscape.md)，這篇把四種高頻能力——**Summarization（摘要）、Explanation（解釋）、Ideation（發想）、Refactor Note（重構筆記）**——各給兩套打法：**① 最省 token**、**② 最有成效**。每種都附模型選型表與可直接複製的 prompt / 工作流程。
+> 承接 [AI 能力全景圖](./ai-capability-landscape.md)，這篇把六種高頻能力 - **摘要、解釋、發想、重構筆記**，加上兩個**複合能力****分析**與**規劃** - 各給兩套打法：**① 最省 token**、**② 最有成效**。每種都附模型選型與可直接複製的 prompt。
 
-> **TL;DR (EN):** For four common capabilities (summarize / explain / ideate / refactor a note), this gives two execution modes each — cheapest-token and highest-quality — with a model-selection table and copy-paste prompts. Core rules: match the model to task difficulty, cap output aggressively for cheap mode, and add thinking/diversity only where the task's cognitive depth needs it.
+> **TL;DR (EN):** Six common capabilities, each with a cheapest-token and a highest-quality execution mode, plus model selection and copy-paste prompts. Two things changed in 2026: `temperature` now returns a 400 error on Opus 4.7 and later - the `effort` parameter replaced it - and the default recommendation moved from Sonnet to Opus 5. Analysis and planning are composites: their value comes from splitting them into separately verifiable stages.
 
 ---
 
-## 先定位：四種能力在全景圖的哪裡 — Where They Sit
+## 2026-09 更新：兩件事變了 — What Changed
+
+> [!WARNING]
+> **一、`temperature` 不能用了。** `temperature`、`top_p`、`top_k` 在 **Claude Opus 4.7 以後的模型**已棄用 - 設成非預設值會直接回 **400 錯誤**。舊版本這篇筆記寫的「摘要用低 temperature、發想拉高 temperature」，在現行模型上**執行不了**。
+>
+> 官方建議的替代方式是：**改用 prompt 引導 ＋ `effort` 參數**。
+
+**二、預設選哪個變了。** 官方現在的建議是「**多數工作從 Claude Opus 5 開始**」，不再是以前的「Sonnet 當預設」。原因是 Sonnet 5 降價到 $2/$10、Opus 5 降到 $5/$25，價差縮小，而 effort 參數讓你可以在同一個模型上調成本。
+
+### 現行模型（2026-09）
+
+| 模型 | API ID | 價格（輸入/輸出，每 1M） | 脈絡長度 | 定位 |
+|:---|:---|:---|:---|:---|
+| **Claude Fable 5.1** | `claude-fable-5-1` | $10 / $50 | 1M | 最難的推理與長時程 agent 工作 |
+| **Claude Opus 5** | `claude-opus-5` | $5 / $25 | 1M | **多數工作的起點** |
+| **Claude Sonnet 5** | `claude-sonnet-5` | $2 / $10 | 1M | 速度與智慧的最佳平衡 |
+| **Claude Haiku 4.5** | `claude-haiku-4-5` | $1 / $5 | 200K | 最快，接近前沿 |
+
+仍可用但已是 legacy：Fable 5、Opus 4.8／4.7／4.6／4.5、Sonnet 4.6／4.5。
+
+**已經完全不能用（retired，打過去會失敗）：**
+
+| 模型 | 退場日 | 官方建議改用 |
+|:---|:---|:---|
+| Claude Opus 4.1 | 2026-08-05 | Opus 4.8（現在直接上 Opus 5） |
+| Claude Opus 4、Sonnet 4 | 2026-06-15 | Opus 4.8／Sonnet 4.6 |
+| Claude Sonnet 3.7、Haiku 3.5 | 2026-02-19 | Sonnet 4.6／Haiku 4.5 |
+| Claude Haiku 3 | 2026-04-20 | Haiku 4.5 |
+
+### `effort`：取代 temperature 的那顆旋鈕
+
+設在 `output_config.effort`，五段，**預設 `high`**（不設就等於 high）。它控制的是模型在整個回應上**花多少 token**，包含思考、文字、工具呼叫。
+
+| 值 | 用在哪 |
+|:---|:---|
+| `low` | 簡單任務、要快、subagent |
+| `medium` | 速度成本效果的平衡點 |
+| `high` | 預設。複雜推理、困難任務 |
+| `xhigh` | 長時程 agent 與 coding（超過 30 分鐘那種） |
+| `max` | 最深的推理，不限 token |
+
+> [!NOTE]
+> Haiku 4.5 **不支援** effort。要控制它的成本只能靠 `max_tokens` 與 prompt。
+
+---
+
+## 先定位：六種能力在全景圖的哪裡 — Where They Sit
 
 | 能力 | 資訊流向 | 認知深度 | 忠實度要求 |
-|---|---|---|---|
-| **Summarization 摘要** | 收斂（多→少） | 低～中階 | 高（怕亂加） |
-| **Explanation 解釋** | 轉換（等量換形式） | 高階 | 高（須忠於原意） |
-| **Ideation 發想** | 發散（少→多） | 高階 | 低（要它亂想） |
-| **Refactor Note 重構筆記** | 轉換為主 + 少量收斂 | 高階 | **最高**（不可漏內容） |
+|:---|:---|:---|:---|
+| **摘要 Summarization** | 收斂（多→少） | 低～中階 | 高（怕亂加） |
+| **解釋 Explanation** | 轉換（等量換形式） | 高階 | 高（須忠於原意） |
+| **發想 Ideation** | 發散（少→多） | 高階 | 低（要它亂想） |
+| **重構筆記 Refactor Note** | 轉換為主 ＋ 少量收斂 | 高階 | **最高**（不可漏內容） |
+| **分析 Analysis** | 收斂（複合：抽取→統整→評估） | 高階 | 高 |
+| **規劃 Planning** | **先發散再收斂**（複合） | 最高 | **分段不同**（見下） |
 
 > [!IMPORTANT]
-> 定位決定打法。**忠實度高**的三個（摘要/解釋/重構）→ 低 temperature、要驗證；**忠實度低**的發想 → 高 temperature、不必查證。**認知深度高**的（解釋/發想/重構）→ 值得給思考空間；低階的摘要 → 不必。
+> 定位決定打法。**忠實度高**的（摘要／解釋／重構／分析）→ 要驗證、要它別加料；**忠實度低**的發想 → 不必查證。**認知深度高**的 → 值得把 effort 開高；低階的摘要 → 開 `low` 就好。
 
 ---
 
 ## 兩條通用槓桿 — The Two Universal Levers
 
-執行任何能力，「省 token」和「拉成效」各有一組固定手段，先記這張總表，後面四節只是套用。
-
-### 省 token 的四個槓桿（有數據）
+### 省 token 的四個槓桿
 
 | 槓桿 | 做法 | 省多少 |
-|---|---|---|
-| **降模型** | 用「能做好這件事的最便宜模型」，別預設 Opus | Haiku vs Opus 輸入省 80% |
-| **限輸出** | `max_tokens` + 要求精簡格式（bullet / JSON） | 輸出省 30–50% |
-| **Chain of Draft（CoD）** | 要模型「用最少字做中間推理」，取代冗長 CoT | 推理 token 省 68–92%，準確度相當 |
-| **Batch / 快取** | 量大用 Batch API（約 5 折）；同一份長文重複問就開 prompt caching | Batch 省 ~50%；快取按命中率 |
+|:---|:---|:---|
+| **降模型** | 用「能做好這件事的最便宜模型」，別預設最強的 | Haiku 4.5 vs Opus 5 輸入省 80% |
+| **降 effort** | 簡單任務設 `low`／`medium`，別讓它預設 high | 依任務，可觀 |
+| **限輸出** | `max_tokens` ＋ 要求精簡格式（bullet／JSON） | 輸出省 30–50% |
+| **Batch／快取** | 量大走 Batch API；同一份長文重複問就開 prompt caching | Batch 省 50%；快取讀取只收基礎輸入價的 10% |
 
 ### 拉成效的四個槓桿
 
 | 槓桿 | 做法 | 適用 |
-|---|---|---|
-| **升模型** | 難的任務換 Sonnet→Opus→Fable | 高階任務 |
-| **給思考空間** | 開 extended thinking / 要求先列思路再產出 | 解釋、重構、發想結構 |
+|:---|:---|:---|
+| **升模型** | Sonnet 5 → Opus 5 → Fable 5.1 | 高階任務 |
+| **升 effort** | 開到 `xhigh` 或 `max` | 解釋、重構、分析、規劃 |
 | **給標準** | 明講受眾、格式、取捨準則、風格指南 | 全部 |
-| **多樣化**（發散專用） | 高 temperature、強制不同角度、多次獨立呼叫 | 發想 |
+| **多樣化**（發散專用） | 強制不同角度、多次獨立呼叫 | 發想 |
 
 > [!WARNING]
-> **發想有個反直覺陷阱**：研究發現用 LLM 發想會**收窄**想法多樣性——一項實驗中 94% 的點子共享同一核心概念。所以「最有成效的發想」不是把 prompt 寫更細，而是**刻意製造分歧**（見下方 Ideation 節）。
+> **發想有個反直覺陷阱**：研究發現用 LLM 發想會**收窄**想法多樣性 - 一項實驗中 94% 的點子共享同一核心概念。所以「最有成效的發想」不是把 prompt 寫更細，而是**刻意製造分歧**。以前靠拉高 temperature 做這件事，現在 temperature 不能設了，**只剩多角度與多次獨立呼叫這兩條路**。
 
 ---
 
 ## 模型選型總表 — Model Selection Cheat Sheet
 
-價格為每 1M token（輸入/輸出）。詳見 [模型費用與效果比較](../01-fundamentals/model-cost-comparison.md)。
-
-| 能力 | ①最省 token 選 | ②最有成效選 | 理由 |
-|---|---|---|---|
-| **Summarization** | **Haiku 4.5**（$1/$5） | **Sonnet 4.6**（$3/$15），密集學術材料才上 Opus | 摘要是高量低階任務，Haiku 官方點名適用 |
-| **Explanation** | **Sonnet 4.6** | **Opus 4.8**（$5/$25） | 解釋要重組+類比，吃推理；便宜端 Sonnet 已夠 |
-| **Ideation** | **Sonnet 4.6**（高 temp） | **Opus 4.8 / Fable 5**（$10/$50），多次獨立呼叫 | 發想品質看模型天花板與多樣性 |
-| **Refactor Note** | **Sonnet 4.6** | **Opus 4.8** | 結構判斷是高階，且不可漏內容，可靠度優先 |
+| 能力 | ① 最省 token | ② 最有成效 | 理由 |
+|:---|:---|:---|:---|
+| **摘要** | **Haiku 4.5** | Sonnet 5（`medium`）；密集學術材料才上 Opus 5 | 高量低階任務 |
+| **解釋** | Sonnet 5（`low`） | **Opus 5**（`high`） | 要重組 ＋ 類比，吃推理 |
+| **發想** | Sonnet 5（`medium`） | **Opus 5 / Fable 5.1**，多次獨立呼叫 | 看模型天花板與多樣性 |
+| **重構筆記** | Sonnet 5（`low`，只回 diff） | **Opus 5**（`high`） | 結構判斷高階，且不可漏內容 |
+| **分析** | Sonnet 5（`medium`） | **Opus 5**（`xhigh`） | 三段推理疊起來，深度需求高 |
+| **規劃** | Sonnet 5（`medium`） | **Opus 5 / Fable 5.1**（`xhigh`），分兩次呼叫 | 發散與收斂要分開做 |
 
 > [!TIP]
-> 通則（Anthropic 2026 建議）：**Sonnet 4.6 當預設**，量大又簡單就掉到 **Haiku 4.5**，任務真的難才升 **Opus 4.8**。Sonnet 以約 6 折成本達到 Opus 97–99% 的品質，是省錢與成效的最佳平衡點。
+> 通則：**Opus 5 當起點**，量大又簡單就掉到 **Haiku 4.5**，最難的長時程工作才上 **Fable 5.1**。同一個模型內，先用 `effort` 調成本，調不下來再換模型。
 
 ---
 
-## 1. Summarization 摘要
+## 六種能力的打法 — The Playbook
+
+每一種都給兩套：**① 最省 token** 與 **② 最有成效**。
+
+---
+
+### 1. 摘要 Summarization
 
 **定位**：收斂、低～中階、忠實度高。目標是丟資訊但不丟重點、不加料。
 
-### ① 最省 token
+#### ① 最省 token
 
-- 模型 **Haiku 4.5**；長文用 **map-reduce**（分段各自摘要再合併），量大走 **Batch API**
-- 硬限輸出長度，指定精簡格式
+模型 **Haiku 4.5**；長文用 **map-reduce**（分段各自摘要再合併），量大走 **Batch API**。硬限輸出長度。
 
 ```
 用繁體中文，把以下內容濃縮成最多 5 條 bullet，每條 ≤ 20 字。
@@ -88,10 +140,9 @@ created: 2026-07-05
 <在此貼上原文>
 ```
 
-### ② 最有成效
+#### ② 最有成效
 
-- 模型 **Sonnet 4.6**（密集論文/財報才上 Opus）
-- 給**取捨準則**（要為誰摘、保留什麼維度），並要求**忠於原文、不得補充**
+模型 **Sonnet 5**（`effort: medium`），密集論文／財報才上 Opus 5。給**取捨準則**，並要求忠於原文。
 
 ```
 你是為「趕時間的決策者」做摘要。閱讀下文後輸出：
@@ -107,28 +158,26 @@ created: 2026-07-05
 ```
 
 > [!TIP]
-> 摘要在忠實度高的一端，**低 temperature（0–0.3）**、產出後快速核對數字。長文優先 map-reduce 而非硬塞進 context，省 token 又避免中段被忽略。
+> 摘要在忠實度高的一端，產出後快速核對數字。長文優先 map-reduce 而非硬塞進 context - 省 token 又避開中段被忽略。
 
 ---
 
-## 2. Explanation 解釋
+### 2. 解釋 Explanation
 
 **定位**：轉換、高階、忠實度高。把難的說成好懂的，但意思不能跑掉。
 
-### ① 最省 token
+#### ① 最省 token
 
-- 模型 **Sonnet 4.6**；用 **Chain of Draft** 讓它精簡推理
-- 綁定受眾與長度，避免它長篇大論
+模型 **Sonnet 5**，`effort: low`。綁定受眾與長度。
 
 ```
 用一個高中生能懂的比喻解釋「<概念>」，限 3 句話。
-先想再答，但思考過程只用關鍵詞、不要寫成完整句子。
+不要列出思考過程，直接給結論。
 ```
 
-### ② 最有成效
+#### ② 最有成效
 
-- 模型 **Opus 4.8**；開 extended thinking / 要求先建結構
-- 明確指定**受眾、深度、類比、以及「先前概念」**
+模型 **Opus 5**，`effort: high`。明確指定受眾、深度、類比、先前概念。
 
 ```
 向「<受眾，例：完全沒寫過程式的產品經理>」解釋「<概念>」。
@@ -139,32 +188,27 @@ created: 2026-07-05
 3. 運作方式（拆 2–3 步，每步配一個具體例子）
 4. 常見誤解一則
 
-要求：忠於技術正確性，類比不可誤導；先在心裡建好結構再寫。
+要求：忠於技術正確性，類比不可誤導。
 ```
-
-> [!TIP]
-> 解釋雖在轉換端，但認知深度高——**給思考空間**（先結構後內容）比直接要答案品質好很多。省 token 模式改用 CoD（只用關鍵詞推理）能保住品質又砍掉冗長。
 
 ---
 
-## 3. Ideation 發想
+### 3. 發想 Ideation
 
 **定位**：發散、高階、忠實度低。要的就是多、新、不同，幻覺是 feature。
 
-### ① 最省 token
+#### ① 最省 token
 
-- 模型 **Sonnet 4.6**，temperature 拉高（0.9–1.0）
-- 要點子清單而非長篇論述，輸出天然就短
+模型 **Sonnet 5**（`medium`）。要點子清單而非長篇論述。
 
 ```
 針對「<主題>」，快速給 15 個點子。
 每個點子一行、≤ 15 字，只要方向不要解釋。求數量與差異，不求完整。
 ```
 
-### ② 最有成效
+#### ② 最有成效
 
-- 模型 **Opus 4.8 / Fable 5**；**多次獨立呼叫**再彙整（對抗多樣性收窄）
-- 強制不同角度 / 角色，避免它全部收斂到同一核心
+模型 **Opus 5 / Fable 5.1**；**多次獨立呼叫**再彙整。強制不同角度，避免它全部收斂到同一核心。
 
 ```
 針對「<主題>」發想，分成三批，每批用不同視角，各給 5 個點子：
@@ -177,18 +221,17 @@ created: 2026-07-05
 ```
 
 > [!WARNING]
-> 別把發想和其他三個一樣「寫更嚴格的 prompt」——過度約束會讓它更收斂。**製造分歧的手段**才是關鍵：高 temperature、多角色、多次獨立 session、最後再人工收斂評估。想法的「收斂評估」是另一個能力（見全景圖左上收斂區），別和發散混在同一次呼叫。
+> 別把發想和其他能力一樣「寫更嚴格的 prompt」 - 過度約束會讓它更收斂。**收斂評估是另一個能力**，別跟發散混在同一次呼叫。
 
 ---
 
-## 4. Refactor Note 重構筆記
+### 4. 重構筆記 Refactor Note
 
-**定位**：以轉換為主（重排結構、改寫）+ 少量收斂（去重）、高階、**忠實度最高**——重構最大的風險是「悄悄弄丟內容」。
+**定位**：轉換為主 ＋ 少量收斂、高階、**忠實度最高** - 重構最大的風險是「悄悄弄丟內容」。
 
-### ① 最省 token
+#### ① 最省 token
 
-- 模型 **Sonnet 4.6**；**不要每次重送整篇再整篇重寫**
-- 開 **prompt caching**（同一篇反覆調），或要求**只回傳改動的段落 / diff**
+模型 **Sonnet 5**（`low`）。**不要每次重送整篇再整篇重寫**，開 prompt caching，或只回傳改動段落。
 
 ```
 以下筆記結構鬆散。請只做「結構重排」：重新分節、加小標、調順序。
@@ -198,10 +241,9 @@ created: 2026-07-05
 <貼上筆記>
 ```
 
-### ② 最有成效
+#### ② 最有成效
 
-- 模型 **Opus 4.8**；**兩段式工作流**（先診斷、後重寫），並餵**風格指南**
-- 明確要求「內容零遺失」並自我檢查
+模型 **Opus 5**（`high`）。**兩段式工作流**，並餵風格指南。
 
 ```
 第一步（先只做這步，等我確認）：
@@ -220,36 +262,150 @@ created: 2026-07-05
 - 符合提供的風格指南（callout 語法、標題格式等）
 ```
 
+---
+
+### 5. 分析 Analysis
+
+**定位**：複合能力。依 [全景圖](./ai-capability-landscape.md)的拆法是**抽取（低階收斂）→ 統整（高階收斂）→ 評估（高階收斂）**，整體偏收斂、高階、忠實度高。
+
 > [!IMPORTANT]
-> 重構是四者中**最該用強模型 + 最該驗證**的。它同時要求「大改結構」與「零內容遺失」，這對忠實度是矛盾壓力——用**兩段式**（診斷／執行分開）+ **內容對照檢查表**把風險壓下來。省 token 版切忌讓它整篇重印，改用「大綱 + 段落對應」或 diff。
+> **這是複合能力，所以最大的風險跟前四種不同：** 丟一句「幫我分析一下」，它得自己決定要不要抽取、要不要評估 - 而你連它走了哪條路都不知道。
+>
+> **打法的核心就是把三段拆開，讓每一段各自可驗收。**
+
+#### ① 最省 token
+
+模型 **Sonnet 5**（`medium`）。一次呼叫，但用結構化輸出逼它把三段分開寫，方便你抽查。
+
+```
+分析以下資料，嚴格依這三段輸出，不要寫其他文字：
+
+【事實】只從原文抽出的數字與事實，每條附出處位置。
+【模式】這些事實合起來呈現什麼（這段可以有你的判斷）。
+【結論】最重要的一件事，一句話。
+
+<貼上資料>
+```
+
+#### ② 最有成效
+
+模型 **Opus 5**，`effort: xhigh`。**拆成兩次呼叫**，中間你自己驗第一段 - 因為第一段錯了，後面全部白做。
+
+```
+第一步（只做這步）：
+從下列資料中抽出所有「可查證的事實」，做成表格：
+| 事實 | 數字 | 出處（段落/頁） |
+不要下任何判斷、不要歸納、不要補充原文沒有的東西。
+
+<貼上資料>
+```
+
+你核對完事實表之後，第二步：
+
+```
+以下是已核實的事實表。請做兩件事：
+
+1.【統整】這些事實合起來說明了什麼？寫出「單看任何一條都看不出來」的那個判斷。
+2.【評估】依「<你的判準，例：對明年營收的影響>」排出重要性，每條給出理由。
+   不確定的地方明講不確定，不要為了完整而硬填。
+
+<貼上你核對過的事實表>
+```
+
+> [!WARNING]
+> **它說「我先抽取了以下要點」不構成它真的這樣做了的證據。** 研究顯示模型對自己步驟的描述，承認率通常低於 20%。要確認它有沒有做某一步 - **看產出對不對，不要看它說它做了什麼**（見 [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md)）。
+
+---
+
+### 6. 規劃 Planning
+
+**定位**：複合能力，全圖認知深度最高。拆法是**分析現況 ＋ 發想選項（高階發散）＋ 收斂成步驟（高階收斂）**。
+
+> [!IMPORTANT]
+> **規劃最特別的地方：同一個任務裡，忠實度要求是分段不同的。**
+>
+> - 「現況」那段 - 忠實度**高**，講錯就整個計畫錯
+> - 「選項」那段 - 忠實度**低**，就是要它天馬行空
+> - 「步驟」那段 - 忠實度**高**，必須從選項推得出來
+>
+> 一次呼叫做完，等於要它同時開兩種相反的模式。**發散會被收斂壓扁，你拿到的通常是三個很像的保守方案。**
+
+#### ① 最省 token
+
+模型 **Sonnet 5**（`medium`）。小事情不必大費周章，直接要步驟表。
+
+```
+目標：<一句話講清楚要達成什麼>
+限制：<時間 / 預算 / 人力>
+
+給我一份步驟表：
+| 步驟 | 產出物 | 怎麼確認這步做完了 |
+最多 7 步。不要寫理由，只要步驟。
+```
+
+#### ② 最有成效
+
+模型 **Opus 5 / Fable 5.1**，`effort: xhigh`。**分兩次呼叫，中間插入人的判斷** - 這是整份手冊最重要的一條工作流。
+
+```
+第一步（只做這步，不要給我計畫）：
+現況：<你知道的事實，越具體越好>
+目標：<要達成什麼>
+
+請給我 3 組「路線完全不同」的做法，每組：
+- 一句話講核心思路
+- 最大的一個風險
+- 什麼情況下這組是明顯最好的選擇
+
+規則：三組之間的核心思路不可重疊。可行性先不用管，我要的是選項的廣度。
+```
+
+你挑一組（或混搭）之後，第二步：
+
+```
+採用這個方向：<貼上你挑的那組 + 你的調整>
+
+請收斂成可執行的步驟：
+| 步驟 | 產出物 | 完成判準（可驗證的） | 卡住的話怎麼辦 |
+
+硬性要求：
+- 每一步的「完成判準」必須是我不用問你就能自己確認的
+- 如果某步依賴我還沒給你的資訊，標成【需要我補】，不要自己編
+```
+
+> [!TIP]
+> 為什麼一定要分兩次：**發散和收斂在同一次呼叫裡會互相污染。** 模型知道最後要交出一份可執行計畫，就會在發想階段先自我審查掉不好執行的點子 - 於是你永遠看不到那個最有意思的選項。中間插入人的挑選，也剛好是[全景圖](./ai-capability-landscape.md)說的「收斂評估是另一個能力」。
 
 ---
 
 ## 常見問題 — FAQ
 
-**Q：為什麼摘要用 Haiku，重構卻要 Opus？兩者都是「處理既有文字」。**
-差在認知深度與風險。摘要是低階濃縮，Haiku 夠；重構要判斷整體結構又不能漏內容（高階 + 最高忠實度），值得用 Opus + 驗證。
+**Q：以前筆記教的 temperature 設定，現在完全不能用了嗎？**
+在 Claude Opus 4.7 以後的模型上是的 - 設非預設值會回 400。舊模型（Opus 4.6 以前）還吃，但那些正在走向退場。要控制「發散程度」，現在得靠 prompt 明講（「要三個核心思路不重疊的方向」）與多次獨立呼叫。
 
-**Q：省 token 和最有成效一定衝突嗎？**
-不一定。**Chain of Draft**（精簡推理）和**降模型到剛好夠用**能同時省錢又保品質；真正衝突的是「難任務硬要用便宜模型」或「簡單任務浪費 Opus」。
+**Q：摘要用 Haiku，重構卻要 Opus，兩者都是「處理既有文字」？**
+差在認知深度與風險。摘要是低階濃縮，Haiku 夠；重構要判斷整體結構又不能漏內容（高階 ＋ 最高忠實度），值得用 Opus 5 ＋ 驗證。
 
-**Q：發想為什麼不能靠更好的 prompt 拉成效？**
-因為 LLM 發想會自然收窄多樣性（94% 點子同核心）。成效來自**多樣性**，得靠高 temperature、多角度、多次獨立呼叫，而非把單次 prompt 寫更細。
+**Q：分析和規劃為什麼都要分兩次呼叫，不能一次做完？**
+可以一次做完，但你會失去中間的驗收點。分析的第一段（抽事實）錯了，後面全部白做；規劃的發散段被收斂壓扁，你就看不到好選項。**分兩次的成本增加有限，但把「錯了才發現」變成「錯了當場攔下」。**
+
+**Q：effort 開高就等於品質好嗎？**
+不一定。官方說明 `max` 在多數工作上「增加不少成本，品質只小幅提升」，在結構化輸出任務上甚至可能想太多。從 `high`（預設）開始，用你自己的評測往上或往下調。
 
 ---
 
 ## 相關筆記 — Related
 
-- [AI 能力全景圖](./ai-capability-landscape.md) — 這四種能力的座標與理論依據
-- [模型費用與效果比較](../01-fundamentals/model-cost-comparison.md) — 各模型定價與 benchmark
-- [Context Engineering](./context-engineering.md) — 餵對資訊本身就是最大的省 token 槓桿
+- [AI 能力全景圖](./ai-capability-landscape.md) - 這六種能力的座標與理論依據
+- [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) - 為什麼「給範例」比「給形容詞」有效
+- [模型費用與效果比較](../01-fundamentals/model-cost-comparison.md) - 各模型定價與 benchmark
+- [Context Engineering](./context-engineering.md) - 餵對資訊本身就是最大的省 token 槓桿
 
 ## Sources
 
-- [Models overview — Claude Platform Docs](https://platform.claude.com/docs/en/about-claude/models/overview)
-- [Claude Model Selection Guide 2026: Sonnet vs Opus vs Haiku — Zenken AI](https://ai.zenken.co.jp/en/post/claude-model-selection-guide/)
+- [Models overview — Claude Platform Docs（現行陣容與定價）](https://platform.claude.com/docs/en/about-claude/models/overview)
+- [Model deprecations — Claude Platform Docs（退場時程與 temperature 棄用）](https://platform.claude.com/docs/en/about-claude/model-deprecations)
+- [Effort — Claude Platform Docs（五段 effort 與每個模型的建議值）](https://platform.claude.com/docs/en/build-with-claude/effort)
+- [Pricing — Claude Platform Docs](https://platform.claude.com/docs/en/about-claude/pricing)
 - [LLM Cost Optimization: 8 Strategies That Cut API Spend by 80% (2026) — PremAI](https://blog.premai.io/llm-cost-optimization-8-strategies-that-cut-api-spend-by-80-2026-guide/)
-- [Prompt Compression and Cache Tuning: Cut Your LLM API Costs by 60% — SitePoint](https://www.sitepoint.com/prompt-compression-cache-tuning-llm-api-costs/)
-- [Token-Efficient Prompting Patterns: Chain of Draft — Token Optimize](https://www.tokenoptimize.dev/guides/token-efficient-prompting-patterns)
-- [Move Beyond Chain-of-Thought with Chain-of-Draft — AWS ML Blog](https://aws.amazon.com/blogs/machine-learning/move-beyond-chain-of-thought-with-chain-of-draft-on-amazon-bedrock/)
 - [AI-Augmented Brainwriting: LLMs in group ideation — arXiv](https://arxiv.org/pdf/2402.14978)
