@@ -119,6 +119,16 @@ created: 2026-07-04
 >
 > **規劃 Planning** ＝ 分析現況 ＋ 發想選項（高階發散）＋ 收斂成步驟（高階收斂）
 
+> [!WARNING]
+> **這兩條等式沒有直接來源,是本文自己的表述。** 沒有任何文獻把「分析」或「規劃」寫成這樣的公式。不過拆解的形狀各有一半站得住:
+>
+> | 部分 | 有沒有依據 |
+> |---|---|
+> | 分析的前兩步 | ✅ Anderson & Krathwohl 修訂版把 **Analyze 的子歷程**定為 *differentiating*（區辨,挑出相關的）→ *organizing*（組織,找出各部分怎麼組合）,對應抽取與統整 |
+> | 分析的第三步「評估」 | ❌ **是本文接上去的**。Bloom 的 Analyze 第三個子歷程是 *attributing*（歸因,判斷立場與意圖）;而 Evaluate 在 Bloom 裡是**另一個層級**,不屬於分析 |
+> | 規劃的發散→收斂 | ✅ 形狀與英國設計協會 2005 年的 **Double Diamond** 一致:兩輪「發散探索 → 收斂決定」 |
+> | 規劃的三段切法 | ❌ Double Diamond 分四階段（Discover / Define / Develop / Deliver）,不是三段。**本文的切法是為了對上這張圖而簡化的** |
+
 其他兩個常見的複合能力:
 
 - **推論 Reasoning** —— 從已知推未知,橫跨理解到創造
@@ -171,3 +181,5 @@ created: 2026-07-04
 - [Best practices for prompt engineering with the OpenAI API — OpenAI Help Center(Transformation 須忠於輸入)](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api)
 - [Bloom's Revised Taxonomy — Colorado College](https://www.coloradocollege.edu/other/assessment/how-to-assess-learning/learning-outcomes/blooms-revised-taxonomy.html)
 - [Bloom's Taxonomy of Learning — Simply Psychology](https://www.simplypsychology.org/blooms-taxonomy.html)
+- [Anderson & Krathwohl 修訂版全表（含 Analyze 的三個子歷程）— Quincy College PDF](https://quincycollege.edu/wp-content/uploads/Anderson-and-Krathwohl_Revised-Blooms-Taxonomy.pdf)
+- [The Double Diamond — UK Design Council](https://www.designcouncil.org.uk/our-resources/the-double-diamond/)
