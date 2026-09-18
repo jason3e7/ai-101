@@ -61,7 +61,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 05 | AI 怎麼知道該用哪種能力 | [how-ai-picks-capability](../../02-advanced/how-ai-picks-capability.md) | ✅ [已完成](./drafts/day05-how-it-picks.md) |
 | 06 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md) + 新研究 | ✅ [已完成](./drafts/day06-prompt-engineering.md) |
 | 07 | 先看終點：Loop Engineering - 你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day07-loop-engineering.md) |
-| 08 | 四種能力怎麼用：摘要、解釋、發想、重構的實戰配方 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) | 改寫 |
+| 08 | 六種能力怎麼用：摘要、解釋、發想、重構、分析、規劃的實戰配方 | [capabilities-playbook](../../02-advanced/capabilities-playbook.md) | 改寫 |
 
 ### 轉·提問：問得準（Day 9–12）
 

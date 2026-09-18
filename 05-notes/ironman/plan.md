@@ -111,7 +111,7 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 | | 4 | AI 能力全景圖：收斂／發散 × 認知層次 | ✅ [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) |
 | | 5 | Prompt Engineering：哪些技巧真的有效 | ✅ 已完成（The Prompt Report、Wharton） |
 | | 6 | 先看終點：Loop Engineering | ✅ [loop-engineering](../../02-advanced/loop-engineering.md) |
-| | 7 | 四種能力的實戰配方 | [four-capabilities-playbook](../../02-advanced/four-capabilities-playbook.md) |
+| | 7 | 六種能力的實戰配方 | [capabilities-playbook](../../02-advanced/capabilities-playbook.md) |
 | **轉·提問** | 8–11 | 好 prompt 的特性 → XY Problem → MVP 模板 → 自我驗證 | [meta-prompting](../meta-prompting.md)（拆四篇） |
 | **轉·脈絡** | 12–13 | Context → Harness（Loop 已提前到 Day 6） | [context](../../02-advanced/context-engineering.md)、[harness](../../02-advanced/harness-engineering.md)，需補實測 |
 | **轉·目標與成本** | 14–18 | 選模型省錢 → 權限 → `/goal` → 強制力 Hook → workflow × goal | [model-cost](../../01-fundamentals/model-cost-comparison.md)、[permissions](../../01-fundamentals/claude-code/permissions.md)、[goal](../../01-fundamentals/claude-code/goal.md) 等 |

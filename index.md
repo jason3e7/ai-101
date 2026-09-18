@@ -74,7 +74,7 @@ updated: 2026-07-04
 | 筆記 | 你會學到 |
 |---|---|
 | [AI 101 - AI 能力全景圖](./02-advanced/ai-capability-landscape.md) | 用「資訊流向 × 認知深度」兩軸把 AI 能力攤成一張圖，看出忠實度梯度與自己的使用盲區 |
-| [AI 101 - 六種能力執行手冊](./02-advanced/four-capabilities-playbook.md) | 摘要／解釋／發想／重構／分析／規劃，各給「最省 token」與「最有成效」兩套打法；含 2026-09 現行模型選型與 effort 參數 |
+| [AI 101 - 六種能力執行手冊](./02-advanced/capabilities-playbook.md) | 摘要／解釋／發想／重構／分析／規劃，各給「最省 token」與「最有成效」兩套打法；含 2026-09 現行模型選型與 effort 參數 |
 | [AI 101 - Context Engineering](./02-advanced/context-engineering.md) | 2026 最重要的技能：Prompt 只是 5%，Context 才是 95% |
 | [AI 101 - Harness Engineering](./02-advanced/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
 | [AI 101 - Loop Engineering](./02-advanced/loop-engineering.md) | 設計「會自己提示 agent 的迴圈」：觸發、可驗證目標、上下文、停止規則；Prompt→Context→Harness→Loop 的下一棒 |

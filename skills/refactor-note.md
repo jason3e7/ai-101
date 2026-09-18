@@ -51,5 +51,5 @@ tags: [refactor, note-management, information-architecture, structure]
 
 ## 相關
 
-- [四種能力執行手冊 — Refactor Note 節](../02-advanced/four-capabilities-playbook.md) — 用 AI 執行重構的 prompt 與工作流程
+- [六種能力執行手冊 — Refactor Note 節](../02-advanced/capabilities-playbook.md) — 用 AI 執行重構的 prompt 與工作流程
 - 依據：Miller's Law（神奇數字 7±2）
