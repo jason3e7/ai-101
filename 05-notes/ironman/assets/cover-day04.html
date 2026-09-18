@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:64px;font-weight:900;line-height:1.18;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:10px;margin-top:10px}
+.axis{height:30px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 04</span></div>
+  <div>
+    <h1>你其實只用了<br>AI 的<em>兩種能力</em></h1>
+    <div class="sub">一張全景圖看完它會什麼</div>
+  </div>
+  <div class="chartwrap">
+  <div class="axis"></div>
+  <svg width="1056" height="224" viewBox="0 0 1056 224">
+    <text x="245.0" y="24" fill="#9aa0b0" font-size="21" text-anchor="middle">收斂</text>
+    <text x="537.0" y="24" fill="#e8a13c" font-size="21" text-anchor="middle">轉換</text>
+    <text x="829.0" y="24" fill="#9aa0b0" font-size="21" text-anchor="middle">發散</text>
+    <text x="86" y="79.0" fill="#9aa0b0" font-size="21" text-anchor="end">低階</text>
+    <text x="86" y="163.0" fill="#9aa0b0" font-size="21" text-anchor="end">高階</text>
+    <rect x="104" y="34" width="282" height="66" rx="10" fill="#e8a13c" stroke="#e8a13c" stroke-width="3"/>
+    <text x="245.0" y="81.0" fill="#14161f" font-size="28" font-weight="700" text-anchor="middle">摘要</text>
+    <rect x="396" y="34" width="282" height="66" rx="10" fill="#ffffff0a" stroke="#e8a13c" stroke-width="3" stroke-dasharray="10 7"/>
+    <text x="537.0" y="81.0" fill="#e8d3b0" font-size="28" font-weight="700" text-anchor="middle">翻譯</text>
+    <rect x="688" y="34" width="282" height="66" rx="10" fill="#ffffff08" stroke="#ffffff20" stroke-width="2"/>
+    <text x="829.0" y="81.0" fill="#8b93a5" font-size="28" font-weight="700" text-anchor="middle">擴寫</text>
+    <rect x="104" y="110" width="282" height="66" rx="10" fill="#ffffff08" stroke="#ffffff20" stroke-width="2"/>
+    <text x="245.0" y="165.0" fill="#8b93a5" font-size="28" font-weight="700" text-anchor="middle">綜合</text>
+    <rect x="396" y="110" width="282" height="66" rx="10" fill="#ffffff0a" stroke="#e8a13c" stroke-width="3" stroke-dasharray="10 7"/>
+    <text x="537.0" y="165.0" fill="#e8d3b0" font-size="28" font-weight="700" text-anchor="middle">解釋</text>
+    <rect x="688" y="110" width="282" height="66" rx="10" fill="#e8a13c" stroke="#e8a13c" stroke-width="3"/>
+    <text x="829.0" y="165.0" fill="#14161f" font-size="28" font-weight="700" text-anchor="middle">發想</text>
+    <text x="528" y="214" fill="#e8d3b0" font-size="20" text-anchor="middle">中間這一整欄最穩、幻覺最少，卻最少人用</text>
+  </svg>
+  </div>
+  <div class="foot">橫軸：資訊往哪流　|　縱軸：要動多少腦</div>
+</div></body></html>
