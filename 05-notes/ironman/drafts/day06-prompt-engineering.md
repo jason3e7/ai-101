@@ -10,7 +10,7 @@ status: draft
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
-> 這題大概是 AI 主題裡被寫最多次的。所以這篇**不列「10 個必學技巧」** - 那種清單網路上有一萬份，而且彼此矛盾。這篇只做一件事：**把常見技巧拿去對證據**，然後用 [Day 01](./day01-llm-is-statistics.md) 的原理解釋為什麼。
+> [Day 05](./day05-how-it-picks.md) 講完它怎麼從你的話裡推論出任務。既然是推論，那些流傳的 prompt 技巧，就分成兩種：**有些在幫它推對，有些只是安慰你自己。** 這題被寫過一萬次，所以這篇不列「10 個必學技巧」 - 只做一件事：**把常見技巧拿去對證據**，再用 [Day 01](./day01-llm-is-statistics.md) 的原理解釋為什麼。
 
 > **TL;DR (EN):** Four elements cover most of it: instruction, context, input data, output format. Beyond that, the evidence is unkind to popular tricks. Personas don't improve objective tasks (162 roles, 4 model families, 2,410 questions). Tipping and threats do nothing (Wharton, 5 models). Chain-of-thought is now near-zero gain on reasoning models at 20–80% more time. What survives — examples, explicit formats, structural separation — all works for the same reason: it narrows the probability distribution. Nothing works by making the model "try harder", because there is no such setting.
 
@@ -21,7 +21,7 @@ status: draft
 不管哪一派，好 prompt 的骨架都是同樣四件事：
 
 | 要素 | 在回答什麼 |
-|---|---|
+|:---|:---|
 | **指令**（instruction） | 要做什麼 |
 | **脈絡**（context） | 背景、限制、你是誰 |
 | **輸入資料**（input data） | 要處理的東西 |
@@ -39,7 +39,7 @@ status: draft
 ## 有證據撐得住的 — What Holds Up
 
 **一、給範例（few-shot） - 最穩的一招。**
-當你要的格式很難用文字描述時，直接給一到三個範例，比寫五百字說明有效得多。原因很直接：**它做的事情就是接續模式**，給它模式就是最短的溝通路徑。
+當你要的格式很難用文字描述時，直接給一到三個範例，比寫五百字說明有效得多。原因 [Day 05](./day05-how-it-picks.md) 已經講過：**任務座標是從你的話裡算出來的，而範例是你操作那個座標最直接的介面** - 給模式，比給形容詞準。
 
 **二、明確的輸出格式與長度。**
 「用 JSON」「三點，每點不超過 30 字」 - 可驗證的約束，它照做的機率高很多。反過來，「詳細一點」這種模糊詞幾乎沒有效果（Day 09 展開）。
@@ -67,12 +67,14 @@ status: draft
 
 「你是一個有 10 年經驗的資深工程師」 - 大概是最多人用、也最少人查證的一招。
 
+[Day 05](./day05-how-it-picks.md) 已經講過為什麼：人設動的是語氣那一層，動不到「它推成什麼任務」那一層。今天補上證據。
+
 EMNLP 2024 的研究（Zheng et al.）做得很徹底：整理 **162 種角色**（涵蓋 6 種人際關係、8 個專業領域），在 **4 個模型家族**上測 **2,410 道事實題**。結論是：**加角色並沒有讓表現變好。**
 
 > [!IMPORTANT]
-> 注意範圍 - 這測的是**客觀任務**（有標準答案的）。在主觀任務上，角色設定仍然有用，因為你要的本來就是「換一種說法」。用 [Day 04](./day04-capability-landscape.md) 那張圖看：**角色設定在「轉換」那一欄有用，在「收斂」那一欄沒用。**
+> 注意範圍 - 這測的是**客觀任務**（有標準答案的）。當「換一種說法」本身就是你要的東西時，人設仍然有用 - 但那時它是在**指定任務**，不是在裝飾語氣（這個區別 Day 05 拆得更細）。
 
-（誠實補一句：我自己四月寫的筆記裡，好 prompt 的結構第一行就是「角色設定」。這條要修。）
+> （jason3e7）誠實補一句：我自己四月寫的筆記裡，好 prompt 的結構第一行就是「角色設定」。這條要修。
 
 ### 給小費、威脅、情緒勒索：沒有效果
 
@@ -90,7 +92,7 @@ Wharton 的 Prompting Science Report 3（2025，標題直白得可愛：*I'll pa
 「Let's think step by step」曾經是最有名的一句咒語。Wharton 在 2025 年 6 月的報告測下來：
 
 | 模型類型 | 加 CoT 的效果 |
-|---|---|
+|:---|:---|
 | **推理模型**（會自己思考的） | 幾乎沒有提升，但**時間多花 20–80%** |
 | **一般模型** | 平均小幅提升，但**答案的變異變大**（同一題，結果更不穩定） |
 
@@ -105,11 +107,11 @@ Wharton 的 Prompting Science Report 3（2025，標題直白得可愛：*I'll pa
 把三段擺在一起，規律很清楚，而且全部能從 Day 01 推出來：
 
 | 技巧 | 有效嗎 | 為什麼 |
-|---|---|---|
+|:---|:---|:---|
 | 給範例 | ✅ | 它就是在接續模式，給模式最直接 |
 | 明確格式與長度 | ✅ | 把機率分布縮到你要的那一區，而且可驗證 |
 | 指令與資料分開 | ✅ | 讓它分得清哪些是要做的、哪些是要處理的 |
-| 角色扮演 | ⚠️ 只在轉換類 | 改的是語氣分布，不是知識 |
+| 角色扮演 | ⚠️ 只在轉換類 | 改的是語氣分布，不是任務 |
 | 給小費／威脅 | ❌ | 沒有改變任何有用的機率 |
 | CoT 用在推理模型 | ❌ | 它本來就已經在做了 |
 
