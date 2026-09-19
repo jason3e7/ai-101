@@ -78,7 +78,7 @@ updated: 2026-07-04
 | [AI 101 - Context Engineering](./02-advanced/context-engineering.md) | 2026 最重要的技能：Prompt 只是 5%，Context 才是 95% |
 | [AI 101 - Harness Engineering](./02-advanced/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
 | [AI 101 - Loop Engineering](./02-advanced/loop-engineering.md) | 設計「會自己提示 agent 的迴圈」：觸發、可驗證目標、上下文、停止規則；Prompt→Context→Harness→Loop 的下一棒 |
-| [AI 101 - AI 怎麼知道該用哪種能力](./02-advanced/how-ai-picks-capability.md) | 能力選擇不是 system prompt 做的：預訓練推論任務、指令微調綁定說法、偏好訓練決定形狀，附公開 system prompt 原文佐證 |
+| [AI 101 - AI 怎麼知道該用哪種能力](./02-advanced/how-ai-picks-capability.md) | 以 Opus 5 為基準拆成八層：五層訓練時長好、三層每次請求自動跑；標明哪幾層動得了，以及對 prompt 的四條推論 |
 | [AI 101 - LLM 的極限](./02-advanced/llm-limitations.md) | 三類做不到：結構性（原理決定）、暫時（下一代會補）、鋸齒狀（看不見邊界）；為什麼鋸齒狀最危險 |
 | [AI 101 - ML 演算法精要](./02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |
 | [AI 101 - Subagent 使用與計費](./02-advanced/subagent-usage-and-billing.md) | Orchestrator 模式、並行 subagent、API 計費結構與省錢策略 |
