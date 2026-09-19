@@ -49,7 +49,6 @@ updated: 2026-07-04
 | [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) | 提升效率的具體方法與工作流 |
 | [AI 101 - 模型費用與效果比較](./01-fundamentals/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
 | [AI 101 - AI 模型名稱怎麼唸](./01-fundamentals/model-name-pronunciation.md) | Claude 家族與開源模型的正確發音，附中文近似音、常見錯誤與 YouTube 示範 |
-| [AI 101 - AI 的文風與語氣](./02-advanced/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
 | [AI 101 - AI 生成內容怎麼標記與辨識](./01-fundamentals/ai-content-watermark.md) | Claude 的文字浮水印與 C2PA 檔案簽章、三條技術路線、為何「查到」與「沒查到」都不是定論 |
 | [AI 101 - v1 chat completions curl Cheatsheet](./01-fundamentals/chat-completions-curl-cheatsheet.md) | 業界通用 LLM API 格式的 curl 完全指南：streaming、tool use、vision、JSON mode、各大供應商切換 |
 | [AI 101 - OpenAI API 完整端點速查](./01-fundamentals/openai-api-endpoints.md) | `/v1/chat/completions` 之外的所有重要端點：Embeddings、Batch（省 50%）、Whisper、TTS、Images、Moderations、Responses API |
@@ -80,6 +79,7 @@ updated: 2026-07-04
 | [AI 101 - Harness Engineering](./02-advanced/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
 | [AI 101 - Loop Engineering](./02-advanced/loop-engineering.md) | 設計「會自己提示 agent 的迴圈」：觸發、可驗證目標、上下文、停止規則；Prompt→Context→Harness→Loop 的下一棒 |
 | [AI 101 - AI 怎麼知道該用哪種能力](./02-advanced/how-ai-picks-capability.md) | 以 Opus 5 為基準拆成八層：五層訓練時長好、三層每次請求自動跑；標明哪幾層動得了，以及對 prompt 的四條推論 |
+| [AI 101 - AI 的文風與語氣](./02-advanced/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
 | [AI 101 - LLM 的極限](./02-advanced/llm-limitations.md) | 三類做不到：結構性（原理決定）、暫時（下一代會補）、鋸齒狀（看不見邊界）；為什麼鋸齒狀最危險 |
 | [AI 101 - ML 演算法精要](./02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |
 | [AI 101 - Subagent 使用與計費](./02-advanced/subagent-usage-and-billing.md) | Orchestrator 模式、並行 subagent、API 計費結構與省錢策略 |
