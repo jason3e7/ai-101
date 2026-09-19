@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:70px;font-weight:900;line-height:1.16;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:6px;margin-top:6px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 05</span></div>
+  <div>
+    <h1>它怎麼知道<br>你要用<em>哪種能力</em></h1>
+    <div class="sub">沒有人幫它選 - 是它從你的話裡算出來的</div>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="196" viewBox="0 0 1056 196">
+    <!-- 輸入框 -->
+    <rect x="0" y="58" width="196" height="66" rx="12" fill="#ffffff0d" stroke="#5a6275" stroke-width="2"/>
+    <text x="98" y="99" fill="#f2f0ea" font-size="26" font-weight="700" text-anchor="middle">「幫我摘要」</text>
+    <text x="98" y="150" fill="#8b93a5" font-size="18" text-anchor="middle">你說的話</text>
+
+    <!-- 推論箭頭 -->
+    <line x1="210" y1="91" x2="330" y2="91" stroke="#5a6275" stroke-width="2" stroke-dasharray="6 6"/>
+    <polygon points="330,91 318,85 318,97" fill="#5a6275"/>
+    <text x="270" y="72" fill="#9aa0b0" font-size="18" text-anchor="middle">推論</text>
+
+    <!-- 座標盤：四個能力點，一個被點亮 -->
+    <rect x="348" y="18" width="360" height="150" rx="12" fill="#ffffff08" stroke="#3a4152" stroke-width="2"/>
+
+    <!-- 暗點 -->
+    <circle cx="430" cy="60" r="9" fill="#3a4152"/>
+    <text x="430" y="46" fill="#5a6275" font-size="17" text-anchor="middle">翻譯</text>
+    <circle cx="620" cy="58" r="9" fill="#3a4152"/>
+    <text x="620" y="44" fill="#5a6275" font-size="17" text-anchor="middle">發想</text>
+    <circle cx="630" cy="128" r="9" fill="#3a4152"/>
+    <text x="630" y="152" fill="#5a6275" font-size="17" text-anchor="middle">分類</text>
+
+    <!-- 亮點：摘要 -->
+    <circle cx="470" cy="112" r="26" fill="#e8a13c22" stroke="#e8a13c" stroke-width="2"/>
+    <circle cx="470" cy="112" r="12" fill="#e8a13c"/>
+    <text x="470" y="150" fill="#e8a13c" font-size="20" font-weight="700" text-anchor="middle">摘要</text>
+
+    <!-- 從輸入指向亮點的細線 -->
+    <line x1="330" y1="91" x2="444" y2="112" stroke="#e8a13c" stroke-width="2.5"/>
+
+    <!-- 說明 -->
+    <text x="770" y="70" fill="#a8aebd" font-size="21">你的話 = 一個座標</text>
+    <text x="770" y="104" fill="#a8aebd" font-size="21">它落在哪，就用哪個能力</text>
+    <text x="770" y="138" fill="#767d8d" font-size="19">話越模糊，落點越糊</text>
+  </svg>
+  </div>
+  <div class="foot">機制：從語境推論任務（task vector）　|　依據：Hendel 2023、Xie 2021</div>
+</div></body></html>
