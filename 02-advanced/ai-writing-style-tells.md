@@ -11,7 +11,7 @@ created: 2026-09-19
 > [!NOTE]
 > 你大概也發現了：Claude Opus 5 寫中文特別愛用破折號（`——`）。這不是巧合，也不是它「喜歡」什麼 - 是訓練留下的痕跡。這篇拆解 AI 最常見的幾個文風習慣、它們**為什麼**會出現，以及一個對你更有用的問題：既然改不掉根源，怎麼在 prompt 端把它們壓下去。
 
-> **TL;DR (EN):** AI writing has recurring tells - the em dash above all, plus tricolons, antithesis ("not just X, but Y"), bold-everywhere, and constant hedging. They are not quirks; they come from markdown-saturated pretraining and RLHF preferring "polished-looking" prose. A 2026 study measured it: Claude Opus 4.6 emits 9.09 em dashes per 1,000 words unconstrained but drops to 0.19 when told not to - highly suppressible, unlike GPT-4.1 which keeps 3.86 even under an explicit ban. Practical upshot: name the specific tic and give the replacement, don't just say "write naturally".
+> **TL;DR (EN):** AI writing has recurring tells - the em dash above all, plus verbosity, tricolons, antithesis ("not just X, but Y"), bold-everywhere, and constant hedging. They are not quirks; they come from markdown-saturated pretraining and RLHF preferring "polished-looking" prose. A 2026 study measured it: Claude Opus 4.6 emits 9.09 em dashes per 1,000 words unconstrained but drops to 0.19 when told not to - highly suppressible, unlike GPT-4.1 which keeps 3.86 even under an explicit ban. Practical upshot: name the specific tic and give the replacement, don't just say "write naturally".
 
 ---
 
@@ -40,6 +40,7 @@ created: 2026-09-19
 | **三段式**（tricolon） | 幾乎每個列舉都剛好三項；「快、狠、準」 | 三拍在訓練資料裡讀起來最「完整」 |
 | **對立句**（antithesis） | 「不只是 X，而是 Y」「重點不在 A，而在 B」 | 二元對立聽起來果斷、乾淨 |
 | **粗體到處撒** | 一段裡標粗好幾個詞組 | 同樣是 markdown 結構習慣的殘留 |
+| **講不停、什麼都解釋** | 你只想要結論，它先鋪陳三段背景才進正題 | RLHF 的長度偏誤 - 評分者常把「更長、更完整」誤當成「更好」 |
 | **無所不在的避險** | 「在某些情況下」「可能」「值得注意的是」 | 訓練目標獎勵「不要講死」，避免被判錯 |
 | **虛設的防守** | 先講一個沒人反對的小論點，再煞有其事地辯護它 | 對齊訓練養出的「先自我辯護」傾向 |
 | **過度熱情的開場** | 「這是一個很棒的問題！」 | RLHF 的討好傾向（sycophancy） |
@@ -81,6 +82,28 @@ Claude 只要你**明確點名**，就幾乎完全照做；GPT 就算明令禁�
 > [!TIP]
 > 最省事的做法：把這幾條寫進 `CLAUDE.md` 或你的自訂風格（style）設定，它每一輪都會重新套用，不必每次重講。這個 repo 自己就這樣做 - 專案規範裡明訂「引用名言用一般 `>`，破折號一律換成 ` - `」，所以你在這些筆記裡看到的是 ` - ` 不是 `——`。
 
+### 冗長是特例：光點名不夠，還要「限制空間」
+
+有一個習慣值得單獨拉出來講，因為它最花你時間，而且**光點名沒用**：AI 很愛解釋。你只想要結論，它先給你三段背景。
+
+原因是 RLHF 的**長度偏誤**：評分階段，較長、較完整的回答常常被誤當成較好的回答，於是「講好講滿」被獎勵了出來。這不是它想炫技，是它以為你要。
+
+你的直覺是對的 - **限制空間是最有效的一招。** 但要搭配幾個一起用：
+
+| 手段 | 怎麼寫 | 為什麼有效 |
+|:---|:---|:---|
+| **硬性長度上限** | 「三句話以內」「最多 5 條 bullet，每條 ≤ 20 字」 | 給它一個算得出來的邊界，比「簡短一點」精確 |
+| **先給結論**（BLUF） | 「第一句就講結論，理由放後面，我不一定會讀」 | 就算它後面照樣長，你要的那句已經在最前面 |
+| **明令去頭去尾** | 「不要開場白、不要總結、不要『希望有幫助』」 | 冗長有一大半是前言和結語，直接禁掉 |
+| **給模板** | 「照這個格式：結論：… ｜ 依據：… ｜ 風險：…」 | 模板本身就沒有留空間讓它鋪陳 |
+| **兩段式** | 先讓它寫，再叫它「砍一半，只留最重要的」 | 它很會刪自己的字，只是你要開口叫 |
+
+> [!WARNING]
+> **一個反直覺的坑：`effort` 參數不能拿來縮短輸出。** 很多人以為把 effort 調低就會變短 - 但官方明講，在 Claude Opus 5 上，effort 控制的是「想多久」，**不是回答的長度**；調低 effort 不會可靠地讓回答變短。要短，只能用上面那些「明講長度」的方式。effort 管的是思考深度，跟篇幅是兩件事。
+
+> [!TIP]
+> 一樣，把常用的那條寫進 `CLAUDE.md` 或自訂風格設定。例如這個 repo 的規範就有一條「避免冗長的前言和結語」 - 這正是在對付長度偏誤。
+
 ### 一個要注意的副作用
 
 壓文風習慣壓過頭，文章會變得**乾巴巴、句子長度一致、不敢下判斷** - 那也是一種「AI 味」，只是換了個方向。目標不是消滅所有結構，是**讓結構服務內容**，而不是內容去遷就結構。留幾個破折號、留一個漂亮的三段式都沒問題；問題永遠是**成群的、空洞的**那種。
@@ -113,4 +136,6 @@ Claude 只要你**明確點名**，就幾乎完全照做；GPT 就算明令禁�
 - [Why do AI models use so many em-dashes? — Sean Goedecke](https://www.seangoedecke.com/em-dashes/)
 - [Why Did LLMs Steal Our Em-Dashes? — McGill Office for Science and Society](https://www.mcgill.ca/oss/article/critical-thinking-student-contributors-technology/why-did-llms-steal-our-em-dashes)
 - [Why ChatGPT writes like that — Colin Gorrie](https://www.deadlanguagesociety.com/p/rhetorical-analysis-ai)
+- [Effort — Claude Platform Docs（effort 控制思考量而非回答長度）](https://platform.claude.com/docs/en/build-with-claude/effort)
+- [A Long Way to Go: Investigating Length Correlations in RLHF — Singhal et al., 2023](https://arxiv.org/abs/2310.03716)
 - [Indicators that suggest something was written by AI — Cherryleaf](https://www.cherryleaf.com/2026/02/indicators-that-suggest-something-was-written-by-ai/)
