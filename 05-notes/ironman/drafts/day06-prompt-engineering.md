@@ -1,5 +1,5 @@
 ---
-title: AI 101 - 鐵人賽 Day 06: Prompt Engineering, 哪些技巧真的有效
+title: "AI 101 - 鐵人賽 Day 06: Prompt Engineering, 哪些技巧真的有效"
 tags: [ai, 鐵人賽, ironman, prompt-engineering, 實證, 草稿]
 created: 2026-09-05
 status: draft
