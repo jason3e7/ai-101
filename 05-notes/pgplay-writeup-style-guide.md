@@ -9,9 +9,9 @@ created: 2026-09-20
 [← 回主頁](../index.md)｜對照概念：[AI 的文風與語氣](../02-advanced/ai-writing-style-tells.md)
 
 > [!NOTE]
-> [AI 的文風與語氣](../02-advanced/ai-writing-style-tells.md) 是**辨識並抑制** AI 的文風習慣；這篇是它的倒影——**辨識並重現** jason3e7 在 2023 年 iThome 鐵人賽〈PG Play 怎麼玩都不累〉三十篇 writeup 的個人文風。目的：讓 Claude 續寫或補寫同系列文章時，讀起來像本人繼續寫下去，不像 AI 接手。作法：把三十篇歸納出的**結構模板、標點慣例、句型節奏、常用零件**，整理成一份可以整段貼進 system prompt 或 skill 的約束清單。
+> [AI 的文風與語氣](../02-advanced/ai-writing-style-tells.md) 是**辨識並抑制** AI 的文風習慣；這篇是它的倒影——**辨識並重現** jason3e7 在 2023 年 iThome 鐵人賽〈PG Play 怎麼玩都不累〉三十篇 writeup 的個人文風。目的：讓 Claude 幫忙續寫 writeup 或在其他技術文章裡也讀得出本人手筆，不像 AI 接手。作法：拆成**文風層**（標點、句型、詞彙——放諸任何格式皆準）與**結構層**（writeup 五塊模板；ai-101 技術文章則走 [CLAUDE.md](../CLAUDE.md) 的模板）。
 
-> **TL;DR (EN):** A style-fingerprint note derived from all 30 articles of the author's 2023 PG Play writeup series. Serves as the mirror image of `ai-writing-style-tells.md`: instead of listing AI tells to suppress, it lists the author's tells to reproduce so Claude can continue the series in the same voice. Key constraints: rigid five-block template per box (防雷頁 / 可能的遺漏 / 摘要 / Walkthrough / ref), half-width comma between Chinese clauses, bullet-only prose, imperative verbs, English tech terms inlined without quotes, no em dash, no callout blocks, no TL;DR line, no closing summary — the article stops at `get proof.txt` plus refs. Paste the "Do / Don't" section into a system prompt to constrain output.
+> **TL;DR (EN):** A style-fingerprint note derived from all 30 articles of the author's 2023 PG Play writeup series. Serves as the mirror image of `ai-writing-style-tells.md`: instead of listing AI tells to suppress, it lists the author's tells to reproduce. Voice-layer fingerprints (apply universally): half-width comma between Chinese clauses, bullet-only prose, imperative verbs, English tech terms inlined, no em dash, no AI padding words, no rhetorical tricolons. Structure-layer fingerprint (writeup only): rigid five-block template per box (防雷頁 / 可能的遺漏 / 摘要 / Walkthrough / ref). Paste the "Do / Don't" section as a voice constraint on top of whatever structure template the target format demands — for ai-101 tech articles, that is CLAUDE.md's own required layout.
 
 ---
 
@@ -57,7 +57,7 @@ ref
 
 ---
 
-## 五塊模板：一定按這個順序，一塊都不能少 — The Five-Block Template
+## 五塊模板：writeup 系列的固定骨架 — The Five-Block Template (writeup only)
 
 | 區塊 | 作用 | 內容規則 |
 |:---|:---|:---|
@@ -183,37 +183,37 @@ Writeup 本體（Day 03 ~ Day 29 的 27 篇）**沒有任何個人語氣**，純
 
 ## Do / Don't 清單：可以整段貼進 prompt — Copy-Paste Constraints
 
+這一節是**文風層**——標點、句型、動詞用法、詞彙選擇——套用在任何格式上都成立。**結構層**照目標格式的模板走：
+
+- **ai-101 技術文章**：依 [CLAUDE.md](../CLAUDE.md) 的必備區塊順序（是什麼 → 安裝 → 基本使用 → 進階 → 常見問題 → Sources）、標題雙語 `# 中文 — English`、開頭 callout + 英文 TL;DR、Sources 用 `- [title](url)` 格式、callout 只用 GitHub 支援的 5 種（NOTE / TIP / IMPORTANT / WARNING / CAUTION）
+- **writeup 系列**：依上面「[五塊模板](#五塊模板writeup-系列的固定骨架--the-five-block-template-writeup-only)」那張表
+
 ```
-寫作約束（PG Play writeup 風格）：
+寫作約束（jason3e7 個人文風，只管文風不管結構）：
 
 DO：
 - 標點：中文句子裡一律用半形逗號和半形句號，中英之間留一個半形空格
-- 結構：每台靶機依序寫「防雷頁 / 可能的遺漏 / 摘要 / Walkthrough / ref」五塊，不加標題以外的裝飾
-- Walkthrough 每一步一行說明，中間空一行；指令直接原文貼上、不解釋
 - 動詞開頭、主詞省略：「先透過 X 確認 Y」「使用 X 提權為 root」
-- 失敗過的嘗試也要列出來，用「沒有弱點, 請嘗試其他攻擊」帶過
-- 英文技術詞（nmap、ssh、command injection、port）保持原大小寫、不加引號
-- ref 區塊一行一連結，不加 `-` 也不加編號
-- 沿用系列固定句：「先透過 nmap 確認開什麼 port 和什麼服務」、「dirb 掃描網站目錄」、
-  「手動檢查網站」、「使用 python 取得 pty shell」、「find setuid program」、
-  「檢查 /etc/crontab」、「檢查 /etc/passwd」、「get local.txt」、「get proof.txt」
+- 一句一件事，多用逗號串短子句，不用「並且」「而且」「因此」「所以」
+- 英文技術詞（nmap、ssh、command injection、port）保持原大小寫；
+  prose 中可以不加 backtick，只有指令、路徑、程式碼識別字（`budget_tokens` 這類）才用 `code` 標記
+- 寫 writeup 類內容時，沿用系列固定句：「先透過 nmap 確認開什麼 port 和什麼服務」、
+  「dirb 掃描網站目錄」、「手動檢查網站」、「使用 python 取得 pty shell」、「find setuid program」、
+  「檢查 /etc/crontab」、「檢查 /etc/passwd」、「get local.txt」、「get proof.txt」；
+  失敗嘗試用「沒有弱點, 請嘗試其他攻擊」帶過，不改寫成漂亮的成功流程
 
 DON'T：
-- 不用全形標點（，。！？：；）
-- 不用破折號（—— 或 —）
-- 不用 markdown callout（> [!NOTE] 這類）
-- 不寫「TL;DR」、「前言」、「結語」、「小結」、「總結一下」
-- 不用「其實」「值得注意的是」「在某些情況下」「換句話說」等 AI 常見冗詞
+- 不用全形標點（，。！？：；）——一律半形
+- 不用破折號（—— 或 —），這是 AI 最強的辨識指紋
+- 不用「其實」「值得注意的是」「在某些情況下」「換句話說」「更在於」等 AI 常見冗詞
 - 不用三段式湊節奏、不用「不只是 X，而是 Y」對立句
-- 不加比喻和譬喻（例外：Day 02 用一次《鋼の錬金術師》，Day 30 一次 script kiddie）
-- 不解釋指令做什麼（指令直接貼原文，讀者自己看）
-- 不在 writeup 本體寫個人感想（感想只在 Day 01 / 02 / 30 這種 meta 篇才有）
-- 不省略失敗路徑改寫成漂亮的成功流程
+- 不寫「讓我們一起看看」「首先／接著／最後」這種鋪陳詞
+- 不加沒必要的比喻譬喻（例外：Day 02 用一次《鋼の錬金術師》、Day 30 一次 script kiddie，都是 meta 篇的一句話濃度）
 ```
 
 ---
 
-## 前後對照：AI 預設 vs 本人風格 — Before/After
+## 前後對照：AI 預設 vs 本人風格（writeup 範例）— Before/After (writeup example)
 
 **AI 預設寫法**（會出現的 tells 全部標粗）：
 
