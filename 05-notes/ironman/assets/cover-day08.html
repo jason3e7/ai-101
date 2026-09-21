@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:82px;font-weight:900;line-height:1.05;letter-spacing:.005em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:6px;margin-top:6px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 08</span></div>
+  <div>
+    <h1>Harness <em>Engineering</em></h1>
+    <div class="sub">六層預設都做好了, 你真正能動的只有四個位置</div>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="220" viewBox="0 0 1056 220">
+    <!-- 兩欄標題 -->
+    <text x="176" y="24" fill="#8b93a5" font-size="20" font-weight="700" letter-spacing="2" text-anchor="middle">✓ 全自動 (你不用管)</text>
+    <text x="704" y="24" fill="#e8a13c" font-size="20" font-weight="700" letter-spacing="2" text-anchor="middle">◆ 你要動 (才有效)</text>
+
+    <line x1="0" y1="38" x2="352" y2="38" stroke="#5a6275" stroke-width="1.5" opacity="0.4"/>
+    <line x1="528" y1="38" x2="1056" y2="38" stroke="#e8a13c" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- 分隔線 -->
+    <line x1="440" y1="14" x2="440" y2="215" stroke="#3a4152" stroke-width="1"/>
+
+    <!-- 左欄: 全自動 (3 layers + 幾個具體項目) -->
+    <text x="0" y="76" fill="#c3c8d4" font-size="22">編排迴圈</text>
+    <text x="0" y="102" fill="#767d8d" font-size="15">query() loop / Turn / Thread</text>
+
+    <text x="0" y="134" fill="#c3c8d4" font-size="22">Context 壓縮</text>
+    <text x="0" y="160" fill="#767d8d" font-size="15">微壓縮 + 反應式 + prompt cache</text>
+
+    <text x="0" y="192" fill="#c3c8d4" font-size="22">錯誤恢復</text>
+    <text x="0" y="218" fill="#767d8d" font-size="15">circuit breaker + 529 fallback</text>
+
+    <!-- 右欄: 你要動 (4 個位置) -->
+    <text x="528" y="76" fill="#f2f0ea" font-size="22">CLAUDE.md / AGENTS.md</text>
+    <text x="528" y="102" fill="#e8a13c" font-size="15">常駐規則, 每輪自動注入</text>
+
+    <text x="528" y="134" fill="#f2f0ea" font-size="22">Permissions ＋ Hooks</text>
+    <text x="528" y="160" fill="#e8a13c" font-size="15">攔截點, 綁 lifecycle 事件</text>
+
+    <text x="528" y="192" fill="#f2f0ea" font-size="22">MCP scope</text>
+    <text x="528" y="218" fill="#e8a13c" font-size="15">每個都吃 context, 挑相關的裝</text>
+
+    <text x="820" y="192" fill="#f2f0ea" font-size="22">Sub-agent</text>
+    <text x="820" y="218" fill="#e8a13c" font-size="15">會產大量結果時派出去</text>
+  </svg>
+  </div>
+  <div class="foot">依據：Claude Code + Codex CLI 2026-09 內建 harness　|　Anthropic、LangChain</div>
+</div></body></html>
