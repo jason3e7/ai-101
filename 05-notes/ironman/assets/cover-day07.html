@@ -24,63 +24,57 @@ text{font-family:"Noto Sans CJK TC",sans-serif}
   <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 07</span></div>
   <div>
     <h1>Context <em>Engineering</em></h1>
-    <div class="sub">Prompt 只是它看到的 5%, 另外 95% 你也可以動</div>
+    <div class="sub">Prompt 只是它看到的 5%, 主動設計那 95% 你以為只是背景的東西</div>
   </div>
   <div class="chartwrap">
-  <svg width="1056" height="220" viewBox="0 0 1056 220">
-    <!-- 說明 -->
-    <text x="0" y="24" fill="#9aa0b0" font-size="20" font-weight="600">模型每一次讀到的 context window, 你打的那句只是最右邊那小格:</text>
-
+  <svg width="1056" height="180" viewBox="0 0 1056 180">
     <!-- 指向 prompt 5% 的箭頭 -->
-    <text x="925" y="76" fill="#e8a13c" font-size="20" font-weight="700" text-anchor="middle">你的 prompt</text>
-    <line x1="925" y1="82" x2="925" y2="98" stroke="#e8a13c" stroke-width="2"/>
-    <polygon points="925,102 919,92 931,92" fill="#e8a13c"/>
+    <text x="925" y="34" fill="#e8a13c" font-size="20" font-weight="700" text-anchor="middle">你的 prompt</text>
+    <line x1="925" y1="40" x2="925" y2="58" stroke="#e8a13c" stroke-width="2"/>
+    <polygon points="925,62 919,52 931,52" fill="#e8a13c"/>
 
     <!-- Bar 底 -->
-    <rect x="0" y="108" width="1056" height="72" fill="#1c1f2b" stroke="#3a4152" stroke-width="1"/>
+    <rect x="0" y="68" width="1056" height="72" fill="#1c1f2b" stroke="#3a4152" stroke-width="1"/>
 
     <!-- 系統 10% (0-105) -->
-    <rect x="0" y="108" width="105" height="72" fill="#3a4152"/>
-    <text x="52" y="150" fill="#c3c8d4" font-size="16" text-anchor="middle">系統規則</text>
-    <text x="52" y="170" fill="#767d8d" font-size="14" text-anchor="middle">10%</text>
+    <rect x="0" y="68" width="105" height="72" fill="#3a4152"/>
+    <text x="52" y="110" fill="#c3c8d4" font-size="16" text-anchor="middle">系統規則</text>
+    <text x="52" y="130" fill="#767d8d" font-size="14" text-anchor="middle">10%</text>
 
     <!-- 分隔 -->
-    <line x1="105" y1="108" x2="105" y2="180" stroke="#14161f" stroke-width="2"/>
+    <line x1="105" y1="68" x2="105" y2="140" stroke="#14161f" stroke-width="2"/>
 
     <!-- 對話歷史 30% (105-421) -->
-    <rect x="106" y="108" width="315" height="72" fill="#454c5f"/>
-    <text x="263" y="150" fill="#c3c8d4" font-size="17" text-anchor="middle">對話歷史</text>
-    <text x="263" y="170" fill="#767d8d" font-size="14" text-anchor="middle">30%</text>
+    <rect x="106" y="68" width="315" height="72" fill="#454c5f"/>
+    <text x="263" y="110" fill="#c3c8d4" font-size="17" text-anchor="middle">對話歷史</text>
+    <text x="263" y="130" fill="#767d8d" font-size="14" text-anchor="middle">30%</text>
 
-    <line x1="421" y1="108" x2="421" y2="180" stroke="#14161f" stroke-width="2"/>
+    <line x1="421" y1="68" x2="421" y2="140" stroke="#14161f" stroke-width="2"/>
 
     <!-- 工具定義 15% (421-580) -->
-    <rect x="422" y="108" width="158" height="72" fill="#3a4152"/>
-    <text x="501" y="150" fill="#c3c8d4" font-size="16" text-anchor="middle">工具定義</text>
-    <text x="501" y="170" fill="#767d8d" font-size="14" text-anchor="middle">15%</text>
+    <rect x="422" y="68" width="158" height="72" fill="#3a4152"/>
+    <text x="501" y="110" fill="#c3c8d4" font-size="16" text-anchor="middle">工具定義</text>
+    <text x="501" y="130" fill="#767d8d" font-size="14" text-anchor="middle">15%</text>
 
-    <line x1="580" y1="108" x2="580" y2="180" stroke="#14161f" stroke-width="2"/>
+    <line x1="580" y1="68" x2="580" y2="140" stroke="#14161f" stroke-width="2"/>
 
     <!-- 檔案 / RAG 30% (580-896) -->
-    <rect x="581" y="108" width="315" height="72" fill="#454c5f"/>
-    <text x="738" y="150" fill="#c3c8d4" font-size="17" text-anchor="middle">檔案 / RAG</text>
-    <text x="738" y="170" fill="#767d8d" font-size="14" text-anchor="middle">30%</text>
+    <rect x="581" y="68" width="315" height="72" fill="#454c5f"/>
+    <text x="738" y="110" fill="#c3c8d4" font-size="17" text-anchor="middle">檔案 / RAG</text>
+    <text x="738" y="130" fill="#767d8d" font-size="14" text-anchor="middle">30%</text>
 
-    <line x1="896" y1="108" x2="896" y2="180" stroke="#14161f" stroke-width="2"/>
+    <line x1="896" y1="68" x2="896" y2="140" stroke="#14161f" stroke-width="2"/>
 
     <!-- Prompt 5% (896-949) - GOLD -->
-    <rect x="897" y="108" width="52" height="72" fill="#e8a13c"/>
-    <text x="923" y="152" fill="#14161f" font-size="22" font-weight="900" text-anchor="middle">5%</text>
+    <rect x="897" y="68" width="52" height="72" fill="#e8a13c"/>
+    <text x="923" y="112" fill="#14161f" font-size="22" font-weight="900" text-anchor="middle">5%</text>
 
-    <line x1="949" y1="108" x2="949" y2="180" stroke="#14161f" stroke-width="2"/>
+    <line x1="949" y1="68" x2="949" y2="140" stroke="#14161f" stroke-width="2"/>
 
     <!-- 回應 10% (949-1056) -->
-    <rect x="950" y="108" width="106" height="72" fill="#3a4152"/>
-    <text x="1003" y="150" fill="#c3c8d4" font-size="16" text-anchor="middle">回應</text>
-    <text x="1003" y="170" fill="#767d8d" font-size="14" text-anchor="middle">10%</text>
-
-    <!-- 結論字 -->
-    <text x="0" y="212" fill="#a8aebd" font-size="19" letter-spacing="1">Context Engineering = 主動設計那 95% 你以為只是背景的東西</text>
+    <rect x="950" y="68" width="106" height="72" fill="#3a4152"/>
+    <text x="1003" y="110" fill="#c3c8d4" font-size="16" text-anchor="middle">回應</text>
+    <text x="1003" y="130" fill="#767d8d" font-size="14" text-anchor="middle">10%</text>
   </svg>
   </div>
   <div class="foot">依據：Karpathy、Anthropic、LangChain　|　比例為典型 Claude Code session 概估</div>
