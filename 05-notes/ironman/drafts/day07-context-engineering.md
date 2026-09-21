@@ -105,7 +105,7 @@ LangChain 的 Lance Martin 把 Context Engineering 的動作分四類. 我把它
 
 > **Prompt 是問句, Context 是它讀的那本書. 問對很好, 但選對書更重要.**
 
-Context Engineering 這件事後面幾天會反覆用到. CLAUDE.md、skills、hooks、subagents 都是它的具體實作, 每一個都會單獨拉出來講.
+Context Engineering 這件事後面幾天會反覆用到. CLAUDE.md、skills、hooks、subagents 都是它的具體實作.
 
 ---
 
