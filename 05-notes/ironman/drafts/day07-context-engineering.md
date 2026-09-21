@@ -68,11 +68,11 @@ LangChain 的 Lance Martin 把 Context Engineering 的動作分四類. 我把它
 
 **例一: 一個 CLAUDE.md 讓 refactor 從三輪變一輪**
 
-沒 CLAUDE.md 時, 你每個檔案都要重貼一次「用 tab 不用 space、結尾空行、commit 用中文」. 寫進 CLAUDE.md 後每輪自動注入, 你只講「refactor 這支」, 它就照 project style 動. 這是 write 那一招: 規則寫外面, 需要時自動 select 進來.
+沒 CLAUDE.md 時, 你每個檔案都要重貼一次「用 tab 不用 space、結尾空行、commit 用中文」. 寫進 CLAUDE.md 後每輪自動注入, 你只講「refactor 這支」, 它就照 project style 動.
 
 **例二: 20 個 MCP 全裝上, 每輪多吃 5K 到 10K tokens**
 
-一個 MCP tool 定義平均 200 到 500 tokens. 裝 20 個等於每輪都讀 4K 到 10K 工具定義, 而且**模型從 20 個裡挑對的準度會下降**. Anthropic 原話: 「人類工程師都無法確定該用哪個, AI agent 也做不到.」實務: MCP 分場景裝, 寫 code 就別掛 Slack.
+一個 MCP tool 定義平均 200 到 500 tokens. 裝 20 個等於每輪都讀 4K 到 10K 工具定義, 而且**模型從 20 個裡挑對的準度會下降**. Anthropic 原話: 「人類工程師都無法確定該用哪個, AI agent 也做不到.」實務: MCP 分場景裝.
 
 **例三: `/compact` 跟 `/clear` 什麼時候各用哪個**
 
@@ -81,12 +81,10 @@ LangChain 的 Lance Martin 把 Context Engineering 的動作分四類. 我把它
 
 大部分人只會 `/clear`. `/compact` 是耐心武器, 長任務中間 compact 幾次比每次都 clear 好.
 
-**例四: 讓 agent 主動寫 `NOTES.md`** (後面會展開)
-
+**例四: 讓 agent 主動寫 `NOTES.md`**
 長跑任務中, 直接叫 agent「把目前進度、待辦、發現寫進 `NOTES.md`」. 下一次對話開始就 `Read NOTES.md`, 恢復到中斷處. Anthropic 那隻打 Pokémon 的 agent 靠這招在幾千步之間追進度. 這是 write 的進階用法: 不只寫規則, **讓 agent 寫自己的外部記憶**.
 
-**例五: 用 sub-agent 隔離髒活** (後面會展開)
-
+**例五: 用 sub-agent 隔離髒活**
 要在整個 repo 找一個特定 pattern, 別在主對話直接 `Grep`, 每次搜尋結果都會留在 context 裡佔位子. 開 sub-agent 專門去找, 只把結論回主對話. 主 context 保持乾淨. 這是 isolate 的日常用法, 也是 [Day 06](./day06-prompt-engineering.md) 「指令與資料分開」的延伸.
 
 ---
