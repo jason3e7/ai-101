@@ -125,6 +125,43 @@ Output Guardrails  → 最終輸出前檢查
 
 ---
 
+## Claude Code / Codex 已經做了多少 — What's Built In (2026-09)
+
+短答: **六大組成裡, Claude Code 幾乎全部預設就有, Codex CLI (2026-08 開源 harness 後) 也差不多.** Harness Engineering 這個詞聽起來像另一門要學的學問, 但你如果在用 Claude Code 或 Codex, 你已經在用一個成熟的 harness, 只是它藏在指令背後.
+
+### 六大組成的實作對照
+
+| 組成 | Claude Code | Codex CLI | 誰要動 |
+|:---|:---|:---|:---|
+| **編排迴圈** | 內建 `query()` async generator, mutable state, 循環到 stop | Codex core 的 agent loop, Item / Turn / Thread 三 primitives | 全自動 |
+| **Context 管理** | 微壓縮 (每輪), 反應式壓縮 (滿了觸發), 5 分鐘 prompt cache | Thread 支援 resume/fork/archive, 有 compaction | 全自動 ＋ 你可以 `/clear`、`/compact` 干預 |
+| **工具集** | ~43 內建 tool (bash/read/write/edit/grep/glob/agent/task/web) ＋ MCP | 內建 tool ＋ MCP ＋ 沙盒執行 | 內建自動; MCP 你決定接哪些 |
+| **狀態與記憶** | 對話記錄自動存, CLAUDE.md 常駐, `MEMORY.md` 開機讀 ~200 行 | AGENTS.md (等同 CLAUDE.md), plugins 打包分發 | 你寫 CLAUDE.md / AGENTS.md |
+| **護欄** | 權限系統 (deny/allow/classifier/prompt), Hooks (PreToolUse / PostToolUse / Stop / SubagentStop / PreCompact 等 lifecycle 事件) | Approval policy ＋ sandbox modes | 你設 permissions 跟 hooks |
+| **錯誤恢復** | Circuit breaker (連 3 次 compaction 失敗停), context overflow → collapse → 重試, 529 fallback | 內建 retry, sandbox 隔離失敗 | 全自動 |
+
+### 你還需要主動做的四件事
+
+前面表格「你要動」那欄整理起來, 實際上就這四個:
+
+1. **`CLAUDE.md` / `AGENTS.md`** — 常駐規則 (Context Engineering 的 write 那一招). 沒寫的話, harness 還是會跑, 但沒有專案風格
+2. **Permissions 跟 Hooks** — 你想在哪些操作前檢查、哪些操作後觸發. 沒設的話, 預設會每次問你確認
+3. **MCP 要接哪些** — 每個 MCP 都吃 context, 選擇要精 (見 [Day 07 Context Engineering](../05-notes/ironman/drafts/day07-context-engineering.md) 例二)
+4. **Sub-agent 什麼時候派** — Explore / Plan 是內建的; 自訂的 subagent 用 `AgentTool` 呼叫. 沒派的話, 主 agent 會自己扛所有 context
+
+**其他都自動了.** 你不用自己實作重試邏輯、compaction、tool 呼叫循環、sandbox 隔離, 那些 2023 年真的要自己寫, 現在都在 harness 裡.
+
+### 那還要學 Harness Engineering 幹嘛
+
+既然預設都做好了, 為什麼還要懂:
+
+- **看得懂錯在哪**: 遇到 agent 卡住、context 爆、tool 選錯, 知道是哪一層在管才能修
+- **知道天花板在哪**: harness 有既定行為, 有些場景硬要用它會撞牆 (例: 100+ 並行 agent, 或需要 CI 級 audit log, Claude Code 不是最適合的形狀)
+- **自己蓋 harness 的時候**: 拿 Claude Code / Codex 當範本, 六大組成一個一個對, 少掉三分之二的坑
+- **多 agent 協作**: 下一節那個 Planner / Generator / Evaluator 三 agent 架構, 內建的 sub-agent 是骨架但 orchestration 邏輯還是你要設計
+
+---
+
 ## Multi-Agent Harness 設計
 
 ### Anthropic 三 Agent 架構
