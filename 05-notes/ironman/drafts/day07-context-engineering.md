@@ -89,6 +89,27 @@ LangChain 的 Lance Martin 把 Context Engineering 的動作分四類. 我把它
 
 ---
 
+## Web chat 版本怎麼做 — What You Can Do in Web Chat
+
+上面五個例子都在講 Claude Code. 如果你用的是 web chat (Claude.ai、ChatGPT、Gemini), 沒有 `CLAUDE.md`、沒有 MCP、沒有 `/compact`、沒有 sub-agent 指令, **不代表 Context Engineering 用不上**. 四招都有對應做法, 只是介面換了:
+
+| 動作 | Web chat 上的做法 |
+|:---|:---|
+| **Write** | Claude Projects Instructions ＋ Knowledge / ChatGPT Custom Instructions / Gemini Gems |
+| **Select** | 上傳前先過濾, 只貼真的需要的段落, 不要整份 doc 丟 |
+| **Compress** | **開新 chat** 就等於 `/clear`. 切換前先叫模型「把目前結論摘要成一段」再貼進新 chat 帶過去 |
+| **Isolate** | 一個主題一個 chat / 一個 Project. 別把工作、學習、旅行塞同一條 |
+
+具體幾條:
+
+1. **`CLAUDE.md` 的 web chat 版是 Custom Instructions / Project Instructions**. Claude Projects 讓你為每個 Project 寫「這個專案的目標、風格、限制」, 每次對話自動注入, 效果跟 CLAUDE.md 一樣
+2. **開新對話比想像中重要**. 沒有 `/clear`, 但點「New Chat」就是最強的 reset. 對話開始歪掉、切主題、或已經很長, **直接開新的比在原對話裡糾正快**
+3. **對話開頭給結構**. 用 [Day 06](./day06-prompt-engineering.md) 那個四件事範本, 手打進去也一樣有效. Web chat 不必用 XML 標籤那麼講究, 「任務: … / 背景: … / 資料: … / 輸出格式: …」四段就夠
+4. **Memory 要看但別依賴**. ChatGPT memory、Claude 個人記憶都會自動累積. 定期進設定看一下, **清掉不再相關的**. 不然它會拿你三個月前的錯誤前提回你新問題
+5. **Attachments 是雙面刃**. 上傳 PDF、圖片會直接進 context, 一份 300 頁的 PDF 塞進去就吃掉一半 window. **只挑需要的頁截圖或摘要貼上**, 比整份丟好
+
+---
+
 ## 常見誤會 — Common Mistakes
 
 | 誤會 | 事實 |
