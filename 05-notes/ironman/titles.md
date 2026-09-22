@@ -67,7 +67,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 09 | 一個好的 prompt 長什麼樣？先把「詳細一點」這種話戒掉 | [meta-prompting](../meta-prompting.md) | 改寫 |
+| 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day09-loop-engineering.md) |
 | 10 | XY Problem：你問的問題，通常不是你真正的問題 | [meta-prompting](../meta-prompting.md) | 改寫 |
 | 11 | 用 prompt 生 prompt：一個可以直接複製的 MVP 模板 | [meta-prompting](../meta-prompting.md) | 改寫 |
 | 12 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 |

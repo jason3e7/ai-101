@@ -1,39 +1,41 @@
 ---
-title: AI 101 - 鐵人賽 Day 07：先看終點，Loop Engineering
+title: AI 101 - 鐵人賽 Day 09：Loop Engineering，你不再是提示 AI 的那個人
 tags: [ai, 鐵人賽, ironman, loop-engineering, agent, 自動化, 草稿]
 created: 2026-09-06
 status: draft
 ---
 
-# Day 07｜先看終點：Loop Engineering - 你不再是提示 AI 的那個人
+# Day 09｜Loop Engineering：你不再是提示 AI 的那個人
 
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
-> 昨天講完 prompt。今天不往下一級走，直接跳到**終點**：讓 agent 自己「做事 → 檢查 → 決定下一步 → 重來」，直到目標達成。先看到終點長什麼樣，中間那幾級才知道是為了什麼而爬。
+> 前三天一路往外退：prompt 是那一句（[Day 06](./day06-prompt-engineering.md)）、context 是模型看到的全部（[Day 07](./day07-context-engineering.md)）、harness 是外面那台跑每一輪的機器（[Day 08](./day08-harness-engineering.md)）。你可能以為今天是「再包一層」。**不是。今天不是加一層，是換一種站法** - 從「陪它跑每一輪」退到「設好目標和停止規則，走人」。
 
-> **TL;DR (EN):** Loop Engineering means designing the system that prompts your agent, instead of typing every next instruction yourself. Four parts: a trigger, a verifiable goal with a verifier, context management, and stop rules. The loop — not the model, not the prompt — is where the leverage sits in 2026. None of the parts are new; what changed is that they finally got reliable enough to leave running unattended.
+> **TL;DR (EN):** Loop Engineering means designing the system that prompts your agent, instead of typing every next instruction yourself. Four parts: a trigger, a verifiable goal with a verifier, context management, and stop rules. It is not a fourth outer layer on top of the harness — the loop lives *inside* the harness (Day 08's first component). What changed is a stance: you stop riding each turn and start setting goals and stop-conditions. None of the parts are new; they just finally got reliable enough to leave running unattended.
 
 ---
 
-## 為什麼第六天就講終點 — Why the Destination, on Day Six
+## 不是第四層，是換一種站法 — A Change of Stance
 
-這條路其實有四級，一級比一級離模型更遠、離系統更近：
+前三天很容易讓人腦補成一座乾淨的階梯，一層包一層：
 
-> **Prompt（怎麼問）→ Context（餵什麼）→ Harness（外層框架）→ Loop（自主迴圈）**
+> Prompt（那一句）⊂ Context（那一輪的全部）⊂ Harness（跑每一輪的機器）
 
-Day 06 講完了第一級。照理說今天該講第二級，但我想先把最後一級攤開來看 - 因為**只看前三級，你不會知道自己在爬什麼。**
+到 harness 為止，這個「往外包」是成立的。但 Loop 接不上去 - **它不是包在 harness 外面的第四層，它是 harness 裡面的零件。** [Day 08](./day08-harness-engineering.md) 把「編排迴圈」列為 harness 六大組成的**第一層**：迴圈本來就在裡面跑。
 
-先給第二級（Context）一個位置：**這一跳其實最大。** Prompt 是你打出來那一句（模型看到的約 5%），Context 是模型當下看到的**全部** - system prompt、對話歷史、工具定義、RAG 結果、長短期記憶都算。[Day 06](./day06-prompt-engineering.md) 那個 prompt 骨架的四件事（指令 / 脈絡 / 輸入 / 輸出格式），Prompt 只有第一格，另外三格都是 Context。**真要說「哪一級動最多結果」，是第二級。** 這一級 Day 13 展開；今天講 Loop 之前先讓你知道它有多大，因為下面 Loop 的四塊骨架裡有一塊「上下文管理」，就是 Context Engineering 的縮影 - agent 漂移，大多是這塊沒管好。
+那為什麼要單獨拉出來講一天？因為真正一路貫穿四天的，不是「包了幾層」，而是**你站多遠、engineering 的單位是什麼**：
 
-爬到第四級的時候，身分會換一次：
+> **一句話（prompt）→ 一輪的輸入（context）→ 那台機器（harness）→ 整個自動流程（loop）**
 
-> **你不再是「提示 AI 的人」，而是「設計那個提示 AI 的系統的人」。**
+前三個你都還站在「每一輪」裡面 - 陪它跑、看它這輪的輸出、決定下一句。到了 loop，身分換了一次：
 
-先分清楚兩個很像的詞：
+> **你不再是「提示 AI 的人」，而是「設計那個提示 AI 的系統的人」。** 你設好目標和停止規則，就走人。
+
+所以今天不是技術上的更外一層，是**心態上的一次退場**。先分清楚兩個很像的詞：
 
 | | **鏈（chain）** | **迴圈（loop）** |
-|---|---|---|
+|:---|:---|:---|
 | 形狀 | 直線、固定（A → B → C） | 循環、可改（會重複、分支、換方向） |
 | 行為 | 跑一次就結束 | 看結果再決定，反覆到目標達成 |
 
@@ -56,12 +58,12 @@ Claude Code、Codex、Devin 這些工具的核心運作就是迴圈：**讀檔 �
 第 3 點也有一個實作重點：
 
 > [!TIP]
-> **要跨越對話壓縮還活著的指令，寫進 `CLAUDE.md`。** 它每一輪都會重新注入，不會因為對話被壓縮而遺失。這正好接上 Day 03 講的「模型不會從對話裡學會」 - `CLAUDE.md` 就是那個補丁。
+> **對話一長就會被壓縮，早期講過的指令可能在壓縮中遺失** - 這正是 [Day 03](./day03-what-it-cannot-do.md) 講的「模型不會從對話裡學會」。設計上，放進 `CLAUDE.md` 這類每輪重新注入的檔案比塞在對話裡更可靠；但**這條的實際效果你要自己在你的設定上測**，不同版本、不同壓縮策略下表現不一定一樣。
 
 Addy Osmani 進一步把「一個完整的迴圈系統」拆成六塊積木：
 
 | 積木 | 作用 | 在 Claude Code 對應 |
-|---|---|---|
+|:---|:---|:---|
 | **自動化** | 排程自動觸發 | `/loop`、`/goal`、cron、GitHub Actions |
 | **Worktree** | 隔離並行的 agent，避免改到同一份檔案打架 | `git worktree` |
 | **Skills** | 把專案知識寫成檔，不用每次重講 | `SKILL.md` |
@@ -75,9 +77,9 @@ Addy Osmani 進一步把「一個完整的迴圈系統」拆成六塊積木：
 
 內建零件其實都在：
 
-- **`/goal`** - 設一個可驗證的完成條件，讓它自己跑到達成（Day 17 展開）
+- **`/goal`** - 設一個可驗證的完成條件，讓它自己跑到達成（後面專門有一天講）
 - **`/loop`** - 讓它按節奏反覆執行某個任務
-- **強制力 Hook** - 防止它中途放棄、跑偏、忘記目標（Day 18 展開，包含一個我實測失敗的 Hook）
+- **強制力 Hook** - 防止它中途放棄、跑偏、忘記目標（講 Hook 那天會示範，包含一個我實測失敗的 Hook）
 - **Worktree ＋ Sub-agent** - 並行多個 agent，寫的和驗的分開
 
 一個完整的迴圈長這樣（Addy 的範例）：
@@ -115,7 +117,7 @@ Loop Engineering **沒有技術突破，零件全是舊的**：act → observe �
 
 值不值得叫一個新的「XX Engineering」，見仁見智。這個問題 Day 30 會再回來收。
 
-接下來兩天回到基本功。然後 Day 13–14 會走回頭路，把跳過的那兩級 - Context 和 Harness - 一級一級補上。
+到這裡，prompt → context → harness → loop 四種站法都看過了。接下來幾天下沉到細節：怎麼把目標寫成「它能自己驗」的樣子、怎麼用 Hook 逼它別中途放棄、怎麼讓寫的和驗的分開。骨架你已經有了，剩下的是把每一塊磨利。
 
 ---
 
