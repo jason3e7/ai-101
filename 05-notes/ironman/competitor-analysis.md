@@ -85,7 +85,7 @@ created: 2026-09-22
 
 ### F. 硬體／地端／推論 — Hardware & Inference (1 系列)
 
-- **128GB 統一記憶體 DGX Spark** ⭐ (kerr, 已在 06-external 收過兩篇 note)
+- **128GB 統一記憶體 DGX Spark** ⭐ (作者 ivanusto; 跟 06-external 收的 kerr 是**不同人**, 兩人都寫 DGX Spark 是巧合)
 
 ### G. 測試 QA (2 系列, 同一人)
 
@@ -183,7 +183,7 @@ created: 2026-09-22
 
 ### 2. 提早推出 4 場 field test
 
-大部分系列缺**實測數據**. 我原本規劃在 Day 22 到 Day 24 集中放, 建議提前散到 Day 10 到 Day 15 之間插播. 一場 field test 的說服力抵得上三篇心法. 現在同組已經有 kerr 的 DGX Spark 實測撐場, 但他做的是硬體, 我做的是**應用層行為實測** (例: 「請仔細思考」實測有沒有效), 不衝突.
+大部分系列缺**實測數據**. 我原本規劃在 Day 22 到 Day 24 集中放, 建議提前散到 Day 10 到 Day 15 之間插播. 一場 field test 的說服力抵得上三篇心法. 現在同組已經有 ivanusto 的 DGX Spark 實測撐場, 但他做的是硬體, 我做的是**應用層行為實測** (例: 「請仔細思考」實測有沒有效), 不衝突.
 
 ### 3. 一週熱點速覽系列 (可選)
 
@@ -238,7 +238,7 @@ created: 2026-09-22
 
 1. **AI coding 沒有新問題** (資深觀察, 標題全反直覺)
 2. **Backend 工程師的 Azure GenAI 實戰** (最專業的一位, 每篇標題都有殺氣; 30 篇全發)
-3. **kerr - 128GB DGX Spark** (實測數據硬派, 我已收 external note)
+3. **ivanusto - 128GB DGX Spark** (30 篇全發, 實測硬派; 跟 06-external 的 kerr 是不同人)
 
 其他 3 個候選: 摩擦-規則系列、AI 負責答我負責可信 (公部門)、方法圖鑑 × Skills.
 
