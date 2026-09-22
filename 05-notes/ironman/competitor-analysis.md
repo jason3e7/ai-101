@@ -247,4 +247,4 @@ created: 2026-09-22
 ## Sources
 
 - 資料來源: [2026 iThome 鐵人賽 Claude AI 組](https://ithelp.ithome.com.tw/2026ironman/claude-ai) (2026-09-22 上午抓)
-- 40 個系列的完整標題列表存放在 `/tmp/ironman/all-series-articles.json` (不提交到 repo, 為避免版權疑慮; 需要時可重新用 playwright 掃)
+- 40 系列的完整標題清單: [competitor-titles.md](./competitor-titles.md) (只收標題與原文 URL, 不轉載內文)
