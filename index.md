@@ -79,6 +79,7 @@ updated: 2026-07-04
 | [AI 101 - Context Engineering 進階](./02-advanced/context-engineering-in-depth.md) | 9 個組成、4 種操作 (write/select/compress/isolate)、3 個原理; 參考 ihower ＋ Anthropic ＋ LangChain |
 | [AI 101 - Harness Engineering](./02-advanced/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
 | [AI 101 - Loop Engineering](./02-advanced/loop-engineering.md) | 設計「會自己提示 agent 的迴圈」：觸發、可驗證目標、上下文、停止規則；Prompt→Context→Harness→Loop 的下一棒 |
+| [AI 101 - 從 Prompt 到 Loop：四個時代](./02-advanced/prompt-engineering-evolution.md) | Prompt→Context→Harness→Loop 的技術演進時間軸與精確日期；主線是「控制單位一直往外退」，四代疊加而非取代 |
 | [AI 101 - AI 怎麼知道該用哪種能力](./02-advanced/how-ai-picks-capability.md) | 以 Opus 5 為基準拆成八層：五層訓練時長好、三層每次請求自動跑；標明哪幾層動得了，以及對 prompt 的四條推論 |
 | [AI 101 - Claude 顯示 thinking 是什麼機制](./02-advanced/how-claude-shows-thinking.md) | 你看到的 Thinking 是**摘要模型**的產出不是原文；signature 才是加密的完整推理；4.7+ `budget_tokens` 已 400，改用 adaptive ＋ effort |
 | [AI 101 - AI 的文風與語氣](./02-advanced/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
