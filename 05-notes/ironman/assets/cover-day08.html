@@ -24,52 +24,49 @@ text{font-family:"Noto Sans CJK TC",sans-serif}
   <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 08</span></div>
   <div>
     <h1>Harness <em>Engineering</em></h1>
-    <div class="sub">六層預設都做好了, 你真正能動的只有四個位置</div>
+    <div class="sub">六層 harness: 三層預設好, 三層你要動</div>
   </div>
   <div class="chartwrap">
-  <svg width="1056" height="220" viewBox="0 0 1056 220">
-    <!-- 上方層說明條 -->
-    <text x="0" y="20" fill="#9aa0b0" font-size="18" font-weight="600">Harness 的六大組成, 灰色是全自動, 金色是你要動的:</text>
-
+  <svg width="1056" height="180" viewBox="0 0 1056 180">
     <!-- 六格 flow, 每格 168 寬, 間 8px, 共 168*6 + 8*5 = 1048 -->
     <!-- Layer 1: 編排迴圈 (自動) -->
-    <rect x="0" y="46" width="168" height="120" rx="10" fill="#232634" stroke="#3a4152" stroke-width="1.5"/>
-    <text x="84" y="76" fill="#c3c8d4" font-size="20" font-weight="700" text-anchor="middle">編排迴圈</text>
-    <text x="84" y="112" fill="#5a6275" font-size="14" text-anchor="middle">query() loop</text>
-    <text x="84" y="150" fill="#767d8d" font-size="14" text-anchor="middle">✓ 自動</text>
+    <rect x="0" y="6" width="168" height="120" rx="10" fill="#232634" stroke="#3a4152" stroke-width="1.5"/>
+    <text x="84" y="36" fill="#c3c8d4" font-size="20" font-weight="700" text-anchor="middle">編排迴圈</text>
+    <text x="84" y="72" fill="#5a6275" font-size="14" text-anchor="middle">query() loop</text>
+    <text x="84" y="116" fill="#767d8d" font-size="14" text-anchor="middle">✓ 自動</text>
 
     <!-- Layer 2: Context 管理 (自動) -->
-    <rect x="176" y="46" width="168" height="120" rx="10" fill="#232634" stroke="#3a4152" stroke-width="1.5"/>
-    <text x="260" y="76" fill="#c3c8d4" font-size="20" font-weight="700" text-anchor="middle">Context 管理</text>
-    <text x="260" y="112" fill="#5a6275" font-size="14" text-anchor="middle">微壓縮 + cache</text>
-    <text x="260" y="150" fill="#767d8d" font-size="14" text-anchor="middle">✓ 自動</text>
+    <rect x="176" y="6" width="168" height="120" rx="10" fill="#232634" stroke="#3a4152" stroke-width="1.5"/>
+    <text x="260" y="36" fill="#c3c8d4" font-size="20" font-weight="700" text-anchor="middle">Context 管理</text>
+    <text x="260" y="72" fill="#5a6275" font-size="14" text-anchor="middle">微壓縮 + cache</text>
+    <text x="260" y="116" fill="#767d8d" font-size="14" text-anchor="middle">✓ 自動</text>
 
     <!-- Layer 3: 工具集 (你要動) -->
-    <rect x="352" y="46" width="168" height="120" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="2"/>
-    <text x="436" y="76" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">工具集</text>
-    <text x="436" y="112" fill="#e8a13c" font-size="14" text-anchor="middle">MCP scope</text>
-    <text x="436" y="132" fill="#e8a13c" font-size="14" text-anchor="middle">Sub-agent 派</text>
-    <text x="436" y="156" fill="#e8a13c" font-size="14" font-weight="700" text-anchor="middle">◆ 你要動</text>
+    <rect x="352" y="6" width="168" height="120" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="2"/>
+    <text x="436" y="36" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">工具集</text>
+    <text x="436" y="72" fill="#e8a13c" font-size="14" text-anchor="middle">MCP scope</text>
+    <text x="436" y="92" fill="#e8a13c" font-size="14" text-anchor="middle">Sub-agent 派</text>
+    <text x="436" y="116" fill="#e8a13c" font-size="14" font-weight="700" text-anchor="middle">◆ 你要動</text>
 
     <!-- Layer 4: 狀態記憶 (你要動) -->
-    <rect x="528" y="46" width="168" height="120" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="2"/>
-    <text x="612" y="76" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">狀態記憶</text>
-    <text x="612" y="112" fill="#e8a13c" font-size="14" text-anchor="middle">CLAUDE.md</text>
-    <text x="612" y="132" fill="#e8a13c" font-size="14" text-anchor="middle">AGENTS.md</text>
-    <text x="612" y="156" fill="#e8a13c" font-size="14" font-weight="700" text-anchor="middle">◆ 你要動</text>
+    <rect x="528" y="6" width="168" height="120" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="2"/>
+    <text x="612" y="36" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">狀態記憶</text>
+    <text x="612" y="72" fill="#e8a13c" font-size="14" text-anchor="middle">CLAUDE.md</text>
+    <text x="612" y="92" fill="#e8a13c" font-size="14" text-anchor="middle">AGENTS.md</text>
+    <text x="612" y="116" fill="#e8a13c" font-size="14" font-weight="700" text-anchor="middle">◆ 你要動</text>
 
     <!-- Layer 5: 護欄 (你要動) -->
-    <rect x="704" y="46" width="168" height="120" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="2"/>
-    <text x="788" y="76" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">護欄</text>
-    <text x="788" y="112" fill="#e8a13c" font-size="14" text-anchor="middle">Permissions</text>
-    <text x="788" y="132" fill="#e8a13c" font-size="14" text-anchor="middle">Hooks</text>
-    <text x="788" y="156" fill="#e8a13c" font-size="14" font-weight="700" text-anchor="middle">◆ 你要動</text>
+    <rect x="704" y="6" width="168" height="120" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="2"/>
+    <text x="788" y="36" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">護欄</text>
+    <text x="788" y="72" fill="#e8a13c" font-size="14" text-anchor="middle">Permissions</text>
+    <text x="788" y="92" fill="#e8a13c" font-size="14" text-anchor="middle">Hooks</text>
+    <text x="788" y="116" fill="#e8a13c" font-size="14" font-weight="700" text-anchor="middle">◆ 你要動</text>
 
     <!-- Layer 6: 錯誤恢復 (自動) -->
-    <rect x="880" y="46" width="168" height="120" rx="10" fill="#232634" stroke="#3a4152" stroke-width="1.5"/>
-    <text x="964" y="76" fill="#c3c8d4" font-size="20" font-weight="700" text-anchor="middle">錯誤恢復</text>
-    <text x="964" y="112" fill="#5a6275" font-size="14" text-anchor="middle">retry + fallback</text>
-    <text x="964" y="150" fill="#767d8d" font-size="14" text-anchor="middle">✓ 自動</text>
+    <rect x="880" y="6" width="168" height="120" rx="10" fill="#232634" stroke="#3a4152" stroke-width="1.5"/>
+    <text x="964" y="36" fill="#c3c8d4" font-size="20" font-weight="700" text-anchor="middle">錯誤恢復</text>
+    <text x="964" y="72" fill="#5a6275" font-size="14" text-anchor="middle">retry + fallback</text>
+    <text x="964" y="116" fill="#767d8d" font-size="14" text-anchor="middle">✓ 自動</text>
 
   </svg>
   </div>
