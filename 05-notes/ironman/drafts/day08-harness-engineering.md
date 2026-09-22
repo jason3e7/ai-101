@@ -119,6 +119,25 @@ Read / Grep 完全不打擾, 要寫入才問. 節省的時間非常明顯.
 
 ---
 
+## Web chat 版本呢 — What About Web Chat
+
+上面例子都是 Claude Code. 如果你用的是 web chat (Claude.ai、ChatGPT、Gemini), **web app 本身就是一個 harness**, 只是形狀跟 Claude Code 不同: 沒有 hooks、沒有 permissions 規則、沒有 worktree, 但也不用你配那些. 你要動的四個位置在 web chat 上都有對應:
+
+| Claude Code 上你要動的 | Web chat 對應 |
+|:---|:---|
+| **CLAUDE.md / AGENTS.md** | Custom Instructions / Claude Projects Instructions / ChatGPT Custom GPT instructions |
+| **Permissions ＋ Hooks** | 沒有 hooks; 但每則訊息可 toggle 啟用哪些工具 (web search、artifacts、extended thinking 等) |
+| **MCP scope** | Claude Connectors (Notion、GDrive、Slack…) / ChatGPT GPT Actions / Gemini Extensions |
+| **Sub-agent 派出去** | Custom GPTs / Claude Projects 當「專用助手」, 分不同 context |
+
+具體幾條:
+
+1. **每個 toggle 都是 harness 選擇**. Web search、artifacts、extended thinking、canvas 這些 mode 都吃 context 和延遲. **不需要就別開**, 例如寫詩不需要 web search
+2. **模型選擇也是 harness 選擇**. Sonnet 做快速迭代、Opus 做深度思考、o-series 做長推理. 選錯 mode 等於選了不合適的 harness
+3. **Custom GPTs / Projects 就是 web 版的 harness config**. 固定工作流 (審 code、翻譯、市場分析) 建一個 dedicated GPT / Project, 綁好 instructions、files、tools, 別每次從零開始
+4. **Connectors 精選**. 每個 connector 也吃 context. 挑「這個 project 一定會用到」的就好, 別把 Notion / GDrive / GitHub / Slack 全掛
+5. **沒 hooks 的替代**: 想要「每次回答前先驗證、完成後檢查」這種 hook 行為, 寫進 project instructions 用 prompt 模擬. 例如「每次寫完 code 後, 列出你沒 handle 的 edge case」. 效果比 hook 弱但可用
+
 ## 那還要學 Harness Engineering 幹嘛 — Why Still Learn It
 
 既然預設都做好了, 為什麼還要懂:
