@@ -59,9 +59,9 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 03 | 它做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/llm-limitations.md) ＋ [實測](../llm-limitations-field-test.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10412787) |
 | 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10413054) |
 | 05 | AI 怎麼知道該用哪種能力 | [how-ai-picks-capability](../../02-advanced/how-ai-picks-capability.md) | ✅ [已完成](./drafts/day05-how-it-picks.md) |
-| 06 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md) + 新研究 | ✅ [已完成](./drafts/day06-prompt-engineering.md) |
-| 07 | 先看終點：Loop Engineering - 你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day07-loop-engineering.md) |
-| 08 | 六種能力怎麼用：摘要、解釋、發想、重構、分析、規劃的實戰配方 | [capabilities-playbook](../../02-advanced/capabilities-playbook.md) | 改寫 |
+| 06 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md)＋新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10414480) |
+| 07 | Context Engineering：prompt 只是它看到的 5% | [context-engineering](../../02-advanced/context-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415067) |
+| 08 | Harness Engineering：你已經在用只是不知道 | [harness-engineering](../../02-advanced/harness-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415590) |
 
 ### 轉·提問：問得準（Day 9–12）
 

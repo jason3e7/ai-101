@@ -1,10 +1,6 @@
 title : [Day 08] Harness Engineering: 你已經在用只是不知道
 
 
-> [Day 07](https://ithelp.ithome.com.tw/articles/10415067) 拆完 Context Engineering: 動的是模型看到的 95%. 今天再往外一層: **Context 是被誰塞進去的? 塞的過程誰在管? 出錯誰處理?** 答案是 harness, 包裹 LLM 的完整執行環境. 你如果在用 Claude Code 或 Codex, 你已經在用一個成熟的 harness 了, 只是它藏在指令背後. 這一天教你認出它, 順便告訴你**你真正能動的位置只有四個, 其他都自動了**.
-
----
-
 ## 為什麼今天講 harness — Zooming Out
 
 前兩天走的是**往內看**: prompt 是那一句 ([Day 06](https://ithelp.ithome.com.tw/articles/10414480)), context 是模型讀到的所有東西 ([Day 07](https://ithelp.ithome.com.tw/articles/10415067)). 今天**往外看**一層.
@@ -152,3 +148,7 @@ Read / Grep 完全不打擾, 要寫入才問. 節省的時間非常明顯.
 - [Unrolling the Codex agent loop — OpenAI](https://openai.com/index/unrolling-the-codex-agent-loop/)
 - [Unlocking the Codex harness — OpenAI (2026-08)](https://openai.com/index/unlocking-the-codex-harness/)
 - [How we built our coding agent harness — LangChain Blog](https://blog.langchain.com/)
+
+---
+
+<!-- 已發布：https://ithelp.ithome.com.tw/articles/10415590 -->
