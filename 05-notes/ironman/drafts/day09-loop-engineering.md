@@ -73,24 +73,52 @@ Addy Osmani 進一步把「一個完整的迴圈系統」拆成六塊積木：
 
 ---
 
-## 在 Claude Code 怎麼做 — In Practice
+## Claude Code 上的具體例子 — Concrete Cases
 
-內建零件其實都在：
+**例一: `/goal` + Hook 讓 refactor 自己跑到完**
 
-- **`/goal`** - 設一個可驗證的完成條件，讓它自己跑到達成（後面專門有一天講）
-- **`/loop`** - 讓它按節奏反覆執行某個任務
-- **強制力 Hook** - 防止它中途放棄、跑偏、忘記目標（講 Hook 那天會示範，包含一個我實測失敗的 Hook）
-- **Worktree ＋ Sub-agent** - 並行多個 agent，寫的和驗的分開
+任務: 「把 legacy 檔案裡的 var 改成 const / let, 保持所有測試綠」. 陪跑要幾十分鐘, 每次改完都跑一次測試, 你在旁邊等. 換成 loop:
 
-一個完整的迴圈長這樣（Addy 的範例）：
+- `/goal` 設: **所有測試通過** ＋ **pre-commit lint 沒紅**
+- PostToolUse Hook 綁 `Write`: 寫檔後自動 `npm test`
+- Stop Hook: goal 沒達成前不准結束
+- 按 enter, 走人去吃午餐. 回來看是「done」還是卡住需要人工
+
+**例二: 排程「每日 CI 巡邏」**
+
+crontab 每早 9:00 觸發 Claude Code, 讀昨晚 CI failed 的 job, 每個開一個獨立 worktree, sub-agent 分別讀 log ＋ 提出修法. 主 agent 收摘要, 挑最像快修的先送 draft PR. 你 10:00 進公司, 看到三個 PR 等 review.
+
+**其他內建零件, 用來組更複雜的 loop**:
+
+| 零件 | 用途 |
+|:---|:---|
+| `/loop` | 讓它按節奏反覆執行某個任務 |
+| `Worktree` | 並行多個 agent 不會改到同一份檔案 |
+| `Sub-agent` | 「寫的人」跟「驗的人」分開, 避免它改自己的考卷 |
+| `Skill` + MCP connector | 把工作流零件化並接外部服務 (Linear、Slack、DB) |
+| `AgentTool` API | 自己組 orchestration, 不吃內建指令 |
+
+一個完整的迴圈長這樣 (Addy Osmani 的範例):
 
 ```text
-每天排程觸發 → 分類 skill 讀 CI 失敗與待辦 issue
-   → 每項發現開一個獨立 worktree
-   → 一個 sub-agent 草擬修復，另一個 sub-agent 驗證
+每天排程觸發 → skill 讀 CI 失敗與待辦 issue
+   → 每項開一個獨立 worktree
+   → 一個 sub-agent 草擬修復, 另一個 sub-agent 驗證
    → connector 自動開 PR、更新票、通知團隊
-   → 狀態檔記錄進度，明天的迴圈接著跑
+   → 狀態檔記錄進度, 明天的迴圈接著跑
 ```
+
+---
+
+## Web chat 版本呢 — What About Web Chat
+
+Web chat 天生對 loop 不友善: 沒 Hook、沒 verifier CLI、每輪都要你按 send. Loop Engineering 在 web chat 上有三條路:
+
+1. **用內建的 Research mode**. ChatGPT Deep Research、Claude Research、Gemini Deep Research 就是 web 版的 loop, 你設一個問題, 它自己搜、讀、寫、驗、產出報告, 20 到 40 分鐘後回來看. **一次性研究這條最省事**
+2. **Custom GPT / Claude Project 內嵌自檢**. 在 Instructions 寫「每輪回答完先自我 review, 有問題就修正再輸出」, 每輪還是要你按 send, 但你不用親手 review. **半自動化, 適合反覆固定的工作流**
+3. **走 API 包 loop**. 想要完全自動化, 得離開 web chat, 用 Claude API / OpenAI API + 幾十行 Python: fetch prompt → 執行 → 驗 → 決定停止, 全部你自己控制. **控制粒度最高, 但也最花工**
+
+**選擇邏輯**: 一次性研究 → Research mode; 反覆固定工作流 → Custom GPT / Project; 完全自動化 → 離開 web chat, 上 CLI (Claude Code、Codex) 或 API.
 
 ---
 
@@ -114,10 +142,6 @@ Loop Engineering **沒有技術突破，零件全是舊的**：act → observe �
 
 1. **命名與重點轉移。** 像「DevOps」 - 沒發明任何技術，只是幫一種做法取了名字。一旦「迴圈」成為你思考的單位，你才會開始問對的問題：verifier 是什麼？停止規則是什麼？狀態怎麼存？
 2. **一個門檻被跨過了。** 早期 agent 跑幾步就漂移，你非盯著不可。2026 年因為自動壓縮、`CLAUDE.md` 重注入、worktree 安全並行，**「設好迴圈、走人」第一次變得實際可行** - 這正好是 [Day 02](./day02-why-it-got-strong.md) 那條門檻曲線的另一個切面。
-
-值不值得叫一個新的「XX Engineering」，見仁見智。這個問題 Day 30 會再回來收。
-
-到這裡，prompt → context → harness → loop 四種站法都看過了。接下來幾天下沉到細節：怎麼把目標寫成「它能自己驗」的樣子、怎麼用 Hook 逼它別中途放棄、怎麼讓寫的和驗的分開。骨架你已經有了，剩下的是把每一塊磨利。
 
 ---
 
