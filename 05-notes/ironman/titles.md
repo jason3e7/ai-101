@@ -9,7 +9,10 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 完成的草稿放在 [`drafts/`](./drafts/)。依照 [參賽規劃](./plan.md) 的骨架（實際排成 **承 8 / 轉 16 / 合 6**；Loop Engineering 提前到 Day 07 當「先看終點」，Day 29「新瓶裝舊酒」併入 Day 30），把三十篇的標題定出來，並標上每篇用哪份現成筆記、還缺什麼。**這是草案，等 jason3e7 過目後再定稿。**
+> 完成的草稿放在 [`drafts/`](./drafts/)。依照 [參賽規劃](./plan.md) 的骨架 **承 8 / 轉 16 / 合 6** 排出三十篇, 標上每篇用哪份現成筆記、還缺什麼. 途中已經動過幾次:
+> - **Day 05** 後加插一篇 (2026-09-18), 之後全部順延
+> - **Day 07** 主題從 Loop Engineering 換成 Context Engineering, Loop 挪到 **Day 09**; Day 08 是 Harness Engineering
+> - **Day 26-27** 插入「AI 風格三部曲」的前兩篇 (風格橫行 → 文風入侵), 原 Day 28-29 的兩篇 (無審查模型、自主滲透) 回到 [候補題目池](#候補題目池--backlog)
 
 > **TL;DR (EN):** Thirty working titles for the Claude AI group, mapped to existing notes in this repo. Twenty-two are rewrites of material that already exists; eight need new writing. Five articles carry a first-hand experiment — those are placed early, where readers decide whether to follow the series.
 
@@ -48,7 +51,9 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 狀態欄：**改寫** = 現成筆記改寫即可；**新寫** = 沒有現成素材；**補實測** = 有內容但要補自己的實驗才有份量。
 
 > [!IMPORTANT]
-> **Day 05 是後來插進來的**（2026-09-18，jason3e7 指定）。原本的 Day 05 以後全部順延一天，Day 30 維持不動，被擠出編號的「ClickFix 實測」移到文末的[候補題目池](#候補題目池--backlog)。
+> 插入與挪動兩次:
+> - **Day 05** (2026-09-18, jason3e7 指定): 「AI 怎麼知道該用哪種能力」後加插, 原 Day 05 以後全部順延, Day 30 不動, 被擠出的「ClickFix 實測」移到[候補題目池](#候補題目池--backlog)
+> - **Day 26-27** (2026-09-22): 加入「AI 風格橫行」與「AI 文風入侵」兩篇, 原 Day 28-29「無審查模型」「自主滲透工具」回到候補池, 原 Day 26/27 順延到 Day 28/29
 
 ### 承：基礎與定位（Day 1–8）
 
@@ -104,13 +109,13 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 25 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day25-what-ai-replaces.md) |
-| 26 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
-| 27 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day27-self-hosted-llm.md) |
-| 28 | 拿掉「拒絕」的真正代價：無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 改寫 |
-| 29 | AI 已經會自己打靶了：自主滲透工具的現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 改寫 |
+| 26 | AI 風格橫行：掃 40 個系列, 找出被入侵最深的三種文風 | 新掃描實驗（本屆鐵人賽已發文章）＋ [ai-writing-style-tells](../../02-advanced/ai-writing-style-tells.md) | 新寫 |
+| 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../pgplay-writeup-style-guide.md) | 改寫 |
+| 28 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
+| 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
-**盤點：已完成 6 篇（含 4 篇已發布）、改寫 20 篇、補實測 2 篇、新寫 2 篇。** 分段為 **承 8 / 轉 16 / 合 6**。
+**盤點：已發布 8 篇、已完成 3 篇（draft）、改寫 15 篇、補實測 2 篇、新寫 2 篇。** 分段為 **承 8 / 轉 16 / 合 6**。
 
 ---
 
@@ -124,6 +129,8 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 怎麼把 AI 的能力，變成自己的能力 | 待補 | **jason3e7 提（2026-09-18）**。跟 Day 30「跟著 AI 持續成長」是同一條線上的，可能是它的前一棒 |
 | 把對話紀錄變成筆記本：匯出、自動分類、收整成可長期用的東西 | [curate-notes](../../skills/curate-notes.md)、[refactor-note](../../skills/refactor-note.md)、[note-lifecycle（待啟用）](../../skills/tmp/note-lifecycle.md) | **jason3e7 提（2026-09-18）**。這個 repo 本身就是這條流程的產物，可以拿實際的 `.jsonl` 與 skill 當案例。要注意匯出檔會夾帶路徑與環境資訊，公開前得先清 |
 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 原 Day 29，被新 Day 05 擠出編號。發文時要沿用防禦式寫法 |
+| 拿掉「拒絕」的真正代價：無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 原 Day 28, 被 AI 風格三部曲擠出 (2026-09-22) |
+| AI 已經會自己打靶了：自主滲透工具的現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 原 Day 29, 被 AI 風格三部曲擠出 (2026-09-22) |
 
 ---
 
