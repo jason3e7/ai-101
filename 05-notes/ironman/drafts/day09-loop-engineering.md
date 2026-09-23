@@ -1,11 +1,11 @@
 ---
-title: AI 101 - 鐵人賽 Day 09：Loop Engineering，你不再是提示 AI 的那個人
+title: "AI 101 - 鐵人賽 Day 09: Loop Engineering, 給它一個測試, 讓它自己跑到過"
 tags: [ai, 鐵人賽, ironman, loop-engineering, agent, 自動化, 草稿]
 created: 2026-09-06
 status: draft
 ---
 
-# Day 09｜Loop Engineering：你不再是提示 AI 的那個人
+# Day 09｜Loop Engineering: 給它一個測試, 讓它自己跑到過
 
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
@@ -16,7 +16,7 @@ status: draft
 
 ---
 
-## 兩種站法的差別 — Two Stances
+## 不用每輪驗, 寫一個測試給它自己對 — Let the Test Do the Checking
 
 前三天 (prompt → context → harness) 你都還在**每一輪**裡陪它跑. Loop 是換一種站法.
 
