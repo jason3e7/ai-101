@@ -1,17 +1,18 @@
 ---
-title: AI 101 - 從 Prompt 到 Loop：四個時代的技術演進
-tags: [ai, prompt-engineering, context-engineering, harness, loop, 時間軸, 歷史, 進階]
+title: AI 101 - 從 Prompt 到 Graph：五個時代的技術演進
+tags: [ai, prompt-engineering, context-engineering, harness, loop, graph, 時間軸, 歷史, 進階]
 created: 2026-09-23
+updated: 2026-09-23
 ---
 
-# 從 Prompt 到 Loop：四個時代 — Prompt to Loop: Four Eras
+# 從 Prompt 到 Graph：五個時代 — Prompt to Graph: Five Eras
 
 [← 回主頁](../index.md)
 
 > [!NOTE]
-> 這幾年冒出一堆「XX Engineering」：Prompt、Context、Harness、Loop。它們不是彼此取代，也不是誰包含誰那麼乾淨。這篇用一條時間軸把它們串起來，並點出真正貫穿全部的那條主線 - **你控制模型的「單位」，一直在往外退。**
+> 這幾年冒出一堆「XX Engineering」：Prompt、Context、Harness、Loop、Graph。它們不是彼此取代，也不是誰包含誰那麼乾淨。這篇用一條時間軸把它們串起來，並點出真正貫穿全部的那條主線 - **你控制模型的「單位」，一直在往外退。**
 
-> **TL;DR (EN):** The mainstream spine is four labels in sequence - prompt (2022–23), context (2024–25), harness (2025–26), loop (2026) - not a clean nesting but a *unit of control* zooming out: one message → one turn's input → the machine that runs turns → the whole autonomous run. It is not only four: Graph extends the same axis further out, Flow (AlphaCodium, 2024) is a parallel lineage, and Memory / RAG / Evals / Spec cut across every era. Each era wraps the last rather than replacing it; the skills all still matter.
+> **TL;DR (EN):** The mainstream spine is now five labels in sequence - prompt (2022–23), context (2024–25), harness (2025–26), loop (2026), graph (2026, frontier) - a *unit of control* zooming out: one message → one turn's input → the machine that runs turns → one autonomous run → a directed graph of many runs. It is not a clean nesting and the ordering has no industry consensus yet. Beyond the spine: Flow (AlphaCodium, 2024) is a parallel lineage, and Memory / RAG / Evals / Spec cut across every era. Each era wraps the last rather than replacing it; the skills all still matter.
 
 ---
 
@@ -26,10 +27,11 @@ created: 2026-09-23
 | **Prompt** | 一句話 | 下指令的人 |
 | **Context** | 一輪的完整輸入 | 佈置資訊的人 |
 | **Harness** | 那台跑每一輪的機器 | 配置系統的人 |
-| **Loop** | 整個自動流程 | 設好目標、走人的人 |
+| **Loop** | 一個自動流程 | 設好目標、走人的人 |
+| **Graph** | 多個流程的協作地圖 | 畫流程圖、定路徑的人 |
 
 > [!IMPORTANT]
-> 注意這**不是**乾淨的俄羅斯娃娃。prompt ⊂ context ⊂ harness 是成立的（前者是後者的一部分），但 **loop 其實是 harness 裡面的一個零件**（就是那個「編排迴圈」），被單獨拉出來命名，是因為「讓它自己跑」是一種完全不同的心態，不是多包一層。**串起四者的是「站多遠」，不是「包幾層」。**
+> 注意這**不是**乾淨的俄羅斯娃娃。prompt ⊂ context ⊂ harness 是成立的（前者是後者的一部分），但 **loop 其實是 harness 裡面的一個零件**（就是那個「編排迴圈」），graph 則是「把很多個 loop 排成一張圖」。它們被一個個單獨拉出來命名，是因為每一次「站得更遠」都是一種不同的心態，不是多包一層。**串起五者的是「站多遠」，不是「包幾層」。**
 
 ---
 
@@ -51,7 +53,7 @@ created: 2026-09-23
 | 2023-05 | **Tree of Thoughts** | 讓它同時展開多條思路再挑 |
 
 > [!TIP]
-> **ReAct 是這一段的樞紐。** 在它之前，一個 prompt 是「送出去一次就結束」的字串；在它之後，prompt 變成「想 → 做 → 看結果 → 再想」的循環。後面三個時代，全都是在把這個循環一層一層工程化。
+> **ReAct 是這一段的樞紐。** 在它之前，一個 prompt 是「送出去一次就結束」的字串；在它之後，prompt 變成「想 → 做 → 看結果 → 再想」的循環。後面幾個時代，全都是在把這個循環一層一層工程化。
 
 ### 第二時代：Context（2024–2025） - 餵對東西比問得好更重要
 
@@ -78,9 +80,9 @@ Context 不會自己出現在模型面前。有一整套系統負責：這一輪
 
 到這一代，2023 年還要自己手寫的 retry、壓縮、工具循環、沙箱隔離，全都內建了。這是「一般人也能跑 agent」變成事實的轉捩點。
 
-### 第四時代：Loop（2026–） - 你退出每一輪
+### 第四時代：Loop（2026） - 你退出每一輪
 
-當 harness 夠穩，可以「設好就走人」時，重點最後一次外移：從「陪它跑每一輪」，退到「設計那個會自己跑的迴圈」。
+當 harness 夠穩，可以「設好就走人」時，重點外移：從「陪它跑每一輪」，退到「設計那個會自己跑的迴圈」。
 
 | 時間 | 事件 | 意義 |
 |:---|:---|:---|
@@ -90,27 +92,32 @@ Claude Code 之父 Boris Cherny 的說法最傳神：
 
 > 「我已經不 prompt Claude 了。我讓一堆迴圈自己跑、自己去 prompt Claude、自己決定要做什麼。**我的工作是寫迴圈。**」
 
----
+### 第五時代：Graph（2026，前沿） - 把很多個迴圈排成一張圖
 
-## 不只這四個 — It's Not Only Four
+一個 loop 顧一件事。當你要**同時指揮一群 agent 把整個專案做完**，就需要先畫一張圖：哪些是獨立的工作步驟、步驟之間怎麼交棒、進度與成本怎麼記錄。這就是 Graph Engineering。
 
-那四個是**最主流的那條主軸**（好幾篇文章正好用同一條線在講，見 Sources）。但如果你去翻，會發現還有別的名字，分兩種：
-
-**一、同一條軸、再往外一格：Graph Engineering**
-
-當你有**多個 loop 要協調**時，就有人開始畫「圖」：用節點代表工作、用邊代表狀態怎麼流轉。它跟 loop 的差別很精準：
+它跟 loop 的差別很精準：
 
 > **在 loop 裡，你設好目標，agent 自己挑路；在 graph 裡，你宣告哪些路徑合法、每條路上有哪些檢查。**
 
-換句話說 loop 是「放手讓它跑」，graph 是「把跑法本身畫成一張受控的地圖」。它坐在 loop 再外面一格，是主軸目前的延伸端。
+換句話說 loop 是「放手讓它跑」，graph 是「把跑法本身畫成一張受控的地圖」，坐在 loop 再外面一格。Karpathy 的 autoresearch 專案就是這個方向的示範。
 
-**二、平行的另一條血脈：Flow Engineering**
+> [!WARNING]
+> **Graph 跟 Loop 幾乎同時在 2026 冒出來，順序還沒有業界共識。** 有人把 graph 當 loop 的外一層，也有人把它當 loop 的另一種形狀（宣告式 vs 放手式）。這一格是現在進行式，講法還會變 - 別把它背成鐵律。
+
+---
+
+## 不只這條主軸 — Beyond the Spine
+
+那五格是**最主流的那條主軸**（好幾篇文章正好用同一條線在講，見 Sources）。但如果你去翻，會發現還有別的名字，分兩種：
+
+**一、平行的另一條血脈：Flow Engineering**
 
 早在 2024-01，CodiumAI 的 AlphaCodium 論文標題就叫〈From Prompt Engineering to Flow Engineering〉。它主張把「一問一答」換成**多階段、測試驅動、反覆修正的流程** - GPT-4 在程式競賽題上的 pass@5 從 19% 拉到 44%。
 
 Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構化流程」的**早期、程式領域的祖型**。它沒有長成主流詞，但方向完全一致，值得知道它比 loop 早了兩年。
 
-**三、橫跨所有時代的「切面」，不是某一階段**
+**二、橫跨所有時代的「切面」，不是某一階段**
 
 還有幾個常聽到的，它們不是主軸上的某一格，而是**每一格裡都要處理**的橫向能力：
 
@@ -119,13 +126,13 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 | **Retrieval / RAG** | 把外部知識檢索進來餵給模型 | context 時代的主力，但 harness／loop 裡照樣要用 |
 | **Memory Engineering** | 設計 agent 怎麼記事實、經驗、跨 session 狀態 | 是 context 與 harness 的共同組成 |
 | **Evals** | 用標準化題組量化「到底有沒有變好」 | 每一個時代都需要它來驗收 |
-| **Spec-driven** | 把需求寫成精確規格，當成生成的依據 | 貫穿 prompt 到 loop 的輸入端 |
+| **Spec-driven** | 把需求寫成精確規格，當成生成的依據 | 貫穿 prompt 到 graph 的輸入端 |
 
 > [!NOTE]
-> 這些橫向能力現在常被一個更大的傘狀詞收攏：**Agent Engineering** - 有人把它定義為「涵蓋 prompt、context、harness、推論、記憶、評估、程式碼」的整合學科。也就是說，主軸四格 ＋ Graph ＋ 這些切面，合起來才是完整的「做 agent」。
+> 這些橫向能力現在常被一個更大的傘狀詞收攏：**Agent Engineering** - 有人把它定義為「涵蓋 prompt、context、harness、推論、記憶、評估、程式碼」的整合學科。也就是說，主軸五格 ＋ 這些切面，合起來才是完整的「做 agent」。
 
 > [!WARNING]
-> **別被名字的數量嚇到。** 這些詞多半是同一個轉變（重點從模型內部移到模型周圍）在不同角度、不同社群、不同時間點被各自命名的結果。抓住那條主軸（控制單位往外退），其他的都掛得上去 - 有些是往外的延伸（Graph），有些是早期的別名（Flow），有些是每一格都要做的橫向功夫（Memory、RAG、Evals、Spec）。
+> **別被名字的數量嚇到。** 這些詞多半是同一個轉變（重點從模型內部移到模型周圍）在不同角度、不同社群、不同時間點被各自命名的結果，連業界都還沒對順序有共識。抓住那條主軸（控制單位往外退），其他的都掛得上去 - 有些是往外的延伸（Graph），有些是早期的別名（Flow），有些是每一格都要做的橫向功夫（Memory、RAG、Evals、Spec）。
 
 ---
 
@@ -133,7 +140,7 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 
 每次新詞出來，都有人喊「prompt engineering 已死」。這是誤讀。
 
-**四個時代是疊加，不是取代。** 你設計 loop 的時候，裡面每一輪還是要有好的 context，context 裡那一句指令還是要用到 prompt 的功夫。往外退一格，不代表裡面那格就不用管了 - 只是不再是你**唯一**在管的東西。
+**五個時代是疊加，不是取代。** 你畫一張 graph，裡面每個節點是一個 loop，loop 每一輪還是要有好的 context，context 裡那一句指令還是要用到 prompt 的功夫。往外退一格，不代表裡面那格就不用管了 - 只是不再是你**唯一**在管的東西。Databricks 的說法很傳神：prompt 和 context engineering「住在」harness engineering 裡面。
 
 > [!WARNING]
 > 真正變的不是「哪個技巧還有用」，而是**槓桿的位置**。2023 年，改一句 prompt 能救一個結果；2026 年，同樣的力氣花在「把目標寫成能自動驗證的樣子」或「設對停止規則」上，回報大得多。技巧沒過期，**但最值得投資的那一格一直在往外移。**
@@ -142,14 +149,17 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 
 ## 常見問題 — FAQ
 
-**Q：所以這是四種不同的技術？**
-不是四種技術，是**同一件事的四種尺度**。底層機制沒變（模型還是在猜下一個字），變的是你介入的位置：一句話、一輪、一台機器、一整個流程。
+**Q：所以這是五種不同的技術？**
+不是五種技術，是**同一件事的五種尺度**。底層機制沒變（模型還是在猜下一個字），變的是你介入的位置：一句話、一輪、一台機器、一個流程、一張協作圖。
 
 **Q：為什麼每一代都隔沒多久就換？**
-因為每一代都在「補上上一代的手工活」。ReAct 讓循環成立、MCP 讓餵 context 標準化、Claude Code 讓 harness 內建、loop 讓整套能無人值守。每補完一層，重點就自然往外移一格。
+因為每一代都在「補上上一代的手工活」。ReAct 讓循環成立、MCP 讓餵 context 標準化、Claude Code 讓 harness 內建、loop 讓整套能無人值守、graph 讓多個 loop 能協調。每補完一層，重點就自然往外移一格。
+
+**Q：Graph 是不是已經定案的「第五代」？**
+還沒。它和 loop 幾乎同時在 2026 出現，業界對「graph 到底是 loop 的外一層、還是另一種形狀」都還沒共識。把它當「現在進行式的前沿」比當「蓋棺論定的一代」更準。
 
 **Q：新手該從哪一代學起？**
-從第一代。往外退的每一格都建立在裡面那格之上 - 不會寫好 prompt，設出來的 loop 每一輪都在產垃圾。**由內而外學，別跳。**
+從第一代。往外退的每一格都建立在裡面那格之上 - 不會寫好 prompt，畫出來的 graph 每個節點都在產垃圾。**由內而外學，別跳。**
 
 ---
 
@@ -172,6 +182,7 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 - [Claude Code Timeline: Release Date and Major Updates — ScriptByAI](https://www.scriptbyai.com/claude-code-timeline/)
 - [The Anthropic leader who built Claude Code says he ditched prompting — now he just writes loops — The New Stack, 2026](https://thenewstack.io/loop-engineering/)
 - [Loop Engineering — Addy Osmani](https://addyosmani.com/blog/loop-engineering/)
+- [從 prompt 到 graph engineering：AI agent 的五層工程 — 數位時代](https://www.bnext.com.tw/article/91632/graph-engineering-ai-agent)
 - [Prompt, Context, Harness & Loop Engineering — Avi Chawla, Daily Dose of DS](https://blog.dailydoseofds.com/p/prompt-context-harness-and-loop-engineering)
 - [Loop, Harness, Context Engineering: The Terms Explained — codecentric](https://www.codecentric.de/en/knowledge-hub/blog/loop-harness-context-engineering-explained)
 - [Harness, Graph, and Loop Engineering — How to Evolve From Prompts and Context — Sarthak AI](https://sarthakai.substack.com/p/harness-graph-and-loop-engineering)
