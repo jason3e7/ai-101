@@ -28,9 +28,7 @@ status: draft
 | 每輪你在做 | 讀 output、決定下一句 | 沒事 |
 | 8 個 bug | 你陪跑 8 遍 | 你什麼都沒做 |
 
-**技術是同一套**（背後都是 tool call + retry + verify）, 差的是你花多少時間陪跑. Loop Engineering 就是把那個時間差搬掉:
-
-> **你不再是「提示 AI 的人」, 而是「設計那個提示 AI 的系統的人」.**
+**技術是同一套**（背後都是 tool call + retry + verify）, 差的是你花多少時間陪跑. Loop Engineering 就是把那個時間差搬掉.
 
 順帶分清楚兩個常搞混的詞:
 
@@ -73,32 +71,55 @@ Addy Osmani 進一步把「一個完整的迴圈系統」拆成六塊積木：
 
 ---
 
-## Claude Code 上的具體例子 — Concrete Cases
+## 在 Claude Code 上跑一次看看 — Try It Yourself
 
-**例一: `/goal` + Hook 讓 refactor 自己跑到完**
+準備 5 分鐘, 完整體驗一次 loop. 建一個示範 project:
 
-任務: 「把 legacy 檔案裡的 var 改成 const / let, 保持所有測試綠」. 陪跑要幾十分鐘, 每次改完都跑一次測試, 你在旁邊等. 換成 loop:
+```bash
+mkdir loop-demo && cd loop-demo
+npm init -y && npm install --save-dev jest
+npm pkg set scripts.test=jest
 
-- `/goal` 設: **所有測試通過** ＋ **pre-commit lint 沒紅**
-- PostToolUse Hook 綁 `Write`: 寫檔後自動 `npm test`
-- Stop Hook: goal 沒達成前不准結束
-- 按 enter, 走人去吃午餐. 回來看是「done」還是卡住需要人工
+# 故意錯的 function
+cat > sum.js << 'EOF'
+function sum(a, b) { return a - b; }
+module.exports = sum;
+EOF
 
-**例二: 排程「每日 CI 巡邏」**
+# 兩個會失敗的測試
+cat > sum.test.js << 'EOF'
+const sum = require('./sum');
+test('1 + 1 = 2', () => expect(sum(1, 1)).toBe(2));
+test('2 + 3 = 5', () => expect(sum(2, 3)).toBe(5));
+EOF
 
-crontab 每早 9:00 觸發 Claude Code, 讀昨晚 CI failed 的 job, 每個開一個獨立 worktree, sub-agent 分別讀 log ＋ 提出修法. 主 agent 收摘要, 挑最像快修的先送 draft PR. 你 10:00 進公司, 看到三個 PR 等 review.
+claude   # 開 Claude Code
+```
 
-**其他內建零件, 用來組更複雜的 loop**:
+在 Claude Code 裡打:
+
+```
+/goal 跑 npm test 全部通過
+把 sum.js 修到測試綠. 你自己跑 npm test 驗證, 不用問我.
+```
+
+它會自己: 讀檔 → 認出 `-` 應該是 `+` → 改 → 跑 `npm test` → 綠. 通常一輪就結束. **你只寫了 1 次 goal ＋ 1 句 prompt, 之後沒再打字**, 停止條件是「測試綠」而不是「你按 Ctrl+C」. 這就是最小可跑的 loop.
+
+**變態版練習**: 把 `sum.test.js` 加更多邊界條件 (負數、浮點、大數、空 argument), 或把 `sum.js` 邏輯換複雜一點 (例如寫錯 recursion). 它會多輪修 → 跑 → 修 → 跑, 你在旁邊倒杯咖啡看它跑.
+
+---
+
+**進階零件, 用來組更複雜的 loop**:
 
 | 零件 | 用途 |
 |:---|:---|
+| PostToolUse Hook | Write / Edit 後自動跑 lint、test、format |
 | `/loop` | 讓它按節奏反覆執行某個任務 |
 | `Worktree` | 並行多個 agent 不會改到同一份檔案 |
 | `Sub-agent` | 「寫的人」跟「驗的人」分開, 避免它改自己的考卷 |
-| `Skill` + MCP connector | 把工作流零件化並接外部服務 (Linear、Slack、DB) |
-| `AgentTool` API | 自己組 orchestration, 不吃內建指令 |
+| MCP connector | 接 Linear / Slack / DB, 讓 loop 能開 PR、更新票、發通知 |
 
-一個完整的迴圈長這樣 (Addy Osmani 的範例):
+一個完整迴圈長這樣 (Addy Osmani 的範例):
 
 ```text
 每天排程觸發 → skill 讀 CI 失敗與待辦 issue
