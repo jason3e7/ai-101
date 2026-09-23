@@ -154,15 +154,26 @@ Web chat 天生對 loop 不友善: 沒 Hook、沒 verifier CLI、每輪都要你
 
 > Addy Osmani 的提醒：**以打算留任的工程師身份來建迴圈，而不是只按下執行鍵的人。** 迴圈是放大器 - 放大你的產出，也放大你偷懶的後果。
 
-最後是一個必須誠實回答的問題。
+最後是一個必須誠實回答的問題.
 
 > [!TIP]
-> （jason3e7 的觀察）第一眼就覺得「這跟原本的技術差不多啊」 - 這個直覺是對的。
+> (jason3e7 的觀察) 第一眼就覺得「這跟原本的技術差不多啊」, 很像 TDD 的 AI 版本. **這個直覺是對的.**
 
-Loop Engineering **沒有技術突破，零件全是舊的**：act → observe → decide → repeat 就是 2022 年的 ReAct；`/goal`、worktree、skills、MCP 全是現成工具。它新在兩件事：
+Loop Engineering **沒有技術突破**: act → observe → decide → repeat 是 2022 年 ReAct 就有的; `/goal`、worktree、skills、MCP 都是現成工具. 概念層還可以再往前拉二十年, 就是 **TDD**:
 
-1. **命名與重點轉移。** 像「DevOps」 - 沒發明任何技術，只是幫一種做法取了名字。一旦「迴圈」成為你思考的單位，你才會開始問對的問題：verifier 是什麼？停止規則是什麼？狀態怎麼存？
-2. **一個門檻被跨過了。** 早期 agent 跑幾步就漂移，你非盯著不可。2026 年因為自動壓縮、`CLAUDE.md` 重注入、worktree 安全並行，**「設好迴圈、走人」第一次變得實際可行** - 這正好是 [Day 02](./day02-why-it-got-strong.md) 那條門檻曲線的另一個切面。
+| | TDD (2003+) | Loop Engineering (2026) |
+|:---|:---|:---|
+| 先做的事 | 寫測試當 spec | 寫測試當 goal |
+| 誰寫 code 讓測試綠 | 你 | Agent |
+| 停止條件 | 全部測試綠 ＋ refactor 乾淨 | 全部測試綠 |
+| 你的角色 | 手寫 code、手跑測試 | 定 goal、按 enter、走人 |
+
+「AI 版 TDD」不算過分. TDD 二十年前就叫你「寫測試當契約, code 服從測試」, Loop Engineering 只是**把「寫 code 讓測試綠」那一步交給 agent**. 前面那個 5 分鐘 demo (sum.js) 就是完整的 AI 版 TDD.
+
+那什麼是新的?
+
+1. **AI 終於能接走「寫 code 讓它綠」那一步.** TDD 的痛點就是人得手寫 code, loop 讓 agent 寫; 這一步 2023 年的 agent 都在漂移, 2026 才勉強撐得住一輪修完
+2. **門檻被跨過了.** 因為自動壓縮、`CLAUDE.md` 重注入、worktree 安全並行, **「設好目標、走人」第一次變得實際可行** - 這正好是 [Day 02](./day02-why-it-got-strong.md) 那條門檻曲線的另一個切面
 
 ---
 
