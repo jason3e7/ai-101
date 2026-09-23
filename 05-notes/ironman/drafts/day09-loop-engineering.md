@@ -12,27 +12,27 @@ status: draft
 > [!NOTE]
 > 前三天一路往外退：prompt 是那一句（[Day 06](./day06-prompt-engineering.md)）、context 是模型看到的全部（[Day 07](./day07-context-engineering.md)）、harness 是外面那台跑每一輪的機器（[Day 08](./day08-harness-engineering.md)）。你可能以為今天是「再包一層」。**不是。今天不是加一層，是換一種站法** - 從「陪它跑每一輪」退到「設好目標和停止規則，走人」。
 
-> **TL;DR (EN):** Loop Engineering means designing the system that prompts your agent, instead of typing every next instruction yourself. Four parts: a trigger, a verifiable goal with a verifier, context management, and stop rules. It is not a fourth outer layer on top of the harness — the loop lives *inside* the harness (Day 08's first component). What changed is a stance: you stop riding each turn and start setting goals and stop-conditions. None of the parts are new; they just finally got reliable enough to leave running unattended.
+> **TL;DR (EN):** Loop Engineering means designing the system that prompts your agent, instead of typing every next instruction yourself. Four parts: a trigger, a verifiable goal with a verifier, context management, and stop rules. What changed is a stance: you stop riding each turn (Days 06-08) and start setting goals and stop-conditions. None of the parts are new; they just finally got reliable enough to leave running unattended.
 
 ---
 
-## 不是第四層，是換一種站法 — A Change of Stance
+## 兩種站法的差別 — Two Stances
 
-前三天很容易讓人腦補成一座乾淨的階梯，一層包一層：
+前三天 (prompt → context → harness) 你都還在**每一輪**裡陪它跑. Loop 是換一種站法.
 
-> Prompt（那一句）⊂ Context（那一輪的全部）⊂ Harness（跑每一輪的機器）
+同一個任務「修好這 8 個測試」, 兩種站法:
 
-到 harness 為止，這個「往外包」是成立的。但 Loop 接不上去 - **它不是包在 harness 外面的第四層，它是 harness 裡面的零件。** [Day 08](./day08-harness-engineering.md) 把「編排迴圈」列為 harness 六大組成的**第一層**：迴圈本來就在裡面跑。
+| | 陪跑（Day 06-08 心法） | 走人（Loop Engineering） |
+|:---|:---|:---|
+| 動作 | 打「看 test 1 為什麼錯」→ 讀輸出 → 給改法 → 打「再跑一次」→ ... | `/goal` 設「所有測試通過」→ 走人吃午餐 |
+| 每輪你在做 | 讀 output、決定下一句 | 沒事 |
+| 8 個 bug | 你陪跑 8 遍 | 你什麼都沒做 |
 
-那為什麼要單獨拉出來講一天？因為真正一路貫穿四天的，不是「包了幾層」，而是**你站多遠、engineering 的單位是什麼**：
+**技術是同一套**（背後都是 tool call + retry + verify）, 差的是你花多少時間陪跑. Loop Engineering 就是把那個時間差搬掉:
 
-> **一句話（prompt）→ 一輪的輸入（context）→ 那台機器（harness）→ 整個自動流程（loop）**
+> **你不再是「提示 AI 的人」, 而是「設計那個提示 AI 的系統的人」.**
 
-前三個你都還站在「每一輪」裡面 - 陪它跑、看它這輪的輸出、決定下一句。到了 loop，身分換了一次：
-
-> **你不再是「提示 AI 的人」，而是「設計那個提示 AI 的系統的人」。** 你設好目標和停止規則，就走人。
-
-所以今天不是技術上的更外一層，是**心態上的一次退場**。先分清楚兩個很像的詞：
+順帶分清楚兩個常搞混的詞:
 
 | | **鏈（chain）** | **迴圈（loop）** |
 |:---|:---|:---|
