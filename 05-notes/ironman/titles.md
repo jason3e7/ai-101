@@ -72,10 +72,10 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | ✅ [已完成](./drafts/day09-loop-engineering.md) |
-| 10 | XY Problem：你問的問題，通常不是你真正的問題 | [meta-prompting](../meta-prompting.md) | 改寫 |
-| 11 | 用 prompt 生 prompt：一個可以直接複製的 MVP 模板 | [meta-prompting](../meta-prompting.md) | 改寫 |
-| 12 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 |
+| 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
+| 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
+| 11 | ~~用 prompt 生 prompt：一個可以直接複製的 MVP 模板~~ | [meta-prompting](../meta-prompting.md) | ❌ 放棄 (2026-09-24, 見下方主題重定) |
+| 12 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 (剛好符合下方驗證主題, 保留待排) |
 
 ### 轉·脈絡：走回頭路補上跳過的兩級（Day 13–14）
 
@@ -116,6 +116,50 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
 **盤點：已發布 8 篇、已完成 3 篇（draft）、改寫 15 篇、補實測 2 篇、新寫 2 篇。** 分段為 **承 8 / 轉 16 / 合 6**。
+
+---
+
+## Day 11-20 主題重定 — Pivoted to Verification (2026-09-24)
+
+Day 01-10 收在原理與 xxx Engineering 發展史. Day 11-20 主軸**改成「怎麼驗證 AI 產出, 從實際案例出發」**. 上面 Day 11-19 原排法要重看, 這裡列新候選, 排哪一天再說.
+
+### 明確放棄 — Dropped
+
+- ~~用 prompt 生 prompt~~ (原 Day 11): meta-prompting 主題吸引力弱, 且 Day 09 已示範讓 AI 自跑
+- ~~XY Problem~~ (原 Day 10): 已被 xxx Engineering 收整取代, 不再另立一天
+
+### 新候選 — New Candidates
+
+| 候選題目 | 定位 | 素材 | Hands-on 度 |
+|:---|:---|:---|:---|
+| 談談驗證這件事: 獨立思考 + 提問的智慧 | 驗證主題**觀念鋪陳篇**, 為後續實測開場 | [ai-verify-then-expand](../ai-verify-then-expand.md) ＋ 新研究 | 低 (觀念) |
+| `/goal` 三種寫法對比: 模糊 / 明確 / 有 verifier | 從 Day 09 sum.js 延伸, 三種 goal 各跑一次看行為差 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ 新實測 | 高 |
+| 選模型 × 實測: 同一題 Opus/Sonnet/Haiku 各跑一次 | 費用比較 ＋ 效果比較 (效果題目難設計, 見下方預產) | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md) ＋ 新實測 | 高 |
+| Claude Code 四層行為系統一次組通 | goal + sub-agent + skill + hook 綜合示範 | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | 高 (tentative) |
+
+### 選模型實測 — 預產候選比較題目
+
+「效果比較」很難設計, 常見陷阱: 選了三個模型都能做到的題目 (等於沒差) 或都做不到 (也沒差). 好題目要**卡在中間**, Opus 一次就對, Sonnet 需要 hint, Haiku 明顯漏.
+
+篩選標準:
+- **可 exact-match 驗證**: 有明確答案, 不吃主觀
+- **有 discrimination**: 三個模型能力落差會顯現在結果上
+- **可重跑**: 讀者能自己複製條件跑
+
+以下 5 個候選, 按「可驗性 × 差異度」排序:
+
+| # | 題目 | 為什麼有差異 | 怎麼驗 | 素材要準備 |
+|:---|:---|:---|:---|:---|
+| 1 | 從 API doc 抽出 endpoint 為結構化 JSON | attention 準度: 15 個 endpoint 有沒有全抽到, params/types 有沒有失真 | exact JSON schema match | 挑一份中等長度 API doc (例: Anthropic Messages API 3-5 頁) |
+| 2 | 給一段夾雜 5 個問題的 log, 標出所有 issue | 事先知道有 5 個問題 (mixed: deprecation, null ref, race hint, timeout, memory leak), 誰找齊 | 命中率 (5 分之 X) | 手動構造 log |
+| 3 | 複雜 SQL: 給 schema + 業務描述, 寫含 window function/CTE 的 query | 一次寫對 vs 需要 retry 幾次 | query 跑得動 + 結果 row 對 | schema (SQLite) + 5 種測試資料 |
+| 4 | 多步 agentic task: 從 GitHub API 找某 repo 最近 10 個 PR 的作者統計, 寫入 file | Haiku 容易在 tool call 迷路, Opus 較穩 | file 內容 exact match | 選一個公開 repo + 預期輸出 |
+| 5 | 修一個真實 bug (從公開 repo 挑一個 closed issue + PR) | root cause 找對 vs 治表面, patch 大小 | 原 test suite 全過 + 是否 regression | 挑一個 issue (bug 明確、fix 已知), 給 pre-fix state |
+
+**建議先選 1 題深入寫**, 而不是一篇塞 5 題. Top 2 pick:
+
+- **題目 1 (API doc 抽 JSON)**: 最容易 exact-match, 三個 JSON 並排 diff 視覺化強, 讀者最易複製條件
+- **題目 4 (multi-step agentic)**: 最能凸顯 Haiku vs Opus 的推理鏈長度差異, 呼應 Day 09 loop 主題
 
 ---
 
