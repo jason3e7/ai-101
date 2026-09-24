@@ -74,7 +74,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
 | 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
-| 11 | ~~用 prompt 生 prompt：一個可以直接複製的 MVP 模板~~ | [meta-prompting](../meta-prompting.md) | ❌ 放棄 (2026-09-24, 見下方主題重定) |
+| 11 | AI 給的答案, 你怎麼知道是對的 (驗證主題開場, 原「用 prompt 生 prompt」放棄) | [ai-verify-then-expand](../ai-verify-then-expand.md) | 🚧 [草稿中](./drafts/day11-verify-ai-output.md) |
 | 12 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 (剛好符合下方驗證主題, 保留待排) |
 
 ### 轉·脈絡：走回頭路補上跳過的兩級（Day 13–14）
