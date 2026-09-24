@@ -136,6 +136,53 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 
 ---
 
+## 五代的熱度對照 — Popularity Snapshot (2026-09)
+
+上面時間軸講「發生了什麼」，這節看**大家實際上有沒有在講**。抓兩個可重現的訊號：**arXiv 論文數**與 **GitHub 專案名數**，兩者都用 exact phrase 匹配。
+
+### 方法
+
+| 訊號 | 怎麼算 |
+|:---|:---|
+| **arXiv 論文** | `https://arxiv.org/search/?searchtype=all&query="<term>"` 頁面頂部的 `Showing 1–50 of X results` 總數（全歷史） |
+| **GitHub 專案** | `https://api.github.com/search/repositories?q=<term-with-dash>+in:name` 的 `total_count`（repo 名稱含關鍵字） |
+| 快照時間 | 2026-09-23 |
+
+### 數字
+
+| 詞 | 命名年 | arXiv | GitHub | 熱度階段 |
+|:---|:---|---:|---:|:---|
+| **Prompt Engineering** | 2020–2023 | **2,326** | **11,231** | 主流已飽和；Google Trends 顯示 2023-04 峰值後下滑約 60% |
+| **Context Engineering** | 2024–2025 | 130 | 1,258 | 已出圈；Karpathy 2025-06 帶飛後急升 |
+| **Harness Engineering** | 2025–2026 | 51 | 1,131 | 出圈中；Mitchell Hashimoto 2026-02 命名 ＋ OpenAI 官方公開發文 |
+| **Loop Engineering** | 2026-06 | 22 | 806 | 剛出圈；Steinberger／Cherny／Osmani 三人同期發布, Andrew Ng 稱為 hot buzzphrase |
+| **Graph Engineering** | 2026-07 | 60* | 468 | **前沿, 尚未完全出圈**；LangGraph／GraphFlow／ADK 三派用法不一 |
+
+*Graph 的 arXiv 60 篇裡有相當比例是講 graph theory／graph database，跟 LLM 無關；實際 LLM-specific graph engineering 論文估計 20 篇內。
+
+### 幾個要打折的地方 — Caveats
+
+- **累積數對舊詞有利**：Prompt 領先 5 年，論文數是第二名的 18 倍很正常，不代表現在還在爆增
+- **同名不同意**：`graph engineering` 有 graph theory、`harness engineering` 有電線束工程、`loop engineering` 有控制系統, 這些 pre-LLM 舊用法會把計數灌水（Graph 影響最大）
+- **GitHub 專案名匹配**只抓 repo 名, 沒抓 topic／description, 實際使用該詞的專案更多
+- **這是快照, 不是曲線**：真正的熱度變化要看 Google Trends 這種 monthly 資料, 這裡只呈現截止到 2026-09 的累積量級
+
+### 解讀
+
+- **Prompt 是壓倒性主流**：累積量級最大, 但**已過峰**（Google Trends 從 2023-04 峰值下滑 60%）
+- **Context 已完全出圈**：命名一年多就到 130 arXiv 論文、1,258 GitHub 專案, 勾配陡
+- **Harness 出圈中**：論文數少但**質量高**（多篇 systematic study）；工具端 Codex 開源、Claude Code 內建, 兩邊拉動
+- **Loop 剛出圈**：命名才 3 個月, 但 Claude Code `/loop`／`/goal` 已跟進, 曲線陡上
+- **Graph 前沿, 尚未出圈**：GitHub 468 專案多半是 LangGraph 週邊, arXiv 60 篇很多是 graph theory 舊詞。**LLM-specific 用法還沒收斂, 三家框架三種派**
+
+### 那要不要現在學 Graph?
+
+- **不用急**. 主流用法還沒定, 現在學的可能半年後名字全換
+- **但概念要認得**: 遇到「多 agent 協調」的問題時知道有這個方向可以查
+- 真的要動手, 入口是 [LangGraph](https://langchain-ai.github.io/langgraph/)
+
+---
+
 ## 一個提醒：後浪沒有淘汰前浪 — It Stacks, Not Replaces
 
 每次新詞出來，都有人喊「prompt engineering 已死」。這是誤讀。
@@ -188,3 +235,8 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 - [Harness, Graph, and Loop Engineering — How to Evolve From Prompts and Context — Sarthak AI](https://sarthakai.substack.com/p/harness-graph-and-loop-engineering)
 - [Code Generation with AlphaCodium: From Prompt Engineering to Flow Engineering — Ridnik et al., 2024](https://arxiv.org/abs/2401.08500)
 - [Harness Engineering for Agentic AI Coding Tools: An Exploratory Study — 2026](https://arxiv.org/abs/2602.14690)
+- [Loop Engineering Emerges as Developers Put AI Coding Agents on Repeat — ADTmag, 2026-07](https://adtmag.com/articles/2026/07/01/loop-engineering-emerges-as-developers-put-ai-coding-agents-on-repeat.aspx)
+- [Graph Engineering for AI Agents — Adnan Masood (Medium)](https://medium.com/@adnanmasood/graph-engineering-for-ai-agents-the-practitioners-guide-to-designing-multi-agent-systems-as-f9a4559aa693)
+- [Graph Engineering in the Era of LLM Agents — arXiv 2608.21156](https://arxiv.org/pdf/2608.21156)
+- [The rise and fall of prompt engineering — xpert.digital](https://xpert.digital/en/prompt-engineering/) (Google Trends 下滑資料)
+- [arXiv search](https://arxiv.org/search/) 與 [GitHub Search API](https://docs.github.com/en/rest/search/search) (2026-09 熱度快照的原始計數來源)
