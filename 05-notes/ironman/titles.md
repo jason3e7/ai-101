@@ -136,6 +136,7 @@ Day 01-10 收在原理與 xxx Engineering 發展史. Day 11-20 主軸**改成「
 | `/goal` 三種寫法對比: 模糊 / 明確 / 有 verifier | 從 Day 09 sum.js 延伸, 三種 goal 各跑一次看行為差 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ 新實測 | 高 |
 | 選模型 × 實測: 同一題 Opus/Sonnet/Haiku 各跑一次 | 費用比較 ＋ 效果比較 (效果題目難設計, 見下方預產) | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md) ＋ 新實測 | 高 |
 | Claude Code 四層行為系統一次組通 | goal + sub-agent + skill + hook 綜合示範 | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | 高 (tentative) |
+| 驗證疲勞: 每題都驗會爆掉, 什麼時候該關掉驗證 | 驗證主題的**反面**, 避免 rubber-stamp 或 burnout | 待研究 | 低 (觀念) |
 
 ### 選模型實測 — 預產候選比較題目
 
