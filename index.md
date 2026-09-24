@@ -83,6 +83,7 @@ updated: 2026-07-04
 | [AI 101 - AI 怎麼知道該用哪種能力](./02-advanced/how-ai-picks-capability.md) | 以 Opus 5 為基準拆成八層：五層訓練時長好、三層每次請求自動跑；標明哪幾層動得了，以及對 prompt 的四條推論 |
 | [AI 101 - Claude 顯示 thinking 是什麼機制](./02-advanced/how-claude-shows-thinking.md) | 你看到的 Thinking 是**摘要模型**的產出不是原文；signature 才是加密的完整推理；4.7+ `budget_tokens` 已 400，改用 adaptive ＋ effort |
 | [AI 101 - 先收整再展開，人才驗得動](./02-advanced/converge-before-verify.md) | 事後全文驗貴，因為人是 bottleneck。兩個手法都用 markdown list 當中間層讓「人」驗得動：**濃縮再驗**（大→小，AI 幫你 preprocess）＋ **從收整衍生**（小→大，list 當 checklist 對照長文）。兩個接起來就是一個 pipeline |
+| [AI 101 - AI 產出怎麼驗](./02-advanced/verifying-ai-output.md) | 4 年學術方法一堆，2024 後大半被推翻或被 reasoning 模型內化。攤開主流方法（Self-Consistency、CoVe、Self-Refine、RARR、FActScore、LLM-as-Judge、CAI、PRM）＋ 5 個負向結果（self-correction 循環、CoT 負收益、overconfidence）＋ 人的因素（automation bias、jagged frontier）＋ 產業框架（NIST / OWASP / RSP）。日常真正用得上剩 3 招：外部證據、跨模型獨立驗算、原子事實分解 |
 | [AI 101 - AI 的文風與語氣](./02-advanced/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
 | [AI 101 - LLM 的極限](./02-advanced/llm-limitations.md) | 三類做不到：結構性（原理決定）、暫時（下一代會補）、鋸齒狀（看不見邊界）；為什麼鋸齒狀最危險 |
 | [AI 101 - ML 演算法精要](./02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |
