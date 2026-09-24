@@ -10,13 +10,13 @@ status: draft
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
-> 這 4 天 (Day 06 到 09) 我一次丟了四個 XXXX Engineering 給你: Prompt / Context / Harness / Loop. 這種文章寫多了, 有個公認副作用: 讀者開始焦慮「怎麼又冒新典範了, 我上個都還沒學會」. 今天不加新詞, 把這四代 (順便加上第五代 Graph) 攤成一條歷史時間軸, 然後回答那個焦慮.
+> 這 4 天 (Day 06 到 09) 我一次丟了四個 XXXX Engineering 給你: Prompt / Context / Harness / Loop. 這種文章寫多了, 有個公認副作用: 讀者開始焦慮「怎麼又冒新典範了, 我上個都還沒學會」. 今天不加新詞, 把這四代攤成一條歷史時間軸, 然後回答那個焦慮.
 
-> **TL;DR (EN):** Five sequential "XXX Engineering" labels have appeared in five years: Prompt (2020-2023), Context (2024-2025), Harness (2025-2026), Loop (2026), Graph (2026, frontier). The through-line is that your unit of control keeps zooming out — one message → one turn's input → the runtime → one autonomous run → a graph of runs. Each era doesn't replace the last, it wraps it and moves the leverage outward. New labels appear because each generation automates the last one's manual work (ReAct → MCP → Claude Code → loop → graph). Don't panic when new terms drop: the underlying mechanic (LLM predicting next token) hasn't changed, and the durable skills (spotting fuzzy specs, external verification, systems decomposition, cross-mapping new tools) travel across all five. Techniques expire, judgment doesn't.
+> **TL;DR (EN):** Four sequential "XXX Engineering" labels have appeared in the past few years: Prompt (2020-2023), Context (2024-2025), Harness (2025-2026), Loop (2026). The through-line is that your unit of control keeps zooming out — one message → one turn's input → the runtime → one autonomous run. Each era doesn't replace the last, it wraps it and moves the leverage outward. New labels appear because each generation automates the last one's manual work (ReAct → MCP → Claude Code → loop). Don't panic when new terms drop: the underlying mechanic (LLM predicting next token) hasn't changed, and the durable skills (spotting fuzzy specs, external verification, systems decomposition, cross-mapping new tools) travel across all four. Techniques expire, judgment doesn't.
 
 ---
 
-## 從一句話, 到一張圖 — Five Eras at a Glance
+## 從一句話, 到一整條流程 — Four Eras at a Glance
 
 過去五年, 你能對 LLM 出手的**位置**一直往外退. 一張表看完:
 
@@ -26,13 +26,12 @@ status: draft
 | **Context Engineering** | 2024–2025 | 一輪的完整輸入 | 佈置資訊的人 |
 | **Harness Engineering** | 2025–2026 | 那台跑每一輪的機器 | 配置系統的人 |
 | **Loop Engineering** | 2026 | 一個自動流程 | 設好目標、走人的人 |
-| **Graph Engineering** | 2026, 前沿 | 多個流程的協作地圖 | 畫流程圖、定路徑的人 |
 
-**一句話串起五代**:
+**一句話串起四代**:
 
 > **每個時代, 你 engineering 的「單位」都往外退了一格.**
 
-從 prompt 到 graph, 表面上是五個學科, 底下是**同一件事的五種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點) 在 [Prompt 到 Graph 進階筆記](../../../02-advanced/prompt-engineering-evolution.md).
+從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 在 [Prompt 到 Graph 進階筆記](../../../02-advanced/prompt-engineering-evolution.md).
 
 ---
 
@@ -46,11 +45,10 @@ status: draft
 | **MCP (2024)** 讓「餵 context」有標準, 不用每個工具都自己接 |
 | **Claude Code / Codex (2025-2026)** 把 retry、壓縮、tool 循環、sandbox 全部內建, harness 變預設 |
 | **Loop (2026)** 因為 harness 夠穩了, 可以「設好目標、走人」而不必守著 |
-| **Graph (2026)** 因為多個 loop 開始要協調, 才需要把 loop 之間的路徑畫成圖 |
 
 **每次一個手工步驟被自動化, 你的注意力就自然被推到更外一格.** 這不是誰在強迫你追潮流, 是**科技把你往外推**.
 
-也因為這樣, 前浪沒被後浪淘汰. Graph 裡每個節點是一個 loop, loop 每一輪還是要好的 context, context 裡那句指令還是要用到 prompt 的功夫. **五代是疊加, 不是取代.**
+也因為這樣, 前浪沒被後浪淘汰. Loop 裡每一輪還是要好的 context, context 裡那句指令還是要用到 prompt 的功夫. **四代是疊加, 不是取代.**
 
 ---
 
@@ -91,9 +89,9 @@ status: draft
 給還在焦慮的自己四條: 
 
 1. **新名詞出來, 先問「它在補之前哪個手工活?」** 找到這個問題的答案, 你就知道它值不值得學、跟舊東西怎麼銜接
-2. **別急著追新典範**, 先確定舊那格會不會用. 由內而外學, 不會 prompt 就跳去畫 graph, 每個節點都在產垃圾
+2. **別急著追新典範**, 先確定舊那格會不會用. 由內而外學, 不會 prompt 就跳去寫 loop, 每一輪都在產垃圾
 3. **承認你會落後一格.** 業界普遍狀態就是「上一代還在消化, 下一代已經在講」. 一格落差是常態, 兩三格才要擔心
-4. **對照歷史軸自我盤點**: 我現在最常改的是哪一格 (prompt / context / harness / loop / graph)? 這格的效能上限在哪? 下一格能不能挪一點注意力過去?
+4. **對照歷史軸自我盤點**: 我現在最常改的是哪一格 (prompt / context / harness / loop)? 這格的效能上限在哪? 下一格能不能挪一點注意力過去?
 
 明天回頭做基本功: 用 prompt 生 prompt 的 meta 技巧, 這是所有時代的通用基本功之一.
 
@@ -101,7 +99,6 @@ status: draft
 
 ## Sources
 
-- [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../02-advanced/prompt-engineering-evolution.md), 完整時間軸與每個節點的意義
+- [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../02-advanced/prompt-engineering-evolution.md), 完整時間軸、Graph 前沿補充、五代熱度對照
 - [The Anthropic leader who built Claude Code says he ditched prompting — The New Stack, 2026](https://thenewstack.io/loop-engineering/)
-- [從 prompt 到 graph engineering: AI agent 的五層工程 — 數位時代](https://www.bnext.com.tw/article/91632/graph-engineering-ai-agent)
 - [Prompt, Context, Harness & Loop Engineering — Avi Chawla, Daily Dose of DS](https://blog.dailydoseofds.com/p/prompt-context-harness-and-loop-engineering)
