@@ -1,18 +1,7 @@
----
-title: "AI 101 - 鐵人賽 Day 10: xxx Engineering 收整, 名字會變, 智慧是自己的"
-tags: [ai, 鐵人賽, ironman, xxx-engineering, 收整, 歷史, 心法, 草稿]
-created: 2026-09-23
-status: draft
----
+title : [Day 10] xxx Engineering 收整: 名字會變, 智慧是自己的
 
-# Day 10｜xxx Engineering 收整: 名字會變, 智慧是自己的
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
-
-> [!NOTE]
 > 這 4 天 (Day 06 到 09) 我一次丟了四個 xxx Engineering 給你: Prompt / Context / Harness / Loop. 這種文章寫多了, 有個公認副作用: 讀者開始焦慮「怎麼又冒新典範了, 我上個都還沒學會」. 今天不加新詞, 把這四代攤成一條歷史時間軸, 然後回答那個焦慮.
-
-> **TL;DR (EN):** Four sequential "XXX Engineering" labels have appeared in the past few years: Prompt (2020-2023), Context (2024-2025), Harness (2025-2026), Loop (2026). The through-line is that your unit of control keeps zooming out — one message → one turn's input → the runtime → one autonomous run. Each era doesn't replace the last, it wraps it and moves the leverage outward. New labels appear because each generation automates the last one's manual work (ReAct → MCP → Claude Code → loop). Don't panic when new terms drop: the underlying mechanic (LLM predicting next token) hasn't changed, and the durable skills (spotting fuzzy specs, external verification, systems decomposition, cross-mapping new tools) travel across all four. Techniques expire, judgment doesn't.
 
 ---
 
@@ -31,7 +20,7 @@ status: draft
 
 > **每個時代, 你 engineering 的「單位」都往外退了一格.**
 
-從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 在 [Prompt 到 Graph 進階筆記](../../../02-advanced/prompt-engineering-evolution.md).
+從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 我另外寫在 repo 的進階筆記裡, 有興趣可以去挖.
 
 ---
 
@@ -54,7 +43,7 @@ status: draft
 
 ## 別焦慮: 名字會變, 底層沒變 — Don't Panic
 
-**回到 [Day 01](./day01-llm-is-statistics.md).** LLM 到今天還是在做同一件事: 看完前面所有 token, 猜下一個. 這件事從 GPT-3 (2020) 到 Opus 4.7 (2026) 沒變過.
+**回到 [Day 01](https://ithelp.ithome.com.tw/articles/10411345).** LLM 到今天還是在做同一件事: 看完前面所有 token, 猜下一個. 這件事從 GPT-3 (2020) 到 Opus 4.7 (2026) 沒變過.
 
 所以四代 xxx Engineering 之間變的是什麼? **是你介入的槓桿位置.**
 
@@ -86,7 +75,7 @@ status: draft
 
 ## 活到老學到老 — Habits That Keep You Sane
 
-給還在焦慮的自己四條: 
+給還在焦慮的自己四條:
 
 1. **新名詞出來, 先問「它在補之前哪個手工活?」** 找到這個問題的答案, 你就知道它值不值得學、跟舊東西怎麼銜接
 2. **別急著追新典範**, 先確定舊那格會不會用. 由內而外學, 不會 prompt 就跳去寫 loop, 每一輪都在產垃圾
@@ -97,6 +86,5 @@ status: draft
 
 ## Sources
 
-- [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../02-advanced/prompt-engineering-evolution.md), 完整時間軸、Graph 前沿補充、五代熱度對照
 - [The Anthropic leader who built Claude Code says he ditched prompting — The New Stack, 2026](https://thenewstack.io/loop-engineering/)
 - [Prompt, Context, Harness & Loop Engineering — Avi Chawla, Daily Dose of DS](https://blog.dailydoseofds.com/p/prompt-context-harness-and-loop-engineering)
