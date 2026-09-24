@@ -100,3 +100,4 @@ status: draft
 - [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../02-advanced/prompt-engineering-evolution.md), 完整時間軸、Graph 前沿補充、五代熱度對照
 - [The Anthropic leader who built Claude Code says he ditched prompting — The New Stack, 2026](https://thenewstack.io/loop-engineering/)
 - [Prompt, Context, Harness & Loop Engineering — Avi Chawla, Daily Dose of DS](https://blog.dailydoseofds.com/p/prompt-context-harness-and-loop-engineering)
+- [Graph Engineering是什麼？迴圈工程、Harness Engineering⋯5種AI工程術語差異一次看懂 — 陳建鈞, 數位時代, 2026-07](https://www.bnext.com.tw/article/91632/graph-engineering-ai-agent)
