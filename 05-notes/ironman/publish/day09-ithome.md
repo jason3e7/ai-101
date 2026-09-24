@@ -1,10 +1,6 @@
 title : [Day 09] Loop Engineering: 給它一個測試, 讓它自己跑到過
 
 
-> 前三天一路往外退：prompt 是那一句（[Day 06](https://ithelp.ithome.com.tw/articles/10414480)）、context 是模型看到的全部（[Day 07](https://ithelp.ithome.com.tw/articles/10415067)）、harness 是外面那台跑每一輪的機器（[Day 08](https://ithelp.ithome.com.tw/articles/10415590)）。你可能以為今天是「再包一層」。**不是。今天不是加一層，是換一種站法** - 從「陪它跑每一輪」退到「設好目標和停止規則，走人」。
-
----
-
 ## 不用每輪驗, 寫一個測試給它自己對 — Let the Test Do the Checking
 
 前三天 (prompt → context → harness) 你都還在**每一輪**裡陪它跑. Loop 是換一種站法.
