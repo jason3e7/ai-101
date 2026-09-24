@@ -1,13 +1,9 @@
 title : [Day 10] xxx Engineering: 名字會變, 智慧是自己的
 
 
-> 這 4 天 (Day 06 到 09) 我一次丟了四個 xxx Engineering 給你: Prompt / Context / Harness / Loop. 這種文章寫多了, 有個公認副作用: 讀者開始焦慮「怎麼又冒新典範了, 我上個都還沒學會」. 今天不加新詞, 把這四代攤成一條歷史時間軸, 然後回答那個焦慮.
-
----
-
 ## 從一句話, 到一整條流程 — Four Eras at a Glance
 
-過去五年, 你能對 LLM 出手的**位置**一直往外退. 一張表看完:
+過去五年, 你對 LLM 出手的**位置**一直往外退. 一張表看完:
 
 | 時代 | 何時浮現 | 你在雕的「單位」 | 你的身分 |
 |:---|:---|:---|:---|
@@ -20,7 +16,7 @@ title : [Day 10] xxx Engineering: 名字會變, 智慧是自己的
 
 > **每個時代, 你 engineering 的「單位」都往外退了一格.**
 
-從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 我另外寫在 repo 的進階筆記裡, 有興趣可以去挖.
+從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering)
 
 ---
 
