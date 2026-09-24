@@ -44,6 +44,8 @@ status: draft
 
 前五招都是**寫進 prompt 就能讓 AI 幫你自己攤開一半**. 第六招不一樣, 得靠你自己動手.
 
+這些手段學術上都有名字: **給依據** ≈ attribution / RARR (Gao 2022, 是 Perplexity、Claude Search 這類「答完附引用」系統的祖宗); **舉反例** ≈ counterexample probing; **獨立驗算** (跨 model) ≈ cross-family judge 或 generative reasoning judges (2025 SOTA); 另有一招常配長文用叫 **FActScore** (Min 2023), 把一段話拆成一句一句的原子事實, 每句獨立驗一次. 完整的方法整理見 [AI 產出怎麼驗](../../../02-advanced/verifying-ai-output.md).
+
 > [!NOTE]
 > **「列步驟」有一個大注意**: [Day 06](./day06-prompt-engineering.md) 講過, 「Let's think step by step」對現代推理模型 (Claude 4.x、o1、GPT-5) 已經是**負收益** — Wharton 2025 報告測下來, 加了反而拖慢或拖錯, 因為模型內部本來就在做這件事, 你再要求一次是干擾. 但這裡的用途不同: 不是「逼 AI 答對」, 而是**把它的推理攤開讓你檢查有沒有跳步**. 這個 verification 用途仍然成立, 只是別再期待「加一句 step by step 就變聰明」.
 
@@ -53,6 +55,8 @@ status: draft
 
 數學裡「加法用減法驗」就是它. 同一個模型、同一個 session 再問一次, 它會**傾向重複剛才的說法** (context 已經被前一輪的答案汙染). 這不是驗證, 是複讀.
 
+**這不是玄學, 學術界已證實**. DeepMind 2024 (Huang et al., ICLR 2024) 直接把論文名叫「LLMs Cannot Self-Correct Reasoning Yet」, 實驗證明: 沒外部訊號的自我修正**普遍讓推理答案變差**. 因為產出錯的 prior 也會產出「驗證」, 打回原點. 唯一破口: 訊號從**外部**進來.
+
 **真正的獨立驗算有三條路**:
 
 1. **換問法**. 同一件事從反面問一次. 例如它剛說「A 比 B 快」, 你另起一個 session 問「B 有哪些情況會比 A 快?」看它有沒有承認你原本要的那個結論
@@ -60,6 +64,9 @@ status: draft
 3. **查權威來源**. 數字對官方文件、人名對維基、法條對法源. 這一步最花時間但最硬
 
 對重要答案, **這招比其他五招加起來更能抓錯**. 呼應 [Day 09](./day09-loop-engineering.md) 的 loop: 那裡「測試 = code 的獨立驗算」, 因為測試是**跟 code 相反方向寫的東西**, 兩邊對得起來才算過.
+
+> [!WARNING]
+> **一個常見的假動作**: 問 AI「你這個答案有幾成把握?」以為得到 confidence 分數. Xiong et al. (ICLR 2024) 實測 **verbalized confidence 系統性高於實際準確率**, 而且 RLHF 訓練後更嚴重. 這等於問醉漢自己會不會開車, **別把它當獨立驗算的替代品**.
 
 ---
 
@@ -80,6 +87,7 @@ status: draft
 - 你越讓 AI 自主, 你自己的**驗證判斷力**就越是關鍵
 - 六招裡最強是**獨立驗算** (換問法 / 換模型 / 查權威). 前五招 AI 幫你做一半, 第六招你自己動手
 - **別把驗證當儀式**. 用「一旦錯了會不會麻煩」決定跑全套還是跳過
+- 想看每一招背後的論文和 2026 現況 (哪些被推翻、哪些還活著), 見 [AI 產出怎麼驗](../../../02-advanced/verifying-ai-output.md)
 
 ---
 
@@ -90,5 +98,9 @@ status: draft
 - [AI as Cognitive Amplifier: Rethinking Human Judgment — arXiv](https://arxiv.org/html/2512.10961v1)
 - [The Augmentation Trap: AI Productivity and the Cost of Cognitive Offloading — arXiv](https://arxiv.org/html/2604.03501)
 - [Chain-of-Verification Reduces Hallucination in LLMs — Meta, 2023](https://arxiv.org/pdf/2309.11495)
+- [LLMs Cannot Self-Correct Reasoning Yet — Huang et al. / DeepMind, ICLR 2024](https://arxiv.org/abs/2310.01798) (為什麼獨立驗算最強的直接證據)
+- [Can LLMs Express Their Uncertainty? Verbalized Confidence — Xiong et al., ICLR 2024](https://arxiv.org/abs/2306.13063) (verbalized confidence 系統性過高)
+- [RARR: Researching and Revising What LLMs Say — Gao et al., 2022](https://arxiv.org/abs/2210.08726) (「給依據」的學術原型)
+- [FActScore: Fine-grained Atomic Evaluation of Factual Precision — Min et al., 2023](https://arxiv.org/abs/2305.14251) (長文分解原子事實)
 - [The Decreasing Value of Chain of Thought in Prompting — Wharton Generative AI Labs, 2025](https://gail.wharton.upenn.edu/research-and-insights/tech-report-chain-of-thought/) (「列步驟」現況)
 - [Why AI Makes Human Judgment Priceless — Forbes Tech Council](https://www.forbes.com/councils/forbestechcouncil/2025/11/07/why-ai-makes-human-judgment-priceless-and-how-to-scale-it/)
