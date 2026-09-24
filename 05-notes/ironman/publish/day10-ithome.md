@@ -1,4 +1,4 @@
-title : [Day 10] xxx Engineering 收整: 名字會變, 智慧是自己的
+title : [Day 10] xxx Engineering: 名字會變, 智慧是自己的
 
 
 > 這 4 天 (Day 06 到 09) 我一次丟了四個 xxx Engineering 給你: Prompt / Context / Harness / Loop. 這種文章寫多了, 有個公認副作用: 讀者開始焦慮「怎麼又冒新典範了, 我上個都還沒學會」. 今天不加新詞, 把這四代攤成一條歷史時間軸, 然後回答那個焦慮.
