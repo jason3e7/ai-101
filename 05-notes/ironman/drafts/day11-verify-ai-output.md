@@ -35,7 +35,7 @@ status: draft
 
 | 手段 | 寫 prompt 時要求它 | 收到答案時自己做 |
 |:---|:---|:---|
-| **列步驟** (proof) | 「先列推理步驟再給結論, 不要跳」 | 檢查每一步之間有沒有跳、有沒有偷渡假設 |
+| **列步驟** (proof) ⚠️ | 「先列推理步驟再給結論, 不要跳」 | 檢查每一步之間有沒有跳、有沒有偷渡假設 |
 | **列假設** | 「列出這結論依賴的假設」 | 看那些假設在你的實際情境是否成立 |
 | **給依據** (citation) | 「每個斷言附可查證來源: 數字 / 引用 / 時間」 | 隨機抽一項回頭查, 特別是數字和人名 |
 | **舉反例** (counterexample) | 「舉一個能推翻這結論的情境」 | 自己想一個「如果 X 不是這樣」的反例 |
@@ -43,6 +43,9 @@ status: draft
 | **獨立驗算** ⭐ | ⚠️ 寫進 prompt 沒用 | **換問法、換模型、查權威來源, 對得起來才信** |
 
 前五招都是**寫進 prompt 就能讓 AI 幫你自己攤開一半**. 第六招不一樣, 得靠你自己動手.
+
+> [!NOTE]
+> **「列步驟」有一個大注意**: [Day 06](./day06-prompt-engineering.md) 講過, 「Let's think step by step」對現代推理模型 (Claude 4.x、o1、GPT-5) 已經是**負收益** — Wharton 2025 報告測下來, 加了反而拖慢或拖錯, 因為模型內部本來就在做這件事, 你再要求一次是干擾. 但這裡的用途不同: 不是「逼 AI 答對」, 而是**把它的推理攤開讓你檢查有沒有跳步**. 這個 verification 用途仍然成立, 只是別再期待「加一句 step by step 就變聰明」.
 
 ---
 
@@ -87,4 +90,5 @@ status: draft
 - [AI as Cognitive Amplifier: Rethinking Human Judgment — arXiv](https://arxiv.org/html/2512.10961v1)
 - [The Augmentation Trap: AI Productivity and the Cost of Cognitive Offloading — arXiv](https://arxiv.org/html/2604.03501)
 - [Chain-of-Verification Reduces Hallucination in LLMs — Meta, 2023](https://arxiv.org/pdf/2309.11495)
+- [The Decreasing Value of Chain of Thought in Prompting — Wharton Generative AI Labs, 2025](https://gail.wharton.upenn.edu/research-and-insights/tech-report-chain-of-thought/) (「列步驟」現況)
 - [Why AI Makes Human Judgment Priceless — Forbes Tech Council](https://www.forbes.com/councils/forbestechcouncil/2025/11/07/why-ai-makes-human-judgment-priceless-and-how-to-scale-it/)
