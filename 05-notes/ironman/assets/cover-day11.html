@@ -1,0 +1,70 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:74px;font-weight:900;line-height:1.05;letter-spacing:.005em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:6px;margin-top:6px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 11</span></div>
+  <div>
+    <h1>AI 給的<em>答案</em>, 你怎麼知道是對的</h1>
+    <div class="sub">六招驗算法, 一招最強</div>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="240" viewBox="0 0 1056 240">
+    <!-- Left panel: 5 pills (前五招, grey/warning) -->
+    <rect x="0" y="10" width="380" height="220" rx="10" fill="#1c1f2b" stroke="#3a4152" stroke-width="1.5"/>
+    <text x="190" y="38" fill="#8b93a5" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="2">前五招 · AI 幫你走一半</text>
+
+    <!-- 5 pills stacked -->
+    <rect x="30" y="55" width="320" height="30" rx="6" fill="#2a2418" stroke="#8b6a35" stroke-width="1"/>
+    <text x="52" y="75" fill="#c3c8d4" font-size="15">⚠️  列步驟 (proof / CoT)</text>
+
+    <rect x="30" y="92" width="320" height="30" rx="6" fill="#2a2e3a" stroke="#5a6275" stroke-width="1"/>
+    <text x="52" y="112" fill="#c3c8d4" font-size="15">列假設</text>
+
+    <rect x="30" y="129" width="320" height="30" rx="6" fill="#2a2e3a" stroke="#5a6275" stroke-width="1"/>
+    <text x="52" y="149" fill="#c3c8d4" font-size="15">給依據 (attribution)</text>
+
+    <rect x="30" y="166" width="320" height="30" rx="6" fill="#2a2e3a" stroke="#5a6275" stroke-width="1"/>
+    <text x="52" y="186" fill="#c3c8d4" font-size="15">舉反例</text>
+
+    <rect x="30" y="203" width="320" height="30" rx="6" fill="#2a2e3a" stroke="#5a6275" stroke-width="1"/>
+    <text x="52" y="223" fill="#c3c8d4" font-size="15">極端 / 邊界</text>
+
+    <!-- Middle: vs -->
+    <text x="418" y="128" fill="#8b93a5" font-size="26" font-weight="700" text-anchor="middle">vs</text>
+
+    <!-- Right panel: 獨立驗算 big card (gold) -->
+    <rect x="456" y="10" width="600" height="220" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="2"/>
+    <text x="756" y="38" fill="#e8a13c" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="2">第六招 ⭐ 你自己動手</text>
+
+    <text x="756" y="90" fill="#f2f0ea" font-size="38" font-weight="900" text-anchor="middle">獨立驗算</text>
+
+    <!-- 3 sub-methods -->
+    <text x="756" y="132" fill="#e8a13c" font-size="17" font-weight="700" text-anchor="middle">換問法  ·  換模型  ·  查權威</text>
+
+    <line x1="506" y1="152" x2="1006" y2="152" stroke="#8b6a35" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <text x="756" y="180" fill="#a8aebd" font-size="16" text-anchor="middle">同 model 自己驗自己是複讀</text>
+    <text x="756" y="204" fill="#a8aebd" font-size="16" text-anchor="middle">DeepMind 2024 已直接證實</text>
+  </svg>
+  </div>
+  <div class="foot">你越讓 AI 自主, 你自己的驗證判斷就越是 bottleneck</div>
+</div></body></html>
