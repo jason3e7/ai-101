@@ -15,11 +15,11 @@ status: draft
 > **TL;DR (EN):** Day 11-12 gave you verification tools; Day 13 asks who's using them. AI reliance measurably erodes the human verifier itself. **Acute — rubber-stamping** happens in a single session: a 2025 physician RCT (NCT07328815, 72 doctors) needed an ensemble-disagreement nudge to recover +7.6pp accuracy; a Radiology 2023 mammography study found readers 4.89× more likely to err when AI was wrong; GitHub Copilot suggestion acceptance climbs from 28.9% to 34% over six months, mirroring the automation-complacency curve aviation has known for half a century. **Chronic — cognitive offloading** builds up: MIT Media Lab 2025 EEG showed LLM users had 55% lower neural connectivity than the brain-only group, with effects persisting when they later wrote unaided (the paper coined "cognitive debt"); a Microsoft/CMU 2025 survey of 319 knowledge workers found higher AI-confidence predicted less enacted critical thinking. Same mechanism, two timescales: each rubber-stamp trains lower scrutiny long-term. Five evidence-backed interventions: ensemble disagreement flags, explainable AI, pre-commit your own answer, brain-only intervals, adversarial self-testing.
 
 ```markdown
-# AI 用久了會鈍化: 兩種鈍, 五招破, 都有實證
-* 為什麼講這個 (承 Day 11-12 磨工具, 這篇看拿工具的人)
+# AI 用久了驗證會鈍化
+* 為什麼講這個 (承 Day 11-12 磨工具, 這篇討論人的狀況)
 * 兩種鈍法, 同一個機制
-  * 急性: 蓋章化 (rubber-stamping) 單次連續就退化
-  * 慢性: 判斷力生鏽 (cognitive offloading) 長期依賴累積
+  * 急性: rubber-stamping 單次連續就退化
+  * 慢性: cognitive offloading 長期依賴累積
   * 每次蓋章訓練下次更快蓋 (Microsoft 因果橋樑)
 * 急性證據 (三份研究)
   * 醫療 RCT NCT07328815: ensemble 警示 +7.6pp
