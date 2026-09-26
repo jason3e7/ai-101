@@ -89,8 +89,6 @@ title : [Day 12] 為了方便人類驗證而生的兩個 skill
 - condense-mindmap: <https://raw.githubusercontent.com/jason3e7/ai-101/refs/heads/master/skills/condense-mindmap/SKILL.md>
 - expand-mindmap: <https://raw.githubusercontent.com/jason3e7/ai-101/refs/heads/master/skills/expand-mindmap/SKILL.md>
 
-明天回到脈絡: 餵什麼, 比怎麼問更重要.
-
 ---
 
 ## Sources
