@@ -82,16 +82,14 @@ title : [Day 12] 為了方便人類驗證而生的兩個 skill
 
 > **與其在讀不完的輸出裡找錯, 不如先把輸出換成驗得動的形狀.**
 
-驗證的前六招 (Day 11) 是「拿到答案後怎麼查」; 這兩個 skill 是更前面一步 - **讓答案一出來就好查**. 明天回到脈絡: 餵什麼, 比怎麼問更重要.
+驗證的前六招 (Day 11) 是「拿到答案後怎麼查」; 這兩個 skill 是更前面一步 - **讓答案一出來就好查**.
 
----
-
-## 拿去用 — Get the Skills
-
-兩個 skill 的完整內容 (全英文, SKILL.md 格式, 可直接放進 `~/.claude/skills/` 或貼給任何吃 SKILL.md 的平台):
+兩個 skill 的完整內容都在下面 (全英文, SKILL.md 格式, 可直接放進 `~/.claude/skills/` 或貼給任何吃 SKILL.md 的平台), 拿去用:
 
 - condense-mindmap: <https://raw.githubusercontent.com/jason3e7/ai-101/refs/heads/master/skills/condense-mindmap/SKILL.md>
 - expand-mindmap: <https://raw.githubusercontent.com/jason3e7/ai-101/refs/heads/master/skills/expand-mindmap/SKILL.md>
+
+明天回到脈絡: 餵什麼, 比怎麼問更重要.
 
 ---
 
