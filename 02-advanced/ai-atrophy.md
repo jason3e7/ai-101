@@ -13,6 +13,28 @@ created: 2026-09-24
 
 > **TL;DR (EN):** Two measurable ways AI use erodes human judgment. **Acute — verification fatigue**: after continuous use, humans mechanically approve AI output (2025 RCT NCT07328815 with 72 physicians showed rubber-stamping; ensemble-disagreement nudges recovered +7.6pp accuracy; Radiology 2023 mammography study showed radiologists were ~5× more likely to err when AI was wrong; GitHub Copilot acceptance climbs 28.9% → 34% over six months, consistent with automation habituation). **Chronic — cognitive offloading**: long-term reliance measurably weakens neural + behavioral independent reasoning (MIT Media Lab EEG 2025: LLM users showed up to 55% reduced neural connectivity vs brain-only, effects persisted when later writing unaided — the paper coined "cognitive debt"; Microsoft/CMU 2025 survey of 319 knowledge workers found higher AI-confidence predicted less enacted critical thinking). Same phenomenon, two timescales: each rubber-stamp trains lower scrutiny long-term. Interventions with data: ensemble disagreement flags, explainable AI, pre-commit to your own answer, brain-only intervals, adversarial self-testing.
 
+```markdown
+# AI 用久了會鈍化: 兩個時間尺度都有實證, 五招破法有靠山
+* 急性 rubber-stamping (單次連續就退化)
+  * 醫療 RCT NCT07328815: ensemble nudge +7.6pp
+  * 乳房攝影 Radiology 2023: AI 錯時醫師錯 4.89x
+  * GitHub Copilot: 接受率半年 28.9% → 34%
+* 慢性 cognitive offloading (長期依賴, 獨立思考下降)
+  * MIT EEG: LLM 組神經連結 -55%, cognitive debt
+  * Microsoft/CMU survey: 越信 AI, critical thinking 越少 (因果橋樑)
+  * Cleverly SSRN: cognitive inheritance 框架
+* 歷史對照 (舊問題的新規模)
+  * 倫敦計程車 hippocampus 灰質變化
+  * 拼字檢查 / generation effect
+  * 航空業 automation complacency 半世紀教訓
+* 五招破法 (都有實證靠山)
+  * ensemble disagreement flags (NCT07328815 RCT)
+  * XAI 顯示原因 (Radiology 2023)
+  * pre-commit 自己先寫 (generation effect)
+  * brain-only 間隔日 (Kosmyna 建議)
+  * 對抗性自測 (航空業慣例)
+```
+
 ---
 
 ## 兩個時間尺度, 同一個問題 — One Problem, Two Timescales
