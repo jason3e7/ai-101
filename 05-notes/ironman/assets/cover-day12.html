@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:70px;font-weight:900;line-height:1.08;letter-spacing:.005em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:4px;margin-top:4px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 12</span></div>
+  <div>
+    <h1>把 AI 產出, 換成<em>驗得動</em>的形狀</h1>
+    <div class="sub">濃縮 vs 放大 - 兩個為驗證而生的 skill</div>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="236" viewBox="0 0 1056 236">
+    <!-- ============ LEFT: condense 收斂 ============ -->
+    <rect x="0" y="8" width="500" height="220" rx="10" fill="#1c1f2b" stroke="#3a4152" stroke-width="1.5"/>
+    <text x="24" y="36" fill="#e8a13c" font-size="17" font-weight="700">condense-mindmap</text>
+    <text x="476" y="36" fill="#8b93a5" font-size="15" text-anchor="end" letter-spacing="2">收斂 · 多 → 少</text>
+
+    <!-- pile of source lines -->
+    <rect x="28" y="70" width="120" height="12" rx="3" fill="#2a2e3a"/>
+    <rect x="28" y="92" width="120" height="12" rx="3" fill="#2a2e3a"/>
+    <rect x="28" y="114" width="120" height="12" rx="3" fill="#2a2e3a"/>
+    <rect x="28" y="136" width="120" height="12" rx="3" fill="#2a2e3a"/>
+    <rect x="28" y="158" width="120" height="12" rx="3" fill="#2a2e3a"/>
+    <text x="88" y="192" fill="#5a6275" font-size="13" text-anchor="middle">一堆資料</text>
+
+    <!-- converging arrows -->
+    <path d="M162 78 L228 120" stroke="#5a6275" stroke-width="1.5" fill="none"/>
+    <path d="M162 120 L228 120" stroke="#5a6275" stroke-width="1.5" fill="none"/>
+    <path d="M162 164 L228 120" stroke="#5a6275" stroke-width="1.5" fill="none"/>
+    <polygon points="228,120 216,114 216,126" fill="#5a6275"/>
+
+    <!-- condensed list -->
+    <circle cx="250" cy="86" r="4" fill="#e8a13c"/><rect x="264" y="81" width="150" height="10" rx="3" fill="#3a4152"/>
+    <circle cx="266" cy="110" r="3.5" fill="#9aa0b0"/><rect x="278" y="106" width="120" height="9" rx="3" fill="#2a2e3a"/>
+    <circle cx="266" cy="130" r="3.5" fill="#9aa0b0"/><rect x="278" y="126" width="120" height="9" rx="3" fill="#2a2e3a"/>
+    <circle cx="250" cy="154" r="4" fill="#e8a13c"/><rect x="264" y="149" width="150" height="10" rx="3" fill="#3a4152"/>
+    <text x="336" y="192" fill="#7fb08a" font-size="14" text-anchor="middle">驗「有沒有失真」</text>
+
+    <!-- ============ RIGHT: expand 發散 ============ -->
+    <rect x="556" y="8" width="500" height="220" rx="10" fill="#2a2418" stroke="#e8a13c" stroke-width="1.5"/>
+    <text x="580" y="36" fill="#e8a13c" font-size="17" font-weight="700">expand-mindmap</text>
+    <text x="1032" y="36" fill="#c9a56a" font-size="15" text-anchor="end" letter-spacing="2">發散 · 少 → 多</text>
+
+    <!-- seed -->
+    <circle cx="612" cy="120" r="10" fill="#e8a13c"/>
+    <text x="612" y="150" fill="#c9a56a" font-size="13" text-anchor="middle">一點種子</text>
+
+    <!-- expanding arrows -->
+    <path d="M628 120 L694 80" stroke="#8b6a35" stroke-width="1.5" fill="none"/>
+    <path d="M628 120 L694 120" stroke="#8b6a35" stroke-width="1.5" fill="none"/>
+    <path d="M628 120 L694 160" stroke="#8b6a35" stroke-width="1.5" fill="none"/>
+
+    <!-- expanded list with (?) -->
+    <circle cx="704" cy="80" r="4" fill="#e8a13c"/><rect x="718" y="75" width="140" height="10" rx="3" fill="#3a4152"/>
+    <circle cx="704" cy="120" r="4" fill="#e8a13c"/><rect x="718" y="115" width="110" height="10" rx="3" fill="#3a4152"/>
+    <text x="842" y="124" fill="#e8a13c" font-size="16" font-weight="700">(?)</text>
+    <circle cx="704" cy="160" r="4" fill="#e8a13c"/><rect x="718" y="155" width="120" height="10" rx="3" fill="#3a4152"/>
+    <text x="852" y="164" fill="#e8a13c" font-size="16" font-weight="700">(?)</text>
+    <text x="800" y="192" fill="#c9a56a" font-size="14" text-anchor="middle">驗「哪裡要查」</text>
+  </svg>
+  </div>
+  <div class="foot">skills：condense-mindmap / expand-mindmap</div>
+</div></body></html>
