@@ -71,7 +71,7 @@ status: draft
 
 反過來, 沒標 `(?)` 的節點是它給的承諾. 你抽查一個沒標的, 如果發現其實沒有依據, 那就知道這次它的標記不可信, 整張圖要重驗.
 
-另外, 因為它被要求**主要分支不能重疊**, 你也能一眼驗「涵蓋夠不夠」: 四個角度攤開, 明顯少了某個面向, 你當場看得出來.
+另外, 它被要求**主要分支不能重疊** - 這條是刻意的: LLM 自己發想會收斂到同一核心 (一項研究中 94% 的點子共享同一概念), 不強制岔開就整片面向漏掉. 岔開之後你也能一眼驗「涵蓋夠不夠」: 四個角度攤開, 明顯少了某個面向, 你當場看得出來.
 
 ---
 
@@ -107,3 +107,4 @@ status: draft
 - [心智圖 skill 設計筆記](../../mindmap-skills-design.md) - 兩個 skill 的完整設計決策
 - [AI 能力全景圖](../../../02-advanced/ai-capability-landscape.md) - 收斂／發散兩端的定位來源
 - [markmap — Visualize your Markdown as mindmaps](https://markmap.js.org/)
+- [AI-Augmented Brainwriting: LLMs in group ideation — arXiv, 2024](https://arxiv.org/pdf/2402.14978) - LLM 發想多樣性收窄（94% 點子同源），expand 強制角度不重疊的依據
