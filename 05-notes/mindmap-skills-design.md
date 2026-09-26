@@ -87,6 +87,9 @@ created: 2026-09-26
 > [!WARNING]
 > **濃縮的坑是「悄悄加料」。** 收斂端最怕它為了讓結構好看，補上原文沒有的節點。skill 要硬性要求：**每個節點都能追回原始資料的哪一段**，加不出處的就是幻覺。這跟 [LLM 的極限](../02-advanced/llm-limitations.md)「驗證必須來自外部」是同一條。
 
+> [!NOTE]
+> **這個 skill 已經寫好了（2026-09-26）：** [`skills/condense-mindmap/SKILL.md`](../skills/condense-mindmap/SKILL.md)，全英文、採官方可攜格式（資料夾 ＋ SKILL.md，見 [Agent Skills 說明](../01-fundamentals/agent-skills.md)）。上面這些設計決定都寫進去了：一個根、深度 ≤ 4、每層 ≤ 7、節點是短語、每個節點可追回原文、超量用 map-reduce、只吐 markdown 不附渲染指令。放大那個還沒動。
+
 ---
 
 ### 放大心智圖（發散）— Expand
@@ -115,9 +118,7 @@ created: 2026-09-26
 - **不包 markmap 指令**：skill 只吐 markdown，不附「貼到哪裡看圖」的話。渲染完全交給使用者的工具（markmap／Obsidian／GitHub）。
 - **放大可用 web 研究**：**不限制工具或方法** - 種子太冷就去查，怎麼查由它決定。
 
-**還沒定：**
-
-- **濃縮的輸入上限**：一次能餵多少資料還沒定（見下方說明）。資料太多會塞爆 context，可能要先分段各自濃縮再合併（map-reduce），這點可參考 [六種能力執行手冊](../02-advanced/capabilities-playbook.md)摘要那節的長文處理。
+**濃縮的輸入上限（2026-09-26 定）：** 一次盡量餵，**當資料超過 context window 時，改用 map-reduce**：先分段各自濃縮成小圖，再把小圖合併濃縮成一張。並告知使用者用了 map-reduce、分了幾段（跨段的關聯可能較弱）。細節見 [六種能力執行手冊](../02-advanced/capabilities-playbook.md)摘要那節的長文處理。
 
 ---
 
