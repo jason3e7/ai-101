@@ -86,6 +86,15 @@ title : [Day 12] 為了方便人類驗證而生的兩個 skill
 
 ---
 
+## 拿去用 — Get the Skills
+
+兩個 skill 的完整內容 (全英文, SKILL.md 格式, 可直接放進 `~/.claude/skills/` 或貼給任何吃 SKILL.md 的平台):
+
+- condense-mindmap: <https://raw.githubusercontent.com/jason3e7/ai-101/refs/heads/master/skills/condense-mindmap/SKILL.md>
+- expand-mindmap: <https://raw.githubusercontent.com/jason3e7/ai-101/refs/heads/master/skills/expand-mindmap/SKILL.md>
+
+---
+
 ## Sources
 
 - [markmap — Visualize your Markdown as mindmaps](https://markmap.js.org/)
