@@ -112,9 +112,32 @@
 
 **檔名與資料夾名一律用英文 kebab-case（全小寫、連字號）。** 檔案內的 `# 標題` 維持中英雙語（L2），只有檔名/路徑是英文。
 
-- **檔名格式**：`主題-slug.md`（全小寫、連字號、**不加** `ai-101-` 前綴、無空格）
+### 檔名格式
+
+- **研究筆記**（01–05 資料夾）：`主題-slug.md`（全小寫、連字號、**不加** `ai-101-` 前綴、無空格）
   - 例：`core-concepts.md`、`claude-code-ecosystem.md`、`ai-capability-landscape.md`
-- **資料夾**：`01-fundamentals` / `02-advanced` / `03-tools` / `04-local-llm` / `05-notes` / `06-external` / `skills`
+- **外部觀點收錄**（`06-external/`）：`yyyymmdd_標題 — 作者.md`
+  - 日期用**當天**（用戶請我加入這篇的當天），不是原文發布日
+  - 標題用繁體中文，作者用原名
+
+### 資料夾對應（哪類筆記放哪）
+
+- `01-fundamentals/` → 基礎知識（核心概念、模型比較、實用技巧）
+  - `claude-code/` → Claude Code 專用主題（`/goal`、hooks、permissions、workflow 等）
+- `02-advanced/` → 進階思維（Context / Harness / Loop Engineering、Subagent、驗證方法論）
+- `03-tools/` → 可安裝使用的工具筆記
+  - `security/` → 資安工具
+  - `agents-platforms/` → 模型平台 / 個人 agent
+- `04-local-llm/` → 本地模型（Ollama、vLLM、Gemma、輕量模型）
+- `05-notes/` → 個人實驗、隨筆、實測、進行中設計稿
+- `06-external/` → 外部文章、貼文、研究的收錄
+  - `reference/` → 次要、時效性強、轉述性的外部觀點
+- `skills/` → Claude Code Skill（工作模式與判斷邏輯）
+
+> 子資料夾依 `refactor-note` 原則建立（單層 ≤ 10、理想 7）。放筆記前先看該層是否已接近上限。
+
+### 索引與遷移狀態
+
 - **索引檔**：`index.md`（repo 根目錄；未來架 MkDocs 剛好是首頁）
 - 索引按「**學習路徑**」分類，不要扁平化平行列表
 - **遷移狀態**：01–05 已改英文名；`06-external` 的 64 篇檔名仍為舊格式，待單獨一輪處理

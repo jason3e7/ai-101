@@ -14,21 +14,20 @@ tags: [meta, workflow, onboarding]
 
 ```
 ai-101/
-├── 01-fundamentals/  → 基礎知識（Claude Code 生態系、核心概念、模型比較、實用技巧）
-├── 02-advanced/      → 進階思維（Context Engineering、Harness Engineering、Subagent）
-├── 03-tools/         → 可安裝使用的工具筆記（OpenClaw、Hermes、OpenCode 等）
-├── 04-local-llm/     → 本地模型（Ollama、vLLM、Gemma、輕量模型）
-├── 05-notes/         → 個人實驗與隨筆
-├── 06-external/      → 外部文章、貼文、研究的筆記（資料夾已英文化；檔名待處理）
+├── 01-fundamentals/  → 基礎知識
+├── 02-advanced/      → 進階思維
+├── 03-tools/         → 可安裝使用的工具
+├── 04-local-llm/     → 本地模型
+├── 05-notes/         → 個人實驗、隨筆、設計稿
+├── 06-external/      → 外部文章、貼文、研究收錄
 │   └── reference/    → 次要、時效性強、轉述性的外部觀點
-├── skills/           → 工作模式與判斷邏輯的可重用 skill
+├── skills/           → Claude Code Skill（工作模式與判斷邏輯）
 ├── index.md          → 知識庫索引，有學習路徑分類
 ├── README.md         → GitHub 首頁
 └── CLAUDE.md         → 專案層級指示
-
-命名：檔名/資料夾一律英文 kebab-case（全小寫、連字號、無空格、無 AI 101- 前綴）。
-      檔案內 # 標題維持中英雙語。01–05 已英文化；06-external 待處理。
 ```
+
+**檔名 / 資料夾對應 / 子資料夾規則、命名格式**：完整見 [`CLAUDE.md`](../CLAUDE.md) 的「檔案與目錄」段。
 
 ---
 
@@ -38,11 +37,11 @@ ai-101/
 
 用戶指定一個主題，Claude 研究後寫成英文 kebab-case 檔名的 `.md`。
 
-**命名規則**：`主題-slug.md`（全小寫、連字號、無 `AI 101 -` 前綴；檔內 `#` 標題仍中英雙語）
+**檔名規則、資料夾對應**：見 [`CLAUDE.md`](../CLAUDE.md) 的「檔案與目錄」。
 
 **筆記結構**（按此順序）：
 1. 是什麼（一句話 + callout）＝ **引言**
-2. **心智清單**（見下方規則，夾在引言和本體之間）
+2. **心智清單**（見下方 skill 選擇規則，夾在引言和本體之間）
 3. 安裝
 4. 基本使用
 5. 進階
@@ -60,15 +59,6 @@ ai-101/
 
 （換句話說：字數只是「拿不準時的預設值」，真正的依據是這篇實際在收斂還是發散。）
 
-**放置規則**：
-* 基礎概念 → `01-fundamentals/`；**Claude Code 相關** → `01-fundamentals/claude-code/`
-* 進階思維框架 → `02-advanced/`
-* 可安裝工具 → `03-tools/`；**資安工具** → `03-tools/security/`；**模型平台 / 個人 agent** → `03-tools/agents-platforms/`
-* 本地模型 → `04-local-llm/`
-* 個人實驗 → `05-notes/`
-
-> 子資料夾依 `refactor-note` 原則建立（單層 ≤ 10、理想 7）。放筆記前先看該層是否已接近上限。
-
 **完成後必須更新 `index.md`**，把新筆記加到對應分類的表格。
 
 ---
@@ -77,9 +67,7 @@ ai-101/
 
 用戶給一到多個 URL，每個 URL 一篇 MD，放入 `06-external/`。
 
-**命名規則**：`yyyymmdd_標題 — 作者.md`
-* 日期用**用戶請我加入的當天**，不是原文發布日
-* 標題用繁體中文，作者用原名
+**檔名規則**：見 [`CLAUDE.md`](../CLAUDE.md) 的「檔案與目錄 → 檔名格式 → 外部觀點收錄」。
 
 **筆記結構**：
 ```markdown
@@ -147,19 +135,12 @@ created: yyyy-mm-dd
 
 ## Git 工作流 — Git Workflow
 
+**Deploy key、commit message 格式**：見 [`CLAUDE.md`](../CLAUDE.md) 的「Git 操作」段。
+
+**Workflow-specific 額外規則**：
+
 ```bash
-# Push 固定用 deploy key
-GIT_SSH_COMMAND="ssh -i ~/.ssh/ai-101-deploy" git push
-
-# 每個 commit 必須包含 Co-Authored-By（型號填 session 實際用的，別寫死）
-git commit -m "$(cat <<'EOF'
-簡短描述
-
-Co-Authored-By: Claude <當前型號> <noreply@anthropic.com>
-EOF
-)"
-
-# 移動檔案保留 git history
+# 移動檔案保留 git history (CLAUDE.md 沒列, 但收整檔案時常用)
 git mv "舊路徑/檔案.md" "新路徑/"
 ```
 
@@ -181,16 +162,9 @@ Skills 放在 `skills/` 資料夾，commit + push 進 repo。
 
 ## 呈現與語言規範（Presentation & Language, GitHub-first）
 
-視覺呈現以 **GitHub 為主、Obsidian 為輔**；語言採 **中英雙讀者友善（L2）**。完整規則在 `CLAUDE.md`，重點：
+視覺呈現以 **GitHub 為主、Obsidian 為輔**；語言採 **中英雙讀者友善（L2）**。
 
-| 項目 | 規則 |
-|---|---|
-| **Callout** | 只用 GitHub 5 種大寫 alert：`[!NOTE]` `[!TIP]` `[!IMPORTANT]` `[!WARNING]` `[!CAUTION]`。引用名言用一般 `>`。舊的 `[!info]`→`[!NOTE]`、`[!quote]`→`>` |
-| **內部連結** | 標準相對連結 `[文字](./資料夾/檔名.md)`，空格編碼 `%20`。**不用 `[[ ]]`**（GitHub 點不動） |
-| **雙語 L2** | 標題「中文 — English」、開頭加一行 `> **TL;DR (EN):**`、術語中英並列；內文主體維持繁中，不逐句雙語 |
-| **老嫗能解** | 白居易寫詩前唸給老太太聽——文字要淺白到非專業讀者能懂：能用日常詞就別用術語、必要時附解釋、避免翻譯腔 |
-| **標題上限** | 每篇 1 個 `#` H1；`##` 主章節 **≤ 7、理想 3**；深層 `###/####` 每一層同樣適用（延續 `refactor-note` 的 3–7 注意力原則） |
-| **遷移策略** | 新筆記照新規；舊筆記的 callout / `[[ ]]` **隨編輯到時順手改**，不做一次性大批改。索引頁（README、index.md）已全面改為相對連結 |
+**完整規則**（Callout / 內部連結 / 雙語 L2 / 老嫗能解 / 標題上限 / 遷移策略）：見 [`CLAUDE.md`](../CLAUDE.md) 的「寫作風格指南」段。
 
 ---
 
