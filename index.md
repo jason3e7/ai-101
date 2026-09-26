@@ -47,6 +47,7 @@ updated: 2026-07-04
 |---|---|
 | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) | Agent、LLM、RAG、幻覺、MCP、Subagents 等基礎詞彙 |
 | [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) | 提升效率的具體方法與工作流 |
+| [AI 101 - Agent Skills 是什麼](./01-fundamentals/agent-skills.md) | 跨平台的 SKILL.md 格式：兩個必填欄位、漸進式揭露、為何 description 決定一切；附怎麼寫一個 |
 | [AI 101 - 模型費用與效果比較](./01-fundamentals/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
 | [AI 101 - AI 模型名稱怎麼唸](./01-fundamentals/model-name-pronunciation.md) | Claude 家族與開源模型的正確發音，附中文近似音、常見錯誤與 YouTube 示範 |
 | [AI 101 - AI 生成內容怎麼標記與辨識](./01-fundamentals/ai-content-watermark.md) | Claude 的文字浮水印與 C2PA 檔案簽章、三條技術路線、為何「查到」與「沒查到」都不是定論 |
