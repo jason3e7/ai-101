@@ -10,7 +10,7 @@ status: draft
 [← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
-> Day 11 教你六招驗證 AI 產出, Day 12 讓你用心智清單降低驗證成本. 前兩天在磨你的**工具**, 這篇討論**人的狀況**: 用 AI 用久了, 驗證會鈍化. 拆兩種鈍 (急性 rubber-stamping ＋ 慢性 cognitive offloading), 都有 2025 實證, 也給 5 招有靠山的破法.
+> [Day 11](./day11-verify-ai-output.md) 教你六招驗證 AI 產出, [Day 12](./day12-mindmap-skills.md) 讓你用心智清單降低驗證成本. 前兩天在磨你的**工具**, 這篇討論**人的狀況**: 用 AI 用久了, 驗證會鈍化. 拆兩種鈍 (急性 rubber-stamping ＋ 慢性 cognitive offloading), 都有 2025 實證, 也給 5 招有靠山的破法.
 
 > **TL;DR (EN):** Day 11-12 gave you verification tools; Day 13 asks who's using them. AI reliance measurably erodes the human verifier itself. **Acute — rubber-stamping** happens in a single session: a 2025 physician RCT (NCT07328815, 72 doctors) needed an ensemble-disagreement nudge to recover +7.6pp accuracy; a Radiology 2023 mammography study found readers 4.89× more likely to err when AI was wrong; GitHub Copilot suggestion acceptance climbs from 28.9% to 34% over six months, mirroring the automation-complacency curve aviation has known for half a century. **Chronic — cognitive offloading** builds up: MIT Media Lab 2025 EEG showed LLM users had 55% lower neural connectivity than the brain-only group, with effects persisting when they later wrote unaided (the paper coined "cognitive debt"); a Microsoft/CMU 2025 survey of 319 knowledge workers found higher AI-confidence predicted less enacted critical thinking. Same mechanism, two timescales: each rubber-stamp trains lower scrutiny long-term. Five evidence-backed interventions: ensemble disagreement flags, explainable AI, pre-commit your own answer, brain-only intervals, adversarial self-testing.
 
@@ -41,7 +41,7 @@ status: draft
 
 ## 為什麼講這個 — Why This Matters
 
-前兩天在磨驗證的**工具**: Day 11 給了六招驗算法, Day 12 給心智清單降低驗證成本. 但驗證這件事有另一個環節你動不了 — **人的狀況**.
+前兩天在磨驗證的**工具**: [Day 11](./day11-verify-ai-output.md) 給了六招驗算法, [Day 12](./day12-mindmap-skills.md) 給心智清單降低驗證成本. 但驗證這件事有另一個環節你動不了 — **人的狀況**.
 
 想想這些場景:
 
@@ -57,7 +57,7 @@ status: draft
 
 用 AI 用久了, 驗證會鈍, 分兩層講:
 
-- **急性: rubber-stamping** (學術詞, 白話 = **看都不看就過, 像蓋章一樣機械**). 單次連續使用就出現
+- **急性: rubber-stamping** (蓋章化, 白話 = **看都不看就過, 像蓋章一樣機械**). 單次連續使用就出現
 - **慢性: cognitive offloading** (認知外包, 白話 = **長期把思考丟給 AI 做, 自己的獨立思考能力測得到下降**)
 
 **兩者不是兩件事**, 是**同一個機制在不同時間尺度**上的顯現. Microsoft 2025 那份 survey 給了因果橋樑: 越信任 AI, 就越少**實際去動腦**; 每一次蓋章 = 訓練自己下次更快蓋 = 累積成長期的認知外包.
@@ -132,7 +132,7 @@ Cleverly 2025 不是實證研究, 是提出 **cognitive inheritance** (認知繼
 
 不是喊「多動腦」就行. 下面 5 招各有 2024-2025 的實驗數據或半世紀航空業經驗做靠山.
 
-| 招 | 白話說 | 靠什麼 |
+| 招式 | 白話說 | 相關研究背景 |
 |:---|:---|:---|
 | **多 AI 對照** (ensemble) | 用 2-3 個 model 跑同題, 意見不合就升紅旗 | NCT07328815 RCT (+7.6pp 準確度) |
 | **讓 AI 說原因** (XAI) | 讓 AI 顯示「為什麼這樣答」而不是只給結論 | Radiology 2023 (bias 從 36.1% → 17.8%) |
