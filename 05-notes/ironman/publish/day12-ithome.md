@@ -1,7 +1,5 @@
 title : [Day 12] 為了方便人類驗證而生的兩個 skill
 
-> [Day 11](https://ithelp.ithome.com.tw/articles/10417119) 的結論是: 你越讓 AI 自主, 你自己的驗證判斷就越是瓶頸. 那能不能讓 AI 的產出**本身就好驗一點**? 今天講我為此做的兩個 skill: condense-mindmap 和 expand-mindmap. 它們不是幫你「產得更多」, 是把產出換成**一眼掃得完的形狀**, 讓你驗得動.
-
 ```markdown
 # 把 AI 產出轉換成好驗證的形狀
 * 為什麼心智清單好驗證
@@ -96,3 +94,7 @@ title : [Day 12] 為了方便人類驗證而生的兩個 skill
 - [AI-Augmented Brainwriting: LLMs in group ideation — arXiv, 2024](https://arxiv.org/pdf/2402.14978)（LLM 發想的多樣性收窄，94% 點子同源）
 - [markmap — Visualize your Markdown as mindmaps](https://markmap.js.org/)
 - [Agent Skills — Anthropic](https://claude.com/blog/skills)
+
+---
+
+<!-- 已發布：https://ithelp.ithome.com.tw/articles/10417425 -->
