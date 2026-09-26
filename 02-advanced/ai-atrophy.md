@@ -9,9 +9,9 @@ created: 2026-09-24
 [← 回主頁](../index.md)
 
 > [!NOTE]
-> AI 讓你變快, 但也在**測量得到的意義上**讓你變鈍. 這篇拆兩個時間尺度: **急性**(單次連續使用後, 驗證動作退化成蓋章)和**慢性**(長期依賴後, 獨立思考能力下降). 兩者不是玄學, 2025 已有 RCT、EEG、大規模 survey 三種證據. 也列出 5 個有實證的破法.
+> AI 讓你變快, 但也在**測量得到的意義上**讓你變鈍. 這篇拆兩個時間尺度: **急性** (單次連續使用後, 驗證動作退化成蓋章) 和**慢性** (長期依賴後, 獨立思考能力下降). 兩者不是玄學, 2025 已有 RCT、EEG、大規模 survey 三種證據. 也列出 5 個有實證的破法.
 
-> **TL;DR (EN):** Two measurable ways AI use erodes human judgment. **Acute — verification fatigue**: after continuous use, humans mechanically approve AI output (2025 RCT NCT07328815 with 72 physicians showed rubber-stamping; ensemble-disagreement nudges recovered +7.6pp accuracy; RSNA 2024 mammography showed radiologists were 5× more likely to err when AI was wrong; GitHub Copilot acceptance climbs 28.9% → 34% over six months, consistent with automation habituation). **Chronic — cognitive offloading**: long-term reliance measurably weakens neural + behavioral independent reasoning (MIT Media Lab EEG 2025: LLM users showed up to 55% reduced neural connectivity vs brain-only, effects persisted when later writing unaided — the paper coined "cognitive debt"; Microsoft/CMU 2025 survey of 319 knowledge workers found higher AI-confidence predicted less enacted critical thinking). Same phenomenon, two timescales: each rubber-stamp trains lower scrutiny long-term. Interventions with data: ensemble disagreement flags, explainable AI, pre-commit to your own answer, brain-only intervals, adversarial self-testing.
+> **TL;DR (EN):** Two measurable ways AI use erodes human judgment. **Acute — verification fatigue**: after continuous use, humans mechanically approve AI output (2025 RCT NCT07328815 with 72 physicians showed rubber-stamping; ensemble-disagreement nudges recovered +7.6pp accuracy; Radiology 2023 mammography study showed radiologists were ~5× more likely to err when AI was wrong; GitHub Copilot acceptance climbs 28.9% → 34% over six months, consistent with automation habituation). **Chronic — cognitive offloading**: long-term reliance measurably weakens neural + behavioral independent reasoning (MIT Media Lab EEG 2025: LLM users showed up to 55% reduced neural connectivity vs brain-only, effects persisted when later writing unaided — the paper coined "cognitive debt"; Microsoft/CMU 2025 survey of 319 knowledge workers found higher AI-confidence predicted less enacted critical thinking). Same phenomenon, two timescales: each rubber-stamp trains lower scrutiny long-term. Interventions with data: ensemble disagreement flags, explainable AI, pre-commit to your own answer, brain-only intervals, adversarial self-testing.
 
 ---
 
@@ -38,7 +38,7 @@ created: 2026-09-24
 
 意思是, 沒 nudge 的組別**明明知道 AI 可能錯**, 還是照單全收. 因為連續閱讀 AI 給的合理答案已經把你的批判性打疲了.
 
-### 影像判讀 (RSNA 2024, 乳房攝影)
+### 影像判讀 (Radiology 2023, 乳房攝影)
 
 沒有 XAI (explainable AI) 情境下, 醫師在 36.1% 被操弄的案例中發生 automation bias. AI 錯的時候, 醫師跟著錯的機率是**基準的 4.89 倍** (OR). 更慘的是新手: 從 79.7% 正確率**掉到 19.8%**, 只因 AI 給了誤導答案. 有 XAI (顯示 AI 為什麼這樣判) 時, bias 從 36.1% 降到 17.8%, 但沒消失.
 
@@ -95,9 +95,9 @@ Copilot suggestion 接受率**從第一個月 28.9% 爬到第六個月 34%**. �
 | 招 | 做什麼 | 靠什麼證據 |
 |:---|:---|:---|
 | **Ensemble disagreement flags** | 用 2-3 個 model 跑同題, 意見不合就升紅旗 | NCT07328815 RCT (+7.6pp 準確度) |
-| **Explainable AI** | 讓 AI 顯示「為什麼這樣答」而不是只給結論 | RSNA 2024 (bias 從 36.1% → 17.8%) |
+| **Explainable AI** | 讓 AI 顯示「為什麼這樣答」而不是只給結論 | Radiology 2023 (bias 從 36.1% → 17.8%) |
 | **Pre-commit 自己先寫答案** | 打開 AI 前, 先寫下自己的假設或答案, 再問 AI, 再對比 | Generation effect + Kosmyna 建議 |
-| **Brain-only 間隔日** | 固定比例 (例如每 3-4 個任務) 完全不用 AI, 純腦子完成 | Kosmyna 「cognitive debt」建議, 防長期累積 |
+| **Brain-only 間隔日** | 固定比例 (例如每 3-4 個任務) 完全不用 AI, 純腦子完成 | Kosmyna「cognitive debt」建議, 防長期累積 |
 | **對抗性自測** | 定期餵 AI 已知錯的 output / vignette, 練自己抓錯 | 航空業慣例 (weekly failure drill), 醫療 RCT 已在試 |
 
 **共通模式**: 都是**主動把「自己動腦的機會」種回工作流裡**. AI 太好用, 不會有機會自動出現.
@@ -118,7 +118,7 @@ Copilot suggestion 接受率**從第一個月 28.9% 爬到第六個月 34%**. �
 ### 急性: 驗證疲勞
 - [Mitigating Automation Bias in Physician-LLM Diagnostic Reasoning — NCT07328815 Protocol](https://cdn.clinicaltrials.gov/large-docs/15/NCT07328815/Prot_SAP_000.pdf)
 - [Mitigating Automation Bias in Physician-LLM Diagnostic Reasoning — medRxiv 2026](https://www.medrxiv.org/content/10.64898/2026.06.01.26354596v1.full)
-- [Automation Bias in Mammography with and without XAI — RSNA Radiology 2023](https://pubs.rsna.org/doi/full/10.1148/radiol.222176)
+- [Automation Bias in Mammography with and without XAI — Radiology 2023](https://pubs.rsna.org/doi/full/10.1148/radiol.222176)
 - [Radiologist Interaction with AI Reports — Journal of ACR 2025](https://www.jacr.org/article/S1546-1440(25)00558-7/fulltext)
 - [GitHub Copilot Acceptance Rate Study](https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/)
 
