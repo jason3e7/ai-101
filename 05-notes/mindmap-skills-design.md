@@ -88,7 +88,7 @@ created: 2026-09-26
 > **濃縮的坑是「悄悄加料」。** 收斂端最怕它為了讓結構好看，補上原文沒有的節點。skill 要硬性要求：**每個節點都能追回原始資料的哪一段**，加不出處的就是幻覺。這跟 [LLM 的極限](../02-advanced/llm-limitations.md)「驗證必須來自外部」是同一條。
 
 > [!NOTE]
-> **這個 skill 已經寫好了（2026-09-26）：** [`skills/condense-mindmap/SKILL.md`](../skills/condense-mindmap/SKILL.md)，全英文、採官方可攜格式（資料夾 ＋ SKILL.md，見 [Agent Skills 說明](../01-fundamentals/agent-skills.md)）。上面這些設計決定都寫進去了：一個根、深度 ≤ 4、每層 ≤ 7、節點是短語、每個節點可追回原文、超量用 map-reduce、只吐 markdown 不附渲染指令。放大那個還沒動。
+> **這個 skill 已經寫好了（2026-09-26）：** [`skills/condense-mindmap/SKILL.md`](../skills/condense-mindmap/SKILL.md)，全英文、採官方可攜格式（資料夾 ＋ SKILL.md，見 [Agent Skills 說明](../01-fundamentals/agent-skills.md)）。上面這些設計決定都寫進去了：一個根、深度 ≤ 4、每層 ≤ 7、節點是短語、每個節點可追回原文、超量用 map-reduce、只吐 markdown 不附渲染指令。兩個都寫好了。
 
 ---
 
@@ -107,6 +107,9 @@ created: 2026-09-26
 
 > [!WARNING]
 > **放大有兩個相反的坑。** 一是[發想多樣性收窄](../02-advanced/capabilities-playbook.md)：LLM 發想會自動收斂到同一核心（一實驗中 94% 點子同源），所以第 1 步要**強制不重疊**。二是研究步驟的幻覺：發散端可以天馬行空，但只要標成「查到的」就必須真的查到 - **虛實要分明**。
+
+> [!NOTE]
+> **這個 skill 也寫好了（2026-09-26）：** [`skills/expand-mindmap/SKILL.md`](../skills/expand-mindmap/SKILL.md)，全英文。虛實用 ` (?)` 標記推測節點、未標記＝已查證。**採選項 A（各自獨立，不依賴濃縮）**：兩個 skill 的輸出契約刻意保持一致（同樣的一個根／深度 ≤ 4／每層 ≤ 7／短語規則），但忠實度心法相反 - 濃縮「追不回原文就丟」，放大「可以生但要標虛實」。之所以不讓放大呼叫濃縮，是因為 (1) 會破壞 skill 的可攜性、(2) 兩者忠實度規則會打架，重疊的只有格式那 15 行，是良性重複。
 
 ---
 
