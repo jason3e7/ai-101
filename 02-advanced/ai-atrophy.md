@@ -119,7 +119,7 @@ Copilot suggestion 接受率**從第一個月 28.9% 爬到第六個月 34%**. �
 - [Mitigating Automation Bias in Physician-LLM Diagnostic Reasoning — NCT07328815 Protocol](https://cdn.clinicaltrials.gov/large-docs/15/NCT07328815/Prot_SAP_000.pdf)
 - [Mitigating Automation Bias in Physician-LLM Diagnostic Reasoning — medRxiv 2026](https://www.medrxiv.org/content/10.64898/2026.06.01.26354596v1.full)
 - [Automation Bias in Mammography with and without XAI — Radiology 2023](https://pubs.rsna.org/doi/full/10.1148/radiol.222176)
-- [Radiologist Interaction with AI Reports — Journal of ACR 2025](https://www.jacr.org/article/S1546-1440(25)00558-7/fulltext)
+- [Radiologist Interaction with AI Reports — Journal of ACR 2025](https://www.jacr.org/article/S1546-1440%2825%2900558-7/fulltext)
 - [GitHub Copilot Acceptance Rate Study](https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/)
 
 ### 慢性: 判斷力生鏽
