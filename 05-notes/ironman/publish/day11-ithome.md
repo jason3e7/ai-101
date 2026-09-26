@@ -1,10 +1,6 @@
 title : [Day 11] AI 給的答案, 你怎麼知道是對的
 
 
-> Day 09 讓你把 goal 交給 AI 自己跑, Day 10 說「外部驗證思維」是跨代通用的判斷力. 從今天起 10 天, 每天挑一種驗證手法配一個實際案例. 今天先擺出六個手段的地圖, 講清楚哪一招最強、什麼時候別跑全套.
-
----
-
 ## 為什麼第 11 天講驗證 — Why Verification Now
 
 前 10 天講原理和 xxx Engineering 發展. 你介入的單位從一句話擴到一整條會自跑的流程. 但**單位越外面, 錯誤被放大得越大**:
@@ -86,3 +82,7 @@ title : [Day 11] AI 給的答案, 你怎麼知道是對的
 - [The Decreasing Value of Chain of Thought in Prompting — Wharton Generative AI Labs, 2025](https://gail.wharton.upenn.edu/research-and-insights/tech-report-chain-of-thought/) (「列步驟」現況)
 - [Gen AI Boosts Productivity, But Can't Turn Novices Into Experts — HBS Working Knowledge](https://www.library.hbs.edu/working-knowledge/gen-ai-boosts-productivity-but-cant-turn-novices-into-experts)
 - [Co-Intelligence: Living and Working with AI — Ethan Mollick](https://inigomedina.co/library/work/mollick-co-intelligence)
+
+---
+
+<!-- 已發布：https://ithelp.ithome.com.tw/articles/10417119 -->

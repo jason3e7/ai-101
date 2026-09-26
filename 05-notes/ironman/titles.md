@@ -74,7 +74,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
 | 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
-| 11 | AI 給的答案, 你怎麼知道是對的 (驗證主題開場, 原「用 prompt 生 prompt」放棄) | [ai-verify-then-expand](../ai-verify-then-expand.md) | 🚧 [草稿中](./drafts/day11-verify-ai-output.md) |
+| 11 | AI 給的答案, 你怎麼知道是對的 | [ai-verify-then-expand](../ai-verify-then-expand.md) ＋ [verifying-ai-output](../../02-advanced/verifying-ai-output.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417119) |
 | 12 | 為了方便人類驗證而生的兩個 skill：condense / expand-mindmap | [mindmap-skills-design](../mindmap-skills-design.md) ＋ [skills/](../../skills/) | 🚧 [草稿中](./drafts/day12-mindmap-skills.md) |
 
 ### 轉·脈絡：走回頭路補上跳過的兩級（Day 13–14）
