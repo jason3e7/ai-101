@@ -1,5 +1,5 @@
 ---
-title: AI 101 - AI 用久了會鈍化: 驗證疲勞與判斷力生鏽
+title: "AI 101 - AI 用久了會鈍化: 驗證疲勞與判斷力生鏽"
 tags: [ai, human-factors, verification-fatigue, cognitive-offloading, automation-bias, rct, eeg, 進階]
 created: 2026-09-24
 ---
