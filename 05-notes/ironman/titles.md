@@ -75,7 +75,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
 | 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
 | 11 | AI 給的答案, 你怎麼知道是對的 (驗證主題開場, 原「用 prompt 生 prompt」放棄) | [ai-verify-then-expand](../ai-verify-then-expand.md) | 🚧 [草稿中](./drafts/day11-verify-ai-output.md) |
-| 12 | 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 改寫 (剛好符合下方驗證主題, 保留待排) |
+| 12 | 為了方便人類驗證而生的兩個 skill：condense / expand-mindmap | [mindmap-skills-design](../mindmap-skills-design.md) ＋ [skills/](../../skills/) | 🚧 [草稿中](./drafts/day12-mindmap-skills.md) |
 
 ### 轉·脈絡：走回頭路補上跳過的兩級（Day 13–14）
 
@@ -173,6 +173,7 @@ Day 01-10 收在原理與 xxx Engineering 發展史. Day 11-20 主軸**改成「
 |:---|:---|:---|
 | 怎麼把 AI 的能力，變成自己的能力 | 待補 | **jason3e7 提（2026-09-18）**。跟 Day 30「跟著 AI 持續成長」是同一條線上的，可能是它的前一棒 |
 | 把對話紀錄變成筆記本：匯出、自動分類、收整成可長期用的東西 | [curate-notes](../../skills/curate-notes.md)、[refactor-note](../../skills/refactor-note.md)、[note-lifecycle（待啟用）](../../skills/tmp/note-lifecycle.md) | **jason3e7 提（2026-09-18）**。這個 repo 本身就是這條流程的產物，可以拿實際的 `.jsonl` 與 skill 當案例。要注意匯出檔會夾帶路徑與環境資訊，公開前得先清 |
+| 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 原 Day 12, 被「心智圖兩 skill」換掉 (2026-09-26)；驗證主題, 之後可再排 |
 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 原 Day 29，被新 Day 05 擠出編號。發文時要沿用防禦式寫法 |
 | 拿掉「拒絕」的真正代價：無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 原 Day 28, 被 AI 風格三部曲擠出 (2026-09-22) |
 | AI 已經會自己打靶了：自主滲透工具的現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 原 Day 29, 被 AI 風格三部曲擠出 (2026-09-22) |
