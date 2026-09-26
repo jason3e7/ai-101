@@ -51,12 +51,14 @@ ai-101/
 
 **心智圖規則（所有 note 一律套用）：**
 
-每篇 note 都在**引言（開頭 callout ＋ TL;DR）和文章本體之間**放一張心智圖，用 markdown 巢狀清單寫（GitHub 顯示成縮排清單、markmap 可畫成圖）。用哪個 skill 依**這次 prompt 給進來的內容多寡**決定：
+每篇 note 都在**引言（開頭 callout ＋ TL;DR）和文章本體之間**放一張心智圖，用 markdown 巢狀清單寫（GitHub 顯示成縮排清單、markmap 可畫成圖）。用哪個 skill，**依這兩步判斷（第一步優先）**：
 
-| prompt 輸入量 | 呼叫的 skill | 為什麼 |
-|:---|:---|:---|
-| **≤ 500 字** | [expand-mindmap](./expand-mindmap/SKILL.md) | 給得少 → 研究後放大成圖（推測節點標 `(?)`）|
-| **> 500 字** | [condense-mindmap](./condense-mindmap/SKILL.md) | 給得多 → 濃縮成圖（每節點可追回來源）|
+1. **先看實際材料（優先）**：這篇 note 手上真正要處理的材料多不多？
+   - **材料已足、要收斂** → [condense-mindmap](./condense-mindmap/SKILL.md)（濃縮，每節點可追回來源）。例：全文已寫完、已抓回一整篇外部文章、給了一疊筆記。
+   - **材料很少、要生成** → [expand-mindmap](./expand-mindmap/SKILL.md)（研究後放大，推測節點標 `(?)`）。例：只有一個主題、一個問題當種子。
+2. **判斷不出來時，才看 prompt 輸入量**：這次 prompt 給進來的內容 **≤ 500 字用 expand-mindmap，> 500 字用 condense-mindmap**。
+
+（換句話說：字數只是「拿不準時的預設值」，真正的依據是這篇實際在收斂還是發散。）
 
 兩個 skill 的輸出契約一致：一個根、深度 ≤ 4、每層 ≤ 7、節點是短語。放置時用一行粗體標籤帶出（例如 `**一張圖看全篇：**`）接巢狀清單，**不另開 `##` 標題**，以免每篇都多一個 H2 撞到標題上限。
 
