@@ -88,7 +88,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 15 | 選模型與省錢：同一件事，成本可以差十倍 | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md)、[subagent 計費](../../02-advanced/subagent-usage-and-billing.md) | 改寫 |
+| 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 (承 Day 14 判斷力貴, pivot 到主動練, 原「選模型與省錢」延後) | [ai-verify-then-expand](../ai-verify-then-expand.md) 線二 | 🚧 [草稿中](./drafts/day15-expand-yourself.md) |
 | 16 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
 | 17 | `/goal`：給它一個能驗證的終點，它才知道什麼時候該停 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
 | 18 | 光有目標還不夠：用 Hook 逼它別中途放棄（含一個我實測失敗的 Hook） | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
