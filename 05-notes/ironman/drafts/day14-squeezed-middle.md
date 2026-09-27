@@ -148,7 +148,7 @@ status: draft
 ## 我的重點 — Takeaways
 
 - **AI 抹平的是知識層, 中產首當其衝**. 頂層 (判斷力) 反而變得更稀缺
-- **新的護城河 = know-why / know-when**, 不是 know-what. Day 11 的獨立驗算與 Day 13 的破法, 練的正是這個
+- **新的護城河 = know-why / know-when**, 不是 know-what. [Day 11](./day11-verify-ai-output.md) 的獨立驗算與 [Day 13](./day13-ai-atrophy.md) 的破法, 練的正是這個
 - **雙重打擊**: 現有工作被夾殺 + 往上爬的階梯被抽. 唯一破法是**刻意保留自己動腦的機會**
 - 更完整的四陣營論戰、判斷力斷層研究、DIKW 補充, 我另外整理在 repo 的個人觀點筆記 (`05-notes/ai-and-knowledge-barriers.md`)
 
