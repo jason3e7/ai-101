@@ -82,7 +82,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/ai-atrophy.md) | 🚧 [草稿中](./drafts/day13-ai-atrophy.md) |
-| 14 | Harness Engineering：模型動不了，但外面那層可以 | [harness-engineering](../../02-advanced/harness-engineering.md) | 補實測 |
+| 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 🚧 [草稿中](./drafts/day14-squeezed-middle.md) |
 
 ### 轉·目標與成本：讓它自己跑（Day 15–19）
 
