@@ -51,7 +51,7 @@ status: draft
 
 ## DIKW 金字塔: 哪一層被抹平 — Where AI Hits Hardest
 
-**DIKW** 是 Ackoff 1989 提的知識層級, 讀作「dee-eye-double-you」, 四層堆疊:
+**DIKW** 是 Ackoff 1989 提的知識層級, 四層堆疊:
 
 **Data 資料 → Information 資訊 → Knowledge 知識 → Wisdom 智慧**
 （原始事實 → 加了脈絡 → 會應用、看出模式 → 有判斷、知道為什麼／該不該）
