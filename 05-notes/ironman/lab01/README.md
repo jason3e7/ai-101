@@ -25,19 +25,47 @@
 4. 匯總: per-article、per-series、per-group
 5. 輸出 CSV + 排行榜
 
-## 產出
+## 檔案結構
 
-- `data/articles.csv`: 每篇的 url、title、author、series、group、`——` 次數
-- `data/series-summary.csv`: 每系列平均 / 中位數 / 總次數
-- `results/README.md`: Top N 系列 (最多雙破折號) 排行 + 觀察
+```
+lab01/
+├── README.md          規劃 doc (這一份)
+├── fetch.py           抓文 script (輸出到 raw/)
+├── analyze.py         分析 script (讀 raw/ 或 raw.tgz, 產 CSV + results.md)
+├── raw.tgz            原始 HTML 打包 (進 git, 保留可重現性)
+├── raw/               解壓後的 HTML (gitignore, 只在本機用)
+├── articles.csv       每篇的 url、title、author、series、group、`——` 次數
+├── series-summary.csv 每系列平均 / 中位數 / 總次數
+└── results.md         Top N 系列排行 + 觀察
+```
+
+**為什麼原始 HTML 打包成 tgz 才進 git**:
+
+- 一屆鐵人賽可能上千篇, 每篇 HTML 幾 KB 到幾十 KB, 散開放進 git 會產生一堆小 blob, git history 難看
+- 打包成一個 `raw.tgz` 對 git 友善 (一個 blob), 未來要 diff / restore 也一樣清楚
+- 分析結果 (CSV、results.md) 少且高價值, 散開進 git 沒問題
 
 ## 執行
 
-TBD. 大概會有一個 `run.py` 或 `fetch.sh`, 執行需求:
+三段式 pipeline, 每段可獨立跑:
+
+```bash
+# 1. 抓文 (輸出到 raw/), 增量式, 已抓過的跳過
+python3 fetch.py
+
+# 2. 打包成 tgz, 準備 commit 到 git
+tar czf raw.tgz raw/
+
+# 3. 分析 (讀 raw/ 或直接讀 raw.tgz), 產 CSV + results.md
+python3 analyze.py
+```
+
+**執行需求**:
 
 - 能繞過 Cloudflare (curl + User-Agent header 目前可以, 見 Day 13 檢查文的做法)
 - Rate limit: 每篇之間 sleep 幾秒, 別打爆對方
-- 增量抓取: 已抓過的不重抓 (存 URL 到 seen list)
+- 增量抓取: 已抓過的不重抓 (raw/ 底下有檔就跳過)
+- 另一台機器 clone repo 後, 解壓 `raw.tgz` 就能重跑 `analyze.py` 重現結果
 
 ## 邊界與限制
 
