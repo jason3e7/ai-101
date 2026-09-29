@@ -36,9 +36,12 @@ status: draft
 
 ## 為什麼講這個 — Why This Matters
 
-過去 5 天寫的東西都是**踩坑吐出來的**:
+原話 (jason3e7):
 
-- [Day 11](../day11-15/day11-verify-ai-output.md) 六招驗證: 交稿前跟 AI 產出的錯字、幻覺、跳脫題目搏鬥累積出的清單
+> 在用 Claude 寫鐵人賽的過程, 一直要修正 AI 產出不通順、不自然的大量內容, 非常厭世, 所以催生了 Day 12 和 Day 13. 接下來也想分析整個鐵人賽到目前為止的文章, AI 明顯的痕跡有多少, 和對未來的推測.
+
+展開來講:
+
 - [Day 12](https://ithelp.ithome.com.tw/articles/10417425) 心智清單 skill: 為了讓自己 (人類) 一眼看完 AI 寫的長段落而催生的兩個 skill
 - [Day 13](https://ithelp.ithome.com.tw/articles/10417978) 驗證疲勞: 每篇都要驗真的太累, 動筆時已經半崩潰
 
