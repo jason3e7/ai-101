@@ -41,7 +41,7 @@ created: 2026-09-17
 | 河內塔 N=7 | 可能開始崩 | ✅ 127 步全對 | **偷偷執行程式** |
 | 河內塔 N=10 | 應該崩掉 | ✅ 1023 步全對 | **偷偷執行程式** |
 
-河內塔的步驟我用 [`hanoi_check.py`](./ironman/hanoi_check.py) 逐步驗過，三份原始輸出都在 `assets/llm-limits-test/`：
+河內塔的步驟我用 [`hanoi_check.py`](../ironman/hanoi_check.py) 逐步驗過，三份原始輸出都在 `assets/llm-limits-test/`：
 
 ```
 N = 5    最少步數 31    它給了 31 步    步驟合法 是    有沒有解開 有
@@ -153,7 +153,7 @@ N=10，一樣執行程式，1023 步全對：
 
 ## 原始檔案 — Raw Artifacts
 
-全部放在 [`assets/llm-limits-test/`](./assets/llm-limits-test/)：
+全部放在 [`assets/llm-limits-test/`](../assets/llm-limits-test/)：
 
 | 檔案 | 內容 |
 |---|---|

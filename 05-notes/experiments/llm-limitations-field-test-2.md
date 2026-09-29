@@ -158,7 +158,7 @@ Sonnet 5 在 arXiv 那題主動說「我不確定」，在 Pfeiffer 那題卻連
 
 ## 原始檔案 — Raw Artifacts
 
-全部在 [`assets/llm-limits-test-r2/`](./assets/llm-limits-test-r2/)，題目與指令在 [`round2-prompts.md`](./assets/llm-limits-test/round2-prompts.md)。
+全部在 [`assets/llm-limits-test-r2/`](../assets/llm-limits-test-r2/)，題目與指令在 [`round2-prompts.md`](../assets/llm-limits-test/arithmetic-and-reversal/round2-prompts.md)。
 
 | 檔案 | 內容 |
 |---|---|

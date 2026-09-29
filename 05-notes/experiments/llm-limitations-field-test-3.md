@@ -76,7 +76,7 @@ Haiku  9904578206305937
 
 ### Haiku 的 N=9：只有步數是對的
 
-這份有留下原始輸出，餵給 [`hanoi_check.py`](./ironman/hanoi_check.py) 之後：
+這份有留下原始輸出，餵給 [`hanoi_check.py`](../ironman/hanoi_check.py) 之後：
 
 ```
 N = 9
@@ -177,7 +177,7 @@ Haiku 在難題上誠實拒絕、在簡單題上自信答錯。所以「它有�
 
 ## 原始檔案 — Raw Artifacts
 
-全部在 [`assets/llm-limits-test-r3/`](./assets/llm-limits-test-r3/)，題目與指令在 [`round2-prompts.md`](./assets/llm-limits-test/round2-prompts.md)。
+全部在 [`assets/llm-limits-test-r3/`](../assets/llm-limits-test-r3/)，題目與指令在 [`round2-prompts.md`](../assets/llm-limits-test/arithmetic-and-reversal/round2-prompts.md)。
 
 | 檔案 | 內容 |
 |---|---|
