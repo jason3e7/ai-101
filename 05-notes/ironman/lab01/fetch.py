@@ -49,7 +49,7 @@ YEAR = 2026
 INDEX_URL = f"{BASE}/{YEAR}ironman"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
-SLEEP_SEC = 1.0
+SLEEP_SEC = 0.1
 NS = {"content": "http://purl.org/rss/1.0/modules/content/"}
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -57,7 +57,7 @@ RAW = os.path.join(HERE, "raw")
 RSS_DIR = os.path.join(RAW, "rss")
 ART_DIR = os.path.join(RAW, "articles")      # 補抓用的完整文章頁 (少量)
 PAGE_DIR = os.path.join(RAW, "pages")        # 每篇文章的正文區塊 (分析用)
-WORKERS = 2
+WORKERS = 7
 INDEX_FILE = os.path.join(RAW, "index.json")
 REPORT_FILE = os.path.join(RAW, "completeness.json")
 
