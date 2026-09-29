@@ -7,7 +7,7 @@ status: draft
 
 # Day 07｜Context Engineering: prompt 只是它看到的 5%
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
 > [Day 06](./day06-prompt-engineering.md) 花整天講 prompt 技巧, 收在一句話: **「prompt 只是它看到的東西的一小部分.」** 今天把「另外那 95%」拆開. 這一級叫 Context Engineering, 是 2025 年之後 Karpathy 跟 Anthropic 都直接點名的**下一個要學的技能**. 好消息: 動的地方就那幾個, 學會了每一次對話立刻變準、變短、變便宜.
@@ -132,7 +132,7 @@ Context Engineering 這件事後面幾天會反覆用到. CLAUDE.md、skills、h
 
 ## Sources
 
-- [Context Engineering 進階筆記 (本 repo)](../../../02-advanced/engineering/context-engineering-in-depth.md), 9 塊組成、4 種操作、3 個原理
+- [Context Engineering 進階筆記 (本 repo)](../../../../02-advanced/engineering/context-engineering-in-depth.md), 9 塊組成、4 種操作、3 個原理
 - [Effective context engineering for AI agents — Anthropic Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [The rise of Context Engineering — LangChain / Harrison Chase](https://www.langchain.com/blog/the-rise-of-context-engineering)
 - [Context Engineering for Agents (write/select/compress/isolate) — Lance Martin](https://blog.langchain.com/context-engineering-for-agents/)

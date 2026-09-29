@@ -7,7 +7,7 @@ status: draft
 
 # Day 27｜自架本地 LLM：什麼時候該把 AI 搬回自己機器上
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
 > 自架的本質不是省錢，是**把一個你控制不了的變數收回來**。這篇講三個真正值得自架的理由、什麼時候不該自架，以及三行指令怎麼開始。
@@ -35,7 +35,7 @@ status: draft
 - 你自己的長期實驗，不希望變數偷偷換掉
 
 > [!IMPORTANT]
-> 這條接得回 [Day 03](./day03-what-it-cannot-do.md)：鋸齒狀前沿看不見，所以你得靠實測找出自己的邊界。**但如果模型會偷偷換版，你昨天測出來的邊界今天就作廢了。** 可重現性是驗證的前提。
+> 這條接得回 [Day 03](../day01-05/day03-what-it-cannot-do.md)：鋸齒狀前沿看不見，所以你得靠實測找出自己的邊界。**但如果模型會偷偷換版，你昨天測出來的邊界今天就作廢了。** 可重現性是驗證的前提。
 
 **三、沒有別人的限制。**
 速率限制、地區限制、內容政策、服務中斷。自架換來的是：跑多少是你的事、什麼時候跑是你的事。
@@ -50,7 +50,7 @@ status: draft
 
 | 你在意的 | 誰贏 | 為什麼 |
 |---|---|---|
-| 最強的能力 | **雲端** | [Day 02](./day02-why-it-got-strong.md) 那條曲線，前沿一直在雲端。本地模型永遠落後一段 |
+| 最強的能力 | **雲端** | [Day 02](../day01-05/day02-why-it-got-strong.md) 那條曲線，前沿一直在雲端。本地模型永遠落後一段 |
 | 低用量的成本 | **雲端** | 按用量計費。你一個月用不到幾十美元，硬體錢要回本很久 |
 | 不想維運 | **雲端** | 自架你要顧硬體、電費、驅動、模型更新、磁碟空間 |
 | 長文件、超長脈絡 | **雲端** | 本地模型的脈絡長度與利用率通常更吃緊 |
@@ -102,8 +102,8 @@ Ollama 適合自己用。當你要把本地模型變成一個**服務**（多人
 
 把整個系列串起來看：
 
-- [Day 02](./day02-why-it-got-strong.md)：能力曲線一直往上，**前沿永遠在雲端**
-- [Day 03](./day03-what-it-cannot-do.md)：邊界看不見，所以要靠自己實測
+- [Day 02](../day01-05/day02-why-it-got-strong.md)：能力曲線一直往上，**前沿永遠在雲端**
+- [Day 03](../day01-05/day03-what-it-cannot-do.md)：邊界看不見，所以要靠自己實測
 - 今天：**實測需要一個不會偷偷改變的東西**
 
 所以結論不是「自架 vs 雲端」二選一，而是分工：
@@ -116,10 +116,10 @@ Ollama 適合自己用。當你要把本地模型變成一個**服務**（多人
 
 ## Sources
 
-- [Ollama 指令教學](../../../04-local-llm/ollama-guide.md)
-- [輕量模型推薦（依 VRAM 分級）](../../../04-local-llm/lightweight-models.md)
-- [vLLM — 高吞吐量推論伺服器](../../../04-local-llm/vllm.md)
-- [PII Masking（隱私遮蔽）](../../../03-tools/pii-masking.md)
-- [Qwen3.6 27B 原版 vs Uncensored](../../../04-local-llm/qwen3-6-27b-uncensored.md)
+- [Ollama 指令教學](../../../../04-local-llm/ollama-guide.md)
+- [輕量模型推薦（依 VRAM 分級）](../../../../04-local-llm/lightweight-models.md)
+- [vLLM — 高吞吐量推論伺服器](../../../../04-local-llm/vllm.md)
+- [PII Masking（隱私遮蔽）](../../../../03-tools/pii-masking.md)
+- [Qwen3.6 27B 原版 vs Uncensored](../../../../04-local-llm/qwen3-6-27b-uncensored.md)
 - [vLLM 官方文件](https://docs.vllm.ai)
 - [Ollama 官網](https://ollama.com)

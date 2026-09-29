@@ -7,7 +7,7 @@ status: draft
 
 # Day 13｜AI 用久了驗證會鈍化 — Verification Fatigue and Cognitive Offloading
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
 > [Day 11](./day11-verify-ai-output.md) 教你六招驗證 AI 產出, [Day 12](./day12-mindmap-skills.md) 讓你用心智清單降低驗證成本. 前兩天在磨你的**工具**, 這篇討論**人的狀況**: 用 AI 用久了, 驗證會鈍化. 拆兩種鈍 (急性 rubber-stamping ＋ 慢性 cognitive offloading), 都有 2025 實證, 也給 5 招有靠山的破法.
@@ -149,7 +149,7 @@ Cleverly 2025 不是實證研究, 是提出 **cognitive inheritance** (認知繼
 - 前兩天教你怎麼驗, 這篇是**你自己會鈍**, 得防這一環. 工具再利, 人鈍了也沒用
 - 兩種鈍是**同一機制在不同時間尺度**: 急性蓋章 → 訓練慢性外包 → 判斷力測得到下降
 - 五招破法**都有實證靠山**, 不是喊多動腦. 挑一招今天就開始
-- 更完整的整理 (含歷史對照: 倫敦計程車、拼字檢查、航空業自動化) 見 repo 的 [AI 用久了會鈍化](../../../02-advanced/limits-and-verification/ai-atrophy.md)
+- 更完整的整理 (含歷史對照: 倫敦計程車、拼字檢查、航空業自動化) 見 repo 的 [AI 用久了會鈍化](../../../../02-advanced/limits-and-verification/ai-atrophy.md)
 
 ---
 

@@ -7,10 +7,10 @@ status: draft
 
 # Day 06｜Prompt Engineering: 哪些技巧真的有效, 哪些只是傳說
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 05](./day05-how-it-picks.md) 講完它怎麼從你的話裡推論出任務. 既然是推論, 流傳的 prompt 技巧就分兩種: **有些在幫它推對, 有些只是安慰你自己.** 這題被寫過一萬次, 所以這篇不列「10 個必學技巧」, 只做一件事: **把常見技巧拿去對證據**, 再用 [Day 01](./day01-llm-is-statistics.md) 的原理解釋為什麼.
+> [Day 05](../day01-05/day05-how-it-picks.md) 講完它怎麼從你的話裡推論出任務. 既然是推論, 流傳的 prompt 技巧就分兩種: **有些在幫它推對, 有些只是安慰你自己.** 這題被寫過一萬次, 所以這篇不列「10 個必學技巧」, 只做一件事: **把常見技巧拿去對證據**, 再用 [Day 01](../day01-05/day01-llm-is-statistics.md) 的原理解釋為什麼.
 
 > **TL;DR (EN):** Four elements cover most of it: instruction, context, input data, output format. Beyond that, the evidence is unkind to popular tricks. Personas don't improve objective tasks (162 roles, 4 model families, 2,410 questions). Tipping and threats do nothing (Wharton, 5 models). Chain-of-thought is now near-zero gain on reasoning models at 20 to 80% more time. What survives, examples, explicit formats, structural separation, all works for the same reason: it narrows the probability distribution. Nothing works by making the model "try harder". No such setting exists.
 
@@ -39,7 +39,7 @@ status: draft
 ## 有證據撐得住的 — What Holds Up
 
 **一、給範例 (few-shot), 最穩的一招.**
-當你要的格式很難用文字描述時, 直接給一到三個範例, 比寫五百字說明有效得多. 原因 [Day 05](./day05-how-it-picks.md) 已經講過: **任務座標是從你的話裡算出來的, 範例是你操作那個座標最直接的介面**. 給模式, 比給形容詞準.
+當你要的格式很難用文字描述時, 直接給一到三個範例, 比寫五百字說明有效得多. 原因 [Day 05](../day01-05/day05-how-it-picks.md) 已經講過: **任務座標是從你的話裡算出來的, 範例是你操作那個座標最直接的介面**. 給模式, 比給形容詞準.
 
 **二、明確的輸出格式與長度.**
 「用 JSON」「三點, 每點不超過 30 字」這類可驗證的約束, 它照做的機率高很多. 反過來, 「詳細一點」這種模糊詞幾乎沒有效果 (Day 09 展開).
@@ -67,7 +67,7 @@ status: draft
 
 「你是一個有 10 年經驗的資深工程師」, 大概是最多人用、也最少人查證的一招.
 
-[Day 05](./day05-how-it-picks.md) 已經講過為什麼: 人設動的是語氣那一層, 動不到「它推成什麼任務」那一層. 今天補上證據.
+[Day 05](../day01-05/day05-how-it-picks.md) 已經講過為什麼: 人設動的是語氣那一層, 動不到「它推成什麼任務」那一層. 今天補上證據.
 
 EMNLP 2024 的研究 (Zheng et al.) 做得很徹底: 整理 **162 種角色** (涵蓋 6 種人際關係、8 個專業領域), 在 **4 個模型家族**上測 **2,410 道事實題**. 結論是: **加角色並沒有讓表現變好.**
 
@@ -98,7 +98,7 @@ Wharton 的 Prompting Science Report 3 (2025, 標題直白得可愛: *I'll pay y
 
 原因很直白: 推理模型的「一步一步想」早就被訓練進去了, 你再叫它一次是重複勞動.
 
-> **這條的心法比技巧本身重要: 一個技巧有沒有效, 取決於你用的是哪一代模型.** [Day 02](./day02-why-it-got-strong.md) 那條四到七個月翻一倍的曲線, 也在淘汰技巧.
+> **這條的心法比技巧本身重要: 一個技巧有沒有效, 取決於你用的是哪一代模型.** [Day 02](../day01-05/day02-why-it-got-strong.md) 那條四到七個月翻一倍的曲線, 也在淘汰技巧.
 
 ---
 

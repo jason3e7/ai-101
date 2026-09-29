@@ -7,7 +7,7 @@ status: draft
 
 # Day 11｜AI 給的答案, 你怎麼知道是對的 — How to Verify AI Output
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
 > Day 09 讓你把 goal 交給 AI 自己跑, Day 10 說「外部驗證思維」是跨代通用的判斷力. 從今天起 10 天, 每天挑一種驗證手法配一個實際案例. 今天先擺出六個手段的地圖, 講清楚哪一招最強、什麼時候別跑全套.
@@ -45,7 +45,7 @@ status: draft
 前五招都是**寫進 prompt 就能讓 AI 幫你自己攤開一半**. 第六招不一樣, 得靠你自己動手.
 
 > [!NOTE]
-> **「列步驟」有一個大注意**: [Day 06](./day06-prompt-engineering.md) 講過, 「Let's think step by step」對現代推理模型 (Claude 4.x、o1、GPT-5) 已經是**負收益** — Wharton 2025 報告測下來, 加了反而拖慢或拖錯, 因為模型內部本來就在做這件事, 你再要求一次是干擾. 但這裡的用途不同: 不是「逼 AI 答對」, 而是**把它的推理攤開讓你檢查有沒有跳步**. 這個 verification 用途仍然成立, 只是別再期待「加一句 step by step 就變聰明」.
+> **「列步驟」有一個大注意**: [Day 06](../day06-10/day06-prompt-engineering.md) 講過, 「Let's think step by step」對現代推理模型 (Claude 4.x、o1、GPT-5) 已經是**負收益** — Wharton 2025 報告測下來, 加了反而拖慢或拖錯, 因為模型內部本來就在做這件事, 你再要求一次是干擾. 但這裡的用途不同: 不是「逼 AI 答對」, 而是**把它的推理攤開讓你檢查有沒有跳步**. 這個 verification 用途仍然成立, 只是別再期待「加一句 step by step 就變聰明」.
 
 ---
 
@@ -61,7 +61,7 @@ status: draft
 2. **換模型**. Claude 問完問 Gemini / GPT / Grok. 模型不同, 訓練資料和偏好不同, 對得起來才信
 3. **查權威來源**. 數字對官方文件、人名對維基、法條對法源. 這一步最花時間但最硬
 
-對重要答案, **這招比其他五招加起來更能抓錯**. 呼應 [Day 09](./day09-loop-engineering.md) 的 loop: 那裡「測試 = code 的獨立驗算」, 因為測試是**跟 code 相反方向寫的東西**, 兩邊對得起來才算過.
+對重要答案, **這招比其他五招加起來更能抓錯**. 呼應 [Day 09](../day06-10/day09-loop-engineering.md) 的 loop: 那裡「測試 = code 的獨立驗算」, 因為測試是**跟 code 相反方向寫的東西**, 兩邊對得起來才算過.
 
 > [!WARNING]
 > **一個常見的假動作**: 問 AI「你這個答案有幾成把握?」以為得到 confidence 分數. Xiong et al. (ICLR 2024) 實測 **verbalized confidence 系統性高於實際準確率**, 而且 RLHF 訓練後更嚴重. 這等於問醉漢自己會不會開車, **別把它當獨立驗算的替代品**.
@@ -85,7 +85,7 @@ status: draft
 - 你越讓 AI 自主, 你自己的**驗證判斷力**就越是關鍵
 - 六招裡最強是**獨立驗算** (換問法 / 換模型 / 查權威). 前五招 AI 幫你做一半, 第六招你自己動手
 - **別把驗證當儀式**. 用「一旦錯了會不會麻煩」決定跑全套還是跳過
-- 想看每一招背後的論文和 2026 現況 (哪些被推翻、哪些還活著), 見 [AI 產出怎麼驗](../../../02-advanced/limits-and-verification/verifying-ai-output.md)
+- 想看每一招背後的論文和 2026 現況 (哪些被推翻、哪些還活著), 見 [AI 產出怎麼驗](../../../../02-advanced/limits-and-verification/verifying-ai-output.md)
 
 ---
 

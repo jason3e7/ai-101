@@ -7,7 +7,7 @@ status: draft
 
 # Day 08｜Harness Engineering: 你已經在用只是不知道
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
 > [Day 07](./day07-context-engineering.md) 拆完 Context Engineering: 動的是模型看到的 95%. 今天再往外一層: **Context 是被誰塞進去的? 塞的過程誰在管? 出錯誰處理?** 答案是 harness, 包裹 LLM 的完整執行環境. 你如果在用 Claude Code 或 Codex, 你已經在用一個成熟的 harness 了, 只是它藏在指令背後. 這一天教你認出它, 順便告訴你**你真正能動的位置只有四個, 其他都自動了**.
@@ -157,7 +157,7 @@ Read / Grep 完全不打擾, 要寫入才問. 節省的時間非常明顯.
 
 ## Sources
 
-- [Harness Engineering (本 repo)](../../../02-advanced/engineering/harness-engineering.md), 六大組成完整拆解
+- [Harness Engineering (本 repo)](../../../../02-advanced/engineering/harness-engineering.md), 六大組成完整拆解
 - [Effective harnesses for long-running agents — Anthropic Engineering](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [Harness design for long-running apps — Anthropic Engineering](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 - [The Anatomy of Claude Code — sidbharath](https://sidbharath.com/blog/the-anatomy-of-claude-code/)

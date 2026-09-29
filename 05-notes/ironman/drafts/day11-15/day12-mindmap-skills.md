@@ -7,7 +7,7 @@ status: draft
 
 # Day 12｜為了方便人類驗證而生的兩個 skill — Two Skills Built for Human Verification
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
 > [Day 11](./day11-verify-ai-output.md) 的結論是: 你越讓 AI 自主, 你自己的驗證判斷就越是瓶頸. 那能不能讓 AI 的產出**本身就好驗一點**? 今天講我為此做的兩個 skill: condense-mindmap 和 expand-mindmap. 它們不是幫你「產得更多」, 是把產出換成**一眼掃得完的形狀**, 讓你驗得動.
@@ -41,7 +41,7 @@ status: draft
 
 > （jason3e7）我做這兩個 skill 的動機很實際: 我常常拿到 AI 一大坨輸出, 知道「應該要驗」但懶得逐字讀, 結果就沒驗. 把它先變成一張圖, 我才驗得下去.
 
-兩個 skill 分別對應[能力全景圖](../../../02-advanced/capabilities/ai-capability-landscape.md)的兩端 - 一個收斂、一個發散, 但都是為了同一件事: 讓你驗得動.
+兩個 skill 分別對應[能力全景圖](../../../../02-advanced/capabilities/ai-capability-landscape.md)的兩端 - 一個收斂、一個發散, 但都是為了同一件事: 讓你驗得動.
 
 ---
 
@@ -89,7 +89,7 @@ status: draft
 輸出格式刻意一致, 所以你看兩張圖的姿勢一樣, 驗法卻各有重點. 這跟 Day 11 的精神一致: **驗證不是儀式, 是把力氣花在會出錯的地方** - condense 把力氣導向「對不對得回來源」, expand 把力氣導向「它自己標不確定的地方」.
 
 > [!NOTE]
-> 兩個 skill 都是純 markdown 巢狀清單輸出, 不綁工具: GitHub 顯示成縮排清單, 貼到 markmap 就畫成圖. 想看完整規則與設計緣由, 見 [心智圖 skill 設計筆記](../../design-and-guides/mindmap-skills-design.md); skill 本身在 [`skills/`](../../../skills/) 底下.
+> 兩個 skill 都是純 markdown 巢狀清單輸出, 不綁工具: GitHub 顯示成縮排清單, 貼到 markmap 就畫成圖. 想看完整規則與設計緣由, 見 [心智圖 skill 設計筆記](../../../design-and-guides/mindmap-skills-design.md); skill 本身在 [`skills/`](../../../../skills/) 底下.
 
 ---
 
@@ -103,8 +103,8 @@ status: draft
 
 ## Sources
 
-- [Agent Skills 是什麼](../../../01-fundamentals/agent-skills.md) - SKILL.md 格式與跨平台說明
-- [心智圖 skill 設計筆記](../../design-and-guides/mindmap-skills-design.md) - 兩個 skill 的完整設計決策
-- [AI 能力全景圖](../../../02-advanced/capabilities/ai-capability-landscape.md) - 收斂／發散兩端的定位來源
+- [Agent Skills 是什麼](../../../../01-fundamentals/agent-skills.md) - SKILL.md 格式與跨平台說明
+- [心智圖 skill 設計筆記](../../../design-and-guides/mindmap-skills-design.md) - 兩個 skill 的完整設計決策
+- [AI 能力全景圖](../../../../02-advanced/capabilities/ai-capability-landscape.md) - 收斂／發散兩端的定位來源
 - [markmap — Visualize your Markdown as mindmaps](https://markmap.js.org/)
 - [AI-Augmented Brainwriting: LLMs in group ideation — arXiv, 2024](https://arxiv.org/pdf/2402.14978) - LLM 發想多樣性收窄（94% 點子同源），expand 強制角度不重疊的依據

@@ -7,7 +7,7 @@ status: draft
 
 # Day 10｜xxx Engineering 收整: 名字會變, 智慧是自己的
 
-[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
 > 這 4 天 (Day 06 到 09) 我一次丟了四個 xxx Engineering 給你: Prompt / Context / Harness / Loop. 這種文章寫多了, 有個公認副作用: 讀者開始焦慮「怎麼又冒新典範了, 我上個都還沒學會」. 今天不加新詞, 把這四代攤成一條歷史時間軸, 然後回答那個焦慮.
@@ -31,7 +31,7 @@ status: draft
 
 > **每個時代, 你 engineering 的「單位」都往外退了一格.**
 
-從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 在 [Prompt 到 Graph 進階筆記](../../../02-advanced/engineering/prompt-engineering-evolution.md).
+從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 在 [Prompt 到 Graph 進階筆記](../../../../02-advanced/engineering/prompt-engineering-evolution.md).
 
 ---
 
@@ -54,7 +54,7 @@ status: draft
 
 ## 別焦慮: 名字會變, 底層沒變 — Don't Panic
 
-**回到 [Day 01](./day01-llm-is-statistics.md).** LLM 到今天還是在做同一件事: 看完前面所有 token, 猜下一個. 這件事從 GPT-3 (2020) 到 Opus 4.7 (2026) 沒變過.
+**回到 [Day 01](../day01-05/day01-llm-is-statistics.md).** LLM 到今天還是在做同一件事: 看完前面所有 token, 猜下一個. 這件事從 GPT-3 (2020) 到 Opus 4.7 (2026) 沒變過.
 
 所以四代 xxx Engineering 之間變的是什麼? **是你介入的槓桿位置.**
 
@@ -97,7 +97,7 @@ status: draft
 
 ## Sources
 
-- [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../02-advanced/engineering/prompt-engineering-evolution.md), 完整時間軸、Graph 前沿補充、五代熱度對照
+- [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../../02-advanced/engineering/prompt-engineering-evolution.md), 完整時間軸、Graph 前沿補充、五代熱度對照
 - [The Anthropic leader who built Claude Code says he ditched prompting — The New Stack, 2026](https://thenewstack.io/loop-engineering/)
 - [Prompt, Context, Harness & Loop Engineering — Avi Chawla, Daily Dose of DS](https://blog.dailydoseofds.com/p/prompt-context-harness-and-loop-engineering)
 - [Graph Engineering是什麼？迴圈工程、Harness Engineering⋯5種AI工程術語差異一次看懂 — 陳建鈞, 數位時代, 2026-07](https://www.bnext.com.tw/article/91632/graph-engineering-ai-agent)

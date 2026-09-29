@@ -63,7 +63,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 02 | 不是它突然變強，是它跨過了你的門檻 | 新研究（METR、scaling laws、MCP 採用曲線） | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10411919) |
 | 03 | 它做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/limits-and-verification/llm-limitations.md) ＋ [實測](../experiments/llm-limitations-field-test.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10412787) |
 | 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/capabilities/ai-capability-landscape.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10413054) |
-| 05 | AI 怎麼知道該用哪種能力 | [how-ai-picks-capability](../../02-advanced/capabilities/how-ai-picks-capability.md) | ✅ [已完成](./drafts/day05-how-it-picks.md) |
+| 05 | AI 怎麼知道該用哪種能力 | [how-ai-picks-capability](../../02-advanced/capabilities/how-ai-picks-capability.md) | ✅ [已完成](./drafts/day01-05/day05-how-it-picks.md) |
 | 06 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md)＋新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10414480) |
 | 07 | Context Engineering：prompt 只是它看到的 5% | [context-engineering](../../02-advanced/engineering/context-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415067) |
 | 08 | Harness Engineering：你已經在用只是不知道 | [harness-engineering](../../02-advanced/engineering/harness-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415590) |
@@ -81,14 +81,14 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) | 🚧 [草稿中](./drafts/day13-ai-atrophy.md) |
-| 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 🚧 [草稿中](./drafts/day14-squeezed-middle.md) |
+| 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) | 🚧 [草稿中](./drafts/day11-15/day13-ai-atrophy.md) |
+| 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 🚧 [草稿中](./drafts/day11-15/day14-squeezed-middle.md) |
 
 ### 轉·目標與成本：讓它自己跑（Day 15–19）
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 (承 Day 14 判斷力貴, pivot 到主動練, 原「選模型與省錢」延後) | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 | 🚧 [草稿中](./drafts/day15-expand-yourself.md) |
+| 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 (承 Day 14 判斷力貴, pivot 到主動練, 原「選模型與省錢」延後) | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 | 🚧 [草稿中](./drafts/day11-15/day15-expand-yourself.md) |
 | 16 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
 | 17 | `/goal`：給它一個能驗證的終點，它才知道什麼時候該停 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
 | 18 | 光有目標還不夠：用 Hook 逼它別中途放棄（含一個我實測失敗的 Hook） | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
@@ -108,11 +108,11 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 25 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day25-what-ai-replaces.md) |
+| 25 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day21-25/day25-what-ai-replaces.md) |
 | 26 | AI 風格橫行：掃 40 個系列, 找出被入侵最深的三種文風 | 新掃描實驗（本屆鐵人賽已發文章）＋ [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) | 新寫 |
 | 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) | 改寫 |
 | 28 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
-| 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day27-self-hosted-llm.md) |
+| 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day26-30/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
 **盤點：已發布 8 篇、已完成 3 篇（draft）、改寫 15 篇、補實測 2 篇、新寫 2 篇。** 分段為 **承 8 / 轉 16 / 合 6**。

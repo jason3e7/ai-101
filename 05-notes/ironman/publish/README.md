@@ -2,6 +2,10 @@
 
 `drafts/` 是 repo 版本（GitHub 語法）；這裡是**貼到 iThome 用的版本**。
 
+## 資料夾結構 — Layout
+
+上稿版依天數每 5 天一組：`day01-05/`、`day06-10/` … `day26-30/`，檔名 `dayNN-ithome.md`。本 README 留在本層。`drafts/` 與 `assets/` 用同一套分組。
+
 ## 兩者的差別
 
 iThome 編輯器採 Markdown 並明示「請勿使用 HTML Code」，而且**不支援 GitHub 專屬語法**。上稿前要做這幾件轉換：
@@ -45,7 +49,7 @@ iThome 編輯器採 Markdown 並明示「請勿使用 HTML Code」，而且**不
 - [ ] 引用他人內容未超過全文 1/3
 - [ ] 沒有殘留的 `[!NOTE]` 等 GitHub alert
 - [ ] 沒有殘留的相對連結
-- [ ] 封面圖已上傳（`../assets/dayNN-cover.png`）
+- [ ] 封面圖已上傳（`../../assets/dayXX-XX/dayNN-cover.png`）
 - [ ] 文末預告下一篇
 - [ ] 用「老嫗能解」再讀一遍：有沒有繞著講、可以換成具體比喻的句子
 

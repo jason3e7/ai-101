@@ -2,18 +2,29 @@
 
 每篇文章的封面圖（1200×630，符合社群分享的標準比例）。
 
+## 資料夾結構 — Layout
+
+每 5 天一組（`day01-05/`、`day06-10/` … `day26-30/`），每組放這 5 天的 `cover-dayNN.html`（原始檔）與 `dayNN-cover.png`（成品）。
+
+| 位置 | 放什麼 |
+|:---|:---|
+| 本層 | `cover-template.html`（範本）、本說明 |
+| `dayNN-NN/` | 該組天數的封面 html ＋ png（成對，每組 ≤ 10 個檔案） |
+| `unused/` | 沒採用的方案（Day 01 立體派風格） |
+
 ## 怎麼產生下一張
 
-1. 複製 `cover-template.html`，改四個地方：
-   - `.day` → `Day 02`
+1. 複製 `cover-template.html` 到對應的組資料夾（例：Day 16 → `day16-20/cover-day16.html`），改四個地方：
+   - `.day` → `Day 16`
    - `<h1>` → 標題（想強調的字包在 `<em>` 裡會變成金色）
    - `.sub` → 副標一句話
    - 中間的視覺區塊 → 換成當篇的主視覺
-2. 用無頭 Chrome 截圖：
+2. 進到該組資料夾，用無頭 Chrome 截圖：
 
 ```bash
+cd day16-20
 google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars \
-  --window-size=1200,630 --screenshot=day02-cover.png cover-day02.html
+  --window-size=1200,630 --screenshot=day16-cover.png cover-day16.html
 ```
 
 ## 設計規則
