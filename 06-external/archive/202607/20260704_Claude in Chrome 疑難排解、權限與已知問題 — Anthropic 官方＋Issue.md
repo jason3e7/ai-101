@@ -8,7 +8,7 @@ created: 2026-07-04
 
 # Claude in Chrome 疑難排解、權限與已知問題 — Troubleshooting, Permissions & Known Issues
 
-[← 回主頁](../index.md)
+[← 回主頁](../../../index.md)
 
 > [!NOTE]
 > 原文：[Claude in Chrome Troubleshooting](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)、[Permissions Guide](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide)、[Issue #73161](https://github.com/anthropics/claude-code/issues/73161)
@@ -16,7 +16,7 @@ created: 2026-07-04
 
 > **TL;DR (EN):** A field guide to Claude in Chrome operations from official docs plus a community bug report — connection troubleshooting, the permission model (two modes, site-level grants, hard-prohibited actions), blocked site categories, quota impact, and one currently-unfixable bug: file/image upload tools are 100% broken due to a client/extension protocol mismatch (Issue #73161, still open).
 
-搭配安裝與基本使用請看 [Claude Code chrome 瀏覽器整合](../01-fundamentals/claude-code/chrome-integration.md)；這篇補的是「裝好之後會撞到的問題」。
+搭配安裝與基本使用請看 [Claude Code chrome 瀏覽器整合](../../../01-fundamentals/claude-code/chrome-integration.md)；這篇補的是「裝好之後會撞到的問題」。
 
 ---
 
@@ -66,7 +66,7 @@ created: 2026-07-04
 > [!IMPORTANT]
 > 這些**硬性禁止**，不受權限模式影響：處理信用卡／身份證資料、永久刪除檔案或清空垃圾桶、修改系統檔案或安全權限、執行投資交易。
 
-這套「模式 + site-level + 硬禁止」的分層，和 Claude Code 本身的 [權限模式與設定層級](../01-fundamentals/claude-code/permissions.md) 是同一種設計思路：預設保守、單點授權、最高層有不可覆蓋的紅線。
+這套「模式 + site-level + 硬禁止」的分層，和 Claude Code 本身的 [權限模式與設定層級](../../../01-fundamentals/claude-code/permissions.md) 是同一種設計思路：預設保守、單點授權、最高層有不可覆蓋的紅線。
 
 ---
 
@@ -105,8 +105,8 @@ created: 2026-07-04
 
 ## 相關筆記 — Related
 
-- [Claude Code chrome 瀏覽器整合](../01-fundamentals/claude-code/chrome-integration.md) — 安裝、架構、基本使用與完整 MCP 工具清單
-- [Claude Code 權限模式與設定層級](../01-fundamentals/claude-code/permissions.md) — CLI 端的權限模型，與本篇 Chrome 權限同源
+- [Claude Code chrome 瀏覽器整合](../../../01-fundamentals/claude-code/chrome-integration.md) — 安裝、架構、基本使用與完整 MCP 工具清單
+- [Claude Code 權限模式與設定層級](../../../01-fundamentals/claude-code/permissions.md) — CLI 端的權限模型，與本篇 Chrome 權限同源
 
 ## 來源 — Sources
 

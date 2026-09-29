@@ -8,7 +8,7 @@ created: 2026-07-15
 
 # Claude 分享對話被濫用於 ClickFix 惡意廣告 — Claude Shared Chat Abused in ClickFix Malvertising
 
-[← 回主頁](../index.md)
+[← 回主頁](../../../index.md)
 
 > [!NOTE]
 > 原文：[Trend Micro — Threat Actors Abuse claude.ai Shared Chat for ClickFix Malvertising](https://www.trendmicro.com/en_us/research/26/f/claudeai-shared-chat-abused-in-malvertising.html)（含 jason3e7 實測重現）
@@ -48,15 +48,15 @@ jason3e7 實際把整條攻擊鏈重現了一次：
 
 **① 搜尋看到假廣告** —— Google 搜「mac claude code」，最上面「贊助商搜尋結果」就是假廣告。顯示的網域寫著 `claude.ai`，看起來完全正常，一般人不會起疑。
 
-![Google 搜尋結果最上方的假贊助商廣告，顯示網域為 claude.ai](./assets/clickfix-01-fake-google-ad.png)
+![Google 搜尋結果最上方的假贊助商廣告，顯示網域為 claude.ai](../../assets/clickfix-01-fake-google-ad.png)
 
 **② 落在真的 claude.ai 分享頁** —— 點下去落在一個**真的** `claude.ai/share/...` 頁面，標題「Running Claude Code on Mac」、右上角掛「Shared by Apple Support」，一步步教你「開 Terminal → 貼上下面這行指令」。那行指令是用 base64 包起來的。
 
-![假冒 Apple Support 的 claude.ai 分享頁，教你在終端機貼上 base64 指令（已部分遮罩）](./assets/clickfix-02-fake-share-page-redacted.png)
+![假冒 Apple Support 的 claude.ai 分享頁，教你在終端機貼上 base64 指令（已部分遮罩）](../../assets/clickfix-02-fake-share-page-redacted.png)
 
 **③ 解碼露出真面目** —— 把那段 base64 丟進 CyberChef 解開，露出真正的惡意網址 `hxxp://malwareaudit[.]com/curl/...`（此處 defang）——那行 `curl` 會去這個網址抓下一階段的東西。
 
-![CyberChef 把 base64 解碼出惡意網址（已部分遮罩）](./assets/clickfix-03-decoded-payload-redacted.png)
+![CyberChef 把 base64 解碼出惡意網址（已部分遮罩）](../../assets/clickfix-03-decoded-payload-redacted.png)
 
 > [!TIP]
 > 兩個實測心得：
