@@ -73,7 +73,7 @@ find setuid program
 
 ## 資料來源與完整版
 
-從 [PG Play writeup 個人文風約束](../05-notes/pgplay-writeup-style-guide.md) 的「Do / Don't 清單」抽出來當 skill.
+從 [PG Play writeup 個人文風約束](../05-notes/design-and-guides/pgplay-writeup-style-guide.md) 的「Do / Don't 清單」抽出來當 skill.
 
 完整版 (含五塊模板結構層、標點指紋詳述、常用零件目錄、個性只在特定位置露頭、對照範例) 見原筆記. Skill 只提取**文風層**這部分.
 

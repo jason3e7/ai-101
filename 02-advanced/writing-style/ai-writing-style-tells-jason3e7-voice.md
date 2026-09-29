@@ -9,7 +9,7 @@ created: 2026-09-20
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> **這篇怎麼來的**: 拿 [pgplay-writeup-style-guide](../../05-notes/pgplay-writeup-style-guide.md) 的 Do / Don't 清單, 把 [ai-writing-style-tells](./ai-writing-style-tells.md) 逐段改寫成 jason3e7 的手筆. 論點沒動, 只換文風: 半形標點、短句串列、動詞收前、破折號歸零、AI 冗詞拿掉. 兩篇對照著看, 一份是 ai-101 預設寫法, 另一份是同樣論點用個人文風寫.
+> **這篇怎麼來的**: 拿 [pgplay-writeup-style-guide](../../05-notes/design-and-guides/pgplay-writeup-style-guide.md) 的 Do / Don't 清單, 把 [ai-writing-style-tells](./ai-writing-style-tells.md) 逐段改寫成 jason3e7 的手筆. 論點沒動, 只換文風: 半形標點、短句串列、動詞收前、破折號歸零、AI 冗詞拿掉. 兩篇對照著看, 一份是 ai-101 預設寫法, 另一份是同樣論點用個人文風寫.
 
 > **TL;DR (EN):** Same content as `ai-writing-style-tells.md`, rewritten under the voice constraints from `pgplay-writeup-style-guide.md`. Punctuation converted to half-width, em dashes (both `——` and the ` - ` substitute the repo uses) removed by splitting sentences, three-item rhythms broken up, hedging padding cut. Kept the ai-101 structural template (opening callout + TL;DR EN, bilingual headings, callouts, tables, Sources), because those are structure not voice. Diff the two files to see what the voice constraints actually change.
 
@@ -126,7 +126,7 @@ Claude 只要你**明確點名**, 就幾乎完全照做. GPT 就算明令禁止�
 ## 相關筆記 — Related
 
 - [ai-writing-style-tells (原版)](./ai-writing-style-tells.md), 這篇的原文, 用 ai-101 預設語氣寫的
-- [pgplay-writeup-style-guide](../../05-notes/pgplay-writeup-style-guide.md), 本篇套用的 Do / Don't 清單來源
+- [pgplay-writeup-style-guide](../../05-notes/design-and-guides/pgplay-writeup-style-guide.md), 本篇套用的 Do / Don't 清單來源
 - [AI 怎麼知道該用哪種能力](../capabilities/how-ai-picks-capability.md), 為什麼模糊指令得到模糊結果, 文風也適用
 - [AI 生成內容怎麼標記與辨識](../../01-fundamentals/ai-content-watermark.md), 為什麼「看起來像 AI」永遠不是證據
 - [六種能力執行手冊](../capabilities/capabilities-playbook.md), 「給標準」是拉成效的通用槓桿, 文風就是一種標準

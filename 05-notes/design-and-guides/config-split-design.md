@@ -7,7 +7,7 @@ status: draft
 
 # 設計稿: CLAUDE.md vs skills/working-style.md 分工 — Config Split Design
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 這是設計稿, 討論兩份 config 檔案的分工原則. 起因: 想把 `skills/working-style.md` 裡的**心智清單規則**搬去 `CLAUDE.md`, 順便盤點兩份檔案哪裡重複、哪裡該搬. 通過後才動手.

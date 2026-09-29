@@ -130,8 +130,8 @@ Copilot suggestion 接受率**從第一個月 28.9% 爬到第六個月 34%**. �
 
 - [AI 產出怎麼驗](./verifying-ai-output.md), 技術層的驗證方法; 這篇是人層的補集
 - [先收整再展開, 人才驗得動](./converge-before-verify.md), 降低驗證成本的具體手法, 讓「該驗的都驗得動」
-- [AI 打破知識壁壘: 被夾殺的知識中產](../../05-notes/ai-and-knowledge-barriers.md), jagged frontier + 專家 vs 新手的另一個角度
-- [先驗證再拓展](../../05-notes/ai-verify-then-expand.md), 個人日常驗證姿勢 (跟數學借的六招)
+- [AI 打破知識壁壘: 被夾殺的知識中產](../../05-notes/essays/ai-and-knowledge-barriers.md), jagged frontier + 專家 vs 新手的另一個角度
+- [先驗證再拓展](../../05-notes/essays/ai-verify-then-expand.md), 個人日常驗證姿勢 (跟數學借的六招)
 
 ---
 

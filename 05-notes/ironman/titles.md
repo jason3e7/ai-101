@@ -61,7 +61,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 01 | 它只是在猜下一個字：LLM 的原理，決定了後面 29 天的所有心法 | [core-concepts](../../01-fundamentals/core-concepts.md) + 新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10411345) |
 | 02 | 不是它突然變強，是它跨過了你的門檻 | 新研究（METR、scaling laws、MCP 採用曲線） | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10411919) |
-| 03 | 它做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/limits-and-verification/llm-limitations.md) ＋ [實測](../llm-limitations-field-test.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10412787) |
+| 03 | 它做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/limits-and-verification/llm-limitations.md) ＋ [實測](../experiments/llm-limitations-field-test.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10412787) |
 | 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/capabilities/ai-capability-landscape.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10413054) |
 | 05 | AI 怎麼知道該用哪種能力 | [how-ai-picks-capability](../../02-advanced/capabilities/how-ai-picks-capability.md) | ✅ [已完成](./drafts/day05-how-it-picks.md) |
 | 06 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md)＋新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10414480) |
@@ -74,21 +74,21 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/engineering/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
 | 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/engineering/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
-| 11 | AI 給的答案, 你怎麼知道是對的 | [ai-verify-then-expand](../ai-verify-then-expand.md) ＋ [verifying-ai-output](../../02-advanced/limits-and-verification/verifying-ai-output.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417119) |
-| 12 | 為了方便人類驗證而生的兩個 skill：condense / expand-mindmap | [mindmap-skills-design](../mindmap-skills-design.md) ＋ [skills/](../../skills/) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417425) |
+| 11 | AI 給的答案, 你怎麼知道是對的 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) ＋ [verifying-ai-output](../../02-advanced/limits-and-verification/verifying-ai-output.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417119) |
+| 12 | 為了方便人類驗證而生的兩個 skill：condense / expand-mindmap | [mindmap-skills-design](../design-and-guides/mindmap-skills-design.md) ＋ [skills/](../../skills/) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417425) |
 
 ### 轉·脈絡：走回頭路補上跳過的兩級（Day 13–14）
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) | 🚧 [草稿中](./drafts/day13-ai-atrophy.md) |
-| 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 🚧 [草稿中](./drafts/day14-squeezed-middle.md) |
+| 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 🚧 [草稿中](./drafts/day14-squeezed-middle.md) |
 
 ### 轉·目標與成本：讓它自己跑（Day 15–19）
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 (承 Day 14 判斷力貴, pivot 到主動練, 原「選模型與省錢」延後) | [ai-verify-then-expand](../ai-verify-then-expand.md) 線二 | 🚧 [草稿中](./drafts/day15-expand-yourself.md) |
+| 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 (承 Day 14 判斷力貴, pivot 到主動練, 原「選模型與省錢」延後) | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 | 🚧 [草稿中](./drafts/day15-expand-yourself.md) |
 | 16 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
 | 17 | `/goal`：給它一個能驗證的終點，它才知道什麼時候該停 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
 | 18 | 光有目標還不夠：用 Hook 逼它別中途放棄（含一個我實測失敗的 Hook） | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
@@ -98,19 +98,19 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 20 | 人要怎麼驗證 AI？跟數學借六種驗算法 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
-| 21 | 獨立驗算為什麼最強：別讓它改自己的考卷 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
+| 20 | 人要怎麼驗證 AI？跟數學借六種驗算法 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) | 改寫 |
+| 21 | 獨立驗算為什麼最強：別讓它改自己的考卷 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) | 改寫 |
 | 22 | 實測：Claude Code 在 HTB 靶機上，目標是怎麼被綁架的 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 改寫 |
-| 23 | 人做不到想像之外的事：用 AI 拓展視野的五個手段 | [ai-verify-then-expand](../ai-verify-then-expand.md) | 改寫 |
-| 24 | 知識金字塔：AI 打掉哪一層壁壘，為什麼專家反而賺更多 | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 改寫 |
+| 23 | 人做不到想像之外的事：用 AI 拓展視野的五個手段 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) | 改寫 |
+| 24 | 知識金字塔：AI 打掉哪一層壁壘，為什麼專家反而賺更多 | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 改寫 |
 
 ### 合：已經在發生的事，怎麼接（Day 25–30）
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 25 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day25-what-ai-replaces.md) |
+| 25 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day25-what-ai-replaces.md) |
 | 26 | AI 風格橫行：掃 40 個系列, 找出被入侵最深的三種文風 | 新掃描實驗（本屆鐵人賽已發文章）＋ [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) | 新寫 |
-| 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../pgplay-writeup-style-guide.md) | 改寫 |
+| 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) | 改寫 |
 | 28 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
 | 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
@@ -132,7 +132,7 @@ Day 01-10 收在原理與 xxx Engineering 發展史. Day 11-20 主軸**改成「
 
 | 候選題目 | 定位 | 素材 | Hands-on 度 |
 |:---|:---|:---|:---|
-| 談談驗證這件事: 獨立思考 + 提問的智慧 | 驗證主題**觀念鋪陳篇**, 為後續實測開場 | [ai-verify-then-expand](../ai-verify-then-expand.md) ＋ 新研究 | 低 (觀念) |
+| 談談驗證這件事: 獨立思考 + 提問的智慧 | 驗證主題**觀念鋪陳篇**, 為後續實測開場 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) ＋ 新研究 | 低 (觀念) |
 | `/goal` 三種寫法對比: 模糊 / 明確 / 有 verifier | 從 Day 09 sum.js 延伸, 三種 goal 各跑一次看行為差 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ 新實測 | 高 |
 | 選模型 × 實測: 同一題 Opus/Sonnet/Haiku 各跑一次 | 費用比較 ＋ 效果比較 (效果題目難設計, 見下方預產) | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md) ＋ 新實測 | 高 |
 | Claude Code 四層行為系統一次組通 | goal + sub-agent + skill + hook 綜合示範 | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | 高 (tentative) |
@@ -173,7 +173,7 @@ Day 01-10 收在原理與 xxx Engineering 發展史. Day 11-20 主軸**改成「
 |:---|:---|:---|
 | 怎麼把 AI 的能力，變成自己的能力 | 待補 | **jason3e7 提（2026-09-18）**。跟 Day 30「跟著 AI 持續成長」是同一條線上的，可能是它的前一棒 |
 | 把對話紀錄變成筆記本：匯出、自動分類、收整成可長期用的東西 | [curate-notes](../../skills/curate-notes.md)、[refactor-note](../../skills/refactor-note.md)、[note-lifecycle（待啟用）](../../skills/tmp/note-lifecycle.md) | **jason3e7 提（2026-09-18）**。這個 repo 本身就是這條流程的產物，可以拿實際的 `.jsonl` 與 skill 當案例。要注意匯出檔會夾帶路徑與環境資訊，公開前得先清 |
-| 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../meta-prompting.md) | 原 Day 12, 被「心智圖兩 skill」換掉 (2026-09-26)；驗證主題, 之後可再排 |
+| 讓 prompt 自己檢查自己：把驗證寫進提示裡 | [meta-prompting](../essays/meta-prompting.md) | 原 Day 12, 被「心智圖兩 skill」換掉 (2026-09-26)；驗證主題, 之後可再排 |
 | 我親手測了一次 ClickFix：AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記（自己的截圖） | 原 Day 29，被新 Day 05 擠出編號。發文時要沿用防禦式寫法 |
 | 拿掉「拒絕」的真正代價：無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 原 Day 28, 被 AI 風格三部曲擠出 (2026-09-22) |
 | AI 已經會自己打靶了：自主滲透工具的現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 原 Day 29, 被 AI 風格三部曲擠出 (2026-09-22) |

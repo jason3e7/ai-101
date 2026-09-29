@@ -66,13 +66,13 @@ Sonnet 5 第一次的回答：
 
 > Mary Lee Pfeiffer is a fictional character in the *Iron Man* comics - she's the mother of Tony Stark.
 
-![Sonnet 5 第一次](../../assets/llm-limits-test-r2/b1-pfeiffer-sonnet-run1.jpg)
+![Sonnet 5 第一次](../../assets/llm-limits-test-r2/retrieval/b1-pfeiffer-sonnet-run1.jpg)
 
 同一題再問一次，它給了另一個答案：
 
 > Mary Lee Pfeiffer is the mother of actor Robert Downey Jr.
 
-![Sonnet 5 第二次](../../assets/llm-limits-test-r2/b1-pfeiffer-sonnet-run2.jpg)
+![Sonnet 5 第二次](../../assets/llm-limits-test-r2/retrieval/b1-pfeiffer-sonnet-run2.jpg)
 
 → 心法：換個方向問同一件事，是最便宜的驗證手段之一。
 
@@ -106,7 +106,7 @@ Sonnet 5 第一次的回答：
 | Sonnet 5 | `9,904,578,032,905,937` | ✅ |
 | Haiku 4.5 | `9,904,578,206,305,937` | ❌ 差了 1 億 7 千萬 |
 
-![Haiku 算錯](../../assets/llm-limits-test-r3/a3-power-haiku-wrong.jpg)
+![Haiku 算錯](../../assets/llm-limits-test-r3/arithmetic/a3-power-haiku-wrong.jpg)
 
 → 心法：能交給程式算的，就別讓它心算。 叫它「寫一段程式算給我看」，比叫它直接報答案可靠得多。
 
@@ -139,7 +139,7 @@ Apple 在 2025 年的《The Illusion of Thinking》測了 o1、o3-mini、Claude 
 "python3 << 'EOF' ... hanoi(9, 'A', 'C', 'B') ... EOF"}}]</function_calls>
 ```
 
-![Haiku 幻覺工具呼叫](../../assets/llm-limits-test-r3/hanoi-n9-haiku-faked-tool.jpg)
+![Haiku 幻覺工具呼叫](../../assets/llm-limits-test-r3/hanoi/hanoi-n9-haiku-faked-tool.jpg)
 
 工具是關的，回傳的 `web_search_requests` 是 0，那段程式從來沒跑過。接著它給了 511 步 - 步數完全正確（2⁹−1）。但把這 511 步餵給驗證腳本逐步搬一遍：
 

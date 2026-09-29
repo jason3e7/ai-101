@@ -110,7 +110,7 @@ skill 是**存起來、可重複叫用的一套做法**（行為層）；prompt 
 ## 相關筆記 — Related
 
 - [Claude Code 生態系](./claude-code/ecosystem.md) - skill／hook／MCP／plugin 四者的關係
-- [兩個心智圖 skill 的設計筆記](../05-notes/mindmap-skills-design.md) - 一個實際在設計中的 skill 案例
+- [兩個心智圖 skill 的設計筆記](../05-notes/design-and-guides/mindmap-skills-design.md) - 一個實際在設計中的 skill 案例
 - [refactor-note skill](../skills/refactor-note.md) - repo 自己的 skill 範例，可直接照抄格式
 
 ## Sources

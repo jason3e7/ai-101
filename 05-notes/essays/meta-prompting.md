@@ -7,7 +7,7 @@ updated: 2026-07-09
 
 # 用 Prompt 生成好 Prompt（Meta-Prompting）— Prompting to Generate Better Prompts
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 一個「叫 AI 幫你寫 prompt 的 prompt」，就叫 meta-prompt。這篇整理什麼是好 prompt、怎麼讓 AI 幫你生一個、以及一組可直接複製貼上的範本。
@@ -185,7 +185,7 @@ E Context
 ```
 
 > [!TIP]
-> 範本 B 品質通常最高——因為它逼你（和模型）先把「問題本身」界定清楚，而不是急著生成。呼應 [六種能力執行手冊](../02-advanced/capabilities/capabilities-playbook.md) 裡「給標準」的做法。
+> 範本 B 品質通常最高——因為它逼你（和模型）先把「問題本身」界定清楚，而不是急著生成。呼應 [六種能力執行手冊](../../02-advanced/capabilities/capabilities-playbook.md) 裡「給標準」的做法。
 
 ### 範本 C：反思式改寫
 

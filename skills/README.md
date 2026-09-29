@@ -34,4 +34,4 @@ created: 2026-09-26
 - **輕量（本庫慣例）**：單一 `.md`，同樣 `name`／`description`（可加 `tags`）frontmatter，本體是判斷準則與流程，主要給本庫維護時在對話裡叫用。
 
 > [!TIP]
-> 兩個心智圖 skill 是一組**收斂／發散**對照，共用同一套輸出契約（一個根、深度 ≤ 4、每層 ≤ 7、節點是短語），但忠實度心法相反。設計緣由見 [心智圖 skill 設計筆記](../05-notes/mindmap-skills-design.md)。
+> 兩個心智圖 skill 是一組**收斂／發散**對照，共用同一套輸出契約（一個根、深度 ≤ 4、每層 ≤ 7、節點是短語），但忠實度心法相反。設計緣由見 [心智圖 skill 設計筆記](../05-notes/design-and-guides/mindmap-skills-design.md)。

@@ -16,7 +16,7 @@ updated: 2026-05-15
 
 ## 實驗一：Claude 指揮 Codex 寫 Hello World（C）
 
-![Claude 指揮 Codex 執行 Hello World — JSON 原始輸出](assets/2026-05-15_11-37-53.png)
+![Claude 指揮 Codex 執行 Hello World — JSON 原始輸出](../assets/2026-05-15_11-37-53.png)
 
 ### Claude 下給 Codex 的指令
 
@@ -53,7 +53,7 @@ codex exec --skip-git-repo-check --json \
   "output_tokens":251}}
 ```
 
-![Claude 整理後的完整對話紀錄](assets/2026-05-15_11-38-39.png)
+![Claude 整理後的完整對話紀錄](../assets/2026-05-15_11-38-39.png)
 
 **Codex JSON 的 item 類型：**
 
@@ -70,7 +70,7 @@ codex exec --skip-git-repo-check --json \
 
 ## 實驗一：Token 用量分析
 
-![Token 用量分析：Claude 單獨 vs 分工](assets/2026-05-15_11-41-26.png)
+![Token 用量分析：Claude 單獨 vs 分工](../assets/2026-05-15_11-41-26.png)
 
 ### Codex 實際用量（從 JSON 精確數值）
 
@@ -182,6 +182,6 @@ Claude（最上層 orchestrator）
 
 ## 相關筆記
 
-- [AI 101 - Subagent 使用與計費](../02-advanced/subagent-usage-and-billing.md) — 跨平台協作的完整方法比較
+- [AI 101 - Subagent 使用與計費](../../02-advanced/subagent-usage-and-billing.md) — 跨平台協作的完整方法比較
 - [[在 Claude Code 裡呼叫 OpenAI Codex：codex-plugin-cc — Will 保哥]] — Plugin 方式整合 Codex
-- [AI 101 - 模型費用與效果比較](../01-fundamentals/model-cost-comparison.md) — 各模型定價，計算分工是否划算
+- [AI 101 - 模型費用與效果比較](../../01-fundamentals/model-cost-comparison.md) — 各模型定價，計算分工是否划算

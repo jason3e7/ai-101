@@ -154,13 +154,13 @@ Gans 的經濟模型點出兩件事：
 
 ## 相關筆記 — Related
 
-- [LLM 極限實測](../../05-notes/llm-limitations-field-test.md) —— jason3e7 實跑這些檢測的結果：**兩個極限它都「答對」了，因為它偷偷換了工具**
-- [LLM 極限實測（二）](../../05-notes/llm-limitations-field-test-2.md) —— 零工具重測：精確計算四題全過，但出現新的失敗模式「**假裝自己有工具**」
-- [LLM 極限實測（三）](../../05-notes/llm-limitations-field-test-3.md) —— 換模型比較：Haiku 4.5 算錯 `17^13`，Sonnet 5 的河內塔邊界在 N=10
+- [LLM 極限實測](../../05-notes/experiments/llm-limitations-field-test.md) —— jason3e7 實跑這些檢測的結果：**兩個極限它都「答對」了，因為它偷偷換了工具**
+- [LLM 極限實測（二）](../../05-notes/experiments/llm-limitations-field-test-2.md) —— 零工具重測：精確計算四題全過，但出現新的失敗模式「**假裝自己有工具**」
+- [LLM 極限實測（三）](../../05-notes/experiments/llm-limitations-field-test-3.md) —— 換模型比較：Haiku 4.5 算錯 `17^13`，Sonnet 5 的河內塔邊界在 N=10
 - [AI 能力全景圖](../capabilities/ai-capability-landscape.md) —— 收斂／發散決定了幻覺是 bug 還是 feature
 - [Context Engineering](../engineering/context-engineering.md) —— 「位置有價」的完整版
-- [先驗證，再用它突破自己](../../05-notes/ai-verify-then-expand.md) —— 外部驗證的六種方法
-- [AI 打破知識壁壘](../../05-notes/ai-and-knowledge-barriers.md) —— 鋸齒前沿為什麼放大了判斷力的價值
+- [先驗證，再用它突破自己](../../05-notes/essays/ai-verify-then-expand.md) —— 外部驗證的六種方法
+- [AI 打破知識壁壘](../../05-notes/essays/ai-and-knowledge-barriers.md) —— 鋸齒前沿為什麼放大了判斷力的價值
 
 ## Sources
 

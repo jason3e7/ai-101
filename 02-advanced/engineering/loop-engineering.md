@@ -84,7 +84,7 @@ Claude Code 內建了迴圈工程的關鍵零件：
 
 迴圈跑得越自動，越要小心這幾個坑：
 
-- **無人監督的驗證**：迴圈自己驗自己，若驗證機制不可靠，錯的東西會被自動放行——**驗證者要獨立、要可信**（呼應 [先驗證，再突破](../../05-notes/ai-verify-then-expand.md) 的「獨立驗算」）
+- **無人監督的驗證**：迴圈自己驗自己，若驗證機制不可靠，錯的東西會被自動放行——**驗證者要獨立、要可信**（呼應 [先驗證，再突破](../../05-notes/essays/ai-verify-then-expand.md) 的「獨立驗算」）
 - **理解債（understanding debt）**：code 生成越快，你對自己專案的理解欠得越多，總有一天要還
 - **認知投降（cognitive surrender）**：設計迴圈很容易變成「用它來避免思考」，而不是「用它來加速思考」
 - **無限迴圈 / 燒錢失控**：沒有停止規則與成本護欄，agent 會一直跑
@@ -120,7 +120,7 @@ Claude Code 內建了迴圈工程的關鍵零件：
 - [Context Engineering](./context-engineering.md)、[Harness Engineering](./harness-engineering.md) —— 演進線的前兩棒
 - [Claude Code goal](../../01-fundamentals/claude-code/goal.md)、[goal 強制力 Hook](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) —— 迴圈的「可驗證目標」與「護欄」
 - [Subagent 使用與計費](../subagent-usage-and-billing.md) —— 寫者／驗者分工
-- [先驗證，再用它突破自己](../../05-notes/ai-verify-then-expand.md) —— 迴圈裡「驗證」為什麼是關鍵
+- [先驗證，再用它突破自己](../../05-notes/essays/ai-verify-then-expand.md) —— 迴圈裡「驗證」為什麼是關鍵
 
 ## Sources
 

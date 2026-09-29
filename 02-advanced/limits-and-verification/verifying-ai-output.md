@@ -122,8 +122,8 @@ created: 2026-09-24
 
 - [先收整再展開, 人才驗得動](./converge-before-verify.md), 講「怎麼把驗證挪到小的中間層」的具體手法
 - [LLM 的極限](./llm-limitations.md), 為什麼有些錯根本驗不出來 (結構性限制)
-- [AI 打破知識壁壘](../../05-notes/ai-and-knowledge-barriers.md), jagged frontier 的另一個角度
-- [先驗證再拓展](../../05-notes/ai-verify-then-expand.md), 個人日常六招 (跟數學借的驗算法) + 為什麼獨立驗算最強
+- [AI 打破知識壁壘](../../05-notes/essays/ai-and-knowledge-barriers.md), jagged frontier 的另一個角度
+- [先驗證再拓展](../../05-notes/essays/ai-verify-then-expand.md), 個人日常六招 (跟數學借的驗算法) + 為什麼獨立驗算最強
 
 ---
 

@@ -6,7 +6,7 @@ created: 2026-09-17
 
 # LLM 極限實測（三）— 換模型比較，第一個真正的失敗
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > [第一輪](./llm-limitations-field-test.md) 工具沒關乾淨、[第二輪](./llm-limitations-field-test-2.md) 關乾淨但只測一個模型。這一輪同樣零工具，把 **Sonnet 5** 和 **Haiku 4.5** 放在一起比。結果終於出現**真正的算術錯誤**，也終於找到**河內塔的邊界**。而第二輪那個「假裝自己有工具」的怪現象，這次在另外兩個模型身上又出現了一次。
@@ -43,11 +43,11 @@ Haiku  9904578206305937
 
 差了 **173,400,000**。錯在中間幾位 - 前 8 位對、後 3 位也對，壞在中段。這正是《Faith and Fate》講的「子圖比對」會出的錯：**片段是對的，組起來的時候接錯了。**
 
-![Haiku 答錯](./assets/llm-limits-test-r3/a3-power-haiku-wrong.jpg)
+![Haiku 答錯](../assets/llm-limits-test-r3/arithmetic/a3-power-haiku-wrong.jpg)
 
 同一題 Sonnet 5 就對了：
 
-![Sonnet 答對](./assets/llm-limits-test-r3/a3-power-sonnet.jpg)
+![Sonnet 答對](../assets/llm-limits-test-r3/arithmetic/a3-power-sonnet.jpg)
 
 ### 更有意思的是：它知道 10 位數乘法做不到
 
@@ -55,7 +55,7 @@ Haiku  9904578206305937
 
 > 我無法在不使用計算工具的情況下精確計算這麼大的數字。這兩個 10 位數相乘涉及複雜的運算，手動計算容易出錯……抱歉無法直接提供。
 
-![Haiku 拒絕](./assets/llm-limits-test-r3/a1-mult10-haiku-declined.jpg)
+![Haiku 拒絕](../assets/llm-limits-test-r3/arithmetic/a1-mult10-haiku-declined.jpg)
 
 > [!IMPORTANT]
 > 同一個模型：**難的那題誠實說做不到，簡單的那題自信答錯。**
@@ -104,13 +104,13 @@ N = 9
 
 Sonnet 5 的 N=9，步數是對的（步驟未驗證）：
 
-![Sonnet N=9](./assets/llm-limits-test-r3/hanoi-n9-sonnet.jpg)
+![Sonnet N=9](../assets/llm-limits-test-r3/hanoi/hanoi-n9-sonnet.jpg)
 
 N=10 就斷了。它**思考了 31,041 個 token**，最後只輸出這一句：
 
 > I'll generate the exact move sequence using a quick internal script (I'll only show you the resulting steps, not code), to guarantee correctness across all 1023 moves.
 
-![Sonnet N=10 沒有輸出](./assets/llm-limits-test-r3/hanoi-n10-sonnet-no-output.jpg)
+![Sonnet N=10 沒有輸出](../assets/llm-limits-test-r3/hanoi/hanoi-n10-sonnet-no-output.jpg)
 
 **然後就結束了，一步都沒給。** 而工具是關的 - 那個 "internal script" 不存在。
 
@@ -135,7 +135,7 @@ hanoi(9, 'A', 'C', 'B')
 EOF"}}]</function_calls>
 ```
 
-![Haiku 幻覺工具呼叫](./assets/llm-limits-test-r3/hanoi-n9-haiku-faked-tool.jpg)
+![Haiku 幻覺工具呼叫](../assets/llm-limits-test-r3/hanoi/hanoi-n9-haiku-faked-tool.jpg)
 
 **工具是關的。** `web_search_requests: 0`，沒有任何指令被執行。這整段 `<function_calls>` 連同裡面的 Python 原始碼，都是它自己寫出來的**表演**。
 
@@ -194,4 +194,4 @@ Haiku 在難題上誠實拒絕、在簡單題上自信答錯。所以「它有�
 
 - [LLM 極限實測（一）](./llm-limitations-field-test.md) —— 工具沒關乾淨，它偷偷繞過去
 - [LLM 極限實測（二）](./llm-limitations-field-test-2.md) —— 關乾淨後，它假裝自己有工具
-- [LLM 的極限](../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源
+- [LLM 的極限](../../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源

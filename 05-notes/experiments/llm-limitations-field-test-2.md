@@ -6,7 +6,7 @@ created: 2026-09-17
 
 # LLM 極限實測（二）— 把工具真的關掉之後
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > [第一輪](./llm-limitations-field-test.md) 的結論是「它不是突破了極限，是繞過去了」- 但那次工具沒關乾淨。這一輪把工具**完全移除**再測一次。結果：**精確計算四題全過**；反轉詛咒**看模型而定**；而且出現一個理論筆記裡沒有的失敗模式 - **工具被拿掉之後，它假裝自己還有工具。**
@@ -45,11 +45,11 @@ claude --safe-mode -p "問題" --tools "" --disallowedTools "mcp__*" --output-fo
 | `17^13` | `9,904,578,032,905,937` | ✅ 附完整冪次表 |
 | 棄九法盲點題 | 見下 | ✅ **識破了** |
 
-![十位數乘法](./assets/llm-limits-test-r2/a1-mult-10digit.jpg)
+![十位數乘法](../assets/llm-limits-test-r2/arithmetic/a1-mult-10digit.jpg)
 
 長鏈那題特別值得看 - 每一步都要等前一步，不能拆成幾段平行算。它 20 步一個不漏：
 
-![二十步長鏈](./assets/llm-limits-test-r2/a2-chain-20steps.jpg)
+![二十步長鏈](../assets/llm-limits-test-r2/arithmetic/a2-chain-20steps.jpg)
 
 ### 棄九法那題，它反過來給我上了一課
 
@@ -57,7 +57,7 @@ claude --safe-mode -p "問題" --tools "" --disallowedTools "mcp__*" --output-fo
 
 原本預期它會說「棄九法通過，答案正確」。實際上：
 
-![棄九法陷阱](./assets/llm-limits-test-r2/a4-casting-out-nines-trap.jpg)
+![棄九法陷阱](../assets/llm-limits-test-r2/arithmetic/a4-casting-out-nines-trap.jpg)
 
 > **結論：棄九法檢查「通過」，但答案其實是錯的。正確答案是 36,611,393。**
 >
@@ -66,7 +66,7 @@ claude --safe-mode -p "問題" --tools "" --disallowedTools "mcp__*" --output-fo
 而且它還自己往下推了一層：試了**棄十一法**，發現也抓不到 - 因為 99 同時是 9 和 11 的倍數。最後結論是「**這個錯誤只能靠重算來發現**」。
 
 > [!TIP]
-> 它不只沒有過度信任自己的驗算法，還講清楚了那個方法的適用邊界。**這正是 [先驗證，再用它突破自己](./ai-verify-then-expand.md) 說的「獨立驗算」- 換一個真正獨立的方法，而不是把同一條路再走一遍。**
+> 它不只沒有過度信任自己的驗算法，還講清楚了那個方法的適用邊界。**這正是 [先驗證，再用它突破自己](../essays/ai-verify-then-expand.md) 說的「獨立驗算」- 換一個真正獨立的方法，而不是把同一條路再走一遍。**
 
 ---
 
@@ -82,11 +82,11 @@ claude --safe-mode -p "問題" --tools "" --disallowedTools "mcp__*" --output-fo
 | **Sonnet 5**（第一次） | 「*Iron Man* 漫畫裡的虛構角色，Tony Stark 的母親」 | ❌ **完全編造** |
 | **Sonnet 5**（第二次） | 「演員小勞勃道尼的母親」 | ❌ 又錯，而且**跟上次錯得不一樣** |
 
-![Fable 答對](./assets/llm-limits-test-r2/b1-pfeiffer-fable.jpg)
+![Fable 答對](../assets/llm-limits-test-r2/retrieval/b1-pfeiffer-fable.jpg)
 
-![Sonnet 第一次](./assets/llm-limits-test-r2/b1-pfeiffer-sonnet-run1.jpg)
+![Sonnet 第一次](../assets/llm-limits-test-r2/retrieval/b1-pfeiffer-sonnet-run1.jpg)
 
-![Sonnet 第二次](./assets/llm-limits-test-r2/b1-pfeiffer-sonnet-run2.jpg)
+![Sonnet 第二次](../assets/llm-limits-test-r2/retrieval/b1-pfeiffer-sonnet-run2.jpg)
 
 同一個模型、同一個問題、同樣沒有工具，**兩次給出兩個不同的錯誤答案，而且兩次都沒有說「我不確定」。**
 
@@ -98,7 +98,7 @@ claude --safe-mode -p "問題" --tools "" --disallowedTools "mcp__*" --output-fo
 | `2310.01798` Cannot Self-Correct | ✅ 對，還指出是 Google DeepMind 團隊 |
 | `2305.18654` Faith and Fate | ⚠️ **主動說「我不確定，建議你直接去查」** |
 
-![Sonnet 說不確定](./assets/llm-limits-test-r2/b2-arxiv-2305-sonnet-unsure.jpg)
+![Sonnet 說不確定](../assets/llm-limits-test-r2/retrieval/b2-arxiv-2305-sonnet-unsure.jpg)
 
 > 我不確定 arXiv 2305.18654 這篇論文的確切標題與內容，不能保證憑記憶準確回答，以免給錯誤導您。
 
@@ -124,7 +124,7 @@ ARXIV RESPONSE:
 <name>Lukas Berglund</name> <name>Meg Tong</name> ...
 ```
 
-![假裝呼叫工具](./assets/llm-limits-test-r2/b2-arxiv-2309-fable-faked-tool.jpg)
+![假裝呼叫工具](../assets/llm-limits-test-r2/retrieval/b2-arxiv-2309-fable-faked-tool.jpg)
 
 而 JSON 回傳寫得清清楚楚：`"web_fetch_requests": 0`。**沒有任何指令被執行過，那段「API 回應」是它編的。**
 
@@ -140,7 +140,7 @@ ARXIV RESPONSE:
 ## 這次學到什麼 — What We Learned
 
 **一、精確計算的極限，比理論筆記寫的高很多。**
-[理論筆記](../02-advanced/limits-and-verification/llm-limitations.md) 把「精確計算不可靠」列為結構性極限。但 10 位數乘法、20 步相依長鏈、`17^13` 全過。**這一項要改成「暫時的極限」** - 至少對這一代前沿模型是。
+[理論筆記](../../02-advanced/limits-and-verification/llm-limitations.md) 把「精確計算不可靠」列為結構性極限。但 10 位數乘法、20 步相依長鏈、`17^13` 全過。**這一項要改成「暫時的極限」** - 至少對這一代前沿模型是。
 
 **二、反轉詛咒是真的，但它是模型的屬性，不是 LLM 的通則。**
 同一題 Fable 5.1 知道、Sonnet 5 編造；換成 arXiv 編號又反過來。**沒有「LLM 會不會反轉詛咒」這種問題，只有「這個模型對這個事實會不會」。**
@@ -171,5 +171,5 @@ Sonnet 5 在 arXiv 那題主動說「我不確定」，在 Pfeiffer 那題卻連
 
 - [LLM 極限實測（一）](./llm-limitations-field-test.md) —— 工具沒關乾淨的那一輪
 - [LLM 極限實測（三）](./llm-limitations-field-test-3.md) —— 同樣零工具，換 Sonnet 5 與 Haiku 4.5 再比一次
-- [LLM 的極限](../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源
-- [先驗證，再用它突破自己](./ai-verify-then-expand.md) —— 獨立驗算
+- [LLM 的極限](../../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源
+- [先驗證，再用它突破自己](../essays/ai-verify-then-expand.md) —— 獨立驗算

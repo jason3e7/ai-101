@@ -7,7 +7,7 @@ updated: 2026-07-07
 
 # AI 打破知識壁壘：被夾殺的知識中產 — When AI Breaks Knowledge Barriers: The Squeeze on the Knowledge Middle Class
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 這是 jason3e7 的觀點文，把「AI 打破知識壁壘」的研究證據、DIKW 框架、與我自己的推論合成一條論證：**取得知識的門檻一路下降，最後被夾殺的是「知識中產」。**

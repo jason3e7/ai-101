@@ -86,5 +86,5 @@ python3 analyze.py
 
 - [AI 的文風與語氣](../../../02-advanced/writing-style/ai-writing-style-tells.md), 破折號是「最強指紋」的原因與量化證據
 - [AI 的文風與語氣: jason3e7 手筆改寫版](../../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md), 同一份內容的 voice 對照
-- [PG Play writeup 個人文風約束](../../pgplay-writeup-style-guide.md), Do/Don't 清單
+- [PG Play writeup 個人文風約束](../../design-and-guides/pgplay-writeup-style-guide.md), Do/Don't 清單
 - [jason3e7-writing-voice skill](../../../skills/jason3e7-writing-voice.md), 抽出來給 Claude 用的 skill
