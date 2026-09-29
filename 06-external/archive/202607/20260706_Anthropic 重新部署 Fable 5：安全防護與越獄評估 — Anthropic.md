@@ -85,7 +85,7 @@ Anthropic 與 Amazon、Microsoft、Google 共提，用來評估一個越獄有�
 
 ## 相關筆記 — Related
 
-- [模型費用與效果比較](../../../01-fundamentals/model-cost-comparison.md) — Fable 5 在模型陣容中的定位與定價
+- [模型費用與效果比較](../../../01-fundamentals/models/model-cost-comparison.md) — Fable 5 在模型陣容中的定位與定價
 - [Claude Code 權限模式與設定層級](../../../01-fundamentals/claude-code/permissions.md) — 「防護在外層」的另一個體現
 
 ## 來源 — Sources

@@ -7,7 +7,7 @@ updated: 2026-04-23
 
 # 模型費用與效果比較
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > 整理各家主力模型的 API 定價與 benchmark 表現，幫助你挑到 CP 值最高的模型。
@@ -162,6 +162,6 @@ updated: 2026-04-23
 
 ## 相關筆記
 
-- [AI 101 - 核心概念](./core-concepts.md) — LLM 基礎概念
-- [AI 101 - 輕量模型推薦](../04-local-llm/lightweight-models.md) — 本地免費模型（Ollama）
-- [AI 101 - Context Engineering](../02-advanced/engineering/context-engineering.md) — 如何降低 token 消耗
+- [AI 101 - 核心概念](../core-concepts.md) — LLM 基礎概念
+- [AI 101 - 輕量模型推薦](../../04-local-llm/lightweight-models.md) — 本地免費模型（Ollama）
+- [AI 101 - Context Engineering](../../02-advanced/engineering/context-engineering.md) — 如何降低 token 消耗

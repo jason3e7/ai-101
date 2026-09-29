@@ -8,7 +8,7 @@ created: 2026-07-06
 
 # Claude Code 被爆內建隱藏程式碼標記中國用戶 — Claude Code Accused of Covertly Tagging China Users
 
-[← 回主頁](../../index.md)
+[← 回主頁](../../../../index.md)
 
 > [!NOTE]
 > 原文：[Claude Code 被爆內建隱藏程式碼，偷偷標記中國用戶 — Rocky, KOC](https://www.koc.com.tw/archives/647871)

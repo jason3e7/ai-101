@@ -7,7 +7,7 @@ updated: 2026-04-23
 
 # PII Masking — 自動偵測與遮蔽個人資料
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > **pii-masking-300k** 是目前最大的開源 PII（個人識別資訊）遮蔽資料集。
@@ -662,5 +662,5 @@ print(f"共偵測到 {len(mapping)} 個 PII 關鍵字")
 
 ## 相關筆記
 
-- [AI 101 - 核心概念](../01-fundamentals/core-concepts.md) — LLM 與 AI 基礎
-- [AI 101 - Harness Engineering](../02-advanced/engineering/harness-engineering.md) — 把 PII 過濾整合進 agent 的護欄層
+- [AI 101 - 核心概念](../../01-fundamentals/core-concepts.md) — LLM 與 AI 基礎
+- [AI 101 - Harness Engineering](../../02-advanced/engineering/harness-engineering.md) — 把 PII 過濾整合進 agent 的護欄層

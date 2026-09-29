@@ -51,7 +51,7 @@ Addy Osmani 進一步把「一個完整迴圈系統」拆成六塊積木：
 | **Worktree** | 隔離並行 agent，避免改到同一份檔案打架 | `git worktree`（每個任務一份獨立工作區） |
 | **Skills** | 把專案知識寫成檔，不用每次重講 | `SKILL.md` |
 | **外掛／連接器 Connectors** | 接外部工具 | MCP（接 Linear、Slack、DB、API） |
-| **Sub-agents** | 把「寫的人」和「驗的人」分開 | 不同指令／模型的子 agent，[分工與計費](../subagent-usage-and-billing.md) |
+| **Sub-agents** | 把「寫的人」和「驗的人」分開 | 不同指令／模型的子 agent，[分工與計費](subagent-usage-and-billing.md) |
 | **狀態檔** | 記已完成／待辦，讓明天的迴圈接得上 | Markdown 或 Linear 看板 |
 
 > [!TIP]
@@ -119,7 +119,7 @@ Claude Code 內建了迴圈工程的關鍵零件：
 
 - [Context Engineering](./context-engineering.md)、[Harness Engineering](./harness-engineering.md) —— 演進線的前兩棒
 - [Claude Code goal](../../01-fundamentals/claude-code/goal.md)、[goal 強制力 Hook](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) —— 迴圈的「可驗證目標」與「護欄」
-- [Subagent 使用與計費](../subagent-usage-and-billing.md) —— 寫者／驗者分工
+- [Subagent 使用與計費](subagent-usage-and-billing.md) —— 寫者／驗者分工
 - [先驗證，再用它突破自己](../../05-notes/essays/ai-verify-then-expand.md) —— 迴圈裡「驗證」為什麼是關鍵
 
 ## Sources

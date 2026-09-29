@@ -8,7 +8,7 @@ created: 2026-07-13
 
 # Cloudflare security-audit-skill：把編碼代理變資安審計員 — Turning a Coding Agent Into a Security Auditor
 
-[← 回主頁](../../index.md)
+[← 回主頁](../../../../index.md)
 
 > [!NOTE]
 > 原文：[cloudflare/security-audit-skill — GitHub](https://github.com/cloudflare/security-audit-skill)
@@ -47,7 +47,7 @@ find security vulnerabilities in ./src
 **技術**：JavaScript（100%）+ Node.js（做 schema 驗證）。**授權**：MIT。
 
 > [!TIP]
-> 最值得學的是它的**設計哲學**：不信任單一代理的判斷，用「多角度攻擊 → 對抗審查 → 獨立查核」層層把關。這正是 [先驗證，再用它突破自己](../../05-notes/essays/ai-verify-then-expand.md) 裡「獨立驗算」的工程化版本——換一個獨立代理再驗一次，才敢信。
+> 最值得學的是它的**設計哲學**：不信任單一代理的判斷，用「多角度攻擊 → 對抗審查 → 獨立查核」層層把關。這正是 [先驗證，再用它突破自己](../../../../05-notes/essays/ai-verify-then-expand.md) 裡「獨立驗算」的工程化版本——換一個獨立代理再驗一次，才敢信。
 
 ---
 

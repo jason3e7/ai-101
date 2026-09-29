@@ -332,4 +332,4 @@ vllm serve ~/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/
 
 - [AI 101 - Ollama 指令教學](./ollama-guide.md) — 更簡單的本地模型方案
 - [AI 101 - 輕量模型推薦](./lightweight-models.md) — 選哪個模型跑在 vLLM 上
-- [AI 101 - 模型費用與效果比較](../01-fundamentals/model-cost-comparison.md) — 本地 vs 雲端成本分析
+- [AI 101 - 模型費用與效果比較](../01-fundamentals/models/model-cost-comparison.md) — 本地 vs 雲端成本分析

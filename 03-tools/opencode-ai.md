@@ -327,4 +327,4 @@ opencode stats
 - [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — Claude Code 的對應功能
 - [AI 101 - 輕量模型推薦](../04-local-llm/lightweight-models.md) — 本地 Ollama 模型選型
 - [AI 101 - Ollama 指令教學](../04-local-llm/ollama-guide.md) — 設定 num_ctx 給 OpenCode 用
-- [AI 101 - 模型費用與效果比較](../01-fundamentals/model-cost-comparison.md) — 選哪個 provider 最划算
+- [AI 101 - 模型費用與效果比較](../01-fundamentals/models/model-cost-comparison.md) — 選哪個 provider 最划算

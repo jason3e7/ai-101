@@ -35,7 +35,7 @@ updated: 2026-07-04
 | **學 2026 最關鍵技能** | [AI 101 - Context Engineering](./02-advanced/engineering/context-engineering.md) → [AI 101 - Harness Engineering](./02-advanced/engineering/harness-engineering.md) |
 | **跑本地模型（離線、隱私）** | [AI 101 - Ollama 指令教學](./04-local-llm/ollama-guide.md) → [AI 101 - 輕量模型推薦](./04-local-llm/lightweight-models.md) → [AI 101 - Gemma 4 本地模型](./04-local-llm/gemma-4-local-model.md) |
 | **架自己的 AI Agent** | [AI 101 - OpenClaw](./03-tools/agents-platforms/openclaw.md) 或 [AI 101 - Hermes Agent](./03-tools/agents-platforms/hermes-agent.md) |
-| **挑最划算的 AI 模型** | [AI 101 - 模型費用與效果比較](./01-fundamentals/model-cost-comparison.md) |
+| **挑最划算的 AI 模型** | [AI 101 - 模型費用與效果比較](./01-fundamentals/models/model-cost-comparison.md) |
 
 ---
 
@@ -48,11 +48,11 @@ updated: 2026-07-04
 | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) | Agent、LLM、RAG、幻覺、MCP、Subagents 等基礎詞彙 |
 | [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) | 提升效率的具體方法與工作流 |
 | [AI 101 - Agent Skills 是什麼](./01-fundamentals/agent-skills.md) | 跨平台的 SKILL.md 格式：兩個必填欄位、漸進式揭露、為何 description 決定一切；附怎麼寫一個 |
-| [AI 101 - 模型費用與效果比較](./01-fundamentals/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
-| [AI 101 - AI 模型名稱怎麼唸](./01-fundamentals/model-name-pronunciation.md) | Claude 家族與開源模型的正確發音，附中文近似音、常見錯誤與 YouTube 示範 |
+| [AI 101 - 模型費用與效果比較](./01-fundamentals/models/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
+| [AI 101 - AI 模型名稱怎麼唸](./01-fundamentals/models/model-name-pronunciation.md) | Claude 家族與開源模型的正確發音，附中文近似音、常見錯誤與 YouTube 示範 |
 | [AI 101 - AI 生成內容怎麼標記與辨識](./01-fundamentals/ai-content-watermark.md) | Claude 的文字浮水印與 C2PA 檔案簽章、三條技術路線、為何「查到」與「沒查到」都不是定論 |
-| [AI 101 - v1 chat completions curl Cheatsheet](./01-fundamentals/chat-completions-curl-cheatsheet.md) | 業界通用 LLM API 格式的 curl 完全指南：streaming、tool use、vision、JSON mode、各大供應商切換 |
-| [AI 101 - OpenAI API 完整端點速查](./01-fundamentals/openai-api-endpoints.md) | `/v1/chat/completions` 之外的所有重要端點：Embeddings、Batch（省 50%）、Whisper、TTS、Images、Moderations、Responses API |
+| [AI 101 - v1 chat completions curl Cheatsheet](./01-fundamentals/api/chat-completions-curl-cheatsheet.md) | 業界通用 LLM API 格式的 curl 完全指南：streaming、tool use、vision、JSON mode、各大供應商切換 |
+| [AI 101 - OpenAI API 完整端點速查](./01-fundamentals/api/openai-api-endpoints.md) | `/v1/chat/completions` 之外的所有重要端點：Embeddings、Batch（省 50%）、Whisper、TTS、Images、Moderations、Responses API |
 
 ### Claude Code — `claude-code/`
 
@@ -89,7 +89,7 @@ updated: 2026-07-04
 | [AI 101 - AI 的文風與語氣](./02-advanced/writing-style/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
 | [AI 101 - LLM 的極限](./02-advanced/limits-and-verification/llm-limitations.md) | 三類做不到：結構性（原理決定）、暫時（下一代會補）、鋸齒狀（看不見邊界）；為什麼鋸齒狀最危險 |
 | [AI 101 - ML 演算法精要](./02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |
-| [AI 101 - Subagent 使用與計費](./02-advanced/subagent-usage-and-billing.md) | Orchestrator 模式、並行 subagent、API 計費結構與省錢策略 |
+| [AI 101 - Subagent 使用與計費](./02-advanced/engineering/subagent-usage-and-billing.md) | Orchestrator 模式、並行 subagent、API 計費結構與省錢策略 |
 
 ---
 
@@ -111,8 +111,8 @@ updated: 2026-07-04
 |---|---|
 | [AI 101 - 女媧 Nuwa Skill](./03-tools/nuwa-skill.md) | 蒸餾公眾人物思維框架的 Skill |
 | [AI 101 - Better Agent Terminal](./03-tools/better-agent-terminal.md) | 整合終端機 + Claude Agent + 開發工具的 Electron 桌面應用 |
-| [AI 101 - PII Masking（隱私遮蔽）](./03-tools/pii-masking.md) | ai4privacy 套件：自動偵測並遮蔽個人資料（50+ 類別、送 LLM 前過濾）|
-| [AI 101 - OpenAI Privacy Filter](./03-tools/openai-privacy-filter.md) | OpenAI 官方開源 PII 模型，本地執行，F1 97%，128K context，Apache 2.0 |
+| [AI 101 - PII Masking（隱私遮蔽）](./03-tools/privacy/pii-masking.md) | ai4privacy 套件：自動偵測並遮蔽個人資料（50+ 類別、送 LLM 前過濾）|
+| [AI 101 - OpenAI Privacy Filter](./03-tools/privacy/openai-privacy-filter.md) | OpenAI 官方開源 PII 模型，本地執行，F1 97%，128K context，Apache 2.0 |
 | [AI 101 - Claude × Godot 遊戲開發](./03-tools/claude-godot-gamedev.md) | 用 Claude Code + MCP + GUT 開發 Godot 遊戲並自動化測試 |
 | [AI 101 - JT Live Whisper（即時語音轉錄）](./03-tools/jt-live-whisper.md) | 本地即時語音轉錄、翻譯、講者辨識、會議摘要，完全不上雲 |
 | [AI 101 - OpenCode.ai](./03-tools/opencode-ai.md) | Claude Code 的開源替代，支援 75+ 模型，可接 Ollama 完全免費 |

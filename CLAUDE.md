@@ -122,20 +122,30 @@
 
 ### 資料夾對應（哪類筆記放哪）
 
-- `01-fundamentals/` → 基礎知識（核心概念、模型比較、實用技巧）
+- `01-fundamentals/` → 基礎知識（核心概念、實用技巧、Agent Skills、內容浮水印）
   - `claude-code/` → Claude Code 專用主題（`/goal`、hooks、permissions、workflow 等）
+  - `api/` → API 速查（chat completions curl、OpenAI 端點）
+  - `models/` → 模型相關（費用與效果比較、名稱怎麼唸）
 - `02-advanced/` → 進階思維（依主題分四個子資料夾）
-  - `engineering/` → Prompt→Context→Harness→Loop 工程演進
+  - `engineering/` → Prompt→Context→Harness→Loop 工程演進，以及 subagent 用法與計費
   - `capabilities/` → 能力全景圖、能力選擇機制、執行手冊
   - `limits-and-verification/` → LLM 極限、驗證方法論、AI 鈍化
   - `writing-style/` → AI 文風與語氣
+  - 根層只留主題獨立的（ML 演算法精要）
 - `03-tools/` → 可安裝使用的工具筆記
   - `security/` → 資安工具
   - `agents-platforms/` → 模型平台 / 個人 agent
+  - `privacy/` → 個資偵測與遮蔽（PII Masking、OpenAI Privacy Filter）
 - `04-local-llm/` → 本地模型（Ollama、vLLM、Gemma、輕量模型）
-- `05-notes/` → 個人實驗、隨筆、實測、進行中設計稿
+- `05-notes/` → 個人筆記
+  - `experiments/` → 實測與實驗記錄
+  - `essays/` → 自己的論述與方法
+  - `design-and-guides/` → 設計稿與寫作指南
+  - `ironman/` → 鐵人賽（`drafts/`、`publish/`、`assets/` 每 5 天一組）
+  - `htb/` → HTB 靶機案例
 - `06-external/` → 外部文章、貼文、研究的收錄
-  - `reference/` → 次要、時效性強、轉述性的外部觀點
+  - 本層只放**當月**；`reference/` → 當月次要、時效性強、轉述性的觀點
+  - `archive/yyyymm/` → 過去月份（進入下個月就封月，`reference/` 跟著進去）
 - `skills/` → Claude Code Skill（工作模式與判斷邏輯）
 
 > 子資料夾依 `refactor-note` 原則建立（單層 ≤ 10、理想 7）。放筆記前先看該層是否已接近上限。

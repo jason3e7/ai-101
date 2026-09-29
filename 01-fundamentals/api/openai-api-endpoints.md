@@ -6,7 +6,7 @@ created: 2026-06-25
 
 # OpenAI API 完整端點速查
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > `/v1/chat/completions` 只是冰山一角。OpenAI API 還有 Embeddings（RAG 必備）、Batch（省 50% 費用）、Audio（Whisper STT + TTS）、Responses（新一代有狀態 API）、Moderations（內容安全）等。這篇用 curl 示範每個端點的核心用法，幫你發現你可能沒注意到的功能。
@@ -520,9 +520,9 @@ curl https://api.openai.com/v1/chat/completions \
 ## 相關筆記
 
 - [AI 101 - v1 chat completions curl Cheatsheet](./chat-completions-curl-cheatsheet.md) — `/v1/chat/completions` 完整用法（streaming、tool use、vision）
-- [AI 101 - Ollama 指令教學](../04-local-llm/ollama-guide.md) — 本地模型，部分端點相容 OpenAI API
-- [AI 101 - vLLM](../04-local-llm/vllm.md) — 高效能推論 server，相容 `/v1/chat/completions` 和 `/v1/embeddings`
-- [AI 101 - 模型費用與效果比較](./model-cost-comparison.md) — 選哪個模型最划算
+- [AI 101 - Ollama 指令教學](../../04-local-llm/ollama-guide.md) — 本地模型，部分端點相容 OpenAI API
+- [AI 101 - vLLM](../../04-local-llm/vllm.md) — 高效能推論 server，相容 `/v1/chat/completions` 和 `/v1/embeddings`
+- [AI 101 - 模型費用與效果比較](../models/model-cost-comparison.md) — 選哪個模型最划算
 
 ## Sources
 

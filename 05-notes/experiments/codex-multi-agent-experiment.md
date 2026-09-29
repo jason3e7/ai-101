@@ -182,6 +182,6 @@ Claude（最上層 orchestrator）
 
 ## 相關筆記
 
-- [AI 101 - Subagent 使用與計費](../../02-advanced/subagent-usage-and-billing.md) — 跨平台協作的完整方法比較
+- [AI 101 - Subagent 使用與計費](../../02-advanced/engineering/subagent-usage-and-billing.md) — 跨平台協作的完整方法比較
 - [[在 Claude Code 裡呼叫 OpenAI Codex：codex-plugin-cc — Will 保哥]] — Plugin 方式整合 Codex
-- [AI 101 - 模型費用與效果比較](../../01-fundamentals/model-cost-comparison.md) — 各模型定價，計算分工是否划算
+- [AI 101 - 模型費用與效果比較](../../01-fundamentals/models/model-cost-comparison.md) — 各模型定價，計算分工是否划算

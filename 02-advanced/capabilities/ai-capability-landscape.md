@@ -182,14 +182,14 @@ created: 2026-07-04
 因為方向不同。摘要是**收斂**(多→少,會丟資訊);翻譯是**轉換**(等量,不丟資訊只換語言)。但 OpenAI 把兩者都歸為「須忠於輸入」的一大類——這是它們的共同點,不是同一格。
 
 **Q:這張圖能拿來選模型嗎?**
-可以當粗略參考:高階格子(統整、規劃、複雜推理)吃模型的推理能力,值得用更強的模型;低階格子(分類、翻譯)較輕量的模型多半就夠。詳見 [AI 101 - 模型費用與效果比較](../../01-fundamentals/model-cost-comparison.md)。
+可以當粗略參考:高階格子(統整、規劃、複雜推理)吃模型的推理能力,值得用更強的模型;低階格子(分類、翻譯)較輕量的模型多半就夠。詳見 [AI 101 - 模型費用與效果比較](../../01-fundamentals/models/model-cost-comparison.md)。
 
 ---
 
 ## 相關筆記
 
 - [AI 101 - 核心概念](../../01-fundamentals/core-concepts.md) —— Agent、RAG、幻覺等基礎詞彙
-- [AI 101 - 模型費用與效果比較](../../01-fundamentals/model-cost-comparison.md) —— 依任務難度(認知深度)選模型
+- [AI 101 - 模型費用與效果比較](../../01-fundamentals/models/model-cost-comparison.md) —— 依任務難度(認知深度)選模型
 - [AI 101 - Context Engineering](../engineering/context-engineering.md) —— 把對的資訊餵進對的格子
 
 ## Sources

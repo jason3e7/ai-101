@@ -71,7 +71,7 @@ OpenAI 內部其實準備過浮水印方案，但**調查顯示 30% 用戶表示
 ## 相關筆記 — Related
 
 - [先驗證，再用它突破自己](../05-notes/essays/ai-verify-then-expand.md) —— 浮水印是「來源線索」，判斷真偽仍要靠獨立驗證
-- [PII Masking（隱私遮蔽）](../03-tools/pii-masking.md) —— 另一種在內容上動手腳的技術，方向相反（隱藏而非標記）
+- [PII Masking（隱私遮蔽）](../03-tools/privacy/pii-masking.md) —— 另一種在內容上動手腳的技術，方向相反（隱藏而非標記）
 
 ## Sources
 

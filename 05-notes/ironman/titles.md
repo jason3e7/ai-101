@@ -112,7 +112,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 26 | AI 風格橫行：掃 40 個系列, 找出被入侵最深的三種文風 | 新掃描實驗（本屆鐵人賽已發文章）＋ [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) | 新寫 |
 | 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) | 改寫 |
 | 28 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
-| 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day26-30/day27-self-hosted-llm.md) |
+| 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ [已完成](./drafts/day26-30/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
 **盤點：已發布 8 篇、已完成 3 篇（draft）、改寫 15 篇、補實測 2 篇、新寫 2 篇。** 分段為 **承 8 / 轉 16 / 合 6**。
@@ -134,7 +134,7 @@ Day 01-10 收在原理與 xxx Engineering 發展史. Day 11-20 主軸**改成「
 |:---|:---|:---|:---|
 | 談談驗證這件事: 獨立思考 + 提問的智慧 | 驗證主題**觀念鋪陳篇**, 為後續實測開場 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) ＋ 新研究 | 低 (觀念) |
 | `/goal` 三種寫法對比: 模糊 / 明確 / 有 verifier | 從 Day 09 sum.js 延伸, 三種 goal 各跑一次看行為差 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ 新實測 | 高 |
-| 選模型 × 實測: 同一題 Opus/Sonnet/Haiku 各跑一次 | 費用比較 ＋ 效果比較 (效果題目難設計, 見下方預產) | [model-cost-comparison](../../01-fundamentals/model-cost-comparison.md) ＋ 新實測 | 高 |
+| 選模型 × 實測: 同一題 Opus/Sonnet/Haiku 各跑一次 | 費用比較 ＋ 效果比較 (效果題目難設計, 見下方預產) | [model-cost-comparison](../../01-fundamentals/models/model-cost-comparison.md) ＋ 新實測 | 高 |
 | Claude Code 四層行為系統一次組通 | goal + sub-agent + skill + hook 綜合示範 | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | 高 (tentative) |
 | 驗證疲勞: 每題都驗會爆掉, 什麼時候該關掉驗證 | 驗證主題的**反面**, 避免 rubber-stamp 或 burnout | 待研究 | 低 (觀念) |
 

@@ -119,7 +119,7 @@ Ollama 適合自己用。當你要把本地模型變成一個**服務**（多人
 - [Ollama 指令教學](../../../../04-local-llm/ollama-guide.md)
 - [輕量模型推薦（依 VRAM 分級）](../../../../04-local-llm/lightweight-models.md)
 - [vLLM — 高吞吐量推論伺服器](../../../../04-local-llm/vllm.md)
-- [PII Masking（隱私遮蔽）](../../../../03-tools/pii-masking.md)
+- [PII Masking（隱私遮蔽）](../../../../03-tools/privacy/pii-masking.md)
 - [Qwen3.6 27B 原版 vs Uncensored](../../../../04-local-llm/qwen3-6-27b-uncensored.md)
 - [vLLM 官方文件](https://docs.vllm.ai)
 - [Ollama 官網](https://ollama.com)

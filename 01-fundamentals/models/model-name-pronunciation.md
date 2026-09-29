@@ -6,7 +6,7 @@ created: 2026-07-04
 
 # AI 模型名稱怎麼唸 — How to Pronounce AI Model Names
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 開會、看影片、跟同事討論時，AI 模型的名字唸錯很尷尬。這篇整理 Claude 家族與常見開源模型的**正確發音**，附英文音標、**中文近似音**、常見錯誤，以及可以親耳聽的 YouTube／工具連結。

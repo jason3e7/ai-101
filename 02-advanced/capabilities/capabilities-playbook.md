@@ -398,7 +398,7 @@ updated: 2026-09-18
 
 - [AI 能力全景圖](./ai-capability-landscape.md) - 這六種能力的座標與理論依據
 - [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) - 為什麼「給範例」比「給形容詞」有效
-- [模型費用與效果比較](../../01-fundamentals/model-cost-comparison.md) - 各模型定價與 benchmark
+- [模型費用與效果比較](../../01-fundamentals/models/model-cost-comparison.md) - 各模型定價與 benchmark
 - [Context Engineering](../engineering/context-engineering.md) - 餵對資訊本身就是最大的省 token 槓桿
 
 ## Sources

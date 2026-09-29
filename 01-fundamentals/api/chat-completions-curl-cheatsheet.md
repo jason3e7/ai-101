@@ -6,7 +6,7 @@ created: 2026-06-25
 
 # /v1/chat/completions curl Cheatsheet
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!info]
 > `/v1/chat/completions` 是業界最廣泛採用的 LLM API 格式——OpenAI 首創，Ollama、vLLM、Groq、Mistral 等幾十個提供者都相容，換個 URL 就能切換模型。這篇用 curl 示範所有主要用法，不需要任何 SDK，複製貼上就能跑。
@@ -28,7 +28,7 @@ created: 2026-06-25
 | Fireworks AI | `https://api.fireworks.ai/inference/v1` | `Authorization: Bearer $FIREWORKS_API_KEY` |
 
 > [!warning]
-> Anthropic Claude 原生 API 用 `/v1/messages`，格式完全不同。要用 Claude 請直接查 [AI 101 - 核心概念](./core-concepts.md)。
+> Anthropic Claude 原生 API 用 `/v1/messages`，格式完全不同。要用 Claude 請直接查 [AI 101 - 核心概念](../core-concepts.md)。
 > Anthropic 沒有官方的 `/v1/chat/completions` endpoint；若需要在 OpenAI-compat 框架下用 Claude，透過 LiteLLM 或 Ollama 代理是常見做法。
 
 ---
@@ -587,9 +587,9 @@ ollama_ask() {
 
 ## 相關筆記
 
-- [AI 101 - Ollama 指令教學](../04-local-llm/ollama-guide.md) — 本地跑模型，完全離線，也支援這個格式
-- [AI 101 - vLLM](../04-local-llm/vllm.md) — 高效能推論 server，OpenAI 相容 API
-- [AI 101 - 模型費用與效果比較](./model-cost-comparison.md) — 選哪個模型最划算
+- [AI 101 - Ollama 指令教學](../../04-local-llm/ollama-guide.md) — 本地跑模型，完全離線，也支援這個格式
+- [AI 101 - vLLM](../../04-local-llm/vllm.md) — 高效能推論 server，OpenAI 相容 API
+- [AI 101 - 模型費用與效果比較](../models/model-cost-comparison.md) — 選哪個模型最划算
 
 ## Sources
 

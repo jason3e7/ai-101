@@ -8,7 +8,7 @@ created: 2026-07-13
 
 # CardRadar：算實拿回饋的信用卡推薦 Claude Skill — A Real-Cashback Credit Card Picker
 
-[← 回主頁](../../index.md)
+[← 回主頁](../../../../index.md)
 
 > [!NOTE]
 > 原文：[kau10082/Card_Radar — GitHub](https://github.com/kau10082/Card_Radar)
@@ -45,7 +45,7 @@ created: 2026-07-13
 **授權**：MIT（可自由使用、修改、商用，須保留原授權標示）。
 
 > [!TIP]
-> 這是個很好的 **Claude Skill 實例**：把「查規則 + 算數字 + 記偏好」這種重複、程序化的事交給 Skill，資料放 Notion、用 MCP 串起來。想學 Skill 怎麼設計的話值得看它的結構。相關概念見 [Claude Code 生態系](../../01-fundamentals/claude-code/ecosystem.md)。
+> 這是個很好的 **Claude Skill 實例**：把「查規則 + 算數字 + 記偏好」這種重複、程序化的事交給 Skill，資料放 Notion、用 MCP 串起來。想學 Skill 怎麼設計的話值得看它的結構。相關概念見 [Claude Code 生態系](../../../../01-fundamentals/claude-code/ecosystem.md)。
 
 ---
 
