@@ -41,7 +41,7 @@ created: 2026-09-17
 | 河內塔 N=7 | 可能開始崩 | ✅ 127 步全對 | **偷偷執行程式** |
 | 河內塔 N=10 | 應該崩掉 | ✅ 1023 步全對 | **偷偷執行程式** |
 
-河內塔的步驟我用 [`hanoi_check.py`](../ironman/hanoi_check.py) 逐步驗過，三份原始輸出都在 `assets/llm-limits-test/`：
+河內塔的步驟我用 [`hanoi_check.py`](../ironman/tools/hanoi_check.py) 逐步驗過，三份原始輸出都在 `assets/llm-limits-test/`：
 
 ```
 N = 5    最少步數 31    它給了 31 步    步驟合法 是    有沒有解開 有
@@ -165,7 +165,7 @@ N=10，一樣執行程式，1023 步全對：
 | `hanoi-n5-moves.txt` / `n7` / `n10` | 完整移動序列，可直接餵給驗證腳本 |
 
 ```bash
-python3 05-notes/ironman/hanoi_check.py 10 < 05-notes/assets/llm-limits-test/hanoi/hanoi-n10-moves.txt
+python3 05-notes/ironman/tools/hanoi_check.py 10 < 05-notes/assets/llm-limits-test/hanoi/hanoi-n10-moves.txt
 ```
 
 ## 相關筆記 — Related

@@ -6,7 +6,7 @@ created: 2026-09-16
 
 # 修正紀錄 — Fix Log (fixButNotPublish)
 
-[← 回主頁](../../index.md)｜[參賽規劃](./plan.md)｜[口語化紀錄](./plain-language-log.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[口語化紀錄](./plain-language-log.md)
 
 > [!IMPORTANT]
 > jason3e7 的訊息若以 **`[fixButNotPublish]`** 開頭，代表：**這是修正，但不要更新到 iThome 上。** 只改 repo，留作日後修訂與正式出版使用。賽期中的 iThome 文章維持原樣。
@@ -74,4 +74,4 @@ created: 2026-09-16
 ## 相關 — Related
 
 - [口語化修訂紀錄](./plain-language-log.md) - 改寫的判準與檢查清單
-- [上稿版本與轉換規則](./publish/README.md) - repo 版轉 iThome 版要改什麼
+- [上稿版本與轉換規則](../publish/README.md) - repo 版轉 iThome 版要改什麼

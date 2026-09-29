@@ -7,7 +7,7 @@ captured: 2026-09-22
 
 # Claude AI 組 40 系列標題快照 — Competitor Titles Snapshot
 
-[← 回主頁](../../index.md)｜[競品分析](./competitor-analysis.md)
+[← 回主頁](../../../index.md)｜[競品分析](./competitor-analysis.md)
 
 > [!NOTE]
 > **這份檔案是外部資料的引用摘錄, 純粹作為 [competitor-analysis](./competitor-analysis.md) 分析的原始資料.**

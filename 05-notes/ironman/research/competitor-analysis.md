@@ -6,7 +6,7 @@ created: 2026-09-22
 
 # Claude AI 組競爭觀察 — 40 系列標題盤點與差異化建議
 
-[← 回主頁](../../index.md)｜[參賽規劃](./plan.md)｜[三十篇標題](./titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > 2026-09-22 上午抓的快照, playwright 掃過 [ironman Claude AI 組](https://ithelp.ithome.com.tw/2026ironman/claude-ai) 六頁, 拿到 40 個獨立系列的標題. 目的: 看清楚**同組在講什麼、哪些題目已經一堆人做、哪些空白區可以吃**, 為 Day 09 到 Day 30 的選題定位.

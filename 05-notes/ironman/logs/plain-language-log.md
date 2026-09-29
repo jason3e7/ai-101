@@ -6,7 +6,7 @@ created: 2026-09-16
 
 # 口語化修訂紀錄 — Plain-Language Revision Log
 
-[← 回主頁](../../index.md)｜[參賽規劃](./plan.md)｜[三十篇標題](./titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > Day 01 上稿後，同一段話來回改了四輪才定稿。這份檔把**每一次改了什麼、為什麼**記下來，萃取成後面 29 篇可以直接套用的檢查清單。唐代詩人白居易寫詩前會唸給老太太聽，聽不懂就改 - 這就是那個「唸給老太太聽」的過程。
@@ -131,5 +131,5 @@ print(len(hits),'處'); [print(' …'+h+'…') for h in hits]
 
 ## 相關 — Related
 
-- [上稿版本與轉換規則](./publish/README.md) - repo 版轉 iThome 版要改什麼
-- [參賽規劃](./plan.md) - 賽制、結構決策、每篇的固定骨架
+- [上稿版本與轉換規則](../publish/README.md) - repo 版轉 iThome 版要改什麼
+- [參賽規劃](../plan.md) - 賽制、結構決策、每篇的固定骨架
