@@ -81,14 +81,14 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) | 🚧 [草稿中](./drafts/day11-15/day13-ai-atrophy.md) |
-| 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 🚧 [草稿中](./drafts/day11-15/day14-squeezed-middle.md) |
+| 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417978) |
+| 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10418241) |
 
 ### 轉·目標與成本：讓它自己跑（Day 15–19）
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 (承 Day 14 判斷力貴, pivot 到主動練, 原「選模型與省錢」延後) | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 | 🚧 [草稿中](./drafts/day11-15/day15-expand-yourself.md) |
+| 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 (承 Day 14 判斷力貴, pivot 到主動練, 原「選模型與省錢」延後) | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10418980) |
 | 16 | 權限：你願意讓 AI 動到哪裡？五種模式與一條紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
 | 17 | `/goal`：給它一個能驗證的終點，它才知道什麼時候該停 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
 | 18 | 光有目標還不夠：用 Hook 逼它別中途放棄（含一個我實測失敗的 Hook） | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
@@ -115,7 +115,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ [已完成](./drafts/day26-30/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
-**盤點：已發布 8 篇、已完成 3 篇（draft）、改寫 15 篇、補實測 2 篇、新寫 2 篇。** 分段為 **承 8 / 轉 16 / 合 6**。
+**盤點：已發布 11 篇、已完成 3 篇（draft）、改寫 12 篇、補實測 2 篇、新寫 2 篇。** 分段為 **承 8 / 轉 16 / 合 6**。
 
 ---
 
