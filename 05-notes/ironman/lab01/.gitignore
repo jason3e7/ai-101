@@ -1,3 +1,5 @@
 # 原始 HTML 解壓後放 raw/, 只在本機用, 不進 git
 # git 只留 raw.tgz (壓縮包) 保存可重現性
 raw/
+__pycache__/
+*.log
