@@ -6,7 +6,7 @@ created: 2026-09-24
 
 # 先收整再展開, 人才驗得動 — Digest First, Verify Faster
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > AI 生成很快但**驗證很慢**, 特別是自由散文, 人要逐字讀又不知道哪裡錯. 這篇拆兩種手法, 目的都一樣: **讓「人」的驗證變便宜**.
@@ -140,7 +140,7 @@ markdown list (小)  ← 你在這裡驗第一次 (半分鐘)
 
 - **JSON schema / structured output** (Outlines、OpenAI Structured Outputs、Claude tool use): 每欄可 assert
 - **Program-of-Thought / PAL** (Chen 2022, Gao 2023): 生成 Python 讓 interpreter 跑, 錯了 exception, 對了跑出數字. GSM8K/MATH 平均比 CoT 高 12%
-- **TDD 的 AI 版** (見 [Day 09 Loop Engineering](../05-notes/ironman/drafts/day09-loop-engineering.md)): 生成測試 (規格 = 收整), agent 改 code 到綠
+- **TDD 的 AI 版** (見 [Day 09 Loop Engineering](../../05-notes/ironman/drafts/day09-loop-engineering.md)): 生成測試 (規格 = 收整), agent 改 code 到綠
 
 但這是「進階版, 且要看情境能不能適用」. 上面兩個 markdown list 手法是**永遠適用的 base case** — 只要人得參與, 這條就有效. 先把 base case 練熟, 遇到適合的情境再升級.
 
@@ -158,10 +158,10 @@ markdown list (小)  ← 你在這裡驗第一次 (半分鐘)
 
 ## 相關筆記 — Related
 
-- [Context Engineering 進階](./context-engineering-in-depth.md), 為什麼結構化的中間層讓後續每一步都更準
-- [Prompt 到 Loop 五個時代](./prompt-engineering-evolution.md), 「先收整再展開」的思路在多個時代都出現
-- [Day 06 Prompt Engineering](../05-notes/ironman/drafts/day06-prompt-engineering.md), 通用四件事範本裡的 `<format>` 就是要求收整
-- [Day 09 Loop Engineering](../05-notes/ironman/drafts/day09-loop-engineering.md), TDD 版是「機器代替人驗」的極端形式
+- [Context Engineering 進階](../engineering/context-engineering-in-depth.md), 為什麼結構化的中間層讓後續每一步都更準
+- [Prompt 到 Loop 五個時代](../engineering/prompt-engineering-evolution.md), 「先收整再展開」的思路在多個時代都出現
+- [Day 06 Prompt Engineering](../../05-notes/ironman/drafts/day06-prompt-engineering.md), 通用四件事範本裡的 `<format>` 就是要求收整
+- [Day 09 Loop Engineering](../../05-notes/ironman/drafts/day09-loop-engineering.md), TDD 版是「機器代替人驗」的極端形式
 
 ---
 

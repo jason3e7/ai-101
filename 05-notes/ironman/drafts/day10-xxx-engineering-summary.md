@@ -31,7 +31,7 @@ status: draft
 
 > **每個時代, 你 engineering 的「單位」都往外退了一格.**
 
-從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 在 [Prompt 到 Graph 進階筆記](../../../02-advanced/prompt-engineering-evolution.md).
+從 prompt 到 loop, 表面上是四個學科, 底下是**同一件事的四種尺度**. 這條主線一路貫穿; 更完整的時間軸 (包括 ReAct、MCP、Claude Code 這些節點, 以及 2026 後半才冒頭的 Graph Engineering) 在 [Prompt 到 Graph 進階筆記](../../../02-advanced/engineering/prompt-engineering-evolution.md).
 
 ---
 
@@ -97,7 +97,7 @@ status: draft
 
 ## Sources
 
-- [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../02-advanced/prompt-engineering-evolution.md), 完整時間軸、Graph 前沿補充、五代熱度對照
+- [從 Prompt 到 Graph: 五個時代的技術演進 (本 repo)](../../../02-advanced/engineering/prompt-engineering-evolution.md), 完整時間軸、Graph 前沿補充、五代熱度對照
 - [The Anthropic leader who built Claude Code says he ditched prompting — The New Stack, 2026](https://thenewstack.io/loop-engineering/)
 - [Prompt, Context, Harness & Loop Engineering — Avi Chawla, Daily Dose of DS](https://blog.dailydoseofds.com/p/prompt-context-harness-and-loop-engineering)
 - [Graph Engineering是什麼？迴圈工程、Harness Engineering⋯5種AI工程術語差異一次看懂 — 陳建鈞, 數位時代, 2026-07](https://www.bnext.com.tw/article/91632/graph-engineering-ai-agent)

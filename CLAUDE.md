@@ -124,7 +124,11 @@
 
 - `01-fundamentals/` → 基礎知識（核心概念、模型比較、實用技巧）
   - `claude-code/` → Claude Code 專用主題（`/goal`、hooks、permissions、workflow 等）
-- `02-advanced/` → 進階思維（Context / Harness / Loop Engineering、Subagent、驗證方法論）
+- `02-advanced/` → 進階思維（依主題分四個子資料夾）
+  - `engineering/` → Prompt→Context→Harness→Loop 工程演進
+  - `capabilities/` → 能力全景圖、能力選擇機制、執行手冊
+  - `limits-and-verification/` → LLM 極限、驗證方法論、AI 鈍化
+  - `writing-style/` → AI 文風與語氣
 - `03-tools/` → 可安裝使用的工具筆記
   - `security/` → 資安工具
   - `agents-platforms/` → 模型平台 / 個人 agent

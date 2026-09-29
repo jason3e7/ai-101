@@ -41,7 +41,7 @@ status: draft
 
 > （jason3e7）我做這兩個 skill 的動機很實際: 我常常拿到 AI 一大坨輸出, 知道「應該要驗」但懶得逐字讀, 結果就沒驗. 把它先變成一張圖, 我才驗得下去.
 
-兩個 skill 分別對應[能力全景圖](../../../02-advanced/ai-capability-landscape.md)的兩端 - 一個收斂、一個發散, 但都是為了同一件事: 讓你驗得動.
+兩個 skill 分別對應[能力全景圖](../../../02-advanced/capabilities/ai-capability-landscape.md)的兩端 - 一個收斂、一個發散, 但都是為了同一件事: 讓你驗得動.
 
 ---
 
@@ -105,6 +105,6 @@ status: draft
 
 - [Agent Skills 是什麼](../../../01-fundamentals/agent-skills.md) - SKILL.md 格式與跨平台說明
 - [心智圖 skill 設計筆記](../../mindmap-skills-design.md) - 兩個 skill 的完整設計決策
-- [AI 能力全景圖](../../../02-advanced/ai-capability-landscape.md) - 收斂／發散兩端的定位來源
+- [AI 能力全景圖](../../../02-advanced/capabilities/ai-capability-landscape.md) - 收斂／發散兩端的定位來源
 - [markmap — Visualize your Markdown as mindmaps](https://markmap.js.org/)
 - [AI-Augmented Brainwriting: LLMs in group ideation — arXiv, 2024](https://arxiv.org/pdf/2402.14978) - LLM 發想多樣性收窄（94% 點子同源），expand 強制角度不重疊的依據

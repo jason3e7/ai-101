@@ -7,7 +7,7 @@ updated: 2026-09-23
 
 # 從 Prompt 到 Graph：五個時代 — Prompt to Graph: Five Eras
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 這幾年冒出一堆「XX Engineering」：Prompt、Context、Harness、Loop、Graph。它們不是彼此取代，也不是誰包含誰那麼乾淨。這篇用一條時間軸把它們串起來，並點出真正貫穿全部的那條主線 - **你控制模型的「單位」，一直在往外退。**
@@ -212,11 +212,11 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 
 ## 相關筆記 — Related
 
-- [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) - Prompt 那一代最核心的機制：它從你的話裡推論任務
+- [AI 怎麼知道該用哪種能力](../capabilities/how-ai-picks-capability.md) - Prompt 那一代最核心的機制：它從你的話裡推論任務
 - [Context Engineering](./context-engineering.md) - 第二時代的主題，餵什麼比怎麼問更重要
 - [Harness Engineering](./harness-engineering.md) - 第三時代：模型動不了，但外面那層可以
 - [Loop Engineering](./loop-engineering.md) - 第四時代：設計會自己 prompt agent 的迴圈
-- [六種能力執行手冊](./capabilities-playbook.md) - 第一、二代的實戰打法
+- [六種能力執行手冊](../capabilities/capabilities-playbook.md) - 第一、二代的實戰打法
 
 ## Sources
 

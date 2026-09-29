@@ -6,7 +6,7 @@ created: 2026-09-24
 
 # AI 產出怎麼驗 — Verifying AI Output: Methods, Limits, Frameworks
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 「驗證 AI 產出」自成一門學問, 累積 4 年學術方法一堆, 但**大部分 2024 後被推翻或被 reasoning 模型內化**. 這篇把主流方法、已知極限、人的因素、產業框架攤在同一張桌上, 讓你知道什麼還能用、什麼是學術玩具, 以及**日常真正用得上的是哪三招**.
@@ -122,8 +122,8 @@ created: 2026-09-24
 
 - [先收整再展開, 人才驗得動](./converge-before-verify.md), 講「怎麼把驗證挪到小的中間層」的具體手法
 - [LLM 的極限](./llm-limitations.md), 為什麼有些錯根本驗不出來 (結構性限制)
-- [AI 打破知識壁壘](../05-notes/ai-and-knowledge-barriers.md), jagged frontier 的另一個角度
-- [先驗證再拓展](../05-notes/ai-verify-then-expand.md), 個人日常六招 (跟數學借的驗算法) + 為什麼獨立驗算最強
+- [AI 打破知識壁壘](../../05-notes/ai-and-knowledge-barriers.md), jagged frontier 的另一個角度
+- [先驗證再拓展](../../05-notes/ai-verify-then-expand.md), 個人日常六招 (跟數學借的驗算法) + 為什麼獨立驗算最強
 
 ---
 

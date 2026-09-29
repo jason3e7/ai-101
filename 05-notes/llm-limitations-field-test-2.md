@@ -140,7 +140,7 @@ ARXIV RESPONSE:
 ## 這次學到什麼 — What We Learned
 
 **一、精確計算的極限，比理論筆記寫的高很多。**
-[理論筆記](../02-advanced/llm-limitations.md) 把「精確計算不可靠」列為結構性極限。但 10 位數乘法、20 步相依長鏈、`17^13` 全過。**這一項要改成「暫時的極限」** - 至少對這一代前沿模型是。
+[理論筆記](../02-advanced/limits-and-verification/llm-limitations.md) 把「精確計算不可靠」列為結構性極限。但 10 位數乘法、20 步相依長鏈、`17^13` 全過。**這一項要改成「暫時的極限」** - 至少對這一代前沿模型是。
 
 **二、反轉詛咒是真的，但它是模型的屬性，不是 LLM 的通則。**
 同一題 Fable 5.1 知道、Sonnet 5 編造；換成 arXiv 編號又反過來。**沒有「LLM 會不會反轉詛咒」這種問題，只有「這個模型對這個事實會不會」。**
@@ -171,5 +171,5 @@ Sonnet 5 在 arXiv 那題主動說「我不確定」，在 Pfeiffer 那題卻連
 
 - [LLM 極限實測（一）](./llm-limitations-field-test.md) —— 工具沒關乾淨的那一輪
 - [LLM 極限實測（三）](./llm-limitations-field-test-3.md) —— 同樣零工具，換 Sonnet 5 與 Haiku 4.5 再比一次
-- [LLM 的極限](../02-advanced/llm-limitations.md) —— 理論來源
+- [LLM 的極限](../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源
 - [先驗證，再用它突破自己](./ai-verify-then-expand.md) —— 獨立驗算

@@ -6,10 +6,10 @@ created: 2026-09-20
 
 # AI 的文風與語氣 — The Tells of AI Writing (jason3e7 Voice)
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
-> **這篇怎麼來的**: 拿 [pgplay-writeup-style-guide](../05-notes/pgplay-writeup-style-guide.md) 的 Do / Don't 清單, 把 [ai-writing-style-tells](./ai-writing-style-tells.md) 逐段改寫成 jason3e7 的手筆. 論點沒動, 只換文風: 半形標點、短句串列、動詞收前、破折號歸零、AI 冗詞拿掉. 兩篇對照著看, 一份是 ai-101 預設寫法, 另一份是同樣論點用個人文風寫.
+> **這篇怎麼來的**: 拿 [pgplay-writeup-style-guide](../../05-notes/pgplay-writeup-style-guide.md) 的 Do / Don't 清單, 把 [ai-writing-style-tells](./ai-writing-style-tells.md) 逐段改寫成 jason3e7 的手筆. 論點沒動, 只換文風: 半形標點、短句串列、動詞收前、破折號歸零、AI 冗詞拿掉. 兩篇對照著看, 一份是 ai-101 預設寫法, 另一份是同樣論點用個人文風寫.
 
 > **TL;DR (EN):** Same content as `ai-writing-style-tells.md`, rewritten under the voice constraints from `pgplay-writeup-style-guide.md`. Punctuation converted to half-width, em dashes (both `——` and the ` - ` substitute the repo uses) removed by splitting sentences, three-item rhythms broken up, hedging padding cut. Kept the ai-101 structural template (opening callout + TL;DR EN, bilingual headings, callouts, tables, Sources), because those are structure not voice. Diff the two files to see what the voice constraints actually change.
 
@@ -54,7 +54,7 @@ created: 2026-09-20
 
 理解了成因, 就知道為什麼一句「寫自然一點」幾乎無效: **那些習慣是訓練烙進去的, 不是它臨時決定的風格, 你用一個模糊的形容詞蓋不過一整套訓練.**
 
-這跟 [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) 是同一個道理: **模糊的指令等於模糊的結果.** 「自然」對模型來說是一個沒有座標的詞, 它只會往「它以為的自然」收斂, 而那恰好就是這些習慣.
+這跟 [AI 怎麼知道該用哪種能力](../capabilities/how-ai-picks-capability.md) 是同一個道理: **模糊的指令等於模糊的結果.** 「自然」對模型來說是一個沒有座標的詞, 它只會往「它以為的自然」收斂, 而那恰好就是這些習慣.
 
 好消息是, 那篇研究也量出了一件很實用的事: **Claude 的破折號極度好壓.**
 
@@ -113,7 +113,7 @@ Claude 只要你**明確點名**, 就幾乎完全照做. GPT 就算明令禁止�
 ## 常見問題 — FAQ
 
 **Q: 所以看到破折號就能斷定是 AI 寫的?**
-不行. 破折號是人類用了幾百年的標點, 很多作者本來就愛用 (研究裡人類基準最高到每千字 17 次). 它只是機率上的提示, 不是證據. 真要判斷, 看的是**多個習慣的密度**加上**有沒有具體、擔責任的內容**, 不是單一符號. 詳見 [AI 生成內容怎麼標記與辨識](../01-fundamentals/ai-content-watermark.md): 連官方浮水印都不能當定論, 何況一個標點.
+不行. 破折號是人類用了幾百年的標點, 很多作者本來就愛用 (研究裡人類基準最高到每千字 17 次). 它只是機率上的提示, 不是證據. 真要判斷, 看的是**多個習慣的密度**加上**有沒有具體、擔責任的內容**, 不是單一符號. 詳見 [AI 生成內容怎麼標記與辨識](../../01-fundamentals/ai-content-watermark.md): 連官方浮水印都不能當定論, 何況一個標點.
 
 **Q: 不同模型的文風差很多嗎?**
 差很多, 而且是訓練決定的. 破折號密度從接近零到每千字十幾個都有. 所以「AI 都愛用破折號」是錯的, 是**某些訓練管線**的產物. 這也意味著文風會隨版本改變. 新一代模型常常補掉舊的習慣, 又長出新的.
@@ -126,10 +126,10 @@ Claude 只要你**明確點名**, 就幾乎完全照做. GPT 就算明令禁止�
 ## 相關筆記 — Related
 
 - [ai-writing-style-tells (原版)](./ai-writing-style-tells.md), 這篇的原文, 用 ai-101 預設語氣寫的
-- [pgplay-writeup-style-guide](../05-notes/pgplay-writeup-style-guide.md), 本篇套用的 Do / Don't 清單來源
-- [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md), 為什麼模糊指令得到模糊結果, 文風也適用
-- [AI 生成內容怎麼標記與辨識](../01-fundamentals/ai-content-watermark.md), 為什麼「看起來像 AI」永遠不是證據
-- [六種能力執行手冊](./capabilities-playbook.md), 「給標準」是拉成效的通用槓桿, 文風就是一種標準
+- [pgplay-writeup-style-guide](../../05-notes/pgplay-writeup-style-guide.md), 本篇套用的 Do / Don't 清單來源
+- [AI 怎麼知道該用哪種能力](../capabilities/how-ai-picks-capability.md), 為什麼模糊指令得到模糊結果, 文風也適用
+- [AI 生成內容怎麼標記與辨識](../../01-fundamentals/ai-content-watermark.md), 為什麼「看起來像 AI」永遠不是證據
+- [六種能力執行手冊](../capabilities/capabilities-playbook.md), 「給標準」是拉成效的通用槓桿, 文風就是一種標準
 
 ## Sources
 

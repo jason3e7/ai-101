@@ -7,7 +7,7 @@
 ## 為什麼從雙破折號開始
 
 - 中文寫作**幾乎不用 `——`**, 但 AI (Claude / GPT 未特別壓制時) 極愛用
-- 是「一眼可辨」的 tell, 對照概念見 [ai-writing-style-tells](../../../02-advanced/ai-writing-style-tells.md)
+- 是「一眼可辨」的 tell, 對照概念見 [ai-writing-style-tells](../../../02-advanced/writing-style/ai-writing-style-tells.md)
 - 純字元計數, 不需要 NLP model, 最容易驗證跟複製
 - 從最容易的訊號開始, 拿到 pipeline 骨架再堆更複雜的 signal
 
@@ -84,7 +84,7 @@ python3 analyze.py
 
 ## 相關筆記
 
-- [AI 的文風與語氣](../../../02-advanced/ai-writing-style-tells.md), 破折號是「最強指紋」的原因與量化證據
-- [AI 的文風與語氣: jason3e7 手筆改寫版](../../../02-advanced/ai-writing-style-tells-jason3e7-voice.md), 同一份內容的 voice 對照
+- [AI 的文風與語氣](../../../02-advanced/writing-style/ai-writing-style-tells.md), 破折號是「最強指紋」的原因與量化證據
+- [AI 的文風與語氣: jason3e7 手筆改寫版](../../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md), 同一份內容的 voice 對照
 - [PG Play writeup 個人文風約束](../../pgplay-writeup-style-guide.md), Do/Don't 清單
 - [jason3e7-writing-voice skill](../../../skills/jason3e7-writing-voice.md), 抽出來給 Claude 用的 skill

@@ -77,4 +77,4 @@ find setuid program
 
 完整版 (含五塊模板結構層、標點指紋詳述、常用零件目錄、個性只在特定位置露頭、對照範例) 見原筆記. Skill 只提取**文風層**這部分.
 
-對照概念: [AI 的文風與語氣](../02-advanced/ai-writing-style-tells.md) 是「辨識並抑制 AI 的文風」, 這 skill 是它的倒影 (辨識並重現 jason3e7 的文風).
+對照概念: [AI 的文風與語氣](../02-advanced/writing-style/ai-writing-style-tells.md) 是「辨識並抑制 AI 的文風」, 這 skill 是它的倒影 (辨識並重現 jason3e7 的文風).

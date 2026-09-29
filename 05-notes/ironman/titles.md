@@ -61,27 +61,27 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 01 | 它只是在猜下一個字：LLM 的原理，決定了後面 29 天的所有心法 | [core-concepts](../../01-fundamentals/core-concepts.md) + 新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10411345) |
 | 02 | 不是它突然變強，是它跨過了你的門檻 | 新研究（METR、scaling laws、MCP 採用曲線） | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10411919) |
-| 03 | 它做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/llm-limitations.md) ＋ [實測](../llm-limitations-field-test.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10412787) |
-| 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10413054) |
-| 05 | AI 怎麼知道該用哪種能力 | [how-ai-picks-capability](../../02-advanced/how-ai-picks-capability.md) | ✅ [已完成](./drafts/day05-how-it-picks.md) |
+| 03 | 它做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/limits-and-verification/llm-limitations.md) ＋ [實測](../llm-limitations-field-test.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10412787) |
+| 04 | 你其實只用了 AI 的兩種能力：一張全景圖看完它會什麼 | [ai-capability-landscape](../../02-advanced/capabilities/ai-capability-landscape.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10413054) |
+| 05 | AI 怎麼知道該用哪種能力 | [how-ai-picks-capability](../../02-advanced/capabilities/how-ai-picks-capability.md) | ✅ [已完成](./drafts/day05-how-it-picks.md) |
 | 06 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md)＋新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10414480) |
-| 07 | Context Engineering：prompt 只是它看到的 5% | [context-engineering](../../02-advanced/context-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415067) |
-| 08 | Harness Engineering：你已經在用只是不知道 | [harness-engineering](../../02-advanced/harness-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415590) |
+| 07 | Context Engineering：prompt 只是它看到的 5% | [context-engineering](../../02-advanced/engineering/context-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415067) |
+| 08 | Harness Engineering：你已經在用只是不知道 | [harness-engineering](../../02-advanced/engineering/harness-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415590) |
 
 ### 轉·提問：問得準（Day 9–12）
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
-| 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
-| 11 | AI 給的答案, 你怎麼知道是對的 | [ai-verify-then-expand](../ai-verify-then-expand.md) ＋ [verifying-ai-output](../../02-advanced/verifying-ai-output.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417119) |
+| 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/engineering/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
+| 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/engineering/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
+| 11 | AI 給的答案, 你怎麼知道是對的 | [ai-verify-then-expand](../ai-verify-then-expand.md) ＋ [verifying-ai-output](../../02-advanced/limits-and-verification/verifying-ai-output.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417119) |
 | 12 | 為了方便人類驗證而生的兩個 skill：condense / expand-mindmap | [mindmap-skills-design](../mindmap-skills-design.md) ＋ [skills/](../../skills/) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417425) |
 
 ### 轉·脈絡：走回頭路補上跳過的兩級（Day 13–14）
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/ai-atrophy.md) | 🚧 [草稿中](./drafts/day13-ai-atrophy.md) |
+| 13 | AI 用久了會鈍化: 兩種鈍, 五招破 (承接驗證主題, 原「Context Engineering 補實測」延後或替換) | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) | 🚧 [草稿中](./drafts/day13-ai-atrophy.md) |
 | 14 | AI 抹平的是中產, 頂層反而變貴 (承 Day 13 判斷力主題, 原「Harness Engineering 補實測」延後或替換) | [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | 🚧 [草稿中](./drafts/day14-squeezed-middle.md) |
 
 ### 轉·目標與成本：讓它自己跑（Day 15–19）
@@ -109,8 +109,8 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 25 | AI 可能會取代什麼，目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day25-what-ai-replaces.md) |
-| 26 | AI 風格橫行：掃 40 個系列, 找出被入侵最深的三種文風 | 新掃描實驗（本屆鐵人賽已發文章）＋ [ai-writing-style-tells](../../02-advanced/ai-writing-style-tells.md) | 新寫 |
-| 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../pgplay-writeup-style-guide.md) | 改寫 |
+| 26 | AI 風格橫行：掃 40 個系列, 找出被入侵最深的三種文風 | 新掃描實驗（本屆鐵人賽已發文章）＋ [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) | 新寫 |
+| 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../pgplay-writeup-style-guide.md) | 改寫 |
 | 28 | 這段字是 AI 寫的嗎？浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 改寫 |
 | 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/pii-masking.md) | ✅ [已完成](./drafts/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |

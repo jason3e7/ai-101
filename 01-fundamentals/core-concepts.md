@@ -49,7 +49,7 @@ updated: 2026-04-22
 
 > [!warning] Prompt Engineering 的限制
 > Prompt 只是 AI 接收資訊的 5%。真正影響結果的是整體 **Context**。
-> 詳見 [AI 101 - Context Engineering](../02-advanced/context-engineering.md)
+> 詳見 [AI 101 - Context Engineering](../02-advanced/engineering/context-engineering.md)
 
 ---
 
@@ -140,5 +140,5 @@ AI 以自信的語氣說出**不存在或錯誤的事實**。
 
 ## 相關筆記
 
-- [AI 101 - Context Engineering](../02-advanced/context-engineering.md) — 比 Prompt Engineering 更重要的技能
+- [AI 101 - Context Engineering](../02-advanced/engineering/context-engineering.md) — 比 Prompt Engineering 更重要的技能
 - [AI 101 - Claude Code 生態系](./claude-code/ecosystem.md) — 實際工具使用

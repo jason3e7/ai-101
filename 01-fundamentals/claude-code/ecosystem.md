@@ -250,5 +250,5 @@ Anthropic 在 2024 年 11 月推出，已被 OpenAI、Google DeepMind 採用。
 
 ## 相關筆記
 
-- [AI 101 - Context Engineering](../../02-advanced/context-engineering.md) — 理解為何這些工具這麼重要
+- [AI 101 - Context Engineering](../../02-advanced/engineering/context-engineering.md) — 理解為何這些工具這麼重要
 - [AI 101 - 實用技巧與最佳實踐](../tips-and-best-practices.md) — 具體的使用技巧

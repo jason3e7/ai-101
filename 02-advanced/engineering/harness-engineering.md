@@ -7,7 +7,7 @@ updated: 2026-04-22
 
 # Harness Engineering
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!quote]
 > "The challenge of production AI is not about the model — it is about the harness.
@@ -146,7 +146,7 @@ Output Guardrails  → 最終輸出前檢查
 
 1. **`CLAUDE.md` / `AGENTS.md`** — 常駐規則 (Context Engineering 的 write 那一招). 沒寫的話, harness 還是會跑, 但沒有專案風格
 2. **Permissions 跟 Hooks** — 你想在哪些操作前檢查、哪些操作後觸發. 沒設的話, 預設會每次問你確認
-3. **MCP 要接哪些** — 每個 MCP 都吃 context, 選擇要精 (見 [Day 07 Context Engineering](../05-notes/ironman/drafts/day07-context-engineering.md) 例二)
+3. **MCP 要接哪些** — 每個 MCP 都吃 context, 選擇要精 (見 [Day 07 Context Engineering](../../05-notes/ironman/drafts/day07-context-engineering.md) 例二)
 4. **Sub-agent 什麼時候派** — Explore / Plan 是內建的; 自訂的 subagent 用 `AgentTool` 呼叫. 沒派的話, 主 agent 會自己扛所有 context
 
 **其他都自動了.** 你不用自己實作重試邏輯、compaction、tool 呼叫循環、sandbox 隔離, 那些 2023 年真的要自己寫, 現在都在 harness 裡.
@@ -237,5 +237,5 @@ Harness Engineering（最外層：基礎設施）
 ## 相關筆記
 
 - [AI 101 - Context Engineering](./context-engineering.md) — Harness 中的 Context 管理層
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — Hooks、Subagents 是 Harness 的實作
-- [AI 101 - 核心概念](../01-fundamentals/core-concepts.md) — Agent 基礎概念
+- [AI 101 - Claude Code 生態系](../../01-fundamentals/claude-code/ecosystem.md) — Hooks、Subagents 是 Harness 的實作
+- [AI 101 - 核心概念](../../01-fundamentals/core-concepts.md) — Agent 基礎概念

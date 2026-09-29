@@ -17,7 +17,7 @@ created: 2026-09-26
 
 ## 先認清：這其實是舊軸的新形狀 — It's the Old Axis
 
-不要把這兩個當成全新的東西。攤到 [AI 能力全景圖](../02-advanced/ai-capability-landscape.md)那兩軸上，位置很清楚：
+不要把這兩個當成全新的東西。攤到 [AI 能力全景圖](../02-advanced/capabilities/ai-capability-landscape.md)那兩軸上，位置很清楚：
 
 | 想法 | 資訊流向 | 對應的既有能力 | 忠實度要求 |
 |:---|:---|:---|:---|
@@ -25,7 +25,7 @@ created: 2026-09-26
 | **放大心智圖** | 發散（少 → 多） | 發想 ＋ 研究 | **低**（就是要它生） |
 
 > [!IMPORTANT]
-> 兩者共用「心智圖」這個**輸出形狀**，但**方向相反、驗收方式相反** - 這跟 [六種能力執行手冊](../02-advanced/capabilities-playbook.md)講摘要與發想時是同一組道理。濃縮要逐節點回原文核對；放大不必對原文，要挑的是有沒有用。**所以它們該是兩個 skill，不是一個 skill 兩個模式** - 硬合在一起，忠實度的相反要求會打架。
+> 兩者共用「心智圖」這個**輸出形狀**，但**方向相反、驗收方式相反** - 這跟 [六種能力執行手冊](../02-advanced/capabilities/capabilities-playbook.md)講摘要與發想時是同一組道理。濃縮要逐節點回原文核對；放大不必對原文，要挑的是有沒有用。**所以它們該是兩個 skill，不是一個 skill 兩個模式** - 硬合在一起，忠實度的相反要求會打架。
 
 ---
 
@@ -85,7 +85,7 @@ created: 2026-09-26
 4. **修剪** - 套注意力上限：每層超過 7 就再分組或砍掉最弱的。
 
 > [!WARNING]
-> **濃縮的坑是「悄悄加料」。** 收斂端最怕它為了讓結構好看，補上原文沒有的節點。skill 要硬性要求：**每個節點都能追回原始資料的哪一段**，加不出處的就是幻覺。這跟 [LLM 的極限](../02-advanced/llm-limitations.md)「驗證必須來自外部」是同一條。
+> **濃縮的坑是「悄悄加料」。** 收斂端最怕它為了讓結構好看，補上原文沒有的節點。skill 要硬性要求：**每個節點都能追回原始資料的哪一段**，加不出處的就是幻覺。這跟 [LLM 的極限](../02-advanced/limits-and-verification/llm-limitations.md)「驗證必須來自外部」是同一條。
 
 > [!NOTE]
 > **這個 skill 已經寫好了（2026-09-26）：** [`skills/condense-mindmap/SKILL.md`](../skills/condense-mindmap/SKILL.md)，全英文、採官方可攜格式（資料夾 ＋ SKILL.md，見 [Agent Skills 說明](../01-fundamentals/agent-skills.md)）。上面這些設計決定都寫進去了：一個根、深度 ≤ 4、每層 ≤ 7、節點是短語、每個節點可追回原文、超量用 map-reduce、只吐 markdown 不附渲染指令。兩個都寫好了。
@@ -106,7 +106,7 @@ created: 2026-09-26
 4. **標記虛實** - 哪些節點是查到的、哪些是推測的，分開標。
 
 > [!WARNING]
-> **放大有兩個相反的坑。** 一是[發想多樣性收窄](../02-advanced/capabilities-playbook.md)：LLM 發想會自動收斂到同一核心（一實驗中 94% 點子同源），所以第 1 步要**強制不重疊**。二是研究步驟的幻覺：發散端可以天馬行空，但只要標成「查到的」就必須真的查到 - **虛實要分明**。
+> **放大有兩個相反的坑。** 一是[發想多樣性收窄](../02-advanced/capabilities/capabilities-playbook.md)：LLM 發想會自動收斂到同一核心（一實驗中 94% 點子同源），所以第 1 步要**強制不重疊**。二是研究步驟的幻覺：發散端可以天馬行空，但只要標成「查到的」就必須真的查到 - **虛實要分明**。
 
 > [!NOTE]
 > **這個 skill 也寫好了（2026-09-26）：** [`skills/expand-mindmap/SKILL.md`](../skills/expand-mindmap/SKILL.md)，全英文。虛實用 ` (?)` 標記推測節點、未標記＝已查證。**採選項 A（各自獨立，不依賴濃縮）**：兩個 skill 的輸出契約刻意保持一致（同樣的一個根／深度 ≤ 4／每層 ≤ 7／短語規則），但忠實度心法相反 - 濃縮「追不回原文就丟」，放大「可以生但要標虛實」。之所以不讓放大呼叫濃縮，是因為 (1) 會破壞 skill 的可攜性、(2) 兩者忠實度規則會打架，重疊的只有格式那 15 行，是良性重複。
@@ -121,16 +121,16 @@ created: 2026-09-26
 - **不包 markmap 指令**：skill 只吐 markdown，不附「貼到哪裡看圖」的話。渲染完全交給使用者的工具（markmap／Obsidian／GitHub）。
 - **放大可用 web 研究**：**不限制工具或方法** - 種子太冷就去查，怎麼查由它決定。
 
-**濃縮的輸入上限（2026-09-26 定）：** 一次盡量餵，**當資料超過 context window 時，改用 map-reduce**：先分段各自濃縮成小圖，再把小圖合併濃縮成一張。並告知使用者用了 map-reduce、分了幾段（跨段的關聯可能較弱）。細節見 [六種能力執行手冊](../02-advanced/capabilities-playbook.md)摘要那節的長文處理。
+**濃縮的輸入上限（2026-09-26 定）：** 一次盡量餵，**當資料超過 context window 時，改用 map-reduce**：先分段各自濃縮成小圖，再把小圖合併濃縮成一張。並告知使用者用了 map-reduce、分了幾段（跨段的關聯可能較弱）。細節見 [六種能力執行手冊](../02-advanced/capabilities/capabilities-playbook.md)摘要那節的長文處理。
 
 ---
 
 ## 相關筆記 — Related
 
-- [AI 能力全景圖](../02-advanced/ai-capability-landscape.md) - 收斂／發散兩軸，這兩個 skill 的定位來源
-- [六種能力執行手冊](../02-advanced/capabilities-playbook.md) - 摘要與發想的實戰打法，直接可套
+- [AI 能力全景圖](../02-advanced/capabilities/ai-capability-landscape.md) - 收斂／發散兩軸，這兩個 skill 的定位來源
+- [六種能力執行手冊](../02-advanced/capabilities/capabilities-playbook.md) - 摘要與發想的實戰打法，直接可套
 - [refactor-note skill](../skills/refactor-note.md) - 每層 ≤ 7 的注意力上限，心智圖分支數的規則
-- [AI 怎麼知道該用哪種能力](../02-advanced/how-ai-picks-capability.md) - 為什麼 skill 描述要給範例、寫清楚任務
+- [AI 怎麼知道該用哪種能力](../02-advanced/capabilities/how-ai-picks-capability.md) - 為什麼 skill 描述要給範例、寫清楚任務
 
 ## Sources
 

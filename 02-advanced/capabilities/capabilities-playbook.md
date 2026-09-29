@@ -7,7 +7,7 @@ updated: 2026-09-18
 
 # 六種能力執行手冊：省 token vs 最有成效 — Capabilities Playbook: Cheapest vs Best
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 承接 [AI 能力全景圖](./ai-capability-landscape.md)，這篇把六種高頻能力 - **摘要、解釋、發想、重構筆記**，加上兩個**複合能力****分析**與**規劃** - 各給兩套打法：**① 最省 token**、**② 最有成效**。每種都附模型選型與可直接複製的 prompt。
@@ -398,8 +398,8 @@ updated: 2026-09-18
 
 - [AI 能力全景圖](./ai-capability-landscape.md) - 這六種能力的座標與理論依據
 - [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) - 為什麼「給範例」比「給形容詞」有效
-- [模型費用與效果比較](../01-fundamentals/model-cost-comparison.md) - 各模型定價與 benchmark
-- [Context Engineering](./context-engineering.md) - 餵對資訊本身就是最大的省 token 槓桿
+- [模型費用與效果比較](../../01-fundamentals/model-cost-comparison.md) - 各模型定價與 benchmark
+- [Context Engineering](../engineering/context-engineering.md) - 餵對資訊本身就是最大的省 token 槓桿
 
 ## Sources
 

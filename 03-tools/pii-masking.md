@@ -663,4 +663,4 @@ print(f"共偵測到 {len(mapping)} 個 PII 關鍵字")
 ## 相關筆記
 
 - [AI 101 - 核心概念](../01-fundamentals/core-concepts.md) — LLM 與 AI 基礎
-- [AI 101 - Harness Engineering](../02-advanced/harness-engineering.md) — 把 PII 過濾整合進 agent 的護欄層
+- [AI 101 - Harness Engineering](../02-advanced/engineering/harness-engineering.md) — 把 PII 過濾整合進 agent 的護欄層

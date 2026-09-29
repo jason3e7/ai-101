@@ -6,7 +6,7 @@ created: 2026-07-21
 
 # Loop Engineering（迴圈工程）— Designing the Loop That Prompts Your Agent
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > **Loop Engineering = 設計「會自己提示 agent 的系統」，而不是你每一步都手動打字叫它做。** 讓 agent 自己「做事 → 檢查結果 → 決定下一步 → 重來」，直到目標達成。2026 年的共識是：**分出好 agent 和普通 agent 的，往往不是模型，而是這個迴圈。**
@@ -51,7 +51,7 @@ Addy Osmani 進一步把「一個完整迴圈系統」拆成六塊積木：
 | **Worktree** | 隔離並行 agent，避免改到同一份檔案打架 | `git worktree`（每個任務一份獨立工作區） |
 | **Skills** | 把專案知識寫成檔，不用每次重講 | `SKILL.md` |
 | **外掛／連接器 Connectors** | 接外部工具 | MCP（接 Linear、Slack、DB、API） |
-| **Sub-agents** | 把「寫的人」和「驗的人」分開 | 不同指令／模型的子 agent，[分工與計費](./subagent-usage-and-billing.md) |
+| **Sub-agents** | 把「寫的人」和「驗的人」分開 | 不同指令／模型的子 agent，[分工與計費](../subagent-usage-and-billing.md) |
 | **狀態檔** | 記已完成／待辦，讓明天的迴圈接得上 | Markdown 或 Linear 看板 |
 
 > [!TIP]
@@ -63,9 +63,9 @@ Addy Osmani 進一步把「一個完整迴圈系統」拆成六塊積木：
 
 Claude Code 內建了迴圈工程的關鍵零件：
 
-- **`/goal`**：設一個可驗證的完成條件，讓它自己跑到達成（見 [Claude Code goal](../01-fundamentals/claude-code/goal.md)）
+- **`/goal`**：設一個可驗證的完成條件，讓它自己跑到達成（見 [Claude Code goal](../../01-fundamentals/claude-code/goal.md)）
 - **`/loop`**：讓它按節奏反覆執行某個任務
-- **強制力 Hook**：用 [goal 強制力 Hook](../01-fundamentals/claude-code/goal-enforcement-hooks.md) 防止它中途放棄、跑偏、忘記目標
+- **強制力 Hook**：用 [goal 強制力 Hook](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) 防止它中途放棄、跑偏、忘記目標
 - **Worktree + Sub-agent**：並行多個 agent，寫的和驗的分開
 
 **一個完整迴圈長這樣**（Addy 的範例）：
@@ -84,7 +84,7 @@ Claude Code 內建了迴圈工程的關鍵零件：
 
 迴圈跑得越自動，越要小心這幾個坑：
 
-- **無人監督的驗證**：迴圈自己驗自己，若驗證機制不可靠，錯的東西會被自動放行——**驗證者要獨立、要可信**（呼應 [先驗證，再突破](../05-notes/ai-verify-then-expand.md) 的「獨立驗算」）
+- **無人監督的驗證**：迴圈自己驗自己，若驗證機制不可靠，錯的東西會被自動放行——**驗證者要獨立、要可信**（呼應 [先驗證，再突破](../../05-notes/ai-verify-then-expand.md) 的「獨立驗算」）
 - **理解債（understanding debt）**：code 生成越快，你對自己專案的理解欠得越多，總有一天要還
 - **認知投降（cognitive surrender）**：設計迴圈很容易變成「用它來避免思考」，而不是「用它來加速思考」
 - **無限迴圈 / 燒錢失控**：沒有停止規則與成本護欄，agent 會一直跑
@@ -118,9 +118,9 @@ Claude Code 內建了迴圈工程的關鍵零件：
 ## 相關筆記 — Related
 
 - [Context Engineering](./context-engineering.md)、[Harness Engineering](./harness-engineering.md) —— 演進線的前兩棒
-- [Claude Code goal](../01-fundamentals/claude-code/goal.md)、[goal 強制力 Hook](../01-fundamentals/claude-code/goal-enforcement-hooks.md) —— 迴圈的「可驗證目標」與「護欄」
-- [Subagent 使用與計費](./subagent-usage-and-billing.md) —— 寫者／驗者分工
-- [先驗證，再用它突破自己](../05-notes/ai-verify-then-expand.md) —— 迴圈裡「驗證」為什麼是關鍵
+- [Claude Code goal](../../01-fundamentals/claude-code/goal.md)、[goal 強制力 Hook](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) —— 迴圈的「可驗證目標」與「護欄」
+- [Subagent 使用與計費](../subagent-usage-and-billing.md) —— 寫者／驗者分工
+- [先驗證，再用它突破自己](../../05-notes/ai-verify-then-expand.md) —— 迴圈裡「驗證」為什麼是關鍵
 
 ## Sources
 

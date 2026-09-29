@@ -281,4 +281,4 @@ print(predicted_labels)
 ## 相關筆記
 
 - [AI 101 - PII Masking（隱私遮蔽）](./pii-masking.md) — ai4privacy 套件（50+ 類別，社群開源）
-- [AI 101 - Context Engineering](../02-advanced/context-engineering.md) — 如何設計送 LLM 前的過濾流程
+- [AI 101 - Context Engineering](../02-advanced/engineering/context-engineering.md) — 如何設計送 LLM 前的過濾流程

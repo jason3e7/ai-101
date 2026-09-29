@@ -58,7 +58,7 @@ created: 2026-08-31
 
 | 撞題系列 | 組別 | 撞到哪 |
 |---|---|---|
-| 「模型動不了，那你能動什麼？AI Engineering 四層工程觀：Prompt、Context、Harness、Loop」 | AI Engineering | [Context](../../02-advanced/context-engineering.md)、[Harness](../../02-advanced/harness-engineering.md)、[Loop](../../02-advanced/loop-engineering.md) 三篇，骨架幾乎一樣 |
+| 「模型動不了，那你能動什麼？AI Engineering 四層工程觀：Prompt、Context、Harness、Loop」 | AI Engineering | [Context](../../02-advanced/engineering/context-engineering.md)、[Harness](../../02-advanced/engineering/harness-engineering.md)、[Loop](../../02-advanced/engineering/loop-engineering.md) 三篇，骨架幾乎一樣 |
 | 「Claude 用得對，也用得省：工程師帶你搞懂選模型、Token 優化與底層邏輯」 | Claude AI | [模型成本比較](../../01-fundamentals/model-cost-comparison.md)、[Subagent 計費](../../02-advanced/subagent-usage-and-billing.md) |
 
 方向接近但不算撞的還有：「AI 時代的軟體開發—人如何與 AI 更有效協作」、「觀察 AI，也觀察自己：30 天重新學會如何學習」、「中文系 MIS 的 Claude 協作嘗試」。
@@ -95,7 +95,7 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 預測會變成空話，也無法驗證。
 
-> 改法：寫**「已經在發生、現在該怎麼接」** - [AI 內容標記與辨識](../../01-fundamentals/ai-content-watermark.md)、隱私遮蔽、agent 已經會自己打靶、ClickFix 被濫用、[知識中產的處境](../ai-and-knowledge-barriers.md)。最後把 [Loop Engineering](../../02-advanced/loop-engineering.md) 那節「是真突破，還是新瓶裝舊酒」併進 Day 30 收尾 - 誠實比預言值錢。
+> 改法：寫**「已經在發生、現在該怎麼接」** - [AI 內容標記與辨識](../../01-fundamentals/ai-content-watermark.md)、隱私遮蔽、agent 已經會自己打靶、ClickFix 被濫用、[知識中產的處境](../ai-and-knowledge-barriers.md)。最後把 [Loop Engineering](../../02-advanced/engineering/loop-engineering.md) 那節「是真突破，還是新瓶裝舊酒」併進 Day 30 收尾 - 誠實比預言值錢。
 
 ---
 
@@ -108,12 +108,12 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 | **承** | 1 | 它只是在猜下一個字：LLM 的原理 | ✅ 已完成（新研究） |
 | | 2 | 不是它突然變強，是它跨過了你的門檻 | ✅ 已完成（METR、scaling laws、MCP） |
 | | 3 | 它做不到什麼：三種極限 | ✅ 已完成（自我修正、反轉詛咒、鋸齒狀前沿） |
-| | 4 | AI 能力全景圖：收斂／發散 × 認知層次 | ✅ [ai-capability-landscape](../../02-advanced/ai-capability-landscape.md) |
+| | 4 | AI 能力全景圖：收斂／發散 × 認知層次 | ✅ [ai-capability-landscape](../../02-advanced/capabilities/ai-capability-landscape.md) |
 | | 5 | Prompt Engineering：哪些技巧真的有效 | ✅ 已完成（The Prompt Report、Wharton） |
-| | 6 | 先看終點：Loop Engineering | ✅ [loop-engineering](../../02-advanced/loop-engineering.md) |
-| | 7 | 六種能力的實戰配方 | [capabilities-playbook](../../02-advanced/capabilities-playbook.md) |
+| | 6 | 先看終點：Loop Engineering | ✅ [loop-engineering](../../02-advanced/engineering/loop-engineering.md) |
+| | 7 | 六種能力的實戰配方 | [capabilities-playbook](../../02-advanced/capabilities/capabilities-playbook.md) |
 | **轉·提問** | 8–11 | 好 prompt 的特性 → XY Problem → MVP 模板 → 自我驗證 | [meta-prompting](../meta-prompting.md)（拆四篇） |
-| **轉·脈絡** | 12–13 | Context → Harness（Loop 已提前到 Day 6） | [context](../../02-advanced/context-engineering.md)、[harness](../../02-advanced/harness-engineering.md)，需補實測 |
+| **轉·脈絡** | 12–13 | Context → Harness（Loop 已提前到 Day 6） | [context](../../02-advanced/engineering/context-engineering.md)、[harness](../../02-advanced/engineering/harness-engineering.md)，需補實測 |
 | **轉·目標與成本** | 14–18 | 選模型省錢 → 權限 → `/goal` → 強制力 Hook → workflow × goal | [model-cost](../../01-fundamentals/model-cost-comparison.md)、[permissions](../../01-fundamentals/claude-code/permissions.md)、[goal](../../01-fundamentals/claude-code/goal.md) 等 |
 | **轉·驗證與擴展** | 19–23 | 六種驗算法 → 獨立驗算 → **HTB 目標綁架實測** → 拓展視野五手段 → 知識金字塔 | [ai-verify-then-expand](../ai-verify-then-expand.md)、[htb/](../htb/htb-abducted-goal-case.md)、[knowledge-barriers](../ai-and-knowledge-barriers.md) |
 | **合** | 24 | AI 可能會取代什麼，目前不會取代什麼 | ✅ 已完成（Stanford Canaries、Anthropic Economic Index） |

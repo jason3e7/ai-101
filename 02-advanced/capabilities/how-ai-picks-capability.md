@@ -6,7 +6,7 @@ created: 2026-09-18
 
 # AI 怎麼知道該用哪種能力 — How AI Picks a Capability
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 你說「幫我摘要」它就摘要，說「幫我想幾個點子」它就發想 - 中間沒有人幫它選。這篇以 **Claude Opus 5** 為基準，把那個選擇拆成八層：**五層在訓練時就長好了，三層在你每次送出請求時自動跑**。重點不是知道有幾層，而是知道**哪幾層你動得了、哪幾層動不了** - 因為那直接決定 prompt 該往哪使力。
@@ -198,7 +198,7 @@ MoE 的 router 是**逐 token** 運作的 - 同一句話裡，不同的字可能
 
 這一條跟前面的機制扣得很緊：**第 7 層回傳的思考區塊本來就只是摘要，不是原始思路**，預設甚至整段空白。你看到的「我的步驟」跟它實際跑的不是同一個東西 - 兩個獨立的理由指向同一個結論。
 
-**要確認它有沒有做某一步，看產出對不對，不要看它說它做了什麼。** 這跟 [LLM 的極限](./llm-limitations.md)裡「驗證必須來自外部」是同一條。
+**要確認它有沒有做某一步，看產出對不對，不要看它說它做了什麼。** 這跟 [LLM 的極限](../limits-and-verification/llm-limitations.md)裡「驗證必須來自外部」是同一條。
 
 ---
 
@@ -221,9 +221,9 @@ MoE 的 router 是**逐 token** 運作的 - 同一句話裡，不同的字可能
 ## 相關筆記
 
 - [AI 101 - AI 能力全景圖](./ai-capability-landscape.md) - 這篇檢驗的那兩條等式的出處
-- [AI 101 - LLM 的極限](./llm-limitations.md) - 為什麼驗證必須來自外部
-- [AI 101 - Context Engineering](./context-engineering.md) - 既然任務是從語境推論的，餵什麼就決定推成什麼
-- [AI 101 - 核心概念](../01-fundamentals/core-concepts.md) - Agent、RAG、幻覺等基礎詞彙
+- [AI 101 - LLM 的極限](../limits-and-verification/llm-limitations.md) - 為什麼驗證必須來自外部
+- [AI 101 - Context Engineering](../engineering/context-engineering.md) - 既然任務是從語境推論的，餵什麼就決定推成什麼
+- [AI 101 - 核心概念](../../01-fundamentals/core-concepts.md) - Agent、RAG、幻覺等基礎詞彙
 
 ## Sources
 

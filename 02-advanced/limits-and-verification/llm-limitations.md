@@ -6,7 +6,7 @@ created: 2026-09-17
 
 # LLM 的極限 — What LLMs Cannot Do
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!IMPORTANT]
 > 「做不到」不是一件事，是三類性質完全不同的事：**結構性的**（原理決定，短期改不掉）、**暫時的**（下一代就補上了）、**鋸齒狀的**（你根本看不見邊界在哪）。把暫時的當永久，你會低估它；把鋸齒狀的當結構性，你會被它坑。
@@ -59,7 +59,7 @@ ICLR 2024 的《Large Language Models Cannot Self-Correct Reasoning Yet》測了
 **一、上下文「用不好」，不是「放不下」。**
 Liu et al. 2023 的《Lost in the Middle》發現：脈絡塞得越滿，模型越偏好開頭和結尾，中間的東西會掉。Chroma 在 2025 年的《Context Rot》測了 18 個前沿模型，每一個都隨輸入變長而退步。但要分清楚：這是「利用率」的問題，不是「容量」的問題。
 
-→ **位置有價。** 最重要的資訊放頭尾。詳見 [Context Engineering](./context-engineering.md)。
+→ **位置有價。** 最重要的資訊放頭尾。詳見 [Context Engineering](../engineering/context-engineering.md)。
 
 **二、複雜度一過線就崩。**
 Apple 在 2025 年的《The Illusion of Thinking》找到三個區間：簡單任務上，不思考的模型反而贏；中等複雜度，會推理的模型佔優；高複雜度，兩種都掉到接近零。不過這篇被打了回馬槍 -《The Illusion of the Illusion of Thinking》指出部分崩潰其實是題目設計與輸出長度上限造成的。後續複現的結論折衷：批評的細節有問題，但核心站得住。
@@ -132,7 +132,7 @@ Gans 的經濟模型點出兩件事：
 有研究主張鋸齒不全是壞事 -《LLM Jaggedness Unlocks Scientific Creativity》認為，正因為它的能力分布跟人類不一樣，才會提出人類想不到的組合。
 
 > [!NOTE]
-> 同一個特性，**在收斂類任務是風險，在發散類任務是資產**。用 [AI 能力全景圖](./ai-capability-landscape.md) 的話說：越靠收斂端越要防鋸齒，越靠發散端越可以利用它。
+> 同一個特性，**在收斂類任務是風險，在發散類任務是資產**。用 [AI 能力全景圖](../capabilities/ai-capability-landscape.md) 的話說：越靠收斂端越要防鋸齒，越靠發散端越可以利用它。
 
 ---
 
@@ -154,13 +154,13 @@ Gans 的經濟模型點出兩件事：
 
 ## 相關筆記 — Related
 
-- [LLM 極限實測](../05-notes/llm-limitations-field-test.md) —— jason3e7 實跑這些檢測的結果：**兩個極限它都「答對」了，因為它偷偷換了工具**
-- [LLM 極限實測（二）](../05-notes/llm-limitations-field-test-2.md) —— 零工具重測：精確計算四題全過，但出現新的失敗模式「**假裝自己有工具**」
-- [LLM 極限實測（三）](../05-notes/llm-limitations-field-test-3.md) —— 換模型比較：Haiku 4.5 算錯 `17^13`，Sonnet 5 的河內塔邊界在 N=10
-- [AI 能力全景圖](./ai-capability-landscape.md) —— 收斂／發散決定了幻覺是 bug 還是 feature
-- [Context Engineering](./context-engineering.md) —— 「位置有價」的完整版
-- [先驗證，再用它突破自己](../05-notes/ai-verify-then-expand.md) —— 外部驗證的六種方法
-- [AI 打破知識壁壘](../05-notes/ai-and-knowledge-barriers.md) —— 鋸齒前沿為什麼放大了判斷力的價值
+- [LLM 極限實測](../../05-notes/llm-limitations-field-test.md) —— jason3e7 實跑這些檢測的結果：**兩個極限它都「答對」了，因為它偷偷換了工具**
+- [LLM 極限實測（二）](../../05-notes/llm-limitations-field-test-2.md) —— 零工具重測：精確計算四題全過，但出現新的失敗模式「**假裝自己有工具**」
+- [LLM 極限實測（三）](../../05-notes/llm-limitations-field-test-3.md) —— 換模型比較：Haiku 4.5 算錯 `17^13`，Sonnet 5 的河內塔邊界在 N=10
+- [AI 能力全景圖](../capabilities/ai-capability-landscape.md) —— 收斂／發散決定了幻覺是 bug 還是 feature
+- [Context Engineering](../engineering/context-engineering.md) —— 「位置有價」的完整版
+- [先驗證，再用它突破自己](../../05-notes/ai-verify-then-expand.md) —— 外部驗證的六種方法
+- [AI 打破知識壁壘](../../05-notes/ai-and-knowledge-barriers.md) —— 鋸齒前沿為什麼放大了判斷力的價值
 
 ## Sources
 

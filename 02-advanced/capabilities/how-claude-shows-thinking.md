@@ -6,7 +6,7 @@ created: 2026-09-20
 
 # Claude 顯示 thinking 是什麼機制 — How Claude Shows Thinking
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!NOTE]
 > 你在 Claude Code 或 API 看到的「Thinking…」不是 Claude 真正想的原文，而是**另一個模型**把它的推理**摘要**過一輪的版本。原始的完整思考被加密塞進 `signature` 欄位——你看得到，但看不懂。這篇拆解這套「思考／摘要／簽章」三層機制，為什麼要這樣設計，以及 Claude 4.7 之後 `budget_tokens` 為什麼直接被 400 掉、要改用 `thinking: {"type": "adaptive"}` ＋ `effort` 的原因。

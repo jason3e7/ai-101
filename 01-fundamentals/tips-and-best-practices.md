@@ -217,4 +217,4 @@ updated: 2026-04-22
 
 - [AI 101 - 核心概念](./core-concepts.md) — 理解基礎詞彙
 - [AI 101 - Claude Code 生態系](./claude-code/ecosystem.md) — 工具詳細說明
-- [AI 101 - Context Engineering](../02-advanced/context-engineering.md) — 進階概念
+- [AI 101 - Context Engineering](../02-advanced/engineering/context-engineering.md) — 進階概念

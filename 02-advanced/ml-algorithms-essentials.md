@@ -481,5 +481,5 @@ pip install hmmlearn        # HMM
 
 ## 相關筆記
 
-- [AI 101 - Context Engineering](./context-engineering.md) — 把這些模型整合進 AI pipeline 時的 context 設計
-- [AI 101 - Harness Engineering](./harness-engineering.md) — 模型外層的執行基礎設施
+- [AI 101 - Context Engineering](./engineering/context-engineering.md) — 把這些模型整合進 AI pipeline 時的 context 設計
+- [AI 101 - Harness Engineering](./engineering/harness-engineering.md) — 模型外層的執行基礎設施

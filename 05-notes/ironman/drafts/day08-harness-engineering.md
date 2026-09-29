@@ -157,7 +157,7 @@ Read / Grep 完全不打擾, 要寫入才問. 節省的時間非常明顯.
 
 ## Sources
 
-- [Harness Engineering (本 repo)](../../../02-advanced/harness-engineering.md), 六大組成完整拆解
+- [Harness Engineering (本 repo)](../../../02-advanced/engineering/harness-engineering.md), 六大組成完整拆解
 - [Effective harnesses for long-running agents — Anthropic Engineering](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [Harness design for long-running apps — Anthropic Engineering](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 - [The Anatomy of Claude Code — sidbharath](https://sidbharath.com/blog/the-anatomy-of-claude-code/)

@@ -7,7 +7,7 @@ updated: 2026-04-22
 
 # Context Engineering
 
-[← 回主頁](../index.md)
+[← 回主頁](../../index.md)
 
 > [!quote]
 > "Prompt 只是 AI 接收資訊的 5%。Context Engineering 設計的是那另外 95%。"
@@ -172,5 +172,5 @@ AI 自行判斷何時需要，適合**動態資訊**。
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](../01-fundamentals/claude-code/ecosystem.md) — 工具的實際使用
-- [AI 101 - 實用技巧與最佳實踐](../01-fundamentals/tips-and-best-practices.md) — 具體技巧
+- [AI 101 - Claude Code 生態系](../../01-fundamentals/claude-code/ecosystem.md) — 工具的實際使用
+- [AI 101 - 實用技巧與最佳實踐](../../01-fundamentals/tips-and-best-practices.md) — 具體技巧

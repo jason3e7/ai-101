@@ -132,7 +132,7 @@ Context Engineering 這件事後面幾天會反覆用到. CLAUDE.md、skills、h
 
 ## Sources
 
-- [Context Engineering 進階筆記 (本 repo)](../../../02-advanced/context-engineering-in-depth.md), 9 塊組成、4 種操作、3 個原理
+- [Context Engineering 進階筆記 (本 repo)](../../../02-advanced/engineering/context-engineering-in-depth.md), 9 塊組成、4 種操作、3 個原理
 - [Effective context engineering for AI agents — Anthropic Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [The rise of Context Engineering — LangChain / Harrison Chase](https://www.langchain.com/blog/the-rise-of-context-engineering)
 - [Context Engineering for Agents (write/select/compress/isolate) — Lance Martin](https://blog.langchain.com/context-engineering-for-agents/)

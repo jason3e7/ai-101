@@ -77,7 +77,7 @@ updated: 2026-07-12
 
 ### 陷阱：別讓 AI 變成新舒適圈
 
-線二有個和線一對稱的危險：**被動接受 AI 的第一個答案，它就變成你的新舒適圈**——你以為在拓展，其實只是換一個更大的籠子（呼應 [發散多樣性收窄](../02-advanced/capabilities-playbook.md) 那條：94% 點子同一核心）。更糟的是，AI 太好用會讓人**連現有舒適圈都不想離開**（反正問它就好，何必自己學）——那是把成長本身外包出去。**破舒適圈必須主動要分歧、要不舒服，不是躺著讓它餵。**
+線二有個和線一對稱的危險：**被動接受 AI 的第一個答案，它就變成你的新舒適圈**——你以為在拓展，其實只是換一個更大的籠子（呼應 [發散多樣性收窄](../02-advanced/capabilities/capabilities-playbook.md) 那條：94% 點子同一核心）。更糟的是，AI 太好用會讓人**連現有舒適圈都不想離開**（反正問它就好，何必自己學）——那是把成長本身外包出去。**破舒適圈必須主動要分歧、要不舒服，不是躺著讓它餵。**
 
 ---
 
@@ -115,7 +115,7 @@ updated: 2026-07-12
 
 - [AI 打破知識壁壘：被夾殺的知識中產](./ai-and-knowledge-barriers.md) —— 為什麼判斷力與拓展力變成關鍵
 - [用 Prompt 生成好 Prompt](./meta-prompting.md) —— 線一「寫 prompt 端」的具體實作（5 要素 = 列假設 + 列步驟 + 給依據）
-- [AI 能力全景圖](../02-advanced/ai-capability-landscape.md) —— 忠實度梯度：幻覺是 bug（線一）還是 feature（線二）
+- [AI 能力全景圖](../02-advanced/capabilities/ai-capability-landscape.md) —— 忠實度梯度：幻覺是 bug（線一）還是 feature（線二）
 
 ## Sources
 

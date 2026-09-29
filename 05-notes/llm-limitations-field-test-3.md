@@ -194,4 +194,4 @@ Haiku 在難題上誠實拒絕、在簡單題上自信答錯。所以「它有�
 
 - [LLM 極限實測（一）](./llm-limitations-field-test.md) —— 工具沒關乾淨，它偷偷繞過去
 - [LLM 極限實測（二）](./llm-limitations-field-test-2.md) —— 關乾淨後，它假裝自己有工具
-- [LLM 的極限](../02-advanced/llm-limitations.md) —— 理論來源
+- [LLM 的極限](../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源

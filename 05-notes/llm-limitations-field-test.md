@@ -9,7 +9,7 @@ created: 2026-09-17
 [← 回主頁](../index.md)
 
 > [!NOTE]
-> 這是 jason3e7 拿 [LLM 的極限](../02-advanced/llm-limitations.md) 裡的檢測方法，實際跑一遍的紀錄。**結果跟預期相反**：三個測試裡，它兩次都答對了 - 但答對的方式，不是它變強了，是它**換了一條路**。
+> 這是 jason3e7 拿 [LLM 的極限](../02-advanced/limits-and-verification/llm-limitations.md) 裡的檢測方法，實際跑一遍的紀錄。**結果跟預期相反**：三個測試裡，它兩次都答對了 - 但答對的方式，不是它變強了，是它**換了一條路**。
 
 > **TL;DR (EN):** Three limits from the theory note, tested on one model in one sitting. Two of them produced correct answers — but not by the model getting better. On the reversal curse it silently searched the web; on Tower of Hanoi it silently ran code from N=7 onward, despite the prompt explicitly forbidding it. Only the interface chrome revealed the switch. The limits are still there; the system around the model routes around them, and it doesn't tell you when it does.
 
@@ -138,7 +138,7 @@ N=10，一樣執行程式，1023 步全對：
 ## 這代表什麼 — What It Means
 
 **一、極限還在，只是被繞過去了。**
-三個測試裡有兩個「答對」，靠的都不是模型本身變強，而是它**換了工具**：一次上網查，兩次執行程式。[理論筆記](../02-advanced/llm-limitations.md) 把極限分成結構性／暫時／鋸齒狀 - 這次實測顯示還有第四種可能：**極限沒消失，只是外面那層把它繞開了。**
+三個測試裡有兩個「答對」，靠的都不是模型本身變強，而是它**換了工具**：一次上網查，兩次執行程式。[理論筆記](../02-advanced/limits-and-verification/llm-limitations.md) 把極限分成結構性／暫時／鋸齒狀 - 這次實測顯示還有第四種可能：**極限沒消失，只是外面那層把它繞開了。**
 
 **二、繞路是沉默的。**
 它沒有說「這題太長，我改用程式算」。從 N=5 到 N=7 的方法切換，只有介面標記看得出來。**你以為在測模型，其實在測整個系統。**
@@ -172,6 +172,6 @@ python3 05-notes/ironman/hanoi_check.py 10 < 05-notes/assets/llm-limits-test/han
 
 - [LLM 極限實測（二）](./llm-limitations-field-test-2.md) —— 把工具**真的**關掉之後再測一次，結論有變
 - [LLM 極限實測（三）](./llm-limitations-field-test-3.md) —— 換模型比較：第一個真正的算術錯誤，以及河內塔的真實邊界
-- [LLM 的極限](../02-advanced/llm-limitations.md) —— 這次實測的理論來源
+- [LLM 的極限](../02-advanced/limits-and-verification/llm-limitations.md) —— 這次實測的理論來源
 - [先驗證，再用它突破自己](./ai-verify-then-expand.md) —— 獨立驗算為什麼最強
-- [AI 能力全景圖](../02-advanced/ai-capability-landscape.md) —— 哪些任務該擔心幻覺
+- [AI 能力全景圖](../02-advanced/capabilities/ai-capability-landscape.md) —— 哪些任務該擔心幻覺
