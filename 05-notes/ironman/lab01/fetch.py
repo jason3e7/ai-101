@@ -287,26 +287,34 @@ def main():
         groups = [g for g in groups if g[0] in want]
     print(f"  {len(groups)} 組: {[g[0] for g in groups]}")
 
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     print("\n[2/5] 報名清單 → 系列")
     series, group_check = {}, []
-    for slug, name in groups:
-        got, declared = get_series_in_group(slug)
-        group_check.append({"group": slug, "declared": declared, "collected": len(got)})
-        for sid, s in got.items():
-            s.update(group_slug=slug, group_name=name)
-            series[sid] = s
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        futs = {ex.submit(get_series_in_group, slug): (slug, name) for slug, name in groups}
+        for f in as_completed(futs):
+            slug, name = futs[f]
+            got, declared = f.result()
+            group_check.append({"group": slug, "declared": declared, "collected": len(got)})
+            for sid, s in got.items():
+                s.update(group_slug=slug, group_name=name)
+                series[sid] = s
     print(f"  共 {len(series)} 個系列, 報名數合計 {sum(g['declared'] or 0 for g in group_check)}, "
           f"宣告篇數合計 {sum(s['expected'] or 0 for s in series.values())}")
 
     print("\n[3/5] 各系列 RSS (列文章清單)")
-    for i, (sid, s) in enumerate(sorted(series.items()), 1):
+    def _fetch_rss(item):
+        sid, s = item
         try:
             s["articles"] = get_rss(sid, refresh=args.refresh)
         except Exception as e:  # noqa: BLE001
             print(f"  ! RSS {sid} 失敗: {e}", file=sys.stderr)
             s["articles"] = []
-        if i % 50 == 0:
-            print(f"  {i}/{len(series)}")
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        for i, _ in enumerate(ex.map(_fetch_rss, sorted(series.items())), 1):
+            if i % 50 == 0:
+                print(f"  {i}/{len(series)}")
 
     print("\n[4/5] 對帳")
     # 規則 (2026-09 以 claude-ai 組 63 系列實測歸納):
@@ -318,6 +326,8 @@ def main():
     for g in group_check:
         if g["declared"] != g["collected"]:
             report["unresolved"].append({"group": g["group"], "problem": "系列數 != 報名數", **g})
+    # A. 分類 (無 I/O, 快). ok / suspected_deleted 直接分好; 其餘進 to_crawl.
+    to_crawl = []
     for sid, s in sorted(series.items()):
         got = {a["article_id"] for a in s["articles"]}
         n, day, st = len(got), s["expected"], s["status"]
@@ -332,17 +342,33 @@ def main():
             report["suspected_deleted"].append({"series_id": sid, "title": s["series_title"],
                                                 "status": st, "day": day})
             continue
-        print(f"  系列 {sid} 「{s['series_title'][:24]}」狀態 {st}, DAY {day}, RSS {n} → 讀目錄確認")
+        to_crawl.append((sid, s, got, n, day, st))
+
+    # B. 平行讀目錄 (每系列獨立, 可平行). WORKERS × SLEEP_SEC 決定實效速率.
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    print(f"  需讀目錄的系列: {len(to_crawl)} (平行 {WORKERS} workers)")
+
+    def _crawl_one(item):
+        sid, s, got, n, day, st = item
+        print(f"  系列 {sid} 「{s['series_title'][:24]}」狀態 {st}, DAY {day}, RSS {n} → 讀目錄確認", flush=True)
         total, known = crawl_series(sid, list(got), have=n)
-        for num, (aid, title) in sorted(known.items()):
-            if aid not in got:
-                s["articles"].append({"article_id": aid, "title": title, "pub_date": None,
-                                      "source": "article_html", "num": num})
-                got.add(aid)
-        s["catalog_total"] = total
-        entry = {"series_id": sid, "title": s["series_title"], "status": st, "day": day,
-                 "rss": n, "catalog_total": total, "collected": len(got)}
-        (report["fixed_by_crawl"] if total and len(got) >= total else report["unresolved"]).append(entry)
+        return item, total, known
+
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        futs = [ex.submit(_crawl_one, item) for item in to_crawl]
+        for i, f in enumerate(as_completed(futs), 1):
+            (sid, s, got, n, day, st), total, known = f.result()
+            for num, (aid, title) in sorted(known.items()):
+                if aid not in got:
+                    s["articles"].append({"article_id": aid, "title": title, "pub_date": None,
+                                          "source": "article_html", "num": num})
+                    got.add(aid)
+            s["catalog_total"] = total
+            entry = {"series_id": sid, "title": s["series_title"], "status": st, "day": day,
+                     "rss": n, "catalog_total": total, "collected": len(got)}
+            (report["fixed_by_crawl"] if total and len(got) >= total else report["unresolved"]).append(entry)
+            if i % 50 == 0:
+                print(f"  對帳 {i}/{len(to_crawl)}", flush=True)
 
     print("\n[5/5] 逐篇抓文章頁 (只存正文)")
     os.makedirs(PAGE_DIR, exist_ok=True)
