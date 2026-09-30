@@ -1,4 +1,4 @@
-title : [Day 16] 掃 15,057 篇, 量一次「AI 味」有多少
+title : [Day 16] 掃當屆所有文章, 量一次「AI 味」有多少
 
 
 ## 為什麼講這個 — Why This Matters
