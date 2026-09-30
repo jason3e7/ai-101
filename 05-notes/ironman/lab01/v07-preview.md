@@ -143,6 +143,113 @@ created: 2026-09-30
 
 ---
 
+## 補: 已知 AI 冗詞清單的來源 — Where Do These Lists Come From?
+
+### 中文清單的來源 — 坦白說沒有
+
+前面用的那份「已知 AI 冗詞清單」(64 條) 是**我根據訓練經驗手動整理的**, 沒有引用單一權威來源. **目前中文 LLM detection 領域沒有等同於英文 Kobak 研究那種系統性大規模統計的清單**.
+
+有的中文相關資源, 但都不列具體特徵詞:
+
+- **NLPCC 2025/2026 Task 6** — LLM-Generated Text Detection (澳門大學 NLP2CT lab, 22 隊參賽), 但重點是 classifier 效果排名, 沒公開特徵詞清單
+- **DetectRL-ZH** 資料集 (同組) — 有標註但沒詞頻分析
+- **WaveDetect** (arXiv:2506.23336) — 小波變換方法, 語言中性, 不列詞
+
+「中文 AI 冗詞的系統性清單」目前是空白, 你這個 lab 的中文清單本身就是**可以拿去發表的 novelty**. 可以參考英文的方法論反推中文.
+
+### 英文有權威清單: Kobak et al. Science Advances 2025
+
+英文有一份目前引用最多、方法最扎實的清單:
+
+> Kobak, D., et al. (2025). "Delving into LLM-assisted writing in biomedical publications through excess vocabulary." *Science Advances*.
+> [DOI](https://www.science.org/doi/10.1126/sciadv.adt3813) · [arXiv 預印本](https://arxiv.org/abs/2406.07016) · [GitHub 完整 CSV](https://github.com/berenslab/llm-excess-vocab)
+
+**方法論核心**: 分析 1500 萬篇 PubMed 摘要 (2010-2024). 比較「ChatGPT 出現前」的年份與「ChatGPT 出現後」的年份, 用類似流行病學「超額死亡」的統計法找出**特定詞的頻率異常上升** — 稱為 excess vocabulary. 共列出 **900 個 excess words**, 全部開源.
+
+這比人工列 cliche 客觀得多, 也是目前唯一有「頻率變化 vs 時間」這種 empirical evidence 的 AI 詞頻研究.
+
+**RLHF 起源分析**: [arXiv 2412.11385](https://arxiv.org/abs/2412.11385) 專門追 "delve" 的來源 — 指出 RLHF 標註者背景 (奈及利亞英語愛用 "delve") 直接影響了 ChatGPT 的詞頻分布. 這解釋了為什麼很多 AI cliche 有一致的「異國化學術腔」感覺.
+
+### 英文 AI 冗詞 30+ 條 (Kobak + 交叉驗證)
+
+依類別整理, r = Kobak 論文的頻率比率 (越高越明顯):
+
+| # | 詞 / 片語 | 類別 | 頻率變化 / 來源 |
+|:---|:---|:---|:---|
+| 1 | **delve / delves** | pretentious verb | Kobak r=25.2 (最高) |
+| 2 | **showcase / showcasing** | verb | Kobak r=9.2 |
+| 3 | **underscore / underscores** | emphasis verb | Kobak r=9.1 |
+| 4 | **intricate** | adjective | Kobak |
+| 5 | **meticulous / meticulously** | adverb/adj | Kobak |
+| 6 | **realm** | pretentious noun | Kobak |
+| 7 | **pivotal** | emphasis adj | Kobak |
+| 8 | **crucial** | intensity marker | Kobak |
+| 9 | **notably** | transition | Kobak |
+| 10 | **particularly** | transition | Kobak |
+| 11 | **additionally** | transition | Kobak |
+| 12 | **comprehensive** | corporate adj | Kobak |
+| 13 | **enhance / enhancing** | vague verb | Kobak |
+| 14 | **insights** | vague noun | Kobak |
+| 15 | **tapestry** | pretentious noun | Kobak (低量高比率, 已成迷因) |
+| 16 | **unwavering** | emphasis adj | Kobak |
+| 17 | **commendable** | emphasis adj | Kobak |
+| 18 | **robust** | corporate adj | Max Planck +50% (Kobak) |
+| 19 | **holistic** | corporate adj | 二級來源共識 |
+| 20 | **multifaceted** | corporate adj | 二級來源共識 |
+| 21 | **seamless / seamlessly** | corporate adj | 二級來源共識 |
+| 22 | **leverage** | pretentious verb | 二級來源共識 |
+| 23 | **utilize** (代替 use) | pretentious verb | 二級來源共識 |
+| 24 | **facilitate** | pretentious verb | 二級來源共識 |
+| 25 | **navigate the complexities of** | metaphor phrase | 二級來源共識 |
+| 26 | **foster** | vague verb | 二級來源共識 |
+| 27 | **harness** | vague verb | 二級來源共識 |
+| 28 | **elucidate** | pretentious verb | 二級來源共識 |
+| 29 | **embark on a journey** | metaphor phrase | 二級來源共識 |
+| 30 | **testament to** | phrase | 二級來源共識 |
+| 31 | **cornerstone** | metaphor noun | 二級來源共識 |
+| 32 | **paradigm shift** | pretentious noun | 二級來源共識 |
+| 33 | **furthermore / moreover** | transition | Kobak + 各家 |
+| 34 | **"It is important to note that…"** | hedging phrase | 各家共識 |
+| 35 | **"In conclusion, …"** | template phrase | 各家共識 |
+| 36 | **"In today's fast-paced world…"** | opening cliché | 二級來源共識 |
+
+「二級來源共識」= 多個部落格 (SlopDetector、ContentBeta、HumanizeThisAI 等) 都列, 但不在 Kobak 論文中. Kobak 是統計方法, 只能抓出**頻率變化明顯**的詞; 有些 tell 是**新造 (post-ChatGPT 才出現)** 或**片語** (Kobak 只做單詞), 統計不到. 兩類都有價值.
+
+### 對照: 中文有沒有對應詞?
+
+Kobak 英文清單裡有不少可以概念對應到中文:
+
+| 英文 (Kobak) | 中文對應 (我推的) |
+|:---|:---|
+| delve into | 深入探討 / 深入剖析 |
+| underscore | 強調 / 突顯 / 凸顯 |
+| comprehensive | 全面的 / 全方位的 |
+| meticulous | 一絲不苟 / 精雕細琢 |
+| realm | 領域 |
+| pivotal | 至關重要 / 舉足輕重 |
+| crucial | 關鍵的 |
+| notably | 值得注意的是 |
+| furthermore / moreover | 此外 / 更進一步 |
+| foster / cultivate | 培養 / 培育 / 孕育 |
+| leverage | 運用 / 借助 |
+| utilize | 使用 / 運用 |
+| testament to | ……的證明 / ……的體現 |
+| navigate the complexities | 駕馭 / 應對複雜性 |
+| embark on a journey | 踏上……的旅程 |
+| paradigm shift | 典範轉移 |
+
+這裡的中文對應是我推的, 沒有實證. 但**如果有夠大的中文 pre-ChatGPT vs post-ChatGPT corpus, 完全可以複製 Kobak 的方法論**, 產出中文版 excess vocabulary — 這是 lab04+ 的一個明確方向.
+
+### 2026 新趨勢
+
+1. **em-dash 政治化**: 2025-11 Sam Altman 宣布 GPT-5.1 起 ChatGPT 終於能遵守「不要用 em-dash」的 custom instruction. em-dash 曾是頭號 AI tell (見 V01), **對 ChatGPT 部分失效**, 但 **Claude / Gemini 仍大量使用**
+2. **"delve" 頻率 2025 年比 2024 更高** — 已進入公眾意識, 部分寫手主動迴避, 但主流輸出未收斂
+3. **markdown fingerprint 假說** ([arXiv 2603.27006 "The Last Fingerprint"](https://arxiv.org/abs/2603.27006)) — 主張 em-dash / 條列 / hr 等排版習慣源於**訓練資料含大量 markdown 洩漏到散文**. 這也是 V02/V03/V04 的理論基礎
+4. **三段式結構偵測 > 單一詞彙偵測** — 更難迴避, 是 2026 主流方向 (lab02 未來要做)
+5. **Claude 4.6 / 4.7 被評為「最難偵測」** — 仍有 77% 命中率, 意味著單靠詞彙清單命中率會下降, **要結合結構特徵**
+
+---
+
 ## 對 V07 的啟示
 
 ### 1. 靠關鍵字表法可行, 但清單要**排除白名單**
@@ -182,10 +289,16 @@ V07 可以做「已知 AI 冗詞頻率」偵測, 但清單需要處理兩層:
 - 佔比高 = 使用 corpus 平均語彙較多 = 可能是 AI (AI 傾向產出常見組合)
 - 缺點: 同組 (組別 / 系列) 內天然相似, 可能誤判
 
-**推薦: 路 A + 路 C 混合**
-- 路 A 抓明確 AI cliche (硬證據)
-- 路 C 抓語彙貧乏 (統計證據)
-- 兩者 or 邏輯或加權
+**路 D: Kobak excess vocabulary (真 novelty)**
+- 找到「pre-ChatGPT 中文 corpus」當 baseline (例如 2020-2021 年的鐵人賽, 或 CC-News 中文子集抓 2020 年以前)
+- 對 2026 corpus 用 Kobak 的統計方法找出「頻率異常上升」的中文詞
+- 產出**實證有據**的中文 excess vocabulary 清單, 不再靠人工猜
+- 這條路做出來就是中文 AI detection 的 novelty, 沒人做過, 可以發表
+- 缺點: 要找到夠大的 baseline corpus, 且要處理中文斷詞
+
+**推薦: 短期路 A + 路 C 混合, 長期路 D**
+- 短期 (V07 MVP): A 抓明確 AI cliche (參考上面英文對應清單 + 我手編的中文 64 條) + C 抓語彙貧乏
+- 長期 (lab04+): 走路 D, 用實證方法替換手編清單, 才是 defensible science
 
 ### 4. Baseline 建議
 
@@ -194,14 +307,12 @@ V07 可以做「已知 AI 冗詞頻率」偵測, 但清單需要處理兩層:
 - 若真的衝榜首, 表示 V07 過度敏感, 該調參
 - 這是免費的 negative test set
 
----
+### 5. 下一步 (等你決定)
 
-## 下一步 (等你決定)
-
-1. 選路 A / B / C / 混合
-2. 決定 AI cliche 清單 (可用本份的清單為起點, 增刪)
-3. 決定要不要處理 context (不只算命中次數, 還算「這個詞前後文有沒有對得起 AI 味」)
-4. 決定要不要吃 jieba 或其他分詞器 (v01-v06 都純 stdlib, V07 若要 TTR 可能得破例)
+1. 選路 A / B / C / D / 混合
+2. 決定 AI cliche 清單 (可用手編 64 條為起點, 或先花時間找中文 baseline corpus 走路 D)
+3. 要不要處理 context (不只算命中次數, 還算「這個詞前後文有沒有對得起 AI 味」)
+4. 要不要吃 jieba 或其他分詞器 (v01-v06 都純 stdlib, V07 若要 TTR / 詞頻對齊可能得破例)
 
 寫完等你 review 再動 V07 code.
 
@@ -213,4 +324,20 @@ V07 可以做「已知 AI 冗詞頻率」偵測, 但清單需要處理兩層:
 
 ## Sources
 
-沒有外部來源, 純自語料掃描 + 個人已知清單.
+**英文 AI 冗詞的權威來源**:
+
+- [Kobak et al. (2025) "Delving into LLM-assisted writing in biomedical publications through excess vocabulary" — Science Advances](https://www.science.org/doi/10.1126/sciadv.adt3813) — 1500 萬篇 PubMed 摘要統計出 900 個 excess words, 目前引用最多的實證研究
+- [arXiv 預印本 (免費全文)](https://arxiv.org/abs/2406.07016) — 同上論文
+- [berenslab/llm-excess-vocab (GitHub)](https://github.com/berenslab/llm-excess-vocab) — Kobak 論文的 900 詞完整 CSV 開源
+- [arXiv 2412.11385 "Why Does ChatGPT 'Delve' So Much"](https://arxiv.org/abs/2412.11385) — 追 "delve" 源於 RLHF 標註者背景 (奈及利亞英語)
+- [arXiv 2603.27006 "The Last Fingerprint"](https://arxiv.org/abs/2603.27006) — em-dash / 排版指紋來自 markdown 訓練資料洩漏
+
+**中文檢測相關 (無公開特徵詞清單)**:
+
+- [NLPCC-2026 Task 6 (GitHub)](https://github.com/NLP2CT/NLPCC-2026-Task6-Detection) — 中文 AI 生成文字檢測任務 (澳門大學 NLP2CT)
+- WaveDetect ([arXiv:2506.23336](https://arxiv.org/abs/2506.23336)) — 小波變換方法, 語言中性
+
+**本 lab 自製**:
+
+- 前面 64 條中文冗詞清單: 我 (jason3e7 的 Claude 助手) 根據訓練經驗手動整理, 沒引用單一權威來源, 是**推測性 baseline**
+- 本份掃描腳本: [`v07-scan-mycorpus.py`](./v07-scan-mycorpus.py)
