@@ -29,6 +29,13 @@
     * U+2600-27BF 範圍有少數非 emoji 字符 (如 ☎ ✉ 是舊符號), 一律都算.
     * Variation Selector (U+FE0F) 不算 emoji 本身, 不列入.
 
+排除清單 (EXCLUDE):
+    人類寫技術文章也常用的排版符號 (checklist, 星等, 圈叉), 不算 AI tell:
+    ○ (U+25CB white circle)   ← 這個本來就不在 emoji range, 保險起見列入
+    ✗ (U+2717 ballot X)
+    ★ (U+2605 black star)
+    ☆ (U+2606 white star)
+
 輸出:
     articles-v05.csv        每篇: emoji_count / chars / per_1k
     series-summary-v05.csv  每系列: 加總後的 per_1k
@@ -70,6 +77,7 @@ RE_EMOJI = re.compile(
     "\U0001F1E6-\U0001F1FF"
     "]"
 )
+EXCLUDE = frozenset("○✗★☆")
 RE_PRE = re.compile(r"(?is)<pre\b.*?</pre>")
 RE_SCRIPT_STYLE = re.compile(r"(?is)<(script|style)\b.*?</\1>")
 RE_TAG = re.compile(r"(?s)<[^>]+>")
@@ -129,7 +137,7 @@ def measure(body_html):
     """回傳 (emoji_count, chars)."""
     body = strip_pre(body_html)
     text = html_to_text(body)
-    emoji_count = len(RE_EMOJI.findall(text))
+    emoji_count = sum(1 for c in RE_EMOJI.findall(text) if c not in EXCLUDE)
     chars = len(re.sub(r"\s", "", text))
     return emoji_count, chars
 
