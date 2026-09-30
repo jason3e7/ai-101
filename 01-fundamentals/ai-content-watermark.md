@@ -2,6 +2,7 @@
 title: AI 101 - AI 生成內容怎麼標記與辨識
 tags: [ai, 浮水印, watermark, c2pa, 溯源, 辨識, 基礎]
 created: 2026-08-19
+updated: 2026-09-30
 ---
 
 # AI 生成內容怎麼標記與辨識 — How AI Content Is Watermarked and Detected
@@ -11,7 +12,7 @@ created: 2026-08-19
 > [!NOTE]
 > 從 2026 年起，Claude 會在產出的內容裡**埋看不見的標記**——文字是嵌入式浮水印，檔案是簽章 metadata。這篇講它怎麼運作、你怎麼查、以及**為什麼「查到」和「沒查到」都不能當定論**。
 
-> **TL;DR (EN):** Anthropic marks Claude output two ways: invisible watermarks woven into the text itself (survives copy-paste), and C2PA-signed metadata on files (.png/.jpg/.svg). Neither is proof: a hit only means Claude touched it (maybe just proofreading), and a miss doesn't mean human-written (old model, heavy editing, too short, stripped metadata). OpenAI built a watermark but never shipped it — 30% of users said they'd quit if it did.
+> **TL;DR (EN):** Anthropic marks Claude output two ways: invisible watermarks woven into the text itself (survives copy-paste), and C2PA-signed metadata on files (.png/.jpg/.svg). Neither is proof: a hit only means Claude touched it (maybe just proofreading), and a miss doesn't mean human-written (old model, heavy editing, too short, stripped metadata). OpenAI wouldn't ship text watermarks (30% would-quit rate) but reversed on images — as of May 2026 all ChatGPT images carry SynthID + C2PA. The EU AI Act Article 50 (in force 2026-08-02) is the reason every vendor moved at once.
 
 ---
 
@@ -26,7 +27,10 @@ Anthropic 用兩種互補技術：
 
 **適用範圍**：2026-08-02 之後推出的新模型從第一天就支援（舊版本正在補）；涵蓋 API、Claude 網頁版、Claude Code、Claude Cowork，以及 AWS / Google Cloud / Microsoft 等雲端夥伴；全球適用。
 
-**怎麼查**：Anthropic 表示正在支援使用者與第三方偵測這些標記，細節會在後續技術文件公布。
+**怎麼查（2026-09 現況）**：
+
+- **檔案 C2PA**：Anthropic 推出 [claude.com/check-content](https://claude.com/check-content) 免費檢查器，任何人可以拖曳 .png / .jpg / .svg 檢視 manifest。
+- **文字浮水印**：偵測 API 目前是 **private preview**，只開放給歐盟法規對應的合格對象（監管機關、執法、媒體、fact-checker、研究者、公民團體）與有合規義務的企業。一般使用者還沒得用。
 
 ---
 
@@ -54,17 +58,34 @@ Anthropic 用兩種互補技術：
 
 所以浮水印是**線索，不是判決**。拿它當「抓 AI 代寫」的鐵證會冤枉人。
 
+**「沒查到」的量化脆弱性**：2026 一份研究（[arXiv 2508.20228](https://arxiv.org/abs/2508.20228)）在 Google SynthID-Text 上實測，**單次 paraphrase 就能移除約 98% 的浮水印訊號**，back-translation（英→中→英）與 copy-paste 進其他 AI 潤稿也會嚴重弱化。換句話說，只要作者「用 AI 寫完再用另一個 AI 改寫一次」就能大幅逃過偵測——這不是 SynthID 特有的缺陷，統計指紋類的浮水印都受這種攻擊影響。Anthropic 的文字浮水印技術細節未公開，但一般假設面對 paraphrase 攻擊也不會樂觀太多。
+
 ### 人工判斷的老方法（也只是線索）
 
 在浮水印之外，大家常用的特徵：**表情符號用得兇、奇怪的破折號、公式化語氣**（像「我想用最不繞彎、最直接、最能夠接住你的方式」這種）。這些同樣不可靠——寫作風格會互相模仿，人也會這樣寫。
 
 ---
 
-## 為什麼 OpenAI 沒做 — Why OpenAI Didn't Ship
+## OpenAI 的立場轉變 — OpenAI's Reversal
 
-OpenAI 內部其實準備過浮水印方案，但**調查顯示 30% 用戶表示「加浮水印就不用 ChatGPT 了」**，所以至今沒上線。
+原本 OpenAI 準備過**文字**浮水印方案，但**調查顯示 30% 用戶表示「加浮水印就不用 ChatGPT 了」**，所以文字部分至今沒上線。
 
-這點出整件事的張力：**溯源透明**（社會想知道內容從哪來）vs **使用者接受度**（沒人想被標記）。Anthropic 選了前者，OpenAI 選了後者。
+但**影像部分 2026-05 轉向**：OpenAI 加入 C2PA Steering Committee，ChatGPT 與 API 產生的所有影像都嵌入 Google **SynthID 隱形浮水印 + C2PA metadata**，並預告要公開影像驗證工具（[TNW 報導](https://thenextweb.com/news/openai-c2pa-synthid-ai-image-detection-watermark)）。這代表原本「文字 vs 影像」不做的立場，被拆成：
+
+- **文字**：still no watermark（30% 用戶顧慮仍在）
+- **影像**：全面加標（C2PA + SynthID）
+
+這反映的張力：**溯源透明** vs **使用者接受度**，在影像領域監管壓力較大（deepfake 政治風險高），使用者反彈相對小；文字則相反。
+
+## 為什麼廠商 2026 忽然都動起來 — Why Everyone Moved in 2026
+
+**驅動來源: EU AI Act Article 50 於 2026-08-02 生效**（[歐盟官方公告](https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august)）。這條要求:
+
+1. AI 生成或大幅改動的內容要有**機器可讀的標記**
+2. Deepfake 要**明顯揭露**
+3. 與 AI 系統互動要**告知使用者**（chatbot 揭露）
+
+Anthropic 從 2026-08-02 開始標記、OpenAI 影像轉向、Google SynthID 快速擴張、TikTok 升格 C2PA Steering Committee（宣稱已標超過 30 億支影片）——都是這條在推。中國 2025-09-01 也上路類似的《AI 生成合成內容標識辦法》，2026 初開始執法。所以未來看到 AI 廠商加浮水印，先問「是不是被監管逼的」，答案通常是「對」。
 
 ---
 
@@ -76,4 +97,9 @@ OpenAI 內部其實準備過浮水印方案，但**調查顯示 30% 用戶表示
 ## Sources
 
 - [Claude 如何標記 AI 生成的內容 — Anthropic 官方說明](https://support.claude.com/zh-TW/articles/16266773-claude-%E5%A6%82%E4%BD%95%E6%A8%99%E8%A8%98-ai-%E7%94%9F%E6%88%90%E7%9A%84%E5%85%A7%E5%AE%B9)
+- [claude.com/check-content — Anthropic 的檔案 C2PA 檢查器](https://claude.com/check-content)
+- [Commission starts enforcing AI Act rules — 歐盟官方公告 (2026-08-02)](https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august)
+- [OpenAI joins C2PA, adds SynthID to ChatGPT images — The Next Web (2026-05)](https://thenextweb.com/news/openai-c2pa-synthid-ai-image-detection-watermark)
+- [SynthID 官方文件 — Google DeepMind](https://ai.google.dev/responsible/docs/safeguards/synthid)
+- [Watermarking LLMs: paraphrase / back-translation attacks (arXiv 2508.20228, 2026)](https://arxiv.org/abs/2508.20228)
 - [你想知道網路上的文章是不是 AI 產生的嗎？ — Wisely Chen（LinkedIn）](https://www.linkedin.com/posts/wisely-chen_%E4%BD%A0%E6%83%B3%E7%9F%A5%E9%81%93%E7%B6%B2%E8%B7%AF%E4%B8%8A%E7%9A%84%E6%96%87%E7%AB%A0%E6%98%AF%E4%B8%8D%E6%98%AF-ai-%E7%94%A2%E7%94%9F%E7%9A%84%E5%97%8E-%E9%99%A4%E4%BA%86%E5%8E%BB%E6%89%BE%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%A5%87%E6%80%AA%E7%9A%84%E7%A0%B4%E6%8A%98%E8%99%9F%E4%BB%A5%E5%A4%96-share-7493094207901859841-PWpZ/)
