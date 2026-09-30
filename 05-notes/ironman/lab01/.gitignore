@@ -1,7 +1,7 @@
 # 原始 HTML 解壓後放 raw/, 只在本機用, 不進 git
-# raw.tgz / raw.tar.xz 超過 GitHub 100M 上限, 也不進 git (備份放 ~/raw.tgz)
+# raw.tgz (只含 pages + json, ~55MB) 進 git, 保留可重現性
+# raw.tar.xz 是本機備份用的完整打包 (含 rss/articles), 不進 git
 raw/
-raw.tgz
 raw.tar.xz
 __pycache__/
 *.log

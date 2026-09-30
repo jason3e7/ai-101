@@ -76,13 +76,13 @@ lab01/
 ├── README.md          規劃 doc (這一份)
 ├── fetch.py           抓文 + 對帳 (輸出到 raw/)
 ├── analyze.py         分析 (讀 raw/ 或 raw.tgz, 產 CSV + results.md)
-├── raw.tgz            raw/ 打包 (進 git, 保留可重現性)
+├── raw.tgz            raw/ 分析必要部分打包 (進 git; 只含 index.json + completeness.json + pages/)
 ├── raw/               解壓後的原始資料 (gitignore, 只在本機用)
-│   ├── index.json         系列與文章清單
-│   ├── completeness.json  對帳結果
-│   ├── rss/{系列}.xml     各系列 RSS (列清單用)
-│   ├── pages/{文章}.html  各篇正文區塊 (分析用)
-│   └── articles/{文章}.html  對帳補抓時存的完整文章頁 (少量)
+│   ├── index.json         系列與文章清單                              ← 進 raw.tgz
+│   ├── completeness.json  對帳結果                                    ← 進 raw.tgz
+│   ├── pages/{文章}.html  各篇正文區塊 (分析用)                        ← 進 raw.tgz
+│   ├── rss/{系列}.xml     各系列 RSS (fetch 中間檔, 分析不用)           ← 不進 raw.tgz
+│   └── articles/{文章}.html  對帳補抓時存的完整文章頁 (fetch 中間檔)     ← 不進 raw.tgz
 ├── articles.csv       每篇: 命中次數、總字數、原始比值、每千字
 ├── series-summary.csv 每系列: 加總後比值、各篇中位數
 └── results.md         原始比值排行 (文章、系列)
@@ -93,6 +93,7 @@ lab01/
 - 一屆鐵人賽上萬篇, 散開放進 git 會產生上萬個小 blob, git history 難看
 - 打包成一個 `raw.tgz` 對 git 友善 (一個 blob), 未來要 diff / restore 也一樣清楚
 - 只存每篇的正文區塊, 不存整頁 HTML (整頁約 57KB, 正文區塊約 8KB), 壓縮包小很多
+- 只打包分析用得到的 `pages/` + `index.json` + `completeness.json` (2026-09 實測 ~55MB); 排除 `rss/` (154MB) 跟 `articles/` (163MB) 兩個 fetch 中間檔, **GitHub 單檔上限 100MB**, 全打包會超過 (實測 139MB). rss 跟 articles 在本機保留, 重跑 fetch 時會自動重建
 - 分析結果 (CSV、results.md) 少且高價值, 散開進 git 沒問題
 
 ## 執行
@@ -102,14 +103,15 @@ lab01/
 ```bash
 cd 05-notes/ironman/lab01
 
-# 1. 抓文 → raw/ (全部組別約 929 系列、1.5 萬篇, 要 2 小時上下)
+# 1. 抓文 → raw/ (全部組別約 929 系列、1.5 萬篇, WORKERS=7 約 30 分鐘)
 python3 -u fetch.py 2>&1 | tee fetch.log
 
 # 2. 確認沒漏抓, 再打包
 python3 -c "import json; print(json.load(open('raw/completeness.json'))['summary'])"
-#    要看到 unresolved: 0、pages_missing: 0 才打包
-tar czf raw.tgz raw/
-ls -lh raw.tgz            # GitHub 單檔上限 100MB
+#    要看到 pages_missing: 0 才打包
+#    unresolved 對照「執行紀錄」段, 內容全部是已知資料源限制就 OK
+tar czf raw.tgz --exclude='raw/articles' --exclude='raw/rss' raw/
+ls -lh raw.tgz            # GitHub 單檔上限 100MB, 排除 fetch 中間檔後 ~55MB
 
 # 3. 分析 → articles.csv、series-summary.csv、results.md
 python3 analyze.py        # 排行榜預設 20 名; 要 30 名: --top 30
@@ -130,6 +132,25 @@ python3 analyze.py        # 排行榜預設 20 名; 要 30 名: --top 30
 - 中斷沒關係: 重跑會跳過 `raw/` 裡已有的檔案, 只補沒抓到的。不過步驟 1–4 (點名、對帳) 每次都會重做, 約 10 分鐘
 
 **速度與禮貌**: `fetch.py` 開頭的 `SLEEP_SEC = 0.1` (每個請求後等 0.1 秒)、`WORKERS = 7` (同時 7 條連線)。實測這個組合能穩定跑完不被 Cloudflare 擋; 想更保守可改回 0.5 秒 / 2 workers。
+
+## 執行紀錄
+
+### 2026-09-30 (fetched_at 2026-09-30 02:38:08)
+
+**參數**: `SLEEP_SEC = 0.1`, `WORKERS = 7`, step 2/3/4 全平行
+
+**結果**:
+- 系列: 929 · 文章: 15057
+- ok: 687 · fixed_by_crawl: 209 · suspected_deleted: 31
+- **pages_missing: 0** (已列入的文章正文全部抓到)
+- **unresolved: 3** — 資料源限制, 已知且接受不修:
+  - `contest` 組: 報名清單頁結構跟其他組不同, declared/collected 都拿不到, 整組未列入
+  - 系列 9110「將考國際證照的應用程式變成開源」: catalog 71 vs RSS 40, 缺 31 (作者過 30 天續發, iThome RSS 只給前 40 篇)
+  - 系列 9216「資訊安全」: catalog 43 vs RSS 40, 缺 3 (同上)
+
+**多執行緒實測**: SLEEP_SEC 從原本的 1.0 降到 0.1、WORKERS 從 2 升到 7, 步驟 2/3/4 也全改成 `ThreadPoolExecutor` 平行, 全程 **0 失敗、沒被 Cloudflare 擋**. 15057 篇正文從原估的 ~1.5 小時縮到約 30 分鐘. 這組參數之後可以繼續用; 若 iThome 開始鎖 rate, 再調回 0.5 秒 / 2 workers.
+
+**打包**: `raw.tgz` 只含 `pages/` + `index.json` + `completeness.json`, 55MB (含全部會是 139MB, 超過 GitHub 單檔上限 100MB). 被排除的 `raw/rss/` (154MB) 跟 `raw/articles/` (163MB) 只是 fetch 過程中間檔, 分析不用, 重跑 fetch 會自動重建.
 
 ## 邊界與限制
 
