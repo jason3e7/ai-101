@@ -10,7 +10,7 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 11](../day11-15/day11-verify-ai-output.md) 到 [Day 15](../day11-15/day15-expand-yourself.md) 講的都是我自己在跟 AI 產出搏鬥時累積出來的心法. 這篇把體感換成數字: 掃當屆 (2026) 鐵人賽已發布的公開文章, 用最粗最粗的機械指標 (雙破折號 `——` 密度) 量一次 AI 味, 給後續更細的 lab 一條基準線.
+> 過去 15 天寫下來, 都是我自己在跟 AI 產出搏鬥時累積出來的心法 ([Day 11](../day11-15/day11-verify-ai-output.md) 到 [Day 15](../day11-15/day15-expand-yourself.md) 那段最直接寫成方法). 這篇把體感換成數字: 掃當屆 (2026) 鐵人賽已發布的公開文章, 用最粗最粗的機械指標 (雙破折號 `——` 密度) 量一次 AI 味, 給後續更細的 lab 一條基準線.
 
 > **TL;DR (EN):** Scanned all 15,057 public articles across 814 series in the 2026 iThome Ironman contest for one mechanical AI-fingerprint signal: density of `——` (double em dash) per thousand characters, computed over the full article. Chinese writers almost never use it; Claude/Gemini love it. **Results:** 70% of articles have zero hits, overall density 0.86 per 1k, p95 = 4.60, max = 17.51. **Biggest surprise:** the ChatGPT & Codex track scores 0.11 per 1k, the lowest of all groups, likely because GPT-5.1 (Nov 2025) started honoring "no em-dash" custom instructions, killing this signal for GPT-based writers. Claude AI track leads at 1.78. Prediction that "median should land in 0.5-1.5" was wrong: median is 0 because 70% never use it. Long-tailed distributions need p90/p95, not median. Method + CSVs + full ranking in `lab01/`. Co-occurrence signal, not a verdict.
 
@@ -81,12 +81,12 @@ status: draft
 
 ### 2. 抓內文: 一律走文章頁
 
-RSS 雖然附全文, 但**濾掉部分標點**: 同一篇 RSS 裡 `—` 出現 0 次, 文章頁 20 次. 拿 RSS 算會讓每篇密度都變 0. 所以 **RSS 只用來列文章清單, 內文一律以文章頁為準**.
+RSS 雖然附全文, 但**濾掉部分標點**: 同一篇文章對照, RSS 版本 `—` 常常是 0, 文章頁卻可能有數十. 拿 RSS 算會讓每篇密度都變 0. 所以 **RSS 只用來列文章清單, 內文一律以文章頁為準**.
 
 ### 3. 算密度: 命中 / 字數
 
 ```
-密度 = 命中 `——` 次數 / 正文總字數
+密度 = 命中 `——` 次數 / 整篇文章總字數
 ```
 
 三個定義先講死:
@@ -109,6 +109,8 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇 RSS 裡 `—` 出現 0
 > 參考: The Last Fingerprint (2026) 用的是「每千**英文字**」. 中文沒有空格斷詞, 這裡改用「每千**字元**」, 兩者**不能直接比**, 只能在本 lab 內部互比.
 
 **禮貌參數**: fetch 開頭寫死 `SLEEP_SEC = 0.1`、`WORKERS = 7` (每請求 0.1 秒, 同時 7 條連線). 全部組別約 929 系列、1.5 萬篇, 跑完約 30 分鐘, 全程 0 失敗沒被 Cloudflare 擋. 初版設 1 秒 / 2 workers 保守, 實測可以更快. 抓的是公開頁面, 不動任何登入牆或付費內容.
+
+**這篇只講 V01 (單一 `——` signal)**. 疊上去的 V02 粗體加權、V03 blockquote、V04 `<hr>`、V05 emoji 種類數、V06 綜合分數已經跑完在 [lab01/](../../lab01/README.md), 綜合分數見 [composite-score-v06.md](../../lab01/composite-score-v06.md). 中文冗詞偵測 V07 還在寫, 見 [v07-preview.md](../../lab01/v07-preview.md). 為的就是**單一 signal 失效時, 其他 signal 補得起來**, 結果段會看到這個設計為什麼必要.
 
 ---
 
@@ -160,7 +162,7 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇 RSS 裡 `—` 出現 0
 
 **ChatGPT & Codex 組全體最低, 0.11 每千字**. 用 ChatGPT 或 Codex 寫的作者, 密度不到全體 0.86 的八分之一. Claude AI 組 1.78 是它的十六倍.
 
-怎麼解釋? OpenAI 2025-11 讓 GPT-5.1 開始能遵守 custom instruction 的「不要用 em-dash」, 用該工具寫的作者天然沒訊號. Claude 跟 Gemini 目前壓不掉, Claude AI 組還是最高. 這篇 lab 講「AI 味最強指紋」, 但這個指紋對 GPT 生態**已經在失效**. 是這次掃描最有價值的意外收穫.
+怎麼解釋? OpenAI 2025-11 讓 GPT-5.1 開始能遵守 custom instruction 的「不要用 em-dash」, 用該工具寫的作者天然沒訊號. Claude 跟 Gemini 目前壓不掉, Claude AI 組還是最高. 當初挑 `——` 是圖它**最粗最好算**, 現在看下來, 這個指紋對 GPT 生態**已經在失效**. 是這次掃描最有價值的意外收穫, 也是為什麼 lab01 已經在疊 V02-V06 signal.
 
 ### 前 20 高密度文章: 兩個系列吃掉一半
 
