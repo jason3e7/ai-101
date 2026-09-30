@@ -184,21 +184,32 @@ def main():
                 "series_id": sid, "series_title": s.get("series_title", ""),
                 "author_id": s.get("author_id", ""), "group_slug": s.get("group_slug", ""),
                 "group_name": s.get("group_name", ""), "source": a.get("source", "rss"),
-                **m, "base": base, "density": density,
+                **m,
+                "em_B": m["em_count"], "em_N": 4,
+                "emoji_B": m["emoji_count"], "emoji_N": m["emoji_types"],
+                "strict_B": m["strict_bold"], "strict_N": 2,
+                "all_B": m["all_bold"], "all_N": 1,
+                "bq_B": m["bq_count"], "bq_N": 1,
+                "hr_B": m["hr_count"], "hr_N": 1,
+                "base": base, "density": density,
             })
 
     if missing:
         print(f"!! {len(missing)} 篇找不到正文: {missing[:10]}")
 
-    # articles-v06.csv
+    # articles-v06.csv — 每個 signal 明確標 B (base = 命中次數) 跟 N (weight)
     fields = ["article_id", "url", "title", "series_id", "series_title", "author_id",
               "group_slug", "group_name", "source",
               "chars",
-              "em_count", "emoji_count", "emoji_types",
-              "strict_bold", "all_bold", "bq_count", "hr_count",
+              "em_B", "em_N",           # V01 —— × 4
+              "emoji_B", "emoji_N",     # V05 emoji: N = distinct types
+              "strict_B", "strict_N",   # V02 嚴格 pattern × 2
+              "all_B", "all_N",         # V02 一般粗體 × 1
+              "bq_B", "bq_N",           # V03 blockquote × 1
+              "hr_B", "hr_N",           # V04 hr × 1
               "base", "density"]
     with open(os.path.join(HERE, "articles-v06.csv"), "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
+        w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         w.writeheader()
         for r in sorted(rows, key=lambda r: -r["density"]):
             w.writerow({**r, "density": f"{r['density']:.4f}"})
