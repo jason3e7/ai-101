@@ -5,3 +5,4 @@ raw/
 raw.tar.xz
 __pycache__/
 *.log
+!fetch.log

@@ -1,0 +1,380 @@
+[1/5] 組別
+  19 組: ['build-on-google-ai', 'claude-ai', 'javascript', 'kubernetes', 'ai-engineering', 'ai-security', 'ai-automation', 'chatgpt-and-codex', 'it-operation', 'modern-web', 'security', 'software-development', 'vibe-coding', 'self', 'it-self-taught', 'it-tech-entrepreneurship', 'it-career-experience', 'side-project-30', 'contest']
+
+[2/5] 報名清單 → 系列
+  kubernetes: 20 系列 (報名數 20)
+  javascript: 24 系列 (報名數 24)
+  ai-security: 33 系列 (報名數 33)
+  ai-automation: 52 系列 (報名數 52)
+  claude-ai: 63 系列 (報名數 63)
+  build-on-google-ai: 62 系列 (報名數 62)
+  it-operation: 32 系列 (報名數 32)
+  chatgpt-and-codex: 42 系列 (報名數 42)
+  modern-web: 43 系列 (報名數 43)
+  it-tech-entrepreneurship: 3 系列 (報名數 3)
+  security: 58 系列 (報名數 58)
+  it-self-taught: 32 系列 (報名數 32)
+  ai-engineering: 123 系列 (報名數 123)
+  it-career-experience: 18 系列 (報名數 18)
+  contest: 0 系列 (報名數 None)
+  vibe-coding: 66 系列 (報名數 66)
+  side-project-30: 21 系列 (報名數 21)
+  self: 110 系列 (報名數 110)
+  software-development: 127 系列 (報名數 127)
+  共 929 個系列, 報名數合計 929, 宣告篇數合計 14438
+
+[3/5] 各系列 RSS (列文章清單)
+  50/929
+  100/929
+  150/929
+  200/929
+  250/929
+  300/929
+  350/929
+  400/929
+  450/929
+  500/929
+  550/929
+  600/929
+  650/929
+  700/929
+  750/929
+  800/929
+  850/929
+  900/929
+
+[4/5] 對帳
+  需讀目錄的系列: 211 (平行 7 workers)
+  系列 9028 「UX 的那些事」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9029 「在 AI Compiler 工程師的路上」狀態 success, DAY 30, RSS 32 → 讀目錄確認
+  系列 9034 「SQL Server  基礎&調教」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9036 「你的自動化測試，大部分是在演戲｜AI codin」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9037 「企業端點完美防禦」狀態 success, DAY 30, RSS 36 → 讀目錄確認
+  系列 9039 「和AI學習gcp - 建立對話代理」狀態 fail, DAY 14, RSS 30 → 讀目錄確認
+  系列 9040 「toui：一條短網址能做到哪些事——從轉址到 A」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9042 「觀察 AI，也觀察自己：30 天重新學會如何學習」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9043 「韌體工程師的不只 0x10 個問題」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9045 「從現場踩坑到 AI 工具 — IT Diagno」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9046 「防範軟體供應鏈攻擊：從零打造具備硬性阻擋能力的雲」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9047 「讓 AI Agent 真的做事：用 Embabe」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9048 「AI 時代下最值得投資的 UI 自動化:30 天」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9049 「生活中的 AI 應用：我在家用 NAS 養了一隻」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9051 「量化交易入門：從 K 線到可組合的交易策略引擎」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9052 「諸神也搖頭的 Legacy Code： 30天 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9054 「AI 時代下，如何建立真正可持續的軟體交付能力」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9055 「遠古聖遺物改造工程：遺留系統全面重構實務指南」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9056 「買錯保險的血淚教訓：我用 Python + AI」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9058 「模型真的會推理嗎？30 天從 Base Mode」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9059 「《九重燼》Vue3 + PixiJS + Ink」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9060 「《讓 AI 去扛人類守不住的戰場，而不是取代人:」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9061 「Android  鐵人賽: 天命最高 - 陪伴大」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9062 「一塊板子，兩個腦袋：Arduino UNO Q 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9063 「30 天手把手學會 Chart.js v4：從圖」狀態 fail, DAY 16, RSS 30 → 讀目錄確認
+  系列 9064 「JS 核心重構：勇者轉職傳說」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9065 「Kotlin Lambda 從零開始」狀態 success, DAY 30, RSS 36 → 讀目錄確認
+  系列 9066 「Backend 工程師的 Azure GenAI」狀態 success, DAY 30, RSS 35 → 讀目錄確認
+  系列 9068 「程式設計沒有告訴你的事：30 天破解每一個 Wh」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9069 「醫療資料通過標準驗證，就真的能交換嗎？——30 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9070 「資安*保險─數位避險」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9071 「AI 時代的輕量化開發：ChatGPT 打造 L」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9072 「從模糊想法到可操作原型：我的 30 天 AI 協」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9073 「《30天打造喵語日誌：Gemini API × 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9074 「30 天開發一款真正能每天使用的散步 App」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9075 「風裡雨裡我在AI世界等你」狀態 success, DAY 30, RSS 32 → 讀目錄確認
+  系列 9076 「SAMRT on FHIR 開發之路」狀態 fail, DAY 2, RSS 1 → 讀目錄確認
+  系列 9077 「學過一點 React，卻被撈進 C#：新手用 A」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9079 「打造高風險場域的智慧決策支援系統（AI for 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9081 「第一次用 Antigravity CLI 做出 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9082 「模型動不了，那你能動什麼？AI Engineer」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9084 「30 天建立架構思維 - From Blocks」狀態 success, DAY 30, RSS 30 → 讀目錄確認  系列 9085 「一天一個 PR，讓我告訴你嵌入式開發的殘酷：如何」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9086 「你該防的不是駭客，是你自己的 AI：在本機驗證你」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+
+  系列 9088 「《30 天用 GCP Security 打造企業」狀態 fail, DAY 22, RSS 30 → 讀目錄確認
+  系列 9089 「AI Demo上 Production 之前：A」狀態 success, DAY 30, RSS 32 → 讀目錄確認
+  系列 9091 「做自己職涯的PM」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9092 「轉生到全端工程師沒多久就要負責公司的大平台？？」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9093 「Microsoft Foundry 的 AI A」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9094 「從看不懂到做出來，用 PawPal 走過前端新手」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9100 「SMART on FHIR 開發之路：30 天做」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9106 「從法條到程式碼：台灣 AI 治理與資安合規實戰指」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9107 「打通天地結界：AAD 修練之旅」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9108 「挑戰 30 天把 ChatGPT 與 Codex」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9109 「30 天打造公開資料版急診檢傷系統：Side P」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9110 「將考國際證照的應用程式變成開源」狀態 success, DAY 30, RSS 40 → 讀目錄確認
+  系列 9111 「一天一招，快速上手 mpv-lazy」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  對帳 50/211
+  系列 9116 「43歲非工程師爸爸與Codex共築墨寒：30天打」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9117 「我從菜雞變粉鳥：30 天學生味退散筆記」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9120 「迎接 AI 開發爆發期：告別手動部署，帶領企業團」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9121 「《30 天從零拆解 AI Agent：從 Too」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9124 「從零到一：使用 K8S + GitOps 打造異」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9126 「用 AI + draw.io MCP 建立可重複」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9127 「AI工具革命 - 使用AI工作流打造簡報生成平台」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9128 「不只會寫 Code：用 ChatGPT × Co」狀態 fail, DAY 12, RSS 30 → 讀目錄確認
+  系列 9129 「從零到 CKA：30 天掌握 Kubernete」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9131 「知識圖譜 : 技能樹式學習歷程」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9132 「打造零成本企業級 AI Agent：以 Gemi」狀態 fail, DAY 15, RSS 30 → 讀目錄確認
+  系列 9135 「Podman Quadlet-容器服務化(在單體」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9138 「Better than 情勒鳥!!Claude 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9139 「從一句話到一個網站：用 Vibe Coding 」狀態 success, DAY 30, RSS 40 → 讀目錄確認
+  系列 9143 「與Claude一起從零打造產值評估工具」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9144 「Java Spring專案的兩大元件 - Sec」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9145 「TL 的荒謬觀察日誌：30 個沒寫在 JD 裡的」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9150 「單鐵的人生如履薄冰！AI 教練 APP 30天開」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9152 「Vibe Coding的30天，自然語言與AI共」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9153 「我做了一個幫你寫鐵人賽的 Agent Skill」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9156 「Vue 前端工程師視角看 Flutter Web」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9158 「我從 intern 變菜鳥：30 天學會別再手擀」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9159 「讓 LLM 不只會回答，還會查證：打造 Agen」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9167 「一個活了六年的 Vue 2 後台，升級到 Vue」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9168 「《矽墟》：我把一部科幻小說當成軟體專案來管」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9169 「我以為我保留了五道閘門」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9170 「一條線救一隻狗：我用 PixiJS、Matter」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9171 「It Works on My Machine：3」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9172 「從0開始的資料結構旅程!」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9173 「LLM 應用資安：從 Prompt Inject」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9174 「從脆弱腳本到可信任測試平台：自動化測試架構30天」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9177 「一個人的 AI 團隊：Claude Code 當」狀態 fail, DAY 14, RSS 30 → 讀目錄確認
+  系列 9178 「你以為自己很敏捷，其實連瀑布都沒做好——30 天」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9179 「Phoenix 2026：當《鳳凰專案》遇上 A」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9180 「Claude Code陪跑：一人開發者的訂閱制S」狀態 fail, DAY 22, RSS 30 → 讀目錄確認
+  系列 9182 「我推的Laravel Ｓ２！」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9183 「Claude 用得對，也用得省：工程師帶你搞懂選」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9184 「槍林彈雨下的資安防守：從品質觀念切入，帶開發者從」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9185 「就決定是你了！打造寶可夢持有追蹤系統 (Reac」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9187 「AI 的駕馭之道：一個 AI Code Revi」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9191 「Laravel 讀碼源」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9192 「那個 Agent 最後沒人用：30 個企業 AI」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9193 「GPU很忙？他真的有在做事嗎？」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9195 「因為沒錢買新Mac，所以我寫了一個 Google」狀態 challenge, DAY 29, RSS 31 → 讀目錄確認
+  系列 9196 「3分鐘 AI Agent導論」狀態 success, DAY 30, RSS 39 → 讀目錄確認
+  系列 9200 「1+1+1>3 ~ Spark 與 DataFu」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9201 「不是模型太慢，是你沒算過這筆帳：地端 LLM 工」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9202 「這隻 LINE Bot 不是我寫的：30 天讓 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9205 「30 天打造 AI 後端：從 LLM、RAG 到」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9207 「Data Machi 30 天學習系列：從 Ch」狀態 success, DAY 30, RSS 31 → 讀目錄確認  對帳 100/211
+  系列 9210 「從零開始的雲端實戰：30 天 Kubernete」狀態 fail, DAY 23, RSS 30 → 讀目錄確認
+
+  系列 9211 「讓 AI 接手工程師的 SOP：30 天 AI 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9212 「前端三分鐘 X 要轉職養豬還是做被取代的工程師？」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9213 「關於我開始踏入資安這檔事」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9214 「開源大佬的脆弱心靈日記」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9215 「用 Astro 打造 Content-first」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9216 「資訊安全」狀態 success, DAY 30, RSS 40 → 讀目錄確認
+  系列 9217 「128GB 統一記憶體的三十天：DGX Spar」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9225 「新手上路不當砲灰！30 天一章一章啃完 Comp」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9226 「Learn HTTP With JS（2）」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9230 「從零訓練到瀏覽器部署：30 天打造 Atari 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9234 「教練看不到的那六天｜從 FIT 檔到 3D 軌跡」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9235 「現代化的 AI 系統設計」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9236 「當一個有紀律的人，開始用 AI 管理自己的健康 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9237 「三個介面，一套工作流？30 天 Claude 跨」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9238 「程式碼 AI 寫，我負責看懂：30 天拆解 Re」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9239 「30天準備 IPAS 資安工程師之課程筆記與備考」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9241 「一行 torch.compile 背後發生了什麼」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9244 「前端不寫 Python，照樣 ship 一把網頁」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9245 「30 天走進 EU CRA：從資安治理一路走到 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9246 「我的一人公司 ｜ AI助理幫我省了多少能量」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9247 「收到自己的紅色炸彈！婚期就是 Deadline：」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9249 「轉型之後：IT 領導者的第二座山」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9251 「ERP 架構師筆記：定義驅動的框架設計」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9252 「教會最愛的人用 Google AI：一位自耕農老」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9256 「從零打造邊緣運算閘道器：Raspberry Pi」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9257 「30天打造一套企業PLM」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9259 「手刻 Redis：用 Go 從零打造高效能高併發」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9266 「CSS 到底在幹嘛？30 天拯救你被 AI 爆改」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9270 「從像素到 Computer Vision：30 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9274 「從 DBA 自用工具到中心四個科的自動化基礎：A」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9275 「我的第一個手作りAndroid App！快樂學習」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9277 「快樂演算法」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9279 「從 Vibe Coding 到 Producti」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9281 「前端互動視覺技術實作 LAB」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9283 「使用 Vibe Coding 開發一套 Tutt」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9285 「AI 黑魔法：30 天拆解 AI 系統攻擊面（重」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9286 「跌跌撞撞的轉職路：面試馬拉松與 AI 時代的工作」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9287 「Kotlin 手刻 Ktor 從零開始」狀態 success, DAY 30, RSS 32 → 讀目錄確認
+  系列 9289 「情報進來，內容發出去：30 天拆一條每天真的在跑」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9292 「台股日頻量化交易：開發一條從資料、特徵、模型到每」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9294 「GPU 效能優化實戰：30 天從 Kernel 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9296 「沒有壞設計，只有剛好戳中你的心機：30天拆解UI」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9302 「Agent的系統防禦升級」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9303 「合法呼叫湊出的攻擊鏈：AI Agent 防禦的 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9304 「CaMeL 動態重擬定：讓 Agent 邊讀邊決」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9306 「文藝復興：這段程式碼，好像有點味道」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9307 「從 Stateless LLM 到 Agenti」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9309 「當企業導入 Agent：30 天拆解治理邊界與平」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9310 「不只是快 —— Bun 30 天：從底層架構、全」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  對帳 150/211
+  系列 9311 「ChatGPT + Codex 打造高效能 AI」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9312 「打造 AI Agent 驅動的第二大腦：用 Go」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9313 「AIOps with OpenTelemetry」狀態 success, DAY 30, RSS 34 → 讀目錄確認
+  系列 9314 「夢幻甜品師闖工程世界：Vibe Coding v」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9315 「NodeRED × Google agy CLI」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9320 「一個人的機房：用 Claude 建置 AI 機房」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9322 「跟 Claude Code CLI 變成好朋友」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9326 「使用gemini  準備 az-900」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9328 「基於人體姿態估測與個人化代償分析之居家復健動作輔」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9330 「從單一agent 到多agent 集群的開發流水」狀態 fail, DAY 16, RSS 37 → 讀目錄確認
+  系列 9334 「利用Custom GPT+遊戲感來寫PRD」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9344 「如何讓 AI 主動完成複雜任務？Claude C」狀態 challenge, DAY 15, RSS 16 → 讀目錄確認
+  系列 9363 「學校沒教的後端生存指南：30 天打造非同步 S3」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9367 「因為 AI 看不懂老舊程式，只好乖乖從零開始學 」狀態 challenge, DAY 30, RSS 30 → 讀目錄確認
+  系列 9379 「《Nyahello！從零開始的 30 天 mal」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9380 「Physical AI 驗證工程：30 天把機器」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9386 「Codex的規格驅動開發 ：30 天打造 .NE」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9387 「Google ADK Agent 教戰：30 天」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9389 「老爺爺練習VIBE CODING」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9390 「生活中的資料結構與演算法：30 天學會把現實問題」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9391 「從呼叫 API 到打造 Gateway：LLM 」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9392 「大學生的VirtualBox虛擬機與Ubuntu」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9393 「30 天打造我的 AI 開發工作流：從需求分析到」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9396 「《從聊天到規格書:我如何把 AI 訓練成報告產線」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9398 「打開黑盒子：大型語言模型的機制解釋性入門」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9401 「30 天走進 OpenClaw：一個 AI Ag」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9402 「打造企業級 AI 虛擬員工：Gemini Spa」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9406 「《從心出發：30 天打造一套具 RAG、心理支持」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9411 「《拒絕爆肝加班！30天打通跨系統自動化與資料比對」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9412 「一杯咖啡的設計課：30 天 Design Pat」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9413 「從 CSSLP 視角建構恰到好處的軟體安全」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9414 「Unity進階——做一個完整的遊戲」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9415 「系統設計就像九頭蛇：打造社群網站的 30 天」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9416 「Claude × Playwright：從新進同」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9420 「Claude AI 新手筆記:30個實用技巧與生」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9421 「綠燈不等於做對：AI 開發的驗收工程 ——從兩個」狀態 success, DAY 30, RSS 31 → 讀目錄確認
+  系列 9423 「Windows 桌面軟體 CI 實戰：從系統工具」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9425 「從 IT 工程師到資安領域」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9426 「從 MCP 到專屬 Agentic 模型：30 」狀態 fail, DAY 8, RSS 30 → 讀目錄確認
+  系列 9427 「30 天認識 AI Security：從 LLM」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9429 「用 AI Agent 重構一套無框架的 lega」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9430 「AI 開發雜記：Skill、CLAUDE.md、」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9431 「讓 AI Agent 維護一個 Open Sou」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9433 「AI 寫 Code 之後，我們還需要 Softw」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9437 「從 C++ 菜鳥到 Low-Latency 勇者」狀態 success, DAY 30, RSS 30 → 讀目錄確認
+  系列 9462 「怎麼找到新東西？把 200 年的「發現」老方法教」狀態 fail, DAY 26, RSS 30 → 讀目錄確認
+  系列 9466 「AI 寫的測試，誰來測？」狀態 challenge, DAY 30, RSS 31 → 讀目錄確認
+  系列 9483 「《醫資生的 FHIR 30日入門：用 Postm」狀態 fail, DAY 2, RSS 30 → 讀目錄確認
+  系列 9505 「用 Hermes Agent 變成企業同事的 3」狀態 fail, DAY 3, RSS 36 → 讀目錄確認
+  系列 9510 「當全世界都在吹 AI Coding 誰來測這坨髒」狀態 fail, DAY 2, RSS 1 → 讀目錄確認
+  對帳 200/211
+  系列 9512 「30 天打造我的個人雲端實驗室：用 Docker」狀態 challenge, DAY 23, RSS 31 → 讀目錄確認
+  系列 9522 「醫院裡的 AI 品管員：30 天，把品質管理交給」狀態 fail, DAY 21, RSS 30 → 讀目錄確認
+  系列 9709 「AI 避雷探針｜Google Maps 店家評論」狀態 challenge, DAY 16, RSS 17 → 讀目錄確認
+  系列 9788 「從情資收集到資安鑑識：30 天建構自動化威脅情資」狀態 challenge, DAY 15, RSS 16 → 讀目錄確認
+
+[5/5] 逐篇抓文章頁 (只存正文)
+  200/15057 (新抓 200, 失敗 0)
+  400/15057 (新抓 400, 失敗 0)
+  600/15057 (新抓 600, 失敗 0)
+  800/15057 (新抓 800, 失敗 0)
+  1000/15057 (新抓 1000, 失敗 0)
+  1200/15057 (新抓 1200, 失敗 0)
+  1400/15057 (新抓 1400, 失敗 0)
+  1600/15057 (新抓 1600, 失敗 0)
+  1800/15057 (新抓 1800, 失敗 0)
+  2000/15057 (新抓 2000, 失敗 0)
+  2200/15057 (新抓 2200, 失敗 0)
+  2400/15057 (新抓 2400, 失敗 0)
+  2600/15057 (新抓 2600, 失敗 0)
+  2800/15057 (新抓 2800, 失敗 0)
+  3000/15057 (新抓 3000, 失敗 0)
+  3200/15057 (新抓 3200, 失敗 0)
+  3400/15057 (新抓 3400, 失敗 0)
+  3600/15057 (新抓 3600, 失敗 0)
+  3800/15057 (新抓 3800, 失敗 0)
+  4000/15057 (新抓 4000, 失敗 0)
+  4200/15057 (新抓 4200, 失敗 0)
+  4400/15057 (新抓 4400, 失敗 0)
+  4600/15057 (新抓 4600, 失敗 0)
+  4800/15057 (新抓 4800, 失敗 0)
+  5000/15057 (新抓 5000, 失敗 0)
+  5200/15057 (新抓 5200, 失敗 0)
+  5400/15057 (新抓 5400, 失敗 0)
+  5600/15057 (新抓 5600, 失敗 0)
+  5800/15057 (新抓 5800, 失敗 0)
+  6000/15057 (新抓 6000, 失敗 0)
+  6200/15057 (新抓 6200, 失敗 0)
+  6400/15057 (新抓 6400, 失敗 0)
+  6600/15057 (新抓 6600, 失敗 0)
+  6800/15057 (新抓 6800, 失敗 0)
+  7000/15057 (新抓 7000, 失敗 0)
+  7200/15057 (新抓 7200, 失敗 0)
+  7400/15057 (新抓 7400, 失敗 0)
+  7600/15057 (新抓 7600, 失敗 0)
+  7800/15057 (新抓 7800, 失敗 0)
+  8000/15057 (新抓 8000, 失敗 0)
+  8200/15057 (新抓 8200, 失敗 0)
+  8400/15057 (新抓 8400, 失敗 0)
+  8600/15057 (新抓 8600, 失敗 0)
+  8800/15057 (新抓 8800, 失敗 0)
+  9000/15057 (新抓 9000, 失敗 0)
+  9200/15057 (新抓 9200, 失敗 0)
+  9400/15057 (新抓 9400, 失敗 0)
+  9600/15057 (新抓 9600, 失敗 0)
+  9800/15057 (新抓 9800, 失敗 0)
+  10000/15057 (新抓 10000, 失敗 0)
+  10200/15057 (新抓 10200, 失敗 0)
+  10400/15057 (新抓 10400, 失敗 0)
+  10600/15057 (新抓 10600, 失敗 0)
+  10800/15057 (新抓 10800, 失敗 0)
+  11000/15057 (新抓 11000, 失敗 0)
+  11200/15057 (新抓 11200, 失敗 0)
+  11400/15057 (新抓 11400, 失敗 0)
+  11600/15057 (新抓 11600, 失敗 0)
+  11800/15057 (新抓 11800, 失敗 0)
+  12000/15057 (新抓 12000, 失敗 0)
+  12200/15057 (新抓 12200, 失敗 0)
+  12400/15057 (新抓 12400, 失敗 0)
+  12600/15057 (新抓 12600, 失敗 0)
+  12800/15057 (新抓 12800, 失敗 0)
+  13000/15057 (新抓 13000, 失敗 0)
+  13200/15057 (新抓 13200, 失敗 0)
+  13400/15057 (新抓 13400, 失敗 0)
+  13600/15057 (新抓 13600, 失敗 0)
+  13800/15057 (新抓 13800, 失敗 0)
+  14000/15057 (新抓 14000, 失敗 0)
+  14200/15057 (新抓 14200, 失敗 0)
+  14400/15057 (新抓 14400, 失敗 0)
+  14600/15057 (新抓 14600, 失敗 0)
+  14800/15057 (新抓 14800, 失敗 0)
+  15000/15057 (新抓 15000, 失敗 0)
+  文章 15057 篇, 本次新抓 15057, 缺 0
+
+完成: {'series': 929, 'articles': 15057, 'ok': 687, 'fixed_by_crawl': 209, 'suspected_deleted': 31, 'pages_missing': 0, 'unresolved': 3}
+
+注意: 以下系列 RSS 為空但報名清單有進度 (斷賽後疑似刪文, 網站上已無文章):
+   {'series_id': '9038', 'title': '易未央 AI 世界 × 未來教育 (AI for Education)', 'status': 'fail', 'day': 4}
+   {'series_id': '9041', 'title': '跟 Claude Code CLI 變成好朋友', 'status': 'fail', 'day': 21}
+   {'series_id': '9044', 'title': '從零開始打造 Redis：以 Go 建立 Production Ready 應用程式', 'status': 'fail', 'day': 13}
+   {'series_id': '9119', 'title': '用 Astro 打造 Content-first 前端網站：30 天從靜態內容到會員、資料庫與選型', 'status': 'fail', 'day': 8}
+   {'series_id': '9141', 'title': '打造 APR Engineer 的生產力平台，從 Flow Tracer 到 SignOff DashBoard 的落地實戰', 'status': 'fail', 'day': 24}
+   {'series_id': '9149', 'title': '火烤多吃：用Custom GPT grill 出一份全熟PRD', 'status': 'fail', 'day': 15}
+   {'series_id': '9188', 'title': '從 4,343 筆職缺到 AI Engineer：MLOps × GenAI Engineering 雙主軸實戰', 'status': 'fail', 'day': 18}
+   {'series_id': '9197', 'title': '自製核融合反應爐模擬器：基於 LLVM IR 動態生成 PARTICLE-IN-CELL', 'status': 'fail', 'day': 4}
+   {'series_id': '9232', 'title': 'Claude × Playwright：30 天打造你的 Agentic SDET 同事', 'status': 'fail', 'day': 13}
+   {'series_id': '9298', 'title': '鼠勾以：用Custom GPT grill 出一份全熟PRD', 'status': 'fail', 'day': 2}
+   {'series_id': '9305', 'title': '文藝復興：這段程式碼，有點味道', 'status': 'fail', 'day': 1}
+   {'series_id': '9341', 'title': '兩個鬧鐘，一個團隊：從零打造 PSIRT 迎戰歐盟 CRA 的 30 天', 'status': 'fail', 'day': 2}
+   {'series_id': '9399', 'title': 'RE: 從 4,343 筆職缺到 AI Engineer：MLOps × GenAI Engineering 雙主軸實戰', 'status': 'fail', 'day': 14}
+   {'series_id': '9400', 'title': '人生成長投資學：從零打造持續增長坡道', 'status': 'fail', 'day': 3}
+   {'series_id': '9404', 'title': '當全世界都在吹 Vibe Coding，誰來測這坨 AI 吐出來的髒東西？大廠 SDET 的 30 天品質防禦戰', 'status': 'fail', 'day': 1}
+   {'series_id': '9419', 'title': '工程師航向財務自由大海：打造自己的雪球坡道，成為自己的人生CEO', 'status': 'fail', 'day': 9}
+   {'series_id': '9451', 'title': 'RE: 打造 APR Engineer 的生產力平台，從 Flow Tracer 到 SignOff DashBoard 的落地實戰', 'status': 'fail', 'day': 10}
+   {'series_id': '9452', 'title': '研究 jQuery 4.0.0 原始碼：30 天 JavaScript 讀碼之旅', 'status': 'fail', 'day': 3}
+   {'series_id': '9475', 'title': '你的 AI Demo 為什麼不能上線？從 Prompt 到 Production 的 AI Engineering', 'status': 'fail', 'day': 1}
+   {'series_id': '9476', 'title': '把 GitHub 專案交給 Codex：AI 到底能不能成為真正的軟體工程師？', 'status': 'fail', 'day': 1}
+   {'series_id': '9477', 'title': '30 天把重複工作交給 AI：打造真正能幫你做事的自動化系統', 'status': 'fail', 'day': 1}
+   {'series_id': '9485', 'title': '當全世界都在吹 AI Coding，誰來測這坨髒東西', 'status': 'fail', 'day': 1}
+   {'series_id': '9504', 'title': '從 UI/UX 麻瓜到工程魔法師 | 從看不懂咒語開始', 'status': 'fail', 'day': 6}
+   {'series_id': '9527', 'title': '拒絕 AI 垃圾產出：用工業工程防呆打醒你的 30 天 SDET 實戰', 'status': 'fail', 'day': 2}
+   {'series_id': '9577', 'title': '30天探索CRA奇妙之旅', 'status': 'fail', 'day': 1}
+   {'series_id': '9626', 'title': '30 天淺談 Spring 框架的核心底層組件', 'status': 'fail', 'day': 1}
+   {'series_id': '9656', 'title': '從「得過且過」心態到建立無障礙生態系：Accesserty', 'status': 'fail', 'day': 12}
+   {'series_id': '9684', 'title': '盡信 Claude，不如無 Code —— 心法與全端實戰', 'status': 'fail', 'day': 1}
+   {'series_id': '9864', 'title': '讓 AI 幫我想壞人：30 天打造一個能被驗收的威脅建模工具', 'status': 'fail', 'day': 3}
+   {'series_id': '9907', 'title': 'AI Agent 從 Demo 到 Production：30 天打造 Enterprise Agentic AI 系統', 'status': 'fail', 'day': 1}
+   {'series_id': '9942', 'title': 'Angular 從零開始 30 天', 'status': 'fail', 'day': 7}
+
+!! 以下系列仍對不上, 可能漏抓:
+   {'group': 'contest', 'problem': '系列數 != 報名數', 'declared': None, 'collected': 0}
+   {'series_id': '9110', 'title': '將考國際證照的應用程式變成開源', 'status': 'success', 'day': 30, 'rss': 40, 'catalog_total': 71, 'collected': 40}
+   {'series_id': '9216', 'title': '資訊安全', 'status': 'success', 'day': 30, 'rss': 40, 'catalog_total': 43, 'collected': 40}
