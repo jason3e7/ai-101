@@ -28,6 +28,7 @@ status: draft
   * 15057 篇, 全體每千字 0.86
   * 70% 零命中
   * ChatGPT 組反常低 0.11
+* 前 20 篇排行 (不設字數門檻, max 17.51)
 * 邊界: 不是判決, 是排序訊號
 ```
 
@@ -148,6 +149,33 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇文章對照, RSS 版�
 怎麼解釋? OpenAI 2025-11 讓 GPT-5.1 開始能遵守 custom instruction 的「不要用 em-dash」, 用該工具寫的作者天然沒訊號. Claude 跟 Gemini 目前壓不掉, Claude AI 組還是最高. 當初挑 `——` 是圖它**最粗最好算**, 現在看下來, 這個指紋對 GPT 生態**已經在失效**. 是這次掃描最有價值的意外收穫.
 
 完整排行見 [`lab01/results.md`](../../lab01/results.md).
+
+---
+
+## 原始比值最高的 20 篇（不設字數門檻）
+
+| # | 原始比值 | 每千字 | 命中 | 字數 | 文章 | 系列 | 組別 |
+|---:|---:|---:|---:|---:|:---|:---|:---|
+| 1 | 0.017510 | 17.51 | 27 | 1542 | [Day01用 Claude 從零打造一個軟體產品：30 天你也做得到](https://ithelp.ithome.com.tw/articles/10411391) | 零基礎也能當產品長：30 天用 Claude 身兼數職，從零打造軟體產品 | Claude AI |
+| 2 | 0.014291 | 14.29 | 42 | 2939 | [Day 12｜第 6 章：流程再造（下）](https://ithelp.ithome.com.tw/articles/10416320) | 白稜 | 佛心分享-IT 人自學之術 |
+| 3 | 0.013489 | 13.49 | 15 | 1112 | [Day25：另一套 mpv 懶人包：dyphire/mpv-config 介紹](https://ithelp.ithome.com.tw/articles/10402332) | 一天一招，快速上手 mpv-lazy | 自我挑戰 |
+| 4 | 0.013474 | 13.47 | 32 | 2375 | [Day 12：治理了半年，治理系統自己也胖了兩千個 Markdown 的肥大與漂移](https://ithelp.ithome.com.tw/articles/10401999) | 生活中的 AI 應用：我在家用 NAS 養了一隻 Agent，幫我看盤、顧家、盯備考——30 天自架實錄 | AI Engineering |
+| 5 | 0.013451 | 13.45 | 32 | 2379 | [Day 10｜第 5 章：三角成形（下）](https://ithelp.ithome.com.tw/articles/10415289) | 白稜 | 佛心分享-IT 人自學之術 |
+| 6 | 0.013239 | 13.24 | 15 | 1133 | [Day 23｜量測而不規訓：三個讀數，零個 KPI](https://ithelp.ithome.com.tw/articles/10408284) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 7 | 0.013072 | 13.07 | 14 | 1071 | [Day 12｜四個頻率聚焦：日週月季年，每層看什麼](https://ithelp.ithome.com.tw/articles/10405411) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 8 | 0.012983 | 12.98 | 38 | 2927 | [Day 09｜第 5 章：三角成形（上）](https://ithelp.ithome.com.tw/articles/10414677) | 白稜 | 佛心分享-IT 人自學之術 |
+| 9 | 0.012951 | 12.95 | 14 | 1081 | [Day 21｜帳本就是介面：AI 不跟 AI 聊天](https://ithelp.ithome.com.tw/articles/10407741) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 10 | 0.012752 | 12.75 | 19 | 1490 | [Day 9｜董總監：組織需要第三個治理功能](https://ithelp.ithome.com.tw/articles/10404754) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 11 | 0.012721 | 12.72 | 56 | 4402 | [Day 07｜第 3 章：董事長的承諾（下）](https://ithelp.ithome.com.tw/articles/10413569) | 白稜 | 佛心分享-IT 人自學之術 |
+| 12 | 0.012126 | 12.13 | 15 | 1237 | [Day 6｜兩本帳：向內的帳全綠，向外的帳沒人記](https://ithelp.ithome.com.tw/articles/10404140) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 13 | 0.012090 | 12.09 | 14 | 1158 | [Day 20｜AI 是手，不是腦：認知卸載的紅線](https://ithelp.ithome.com.tw/articles/10407481) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 14 | 0.011518 | 11.52 | 11 | 955 | [Day 28｜加了這堆治理，真的有比較好嗎](https://ithelp.ithome.com.tw/articles/10406510) | 我做了一個幫你寫鐵人賽的 Agent Skill，然後讓它寫自己 | 佛心分享-SideProject30 |
+| 15 | 0.011511 | 11.51 | 16 | 1390 | [Day 18｜解釋頻寬：系統不只做不動，還會看不懂](https://ithelp.ithome.com.tw/articles/10406854) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 16 | 0.011398 | 11.40 | 15 | 1316 | [Day 17｜兵法三部曲：餘裕重定義落地](https://ithelp.ithome.com.tw/articles/10406603) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 17 | 0.011377 | 11.38 | 10 | 879 | [Day 22｜Day 1 初稿不是成品，是等著被改的半成品](https://ithelp.ithome.com.tw/articles/10405151) | 我做了一個幫你寫鐵人賽的 Agent Skill，然後讓它寫自己 | 佛心分享-SideProject30 |
+| 18 | 0.011376 | 11.38 | 31 | 2725 | [Day 03｜第 1 章：微軟博物館（下）](https://ithelp.ithome.com.tw/articles/10410755) | 白稜 | 佛心分享-IT 人自學之術 |
+| 19 | 0.011345 | 11.35 | 14 | 1234 | [Day 27｜管現在的人：節奏承載力，與不掉球的日常](https://ithelp.ithome.com.tw/articles/10409424) | 轉型之後：IT 領導者的第二座山 | IT Operation |
+| 20 | 0.011334 | 11.33 | 13 | 1147 | [Day 16｜裂變定向突變組牌：讓團隊長大的三個動詞](https://ithelp.ithome.com.tw/articles/10406339) | 轉型之後：IT 領導者的第二座山 | IT Operation |
 
 ---
 
