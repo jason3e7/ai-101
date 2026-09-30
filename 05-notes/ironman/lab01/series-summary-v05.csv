@@ -44,7 +44,6 @@ series_id,series_title,group_name,articles,emoji_count,chars,per_1k,median_artic
 9838,零程式碼的現代數據力：用 Tableau 與 Dify/n8n 打造自動化商業戰情室 30 天,自我挑戰,16,47,24739,1.8998,1.6701
 9369,給藥袋裝一張嘴：30 天用 Android 與 Google VLM 實作高齡語音用藥助手,Build on Google AI,15,30,15793,1.8996,1.3263
 9291,給小白導讀線上教學影片跟作品--◍寫出好維護的程式碼,佛心分享-IT 人自學之術,5,30,16370,1.8326,1.6843
-9756,今天的我能騙過昨天的我嗎？高中生的 30 天社交工程與釣魚辨識實驗,Security,16,21,11732,1.7900,0.0000
 9388,30 天打造 AI 自動化維運平台：從監控、告警到故障分析,AI 自動化,9,37,20937,1.7672,1.8504
 9829,AI 時代下的自學革命：30 天打造高效 IT 知識庫與實戰力,佛心分享-IT 人自學之術,4,8,4637,1.7253,1.5529
 9875,Build on Google AI ：長者照護 —— 口腔機能訓練 與 延緩認知退化,Build on Google AI,15,83,48657,1.7058,1.8450
@@ -111,7 +110,6 @@ series_id,series_title,group_name,articles,emoji_count,chars,per_1k,median_artic
 9802,Ai大時代透過vibe coding 逆向學習回來,佛心分享-IT 人自學之術,5,4,5754,0.6952,0.0000
 9312,打造 AI Agent 驅動的第二大腦：用 Go + Claude Code + Obsidian + Graphify 打造工程師知識作業系統,Claude AI,30,60,87226,0.6879,0.3012
 9639,銀行金流議題與API串接實際應用,佛心分享-SideProject30,6,3,4429,0.6774,0.0000
-9365,如果 AI 幫我安排每日的任務？——讓待辦清單不只是清單：LLM × Flask × MySQL 打造動態任務規劃系統,AI Engineering,15,7,10379,0.6744,0.0000
 9205,30 天打造 AI 後端：從 LLM、RAG 到 AI Agent,AI Engineering,30,55,81905,0.6715,0.0000
 9484,用 Google AI 從零打造 Network Stack：30 天實作封包、TCP 與 HTTP Server,Build on Google AI,19,29,45247,0.6409,0.0000
 9932,實戰打造個人專屬 AI 自動化工作流：從零建立高效生產力系統,AI 自動化,5,2,3122,0.6406,0.0000
@@ -171,7 +169,6 @@ series_id,series_title,group_name,articles,emoji_count,chars,per_1k,median_artic
 9183,Claude 用得對，也用得省：工程師帶你搞懂選模型、Token 優化與底層邏輯,Claude AI,30,77,195252,0.3944,0.3421
 9216,資訊安全,佛心分享-IT 人自學之術,40,28,71671,0.3907,0.0000
 9275,我的第一個手作りAndroid App！快樂學習物件導向程式設計！,Software Development,30,23,59106,0.3891,0.0000
-9070,資安*保險─數位避險,Security,30,14,36363,0.3850,0.0000
 9421,綠燈不等於做對：AI 開發的驗收工程 ——從兩個失敗的案子，到驗收交付,Software Development,31,35,91009,0.3846,0.0000
 9177,一個人的 AI 團隊：Claude Code 當組長，帶四家引擎做教學工作的實測與踩坑,Claude AI,30,13,34034,0.3820,0.0000
 9565,Macaron：30 天打造一位會占卜的 AI Agent,AI Engineering,19,10,26517,0.3771,0.4129
@@ -195,13 +192,13 @@ series_id,series_title,group_name,articles,emoji_count,chars,per_1k,median_artic
 9053,賢者大叔的觀測結界：讓 agent 推理得動的 30 天,AI Engineering,16,41,125088,0.3278,0.0000
 9378,從能用到可信：Agent Coding 的工程化探索,AI Engineering,6,2,6112,0.3272,0.0000
 9170,一條線救一隻狗：我用 PixiJS、Matter.js 和一條有閘門的 AI 產線做完一款網頁小遊戲,JavaScript,30,50,152970,0.3269,0.0000
-9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,Claude AI,30,31,95846,0.3234,0.0000
 9379,《Nyahello！從零開始的 30 天 malware 學習日誌》,Security,30,30,95422,0.3144,0.0000
 9068,程式設計沒有告訴你的事：30 天破解每一個 Why,Software Development,30,37,117997,0.3136,0.0000
 9162,教使用生成式AI的老師，也是企業員工，怎麼做AI自動化,AI 自動化,15,2,6483,0.3085,0.0000
 9111,一天一招，快速上手 mpv-lazy,自我挑戰,30,11,35870,0.3067,0.0000
 9804,30天從零打造醫療資訊小系統,JavaScript,11,7,22894,0.3058,0.0000
 9500,Kubernetes學習心得分享,Kubernetes,12,12,39383,0.3047,0.3100
+9365,如果 AI 幫我安排每日的任務？——讓待辦清單不只是清單：LLM × Flask × MySQL 打造動態任務規劃系統,AI Engineering,15,3,10379,0.2890,0.0000
 9641,資安這條路：系統化學習滲透測試提權手法,Security,15,18,63162,0.2850,0.0000
 9814,從標準到臨床：FHIR 架構與智慧護理資訊系統（NIS）實作 30 天,Software Development,15,8,28285,0.2828,0.0000
 9729,它說得頭頭是道,AI Engineering,14,13,46543,0.2793,0.0000
@@ -239,7 +236,9 @@ series_id,series_title,group_name,articles,emoji_count,chars,per_1k,median_artic
 9416,Claude × Playwright：從新進同事到 Agentic SDET 代理人,Claude AI,30,21,109516,0.1918,0.0000
 9124,從零到一：使用 K8S + GitOps 打造異構技術棧的資料分析平台,Kubernetes,31,13,71671,0.1814,0.0000
 9374,基於 Multi-Agent 協作之蘇格拉底式程式學習與自動化評測系統,AI Engineering,15,2,11179,0.1789,0.0000
+9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,Claude AI,30,17,95846,0.1774,0.0000
 9039,和AI學習gcp - 建立對話代理,自我挑戰,30,6,34992,0.1715,0.0000
+9756,今天的我能騙過昨天的我嗎？高中生的 30 天社交工程與釣魚辨識實驗,Security,16,2,11732,0.1705,0.0000
 9777,30 天打造我的 AI 自動化工作流,AI 自動化,15,4,23493,0.1703,0.0000
 9464,AI 如何幫一般人把生活與工作變簡單,AI 自動化,28,2,12354,0.1619,0.0000
 9621,30 天，挑戰我的 Web 前端力,自我挑戰,17,3,18906,0.1587,0.0000
@@ -303,6 +302,7 @@ series_id,series_title,group_name,articles,emoji_count,chars,per_1k,median_artic
 9545,從告警到結案報告：30 天勒索軟體事件應變實戰,Security,22,2,35438,0.0564,0.0000
 9494,用 AI Agent 打造你的產品使用手冊產線,AI 自動化,24,3,53912,0.0556,0.0000
 9168,《矽墟》：我把一部科幻小說當成軟體專案來管,AI Engineering,30,5,90574,0.0552,0.0000
+9070,資安*保險─數位避險,Security,30,2,36363,0.0550,0.0000
 9698,AI 改變產品設計的起點：產品經理的 30 個 AI Native 設計思考,Software Development,15,2,36959,0.0541,0.0000
 9758,地端機房的三十天維運：開源服務封裝、GPU 節點守護與可稽核的變更管理,IT Operation,15,5,93967,0.0532,0.0000
 9522,醫院裡的 AI 品管員：30 天，把品質管理交給 AI 試試看,AI 自動化,30,7,132334,0.0529,0.0000

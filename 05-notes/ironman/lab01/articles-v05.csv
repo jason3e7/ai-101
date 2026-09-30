@@ -12,7 +12,6 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10401261,https://ithelp.ithome.com.tw/articles/10401261,Day 02：清點魔法物資  變數宣告與作用域的生存法則,9064,JS 核心重構：勇者轉職傳說,20105113,javascript,JavaScript,rss,31,2296,13.5017
 10412982,https://ithelp.ithome.com.tw/articles/10412982,如果小豬機器人做得比你老闆還要好？,9212,前端三分鐘 X 要轉職養豬還是做被取代的工程師？用 Google AI 打造我的 AI 雙刀流自動化工作流,20130026,build-on-google-ai,Build on Google AI,rss,24,1801,13.3259
 10418423,https://ithelp.ithome.com.tw/articles/10418423,Day 14｜讓服藥提醒更完整：加入提醒操作,9874,AI 保健小幫手：用 ChatGPT & Codex 打造個人健康紀錄工具,20183391,chatgpt-and-codex,ChatGPT & Codex,rss,14,1091,12.8323
-10411529,https://ithelp.ithome.com.tw/articles/10411529,Day (一) 我真的分得出釣魚訊息嗎？(前測),9756,今天的我能騙過昨天的我嗎？高中生的 30 天社交工程與釣魚辨識實驗,20184281,security,Security,rss,21,1682,12.4851
 10417076,https://ithelp.ithome.com.tw/articles/10417076,Day 11｜管理用藥資料：加入刪除功能,9874,AI 保健小幫手：用 ChatGPT & Codex 打造個人健康紀錄工具,20183391,chatgpt-and-codex,ChatGPT & Codex,rss,18,1465,12.2867
 10404251,https://ithelp.ithome.com.tw/articles/10404251,Day 20：真相Promise：給未來的一個承諾，解決你的回呼地獄,9064,JS 核心重構：勇者轉職傳說,20105113,javascript,JavaScript,rss,23,1872,12.2863
 10418132,https://ithelp.ithome.com.tw/articles/10418132,Day 15｜使用 AI 製作主管報告,9759,為什麼一般人都該學 AI？30 天完成生活與工作的 AI 實戰。,20010931,self,自我挑戰,rss,5,408,12.2549
@@ -26,7 +25,6 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10403782,https://ithelp.ithome.com.tw/articles/10403782,Day 18：期中實戰純 JS 打造你的第一個任務佈告欄,9064,JS 核心重構：勇者轉職傳說,20105113,javascript,JavaScript,rss,17,1509,11.2657
 10401425,https://ithelp.ithome.com.tw/articles/10401425,Day 03：極速短咒  箭頭函式與傳說中的隱形回傳,9064,JS 核心重構：勇者轉職傳說,20105113,javascript,JavaScript,rss,29,2576,11.2578
 10403105,https://ithelp.ithome.com.tw/articles/10403105,Day 14：原理篇  事件監聽：當使用者點下去後，瀏覽器發生了什麼？,9064,JS 核心重構：勇者轉職傳說,20105113,javascript,JavaScript,rss,20,1779,11.2423
-10405894,https://ithelp.ithome.com.tw/articles/10405894,Day 29：中小企業主的資安預產配置心法 對中小企業主的意義為何?,9070,資安*保險─數位避險,20021644,security,Security,rss,14,1254,11.1643
 10414681,https://ithelp.ithome.com.tw/articles/10414681,我想像中的未來小豬,9212,前端三分鐘 X 要轉職養豬還是做被取代的工程師？用 Google AI 打造我的 AI 雙刀流自動化工作流,20130026,build-on-google-ai,Build on Google AI,rss,24,2184,10.9890
 10409998,https://ithelp.ithome.com.tw/articles/10409998,Day 17：視知覺前注意力特徵（Pre-Attentive Attributes）在風險預警的妙用,9634,30 天 從數據思維到自動化稽核實戰,20070969,it-self-taught,佛心分享-IT 人自學之術,rss,30,2735,10.9689
 10413670,https://ithelp.ithome.com.tw/articles/10413670,先從一隻豬豬開始養起,9212,前端三分鐘 X 要轉職養豬還是做被取代的工程師？用 Google AI 打造我的 AI 雙刀流自動化工作流,20130026,build-on-google-ai,Build on Google AI,rss,25,2282,10.9553
@@ -218,7 +216,6 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10415111,https://ithelp.ithome.com.tw/articles/10415111,讓 Spring Boot 接收使用者輸入,9926,Java × AI：30天打造智慧健康助理,20184355,ai-engineering,AI Engineering,rss,8,1470,5.4422
 10409958,https://ithelp.ithome.com.tw/articles/10409958,Day 3：金融資料安全資安隱私與去識別化（De-identification）,9634,30 天 從數據思維到自動化稽核實戰,20070969,it-self-taught,佛心分享-IT 人自學之術,rss,11,2022,5.4402
 10411873,https://ithelp.ithome.com.tw/articles/10411873,Day 2Gumloop 製作 ptt 爬蟲程式,9791,30 天玩轉 Gumloop：從 AI 自動化、Agent 到企業實戰,20182494,ai-automation,AI 自動化,rss,4,737,5.4274
-10411766,https://ithelp.ithome.com.tw/articles/10411766,Day 02｜一般Todo List 已經這麼方便了，到底還缺什麼？,9365,如果 AI 幫我安排每日的任務？——讓待辦清單不只是清單：LLM × Flask × MySQL 打造動態任務規劃系統,20183870,ai-engineering,AI Engineering,rss,5,923,5.4171
 10411870,https://ithelp.ithome.com.tw/articles/10411870,Day 2：30 秒內讓本地 LLM 分析你的規格書,9368,解決需求規格書矛盾：用 Claude Code × MCP 實作自律型文檔審查 Agent,20183872,claude-ai,Claude AI,rss,7,1293,5.4138
 10414209,https://ithelp.ithome.com.tw/articles/10414209,Day 12：每個片段各自重試，而不是整份清單重新下載一次,9554,下載器不是寫完就能跑：一個 HLS 分段式串流工具的架構與測試修練,20065818,software-development,Software Development,rss,4,743,5.3836
 10418163,https://ithelp.ithome.com.tw/articles/10418163,Day 14 - 用 Docker 啟動第一個 PostgreSQL Container,9397,Docker 新手村：從容器到 PostgreSQL 的實戰之路,20178759,it-operation,IT Operation,rss,8,1487,5.3800
@@ -636,7 +633,6 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10407946,https://ithelp.ithome.com.tw/articles/10407946,Day 10探索 IDA！使用方法與交叉參照介紹,9379,《Nyahello！從零開始的 30 天 malware 學習日誌》,20183878,security,Security,rss,7,2695,2.5974
 10414245,https://ithelp.ithome.com.tw/articles/10414245,Day 20 | API 呼叫永遠在賽跑  React Query／TanStack Query 怎麼管理遠端資料狀態,9470,現代函式庫與JavaScript的關係,20183570,modern-web,Modern Web,rss,10,3868,2.5853
 10413236,https://ithelp.ithome.com.tw/articles/10413236,Day 20｜資料庫與 Alembic：migration 的人工 review,9393,30 天打造我的 AI 開發工作流：從需求分析到上線,20183588,ai-engineering,AI Engineering,rss,4,1548,2.5840
-10404637,https://ithelp.ithome.com.tw/articles/10404637,Day 27: Playwright MCP:讓 Claude Code 自己打開瀏覽器探索網站,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,17,6594,2.5781
 10405658,https://ithelp.ithome.com.tw/articles/10405658,Day 23 一個變數，決定前端打誰,9247,收到自己的紅色炸彈！婚期就是 Deadline：前端一人用 AI 規格流水線，30 天出貨婚禮 SaaS,20171627,software-development,Software Development,rss,5,1940,2.5773
 10416393,https://ithelp.ithome.com.tw/articles/10416393,第 27 天：skill 在 ClawHub 裡扮演什麼角色,9401,30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化,20161644,side-project-30,佛心分享-SideProject30,rss,6,2345,2.5586
 10410094,https://ithelp.ithome.com.tw/articles/10410094,Day 4: 跨時區溝通大師：Slack/Discord 講者時程協調機器人,9551,激發靈感！AI Studio 的 30 天 Vibe Coding 挑戰,20121643,build-on-google-ai,Build on Google AI,rss,2,783,2.5543
@@ -1037,6 +1033,7 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10413634,https://ithelp.ithome.com.tw/articles/10413634,Day 6：改動範圍 vs 需求範圍一個可以量化過度設計的指標,9724,當 AI 寫得比你讀得快：Code Review 該審什麼,20065818,software-development,Software Development,rss,4,2492,1.6051
 10400915,https://ithelp.ithome.com.tw/articles/10400915,Day 25  這個系列本身，就是 Claude 協作的產物,9045,從現場踩坑到 AI 工具 — IT Diagnostic Agent 開發實錄,20156847,claude-ai,Claude AI,rss,5,3124,1.6005
 10416975,https://ithelp.ithome.com.tw/articles/10416975,Day 24｜我要開會三小時，Gemini 能幫忙挑店嗎？,9444,咖啡、Wi-Fi 與 AI：30 天打造數位遊牧工作地圖,20121296,build-on-google-ai,Build on Google AI,rss,5,3124,1.6005
+10405894,https://ithelp.ithome.com.tw/articles/10405894,Day 29：中小企業主的資安預產配置心法 對中小企業主的意義為何?,9070,資安*保險─數位避險,20021644,security,Security,rss,2,1254,1.5949
 10418747,https://ithelp.ithome.com.tw/articles/10418747,# Day 15 - 前後端 API 串接：讓 AI 寫 Client-side 資料獲取（TanStack Query / SWR）,9338,Vibe Mode 開啟：30 天用 AI 打造網頁，邊做邊學 JavaScript,20178686,vibe-coding,Vibe Coding,rss,3,1883,1.5932
 10410659,https://ithelp.ithome.com.tw/articles/10410659,Day 06｜Tool 能跑不代表 AI 會用：namedescriptionschema 到底怎麼寫,9549,WebMCP：30 天打造 AI Agent 看得懂、也操作得動的網站,20121296,modern-web,Modern Web,rss,2,1258,1.5898
 10415059,https://ithelp.ithome.com.tw/articles/10415059,D07 網頁上一段字，就能指揮你的 AI,9908,AI 寫的程式，安全嗎？完工不是結束，是攻擊倒數的起點,20103068,ai-security,AI Security,rss,11,6922,1.5891
@@ -1166,7 +1163,6 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10406976,https://ithelp.ithome.com.tw/articles/10406976,第 5 天：工具不是裝飾品，是 OpenClaw 的手腳,9401,30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化,20161644,side-project-30,佛心分享-SideProject30,rss,5,3564,1.4029
 10402573,https://ithelp.ithome.com.tw/articles/10402573,做自己職涯的PM  求職管道（中）,9091,做自己職涯的PM,20130299,it-career-experience,佛心分享-IT 人職涯歷練,rss,1,713,1.4025
 10410504,https://ithelp.ithome.com.tw/articles/10410504,DAY 01｜為什麼我要為自己打造一款學習任務計時器？,9722,從 UI/UX 設計到前端實作：30 天打造專屬的任務學習計時器,20183738,modern-web,Modern Web,rss,1,713,1.4025
-10404161,https://ithelp.ithome.com.tw/articles/10404161,Day22: Fixtures 與測試資料管理,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,5,3567,1.4017
 10414389,https://ithelp.ithome.com.tw/articles/10414389,Day 10｜開發前的準備：用哪些技術與 AI 工具打造 iOS App？,9436,從 0 到 1: 產品設計師用 Vibe Coding 打造呼吸放鬆 App,20183825,vibe-coding,Vibe Coding,rss,1,714,1.4006
 10417953,https://ithelp.ithome.com.tw/articles/10417953,Day 16 文本？電影海報？線上策展？繞這麼多，其實最後是想要講 QR Code！,9607,學生身份如何每天透過Vibe Coding每天做跨領域的創新項目,20184140,vibe-coding,Vibe Coding,rss,3,2144,1.3993
 10403916,https://ithelp.ithome.com.tw/articles/10403916,[3分鐘 AI Agent導論] Day11 -- LLM：Agent 的大腦(1),9196,3分鐘 AI Agent導論,20183533,ai-engineering,AI Engineering,rss,2,1431,1.3976
@@ -1309,6 +1305,7 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10400903,https://ithelp.ithome.com.tw/articles/10400903,Day 15  我用 Claude 稽核自己的工具，結果找到一個 Prompt 漏洞,9045,從現場踩坑到 AI 工具 — IT Diagnostic Agent 開發實錄,20156847,claude-ai,Claude AI,rss,5,4097,1.2204
 10416907,https://ithelp.ithome.com.tw/articles/10416907,Day 24：時間相依的 Job 怎麼測用 Carbon::setTestNow() 鎖定測試當下時間,9473,同一套 Laravel 系統，測試怎麼寫才不會說謊,20065818,software-development,Software Development,rss,2,1643,1.2173
 10413170,https://ithelp.ithome.com.tw/articles/10413170,Day 4Gumloop 串接 LINE ，輕鬆觸發自動化流程,9791,30 天玩轉 Gumloop：從 AI 自動化、Agent 到企業實戰,20182494,ai-automation,AI 自動化,rss,1,823,1.2151
+10404637,https://ithelp.ithome.com.tw/articles/10404637,Day 27: Playwright MCP:讓 Claude Code 自己打開瀏覽器探索網站,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,8,6594,1.2132
 10416948,https://ithelp.ithome.com.tw/articles/10416948,Day 11｜Learning Card Schema 怎麼設計？把 AI 回傳格式定義清楚,9900,今天學什麼？30 天用 Google AI 打造智慧學習卡,20142045,build-on-google-ai,Build on Google AI,rss,2,1650,1.2121
 10403587,https://ithelp.ithome.com.tw/articles/10403587,Day 2：Definition-Driven 架構總覽,9251,ERP 架構師筆記：定義驅動的框架設計,20007956,software-development,Software Development,rss,5,4126,1.2118
 10412409,https://ithelp.ithome.com.tw/articles/10412409,Day 5 深夜最適合弄ASMR精華剪輯了！嗯？你說為什麼是弄，而不是聽？欸秘密！,9607,學生身份如何每天透過Vibe Coding每天做跨領域的創新項目,20184140,vibe-coding,Vibe Coding,rss,3,2480,1.2097
@@ -1331,6 +1328,7 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10405920,https://ithelp.ithome.com.tw/articles/10405920,Day 29：讓畫面慢慢長出來,9047,讓 AI Agent 真的做事：用 Embabel 打造可控、可測試的智慧 Dashboard,20161290,ai-engineering,AI Engineering,rss,3,2516,1.1924
 10417829,https://ithelp.ithome.com.tw/articles/10417829,Day 13  Codex 開發實戰 (上)：運用大模型快速建構核心邏輯與 UI 互動,9384,人機協同程式開發實戰：用 AI 輔助開發 Swift 與 Spring Boot，打造屬於自己的程式,20178746,vibe-coding,Vibe Coding,rss,1,839,1.1919
 10405868,https://ithelp.ithome.com.tw/articles/10405868,Day 21：突破人工排班極限：用 Google OR-Tools CP-SAT 求解複雜醫療排班,9389,老爺爺練習VIBE CODING,20070969,it-self-taught,佛心分享-IT 人自學之術,rss,3,2519,1.1909
+10411529,https://ithelp.ithome.com.tw/articles/10411529,Day (一) 我真的分得出釣魚訊息嗎？(前測),9756,今天的我能騙過昨天的我嗎？高中生的 30 天社交工程與釣魚辨識實驗,20184281,security,Security,rss,2,1682,1.1891
 10415390,https://ithelp.ithome.com.tw/articles/10415390,Day 21：定期爬取外部網頁Generator 分頁 + PSR-18 discovery + retry plugin 組合技,9474,一套真實運作中的 Laravel 系統，拆解它的原生機制,20065818,software-development,Software Development,rss,2,1684,1.1876
 10416602,https://ithelp.ithome.com.tw/articles/10416602,JavaScript：哈納到底在哪？Array 搜查隊出動！！！,9621,30 天，挑戰我的 Web 前端力,20178938,self,自我挑戰,rss,1,843,1.1862
 10412229,https://ithelp.ithome.com.tw/articles/10412229,[Day 3] 把世界寫進 CLAUDE.md，梅拉不用 resume 都在,9703,30 天建立 Claude Code 地城領主,20154170,claude-ai,Claude AI,rss,3,2529,1.1862
@@ -1443,6 +1441,7 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10406642,https://ithelp.ithome.com.tw/articles/10406642,第 24 章：診所預約 MVP時段名額與櫃檯後台,9449,Lovable：地球上最強的 AI 生成全端網站 Agentic 開發實戰,20046160,modern-web,Modern Web,rss,4,3683,1.0861
 10407172,https://ithelp.ithome.com.tw/articles/10407172,Day 02：Eloquent 模型設計一段字串處理邏輯，為什麼後來搬進了 Model,9474,一套真實運作中的 Laravel 系統，拆解它的原生機制,20065818,software-development,Software Development,rss,2,1843,1.0852
 10404082,https://ithelp.ithome.com.tw/articles/10404082,Day 13｜Skill 怎麼測試？用 LLM Judge 當回歸防線,9187,AI 的駕馭之道：一個 AI Code Reviewer 的養成、評測與邊界實錄,20183518,ai-engineering,AI Engineering,rss,3,2768,1.0838
+10411766,https://ithelp.ithome.com.tw/articles/10411766,Day 02｜一般Todo List 已經這麼方便了，到底還缺什麼？,9365,如果 AI 幫我安排每日的任務？——讓待辦清單不只是清單：LLM × Flask × MySQL 打造動態任務規劃系統,20183870,ai-engineering,AI Engineering,rss,1,923,1.0834
 10409044,https://ithelp.ithome.com.tw/articles/10409044,Day 13｜機器人手術模擬：你的手往右，器械真的也往右嗎？,9380,Physical AI 驗證工程：30 天把機器人模擬變成可檢查的證據,20183665,ai-engineering,AI Engineering,rss,2,1846,1.0834
 10406711,https://ithelp.ithome.com.tw/articles/10406711,第 19 章：把 AI 生成的程式整理成可維護架構,9450,Roblox Studio AI 協作開發大全,20046160,software-development,Software Development,rss,5,4625,1.0811
 10408048,https://ithelp.ithome.com.tw/articles/10408048,Day 8｜手術機器人情境設計：先別急著讓機械臂動，3D 手術室如何通過基線檢查？,9380,Physical AI 驗證工程：30 天把機器人模擬變成可檢查的證據,20183665,ai-engineering,AI Engineering,rss,2,1851,1.0805
@@ -2893,6 +2892,7 @@ article_id,url,title,series_id,series_title,author_id,group_slug,group_name,sour
 10404437,https://ithelp.ithome.com.tw/articles/10404437,Day 25: 放進 CI:自動跑測試與向上展示成果,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,0,3072,0.0000
 10404423,https://ithelp.ithome.com.tw/articles/10404423,Day 24: 測試的命名與組織:讓半年後的自己看得懂,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,0,2106,0.0000
 10404386,https://ithelp.ithome.com.tw/articles/10404386,Day 23: Flaky Test 治理:抓出時好時壞的測試,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,0,1655,0.0000
+10404161,https://ithelp.ithome.com.tw/articles/10404161,Day22: Fixtures 與測試資料管理,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,0,3567,0.0000
 10403945,https://ithelp.ithome.com.tw/articles/10403945,Day 21: Page Object Model:請 Claude Code 幫你重構,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,0,3149,0.0000
 10403757,https://ithelp.ithome.com.tw/articles/10403757,Day20: 多瀏覽器與行動裝置模擬,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,0,3884,0.0000
 10403635,https://ithelp.ithome.com.tw/articles/10403635,Day19: 截圖與視覺比對:畫面長歪了怎麼抓,9048,AI 時代下最值得投資的 UI 自動化:30 天用 Claude Code 學會寫 Playwright,20161809,claude-ai,Claude AI,rss,0,4942,0.0000

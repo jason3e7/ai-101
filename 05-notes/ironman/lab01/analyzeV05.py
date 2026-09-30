@@ -35,6 +35,7 @@
     ✗ (U+2717 ballot X)
     ★ (U+2605 black star)
     ☆ (U+2606 white star)
+    ☐ (U+2610 ballot box)
 
 輸出:
     articles-v05.csv        每篇: emoji_count / chars / per_1k
@@ -77,7 +78,7 @@ RE_EMOJI = re.compile(
     "\U0001F1E6-\U0001F1FF"
     "]"
 )
-EXCLUDE = frozenset("○✗★☆")
+EXCLUDE = frozenset("○✗★☆☐")
 RE_PRE = re.compile(r"(?is)<pre\b.*?</pre>")
 RE_SCRIPT_STYLE = re.compile(r"(?is)<(script|style)\b.*?</\1>")
 RE_TAG = re.compile(r"(?s)<[^>]+>")

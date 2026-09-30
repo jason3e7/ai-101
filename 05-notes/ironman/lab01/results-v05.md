@@ -12,10 +12,10 @@
 |:---|---:|
 | 系列數 | 814 |
 | 文章數 | 15057 |
-| 有 emoji 的文章 | 2544（16.9%） |
-| emoji 總數 | 13484 |
+| 有 emoji 的文章 | 2543（16.9%） |
+| emoji 總數 | 13435 |
 | 全篇總字數 | 39634634 |
-| 全體 per_1k | 0.3402 |
+| 全體 per_1k | 0.3390 |
 
 ## per_1k 最高的 20 篇（不設字數門檻）
 
@@ -34,13 +34,13 @@
 | 11 | 13.5017 | 31 | 2296 | [Day 02：清點魔法物資  變數宣告與作用域的生存法則](https://ithelp.ithome.com.tw/articles/10401261) | JS 核心重構：勇者轉職傳說 | JavaScript |
 | 12 | 13.3259 | 24 | 1801 | [如果小豬機器人做得比你老闆還要好？](https://ithelp.ithome.com.tw/articles/10412982) | 前端三分鐘 X 要轉職養豬還是做被取代的工程師？用 Google AI 打造我的 AI 雙刀流自動化工作流 | Build on Google AI |
 | 13 | 12.8323 | 14 | 1091 | [Day 14｜讓服藥提醒更完整：加入提醒操作](https://ithelp.ithome.com.tw/articles/10418423) | AI 保健小幫手：用 ChatGPT & Codex 打造個人健康紀錄工具 | ChatGPT & Codex |
-| 14 | 12.4851 | 21 | 1682 | [Day (一) 我真的分得出釣魚訊息嗎？(前測)](https://ithelp.ithome.com.tw/articles/10411529) | 今天的我能騙過昨天的我嗎？高中生的 30 天社交工程與釣魚辨識實驗 | Security |
-| 15 | 12.2867 | 18 | 1465 | [Day 11｜管理用藥資料：加入刪除功能](https://ithelp.ithome.com.tw/articles/10417076) | AI 保健小幫手：用 ChatGPT & Codex 打造個人健康紀錄工具 | ChatGPT & Codex |
-| 16 | 12.2863 | 23 | 1872 | [Day 20：真相Promise：給未來的一個承諾，解決你的回呼地獄](https://ithelp.ithome.com.tw/articles/10404251) | JS 核心重構：勇者轉職傳說 | JavaScript |
-| 17 | 12.2549 | 5 | 408 | [Day 15｜使用 AI 製作主管報告](https://ithelp.ithome.com.tw/articles/10418132) | 為什麼一般人都該學 AI？30 天完成生活與工作的 AI 實戰。 | 自我挑戰 |
-| 18 | 12.2520 | 21 | 1714 | [Day 15：原理篇  圖解事件委派：一人領信，全家收件](https://ithelp.ithome.com.tw/articles/10403249) | JS 核心重構：勇者轉職傳說 | JavaScript |
-| 19 | 12.1887 | 23 | 1887 | [Day 12：原理篇  邏輯開關&&\|\| 與 ?? 的短路判斷：老手最愛用的簡潔語法](https://ithelp.ithome.com.tw/articles/10402727) | JS 核心重構：勇者轉職傳說 | JavaScript |
-| 20 | 11.7647 | 5 | 425 | [Day 13｜使用 AI 整理會議紀錄](https://ithelp.ithome.com.tw/articles/10417292) | 為什麼一般人都該學 AI？30 天完成生活與工作的 AI 實戰。 | 自我挑戰 |
+| 14 | 12.2867 | 18 | 1465 | [Day 11｜管理用藥資料：加入刪除功能](https://ithelp.ithome.com.tw/articles/10417076) | AI 保健小幫手：用 ChatGPT & Codex 打造個人健康紀錄工具 | ChatGPT & Codex |
+| 15 | 12.2863 | 23 | 1872 | [Day 20：真相Promise：給未來的一個承諾，解決你的回呼地獄](https://ithelp.ithome.com.tw/articles/10404251) | JS 核心重構：勇者轉職傳說 | JavaScript |
+| 16 | 12.2549 | 5 | 408 | [Day 15｜使用 AI 製作主管報告](https://ithelp.ithome.com.tw/articles/10418132) | 為什麼一般人都該學 AI？30 天完成生活與工作的 AI 實戰。 | 自我挑戰 |
+| 17 | 12.2520 | 21 | 1714 | [Day 15：原理篇  圖解事件委派：一人領信，全家收件](https://ithelp.ithome.com.tw/articles/10403249) | JS 核心重構：勇者轉職傳說 | JavaScript |
+| 18 | 12.1887 | 23 | 1887 | [Day 12：原理篇  邏輯開關&&\|\| 與 ?? 的短路判斷：老手最愛用的簡潔語法](https://ithelp.ithome.com.tw/articles/10402727) | JS 核心重構：勇者轉職傳說 | JavaScript |
+| 19 | 11.7647 | 5 | 425 | [Day 13｜使用 AI 整理會議紀錄](https://ithelp.ithome.com.tw/articles/10417292) | 為什麼一般人都該學 AI？30 天完成生活與工作的 AI 實戰。 | 自我挑戰 |
+| 20 | 11.6718 | 34 | 2913 | [Day 10｜引用查證器：每一筆參考文獻都要能被打開](https://ithelp.ithome.com.tw/articles/10409750) | 研究生自救指南:30 天用 Claude Code 打造我的論文工具箱 | Claude AI |
 
 ## per_1k 最高的 20 個系列
 
