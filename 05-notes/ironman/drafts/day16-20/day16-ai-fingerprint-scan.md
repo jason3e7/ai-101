@@ -12,7 +12,7 @@ status: draft
 > [!NOTE]
 > 過去 15 天寫下來, 都是我自己在跟 AI 產出搏鬥時累積出來的心法 ([Day 11](../day11-15/day11-verify-ai-output.md) 到 [Day 15](../day11-15/day15-expand-yourself.md) 那段最直接寫成方法). 這篇把體感換成數字: 掃當屆 (2026) 鐵人賽已發布的公開文章, 用最粗最粗的機械指標 (雙破折號 `——` 密度) 量一次 AI 味, 給後續更細的 lab 一條基準線.
 
-> **TL;DR (EN):** Scanned all 15,057 public articles across 814 series in the 2026 iThome Ironman contest for one mechanical AI-fingerprint signal: density of `——` (double em dash) per thousand characters, computed over the full article. Chinese writers almost never use it; Claude/Gemini love it. **Results:** 70% of articles have zero hits, overall density 0.86 per 1k, p95 = 4.60, max = 17.51. **Biggest surprise:** the ChatGPT & Codex track scores 0.11 per 1k, the lowest of all groups, likely because GPT-5.1 (Nov 2025) started honoring "no em-dash" custom instructions, killing this signal for GPT-based writers. Claude AI track leads at 1.78. Prediction that "median should land in 0.5-1.5" was wrong: median is 0 because 70% never use it. Long-tailed distributions need p90/p95, not median. Method + CSVs + full ranking in `lab01/`. Co-occurrence signal, not a verdict.
+> **TL;DR (EN):** Scanned all 15,057 public articles across 814 series in the 2026 iThome Ironman contest for one mechanical AI-fingerprint signal: density of `——` (double em dash) per thousand characters, computed over the full article. Chinese writers almost never use it; Claude/Gemini love it. **Results:** 70% of articles have zero hits, overall density 0.86 per 1k. **Biggest surprise:** the ChatGPT & Codex track scores 0.11 per 1k, the lowest of all groups, likely because GPT-5.1 (Nov 2025) started honoring "no em-dash" custom instructions, killing this signal for GPT-based writers. Claude AI track leads at 1.78. Method + CSVs + full ranking in `lab01/`. Co-occurrence signal, not a verdict.
 
 ```markdown
 # 掃當屆鐵人賽, 量一次 AI 味有多少
@@ -26,13 +26,8 @@ status: draft
   * 密度 = 命中 / 字數
 * 結果 (2026-09 實測)
   * 15057 篇, 全體每千字 0.86
-  * 70% 零命中, 中位數 0
-  * 長尾: p95 4.60, max 17.51
+  * 70% 零命中
   * ChatGPT 組反常低 0.11
-  * 兩系列吃掉前 20 一半
-* 打臉自己
-  * 預期中位數 0.5-1.5, 實際 0
-  * 預期 ChatGPT 組高, 實際最低
 * 邊界: 不是判決, 是排序訊號
 ```
 
@@ -61,7 +56,6 @@ status: draft
 
 - 中文寫作**幾乎不用 `——`** (至少不會密集出現), 但 AI (Claude / GPT 未特別壓制時) 極愛用它做插敘、下定義、切節奏
 - 純字元計數, 不用 NLP model, 最容易驗證跟複製
-- 是「一眼可辨」的 tell, 對照概念見 [ai-writing-style-tells](../../../../02-advanced/writing-style/ai-writing-style-tells.md)
 - 從最容易的訊號開始, 拿到 pipeline 骨架再堆更複雜的 signal
 
 > [!IMPORTANT]
@@ -96,7 +90,6 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇文章對照, RSS 版�
 | **命中次數** | 整篇文章 (**正文、標題、程式碼區塊都算**) 裡 `——` 出現幾次. 一個 `——` (兩個 `U+2014` 相連) 算 **1 次**, 不是 2 次 |
 | **總字數** | 整篇文章去掉空白後的字元數. 中文字、英數字、標點都各算 1 字. **標題、程式碼區塊都算**, 跟命中次數用同一段範圍 |
 | **呈現單位** | 同時列**原始比值**與 × 1,000 後的「**每千字 X 次**」 |
-| **輸出** | 每篇一列 (`articles.csv`: 命中、字數、密度) ＋ 統計匯總 (`series-summary.csv`: 各系列加總; `results.md`: 全體分佈、quantiles、排行榜) |
 
 **系列匯總用「加總再除」, 不用「平均各篇密度」**:
 
@@ -109,8 +102,6 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇文章對照, RSS 版�
 > 參考: The Last Fingerprint (2026) 用的是「每千**英文字**」. 中文沒有空格斷詞, 這裡改用「每千**字元**」, 兩者**不能直接比**, 只能在本 lab 內部互比.
 
 **禮貌參數**: fetch 開頭寫死 `SLEEP_SEC = 0.1`、`WORKERS = 7` (每請求 0.1 秒, 同時 7 條連線). 全部組別約 929 系列、1.5 萬篇, 跑完約 30 分鐘, 全程 0 失敗沒被 Cloudflare 擋. 初版設 1 秒 / 2 workers 保守, 實測可以更快. 抓的是公開頁面, 不動任何登入牆或付費內容.
-
-**這篇只講 V01 (單一 `——` signal)**. 疊上去的 V02 粗體加權、V03 blockquote、V04 `<hr>`、V05 emoji 種類數、V06 綜合分數已經跑完在 [lab01/](../../lab01/README.md), 綜合分數見 [composite-score-v06.md](../../lab01/composite-score-v06.md). 中文冗詞偵測 V07 還在寫, 見 [v07-preview.md](../../lab01/v07-preview.md). 為的就是**單一 signal 失效時, 其他 signal 補得起來**, 結果段會看到這個設計為什麼必要.
 
 ---
 
@@ -128,14 +119,6 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇文章對照, RSS 版�
 | 命中總次數 | 34,185 |
 | 總字數 | 39,634,634 |
 | **全體每千字** | **0.86** 次 |
-
-### 密度分位數 (每千字)
-
-| p10 | p25 | p50 中位數 | p75 | p90 | **p95** | p99 | max |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 0.00 | 0.00 | **0.00** | 0.66 | 3.31 | **4.60** | 7.44 | **17.51** |
-
-七成文章零命中, 中位數是 0 不奇怪. 訊號要看右尾: p95 = 4.60、p99 = 7.44、max = 17.51. 分佈很扭曲, 大部分作者根本不用這個符號, 少數幾個系列用得很兇.
 
 ### 各組排行 (加總再除)
 
@@ -162,31 +145,9 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇文章對照, RSS 版�
 
 **ChatGPT & Codex 組全體最低, 0.11 每千字**. 用 ChatGPT 或 Codex 寫的作者, 密度不到全體 0.86 的八分之一. Claude AI 組 1.78 是它的十六倍.
 
-怎麼解釋? OpenAI 2025-11 讓 GPT-5.1 開始能遵守 custom instruction 的「不要用 em-dash」, 用該工具寫的作者天然沒訊號. Claude 跟 Gemini 目前壓不掉, Claude AI 組還是最高. 當初挑 `——` 是圖它**最粗最好算**, 現在看下來, 這個指紋對 GPT 生態**已經在失效**. 是這次掃描最有價值的意外收穫, 也是為什麼 lab01 已經在疊 V02-V06 signal.
+怎麼解釋? OpenAI 2025-11 讓 GPT-5.1 開始能遵守 custom instruction 的「不要用 em-dash」, 用該工具寫的作者天然沒訊號. Claude 跟 Gemini 目前壓不掉, Claude AI 組還是最高. 當初挑 `——` 是圖它**最粗最好算**, 現在看下來, 這個指紋對 GPT 生態**已經在失效**. 是這次掃描最有價值的意外收穫.
 
-### 前 20 高密度文章: 兩個系列吃掉一半
-
-前 20 排行由兩個系列 dominate:
-
-- 「轉型之後: IT 領導者的第二座山」(IT Operation): 10 篇進 top 20
-- 「白稜」(佛心分享-IT 人自學之術): 6 篇進 top 20
-
-兩系列合計 16 篇. 個別作者的排版習慣 (可能配特定 AI 潤稿流程) 會系列性重現, 拉高整個系列的密度. 完整排行見 [`lab01/results.md`](../../lab01/results.md).
-
-### 事前預期 vs 實際: 4 條猜測有 2 條打臉
-
-寫下來給自己打臉用的四條, 對照結果:
-
-| # | 預期 | 實際 | |
-|:---:|:---|:---|:---|
-| 1 | 中位數每千字 0.5-1.5 | 中位數 **0.00** | ❌ 打臉 |
-| 2 | 長尾, 少數 5+ | max 17.51, p99 7.44, 前 20 全 12+ | ✅ 命中 |
-| 3 | 技術組 > 生活組 | 大致對, 但 ChatGPT & Codex 全體最低 | ⚠️ 部分打臉 |
-| 4 | 完賽略高 | 完賽 0.90 vs 進行中 0.78 (差 15%) | ✅ 輕度命中 |
-
-Prediction 1 教會的事: **長尾分佈用中位數描述沒意義**. 下次類似分析要直接看分位數表.
-
-Prediction 3 打臉最有價值: **AI 指紋會被 upstream 工具改變**. 訊號選集不能假設「AI 全都愛某個符號」, 要考慮不同模型的實際輸出行為. 這個行為會隨版本變, 這次抓到的 ChatGPT 分數兩年後可能又不一樣.
+完整排行見 [`lab01/results.md`](../../lab01/results.md).
 
 ---
 
@@ -206,11 +167,7 @@ Prediction 3 打臉最有價值: **AI 指紋會被 upstream 工具改變**. 訊�
 - 選 `——` 當第一發沒錯, 用「中文不用、AI 極愛」的落差最乾淨, 純字元計數最好複製
 - 最意外的一件事: **ChatGPT & Codex 組全體最低 (0.11)**, 對照 2025-11 GPT-5.1 起可壓 em-dash 的變化, 這個指紋對 GPT 生態已經在失效. 訊號選集要考慮不同模型的實際輸出, 這行為還會隨版本變
 - **七成文章零命中**, 這件事本身也是強觀察. 大多數作者根本不用這個符號
-- 長尾分佈, p95 才 4.60, 但 max 17.51. 下次類似分析直接看分位數, 不要看中位數
-- 兩個系列 (「轉型之後」10 篇、「白稜」6 篇) 吃掉前 20 排行. 個別作者的排版習慣會系列性重現
 - 高密度不等於 AI 寫的, 這個指標只做排序不做判定
-- 已經在 [lab01/](../../lab01/README.md) 疊了更多 signal: V02 粗體加權、V03 blockquote、V04 `<hr>`、V05 emoji 種類數、V06 綜合分數. 為的就是單一 signal 失效時, 其他 signal 補得起來
-- 中文 AI 冗詞偵測 (V07) 在寫, 比字元計數難很多, 見 [v07-preview](../../lab01/v07-preview.md)
 
 ---
 
