@@ -12,21 +12,28 @@ status: draft
 > [!NOTE]
 > [Day 11](../day11-15/day11-verify-ai-output.md) 到 [Day 15](../day11-15/day15-expand-yourself.md) 講的都是我自己在跟 AI 產出搏鬥時累積出來的心法. 這篇把體感換成數字: 掃當屆 (2026) 鐵人賽已發布的公開文章, 用最粗最粗的機械指標 (雙破折號 `——` 密度) 量一次 AI 味, 給後續更細的 lab 一條基準線.
 
-> **TL;DR (EN):** All 15 days so far have been my own subjective experience editing AI-drafted posts — building mindmap skills so a human can eyeball AI output fast (Day 12) and diagnosing verification fatigue (Day 13) came directly out of that exhaustion. This post turns the anecdote into numbers: scan every public article in the 2026 iThome Ironman contest and measure a single mechanical AI-fingerprint signal — the density of the double em dash `——` per thousand characters, computed over the full article (body + titles + code blocks). Chinese writers almost never use `——`; LLMs (Claude / GPT, unless actively suppressed) love it. Method: enrol via `signup/list`, list articles via each series' RSS, fetch every article page (RSS strips punctuation so it's useless for counting), then `hits / total_chars`. Output is per-article rows (`articles.csv`) plus aggregate stats (`series-summary.csv`, `results.md`). Result is [待實測]. Co-occurrence signal, not a verdict — high density doesn't prove AI, low density doesn't prove human.
+> **TL;DR (EN):** Scanned all 15,057 public articles across 814 series in the 2026 iThome Ironman contest for one mechanical AI-fingerprint signal: density of `——` (double em dash) per thousand characters, computed over the full article. Chinese writers almost never use it; Claude/Gemini love it. **Results:** 70% of articles have zero hits, overall density 0.86 per 1k, p95 = 4.60, max = 17.51. **Biggest surprise:** the ChatGPT & Codex track scores 0.11 per 1k, the lowest of all groups, likely because GPT-5.1 (Nov 2025) started honoring "no em-dash" custom instructions, killing this signal for GPT-based writers. Claude AI track leads at 1.78. Prediction that "median should land in 0.5-1.5" was wrong: median is 0 because 70% never use it. Long-tailed distributions need p90/p95, not median. Method + CSVs + full ranking in `lab01/`. Co-occurrence signal, not a verdict.
 
 ```markdown
 # 掃當屆鐵人賽, 量一次 AI 味有多少
-* 為什麼講這個 (15 天個人厭世 → 想拿數據看)
-* 挑最強指紋: 雙破折號 ——
+* 為什麼講這個 (15 天個人厭世, 想拿數據看)
+* 挑最強指紋: 雙破折號
   * 中文幾乎不用, AI 極愛用
   * 是共現訊號, 不是判決
 * 方法: 抓、算、排
-  * 名單: signup/list + RSS
-  * 內文: 一律走文章頁 (RSS 濾標點)
-  * 密度 = 命中 / 字數 (算整篇: 正文 + 標題 + code)
-  * 輸出: 每篇一列 + 統計匯總
-* 結果: 密度分佈與排行 (待實測)
-* 邊界: 不是 AI 判定, 只是排序訊號
+  * 名單 + RSS 列文章清單
+  * 內文一律走文章頁
+  * 密度 = 命中 / 字數
+* 結果 (2026-09 實測)
+  * 15057 篇, 全體每千字 0.86
+  * 70% 零命中, 中位數 0
+  * 長尾: p95 4.60, max 17.51
+  * ChatGPT 組反常低 0.11
+  * 兩系列吃掉前 20 一半
+* 打臉自己
+  * 預期中位數 0.5-1.5, 實際 0
+  * 預期 ChatGPT 組高, 實際最低
+* 邊界: 不是判決, 是排序訊號
 ```
 
 ---
@@ -101,30 +108,83 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇 RSS 裡 `—` 出現 0
 
 > 參考: The Last Fingerprint (2026) 用的是「每千**英文字**」. 中文沒有空格斷詞, 這裡改用「每千**字元**」, 兩者**不能直接比**, 只能在本 lab 內部互比.
 
-**禮貌參數**: fetch 開頭寫死 `SLEEP_SEC = 1.0`、`WORKERS = 2` (每請求後等 1 秒, 同時 2 條連線). 全部組別約 929 系列、1.5 萬篇, 跑完約 2 小時. 抓的是**公開頁面**, 不動任何登入牆或付費內容.
+**禮貌參數**: fetch 開頭寫死 `SLEEP_SEC = 0.1`、`WORKERS = 7` (每請求 0.1 秒, 同時 7 條連線). 全部組別約 929 系列、1.5 萬篇, 跑完約 30 分鐘, 全程 0 失敗沒被 Cloudflare 擋. 初版設 1 秒 / 2 workers 保守, 實測可以更快. 抓的是公開頁面, 不動任何登入牆或付費內容.
 
 ---
 
 ## 結果: 密度分佈與排行 — What We Found
 
-> [!WARNING]
-> 這一節是 **draft placeholder**. Cut-off 訂在 2026-09-29 之後找一天跑完 fetch + analyze, 再回填實際數字. lab 產出的 `articles.csv`、`series-summary.csv`、`results.md` 會同時 commit 進 repo.
+抓取時間 2026-09-30. 掃出 814 個系列、15,057 篇文章.
 
-預期看的圖:
+### 整體數字
 
-- **全體密度分佈**: 中位數 `[待實測]` 每千字次, 前 5% 密度 `[待實測]`
-- **各組排行**: Claude AI 組 / Modern Web 組 / DevOps 組 ... 的系列密度中位數比對
-- **前 20 高密度文章**: 附連結, 讓讀者自己去看是不是真的很 AI
-- **零命中比例**: 全篇沒用過 `——` 的文章佔比, 這一群是「刻意壓乾淨」或「本來就不用」
+| 項目 | 數值 |
+|:---|---:|
+| 系列 / 文章 | 814 / 15,057 |
+| 有 `——` 的文章 | 4,547 (30.2%) |
+| **零命中** | **10,510 (69.8%)** |
+| 命中總次數 | 34,185 |
+| 總字數 | 39,634,634 |
+| **全體每千字** | **0.86** 次 |
 
-我對數字的**事前預期** (寫下來給自己打臉用):
+### 密度分位數 (每千字)
 
-1. 中位數大約在 **每千字 0.5-1.5 次**之間 (依 [Last Fingerprint](https://last-fingerprint.example) 的英文語料換算, 但中文寫作對 `——` 更冷淡, 可能再低)
-2. 分佈是**長尾**: 大多數人 0 或極少, 少數幾個系列非常高 (每千字 5+)
-3. **技術組 > 生活組**: 寫程式的人更早開始拿 AI 幫忙寫文
-4. Day 16 之前**已完賽 (30/30)** 的系列, 密度比進行中的系列略高 (存稿多、後段可能更靠 AI 產出)
+| p10 | p25 | p50 中位數 | p75 | p90 | **p95** | p99 | max |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0.00 | 0.00 | **0.00** | 0.66 | 3.31 | **4.60** | 7.44 | **17.51** |
 
-跑完數字回填時, 對照這四條猜測看誰命中誰打臉.
+七成文章零命中, 中位數是 0 不奇怪. 訊號要看右尾: p95 = 4.60、p99 = 7.44、max = 17.51. 分佈很扭曲, 大部分作者根本不用這個符號, 少數幾個系列用得很兇.
+
+### 各組排行 (加總再除)
+
+| 組別 | 每千字 | 命中 | 篇數 |
+|:---|---:|---:|---:|
+| Claude AI | **1.78** | 4654 | 990 |
+| 佛心分享-IT 人自學之術 | 1.69 | 1708 | 469 |
+| Kubernetes | 1.46 | 1913 | 384 |
+| AI Engineering | 1.35 | 9339 | 2146 |
+| JavaScript | 0.95 | 1094 | 438 |
+| 佛心分享-IT 人職涯歷練 | 0.92 | 364 | 295 |
+| AI 自動化 | 0.77 | 1347 | 843 |
+| AI Security | 0.70 | 1456 | 666 |
+| Modern Web | 0.68 | 1614 | 748 |
+| Vibe Coding | 0.62 | 1300 | 900 |
+| Software Development | 0.60 | 4141 | 2289 |
+| Build on Google AI | 0.58 | 1478 | 1028 |
+| 自我挑戰 | 0.57 | 1417 | 1459 |
+| Security | 0.52 | 1060 | 889 |
+| 佛心分享-SideProject30 | 0.51 | 383 | 291 |
+| IT Operation | 0.41 | 742 | 612 |
+| 佛心分享-IT 人技術創業 | 0.35 | 33 | 36 |
+| **ChatGPT & Codex** | **0.11** | 142 | 574 |
+
+**ChatGPT & Codex 組全體最低, 0.11 每千字**. 用 ChatGPT 或 Codex 寫的作者, 密度不到全體 0.86 的八分之一. Claude AI 組 1.78 是它的十六倍.
+
+怎麼解釋? OpenAI 2025-11 讓 GPT-5.1 開始能遵守 custom instruction 的「不要用 em-dash」, 用該工具寫的作者天然沒訊號. Claude 跟 Gemini 目前壓不掉, Claude AI 組還是最高. 這篇 lab 講「AI 味最強指紋」, 但這個指紋對 GPT 生態**已經在失效**. 是這次掃描最有價值的意外收穫.
+
+### 前 20 高密度文章: 兩個系列吃掉一半
+
+前 20 排行由兩個系列 dominate:
+
+- 「轉型之後: IT 領導者的第二座山」(IT Operation): 10 篇進 top 20
+- 「白稜」(佛心分享-IT 人自學之術): 6 篇進 top 20
+
+兩系列合計 16 篇. 個別作者的排版習慣 (可能配特定 AI 潤稿流程) 會系列性重現, 拉高整個系列的密度. 完整排行見 [`lab01/results.md`](../../lab01/results.md).
+
+### 事前預期 vs 實際: 4 條猜測有 2 條打臉
+
+寫下來給自己打臉用的四條, 對照結果:
+
+| # | 預期 | 實際 | |
+|:---:|:---|:---|:---|
+| 1 | 中位數每千字 0.5-1.5 | 中位數 **0.00** | ❌ 打臉 |
+| 2 | 長尾, 少數 5+ | max 17.51, p99 7.44, 前 20 全 12+ | ✅ 命中 |
+| 3 | 技術組 > 生活組 | 大致對, 但 ChatGPT & Codex 全體最低 | ⚠️ 部分打臉 |
+| 4 | 完賽略高 | 完賽 0.90 vs 進行中 0.78 (差 15%) | ✅ 輕度命中 |
+
+Prediction 1 教會的事: **長尾分佈用中位數描述沒意義**. 下次類似分析要直接看分位數表.
+
+Prediction 3 打臉最有價值: **AI 指紋會被 upstream 工具改變**. 訊號選集不能假設「AI 全都愛某個符號」, 要考慮不同模型的實際輸出行為. 這個行為會隨版本變, 這次抓到的 ChatGPT 分數兩年後可能又不一樣.
 
 ---
 
@@ -140,19 +200,24 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇 RSS 裡 `—` 出現 0
 
 ## 我的重點 — Takeaways
 
-- 15 天寫下來的心法都是**個人厭世**吐出來的, 這篇把體感換數字
-- 選 `——` 當第一發, 是因為**中文不用、AI 極愛**的落差最乾淨, 純字元計數最好複製
-- **高密度不等於 AI 寫的**, 這個指標只用來排序不做判定
-- 密度算整篇 (含標題、程式碼區塊), 系列匯總用**加總再除**, 不用平均各篇, 避免短文拉歪權重
-- **輸出兩層**: 每篇一列 (articles.csv) + 統計匯總 (series-summary.csv、results.md 分佈與排行)
+- 15 天的心法都是個人厭世吐出來的, 這篇把體感換數字
+- 選 `——` 當第一發沒錯, 用「中文不用、AI 極愛」的落差最乾淨, 純字元計數最好複製
+- 最意外的一件事: **ChatGPT & Codex 組全體最低 (0.11)**, 對照 2025-11 GPT-5.1 起可壓 em-dash 的變化, 這個指紋對 GPT 生態已經在失效. 訊號選集要考慮不同模型的實際輸出, 這行為還會隨版本變
+- **七成文章零命中**, 這件事本身也是強觀察. 大多數作者根本不用這個符號
+- 長尾分佈, p95 才 4.60, 但 max 17.51. 下次類似分析直接看分位數, 不要看中位數
+- 兩個系列 (「轉型之後」10 篇、「白稜」6 篇) 吃掉前 20 排行. 個別作者的排版習慣會系列性重現
+- 高密度不等於 AI 寫的, 這個指標只做排序不做判定
+- 已經在 [lab01/](../../lab01/README.md) 疊了更多 signal: V02 粗體加權、V03 blockquote、V04 `<hr>`、V05 emoji 種類數、V06 綜合分數. 為的就是單一 signal 失效時, 其他 signal 補得起來
+- 中文 AI 冗詞偵測 (V07) 在寫, 比字元計數難很多, 見 [v07-preview](../../lab01/v07-preview.md)
 
 ---
 
 ## Sources
 
-- [lab01: AI 文風檢測 — 雙破折號基準線](../../lab01/README.md)
+- [lab01: AI 文風檢測 — 雙破折號基準線](../../lab01/README.md), [完整排行 `results.md`](../../lab01/results.md), [每篇 `articles.csv`](../../lab01/articles.csv), [每系列 `series-summary.csv`](../../lab01/series-summary.csv)
+- [lab01 V07 preview: 中文冗詞候選 + Kobak 英文權威清單](../../lab01/v07-preview.md)
 - [AI 的文風與語氣: 破折號是最強指紋](../../../../02-advanced/writing-style/ai-writing-style-tells.md)
 - [AI 的文風與語氣: jason3e7 手筆改寫版](../../../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md)
-- [PG Play writeup 個人文風約束](../../../design-and-guides/pgplay-writeup-style-guide.md)
-- [The Last Fingerprint — quantifying LLM stylistic tells (2026)](https://arxiv.org/abs/2603.example)
+- [AI 生成內容浮水印: 2026 現況 + em-dash 政治化](../../../../01-fundamentals/ai-content-watermark.md)
+- [Kobak et al. (2025) Science Advances: excess vocabulary 統計研究](https://www.science.org/doi/10.1126/sciadv.adt3813)
 - [2026 iThome 鐵人賽 首頁](https://ithelp.ithome.com.tw/2026ironman)
