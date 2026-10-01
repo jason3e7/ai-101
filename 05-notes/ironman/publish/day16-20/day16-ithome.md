@@ -146,8 +146,7 @@ RSS 雖然附全文, 但**濾掉部分標點**: 同一篇文章對照, RSS 版�
 
 ## Sources
 
-- lab01 掃描原始碼與資料 (fetch.py / analyze.py / articles.csv / results.md): <https://github.com/jason3e7/ai-101/tree/master/05-notes/ironman/lab01>
-- [AI 的文風與語氣: 破折號是最強指紋](https://github.com/jason3e7/ai-101/blob/master/02-advanced/writing-style/ai-writing-style-tells.md)
-- [AI 生成內容浮水印: 2026 現況 + em-dash 政治化](https://github.com/jason3e7/ai-101/blob/master/01-fundamentals/ai-content-watermark.md)
+- [The Last Fingerprint: How Markdown Training Shapes LLM Prose — E. M. Freeburg, 2026](https://arxiv.org/abs/2603.27006)
 - [Kobak et al. (2025) Science Advances: excess vocabulary 統計研究](https://www.science.org/doi/10.1126/sciadv.adt3813)
+- [你想知道網路上的文章是不是 AI 產生的嗎? — Wisely Chen (LinkedIn)](https://www.linkedin.com/posts/wisely-chen_%E4%BD%A0%E6%83%B3%E7%9F%A5%E9%81%93%E7%B6%B2%E8%B7%AF%E4%B8%8A%E7%9A%84%E6%96%87%E7%AB%A0%E6%98%AF%E4%B8%8D%E6%98%AF-ai-%E7%94%A2%E7%94%9F%E7%9A%84%E5%97%8E-%E9%99%A4%E4%BA%86%E5%8E%BB%E6%89%BE%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%A5%87%E6%80%AA%E7%9A%84%E7%A0%B4%E6%8A%98%E8%99%9F%E4%BB%A5%E5%A4%96-share-7493094207901859841-PWpZ/)
 - [2026 iThome 鐵人賽 首頁](https://ithelp.ithome.com.tw/2026ironman)
