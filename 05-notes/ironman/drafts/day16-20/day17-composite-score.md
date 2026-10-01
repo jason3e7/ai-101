@@ -10,9 +10,9 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 16](./day16-ai-fingerprint-scan.md) 只用一個訊號 (雙破折號 `——`) 掃出 15,057 篇, 發現 ChatGPT & Codex 組只 0.11 每千字, 這個指紋對 GPT 生態已經失效. 單一指標會被模型 upstream 壓掉, 這篇把 lab01 疊到**綜合分數** (6 個 signal, 總量加權型, 公式 B 總和 × N 總和), 重跑一次排名, 看多指紋捕捉到的「AI 味」是什麼樣貌.
+> [Day 16](./day16-ai-fingerprint-scan.md) 只用一個訊號 (雙破折號 `——`) 掃出 15,057 篇, 發現 ChatGPT & Codex 組只 0.11 每千字, 這個指紋對 GPT 生態已經失效. 單一指標會被模型 upstream 壓掉, 這篇把指標疊到**綜合分數** (6 個 signal, 總量加權型, 公式 B 總和 × N 總和), 重跑一次排名, 看多指紋捕捉到的「AI 味」是什麼樣貌.
 
-> **TL;DR (EN):** Day 16 ranked articles by a single signal (`——`); results showed the signal is dying for GPT-based writers because GPT-5.1 can suppress em-dash on request. This post stacks six signals (`——` × 4, emoji × distinct-types, strict-bold-list × 3, all-bold × 0, blockquote × 1, `<hr>` × 1.5) and combines them with a composite formula: `base = (ΣB) × (ΣN of hit signals)`, then density per 1k chars. Across the same 15,057 articles, overall density jumps from 0.86 to 55.45. **Top 3 shifts completely**: Day 16's em-dash-heavy articles get displaced by markdown-formatting-heavy articles — 「使用gemini 準備 az-900」series takes #1/#4/#6/#10 (stacks every signal at scale). Series rankings: JS 核心重構 keeps #1 (overlap with Day 16), gemini-az-900 jumps to #2 (new winner), Phoenix 2026 at #3. Two parallel composite formulas live in lab01: the one here captures markdown-pile-everything users (total-weighted), a sister formula captures clean AI tells (selective-weighted). Different lenses, both ship.
+> **TL;DR (EN):** Day 16 ranked articles by a single signal (`——`); results showed the signal is dying for GPT-based writers because GPT-5.1 can suppress em-dash on request. This post stacks six signals (`——` × 4, emoji × distinct-types, strict-bold-list × 3, all-bold × 0, blockquote × 1, `<hr>` × 1.5) with the formula `base = (ΣB) × (ΣN of hit signals)`, then density per 1k chars. Across the same 15,057 articles, overall density jumps from 0.86 to 55.45. **Top 3 shifts completely**: Day 16's em-dash-heavy articles get displaced by markdown-formatting-heavy ones — 「使用gemini 準備 az-900」series takes #1/#4/#6/#10 (stacks every signal at scale). Different lens: single signal catches em-dash lovers, composite catches markdown-pile-everything users.
 
 ```markdown
 # 從 1 個訊號擴到 6 個, 綜合分數
@@ -22,13 +22,13 @@ status: draft
   * blockquote, <hr>
 * 公式
   * B 總和 × N 總和 (總量加權)
-  * 跟姊妹算法 Σ(B×N) 選擇性加權的差別
+  * 一般粗體 N=0 當放大器
 * 結果 (全體 density 55.45)
   * top 5 文章: 排版重度派
   * top 5 系列: gemini az-900 奪冠
 * 跟 Day 16 (單 ——) 對比
   * top 3 完全不重疊
-  * 兩個算法捕捉不同的「AI 味」
+  * 單指紋 vs 綜合分數捕捉不同的「AI 味」
 * 邊界
 ```
 
@@ -44,7 +44,7 @@ status: draft
 - **愛用 `——` 的老派人類作者**: 單一指標誤判
 - **用 AI 但只重排版的作者**: 不碰 `——` 但狂灑 emoji + 粗體 + 分段線, 單一指標完全漏掉
 
-要補這些洞, 做法是**疊更多 signal**. 單一壞掉其他補得起. 這篇講 lab01 疊到的**綜合分數** (6 個 signal, 總量加權型), 用同一批 2026-09 corpus (15,057 篇) 重跑排名.
+要補這些洞, 做法是**疊更多 signal**. 單一壞掉其他補得起. 這篇疊到**綜合分數** (6 個 signal, 總量加權型), 用同一批 2026-09 corpus (15,057 篇) 重跑排名.
 
 ---
 
@@ -66,7 +66,7 @@ status: draft
 - **emoji 的乘數是「種類數」不是「個數」**: 5 個相同 emoji (count=5, types=1) 分數 = 5; 5 個不同 emoji (count=5, types=5) 分數 = 25. 人類寫作通常固定幾個常用 emoji, AI 愛展示變化
 - **嚴格 pattern 跟一般粗體分開算**: 嚴格 pattern 是一般粗體的子集, 命中嚴格 pattern 同時也算一般粗體 (加倍計, 總權重 3+0=3), 捕捉「`- **標籤**: 說明」這種最像 AI 的樣子
 - **一般粗體權重 0**: 人類也常用, 不給 vote, 但 count 會進 B_total 當**痕跡放大器** (下一節解釋)
-- **權重是 data-driven 調過的**: 初版 N 憑感覺, 2026-10-01 根據 corpus contribution 調整過 (嚴格 pattern 2→3, `<hr>` 1→1.5), 詳見 [lab01 權重微調 note](../../lab01/v06b-weight-tuning.md)
+- **權重是 data-driven 調過的**: 初版 N 憑感覺, 2026-10-01 根據 corpus contribution 調整過 (嚴格 pattern 2→3, `<hr>` 1→1.5)
 - **emoji 排除清單**: `○ ✗ ★ ☆ ☐` 這些 checklist / 星等排版符號人類也常用, 不算
 
 ---
@@ -82,12 +82,7 @@ base    = B_total × N_sum
 density = base / 總字數 × 1000                               ← 排名主指標
 ```
 
-**跟姊妹算法 (`Σ(Bᵢ × Nᵢ)` 每 signal 各自 B×N 再加) 的差別**:
-
-- 一般粗體 N=0 → 姊妹算法下完全消失, 本篇這算法把 count 進 B_total 當放大器
-- 直覺差別: 姊妹算法是「**選擇性加權**」(弱 signal 消音), 本篇這算法是「**總量加權**」(弱 signal 當放大器)
-- 兩個 Spearman 排名相關 0.95 (高相關), 但 top 10 交集只 3/10, 細節洗牌劇烈
-- **這篇用「總量加權」**, 「選擇性加權」姊妹算法並存. 對照細節見 [lab01 兩算法對照](../../lab01/v06-vs-v06b.md)
+**一般粗體 N=0 當放大器**: all count 本身不給 vote (N=0), 但 count 進 B_total, 把全盤放大 N_sum 倍. 這是刻意的設計 — 粗體排版重度 (就算每項權重 0) 也會放大其他 signal 的影響.
 
 舉例: 「使用gemini 準備 az-900 Day 21」:
 
@@ -137,8 +132,6 @@ Day 16 單 signal 全體 0.86 → 綜合分數 55.45, 數字差 60 倍 (因為�
 | 4 | 487.02 | 30 | 槍林彈雨下的資安防守 |
 | 5 | 408.43 | 29 | OpenShift AI 簡易入門 30 天 |
 
-完整排行 (20 篇文章、20 系列) 見 [lab01 完整結果 note](../../lab01/results-v06b.md).
-
 ---
 
 ## 跟 Day 16 單 `——` 比: top 3 完全不重疊 — Different Lens, Different Top
@@ -149,7 +142,7 @@ Day 16 單 signal 全體 0.86 → 綜合分數 55.45, 數字差 60 倍 (因為�
 | 2 | 白稜 Day 12 流程再造 (14.29) | Phoenix 2026 Day 12 (1100.59) |
 | 3 | mpv-lazy Day25 (13.49) | JS 核心重構 Day 02 (1077.31) |
 
-**兩套 top 3 完全不重疊**. 不是誰對誰錯, 是**兩套算法在量不同的「AI 味」**:
+**兩套 top 3 完全不重疊**. 不是誰對誰錯, 是**兩個指標在量不同的「AI 味」**:
 
 - **Day 16 top 3 共通點**: 短文 + `——` 用得兇. 單一 tell 強, 其他 signal 平淡
 - **Day 17 top 3 共通點**: 排版重度 (每篇都塞 emoji + 粗體 + 分段 + 引用), 不一定愛 `——`
@@ -165,7 +158,6 @@ Day 16 單 signal 全體 0.86 → 綜合分數 55.45, 數字差 60 倍 (因為�
 - **權重是人工調的**: N 用 data-driven 分析調過 (contribution + ablation), 但終究是人設的, 不是 ground truth
 - **「排版重度」不等於 AI 寫的**: 有些作者 (特別是教學類) 本來就愛塞 emoji + 粗體, 不代表 AI 代筆. 這個指標只用來排序, 不做判定
 - **系列密度用「加總再除」**: 用字數當權重, 跟平均各篇密度不一樣 (細節同 Day 16)
-- **兩種算法選用**: 想抓**乾淨 AI tell** 用「選擇性加權」(弱 signal 消音); 想抓**排版 maximalist** 用「總量加權」(弱 signal 當放大器). 細節見 [lab01 兩算法對照](../../lab01/v06-vs-v06b.md)
 - 其他邊界 (只算 `——`、算整篇含標題與程式碼、不設字數門檻、不 doxx) 同 [Day 16](./day16-ai-fingerprint-scan.md)
 
 ---
@@ -173,18 +165,14 @@ Day 16 單 signal 全體 0.86 → 綜合分數 55.45, 數字差 60 倍 (因為�
 ## 我的重點 — Takeaways
 
 - 單一指紋會被 upstream 工具壓掉 (Day 16 的 `——` 對 GPT 生態已失效), 疊 signal 是必要的補救
-- `(ΣB) × (ΣN)` 公式讓**連弱 signal (一般粗體 N=0) 都當放大器**, 跟「每 signal 各自 B×N 再加」的姊妹算法是不同哲學
-- 兩套算法**跟 Day 16 top 3 完全不重疊** — 不是誰對誰錯, 是在量不同面相的「AI 味」(em-dash 愛好者 vs markdown 排版 maximalist)
-- 系列層級更穩: JS 核心重構 兩套算法都 top 3 (強重疊), 說明有穩定的「排版 pattern」
-- 「使用gemini 準備 az-900」整系列在姊妹算法排 58, 在本篇這算法直衝排名 1/4/6/10, 顯示**連綴性排版習慣**會系列性重現 — 一次校準的作者, 整系列都在同一個峰值
+- 綜合分數**跟 Day 16 top 3 完全不重疊** — 不是誰對誰錯, 是在量不同面相的「AI 味」(em-dash 愛好者 vs markdown 排版 maximalist)
+- 「排版重度」是另一條訊號線: 看到有人每篇都塞 emoji + 粗體 + 分段, 不是 AI 代筆的鐵證, 但值得多看一眼
 
 ---
 
 ## Sources
 
-- [lab01 綜合分數完整排行 (20 篇文章 + 20 系列)](../../lab01/results-v06b.md)
-- [lab01 兩算法對照 (總量加權 vs 選擇性加權)](../../lab01/v06-vs-v06b.md)
-- [lab01 姊妹算法原始設計 (選擇性加權)](../../lab01/composite-score-v06.md)
-- [lab01 N 權重 data-driven 微調](../../lab01/v06b-weight-tuning.md)
-- [lab01 各 signal 的實驗紀錄](../../lab01/signal-experiments.md)
 - [Day 16: 掃當屆所有文章, 量一次「AI 味」有多少](https://ithelp.ithome.com.tw/articles/10419414) — 單 `——` 掃全屆
+- [Ghostbuster: Detecting Text Ghostwritten by Large Language Models (Verma et al., NAACL 2024)](https://arxiv.org/abs/2305.15047) — 多 feature 綜合計分, 跟本篇的 (ΣB)×(ΣN) 同一思路
+- [Spotting LLMs With Binoculars: Zero-Shot Detection of Machine-Generated Text (Hans et al., ICML 2024)](https://arxiv.org/abs/2401.12070) — 不同算法 (perplexity ratio) 但同一題
+- [Contrasting Linguistic Patterns in Human and LLM-Generated News Text (Muñoz-Ortiz & Gómez-Rodríguez, 2024)](https://arxiv.org/abs/2308.09067) — 統計上找人 vs LLM 的語言 pattern 差異
