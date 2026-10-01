@@ -83,8 +83,8 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 16 | 掃當屆所有文章, 量一次「AI 味」有多少 | [lab01](../lab01/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10419414) |
 | 17 | 從 1 個訊號擴到 6 個, 綜合分數再測「AI 味」 | [lab01 結果](../lab01/results-v06b.md) ＋ [兩算法對照](../lab01/v06-vs-v06b.md) | 🚧 [草稿中](./drafts/day16-20/day17-composite-score.md) |
 | 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? | [lab01](../lab01/README.md) ＋ jason3e7 翻面提問 | 🚧 [草稿骨架](./drafts/day16-20/day18-detecting-pure-human.md) |
-| 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 📅 預計 (原 Day 28 題目前移) |
-| 20 | 文風測量 + 浮水印 子系列小結 (Day 16-19) | — | 📅 預計 |
+| 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 🚧 [草稿中](./drafts/day16-20/day19-ai-watermark.md) |
+| 20 | AI 文風入侵: 五個記號一次講完 + 把味道壓回去的抗體 + 子系列小結 (Day 16-19) | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) ＋ 子系列回顧 | 📅 預計 |
 | 21 | (待重排) | 見 [Day 21-24 候選](#day-17-24-候選--candidates-for-re-slotting) | 🔄 |
 | 22 | (待重排) |  | 🔄 |
 | 23 | (待重排) |  | 🔄 |
@@ -96,17 +96,18 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 25 | AI 可能會取代什麼, 目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day21-25/day25-what-ai-replaces.md) |
 | 26 | (待想) | 原「AI 風格橫行掃 40 系列」跟 Day 16 lab01 重疊, 已撤空 | 🔄 |
-| 27 | AI 文風入侵：五個記號一次講完, 附把味道壓回去的抗體 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) | 改寫 |
+| 27 | (待想, 原「AI 文風入侵」已前移到 Day 20) | — | 🔄 |
 | 28 | (待想, 原「浮水印」已前移到 Day 19) | — | 🔄 |
 | 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ [已完成](./drafts/day26-30/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
-**盤點**: 🚀 已發布 16 篇 (Day 1-16) · ✅ 已完成 draft 2 篇 (Day 25、29) · 🚧 草稿中 1 篇 (Day 17) · 📅 預計 3 篇 (Day 18-20) · 🔄 待重排/待想 6 篇 (Day 21-24、26、28) · 未動工 2 篇 (Day 27、30).
+**盤點**: 🚀 已發布 16 篇 (Day 1-16) · ✅ 已完成 draft 2 篇 (Day 25、29) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 1 篇 (Day 20) · 🔄 待重排/待想 7 篇 (Day 21-24、26、27、28) · 未動工 1 篇 (Day 30).
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-01 (下午)**: Day 20 合併原 Day 27「AI 文風入侵: 五個記號 + 把味道壓回去的抗體」+「子系列小結 (Day 16-19)」, 兩個主題相關就一次講; Day 27 slot 空出變 🔄 待想; Day 19 draft 寫完 (🚧 草稿中)
 - **2026-10-01**: Day 16 已發布 (10419414); Day 17 lab01 第二篇「V06B 綜合分數」draft 寫完; Day 18-20 排定「文風測量 + 浮水印」子系列 (Day 18 lab01 收尾, Day 19 浮水印 (ai-content-watermark), Day 20 子系列小結); Day 28 原「浮水印」題目前移到 Day 19, 原 slot 待想
 - **2026-09-29**: Day 16 從「權限：AI 動到哪裡」pivot 到「lab01 雙破折號掃描」; Day 17-24 全部 mark 🔄 待重排 (原內容中 Day 20/21/23/24 已被 Day 11/14/15 用掉); Day 26 撤空 (原「AI 風格橫行掃 40 系列」跟 Day 16 lab01 重疊); 移除已無效的「Day 11-20 主題重定」與「選模型實測預產」兩節
 - **2026-09-24**: Day 11-20 主軸重定成「驗證 → 判斷力」主題; 廢棄原 Day 11「用 prompt 生 prompt」與 Day 10「XY Problem」(已被 xxx Engineering 收整)
