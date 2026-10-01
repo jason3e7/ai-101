@@ -1,12 +1,15 @@
 ---
 title: lab01 V06 vs V06B — 兩種綜合分數算法對照
 created: 2026-10-01
+updated: 2026-10-01 (V06B N 保守微調後更新)
 ---
 
 # V06 vs V06B — Comparing Two Composite Score Formulas
 
 > [!NOTE]
 > V06 原本實作成「每個 signal 的 B × 自己的 N, 再加總」(乘積和). 討論中發現原始設計意圖是「所有 B 加總, 乘上所有 N 加總」(和的乘積). 兩種算法對 V02 all N=0 的處理差很多: V06 讓 V02 all 完全消失, V06B 讓它作為「痕跡放大器」. 這篇用同一份 2026-09 corpus (15057 篇) 跑兩個算法, 比對排名差異, 討論兩者各自的語意與用途.
+>
+> **2026-10-01 更新**: V06B 的 N 保守微調 (strict 2→3, hr 1→1.5), 詳見 [v06b-weight-tuning.md](./v06b-weight-tuning.md). Spearman 0.9984 幾乎不變, top 20 文章完全一樣 (微調只影響順序). 以下數字反映微調後的 V06B.
 
 > **TL;DR (EN):** Two composite-score formulas for V06. V06 is `Σ(Bᵢ × Nᵢ)` where V02 all (N=0) contributes nothing. V06B is `B_total × N_sum` where V02 all still inflates B_total even though its own weight is zero. Both run on same 15,057 articles. Spearman rank correlation 0.95 (strongly correlated overall) but top-10 overlap is only 3/10. V06 ranks em-dash + emoji-variety + strict-pattern heavy articles highest; V06B promotes "markdown-formatting-heavy" articles that pile on all bold + hr + bq together. 使用gemini 準備 az-900 series jumps from rank 58 (V06) to rank 1 (V06B) because it stacks all signals; JS 核心重構 series stays top in both but shuffles. Different formulas measure different notions of "AI-smell": V06 catches cleanest AI tells, V06B catches markdown-formatting load.
 
@@ -44,13 +47,13 @@ base = Σᵢ (Bᵢ × Nᵢ)
 ```
 每 signal 用自己的 N 乘自己的 B, 再全部加. V02 all 的 N=0 → all 命中再多, 貢獻恆 0.
 
-**V06B (user intent)**:
+**V06B (user intent, 2026-10-01 微調後)**:
 
 ```
 B_total = em + emoji + strict + all + bq + hr                    ← 命中總次數 (含 all)
 N_sum   = Σ (Nᵢ where Bᵢ > 0)                                     ← 只對命中的 signal 加 N
-        = (4 if em>0) + (types if emoji>0) + (2 if strict>0)
-          + (0 if all>0) + (1 if bq>0) + (1 if hr>0)
+        = (4 if em>0) + (types if emoji>0) + (3 if strict>0)
+          + (0 if all>0) + (1 if bq>0) + (1.5 if hr>0)
 base    = B_total × N_sum
 ```
 
@@ -64,14 +67,16 @@ all 的 count 也進 B_total, 等於「痕跡放大器」. 但單獨命中 all �
 
 ### 全體 base 跟 density
 
-| 指標 | V06 | V06B | 比值 |
+| 指標 | V06 | V06B (微調後) | 比值 |
 |:---|---:|---:|---:|
 | 系列數 | 814 | 814 | — |
 | 文章數 | 15,057 | 15,057 | — |
-| base 總和 | 342,543 | 1,921,010 | **×5.6** |
-| 全體 density | 8.64 | 48.47 | **×5.6** |
+| base 總和 | 342,543 | 2,197,603 | **×6.4** |
+| 全體 density | 8.64 | 55.45 | **×6.4** |
 
-V06B 的 base 普遍是 V06 的 5.6 倍 (平均而言). 但 scale 不是重點, 排名才是.
+V06B 的 base 普遍是 V06 的 6.4 倍 (平均而言). 但 scale 不是重點, 排名才是.
+
+> V06B 微調前後對比: 舊 density 48.47, 新 55.45 (×1.14 scale 提升, 來自 strict 2→3 跟 hr 1→1.5). Spearman 新舊 V06B = 0.9984, top 20 文章完全一樣. 微調主要影響數值而非排名.
 
 ### 排名重疊
 
@@ -94,23 +99,24 @@ V06B 的 base 普遍是 V06 的 5.6 倍 (平均而言). 但 scale 不是重點, 
 
 ## Top 10 對照 — Head-to-Head
 
-| 排名 | V06 | V06B |
+| 排名 | V06 | V06B (微調後) |
 |:---:|:---|:---|
-| 1 | 驗證使用 AI 助教 (246.58) | **使用gemini 準備 az-900 DAY 6** (1097.92) |
-| 2 | Day 02 清點魔法物資 (JS 核心重構, 233.88) | **Day 12 你敢不敢承認** (Phoenix 2026, 1040.56) |
-| 3 | Day 12 邏輯開關 (JS 核心重構, 209.86) | Day 02 清點魔法物資 (JS 核心重構, 1013.94) |
-| 4 | Day 20 Promise (JS 核心重構, 204.59) | **使用gemini 準備AZ-900 Day21** (963.54) |
-| 5 | Day 15 事件委派 (JS 核心重構, 200.12) | **使用gemini 準備 az-900 DAY 1** (951.84) |
-| 6 | Day 03 箭頭函式 (JS 核心重構, 189.83) | Day 03 箭頭函式 (JS 核心重構, 946.43) |
-| 7 | Day 10 this (JS 核心重構, 187.86) | Day 27 戰略指揮 (JS 核心重構, 941.71) |
-| 8 | 我想像中的未來小豬 (187.27) | 我想像中的未來小豬 (912.09) |
-| 9 | Day 17 Timeout (JS 核心重構, 180.01) | Day 26 效能神兵 (JS 核心重構, 904.31) |
-| 10 | 小豬的健康讓我來守護 (179.72) | **使用gemini 準備 az-900 Day 4** (876.55) |
+| 1 | 驗證使用 AI 助教 (246.58) | **使用gemini 準備 az-900 DAY 6** (1141.26) |
+| 2 | Day 02 清點魔法物資 (JS 核心重構, 233.88) | **Day 12 你敢不敢承認** (Phoenix 2026, 1100.59) |
+| 3 | Day 12 邏輯開關 (JS 核心重構, 209.86) | Day 02 清點魔法物資 (JS 核心重構, 1077.31) |
+| 4 | Day 20 Promise (JS 核心重構, 204.59) | **使用gemini 準備 az-900 DAY 1** (1008.95) |
+| 5 | Day 15 事件委派 (JS 核心重構, 200.12) | Day 03 箭頭函式 (JS 核心重構, 1008.15) |
+| 6 | Day 03 箭頭函式 (JS 核心重構, 189.83) | **使用gemini 準備AZ-900 Day21** (1007.34) |
+| 7 | Day 10 this (JS 核心重構, 187.86) | Day 27 戰略指揮 (JS 核心重構, 1003.13) |
+| 8 | 我想像中的未來小豬 (187.27) | 我想像中的未來小豬 (969.09) |
+| 9 | Day 17 Timeout (JS 核心重構, 180.01) | Day 26 效能神兵 (JS 核心重構, 963.29) |
+| 10 | 小豬的健康讓我來守護 (179.72) | **驗證使用 AI 助教 (V06 top 1)** (938.18) |
 
 **V06B 新進榜 top 10 (粗體)**:
 
-- 「使用gemini 準備 az-900」系列 4 篇 (V06 排 35-152 → V06B 1-10)
+- 「使用gemini 準備 az-900」系列 3 篇 (V06 排 35-93 → V06B 1/4/6)
 - 「Phoenix 2026」1 篇 (V06 排 63 → V06B 2)
+- V06 top 1「驗證使用 AI 助教」在 V06B 排 10, 兩個算法都看到它但 V06 更推它
 - 掉榜: V06 的 JS 核心重構 Day 12/15/20/10/17 掉到 V06B 排 20-30 外
 
 ---
@@ -162,12 +168,12 @@ V06B 的 base 普遍是 V06 的 5.6 倍 (平均而言). 但 scale 不是重點, 
 ```
 em=20, emoji=101(25 種), strict=170, all=248, bq=15, hr=21
 B_total = 575
-N_sum = 4 + 25 + 2 + 0 + 1 + 1 = 33
-V06B base = 575 × 33 = 18,975
+N_sum (微調後) = 4 + 25 + 3 + 0 + 1 + 1.5 = 34.5
+V06B base = 575 × 34.5 = 19,837.5    (density ≈ 1007 在 top 6)
 V06  base = 20×4 + 101×25 + 170×2 + 15 + 21 = 80 + 2525 + 340 + 36 = 2,981
 ```
 
-V06B 比 V06 高 6.4 倍, 因為 all=248 進了 B_total, strict=170 進了 B_total, 兩個 big number 乘上 33 的 N_sum. V06 下 all 完全消失, strict 只貢獻 340, 遠低於 B_total×N_sum 的放大效應.
+V06B 比 V06 高 6.6 倍, 因為 all=248 進了 B_total, strict=170 進了 B_total, 兩個 big number 乘上 34.5 的 N_sum. V06 下 all 完全消失, strict 只貢獻 340, 遠低於 B_total×N_sum 的放大效應.
 
 ### V06 把這些拉上來的原因
 
@@ -177,11 +183,11 @@ V06B 比 V06 高 6.4 倍, 因為 all=248 進了 B_total, strict=170 進了 B_tot
 em=1, emoji=31(9 種), strict=0, all=14, bq=5, hr=8, chars=1647
 V06  base = 1×4 + 31×9 + 0 + 5 + 8 = 296, density = 179.72
 V06B B_total = 1+31+0+14+5+8 = 59
-V06B N_sum = 4 + 9 + 0 (strict=0) + 0 (all is 0 anyway) + 1 + 1 = 15
-V06B base = 59 × 15 = 885, density = 537.34, 排名 72
+V06B N_sum (微調後) = 4 + 9 + 0 (strict=0) + 0 (all is 0 anyway) + 1 + 1.5 = 15.5
+V06B base = 59 × 15.5 = 914.5, density ≈ 555, 排名約 70
 ```
 
-V06 排 10, V06B 排 72. V06 給它高分是因為 emoji_count × emoji_types (31 × 9 = 279) 吃了大部分分. V06B 下 N_sum 只有 15 (沒有 strict), B_total 只有 59 (沒有大量 all), 乘起來不如那些「什麼都塞」的系列.
+V06 排 10, V06B 排 70 左右. V06 給它高分是因為 emoji_count × emoji_types (31 × 9 = 279) 吃了大部分分. V06B 下 N_sum 只有 15.5 (沒有 strict), B_total 只有 59 (沒有大量 all), 乘起來不如那些「什麼都塞」的系列.
 
 ---
 

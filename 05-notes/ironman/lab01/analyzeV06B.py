@@ -13,13 +13,16 @@ V06B 的動機:
     進 B_total, 讓它作為「痕跡放大器」— 單獨出現仍不計分 (N_sum=0), 但配合
     其他 signal 命中時能放大整體 base.
 
-公式細節:
+公式細節 (2026-10-01 保守微調後的 N):
     B_total = em + emoji + strict + all + bq + hr          所有 signal 的 count 加總
     N_sum   = Σ (Nᵢ where Bᵢ > 0)                          只對命中的 signal 加 N
-            = (4 if em>0) + (emoji_types if emoji>0) + (2 if strict>0)
-              + (0 if all>0) + (1 if bq>0) + (1 if hr>0)
+            = (4 if em>0) + (emoji_types if emoji>0) + (3 if strict>0)
+              + (0 if all>0) + (1 if bq>0) + (1.5 if hr>0)
     base    = B_total × N_sum
     density = base / chars × 1000  (per_1k 型)
+
+    N 微調理由見 v06b-weight-tuning.md: strict 2→3 (強 AI pattern 跟 bq 拉開),
+    hr 1→1.5 (比 bq 稀, AI 愛切章節).
 
 跟 V06 的語意差別 (舉例):
     1 em + 50 all:
@@ -157,14 +160,14 @@ def measure(body_html):
 
 
 def compute_v06b(m):
-    """V06B: base = B_total × N_sum."""
+    """V06B: base = B_total × N_sum. N 微調後 (2026-10-01 保守)."""
     b_total = m["em_count"] + m["emoji_count"] + m["strict_bold"] + m["all_bold"] + m["bq_count"] + m["hr_count"]
     n_sum = ((4 if m["em_count"] > 0 else 0)
              + (m["emoji_types"] if m["emoji_count"] > 0 else 0)
-             + (2 if m["strict_bold"] > 0 else 0)
+             + (3 if m["strict_bold"] > 0 else 0)
              + (0 if m["all_bold"] > 0 else 0)
              + (1 if m["bq_count"] > 0 else 0)
-             + (1 if m["hr_count"] > 0 else 0))
+             + (1.5 if m["hr_count"] > 0 else 0))
     return b_total, n_sum, b_total * n_sum
 
 
@@ -266,8 +269,10 @@ def main():
          f"> 抓取時間 {idx.get('fetched_at')}. 公式:",
          f"> B_total = em + emoji + strict + all + bq + hr",
          f"> N_sum   = Σ (Nᵢ where Bᵢ > 0)",
+         f">        = (4 if em) + (types if emoji) + (3 if strict) + (0 if all) + (1 if bq) + (1.5 if hr)",
          f"> base    = B_total × N_sum",
          f"> density = base / total_chars × 1000  (per_1k 型)",
+         f"> N 2026-10-01 保守微調: strict 2→3, hr 1→1.5 (見 v06b-weight-tuning.md).",
          f"> V02 all 的 N=0 仍進 B_total 當放大器, 但單獨命中 N_sum=0 不計分.",
          f"> 跟 V06 (每個 signal 自己 B×N 加總) 比較見 lab01/v06-vs-v06b.md.",
          "",
