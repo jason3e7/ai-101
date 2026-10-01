@@ -82,7 +82,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 16 | 掃當屆所有文章, 量一次「AI 味」有多少 | [lab01](../lab01/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10419414) |
 | 17 | 從 1 個訊號擴到 6 個, V06B 綜合分數再測「AI 味」 | [lab01 V06B](../lab01/results-v06b.md) ＋ [v06-vs-v06b](../lab01/v06-vs-v06b.md) | 🚧 [草稿中](./drafts/day16-20/day17-composite-score-v06b.md) |
-| 18 | lab01 第三篇 (收尾) | [lab01](../lab01/README.md) | 📅 預計 |
+| 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? | [lab01](../lab01/README.md) ＋ jason3e7 翻面提問 | 🚧 [草稿骨架](./drafts/day16-20/day18-detecting-pure-human.md) |
 | 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 📅 預計 (原 Day 28 題目前移) |
 | 20 | 文風測量 + 浮水印 子系列小結 (Day 16-19) | — | 📅 預計 |
 | 21 | (待重排) | 見 [Day 21-24 候選](#day-17-24-候選--candidates-for-re-slotting) | 🔄 |
