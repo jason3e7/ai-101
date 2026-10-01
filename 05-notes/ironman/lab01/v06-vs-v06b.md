@@ -60,7 +60,9 @@ all 的 count 也進 B_total, 等於「痕跡放大器」. 但單獨命中 all �
 
 ---
 
-## 全體數字 — Corpus-Level Numbers
+## 全體數字與排名重疊 — Corpus Numbers + Rank Overlap
+
+### 全體 base 跟 density
 
 | 指標 | V06 | V06B | 比值 |
 |:---|---:|---:|---:|
@@ -71,9 +73,7 @@ all 的 count 也進 B_total, 等於「痕跡放大器」. 但單獨命中 all �
 
 V06B 的 base 普遍是 V06 的 5.6 倍 (平均而言). 但 scale 不是重點, 排名才是.
 
----
-
-## 排名重疊分析 — Rank Overlap
+### 排名重疊
 
 | Top N | V06 ∩ V06B | 只在 V06 | 只在 V06B |
 |---:|---:|---:|---:|
