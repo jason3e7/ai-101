@@ -4,7 +4,8 @@
 > Pattern: 不是…而是 (regex: 不是[^。！？\n]{1,25}而是)
 > 範例命中: 不是功能, 而是使用者感受 / 不是技術問題而是商業問題
 > jason3e7 voice guide 明確說「不用這種對立句」, 預期是強 AI tell.
-> **排行榜最小字數門檻 500 字** (排除 739 篇短文).
+> **兩版排行並存**: 門檻版 (chars >= 500) + 無門檻版.
+> 對立句本身長度足夠, 短文密度不太會巧合命中, 無門檻版的短文大多是「作者 register 愛用對立句」的 signal.
 
 ## 總覽
 
@@ -16,8 +17,9 @@
 | 命中總次數 | 9,874 |
 | 全篇總字數 | 39,634,634 |
 | 全體 per_1k | 0.2491 |
+| chars < 500 的短文 | 739 篇 (未進門檻版) |
 
-## per_1k 最高的 20 篇 (chars >= 500)
+## [A] per_1k 最高的 20 篇 (chars >= 500)
 
 | # | per_1k | hits | 總字 | 文章 | 系列 | 組別 |
 |---:|---:|---:|---:|:---|:---|:---|
@@ -41,6 +43,31 @@
 | 18 | 4.1806 | 5 | 1196 | [Day 07：讓記憶變成看得懂的東西](https://ithelp.ithome.com.tw/articles/10401689) | 讓 AI Agent 真的做事：用 Embabel 打造可控、可測試的智慧 Dashboard | AI Engineering |
 | 19 | 4.1551 | 3 | 722 | [Day 3｜學習 HTML 結構設計與表單基礎](https://ithelp.ithome.com.tw/articles/10407662) | Vibe Coding 實戰手冊：30 天打造具備預算控管與數據視覺化的 React 記帳應用 | Vibe Coding |
 | 20 | 4.1102 | 10 | 2433 | [Day 9 - Landing Zone：一套可參考的架構藍圖](https://ithelp.ithome.com.tw/articles/10401798) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+
+## [B] per_1k 最高的 20 篇 (無字數門檻, 全 15057 篇)
+
+| # | per_1k | hits | 總字 | 文章 | 系列 | 組別 |
+|---:|---:|---:|---:|:---|:---|:---|
+| 1 ⚠️ | 10.2740 | 3 | 292 | [菜雞學習資料結構的 30 日讀書分享Day 5](https://ithelp.ithome.com.tw/articles/10407905) | 菜雞學習資料結構的 30 日讀書分享【Day 1】 | 佛心分享-IT 人自學之術 |
+| 2 ⚠️ | 10.2740 | 3 | 292 | [菜雞學習資料結構的 30 日讀書分享Day 5](https://ithelp.ithome.com.tw/articles/10409496) | 菜雞學習資料結構的 30 日讀書分享 | 佛心分享-IT 人自學之術 |
+| 3 | 7.9156 | 6 | 758 | [Day 1｜我為什麼要教最愛的人用 Google AI？](https://ithelp.ithome.com.tw/articles/10403458) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
+| 4 ⚠️ | 6.7265 | 3 | 446 | [Day 30｜從不敢打開，到能陪另一個人按一次](https://ithelp.ithome.com.tw/articles/10410750) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
+| 5 | 5.5556 | 3 | 540 | [Day 06｜第一週的維運復盤：從被動滅火到架構縱深，一線網管的防禦蛻變](https://ithelp.ithome.com.tw/articles/10414509) | 從網管黑手到資安長思維：一線維運的 30 天防禦進化與證照修煉 | 佛心分享-IT 人職涯歷練 |
+| 6 | 5.4845 | 15 | 2735 | [第 1 天：我想跟一個 AI Agent 認識，先從 OpenClaw 開始](https://ithelp.ithome.com.tw/articles/10405915) | 30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化 | 佛心分享-SideProject30 |
+| 7 | 5.4289 | 10 | 1842 | [Day 4 - 架構原則，如何把企業需求轉化成架構設計？](https://ithelp.ithome.com.tw/articles/10401312) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+| 8 ⚠️ | 5.3191 | 2 | 376 | [關於我開始踏入資安這檔事Day13－APT到底是什麼？為什麼這麼難防？](https://ithelp.ithome.com.tw/articles/10405222) | 關於我開始踏入資安這檔事 | Security |
+| 9 ⚠️ | 5.1546 | 2 | 388 | [Day 3｜我的 AI 員工：5 秒完成證券對帳](https://ithelp.ithome.com.tw/articles/10401440) | 我的AI 員工- 小幫手幫我做了哪些事 | AI 自動化 |
+| 10 ⚠️ | 5.1282 | 2 | 390 | [Day 27｜不用背指令，留下自己最敢說的三句話](https://ithelp.ithome.com.tw/articles/10409639) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
+| 11 ⚠️ | 5.1020 | 2 | 392 | [Day 23｜一個人在家有點無聊？請 AI 一次出一題生活猜謎](https://ithelp.ithome.com.tw/articles/10408513) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
+| 12 | 5.0912 | 12 | 2357 | [Day 5 - 好的架構，都有共同的特質](https://ithelp.ithome.com.tw/articles/10401376) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+| 13 | 5.0569 | 4 | 791 | [Day11 AI做遊戲：讓孩子邊玩邊學](https://ithelp.ithome.com.tw/articles/10414884) | AI陪孩子學習：從答案工具變成思考教練 | AI Engineering |
+| 14 | 4.9932 | 11 | 2203 | [第 3 天：它怎麼接到第一個任務，從入口開始看](https://ithelp.ithome.com.tw/articles/10406368) | 30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化 | 佛心分享-SideProject30 |
+| 15 | 4.9246 | 16 | 3249 | [第 14 天：流程不是直線，OpenClaw 的工作流思維](https://ithelp.ithome.com.tw/articles/10409357) | 30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化 | 佛心分享-SideProject30 |
+| 16 | 4.7880 | 14 | 2924 | [Day 1 - 用 Codex 從零做 LINE Bot：不只寫出 Message action，還把 webhook 和部署一路打通](https://ithelp.ithome.com.tw/articles/10402599) | 這隻 LINE Bot 不是我寫的：30 天讓 Codex 從零幫我做到上線 | ChatGPT & Codex |
+| 17 ⚠️ | 4.7847 | 2 | 418 | [Day 4｜一個Excel工具，讓我重新理解什麼叫教懂](https://ithelp.ithome.com.tw/articles/10413090) | 教使用生成式AI的老師，也是企業員工，怎麼做AI自動化 | AI 自動化 |
+| 18 ⚠️ | 4.6296 | 2 | 432 | [Day 18｜老照片別只放著，用聲音留下一段家庭故事](https://ithelp.ithome.com.tw/articles/10407208) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
+| 19 ⚠️ | 4.6296 | 2 | 432 | [Day 15｜明天出門穿什麼？用一句話問天氣與準備](https://ithelp.ithome.com.tw/articles/10405713) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
+| 20 | 4.5011 | 18 | 3999 | [第 7 天：記憶不是記越多越好，而是記對的東西](https://ithelp.ithome.com.tw/articles/10407493) | 30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化 | 佛心分享-SideProject30 |
 
 ## per_1k 最高的 20 個系列
 
