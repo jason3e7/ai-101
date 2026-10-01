@@ -112,9 +112,10 @@ def page_body(block):
 def measure(body_html):
     body = strip_pre(body_html)
     text = html_to_text(body)
-    hits = len(RE_TARGET.findall(text))
+    matches = RE_TARGET.findall(text)
+    hits = len(matches)
     chars = len(re.sub(r"\s", "", text))
-    return hits, chars
+    return matches, hits, chars
 
 
 def main():
@@ -135,7 +136,7 @@ def main():
             if block is None:
                 missing.append(aid)
                 continue
-            hits, chars = measure(page_body(block))
+            matches, hits, chars = measure(page_body(block))
             per_1k = hits / chars * SCALE if chars else 0.0
             rows.append({
                 "article_id": aid, "url": f"{BASE}/articles/{aid}", "title": a.get("title", ""),
@@ -143,6 +144,7 @@ def main():
                 "author_id": s.get("author_id", ""), "group_slug": s.get("group_slug", ""),
                 "group_name": s.get("group_name", ""), "source": a.get("source", "rss"),
                 "hits": hits, "chars": chars, "per_1k": per_1k,
+                "_matches": matches,
             })
 
     if missing:
@@ -151,7 +153,7 @@ def main():
     fields = ["article_id", "url", "title", "series_id", "series_title", "author_id",
               "group_slug", "group_name", "source", "hits", "chars", "per_1k"]
     with open(os.path.join(HERE, "articles-v09.csv"), "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
+        w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         w.writeheader()
         for r in sorted(rows, key=lambda r: -r["per_1k"]):
             w.writerow({**r, "per_1k": f"{r['per_1k']:.4f}"})
@@ -227,6 +229,28 @@ def main():
         L.append(f"| {i} | {r['per_1k']:.4f} | {r['median_article_per_1k']:.4f} | "
                  f"{r['articles']} | {r['hits']} | {r['chars']} | "
                  f"{st} | {r['group_name']} |")
+    # 命中詞 top 20 (全 corpus) + 對應證據文章 top 3
+    from collections import Counter, defaultdict
+    global_counter = Counter()
+    by_phrase_articles = defaultdict(Counter)
+    article_lookup = {r["article_id"]: r for r in rows}
+    for r in rows:
+        for m in r["_matches"]:
+            global_counter[m] += 1
+            by_phrase_articles[m][r["article_id"]] += 1
+
+    L += ["", "## 命中詞主要 Top 20 (附證據文章 Top 3)", "",
+          f"> 全 corpus 掃出 {len(global_counter)} 種 unique 命中詞, 列出 top 20 跟其對應的 top 3 證據文章",
+          "> 證據文章 = 該命中詞在哪 3 篇文章出現最多次, 讀者可直接點進去看語境",
+          ""]
+    for i, (phrase, total) in enumerate(global_counter.most_common(20), 1):
+        L.append(f"**{i}. 「{phrase}」** (全 corpus ×{total})")
+        for aid, cnt in by_phrase_articles[phrase].most_common(3):
+            ar = article_lookup[aid]
+            t = ar["title"].replace("|", "\\|")
+            L.append(f"- [{t}]({ar['url']}) ×{cnt}  — {ar['series_title']} · {ar['group_name']}")
+        L.append("")
+
     L += ["", "> 這是共現訊號, 不是判決.", ""]
     with open(os.path.join(HERE, "results-v09.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(x for x in L if x is not None))
