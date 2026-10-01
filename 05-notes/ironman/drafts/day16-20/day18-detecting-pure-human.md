@@ -10,7 +10,7 @@ status: draft-skeleton
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> lab01 文風檢測三部曲收尾. [Day 16](./day16-ai-fingerprint-scan.md) 用單指紋 (`——`) 掃全屆, [Day 17](./day17-composite-score-v06b.md) 疊到 6 個 signal 的 V06B 綜合分數. 這篇把問題**翻面**: 不問「誰像 AI」, 改問「誰是純手寫、完全沒碰 AI」. 這個問題比抓 AI 味難得多, 因為「沒有訊號」可能是**沒用 AI**, 也可能是**用了 AI 但壓得乾淨**.
+> lab01 文風檢測三部曲收尾. [Day 16](./day16-ai-fingerprint-scan.md) 用單指紋 (`——`) 掃全屆, [Day 17](./day17-composite-score.md) 疊到 6 個 signal 的 V06B 綜合分數. 這篇把問題**翻面**: 不問「誰像 AI」, 改問「誰是純手寫、完全沒碰 AI」. 這個問題比抓 AI 味難得多, 因為「沒有訊號」可能是**沒用 AI**, 也可能是**用了 AI 但壓得乾淨**.
 
 > **TL;DR (EN):** TODO — after writing body
 
