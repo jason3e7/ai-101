@@ -46,6 +46,8 @@ status: draft
 
 要補這些洞, 做法是**疊更多 signal**. 單一壞掉其他補得起. 這篇疊到**綜合分數** (6 個 signal, 總量加權型), 用同一批 2026-09 corpus (15,057 篇) 重跑排名.
 
+疊 signal 的思路不是新鮮事: 學術界的 [Ghostbuster](https://arxiv.org/abs/2305.15047) (Verma et al. NAACL 2024) 用多 feature 綜合計分做 AI 文本偵測; [Muñoz-Ortiz & Gómez-Rodríguez 2024](https://arxiv.org/abs/2308.09067) 統計上找人 vs LLM 寫作的語言 pattern 差異. 這篇是把同一條思路用在**中文鐵人賽的 markdown 排版**上.
+
 ---
 
 ## 疊了什麼 — Six Signals Stacked
@@ -158,6 +160,7 @@ Day 16 單 signal 全體 0.86 → 綜合分數 55.45, 數字差 60 倍 (因為�
 - **權重是人工調的**: N 用 data-driven 分析調過 (contribution + ablation), 但終究是人設的, 不是 ground truth
 - **「排版重度」不等於 AI 寫的**: 有些作者 (特別是教學類) 本來就愛塞 emoji + 粗體, 不代表 AI 代筆. 這個指標只用來排序, 不做判定
 - **系列密度用「加總再除」**: 用字數當權重, 跟平均各篇密度不一樣 (細節同 Day 16)
+- **還有別的思路**: [Binoculars](https://arxiv.org/abs/2401.12070) (Hans et al. ICML 2024) 用兩個模型的 perplexity ratio 做 zero-shot 偵測, 不靠 markdown signal. 兩種路可以互補 — markdown 看表面, perplexity 看文字機率結構
 - 其他邊界 (只算 `——`、算整篇含標題與程式碼、不設字數門檻、不 doxx) 同 [Day 16](./day16-ai-fingerprint-scan.md)
 
 ---
