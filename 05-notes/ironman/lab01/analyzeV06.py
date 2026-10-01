@@ -10,16 +10,15 @@
         = em_count × 4                      # V01 —— (最乾淨的 tell)
         + emoji_count × emoji_types         # V05 emoji (種類越多越 AI, 排除 ○ ✗ ★ ☆ ☐)
         + strict_bold × 2                   # V02 嚴格 `- **標籤**: xxx`
-        + all_bold × 1                      # V02 一般 `**標籤**`  (strict 是 all 的子集, 所以 strict 命中會多算一次)
         + bq_count × 1                      # V03 blockquote
         + hr_count × 1                      # V04 <hr>
 
     density(article) = base / chars × 1000   ← 主指標 (per_1k 型)
 
-範圍:
-    strict 是 all 的子集 → strict 命中會被 all 也計到, 等於 strict 效果總權重 × 3.
-    這是刻意加倍計 (延續 V02e 的 strict 加算精神).
+    注意: V02 一般 `**標籤**` 的 N = 0, 不計分 (太 generic, 68% 文章都用).
+          命中次數仍在 CSV 的 all_B 欄位保留, 供分析參考用.
 
+範圍:
     emoji 排除清單延續 V05: ○ ✗ ★ ☆ ☐ (checklist / 星等 / 圈叉 排版符號).
     emoji 種類數只算「非排除」的 distinct codepoint.
 
@@ -151,10 +150,10 @@ def measure(body_html):
 
 
 def score_base(m):
+    # V02 all_bold 權重 = 0 (太 generic, 不計分), 命中次數仍記錄在 CSV
     return (m["em_count"] * 4
             + m["emoji_count"] * m["emoji_types"]
             + m["strict_bold"] * 2
-            + m["all_bold"] * 1
             + m["bq_count"] * 1
             + m["hr_count"] * 1)
 
@@ -185,28 +184,29 @@ def main():
                 "author_id": s.get("author_id", ""), "group_slug": s.get("group_slug", ""),
                 "group_name": s.get("group_name", ""), "source": a.get("source", "rss"),
                 **m,
-                "em_B": m["em_count"], "em_N": 4,
-                "emoji_B": m["emoji_count"], "emoji_N": m["emoji_types"],
-                "strict_B": m["strict_bold"], "strict_N": 2,
-                "all_B": m["all_bold"], "all_N": 1,
-                "bq_B": m["bq_count"], "bq_N": 1,
-                "hr_B": m["hr_count"], "hr_N": 1,
+                "em_B": m["em_count"],
+                "emoji_B": m["emoji_count"],
+                "strict_B": m["strict_bold"],
+                "all_B": m["all_bold"],
+                "bq_B": m["bq_count"],
+                "hr_B": m["hr_count"],
                 "base": base, "density": density,
             })
 
     if missing:
         print(f"!! {len(missing)} 篇找不到正文: {missing[:10]}")
 
-    # articles-v06.csv — 每個 signal 明確標 B (base = 命中次數) 跟 N (weight)
+    # articles-v06.csv — 只保留命中次數 B, 權重 N 常數在 docstring, 加總結果看 base
+    # N 權重: V01=4, V05 emoji=distinct_types, V02 strict=2, V02 all=0 (不計分), V03=1, V04=1
     fields = ["article_id", "url", "title", "series_id", "series_title", "author_id",
               "group_slug", "group_name", "source",
               "chars",
-              "em_B", "em_N",           # V01 —— × 4
-              "emoji_B", "emoji_N",     # V05 emoji: N = distinct types
-              "strict_B", "strict_N",   # V02 嚴格 pattern × 2
-              "all_B", "all_N",         # V02 一般粗體 × 1
-              "bq_B", "bq_N",           # V03 blockquote × 1
-              "hr_B", "hr_N",           # V04 hr × 1
+              "em_B",       # V01 —— 命中次數
+              "emoji_B",    # V05 emoji 命中次數 (已排除 ○ ✗ ★ ☆ ☐)
+              "strict_B",   # V02 嚴格 pattern 命中次數
+              "all_B",      # V02 一般粗體命中次數 (不計分, 僅供參考)
+              "bq_B",       # V03 blockquote 命中次數
+              "hr_B",       # V04 hr 命中次數
               "base", "density"]
     with open(os.path.join(HERE, "articles-v06.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
@@ -268,8 +268,9 @@ def main():
     L = [f"# lab01 V06 結果：綜合訊號分數 (絕對值加權型)",
          "",
          f"> 抓取時間 {idx.get('fetched_at')}. 公式:",
-         f"> base = ——×4 + emoji_count×emoji_types + strict×2 + all×1 + bq×1 + hr×1",
+         f"> base = ——×4 + emoji_count×emoji_types + strict×2 + bq×1 + hr×1",
          f"> density = base / total_chars × 1000  (per_1k 型)",
+         f"> V02 一般粗體 (all) 不計分 (N=0), 命中次數仍在表中顯示供參考.",
          f"> emoji 排除清單: ○ ✗ ★ ☆ ☐. 排名不設字數門檻, 短文仍可能爆.",
          "",
          "## 總覽",
@@ -309,7 +310,8 @@ def main():
                  f"{r['articles']} | {r['em_count']} | {r['emoji_count']} | "
                  f"{r['strict_bold']} | {r['all_bold']} | {r['bq_count']} | {r['hr_count']} | "
                  f"{r['base']} | {r['chars']} | {st} | {r['group_name']} |")
-    L += ["", "> 表頭縮寫: emj(種) = emoji_count (distinct types), strict = V02 嚴格 pattern 命中, all = V02 一般粗體命中.",
+    L += ["", "> 表頭縮寫: emj(種) = emoji_count (distinct types), strict = V02 嚴格 pattern 命中, all = V02 一般粗體命中 (**不計分**, 僅參考).",
+          "> N 權重: V01=4, V05=distinct_types, V02 strict=2, V02 all=0, V03=1, V04=1",
           "> 這是共現訊號的加權排序, 不是判決.", ""]
     with open(os.path.join(HERE, "results-v06.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(x for x in L if x is not None))

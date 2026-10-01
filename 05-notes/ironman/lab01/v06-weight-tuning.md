@@ -1,9 +1,19 @@
 ---
 title: lab01 V06 權重微調 — 從憑感覺到有依據
 created: 2026-09-30
+status: obsolete
 ---
 
 # V06 權重微調 — Calibrating V06 Weights
+
+> [!CAUTION]
+> **本份已 obsolete, 需要重寫**. 2026-09-30 的分析基於「V02 all N=1」的**錯誤前提**, 事實上原設計意圖是 V02 all N=0 (不計分, 只記錄命中次數). 修正後 V02 all 根本不吃權重, 「V02 all 吃 30.7%」這個驅動 recommendation 的 observation 不成立, 整份 analysis 失去意義.
+>
+> 修正後的實際 code 已更新 (`analyzeV06.py` V02 all N=0, 其他保持原本 V01=4, strict=2, bq=1, hr=1), 但這篇 note 的 recommendation 不再適用. 要重做 principled 微調的話, 需要用修正後的 contribution 分佈重新分析.
+>
+> 以下內容保留作紀錄, **不要照抄**.
+
+---
 
 > [!NOTE]
 > V06 的原本 N 權重 (V01 4 / V05 types / V02 strict 2 / V02 all 1 / V03 1 / V04 1) 是憑感覺寫的. 這篇用當前 corpus (2026-09 鐵人賽 15057 篇) 的 coverage + contribution 數據, principled 推一組新 N, 並列出理由. emoji 的 `count × distinct_types` 當 anchor 不動.
