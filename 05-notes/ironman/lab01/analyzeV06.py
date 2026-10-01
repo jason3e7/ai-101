@@ -23,9 +23,15 @@
     emoji 種類數只算「非排除」的 distinct codepoint.
 
 輸出:
-    articles-v06.csv        每篇: 各訊號 count + base + density (per_1k)
+    articles-v06.csv        每篇: 各訊號 count + n_sum + base + density (per_1k)
     series-summary-v06.csv  每系列: 加總後的 density
     results-v06.md          density 最高的文章與系列排行 (含各訊號分解)
+
+    n_sum 欄位 = 各 signal N 權重加總 per article
+               = 4 + emoji_types + 2 + 0 + 1 + 1
+               = 8 + emoji_types
+    emoji_N (= distinct types) 是唯一變動的 N, 其他都常數. 高 n_sum = 該篇
+    用了很多 emoji 種類, 代表權重 budget 比平均大.
 
 讀資料: 沿用 analyze.py 的 Raw class.
 
@@ -178,6 +184,9 @@ def main():
             m = measure(page_body(block))
             base = score_base(m)
             density = base / m["chars"] * SCALE if m["chars"] else 0.0
+            # n_sum = 各 signal N 權重加總 (per article). 多數欄位是常數, 只有 emoji_N 變動.
+            # = 4 + emoji_types + 2 + 0 + 1 + 1 = 8 + emoji_types
+            n_sum = 4 + m["emoji_types"] + 2 + 0 + 1 + 1
             rows.append({
                 "article_id": aid, "url": f"{BASE}/articles/{aid}", "title": a.get("title", ""),
                 "series_id": sid, "series_title": s.get("series_title", ""),
@@ -190,6 +199,7 @@ def main():
                 "all_B": m["all_bold"],
                 "bq_B": m["bq_count"],
                 "hr_B": m["hr_count"],
+                "n_sum": n_sum,
                 "base": base, "density": density,
             })
 
@@ -207,6 +217,7 @@ def main():
               "all_B",      # V02 一般粗體命中次數 (不計分, 僅供參考)
               "bq_B",       # V03 blockquote 命中次數
               "hr_B",       # V04 hr 命中次數
+              "n_sum",      # 加總的 N = 4 + emoji_types + 2 + 0 + 1 + 1 = 8 + emoji_types
               "base", "density"]
     with open(os.path.join(HERE, "articles-v06.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
