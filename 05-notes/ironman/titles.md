@@ -85,51 +85,35 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? | [lab01](../lab01/README.md) ＋ jason3e7 翻面提問 | 🚧 [草稿骨架](./drafts/day16-20/day18-detecting-pure-human.md) |
 | 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 🚧 [草稿中](./drafts/day16-20/day19-ai-watermark.md) |
 | 20 | AI 文風入侵: 五個記號一次講完 + 把味道壓回去的抗體 + 子系列小結 (Day 16-19) | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) ＋ 子系列回顧 | 📅 預計 |
-| 21 | (待重排) | 見 [Day 21-24 候選](#day-17-24-候選--candidates-for-re-slotting) | 🔄 |
-| 22 | (待重排) |  | 🔄 |
-| 23 | (待重排) |  | 🔄 |
-| 24 | (待重排) |  | 🔄 |
+| 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 📅 預計 (暫排) |
+| 22 | `/goal` + Hook: 給 AI 能驗證的終點, 用 hook 守住 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 📅 預計 (暫排) |
+| 23 | Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 📅 預計 (暫排) |
+| 24 | HTB 靶機實測: Claude Code 的目標怎麼被綁架 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 📅 預計 (暫排) |
 
 ### 合: 已經在發生的事，怎麼接 (Day 25-30)
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 25 | AI 可能會取代什麼, 目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day21-25/day25-what-ai-replaces.md) |
-| 26 | (待想) | 原「AI 風格橫行掃 40 系列」跟 Day 16 lab01 重疊, 已撤空 | 🔄 |
-| 27 | (待想, 原「AI 文風入侵」已前移到 Day 20) | — | 🔄 |
-| 28 | (待想, 原「浮水印」已前移到 Day 19) | — | 🔄 |
+| 26 | 選模型 × 實測: 同一題 Opus / Sonnet / Haiku 各跑一次 | [model-cost-comparison](../../01-fundamentals/models/model-cost-comparison.md) ＋ 新實測 | 📅 預計 (暫排, 要跑) |
+| 27 | 拿掉「拒絕」的真正代價: 無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 📅 預計 (暫排) |
+| 28 | AI 已經會自己打靶: 自主滲透工具現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 📅 預計 (暫排) |
 | 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ [已完成](./drafts/day26-30/day27-self-hosted-llm.md) |
 | 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
 
-**盤點**: 🚀 已發布 16 篇 (Day 1-16) · ✅ 已完成 draft 2 篇 (Day 25、29) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 1 篇 (Day 20) · 🔄 待重排/待想 7 篇 (Day 21-24、26、27、28) · 未動工 1 篇 (Day 30).
+**盤點**: 🚀 已發布 16 篇 (Day 1-16) · ✅ 已完成 draft 2 篇 (Day 25、29) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 8 篇 (Day 20、21-24、26-28, 其中 Day 21-24 + 26-28 標「暫排」待確認) · 未動工 1 篇 (Day 30). **🔄 已清零** (所有 slot 都有主題了, 等實際動筆再微調).
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-01 (傍晚)**: Day 21-24, 26-28 全部 📅 預計 (暫排) — 承接「文風測量 + 浮水印」子系列後進入「Claude Code 落地四連 (Day 21-24: 權限 / goal+hooks / workflow / HTB) + 風險面三連 (Day 26-28: 選模型實測 / 無審查 / 自主滲透)」. 🔄 全清零 (所有 slot 都有題目了). 候補題目池剩: 把對話紀錄變成筆記本、怎麼把 AI 能力變成自己的、ClickFix 實測、behavior-design 綜合、驗證疲勞. Day 17-24 候選 section 移除 (已失效)
 - **2026-10-01 (下午)**: Day 20 合併原 Day 27「AI 文風入侵: 五個記號 + 把味道壓回去的抗體」+「子系列小結 (Day 16-19)」, 兩個主題相關就一次講; Day 27 slot 空出變 🔄 待想; Day 19 draft 寫完 (🚧 草稿中)
 - **2026-10-01**: Day 16 已發布 (10419414); Day 17 lab01 第二篇「V06B 綜合分數」draft 寫完; Day 18-20 排定「文風測量 + 浮水印」子系列 (Day 18 lab01 收尾, Day 19 浮水印 (ai-content-watermark), Day 20 子系列小結); Day 28 原「浮水印」題目前移到 Day 19, 原 slot 待想
 - **2026-09-29**: Day 16 從「權限：AI 動到哪裡」pivot 到「lab01 雙破折號掃描」; Day 17-24 全部 mark 🔄 待重排 (原內容中 Day 20/21/23/24 已被 Day 11/14/15 用掉); Day 26 撤空 (原「AI 風格橫行掃 40 系列」跟 Day 16 lab01 重疊); 移除已無效的「Day 11-20 主題重定」與「選模型實測預產」兩節
 - **2026-09-24**: Day 11-20 主軸重定成「驗證 → 判斷力」主題; 廢棄原 Day 11「用 prompt 生 prompt」與 Day 10「XY Problem」(已被 xxx Engineering 收整)
 - **2026-09-22**: Day 26-27 插入「AI 風格三部曲」前兩篇 (風格橫行 → 文風入侵), 原 Day 28-29「無審查模型」「自主滲透工具」回候補池
 - **2026-09-18**: Day 05 後加插「how it picks」, 原 Day 05 起全部順延, 被擠出的「ClickFix 實測」回候補池
-
-### Day 17-24 候選 — Candidates for Re-slotting
-
-八格全開, 從下面挑或另想. 上面數字排序不代表優先度.
-
-| 候選 | 素材 | 動作 |
-|:---|:---|:---|
-| 權限：AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 改寫 |
-| `/goal`: 給它能驗證的終點 | [goal](../../01-fundamentals/claude-code/goal.md) | 改寫 |
-| 光有目標不夠: 用 Hook 逼它別放棄 | [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 改寫 |
-| Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 改寫 |
-| Claude Code 四層行為系統: goal + sub-agent + skill + hook | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | 改寫 (tentative) |
-| Claude Code 在 HTB 靶機上, 目標怎麼被綁架 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 改寫 |
-| 選模型 × 實測: 同一題 Opus/Sonnet/Haiku 各跑一次 | [model-cost-comparison](../../01-fundamentals/models/model-cost-comparison.md) + 新實測 | 高 (要跑) |
-| 驗證疲勞: 什麼時候該關掉驗證 | 待研究 | 觀念 |
-
----
 
 ## 候補題目池 — Backlog
 
@@ -142,8 +126,8 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 把對話紀錄變成筆記本: 匯出、自動分類、收整成可長期用的東西 | [curate-notes](../../skills/curate-notes.md)、[refactor-note](../../skills/refactor-note.md)、[note-lifecycle（待啟用）](../../skills/tmp/note-lifecycle.md) | jason3e7 提 (2026-09-18); 本 repo 就是實例. 匯出檔會夾帶路徑與環境資訊, 公開前得先清 |
 | 讓 prompt 自己檢查自己: 把驗證寫進提示裡 | [meta-prompting](../essays/meta-prompting.md) | 原 Day 12, 已被 mindmap skills 取代 (2026-09-26) |
 | 親手測 ClickFix: AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記 (自己的截圖) | 原 Day 29 被新 Day 05 擠出. 發文時要沿用防禦式寫法 |
-| 拿掉「拒絕」的真正代價: 無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 原 Day 28, 被 AI 風格三部曲擠出 (2026-09-22) |
-| AI 已經會自己打靶: 自主滲透工具現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 原 Day 29, 被 AI 風格三部曲擠出 (2026-09-22) |
+| Claude Code 四層行為系統: goal + sub-agent + skill + hook | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | Day 22-23 已把 goal / hooks / workflow 拆開講, 這份是綜合示範, 之後可當 Day 24 的替代 |
+| 驗證疲勞: 什麼時候該關掉驗證 | 待研究 | 觀念篇, 跟 Day 13 鈍化成姊妹作 |
 
 ---
 
