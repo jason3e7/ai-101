@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:56px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:64px;font-weight:900;line-height:1.1;letter-spacing:.005em}
+h1 em{font-style:normal;color:#e8a13c}
+.chartwrap{margin-bottom:4px;margin-top:4px}
+.foot{font-size:17px;color:#767d8d;letter-spacing:.03em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 18</span></div>
+  <div>
+    <h1>翻面問題:<em>純手寫</em>的文章,<br>V12 認得出來嗎?</h1>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="246" viewBox="0 0 1056 246">
+    <!-- axis label -->
+    <text x="320" y="0" fill="#767d8d" font-size="13" letter-spacing=".1em" dy="10">V12 density / 千字 — 零命中的兩種, 長得一模一樣</text>
+
+    <!-- Row 1: pure human (near zero) -->
+    <text x="10" y="44" fill="#f2f0ea" font-size="19" font-weight="700">純手寫, 沒碰 AI</text>
+    <rect x="320" y="27" width="7" height="20" fill="#e8a13c70" rx="2"/>
+    <text x="340" y="44" fill="#9aa0b0" font-size="19" font-weight="700">≈ 0</text>
+
+    <!-- Row 2: AI but cleaned (ChatGPT 0.11) -->
+    <text x="10" y="80" fill="#ff7a4d" font-size="19" font-weight="700">AI 寫的, 但壓乾淨</text>
+    <rect x="320" y="63" width="9" height="20" fill="#ff7a4d" rx="2"/>
+    <text x="342" y="80" fill="#ff7a4d" font-size="19" font-weight="700">0.11</text>
+
+    <!-- brace + verdict -->
+    <path d="M470 30 q10 0 10 11 v8 q0 11 10 11 q-10 0 -10 11 v8 q0 11 -10 11" fill="none" stroke="#5b6170" stroke-width="2"/>
+    <text x="500" y="70" fill="#f2f0ea" font-size="21" font-weight="900">V12 分不出這兩種</text>
+
+    <!-- divider -->
+    <line x1="10" y1="112" x2="1000" y2="112" stroke="#ffffff14" stroke-width="1"/>
+
+    <!-- Row 3: corpus average reference -->
+    <text x="10" y="152" fill="#9aa0b0" font-size="19" font-weight="700">全屆一般文章 (對照)</text>
+    <rect x="320" y="135" width="440" height="20" fill="#e8a13c60" rx="2"/>
+    <text x="772" y="152" fill="#e8a13c" font-size="20" font-weight="900">69.66</text>
+
+    <!-- annotation -->
+    <text x="10" y="210" fill="#a8aebd" font-size="17">↑ 證明「有 AI 味」容易, 證明「完全沒碰 AI」不可能 — 缺席不是證據</text>
+  </svg>
+  </div>
+  <div class="foot">把 Day 16-17 的尺翻過來用 · 它排得出誰像 AI, 卻認不出誰是純手寫　|　資料：lab01 V12 (15,057 篇)</div>
+</div></body></html>
