@@ -12,7 +12,7 @@ status: draft
 > [!NOTE]
 > 文風檢測三部曲收尾. [Day 16](./day16-ai-fingerprint-scan.md) 用單指紋 (`——`) 掃全屆, [Day 17](./day17-composite-score.md) 疊到 6 個訊號的綜合分數, 這 15 天我又把它養到 **9 個訊號 ＋ 權重微調**. 這篇拿這把最細的尺去問一個**翻面**的問題: 不問「誰像 AI」, 改問「誰是純手寫、完全沒碰 AI」. 結論先講: **這把尺答不出來** —— 而且為什麼答不出來, 比它答得出什麼更值得講. 文末附一個 Tampermonkey script, 讓你瀏覽任何網頁時即時看到 N_sum 與 density.
 
-> **TL;DR (EN):** The series closer. After refining the AI-tell detector all the way to nine signals (tuned weights, overall density 69.66 across all 15,057 articles), I flip the question: can it identify writing that is *purely human*, with no AI involved? It cannot - and the reason is epistemological, not a tuning problem. Zero signals can mean "no AI" or "AI used but cleaned up" (the Day 16 ChatGPT track scored 0.11, essentially invisible, because GPT-5.1 honors "no em-dash"). Proving presence is easy; proving absence is not. The detector gives a reliable *ranking* of AI-flavor, never a verdict of human authorship. Ships with a Tampermonkey userscript that runs the exact same scoring in your browser and shows N_sum + density per page.
+> **TL;DR (EN):** The series closer. After refining the AI-tell detector all the way to nine signals (tuned weights, overall density 69.66 across all 15,057 articles) — the three newest being the first to target Chinese *phrasing* rather than language-agnostic markdown, which is part of why this warranted a third pass — I flip the question: can it identify writing that is *purely human*, with no AI involved? It cannot - and the reason is epistemological, not a tuning problem. Zero signals can mean "no AI" or "AI used but cleaned up" (the Day 16 ChatGPT track scored 0.11, essentially invisible, because GPT-5.1 honors "no em-dash"). Proving presence is easy; proving absence is not. The detector gives a reliable *ranking* of AI-flavor, never a verdict of human authorship. Ships with a Tampermonkey userscript that runs the exact same scoring in your browser and shows N_sum + density per page.
 
 ```markdown
 # 把尺養到九個訊號, 卻答不出「誰是純手寫」
@@ -22,6 +22,7 @@ status: draft
 * 偵測器養到九訊號
     * 9 個訊號 B 總和 乘 N 總和
     * 權重: em4 emoji5 strict3 不是而是3 最容易3 標題｜2
+    * 新三訊號第一次抓中文語句 前兩天是排版符號
     * 全屆 density 69.66
 * 翻面行不行
     * 零命中 ≠ 人寫
@@ -68,6 +69,9 @@ status: draft
 
 > [!NOTE]
 > 那三個新訊號的權重是這兩天才用全站資料校過的: 排版性的 `｜` 標題從 5 **降到 2**, 文字層的「不是⋯而是」「最容易⋯的」各升到 3, 讓「文字層的 AI 味」主導分數, 而不是「排版花俏」. 校的過程見[權重微調那篇](../../lab01/v12-weight-tuning.md).
+
+> [!IMPORTANT]
+> 這三個新訊號跟前兩天最大的不同: **它們第一次抓「中文語句」本身.** Day 16 的破折號 `——`、Day 17 的 emoji / 粗體 / 引用 / 分隔線, 抓的都是**排版與符號**習慣 —— 跟寫哪種語言關係不大, 一篇英文文章照樣命中. 但「不是⋯而是」「最容易⋯的」是**中文的句型與腔調**, 標題 `｜` 也是中文圈特有的排版. 講白一點: 前兩天量的是「markdown 味」, 這天才開始量「中文的 AI 味」. 這也是這套工具值得做到第三天的原因之一.
 
 重跑全站 15,057 篇、814 系列, **全體 density 是 69.66**. 這個數字是後面排名的基準 —— 數字越高, 相對全屆越偏「AI 味濃」. 文末的瀏覽器工具用同一套算法, 掃到的 density 可以直接跟 69.66 比.
 
