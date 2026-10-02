@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         AI 味即時掃描 — N_sum & density
 // @namespace    https://github.com/jason3e7/ai-101
-// @version      2.0.0
-// @description  瀏覽任何網頁時, 用排版訊號即時算出 N_sum 與 density (每千字), 浮出一個小面板. 每個網站都會自動掃. 這是共現訊號, 不是判決.
+// @version      2.1.0
+// @description  瀏覽任何網頁時, 用 9 個訊號即時算出 N_sum 與 density (每千字), 浮出一個小面板. 每個網站都會自動掃. 這是共現訊號, 不是判決.
 // @author       jason3e7 + Claude
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 /*
- * 6 個排版訊號與權重:
+ * 9 個訊號與權重:
  *
  *   訊號            B (數量)                                   N (權重, Bᵢ>0 才計)
  *   em     ——       innerText 裡 "——" 出現次數                 4
@@ -19,14 +19,17 @@
  *   all 粗體標籤     <strong> 總數                               0  (只進 B_total, 當放大器)
  *   bq              <blockquote> 數                             1
  *   hr              <hr> 數                                     1.5
+ *   不是…而是        不(只)?是…(而是|更是)                        3
+ *   最容易…的        最容易[中文]{1,5}的                          3
+ *   標題 ｜          標題含全形 ｜                               2  (binary)
  *
  *   B_total = ΣBᵢ
- *   N_sum   = Σ Nᵢ (只加 Bᵢ>0 的)              最高 14.5
+ *   N_sum   = Σ Nᵢ (只加 Bᵢ>0 的)              最高 22.5
  *   base    = B_total × N_sum
  *   density = base / 去空白字數 × 1000   ← 「每千字」
  *
- * 2026 iThome 鐵人賽 15,057 篇的全體 density ≈ 49.4, 可當對照基準.
- * <pre> 程式碼區塊整段排除, 標題不算進字數.
+ * 2026 iThome 鐵人賽 15,057 篇的全體 density ≈ 69.7, 可當對照基準.
+ * <pre> 程式碼區塊整段排除, 標題不算進字數 (只有「標題 ｜」看標題).
  */
 
 (function () {
@@ -34,14 +37,17 @@
 
   const SCALE = 1000;
   const EMOJI_EXCLUDE = new Set(['○', '✗', '★', '☆', '☐']);
-  const CORPUS_DENSITY = 49.4; // 2026 鐵人賽全體平均, 供對照
+  const CORPUS_DENSITY = 69.7; // 2026 鐵人賽全體平均, 供對照
 
   const RE_EM_DASH = /——/g;
   const RE_EMOJI = /[\u{1F300}-\u{1F5FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu;
   const RE_STRICT_BOLD_LI = /<li\b[^>]*>\s*(?:<p\b[^>]*>\s*)?<strong\b[^>]*>([^<>]+)<\/strong>[：:\s]*[^\s<]/gi;
+  const RE_NOT_BUT = /不(?:只)?是[^。！？\n]{1,25}(?:而是|更是)/g;
+  const RE_EASIEST = /最容易[一-鿿]{1,5}的/g;
+  const PIPE = '｜'; // U+FF5C
 
   // N 權重 (Bᵢ>0 才計). emoji 另算 min(types,5).
-  const N = { em: 4, strict: 3, all: 0, bq: 1, hr: 1.5 };
+  const N = { em: 4, strict: 3, all: 0, bq: 1, hr: 1.5, notBut: 3, easiest: 3, pipe: 2 };
   const EMOJI_TYPES_CAP = 5;
 
   function pickContainer() {
@@ -49,6 +55,11 @@
       || document.querySelector('article')
       || document.querySelector('main')
       || document.body;
+  }
+
+  function pickTitle() {
+    const el = document.querySelector('.qa-header__title, .qa-list__title, article h1, h1');
+    return (el ? el.textContent : document.title) || '';
   }
 
   function measure() {
@@ -70,10 +81,13 @@
     const strict_B = (htmlNoPre.match(RE_STRICT_BOLD_LI) || []).length;
     const bq_B = clone.querySelectorAll('blockquote').length;
     const hr_B = clone.querySelectorAll('hr').length;
+    const notBut_B = (text.match(RE_NOT_BUT) || []).length;
+    const easiest_B = (text.match(RE_EASIEST) || []).length;
+    const pipe_B = pickTitle().includes(PIPE) ? 1 : 0;
 
     const chars = text.replace(/\s/g, '').length;
 
-    const b_total = em_B + emoji_B + strict_B + all_B + bq_B + hr_B;
+    const b_total = em_B + emoji_B + strict_B + all_B + bq_B + hr_B + notBut_B + easiest_B + pipe_B;
     const emoji_n = emoji_B > 0 ? Math.min(emoji_types, EMOJI_TYPES_CAP) : 0;
     const n_sum =
       (em_B > 0 ? N.em : 0) +
@@ -81,7 +95,10 @@
       (strict_B > 0 ? N.strict : 0) +
       (all_B > 0 ? N.all : 0) +
       (bq_B > 0 ? N.bq : 0) +
-      (hr_B > 0 ? N.hr : 0);
+      (hr_B > 0 ? N.hr : 0) +
+      (notBut_B > 0 ? N.notBut : 0) +
+      (easiest_B > 0 ? N.easiest : 0) +
+      (pipe_B > 0 ? N.pipe : 0);
     const base = b_total * n_sum;
     const density = chars ? (base / chars) * SCALE : 0;
 
@@ -93,6 +110,9 @@
         ['all 粗體標籤', all_B, 0],
         ['blockquote', bq_B, bq_B > 0 ? N.bq : 0],
         ['hr 分隔線', hr_B, hr_B > 0 ? N.hr : 0],
+        ['不是…而是', notBut_B, notBut_B > 0 ? N.notBut : 0],
+        ['最容易…的', easiest_B, easiest_B > 0 ? N.easiest : 0],
+        ['標題 ｜', pipe_B, pipe_B > 0 ? N.pipe : 0],
       ],
       b_total, n_sum, base, density, chars,
       container: container === document.body ? 'document.body (泛用掃描)' : (container.className || container.tagName.toLowerCase()),
