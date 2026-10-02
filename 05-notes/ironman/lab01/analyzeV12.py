@@ -9,7 +9,7 @@
 完整 N 設定:
     V06B 原有:
       em (V01) : N = 4
-      emoji    : N = distinct_types (變動)
+      emoji    : N = min(distinct_types, 5)   ← 上限 5, 超過當 5
       strict   : N = 3
       all      : N = 0 (不計 N_sum 但進 B_total)
       bq (V03) : N = 1
@@ -17,7 +17,9 @@
     V12 新加:
       v08c     : N = 2
       v09      : N = 2
-      v11      : N = 1 (binary, title 含 ｜ 加 1)
+      v11      : N = 5 (binary, title 含 ｜ 加 5)
+
+注意: 預設不設字數門檻 (min-chars = 0), 全部文章進榜.
 
 公式:
     B_total = em + emoji + strict + all + bq + hr + v08c + v09 + v11
@@ -50,7 +52,8 @@ RAW_TGZ = os.path.join(HERE, "raw.tgz")
 SCALE = 1000
 BASE = "https://ithelp.ithome.com.tw"
 END_MARKERS = ("qa-action", "article-series-page", "ir-article__footer", "qa-panel")
-MIN_CHARS = 500
+MIN_CHARS = 0
+EMOJI_TYPES_CAP = 5
 
 RE_EM_DASH = re.compile("——")
 RE_EMOJI = re.compile(
@@ -159,15 +162,16 @@ def measure(body_html, title):
 def compute_v12(m):
     b_total = (m["em_B"] + m["emoji_B"] + m["strict_B"] + m["all_B"]
                + m["bq_B"] + m["hr_B"] + m["v08c_B"] + m["v09_B"] + m["v11_B"])
+    emoji_n = min(m["emoji_types"], EMOJI_TYPES_CAP) if m["emoji_B"] > 0 else 0
     n_sum = ((4 if m["em_B"] > 0 else 0)
-             + (m["emoji_types"] if m["emoji_B"] > 0 else 0)
+             + emoji_n
              + (3 if m["strict_B"] > 0 else 0)
              + (0 if m["all_B"] > 0 else 0)
              + (1 if m["bq_B"] > 0 else 0)
              + (1.5 if m["hr_B"] > 0 else 0)
              + (2 if m["v08c_B"] > 0 else 0)
              + (2 if m["v09_B"] > 0 else 0)
-             + (1 if m["v11_B"] > 0 else 0))
+             + (5 if m["v11_B"] > 0 else 0))
     return b_total, n_sum, b_total * n_sum
 
 
@@ -257,9 +261,9 @@ def main():
          "",
          f"> 抓取時間 {idx.get('fetched_at')}.",
          f"> 公式: base = B_total × N_sum, density = base / chars × 1000",
-         f"> V06B 骨架 (em 4 / emoji types / strict 3 / all 0 / bq 1 / hr 1.5)",
-         f"> 新加 clean prose signals: V08C N=2 (不是…而是), V09 N=2 (最容易...的), V11 N=1 (title ｜)",
-         f"> **排行榜最小字數門檻 {args.min_chars}** (排除 {skipped} 篇短文).",
+         f"> V06B 骨架 (em 4 / emoji min(types,{EMOJI_TYPES_CAP}) / strict 3 / all 0 / bq 1 / hr 1.5)",
+         f"> 新加 signals: V08C N=2 (不是…而是), V09 N=2 (最容易...的), V11 N=5 (title ｜)",
+         f"> 字數門檻 = {args.min_chars} (0 = 不排除短文)" + (f", 排除 {skipped} 篇" if skipped else ""),
          "",
          "## 總覽",
          "",
