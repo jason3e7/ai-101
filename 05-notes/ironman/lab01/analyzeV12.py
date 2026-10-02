@@ -2,9 +2,9 @@
 """analyzeV12.py — V06B 加三個 clean prose 訊號的 meta-composite.
 
 公式延續 V06B 的 base = B_total × N_sum, 加入:
-    - V08C 不是/不只是…而是/更是  (N=2)
-    - V09  最容易...的              (N=2)
-    - V11  標題含 ｜               (N=1, binary)
+    - V08C 不是/不只是…而是/更是  (N=3)
+    - V09  最容易...的              (N=3)
+    - V11  標題含 ｜               (N=2, binary)
 
 完整 N 設定:
     V06B 原有:
@@ -15,9 +15,9 @@
       bq (V03) : N = 1
       hr (V04) : N = 1.5
     V12 新加:
-      v08c     : N = 2
-      v09      : N = 2
-      v11      : N = 5 (binary, title 含 ｜ 加 5)
+      v08c     : N = 3
+      v09      : N = 3
+      v11      : N = 2 (binary, title 含 ｜ 加 2)
 
 注意: 預設不設字數門檻 (min-chars = 0), 全部文章進榜.
 
@@ -169,9 +169,9 @@ def compute_v12(m):
              + (0 if m["all_B"] > 0 else 0)
              + (1 if m["bq_B"] > 0 else 0)
              + (1.5 if m["hr_B"] > 0 else 0)
-             + (2 if m["v08c_B"] > 0 else 0)
-             + (2 if m["v09_B"] > 0 else 0)
-             + (5 if m["v11_B"] > 0 else 0))
+             + (3 if m["v08c_B"] > 0 else 0)
+             + (3 if m["v09_B"] > 0 else 0)
+             + (2 if m["v11_B"] > 0 else 0))
     return b_total, n_sum, b_total * n_sum
 
 
@@ -262,7 +262,7 @@ def main():
          f"> 抓取時間 {idx.get('fetched_at')}.",
          f"> 公式: base = B_total × N_sum, density = base / chars × 1000",
          f"> V06B 骨架 (em 4 / emoji min(types,{EMOJI_TYPES_CAP}) / strict 3 / all 0 / bq 1 / hr 1.5)",
-         f"> 新加 signals: V08C N=2 (不是…而是), V09 N=2 (最容易...的), V11 N=5 (title ｜)",
+         f"> 新加 signals: V08C N=3 (不是…而是), V09 N=3 (最容易...的), V11 N=2 (title ｜)",
          f"> 字數門檻 = {args.min_chars} (0 = 不排除短文)" + (f", 排除 {skipped} 篇" if skipped else ""),
          "",
          "## 總覽",

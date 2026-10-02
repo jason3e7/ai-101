@@ -5,6 +5,9 @@ created: 2026-10-02
 
 # V12 權重微調 — Calibrating V12 Weights
 
+> [!IMPORTANT]
+> **已套用 (2026-10-02)**: `analyzeV12.py` 的實際權重為 **v11 5→2、v08c 2→3、v09 2→3**（在「推薦」與「保守」之間：v11 用推薦值、v08c/v09 用保守值）。下面的三方案分析是提案當時的紀錄，`results-v12.md` 已是套用後的結果。
+
 > [!NOTE]
 > V12 的 N 權重大多從 V06B 繼承 (em 4, strict 3, bq 1, hr 1.5), v08c/v09 用了 2, v11 剛升到 5. 這篇用 2026-09 corpus (15057 篇) 的 contribution + ablation 數據, data-driven 推一組新 N. emoji 的 `min(distinct_types, 5)` 當 anchor 不動.
 
