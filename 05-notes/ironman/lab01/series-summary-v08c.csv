@@ -4,7 +4,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9252,教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗,Build on Google AI,30,45,14468,3.1103,2.5977
 9067,AI for Social Good：打造高風險場域的智慧決策支援系統,自我挑戰,2,20,6446,3.1027,3.2120
 9033,ChatGPT & Codex 練功日記,ChatGPT & Codex,1,2,653,3.0628,3.0628
-9084,30 天建立架構思維 - From Blocks to Castle,IT Operation,30,214,75553,2.8324,2.6072
+9084,30 天建立架構思維 - From Blocks to Castle,IT Operation,30,222,75553,2.9383,2.8156
 9401,30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化,佛心分享-SideProject30,31,264,100278,2.6327,2.7226
 9680,AI陪孩子學習：從答案工具變成思考教練,AI Engineering,15,31,14460,2.1438,2.3952
 9113,AI照護小幫手：智慧健康與情緒關懷系統,ChatGPT & Codex,16,23,11973,1.9210,1.6850
@@ -31,23 +31,23 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9781,AI Recipe — AI 智慧食譜推薦系統,自我挑戰,3,3,2464,1.2175,1.2034
 9235,現代化的 AI 系統設計,AI Engineering,30,177,149370,1.1850,1.2048
 9879,從對話到照護：30 天打造高齡智慧健康 AI Companion,AI Engineering,9,18,15243,1.1809,0.7305
+9322,跟 Claude Code CLI 變成好朋友,Claude AI,30,45,38159,1.1793,1.1014
 9118,從第一線應變到企業治理：30 天打造資安溝通與營運韌性,自我挑戰,16,38,32597,1.1658,1.4369
 9782,AI 救得了祖傳系統嗎？30 天實戰企業 Legacy System × AI 協作開發,ChatGPT & Codex,15,81,69535,1.1649,1.2170
 9931,用30天建立「可重複使用的 AI 產品工程能力」,AI Engineering,2,2,1724,1.1601,0.9251
-9322,跟 Claude Code CLI 變成好朋友,Claude AI,30,44,38159,1.1531,1.1014
 9414,Unity進階——做一個完整的遊戲,Software Development,30,126,111794,1.1271,0.8791
 9218,邁向 AI Coding 勇者之路：沒有程式基礎也能上線,Vibe Coding,16,24,21567,1.1128,1.1437
 9207,Data Machi 30 天學習系列：從 Chat 到 Product，打造真正能工作的企業 AI,AI 自動化,31,161,146988,1.0953,1.1157
 9860,資安入門地圖:30 天建立資訊安全全貌知識體系,Security,8,15,13857,1.0825,1.0257
+9593,群島手記：你要的是答案，還是找答案的方法？,佛心分享-IT 人自學之術,20,32,30027,1.0657,0.8802
 9943,AI 編年史：一群人想教機器思考，然後呢？,自我挑戰,6,12,11348,1.0575,1.0739
 9064,JS 核心重構：勇者轉職傳說,JavaScript,31,66,62437,1.0571,0.9995
 9579,用 JavaScript 打造可長期經營的記帳 App：StrawMoneyBook 實戰,JavaScript,1,3,2846,1.0541,1.0541
 9429,用 AI Agent 重構一套無框架的 legacy PHP 系統,Claude AI,30,65,62053,1.0475,1.0230
 9802,Ai大時代透過vibe coding 逆向學習回來,佛心分享-IT 人自學之術,5,6,5754,1.0428,0.7675
-9593,群島手記：你要的是答案，還是找答案的方法？,佛心分享-IT 人自學之術,20,31,30027,1.0324,0.7898
 9683,把 ChatGPT & Codex 當成隊友：30 天從 Idea 到 Production,ChatGPT & Codex,15,20,19474,1.0270,0.9033
 9664,重新認識Github Copilot (續),Vibe Coding,15,27,26514,1.0183,1.1204
-9332,不是所有的英雄都披著披風：那些默默守護金融安全的驗證技術,Security,29,37,37514,0.9863,0.7843
+9332,不是所有的英雄都披著披風：那些默默守護金融安全的驗證技術,Security,29,38,37514,1.0130,0.7843
 9059,《九重燼》Vue3 + PixiJS + Ink.js 視覺小說遊戲開發全紀錄,Modern Web,30,90,93520,0.9624,0.8652
 9422,打造台語發音檢測系統：可憐大四生的專題實錄,佛心分享-SideProject30,11,34,35489,0.9580,0.7639
 9198,《AI Companion：30 天打造一個會聽、會說、會記得你的 AI 夥伴》,AI Engineering,6,6,6348,0.9452,0.3463
@@ -67,6 +67,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9246,我的一人公司 ｜ AI助理幫我省了多少能量,AI 自動化,30,33,39061,0.8448,0.7446
 9520,AI 時代下的好奇心練習：從社會、生命、文化到科技，用 30 天重新認識這個世界,自我挑戰,23,68,82369,0.8256,0.7574
 9503,只要有心，人人都是食神—做得出來，就能端給別人吃嗎？,Vibe Coding,26,58,72560,0.7993,0.0000
+9661,架構思維比語法重要-大道至簡的 AI 落地學：帶領跨部門同仁啟動 AI 助理協作革命,自我挑戰,15,24,30352,0.7907,0.7402
 9762,30天ITSA挑戰：從看不懂題目到解出6題,Software Development,3,2,2531,0.7902,0.7680
 9660,30天搞定科技背後的東西,自我挑戰,16,20,25466,0.7854,0.6397
 9344,如何讓 AI 主動完成複雜任務？Claude Code × Agentic Workflow 實戰,Claude AI,16,7,8933,0.7836,0.0000
@@ -76,7 +77,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9631,逃離對話框的 AI：OpenClaw 2.0 實戰,AI 自動化,7,5,6493,0.7701,0.9852
 9179,Phoenix 2026：當《鳳凰專案》遇上 AI Agent —— 30 天 DevOps 職場 RPG 冒險,Software Development,30,89,117083,0.7601,0.7367
 9175,AI x PM x Agile  AI 敏捷專案管理技能工具箱,Build on Google AI,1,2,2632,0.7599,0.7599
-9661,架構思維比語法重要-大道至簡的 AI 落地學：帶領跨部門同仁啟動 AI 助理協作革命,自我挑戰,15,23,30352,0.7578,0.6200
 9272,Medical AI Security Lab：醫療 AI Chatbot 的攻防實驗與自動化 Red Team,AI Security,15,21,27806,0.7552,0.7027
 9837,企業知識檢索與 RAG 工程：標註、微調、混合檢索、Rerank 與可重現評測,AI Engineering,16,24,32439,0.7399,0.5382
 9747,從需求到實作：30 天與 Codex 協作打造 Idea Note PWA,ChatGPT & Codex,11,10,13527,0.7393,0.7645
@@ -100,6 +100,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9543,40歲，我決定重新學一次理工：一個文組商業大叔的30天 Google AI 實驗,Build on Google AI,3,3,4439,0.6758,1.2034
 9128,不只會寫 Code：用 ChatGPT × Codex 打造企業級 AI 開發工作流,ChatGPT & Codex,30,91,134719,0.6755,0.7072
 9618,Rive 的一些進階主題,Modern Web,16,13,19435,0.6689,0.0000
+9396,《從聊天到規格書:我如何把 AI 訓練成報告產線員工》,AI 自動化,30,34,51029,0.6663,0.5879
 9314,夢幻甜品師闖工程世界：Vibe Coding vs 專業開發的 0→1 冒險攻略,Vibe Coding,30,69,104213,0.6621,0.6645
 9171,It Works on My Machine：30 天從踩雷學會工程事故調查,佛心分享-IT 人自學之術,30,19,28767,0.6605,0.0000
 9538,拒當 API 韭菜！30 天手邊設備玩轉 AI Agent,AI Engineering,6,14,21268,0.6583,0.6580
@@ -121,20 +122,19 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9926,Java × AI：30天打造智慧健康助理,AI Engineering,7,7,11415,0.6132,0.4857
 9613,從資料到圖表，再到決策：30 天資料視覺化思考之旅,自我挑戰,3,1,1642,0.6090,0.0000
 9521,群島計畫：你複製的是結論，還是看見的能力？,自我挑戰,25,31,50962,0.6083,0.4980
-9396,《從聊天到規格書:我如何把 AI 訓練成報告產線員工》,AI 自動化,30,31,51029,0.6075,0.5848
 9431,讓 AI Agent 維護一個 Open Source Project,Vibe Coding,30,40,65879,0.6072,0.5868
 9914,「這本來只是個小工具」：從專案管理到Vibe Coder的意外旅程,Vibe Coding,10,7,11593,0.6038,0.3041
 9830,2026 年，會用 AI 不等於會帶 AI：用 ChatGPT × Codex 從零開始實現一人 AI 團隊,ChatGPT & Codex,15,29,48498,0.5980,0.5508
 9343,Learning SRE for the AI Era：從 SRE Lab 到 Production AI Reliability,AI Engineering,19,138,231246,0.5968,0.5526
+9212,前端三分鐘 X 要轉職養豬還是做被取代的工程師？用 Google AI 打造我的 AI 雙刀流自動化工作流,Build on Google AI,30,36,60500,0.5950,0.4984
+9308,30 天新世代 JavaScript 自我學習指南,JavaScript,25,87,146796,0.5927,0.5964
 9277,快樂演算法,Software Development,30,12,20257,0.5924,0.0000
 9240,LLM infra 學習日記,Software Development,20,21,35708,0.5881,0.4328
 9238,程式碼 AI 寫，我負責看懂：30 天拆解 React × TypeScript,自我挑戰,30,32,54540,0.5867,0.5327
-9308,30 天新世代 JavaScript 自我學習指南,JavaScript,25,86,146796,0.5858,0.5964
 9809,《球迷的棒球數據分析實驗：30天用MLB數據學習資料分析》,自我挑戰,3,3,5124,0.5855,0.6720
 9036,你的自動化測試，大部分是在演戲｜AI coding 時代的探索性測試 30 講,Software Development,30,69,117881,0.5853,0.3193
 9361,30 天打造 Codebase Intelligence Agent：從程式碼檢索、結構化索引到變更影響分析實戰,AI Engineering,15,10,17165,0.5826,0.0000
 9159,讓 LLM 不只會回答，還會查證：打造 Agentic RAG 智慧知識助理,AI Engineering,30,48,82826,0.5795,0.3933
-9212,前端三分鐘 X 要轉職養豬還是做被取代的工程師？用 Google AI 打造我的 AI 雙刀流自動化工作流,Build on Google AI,30,35,60500,0.5785,0.4712
 9365,如果 AI 幫我安排每日的任務？——讓待辦清單不只是清單：LLM × Flask × MySQL 打造動態任務規劃系統,AI Engineering,15,6,10379,0.5781,0.0000
 9126,用 AI + draw.io MCP 建立可重複使用的流程圖工作流,自我挑戰,30,26,45281,0.5742,0.5960
 9780,Vibe 完之後：30 天給 AI 蓋的小商店裝上護欄,Vibe Coding,5,6,10636,0.5641,0.4318
@@ -156,6 +156,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9408,從 Prompt 到成品：30 天 Vibe Coding 入門與實作,Vibe Coding,15,4,7613,0.5254,0.0000
 9880,AI 時代的 Android Engineer：30 天打造我的 AI 開發工作流,Software Development,15,16,31024,0.5157,0.6423
 9581,從 Vibe Coding 到可維護專案：用 Hermes Agent 重讀 RoomRush Android 專題,Software Development,20,25,48628,0.5141,0.3786
+9052,諸神也搖頭的 Legacy Code： 30天 .NET 工程師生存之道,Software Development,30,76,150732,0.5042,0.5614
 9892,AI 情境英文口語教練——結合 LLM 與自動化工作流的個人化英文學習系統,AI 自動化,15,11,21820,0.5041,0.4608
 9728,淺談OWASP Top 10 for Large Language Model Applications,AI Security,16,7,13897,0.5037,0.0000
 9501,從 Web 到 AI Agent：30 天看懂新世代資安攻防,AI Security,13,6,11939,0.5026,0.0000
@@ -163,20 +164,21 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9442,《Agentic AI 攻防 1~30 天》,AI Security,25,12,24025,0.4995,0.0000
 9184,槍林彈雨下的資安防守：從品質觀念切入，帶開發者從零動手作資安 30 天,Security,30,46,92193,0.4990,0.4276
 9772,愛安豬,自我挑戰,4,5,10021,0.4990,0.3840
-9052,諸神也搖頭的 Legacy Code： 30天 .NET 工程師生存之道,Software Development,30,74,150732,0.4909,0.5133
+9079,打造高風險場域的智慧決策支援系統（AI for Social Good）,Build on Google AI,30,54,109123,0.4949,0.0000
 9196,3分鐘 AI Agent導論,AI Engineering,39,24,49009,0.4897,0.0000
 9136,從 Page Fault 到 OOM：Linux 記憶體管理 30 天拆解,自我挑戰,11,6,12310,0.4874,0.0000
+9104,從 AI 助理到營運中台：金融 PM 的 30 天 Claude Code 治理實戰,Claude AI,16,17,34903,0.4871,0.4490
 9560,AI 不只會回答：30 天打造一套真正能上線的智慧助理,自我挑戰,17,18,37029,0.4861,0.3852
 9464,AI 如何幫一般人把生活與工作變簡單,AI 自動化,28,6,12354,0.4857,0.0000
 9499,我也希望安全第一——然後我們看看這些鎖是怎麼一個個被撬開的,AI Security,25,27,55789,0.4840,0.4296
 9108,挑戰 30 天把 ChatGPT 與 Codex 放進軟體開發流程,ChatGPT & Codex,30,21,43420,0.4836,0.4888
 9425,從 IT 工程師到資安領域,佛心分享-IT 人職涯歷練,30,45,93844,0.4795,0.3367
 9047,讓 AI Agent 真的做事：用 Embabel 打造可控、可測試的智慧 Dashboard,AI Engineering,31,36,75209,0.4787,0.3709
-9079,打造高風險場域的智慧決策支援系統（AI for Social Good）,Build on Google AI,30,52,109123,0.4765,0.0000
 9877,把地球的發燒表格化：30 天用 Gemini 把暖化、河川與空污收成同一張決策表,Build on Google AI,2,2,4213,0.4747,0.4431
 9473,同一套 Laravel 系統，測試怎麼寫才不會說謊,Software Development,28,24,50767,0.4727,0.2139
 9498,成為產品型工程師吧！從培養產品思維到 PostHog 數據實戰,Software Development,26,28,59496,0.4706,0.1548
 9532,菜雞學習資料結構的 30 日讀書分享,佛心分享-IT 人自學之術,23,4,8516,0.4697,0.0000
+9929,從 Linux 到 Pwn：30 天學習資安攻防,Security,15,8,17074,0.4685,0.0000
 9450,Roblox Studio AI 協作開發大全,Software Development,29,70,149497,0.4682,0.4740
 9777,30 天打造我的 AI 自動化工作流,AI 自動化,15,11,23493,0.4682,0.5149
 9637,30 天打造讓人敢簽核的 AI Agent：從會回答到可信任的審核型 AI,AI Engineering,5,6,12854,0.4668,0.5705
@@ -208,7 +210,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9398,打開黑盒子：大型語言模型的機制解釋性入門,AI Security,30,77,178081,0.4324,0.4287
 9829,AI 時代下的自學革命：30 天打造高效 IT 知識庫與實戰力,佛心分享-IT 人自學之術,4,2,4637,0.4313,0.4212
 9924,不會用 AI 的竹科打雜王兼人類學博士生 X AI 幫幫忙全紀錄,自我挑戰,12,7,16250,0.4308,0.2425
-9104,從 AI 助理到營運中台：金融 PM 的 30 天 Claude Code 治理實戰,Claude AI,16,15,34903,0.4298,0.4490
 9799,別讓 AI 成為資安破口：30 天打造安全、高效且會賺錢的企業級 AI 應用,AI Engineering,3,3,6994,0.4289,0.0000
 9616,大廠觀落陰：中年工程師的產線鬼故事與生存防身術,Software Development,18,6,14009,0.4283,0.0000
 9519,30 天解雇我自己：用 AI 自動化掉每天的重複工作,AI 自動化,17,12,28191,0.4257,0.3804
@@ -222,14 +223,13 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9496,30 天一起培養一個習慣：把工作交給 AI 之前，先判斷，再搭建工作流,AI 自動化,15,11,26636,0.4130,0.3705
 9358,從黑盒到可驗證：30 天打造 AI Agent 的 Trace、Eval 與 Guardrails 系統,AI Engineering,16,24,58120,0.4129,0.3526
 9139,從一句話到一個網站：用 Vibe Coding 開發 WordPress Block Theme 的 30 天,Vibe Coding,40,59,143768,0.4104,0.3440
-9929,從 Linux 到 Pwn：30 天學習資安攻防,Security,15,7,17074,0.4100,0.0000
 9557,協定、框架、架構：一條龍搞懂 AI Agent 是怎麼被造出來的,AI 自動化,16,11,26864,0.4095,0.2588
 9214,開源大佬的脆弱心靈日記,IT Operation,30,7,17241,0.4060,0.0000
 9350,從 LLM、Agent 到 Guardrails：30 天打造可控、安全、可驗證的 AI Agent,AI Security,15,14,34572,0.4050,0.0000
 9826,踏入品質保證工程之路：QA 新手如何善用 AI 與開發者工具,自我挑戰,15,13,32425,0.4009,0.3689
+9106,從法條到程式碼：台灣 AI 治理與資安合規實戰指南,AI Security,30,71,177386,0.4003,0.3252
 9779,從 Pixel 到 AI：30 天影像辨識入門之路,AI Engineering,15,9,22606,0.3981,0.0000
 9726,一個非工程背景 PM 的流程自動化實戰分享,AI 自動化,15,12,30391,0.3949,0.3542
-9106,從法條到程式碼：台灣 AI 治理與資安合規實戰指南,AI Security,30,70,177386,0.3946,0.3252
 9928,我的工程師好像哪裡怪怪的,佛心分享-IT 人職涯歷練,4,2,5088,0.3931,0.3137
 9558,跟 Claude Code 協作的摩擦，都是沒講清楚的規則,Claude AI,21,7,17815,0.3929,0.0000
 9534,拯救混亂數據：30 天 Python 輕量級 ETL 與電商關聯資料分析,自我挑戰,20,10,25614,0.3904,0.0000
@@ -260,6 +260,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9497,AI Agent 憑什麼動手？30 天拆解 Agent Identity、Delegation 與 Authorization,AI Security,24,27,77143,0.3500,0.4020
 9599,系統是怎麼被流量打爆的？30 天實戰 System Design,Software Development,3,4,11549,0.3464,0.2101
 9420,Claude AI 新手筆記:30個實用技巧與生活/課業應用,Claude AI,30,8,23259,0.3440,0.0000
+9732,文科生的軟體工程啟蒙：用一個代購 App，看懂 30 個系統設計觀念,Software Development,16,8,23263,0.3439,0.0000
 9563,新手 AI 應用之閱讀筆記,自我挑戰,19,6,17451,0.3438,0.0000
 9667,chat不能亡,佛心分享-IT 人自學之術,16,5,14722,0.3396,0.0000
 9632,打造 AI Security Lab：從攻擊 LLM 到建立自己的 AI 防線,AI Security,17,15,44178,0.3395,0.3172
@@ -272,6 +273,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9317,網站終於會說話：30 天實作並驗證 Agent-ready 的 WebMCP 活動網站,Modern Web,29,31,94300,0.3287,0.3416
 9109,30 天打造公開資料版急診檢傷系統：Side Project 與實驗計畫,佛心分享-SideProject30,30,83,252914,0.3282,0.2929
 9437,從 C++ 菜鳥到 Low-Latency 勇者：一場分秒必爭的賽局,Software Development,30,19,57904,0.3281,0.0000
+9904,程式碼門診：診斷壞味道、開出重構處方,自我挑戰,15,9,27437,0.3280,0.0000
 9889,AI 要即時：AI X AI產品開發的敏捷工程實驗,Claude AI,3,2,6105,0.3276,0.3032
 9798,AaaS from Scratch: 從一次性定義，到規模化分析,AI 自動化,15,11,33676,0.3266,0.0000
 9098,Lovable: 地球上最強的 AI 生成全端網站Agentic開發實戰,Modern Web,18,42,128813,0.3261,0.1701
@@ -289,15 +291,14 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9236,當一個有紀律的人，開始用 AI 管理自己的健康 系列。,ChatGPT & Codex,30,26,83372,0.3119,0.1502
 9741,用  AI Agent 撰寫長篇技術系列文章,Claude AI,16,16,51361,0.3115,0.3513
 9669,從 Vibe Coding 到系統架構：Gemini x Claude Code 雙 AI 協同開發 Godot 2D Roguelike 卡牌遊戲實戰,Vibe Coding,16,13,41868,0.3105,0.1749
+9045,從現場踩坑到 AI 工具 — IT Diagnostic Agent 開發實錄,Claude AI,30,23,74160,0.3101,0.2901
 9930,從 Prompt Engineering 到 Copilot / Codex 實務 30 天,ChatGPT & Codex,2,1,3241,0.3085,0.3141
+9087,Eric 的創作者重生計畫,自我挑戰,21,8,26116,0.3063,0.0000
 9615,地端 AI 建築學,AI Engineering,20,18,58889,0.3057,0.2701
 9686,AI Guardrails 實戰：用合成資料與評估，打造可驗證的 LLM 應用防護流程,AI Engineering,15,17,56135,0.3028,0.0000
-9732,文科生的軟體工程啟蒙：用一個代購 App，看懂 30 個系統設計觀念,Software Development,16,7,23263,0.3009,0.0000
 9489,用python做一個X11 WM,Software Development,27,1,3349,0.2986,0.0000
-9045,從現場踩坑到 AI 工具 — IT Diagnostic Agent 開發實錄,Claude AI,30,22,74160,0.2967,0.2591
 9403,血汗同事：我和 Claude Code 僱了一隊 AI，做出 Web MMO ARPG,Claude AI,12,7,23688,0.2955,0.0000
 9178,你以為自己很敏捷，其實連瀑布都沒做好——30 天從錯誤承諾、大神救火，到沒有大神也跑得動的開發方法,佛心分享-IT 人自學之術,30,21,71749,0.2927,0.3902
-9904,程式碼門診：診斷壞味道、開出重構處方,自我挑戰,15,8,27437,0.2916,0.0000
 9469,30天 LeetCode 演算法實戰：Java 與 Python 解法比較,自我挑戰,28,12,41371,0.2901,0.0000
 9754,2026 初學者資安入門技，是誰在敲打我窗,Security,15,3,10345,0.2900,0.0000
 9840,AWS 架構為什麼這樣選？30 天拆解服務選型與設計取捨,IT Operation,15,16,55192,0.2899,0.2534
@@ -307,6 +308,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9137,連網路壞在哪都不知道，怎麼成為系統網路工程師？,IT Operation,13,23,80752,0.2848,0.2785
 9316,SyncETA 開發日記：手把手打造你的智慧出發時間推薦 PWA,Software Development,14,2,7045,0.2839,0.0000
 9279,從 Vibe Coding 到 Production：用 Google AI 打造上線守門員,Build on Google AI,30,37,130337,0.2839,0.2068
+9247,收到自己的紅色炸彈！婚期就是 Deadline：前端一人用 AI 規格流水線，30 天出貨婚禮 SaaS,Software Development,30,19,67523,0.2814,0.1691
 9572,從登入到授權-現代軟體的身分架構指南,Software Development,22,33,117409,0.2811,0.2178
 9241,一行 torch.compile 背後發生了什麼？30 天深度拆解 PyTorch 編譯器,AI Engineering,30,37,132278,0.2797,0.2513
 9578,在職涯交叉路口，走向適合自己的下一站,佛心分享-IT 人職涯歷練,19,5,17932,0.2788,0.0000
@@ -322,12 +324,12 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9289,情報進來，內容發出去：30 天拆一條每天真的在跑的 AI 內容產線,AI 自動化,30,38,139863,0.2717,0.2214
 9386,Codex的規格驅動開發 ：30 天打造 .NET 內部專案管理系統,Software Development,31,32,118826,0.2693,0.2347
 9383,從 Web 到宇宙：Three.js × WebGL 互動式太陽系與光影實作,Modern Web,15,5,18623,0.2685,0.0000
-9087,Eric 的創作者重生計畫,自我挑戰,21,7,26116,0.2680,0.0000
 9155,Python 數據專案從頭做起：跟著一個專案學資料工程,Software Development,7,4,14924,0.2680,0.0000
 9535,SyncETA 開發日記：手把手打造你的智慧出發時間推薦 PWA,Software Development,23,3,11307,0.2653,0.0000
 9609,從零打造網頁簡報編輯器,Software Development,19,6,22706,0.2642,0.0000
 9795,告別重複日常：用AI Agent打造個人化智能工具,AI 自動化,9,1,3788,0.2640,0.0000
 9635,做一個團購後端，順便搞懂那些事,Vibe Coding,15,5,19071,0.2622,0.0000
+9073,《30天打造喵語日誌：Gemini API × Vibe Coding 實戰》,Build on Google AI,30,15,57297,0.2618,0.0000
 9351,Harness Engineering × Pi  Agent 實戰：打造可觀測、可評估的 AI Coding Agent,AI Engineering,15,8,30800,0.2597,0.0000
 9690,30 天認識 ChatGPT：從基本功能到日常應用,ChatGPT & Codex,20,4,15496,0.2581,0.0000
 9040,toui：一條短網址能做到哪些事——從轉址到 AI 工作流,佛心分享-SideProject30,31,19,74784,0.2541,0.2963
@@ -335,7 +337,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9582,30 天從 Full-Stack Engineer 進化到 System Design：從 0 設計可支撐百萬使用者的系統,Software Development,15,15,59177,0.2535,0.3001
 9861,AI Reliability Lab：30 天用 Python 把「AI 好像很準」變成可以量的工程指標,AI Engineering,15,17,67152,0.2532,0.2545
 9115,AI 黑魔法：30 天拆解 AI 系統攻擊面,AI Security,17,14,55449,0.2525,0.0000
-9247,收到自己的紅色炸彈！婚期就是 Deadline：前端一人用 AI 規格流水線，30 天出貨婚禮 SaaS,Software Development,30,17,67523,0.2518,0.0000
 9539,AI × Digital Twin 打造線纜工廠自我進化系統,AI 自動化,6,6,23914,0.2509,0.1837
 9715,影子 IT 與他們的產地 - AI 時代的影子 IT 資安議題與應對之道,AI Security,15,4,16032,0.2495,0.0000
 9449,Lovable：地球上最強的 AI 生成全端網站 Agentic 開發實戰,Modern Web,29,46,184923,0.2488,0.1311
@@ -350,6 +351,8 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9897,30 天打造 AI 輔助 SOC 資安事件分析平台,AI Security,15,3,12310,0.2437,0.0000
 9847,盯！視覺追蹤機器人 | ROS2打造追蹤機器人,自我挑戰,12,5,20629,0.2424,0.0000
 9620,"RE: 從 4,343 筆職缺到 AI Engineer：MLOps × GenAI Engineering 雙主軸實戰",AI Engineering,19,14,57821,0.2421,0.0000
+9748,Spring Boot + Kotlin 協程高併發，後端開發新選擇,Software Development,16,12,49586,0.2420,0.1040
+9061,Android  鐵人賽: 天命最高 - 陪伴大家一步步打造屬於自己的app,Software Development,30,35,144957,0.2415,0.1978
 9590,為你自己蓋一座會複利的知識庫——WikiBrain,佛心分享-SideProject30,20,13,54516,0.2385,0.0000
 9541,FDE 是 AI Agent 時代的最強武器嗎？28 個企業 AI 落地的真實決策與挑戰,AI 自動化,15,9,37830,0.2379,0.0000
 9945,沒有人的 Tech Team,Software Development,2,1,4209,0.2376,0.2472
@@ -358,35 +361,33 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9173,LLM 應用資安：從 Prompt Injection 到 AI Red Teaming,AI Security,31,44,187502,0.2347,0.2264
 9387,Google ADK Agent 教戰：30 天從原型到可上線的 AI Agent 系統,Build on Google AI,30,32,136677,0.2341,0.2311
 9099,讓 Claude 學會看圖:30 天打造 LLM 驅動的機器視覺工作站(MCP × OpenCV × Terminal Plugin)》,AI 自動化,5,3,12866,0.2332,0.0000
+9174,從脆弱腳本到可信任測試平台：自動化測試架構30天,Software Development,30,15,64460,0.2327,0.0000
 9296,沒有壞設計，只有剛好戳中你的心機：30天拆解UI裡的心理學筆記,自我挑戰,30,8,34448,0.2322,0.0000
 9767,DishFlow AI Agent：用 Google AI 打造 Eat-Cost Balance 的下一餐決策系統,Build on Google AI,15,13,56091,0.2318,0.1573
 9379,《Nyahello！從零開始的 30 天 malware 學習日誌》,Security,30,22,95422,0.2306,0.0000
 9193,GPU很忙？他真的有在做事嗎？,AI Engineering,30,39,169438,0.2302,0.0000
+9375,從零打造情感感知 Agentic System：FSM 狀態機與 RAG 的整合實作,AI Engineering,16,4,17380,0.2301,0.0000
 9397,Docker 新手村：從容器到 PostgreSQL 的實戰之路,IT Operation,15,4,17383,0.2301,0.0000
-9061,Android  鐵人賽: 天命最高 - 陪伴大家一步步打造屬於自己的app,Software Development,30,33,144957,0.2277,0.1978
+9571,自我耍廢組：全自動化の鐵人,自我挑戰,19,13,56946,0.2283,0.3087
 9856,從 Fragment 到 Compose — 老 Android App 重寫的架構取捨,Software Development,15,3,13208,0.2271,0.0000
 9565,Macaron：30 天打造一位會占卜的 AI Agent,AI Engineering,19,6,26517,0.2263,0.0000
 9474,一套真實運作中的 Laravel 系統，拆解它的原生機制,Software Development,28,12,53300,0.2251,0.0000
 9734,AI時代下的軟體工程,Software Development,16,10,44517,0.2246,0.0000
+9092,轉生到全端工程師沒多久就要負責公司的大平台？？,Vibe Coding,31,27,120295,0.2244,0.2316
 9651,從 Claude Code 到無人值守：我的 AI Agent 工程化實戰,AI Engineering,16,9,40107,0.2244,0.1741
 9069,醫療資料通過標準驗證，就真的能交換嗎？——30 天打造 TW Core 資料品質閘門,Software Development,30,32,143742,0.2226,0.1514
-9748,Spring Boot + Kotlin 協程高併發，後端開發新選擇,Software Development,16,11,49586,0.2218,0.0000
 9641,資安這條路：系統化學習滲透測試提權手法,Security,15,14,63162,0.2217,0.2103
 9068,程式設計沒有告訴你的事：30 天破解每一個 Why,Software Development,30,26,117997,0.2203,0.0704
 9515,台北女子，東京在住——AI 時代的海外工作與生活觀察,自我挑戰,23,6,27398,0.2190,0.0000
 9121,《30 天從零拆解 AI Agent：從 Tool Calling 到多 Agent 協作》,AI Engineering,30,32,146205,0.2189,0.1543
 9903,Java 程式設計與實作：30 天打造個人記帳系統,自我挑戰,10,3,13789,0.2176,0.0000
-9174,從脆弱腳本到可信任測試平台：自動化測試架構30天,Software Development,30,14,64460,0.2172,0.0000
 9406,《從心出發：30 天打造一套具 RAG、心理支持決策、安全治理與 ARCI 自適應能力的 AI 心理支持平台》,AI 自動化,30,17,78478,0.2166,0.0000
 9530,奇幻塔防開發實錄：用 Claude 打造一款有靈魂的塔防遊戲,Claude AI,16,13,60074,0.2164,0.0000
-9092,轉生到全端工程師沒多久就要負責公司的大平台？？,Vibe Coding,31,26,120295,0.2161,0.2316
 9872,LOCAL：30 天打造 LINE × Google AI 地方服務 Agent,Build on Google AI,15,21,97320,0.2158,0.1603
 9866,AI 寫不好，可能是我沒說清楚：30 天打造 ClarifyBuild，讓 Vibe Coding 從需求開始,Vibe Coding,15,13,60341,0.2154,0.0000
 9936,AI 策展人：用 Google ADK 打造會思考、會介紹的 3D 展示平台,Build on Google AI,15,5,23352,0.2141,0.0000
 9523,AI 這麼聰明，為什麼還會被騙？30 天搞懂 AI 資安,AI Security,17,11,51662,0.2129,0.0000
 9839,我的音樂不該被平台綁架：30 天用 ChatGPT × Codex 打造跨平台 Music Recap,ChatGPT & Codex,15,10,47051,0.2125,0.0000
-9571,自我耍廢組：全自動化の鐵人,自我挑戰,19,12,56946,0.2107,0.3087
-9073,《30天打造喵語日誌：Gemini API × Vibe Coding 實戰》,Build on Google AI,30,12,57297,0.2094,0.0000
 9466,AI 寫的測試，誰來測？,AI Engineering,31,20,95525,0.2094,0.0000
 9417,菜鳥工程師的 DR 告白：混合雲異地備援，與資料庫回家的那 12 分鐘,IT Operation,14,6,28748,0.2087,0.0000
 9887,《NestJS 絕地求生手冊》：我用一年血淚換來的實戰排雷筆記,Modern Web,15,8,38628,0.2071,0.0000
@@ -394,6 +395,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9371,AI 都會寫程式了，我還要學什麼？——從「做得出來」到學會開發的 30 天,Software Development,21,7,34192,0.2047,0.0000
 9720,30 天 AI 應用煉成陣：活用 Low-code 打造專屬智慧 Agent,AI Engineering,16,3,14688,0.2042,0.0000
 9508,我的 SDD 實驗之路 - 從實際使用現有工具，到設計自己的流程,Software Development,24,21,103034,0.2038,0.0720
+9075,風裡雨裡我在AI世界等你,AI 自動化,32,14,68775,0.2036,0.0000
 9899,CDD 抱怨驅動開發：30 天 Vibe Coding 家庭生活改造,Vibe Coding,15,3,14770,0.2031,0.0000
 9262,AI 時代的 Clean Code：30 天讓 AI 產出的程式碼可讀、可驗證、可維護,Software Development,29,53,262969,0.2015,0.1776
 9561,現在就學C# 與 ASP.NET Core,Modern Web,21,9,44732,0.2012,0.0000
@@ -422,14 +424,14 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9269,《30天打造 Tool-Calling Agent：從 MDP 理論到 DPOTrainer 實戰訓練》,AI Engineering,22,5,27830,0.1797,0.0000
 9374,基於 Multi-Agent 協作之蘇格拉底式程式學習與自動化評測系統,AI Engineering,15,2,11179,0.1789,0.0000
 9311,ChatGPT + Codex 打造高效能 AI 開發工作流,ChatGPT & Codex,30,16,89756,0.1783,0.0000
+9423,Windows 桌面軟體 CI 實戰：從系統工具開發到 Zero-RDP 自動化測試錄影,Software Development,30,20,112627,0.1776,0.0000
 9356,AI Agent：OpenClaw 從入門到自動化流程,AI 自動化,15,2,11319,0.1767,0.0000
 9056,買錯保險的血淚教訓：我用 Python + AI Agent 重構人生財務防禦系統,AI Engineering,30,5,28391,0.1761,0.0000
 9642,經濟部國營聯招資通安全類科 30 天精讀筆記,Security,11,1,5711,0.1751,0.0000
 9938,探討k8s部署方式,Kubernetes,15,6,34358,0.1746,0.0000
-9375,從零打造情感感知 Agentic System：FSM 狀態機與 RAG 的整合實作,AI Engineering,16,3,17380,0.1726,0.0000
 9585,解構作業系統：30 天從 Process、Concurrency 到 Virtual Memory,IT Operation,15,6,35002,0.1714,0.0000
 9883,AI Agent 從零開始,自我挑戰,15,3,17616,0.1703,0.0000
-9423,Windows 桌面軟體 CI 實戰：從系統工具開發到 Zero-RDP 自動化測試錄影,Software Development,30,19,112627,0.1687,0.0000
+9176,一個人的 IT 部門：用 Claude Code 從裸機到一整座 AI 機房,Claude AI,12,4,23751,0.1684,0.0000
 9752,企業管理自動化與執行框架-以SOC運作為實例,Security,16,11,65327,0.1684,0.0000
 9285,AI 黑魔法：30 天拆解 AI 系統攻擊面（重啟）,AI Security,30,15,90312,0.1661,0.0000
 9636,《朝 HTB CPTS 前進：資安新手的 30 天實作筆記》,Security,15,14,85275,0.1642,0.1379
@@ -437,7 +439,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9771,從零開始將作品整理成GitHub履歷,Software Development,15,2,12226,0.1636,0.0000
 9548,管理職PM的敏捷團隊賦能實踐航道,自我挑戰,22,3,18389,0.1631,0.0000
 9696,30 天打造 AI Web Security Agent：從 Google AI Studio 到 Gemini Agent,Build on Google AI,15,6,37051,0.1619,0.0000
-9075,風裡雨裡我在AI世界等你,AI 自動化,32,11,68775,0.1599,0.0000
 9695,大學以前只看過那隻貓？用白話文帶你從 Python  跨進 JavaScript,JavaScript,15,4,25315,0.1580,0.0000
 9302,Agent的系統防禦升級,AI Security,30,8,51547,0.1552,0.0000
 9796,灰色地帶：資訊安全奇聞車失事,Security,6,2,12959,0.1543,0.0000
@@ -486,7 +487,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9281,前端互動視覺技術實作 LAB,Modern Web,30,8,62509,0.1280,0.0000
 9455,從看得到到看得懂：30 天在自架 K8s 上實踐可觀測性與告警,Kubernetes,29,14,109721,0.1276,0.0000
 9363,學校沒教的後端生存指南：30 天打造非同步 S3 微服務，部署 K8s 實現 HA 架構,Software Development,30,14,109800,0.1275,0.0000
-9176,一個人的 IT 部門：用 Claude Code 從裸機到一整座 AI 機房,Claude AI,12,3,23751,0.1263,0.0000
 9832,用 LINE Bot 和 Agent Skill 自動化整理筆記與 IG 發文,AI 自動化,15,3,23904,0.1255,0.0000
 9049,生活中的 AI 應用：我在家用 NAS 養了一隻 Agent，幫我看盤、顧家、盯備考——30 天自架實錄,AI Engineering,31,16,127817,0.1252,0.0000
 9058,模型真的會推理嗎？30 天從 Base Model 打造可驗證的小型推理模型,自我挑戰,30,9,73425,0.1226,0.0000
@@ -505,8 +505,11 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9090,用 Google AI 生態系 30 天從零打造一個全棧 AI SaaS 服務,Build on Google AI,16,4,34788,0.1150,0.0000
 9039,和AI學習gcp - 建立對話代理,自我挑戰,30,4,34992,0.1143,0.0000
 9742,你的第一本 AEO x GEO 教戰手冊,Modern Web,11,9,79072,0.1138,0.1252
+9381,從漏洞告警到 AI 決策：Wazuh × RAG × n8n 實作自動化資安漏洞驗證與智慧通報,AI 自動化,15,3,26566,0.1129,0.0000
 9111,一天一招，快速上手 mpv-lazy,自我挑戰,30,4,35870,0.1115,0.0000
 9953,打造專屬 AI 參謀群：以 Gemini Spark、Workspace 與 ADK 構建自動化決策雷達,Build on Google AI,15,2,17986,0.1112,0.0000
+9644,資安這條路：從攻擊者視角看 Kubernetes,Kubernetes,15,13,116981,0.1111,0.1178
+9132,打造零成本企業級 AI Agent：以 Gemini 2.5 Flash 構建金融分析助手與維運實戰,Build on Google AI,30,5,45042,0.1110,0.0000
 9168,《矽墟》：我把一部科幻小說當成軟體專案來管,AI Engineering,30,10,90574,0.1104,0.0000
 9846,Python 爬蟲與資料分析實戰：從網路資料到資訊視覺化,自我挑戰,13,3,27265,0.1100,0.0000
 9608,學習用Pygame製作小專案,自我挑戰,19,1,9309,0.1074,0.0000
@@ -519,7 +522,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9811,從零學 K8s｜30 天核心概念 × 實作，新手也能真正掌握 Kubernetes,Kubernetes,15,3,28596,0.1049,0.0000
 9844,C++ 套件管理器求生指南 Conan vs Vcpkg,Software Development,15,2,19203,0.1042,0.0000
 9783,基本面與技術面組合投資模型建置,Build on Google AI,14,3,28876,0.1039,0.0000
-9644,資安這條路：從攻擊者視角看 Kubernetes,Kubernetes,15,12,116981,0.1026,0.1096
 9645,從 JavaScript 到 TypeScript：30 天建立 AI 時代的型別思維,JavaScript,16,3,29261,0.1025,0.0000
 9265,30 天從零開始學會 React 19：從核心基礎、Hooks 到實戰開發,JavaScript,29,23,226246,0.1017,0.0000
 9224,不再和 LaTeX 打架：30 天從零學會 Typst,自我挑戰,11,3,29596,0.1014,0.0000
@@ -542,11 +544,13 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9569,透過 vibe coding 製作一套基於社群打造的互動式遊戲,Vibe Coding,11,2,22377,0.0894,0.0000
 9085,一天一個 PR，讓我告訴你嵌入式開發的殘酷：如何為 AI Agent 建立可信的工程閉環,AI Engineering,30,11,123076,0.0894,0.0000
 9595,《30 天從零打造資安語言模型：從微調到 Agent 落地》,AI Security,20,3,33600,0.0893,0.0000
+9310,不只是快 —— Bun 30 天：從底層架構、全套工具鏈到生產部署,JavaScript,30,4,44962,0.0890,0.0000
+9239,30天準備 IPAS 資安工程師之課程筆記與備考實戰,Security,30,3,33723,0.0890,0.0000
 9251,ERP 架構師筆記：定義驅動的框架設計,Software Development,30,12,135110,0.0888,0.0000
-9132,打造零成本企業級 AI Agent：以 Gemini 2.5 Flash 構建金融分析助手與維運實戰,Build on Google AI,30,4,45042,0.0888,0.0000
 9182,我推的Laravel Ｓ２！,Modern Web,31,12,136072,0.0882,0.0000
 9913,跟著 Claude Academy，重新認識 Claude,Claude AI,15,10,114363,0.0874,0.0000
 9459,個人知識庫、第二大腦，都用不好？我讓 AI 當維護者，自己只負責讀、想、問,AI Engineering,29,5,57268,0.0873,0.0000
+9237,三個介面，一套工作流？30 天 Claude 跨領域實戰：從 claude.ai、Claude Desktop 到 Claude Code,Claude AI,30,20,233479,0.0857,0.0000
 9091,做自己職涯的PM,佛心分享-IT 人職涯歷練,30,2,23376,0.0856,0.0000
 9172,從0開始的資料結構旅程!,Software Development,30,3,35385,0.0848,0.0000
 9833,找回消失的程式手感:從 Figma 到 VS Code 設計系的 30 天前端打怪日常,自我挑戰,15,1,11984,0.0834,0.0000
@@ -555,11 +559,12 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9479,液態玻璃美學：結合 Gemini 與 Antigravity IDE，打造 120FPS、多視窗比例與網格順延推擠佈局的強大商務運算終端,Build on Google AI,26,5,60838,0.0822,0.0000
 9487,研究生自救指南:30 天用 Claude Code 打造我的論文工具箱,Claude AI,27,6,73153,0.0820,0.0000
 9368,解決需求規格書矛盾：用 Claude Code × MCP 實作自律型文檔審查 Agent,Claude AI,15,3,36597,0.0820,0.0000
-9237,三個介面，一套工作流？30 天 Claude 跨領域實戰：從 claude.ai、Claude Desktop 到 Claude Code,Claude AI,30,19,233479,0.0814,0.0000
 9107,打通天地結界：AAD 修練之旅,Security,30,3,36872,0.0814,0.0000
 9705,AI-Driven MarTech：用 Google Cloud + Vertex AI 打造全自動廣告歸因與多模態素材分析系統,Build on Google AI,15,8,98589,0.0811,0.0000
+9384,人機協同程式開發實戰：用 AI 輔助開發 Swift 與 Spring Boot，打造屬於自己的程式,Vibe Coding,15,1,12369,0.0808,0.0000
 9125,Kubernetes ingress架構,Kubernetes,8,2,24740,0.0808,0.0000
 9220,從多數決到可信投票：30 天打造 TACT 大語言模型推理聚合方法,自我挑戰,9,1,12479,0.0801,0.0000
+9818,零預算 NGO 數位轉型挑戰：30 天打造智慧訂房系統,Build on Google AI,15,2,25104,0.0797,0.0000
 9638,酒鬼加農！買醉前先來酒譜查詢器保護自己！,佛心分享-SideProject30,15,1,12669,0.0789,0.0000
 9287,Kotlin 手刻 Ktor 從零開始,Software Development,32,16,203062,0.0788,0.0000
 9100,SMART on FHIR 開發之路：30 天做一個跨醫院的 app,Software Development,30,10,128149,0.0780,0.0000
@@ -568,11 +573,12 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9129,從零到 CKA：30 天掌握 Kubernetes 核心觀念與實作,Kubernetes,31,11,143071,0.0769,0.0000
 9201,不是模型太慢，是你沒算過這筆帳：地端 LLM 工程實戰 30 天,AI Engineering,30,13,170145,0.0764,0.0000
 9675,今晚來點 Claude Skills：產品開發者的 AI 工作流,Claude AI,15,2,26237,0.0762,0.0000
-9381,從漏洞告警到 AI 決策：Wazuh × RAG × n8n 實作自動化資安漏洞驗證與智慧通報,AI 自動化,15,2,26566,0.0753,0.0000
 9326,使用gemini  準備 az-900,Build on Google AI,30,31,413895,0.0749,0.0000
 9648,我和 AI 一起打造 AI：30 天把 Sol 從對話框帶進真實世界,AI Engineering,17,3,40918,0.0733,0.0000
 9063,30 天手把手學會 Chart.js v4：從圖表基礎到互動式資料視覺化實戰,Modern Web,30,10,137825,0.0726,0.0000
 9791,30 天玩轉 Gumloop：從 AI 自動化、Agent 到企業實戰,AI 自動化,15,1,13902,0.0719,0.0000
+9395,從零打造 RAG 系統：檢索、生成與落地全紀錄,AI Engineering,15,1,14098,0.0709,0.0000
+9602,《再叩一次》—一個中年轉職叩門者的 OSCP 三十夜,Security,19,5,70571,0.0709,0.0000
 9814,從標準到臨床：FHIR 架構與智慧護理資訊系統（NIS）實作 30 天,Software Development,15,2,28285,0.0707,0.0000
 9854,嘗試使用OWASP ZAP與DVWA探索常見 Web 漏洞,Security,15,1,14338,0.0697,0.0000
 9180,Claude Code陪跑：一人開發者的訂閱制SaaS架構與十大地雷實戰記,Claude AI,30,2,28724,0.0696,0.0000
@@ -583,7 +589,7 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9862,買了 Claude Code，然後呢？,Claude AI,15,6,87660,0.0684,0.0000
 9254,ChatGPT + Codex 打造高效能 AI 開發工作流,ChatGPT & Codex,5,1,14649,0.0683,0.0000
 9445,30 天的 SAA 學習筆記,自我挑戰,15,6,88333,0.0679,0.0000
-9310,不只是快 —— Bun 30 天：從底層架構、全套工具鏈到生產部署,JavaScript,30,3,44962,0.0667,0.0000
+9722,從 UI/UX 設計到前端實作：30 天打造專屬的任務學習計時器,Modern Web,17,1,15479,0.0646,0.0000
 9313,AIOps with OpenTelemetry：從可觀測到可信任,AI Engineering,34,15,232644,0.0645,0.0000
 9566,從桃子園灘頭到CySA+,Security,15,2,31252,0.0640,0.0000
 9908,AI 寫的程式，安全嗎？完工不是結束，是攻擊倒數的起點,AI Security,9,4,62853,0.0636,0.0000
@@ -594,18 +600,18 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9330,從單一agent 到多agent 集群的開發流水帳以及應用,AI Engineering,37,18,296506,0.0607,0.0000
 9147,我用 AI 養出一個 AWS 維運同事：從查帳單到進機房的 30 天,IT Operation,9,1,16615,0.0602,0.0000
 9551,激發靈感！AI Studio 的 30 天 Vibe Coding 挑戰,Build on Google AI,20,1,16699,0.0599,0.0000
-9239,30天準備 IPAS 資安工程師之課程筆記與備考實戰,Security,30,2,33723,0.0593,0.0000
 9346,ADK × A2A × Cloud Run 打造可部署、可互通的 Agent 系統,Build on Google AI,15,1,16992,0.0589,0.0000
 9813,裸辭後，我對過去工作產出的回顧、對自己當下的職涯剖析、對未來的規劃,佛心分享-IT 人職涯歷練,15,1,17077,0.0586,0.0000
 9863,利用 Claude 建置自己各種興趣的 Side Project,Claude AI,15,4,68571,0.0583,0.0000
+9628,30 天學會做一個 CLI：打造人類與 AI 都友善的現代 CLI 應用,Software Development,18,3,51462,0.0583,0.0000
 9135,Podman Quadlet-容器服務化(在單體系統到微服務之間),IT Operation,30,2,35219,0.0568,0.0000
-9602,《再叩一次》—一個中年轉職叩門者的 OSCP 三十夜,Security,19,4,70571,0.0567,0.0000
 9682,用 Python 打造最順手的良率統計工具：半導體工程師的模組化開發之道,Software Development,16,2,35862,0.0558,0.0000
 9120,迎接 AI 開發爆發期：告別手動部署，帶領企業團隊從 Git 規範到 CI/CD 實戰,IT Operation,30,2,36228,0.0552,0.0000
 9131,知識圖譜 : 技能樹式學習歷程,AI Engineering,30,5,90925,0.0550,0.0000
 9392,大學生的VirtualBox虛擬機與Ubuntu實戰30天,IT Operation,30,2,37225,0.0537,0.0000
 9851,用數據守護雙眼：生活型態對視力影響的探索性資料分析,自我挑戰,15,1,18733,0.0534,0.0000
 9481,Kotlin Ktor 實戰 101,Software Development,20,9,173010,0.0520,0.0000
+9320,一個人的機房：用 Claude 建置 AI 機房,Claude AI,30,4,77689,0.0515,0.0000
 9760,從空拍到3D展示,佛心分享-IT 人自學之術,15,1,19458,0.0514,0.0000
 9340,不囉唆圖解 Kubernetes,Kubernetes,16,2,39004,0.0513,0.0000
 9948,AI寫得出程式，但它不知道你的店：一家租書店的30天技術選型實錄,Software Development,7,1,19557,0.0511,0.0000
@@ -632,18 +638,17 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9758,地端機房的三十天維運：開源服務封裝、GPU 節點守護與可稽核的變更管理,IT Operation,15,4,93967,0.0426,0.0000
 9947,測試之外的那一半：一個 QA 回頭帶當年的自己,佛心分享-IT 人職涯歷練,16,1,23835,0.0420,0.0000
 9216,資訊安全,佛心分享-IT 人自學之術,40,3,71671,0.0419,0.0000
+9933,資深工程師的 Claude Code 工作筆記,Claude AI,15,4,96259,0.0416,0.0000
+9411,《拒絕爆肝加班！30天打通跨系統自動化與資料比對防線》,佛心分享-IT 人自學之術,30,3,72560,0.0413,0.0000
 9773,Like an Exploition：IoT 韌體漏洞鍊成術,Security,15,1,24240,0.0413,0.0000
 9385,從零開始學習TypeScript：菜鳥的入門介紹與概覽,JavaScript,28,1,24692,0.0405,0.0000
 9093,Microsoft Foundry 的 AI Agent 攻防實戰：建立高資安與可治理的 Agent 系統,AI Security,31,10,247319,0.0404,0.0000
 9140,從前後端踏上 AWS 雲端架構勇者之路,IT Operation,17,2,49610,0.0403,0.0000
-9818,零預算 NGO 數位轉型挑戰：30 天打造智慧訂房系統,Build on Google AI,15,1,25104,0.0398,0.0000
 9413,從 CSSLP 視角建構恰到好處的軟體安全,Security,31,2,51328,0.0390,0.0000
 9592,用 Dify 建構個人專屬 AI Agent 應用,AI 自動化,21,1,25683,0.0389,0.0000
-9628,30 天學會做一個 CLI：打造人類與 AI 都友善的現代 CLI 應用,Software Development,18,2,51462,0.0389,0.0000
 9788,從情資收集到資安鑑識：30 天建構自動化威脅情資與鑑識平台,Security,16,1,25748,0.0388,0.0000
 9339,從零開始的 Linux 維運與 Bash 自動化實戰 30 天,IT Operation,28,1,25803,0.0388,0.0000
 9655,和 AI 一同打造個人專用知識庫：從零散資料到可運用的知識,AI Engineering,15,1,25887,0.0386,0.0000
-9320,一個人的機房：用 Claude 建置 AI 機房,Claude AI,30,3,77689,0.0386,0.0000
 9588,當人、AI、系統開始一起工作,IT Operation,20,1,26046,0.0384,0.0000
 9034,SQL Server  基礎&調教,自我挑戰,30,10,263723,0.0379,0.0000
 9144,Java Spring專案的兩大元件 - Security、Schedule,自我挑戰,30,1,26829,0.0373,0.0000
@@ -653,7 +658,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9562,帶著 GPT 進入我的遊戲世界：30 天角色繪圖日記,自我挑戰,21,1,28233,0.0354,0.0000
 9701,前端來點 AWS 技能樹!,Modern Web,15,1,29180,0.0343,0.0000
 9334,利用Custom GPT+遊戲感來寫PRD,ChatGPT & Codex,30,3,91408,0.0328,0.0000
-9933,資深工程師的 Claude Code 工作筆記,Claude AI,15,3,96259,0.0312,0.0000
 9234,教練看不到的那六天｜從 FIT 檔到 3D 軌跡，馬拉松訓練資料 Dashboard,Modern Web,30,2,65879,0.0304,0.0000
 9816,Re:從零開始做直播代購電商平台,Software Development,15,1,33012,0.0303,0.0000
 9765,邊做邊補：用一個 AI 代理 mesh 專案，補齊 AI 工程師該有的能力,AI Engineering,18,2,66522,0.0301,0.0000
@@ -661,7 +665,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9292,台股日頻量化交易：開發一條從資料、特徵、模型到每日下單清單的產線,Software Development,30,2,69055,0.0290,0.0000
 9545,從告警到結案報告：30 天勒索軟體事件應變實戰,Security,22,1,35438,0.0282,0.0000
 9564,格鬥教練想轉職學資安是否搞錯了什麼(自學第一步)IPAS初級筆記,Security,16,1,36249,0.0276,0.0000
-9411,《拒絕爆肝加班！30天打通跨系統自動化與資料比對防線》,佛心分享-IT 人自學之術,30,2,72560,0.0276,0.0000
 9249,轉型之後：IT 領導者的第二座山,IT Operation,30,1,37227,0.0269,0.0000
 9634,30 天 從數據思維到自動化稽核實戰,佛心分享-IT 人自學之術,17,1,38785,0.0258,0.0000
 9687,30 篇淺談 Spring 框架的核心底層組件,Software Development,15,1,39225,0.0255,0.0000
@@ -723,8 +726,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9369,給藥袋裝一張嘴：30 天用 Android 與 Google VLM 實作高齡語音用藥助手,Build on Google AI,15,0,15793,0.0000,0.0000
 9377,解決學了JavaScript不知道能做什麼：用DOM操作打造實用網頁效果,JavaScript,15,0,14468,0.0000,0.0000
 9378,從能用到可信：Agent Coding 的工程化探索,AI Engineering,6,0,6112,0.0000,0.0000
-9384,人機協同程式開發實戰：用 AI 輔助開發 Swift 與 Spring Boot，打造屬於自己的程式,Vibe Coding,15,0,12369,0.0000,0.0000
-9395,從零打造 RAG 系統：檢索、生成與落地全紀錄,AI Engineering,15,0,14098,0.0000,0.0000
 9409,從零打造 AI 全端應用：Vibe Coding 結合 n8n 視覺化工作流實戰,Vibe Coding,15,0,21637,0.0000,0.0000
 9424,30天從零打造 AI 中台自學之路,AI Engineering,8,0,10408,0.0000,0.0000
 9428,GitHub Copilot SDK 實戰：從 Agent 應用到可部署服務,AI Engineering,29,0,184577,0.0000,0.0000
@@ -771,7 +772,6 @@ series_id,series_title,group_name,articles,hits,chars,per_1k,median_article_per_
 9707,大學生的生存筆記：用 Dify 零程式打造專屬課堂複習與考前衝刺 Agent,AI 自動化,15,0,17147,0.0000,0.0000
 9716,AI 時代的紅藍隊攻防：從 LLM 漏洞剖析到 AI Agent 安全實戰,AI Security,12,0,8669,0.0000,0.0000
 9721,30天刷完leetcoode75,Software Development,15,0,7086,0.0000,0.0000
-9722,從 UI/UX 設計到前端實作：30 天打造專屬的任務學習計時器,Modern Web,17,0,15479,0.0000,0.0000
 9735,使用 Serverless 架構設計廣告點擊系統,Software Development,15,0,5783,0.0000,0.0000
 9736,AI 沒有消滅專業：不寫 code 上架四個 App 的商業分析師，30 天拆給你看,Vibe Coding,15,0,23863,0.0000,0.0000
 9740,Vscode 實作：用 HTML/CSS/JS 打造醫藥健康小工具箱,自我挑戰,16,0,19327,0.0000,0.0000

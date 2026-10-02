@@ -1,7 +1,7 @@
-# lab01 V08C 結果：中文「不是/不只是…而是 (regex: 不(?:只)?是[^。！？\n]{1,25}而是)」密度
+# lab01 V08C 結果：中文「不是/不只是…而是/更是 (regex: 不(?:只)?是[^。！？\n]{1,25}(?:而是|更是))」密度
 
 > 抓取時間 2026-09-30 02:38:08. 公式: per_1k = hits / chars * 1000
-> Pattern: 不是/不只是…而是 (regex: 不(?:只)?是[^。！？\n]{1,25}而是)
+> Pattern: 不是/不只是…而是/更是 (regex: 不(?:只)?是[^。！？\n]{1,25}(?:而是|更是))
 > 範例命中: 不是功能, 而是使用者感受 / 不是技術問題而是商業問題
 > jason3e7 voice guide 明確說「不用這種對立句」, 預期是強 AI tell.
 > **兩版排行並存**: 門檻版 (chars >= 500) + 無門檻版.
@@ -13,10 +13,10 @@
 |:---|---:|
 | 系列數 | 814 |
 | 文章數 | 15057 |
-| 有命中的文章 | 5307（35.2%） |
-| 命中總次數 | 11,075 |
+| 有命中的文章 | 5336（35.4%） |
+| 命中總次數 | 11,136 |
 | 全篇總字數 | 39,634,634 |
-| 全體 per_1k | 0.2794 |
+| 全體 per_1k | 0.2810 |
 | chars < 500 的短文 | 739 篇 (未進門檻版) |
 
 ## [A] per_1k 最高的 20 篇 (chars >= 500)
@@ -24,9 +24,9 @@
 | # | per_1k | hits | 總字 | 文章 | 系列 | 組別 |
 |---:|---:|---:|---:|:---|:---|:---|
 | 1 | 9.2348 | 7 | 758 | [Day 1｜我為什麼要教最愛的人用 Google AI？](https://ithelp.ithome.com.tw/articles/10403458) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
-| 2 | 6.7454 | 4 | 593 | [Day1-2026鐵人賽（ AI 不只是工具，而且是工作夥伴）](https://ithelp.ithome.com.tw/articles/10400866) | 風裡雨裡我在AI世界等你 | AI 自動化 |
-| 3 | 5.9718 | 11 | 1842 | [Day 4 - 架構原則，如何把企業需求轉化成架構設計？](https://ithelp.ithome.com.tw/articles/10401312) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
-| 4 | 5.9398 | 14 | 2357 | [Day 5 - 好的架構，都有共同的特質](https://ithelp.ithome.com.tw/articles/10401376) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+| 2 | 8.4317 | 5 | 593 | [Day1-2026鐵人賽（ AI 不只是工具，而且是工作夥伴）](https://ithelp.ithome.com.tw/articles/10400866) | 風裡雨裡我在AI世界等你 | AI 自動化 |
+| 3 | 6.3640 | 15 | 2357 | [Day 5 - 好的架構，都有共同的特質](https://ithelp.ithome.com.tw/articles/10401376) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+| 4 | 5.9718 | 11 | 1842 | [Day 4 - 架構原則，如何把企業需求轉化成架構設計？](https://ithelp.ithome.com.tw/articles/10401312) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
 | 5 | 5.6075 | 3 | 535 | [Day 04｜從需求開始整理：VoCare 到底需要哪些功能？](https://ithelp.ithome.com.tw/articles/10413345) | AI 不只會聊天：30 天打造 VoCare 智慧陪伴系統 | ChatGPT & Codex |
 | 6 | 5.5556 | 3 | 540 | [Day 06｜第一週的維運復盤：從被動滅火到架構縱深，一線網管的防禦蛻變](https://ithelp.ithome.com.tw/articles/10414509) | 從網管黑手到資安長思維：一線維運的 30 天防禦進化與證照修煉 | 佛心分享-IT 人職涯歷練 |
 | 7 | 5.4845 | 15 | 2735 | [第 1 天：我想跟一個 AI Agent 認識，先從 OpenClaw 開始](https://ithelp.ithome.com.tw/articles/10405915) | 30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化 | 佛心分享-SideProject30 |
@@ -51,10 +51,10 @@
 | 1 ⚠️ | 10.2740 | 3 | 292 | [菜雞學習資料結構的 30 日讀書分享Day 5](https://ithelp.ithome.com.tw/articles/10407905) | 菜雞學習資料結構的 30 日讀書分享【Day 1】 | 佛心分享-IT 人自學之術 |
 | 2 ⚠️ | 10.2740 | 3 | 292 | [菜雞學習資料結構的 30 日讀書分享Day 5](https://ithelp.ithome.com.tw/articles/10409496) | 菜雞學習資料結構的 30 日讀書分享 | 佛心分享-IT 人自學之術 |
 | 3 | 9.2348 | 7 | 758 | [Day 1｜我為什麼要教最愛的人用 Google AI？](https://ithelp.ithome.com.tw/articles/10403458) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
-| 4 | 6.7454 | 4 | 593 | [Day1-2026鐵人賽（ AI 不只是工具，而且是工作夥伴）](https://ithelp.ithome.com.tw/articles/10400866) | 風裡雨裡我在AI世界等你 | AI 自動化 |
+| 4 | 8.4317 | 5 | 593 | [Day1-2026鐵人賽（ AI 不只是工具，而且是工作夥伴）](https://ithelp.ithome.com.tw/articles/10400866) | 風裡雨裡我在AI世界等你 | AI 自動化 |
 | 5 ⚠️ | 6.7265 | 3 | 446 | [Day 30｜從不敢打開，到能陪另一個人按一次](https://ithelp.ithome.com.tw/articles/10410750) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
-| 6 | 5.9718 | 11 | 1842 | [Day 4 - 架構原則，如何把企業需求轉化成架構設計？](https://ithelp.ithome.com.tw/articles/10401312) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
-| 7 | 5.9398 | 14 | 2357 | [Day 5 - 好的架構，都有共同的特質](https://ithelp.ithome.com.tw/articles/10401376) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+| 6 | 6.3640 | 15 | 2357 | [Day 5 - 好的架構，都有共同的特質](https://ithelp.ithome.com.tw/articles/10401376) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+| 7 | 5.9718 | 11 | 1842 | [Day 4 - 架構原則，如何把企業需求轉化成架構設計？](https://ithelp.ithome.com.tw/articles/10401312) | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
 | 8 ⚠️ | 5.8480 | 2 | 342 | [有 AI 菜有辦法Day 25](https://ithelp.ithome.com.tw/articles/10418837) | 從農地守護餐桌食安！《審時農曆：短期葉菜栽耕時序決策系統》 | Build on Google AI |
 | 9 | 5.6075 | 3 | 535 | [Day 04｜從需求開始整理：VoCare 到底需要哪些功能？](https://ithelp.ithome.com.tw/articles/10413345) | AI 不只會聊天：30 天打造 VoCare 智慧陪伴系統 | ChatGPT & Codex |
 | 10 | 5.5556 | 3 | 540 | [Day 06｜第一週的維運復盤：從被動滅火到架構縱深，一線網管的防禦蛻變](https://ithelp.ithome.com.tw/articles/10414509) | 從網管黑手到資安長思維：一線維運的 30 天防禦進化與證照修煉 | 佛心分享-IT 人職涯歷練 |
@@ -78,7 +78,7 @@
 | 3 | 3.1103 | 2.5977 | 30 | 45 | 14468 | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
 | 4 | 3.1027 | 3.2120 | 2 | 20 | 6446 | AI for Social Good：打造高風險場域的智慧決策支援系統 | 自我挑戰 |
 | 5 | 3.0628 | 3.0628 | 1 | 2 | 653 | ChatGPT & Codex 練功日記 | ChatGPT & Codex |
-| 6 | 2.8324 | 2.6072 | 30 | 214 | 75553 | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
+| 6 | 2.9383 | 2.8156 | 30 | 222 | 75553 | 30 天建立架構思維 - From Blocks to Castle | IT Operation |
 | 7 | 2.6327 | 2.7226 | 31 | 264 | 100278 | 30 天走進 OpenClaw：一個 AI Agent 的誕生、掙扎與進化 | 佛心分享-SideProject30 |
 | 8 | 2.1438 | 2.3952 | 15 | 31 | 14460 | AI陪孩子學習：從答案工具變成思考教練 | AI Engineering |
 | 9 | 1.9210 | 1.6850 | 16 | 23 | 11973 | AI照護小幫手：智慧健康與情緒關懷系統 | ChatGPT & Codex |
