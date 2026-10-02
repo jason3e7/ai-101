@@ -87,6 +87,7 @@ updated: 2026-07-04
 | [AI 101 - AI 產出怎麼驗](./02-advanced/limits-and-verification/verifying-ai-output.md) | 4 年學術方法一堆，2024 後大半被推翻或被 reasoning 模型內化。攤開主流方法（Self-Consistency、CoVe、Self-Refine、RARR、FActScore、LLM-as-Judge、CAI、PRM）＋ 5 個負向結果（self-correction 循環、CoT 負收益、overconfidence）＋ 人的因素（automation bias、jagged frontier）＋ 產業框架（NIST / OWASP / RSP）。日常真正用得上剩 3 招：外部證據、跨模型獨立驗算、原子事實分解 |
 | [AI 101 - AI 用久了會鈍化](./02-advanced/limits-and-verification/ai-atrophy.md) | AI 讓你變快也讓你**測得到地**變鈍。**急性**：驗證疲勞 / 蓋章化（NCT07328815 RCT 72 名醫師 rubber-stamp、Radiology 2023 mammography 4.89× bias、Copilot 接受率半年 28.9%→34%）。**慢性**：判斷力生鏽 / 認知外包（MIT EEG 55% 神經連結下降、Microsoft/CMU 319 人 survey、Cleverly SSRN 框架）。5 個有實證的破法：ensemble 警示、XAI、pre-commit、brain-only 間隔、對抗性自測 |
 | [AI 101 - AI 的文風與語氣](./02-advanced/writing-style/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
+| [AI 101 - 全民抓 AI 文](./02-advanced/writing-style/ai-writing-tells-discourse.md) | 2025–2026 社群把破折號、「不是…而是」、「」引號當成抓鬼鐵證的現象；為什麼幾乎都會冤枉人（經濟學人 120 萬字調查：破折號不可靠、真正破綻是標點太少）、清單為何一直在變（軍備競賽）、以及「與其抓鬼不如調教」的另一派 |
 | [AI 101 - LLM 的極限](./02-advanced/limits-and-verification/llm-limitations.md) | 三類做不到：結構性（原理決定）、暫時（下一代會補）、鋸齒狀（看不見邊界）；為什麼鋸齒狀最危險 |
 | [AI 101 - ML 演算法精要](./02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |
 | [AI 101 - Subagent 使用與計費](./02-advanced/engineering/subagent-usage-and-billing.md) | Orchestrator 模式、並行 subagent、API 計費結構與省錢策略 |
