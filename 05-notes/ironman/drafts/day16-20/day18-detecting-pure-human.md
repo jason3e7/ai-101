@@ -151,7 +151,9 @@ Day 16 單 `——` 全體 0.86 → Day 17 六訊號 55.45 → 今天九訊號 *
 
 ## 自己動手玩: 瀏覽器即時版 — A Tampermonkey Script
 
-講這麼多, 不如你自己拿去量. 我把這套算法整個搬進瀏覽器, 做成一個 [Tampermonkey](https://www.tampermonkey.net/) userscript: 瀏覽**任何網頁**時浮出一個小面板, 即時給你**這一頁的 N_sum 和 density**, 外加 9 個訊號的逐項拆解.
+**為什麼要做成工具?** 老實說動機很個人 (jason3e7): 這些特徵看久了, 我就是會**不太舒服**, 所以想要一個「一眼就能辨識」的東西. 那種感覺, 有點像有些人看到簡體中文、或某些中國用語會覺得不對味 —— 說不上誰對誰錯, 就是一種讀起來的直覺反應. 把它變成一個隨手能按的面板, 等於把這份直覺量化出來.
+
+所以我把這套算法整個搬進瀏覽器, 做成一個 [Tampermonkey](https://www.tampermonkey.net/) userscript: 瀏覽**任何網頁**時浮出一個小面板, 即時給你**這一頁的 N_sum 和 density**, 外加 9 個訊號的逐項拆解.
 
 **檔案**: [`05-notes/assets/browser-ranker.user.js`](../../../assets/browser-ranker.user.js)
 
