@@ -211,8 +211,10 @@ def main():
          f"| 全篇總字數 | {tot_chars:,} |"]
     if tot_chars:
         L.append(f"| 全體 per_1k | {tot_hits / tot_chars * SCALE:.4f} |")
+    top_no_thresh = sorted(rows, key=lambda r: -r["per_1k"])[:args.top]
+
     L += ["",
-          f"## per_1k 最高的 {len(top)} 篇 (chars >= {args.min_chars})",
+          f"## [A] per_1k 最高的 {len(top)} 篇 (chars >= {args.min_chars})",
           "",
           "| # | per_1k | hits | 總字 | 文章 | 系列 | 組別 |",
           "|---:|---:|---:|---:|:---|:---|:---|"]
@@ -220,6 +222,18 @@ def main():
         t = r["title"].replace("|", "\\|")
         st = r["series_title"].replace("|", "\\|")
         L.append(f"| {i} | {r['per_1k']:.4f} | {r['hits']} | {r['chars']} | "
+                 f"[{t}]({r['url']}) | {st} | {r['group_name']} |")
+
+    L += ["",
+          f"## [B] per_1k 最高的 {len(top_no_thresh)} 篇 (無字數門檻, 全 {len(rows)} 篇)",
+          "",
+          "| # | per_1k | hits | 總字 | 文章 | 系列 | 組別 |",
+          "|---:|---:|---:|---:|:---|:---|:---|"]
+    for i, r in enumerate(top_no_thresh, 1):
+        t = r["title"].replace("|", "\\|")
+        st = r["series_title"].replace("|", "\\|")
+        marker = "" if r["chars"] >= args.min_chars else " ⚠️"
+        L.append(f"| {i}{marker} | {r['per_1k']:.4f} | {r['hits']} | {r['chars']} | "
                  f"[{t}]({r['url']}) | {st} | {r['group_name']} |")
     L += ["", f"## per_1k 最高的 {min(args.top, len(srows))} 個系列", "",
           "| # | per_1k | 各篇中位數 | 篇數 | hits | 總字 | 系列 | 組別 |",

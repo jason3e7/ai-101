@@ -17,7 +17,7 @@
 | 全篇總字數 | 39,634,634 |
 | 全體 per_1k | 0.0298 |
 
-## per_1k 最高的 20 篇 (chars >= 500)
+## [A] per_1k 最高的 20 篇 (chars >= 500)
 
 | # | per_1k | hits | 總字 | 文章 | 系列 | 組別 |
 |---:|---:|---:|---:|:---|:---|:---|
@@ -41,6 +41,31 @@
 | 18 | 1.1648 | 2 | 1717 | [Day 05：假陽性測試的三種樣貌空斷言恆真斷言Mock 掉待測物件本身](https://ithelp.ithome.com.tw/articles/10407487) | AI 時代的 TDD：讓 AI 寫 Code，但不要讓它決定品質 | Software Development |
 | 19 | 1.1648 | 2 | 1717 | [Day 05：假陽性測試的三種樣貌空斷言恆真斷言Mock 掉待測物件本身](https://ithelp.ithome.com.tw/articles/10409905) | AI 時代的 TDD：讓 AI 寫 Code，但不要讓它決定品質 | Software Development |
 | 20 | 1.1494 | 1 | 870 | [動工前，先把一個模型長什麼樣講清楚](https://ithelp.ithome.com.tw/articles/10412868) | AI 策展人：用 Google ADK 打造會思考、會介紹的 3D 展示平台 | Build on Google AI |
+
+## [B] per_1k 最高的 20 篇 (無字數門檻, 全 15057 篇)
+
+| # | per_1k | hits | 總字 | 文章 | 系列 | 組別 |
+|---:|---:|---:|---:|:---|:---|:---|
+| 1 ⚠️ | 3.7037 | 1 | 270 | [Day 2｜左手不能打字，我才發現：開口說，就是使用 AI 的開始](https://ithelp.ithome.com.tw/articles/10403538) | 教會最愛的人用 Google AI：一位自耕農老公與一位 76+ 老爸的 30 天生活實驗 | Build on Google AI |
+| 2 | 2.2701 | 2 | 881 | [[Day 28] 倒數三天!給 Claude AI 新手的入門建議](https://ithelp.ithome.com.tw/articles/10417229) | Claude AI 新手筆記:30個實用技巧與生活/課業應用 | Claude AI |
+| 3 ⚠️ | 2.1322 | 1 | 469 | [關於我開始踏入資安這檔事Day28-事情處理完，就真的改善了嗎？](https://ithelp.ithome.com.tw/articles/10408995) | 關於我開始踏入資安這檔事 | Security |
+| 4 | 1.8067 | 2 | 1107 | [Day 8 JSX 不是 HTML！揭開 Babel 將 JSX 轉譯為 React.createElement 的面紗](https://ithelp.ithome.com.tw/articles/10415439) | React 觀念架構：從js 基礎到Hook 底層邏輯 | JavaScript |
+| 5 | 1.6420 | 1 | 609 | [Day 14-五種設定各管什麼：我終於不再亂裝](https://ithelp.ithome.com.tw/articles/10411948) | 文科生的 Claude Code 30 日實戰：從零到台股研究工作台 | Claude AI |
+| 6 | 1.5748 | 2 | 1270 | [Day 10：事實查核為什麼不能只憑內部踩坑經驗的記憶](https://ithelp.ithome.com.tw/articles/10416422) | 用 AI 打一場鐵人賽：多系列並行的排程、進度與寫作紀律 | 自我挑戰 |
+| 7 | 1.4577 | 1 | 686 | [執行計劃與規劃，讓 AI 完成 CI/CD](https://ithelp.ithome.com.tw/articles/10414009) | 30 天打造我的個人雲端實驗室：用 Docker、Kubernetes、Flyte 和自建服務，重構手機與電腦的日常工作流 | Kubernetes |
+| 8 | 1.4104 | 1 | 709 | [Day2 哪款AI比較適合孩子？](https://ithelp.ithome.com.tw/articles/10410496) | AI陪孩子學習：從答案工具變成思考教練 | AI Engineering |
+| 9 | 1.3831 | 1 | 723 | [Day 7｜AI 幫我找論文，我現在第一件事是先確認這篇真的存在嗎？](https://ithelp.ithome.com.tw/articles/10415133) | 不會用 AI 的竹科打雜王兼人類學博士生 X AI 幫幫忙全紀錄 | 自我挑戰 |
+| 10 | 1.3263 | 1 | 754 | [Day 12｜搞懂 React 元件之間怎麼溝通：Props 與 State](https://ithelp.ithome.com.tw/articles/10409830) | Vibe Coding 實戰手冊：30 天打造具備預算控管與數據視覺化的 React 記帳應用 | Vibe Coding |
+| 11 | 1.3263 | 1 | 754 | [Day 12：籌碼動能大解密  導入成交量能與法人籌碼監控！](https://ithelp.ithome.com.tw/articles/10416968) | 30 天打造專屬盯盤機器人：資料爬取、策略指標到 Telegram/LINE 推播 | Software Development |
+| 12 | 1.3123 | 1 | 762 | [Day13 - 考慮"價值與數據"驅動的轉型優先序決策](https://ithelp.ithome.com.tw/articles/10414479) | 管理職PM的敏捷團隊賦能實踐航道 | 自我挑戰 |
+| 13 | 1.3106 | 2 | 1526 | [Day 13｜\|\|??三元運算子都像在給預設值，到底怎麼選？](https://ithelp.ithome.com.tw/articles/10417787) | 從 UI/UX 麻瓜到工程魔法師｜從讀懂程式開始 | 佛心分享-IT 人職涯歷練 |
+| 14 | 1.2853 | 1 | 778 | [Day 29 意圖跟心態的重要性](https://ithelp.ithome.com.tw/articles/10412847) | 跌跌撞撞的轉職路：面試馬拉松與 AI 時代的工作筆記 | 佛心分享-IT 人職涯歷練 |
+| 15 | 1.2323 | 2 | 1623 | [Day 04｜npm run dev 小整理](https://ithelp.ithome.com.tw/articles/10408118) | JavaScript為什麼筆記本 | JavaScript |
+| 16 | 1.2285 | 1 | 814 | [Day 4 履歷重塑（二）：量化與包裝的魔法](https://ithelp.ithome.com.tw/articles/10404709) | 跌跌撞撞的轉職路：面試馬拉松與 AI 時代的工作筆記 | 佛心分享-IT 人職涯歷練 |
+| 17 | 1.1862 | 1 | 843 | [Day 7：mpv-lazy 在 AMD 怎麼用 AI 超分 + 補幀(AFMF)](https://ithelp.ithome.com.tw/articles/10401807) | 一天一招，快速上手 mpv-lazy | 自我挑戰 |
+| 18 | 1.1820 | 1 | 846 | [Day 4｜Agent 可觀測性的三個層次：基礎設施模型呼叫決策邏輯](https://ithelp.ithome.com.tw/articles/10409819) | 《30 天用 Google Cloud Observability 打造 AI Agent 全方位監控》 | Security |
+| 19 | 1.1737 | 2 | 1704 | [Day 17進階推理技術 (下)：讓 AI 幫你判斷本週事件趨勢與嚴重性](https://ithelp.ithome.com.tw/articles/10410104) | 《從聊天到規格書:我如何把 AI 訓練成報告產線員工》 | AI 自動化 |
+| 20 | 1.1648 | 2 | 1717 | [Day 05：假陽性測試的三種樣貌空斷言恆真斷言Mock 掉待測物件本身](https://ithelp.ithome.com.tw/articles/10407487) | AI 時代的 TDD：讓 AI 寫 Code，但不要讓它決定品質 | Software Development |
 
 ## per_1k 最高的 20 個系列
 
