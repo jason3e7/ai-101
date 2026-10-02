@@ -10,7 +10,7 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> lab01 文風檢測三部曲收尾. [Day 16](./day16-ai-fingerprint-scan.md) 用單指紋 (`——`) 掃全屆, [Day 17](./day17-composite-score.md) 疊到 6 個 signal 的綜合分數, 這 15 天我又把它養到了 **V12 (9 個 signal ＋ 權重微調)**. 這篇拿這把最細的尺去問一個**翻面**的問題: 不問「誰像 AI」, 改問「誰是純手寫、完全沒碰 AI」. 結論先講: **這把尺答不出來** —— 而且為什麼答不出來, 比它答得出什麼更值得講. 文末附一個 Tampermonkey script, 讓你瀏覽任何網頁時即時看到 V12 的 N_sum 與 density.
+> lab01 文風檢測三部曲收尾. [Day 16](./day16-ai-fingerprint-scan.md) 用單指紋 (`——`) 掃全屆, [Day 17](./day17-composite-score.md) 疊到 6 個 signal 的綜合分數, 這 15 天我又把它養到了 **V12 (9 個 signal ＋ 權重微調)**. 這篇拿這把最細的尺去問一個**翻面**的問題: 不問「誰像 AI」, 改問「誰是純手寫、完全沒碰 AI」. 結論先講: **這把尺答不出來** —— 而且為什麼答不出來, 比它答得出什麼更值得講. 文末附一個 Tampermonkey script, 讓你瀏覽任何網頁時即時看到 N_sum 與 density.
 
 > **TL;DR (EN):** The series closer. After refining the AI-tell detector all the way to V12 (9 signals, tuned weights, overall density 69.66 across all 15,057 articles), I flip the question: can it identify writing that is *purely human*, with no AI involved? It cannot - and the reason is epistemological, not a tuning problem. Zero signals can mean "no AI" or "AI used but cleaned up" (the Day 16 ChatGPT track scored 0.11, essentially invisible, because GPT-5.1 honors "no em-dash"). Proving presence is easy; proving absence is not. The detector gives a reliable *ranking* of AI-flavor, never a verdict of human authorship. Ships with a Tampermonkey userscript that runs the exact V12 scoring in your browser and shows N_sum + density per page.
 
@@ -69,7 +69,7 @@ status: draft
 > [!NOTE]
 > 粗體那三個新 signal (v08c / v09 / v11) 的權重是這兩天才用全站資料校過的: 排版性的 `｜` 標題 (v11) 從 5 **降到 2**, 文字層的「不是⋯而是」(v08c)、「最容易⋯的」(v09) 各升到 3, 讓「文字層的 AI 味」主導分數, 而不是「排版花俏」. 校的過程見 [v12-weight-tuning](../../lab01/v12-weight-tuning.md).
 
-重跑全站 15,057 篇、814 系列, **V12 全體 density 是 69.66**. 這個數字待會當對照基準 —— 你用文末的瀏覽器工具掃到的 density, 跟 69.66 比, 就知道這篇相對全屆是偏高還偏低.
+重跑全站 15,057 篇、814 系列, **V12 全體 density 是 69.66**. 這個數字是後面排名的基準 —— 數字越高, 相對全屆越偏「AI 味濃」. (注: 文末那個瀏覽器工具是**簡化版**, 只取 6 個排版訊號, 對照基準另為 49.4, 不是這裡的 69.66.)
 
 這把尺拿來**排序** AI 味, 到 V12 已經相當穩. 問題來了: 它能不能反過來認「人」?
 
@@ -92,26 +92,25 @@ status: draft
 
 ## 自己動手玩: 瀏覽器即時版 — A Tampermonkey Script
 
-講這麼多, 不如你自己拿去量. 我把 V12 的算法整個搬進瀏覽器, 做成一個 [Tampermonkey](https://www.tampermonkey.net/) userscript: 看網頁時浮出一個小面板, 即時給你**這一頁的 N_sum 和 density**, 外加 9 個 signal 的逐項拆解.
+講這麼多, 不如你自己拿去量. 我把這套算法的**排版訊號**部分搬進瀏覽器, 做成一個 [Tampermonkey](https://www.tampermonkey.net/) userscript: 瀏覽**任何網頁**時浮出一個小面板, 即時給你**這一頁的 N_sum 和 density**, 外加 6 個排版 signal 的逐項拆解.
 
-**檔案**: [`lab01/v12-browser-ranker.user.js`](../../lab01/v12-browser-ranker.user.js)
+**檔案**: [`05-notes/assets/browser-ranker.user.js`](../../../assets/browser-ranker.user.js)
 
 **怎麼裝**:
 
 1. 瀏覽器裝 Tampermonkey 擴充套件
-2. 開 Tampermonkey → 新增 script → 把 `v12-browser-ranker.user.js` 內容整段貼上 → 存檔
-3. 開任何一篇 iThome 鐵人賽文章, 右上角會**自動**浮出面板
-4. 其他網站: 點 Tampermonkey 圖示 → 選單選「V12 掃描這頁」手動觸發
+2. 開 Tampermonkey → 新增 script → 把 `browser-ranker.user.js` 內容整段貼上 → 存檔
+3. 開**任何網站**, 右上角都會**自動**浮出面板 (要重掃或換頁後再掃, 點面板的 ↻, 或 Tampermonkey 選單選「掃描這頁」)
 
 **面板給你什麼**:
 
-- **N_sum**: 這頁命中了哪些 signal、權重加起來多少 (滿分 22.5)
-- **density (每千字)**: `base ÷ 去空白字數 × 1000`, 跟全屆平均 69.66 比
-- 9 個 signal 的 B (數量) 與 N (權重) 逐項表, 沒命中的淡掉
+- **N_sum**: 這頁命中了哪些 signal、權重加起來多少 (滿分 14.5)
+- **density (每千字)**: `base ÷ 去空白字數 × 1000`, 跟全屆平均 49.4 比
+- 6 個排版 signal 的 B (數量) 與 N (權重) 逐項表, 沒命中的淡掉
 - density 顏色: 低於平均一半綠、接近平均橘、超過平均紅
 
 > [!NOTE]
-> 它跟 `analyzeV12.py` 的 9 個 signal、權重、公式完全對齊 (實測同一篇文章的 B 與 N_sum 數字一致; density 因瀏覽器算空白字數的方式略有 <1% 誤差). iThome 文章頁自動抓正文區塊 (`.markdown__style`), 其他網頁退而抓 `article` / `main` / 整頁, `<pre>` 程式碼區塊一律排除 —— 跟 analyzer 一樣.
+> 瀏覽器版只保留**排版層**的 6 個 signal (——、emoji、嚴格 / 一般粗體、blockquote、`<hr>`), 拿掉了文字層那三個 (不是⋯而是 / 最容易⋯的 / 標題 `｜`), 所以它是比 lab01 完整分數**簡化**的通用版, 全體 density 對照基準也降到 49.4. iThome 文章頁自動抓正文區塊 (`.markdown__style`), 其他網頁退而抓 `article` / `main` / 整頁, `<pre>` 程式碼區塊一律排除 —— 跟 analyzer 一樣.
 
 > [!WARNING]
 > 面板上的數字是**共現訊號, 不是判決.** density 高只代表「這篇疊了很多常見的 AI 排版/句型習慣」, 不代表「一定是 AI 寫的」; density 低也**不代表**「一定是人寫的」(這就是上一段整段在講的事). 拿它排序、拿它當提醒, 別拿它當證據去指認任何人.
@@ -146,7 +145,7 @@ status: draft
 
 - [lab01 V12 結果 (results-v12.md)](../../lab01/results-v12.md) — 本篇的數據基礎 (15,057 篇, density 69.66)
 - [lab01 V12 權重微調 (v12-weight-tuning.md)](../../lab01/v12-weight-tuning.md) — v08c/v09/v11 新權重怎麼校的
-- [v12-browser-ranker.user.js](../../lab01/v12-browser-ranker.user.js) — 本篇附的 Tampermonkey script
+- [browser-ranker.user.js](../../../assets/browser-ranker.user.js) — 本篇附的 Tampermonkey script (放在固定位置 `05-notes/assets/`)
 - [Day 16: 單指紋掃全屆](./day16-ai-fingerprint-scan.md) — ChatGPT 組 0.11 的來源
 - [Day 17: 從 1 個訊號擴到 6 個](./day17-composite-score.md) — 綜合分數的起點
 - [AI 生成內容怎麼標記與辨識](../../../../01-fundamentals/ai-content-watermark.md) — 為什麼連浮水印都不能證明「不是 AI」

@@ -82,7 +82,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 |:---|:---|:---|:---|
 | 16 | 掃當屆所有文章, 量一次「AI 味」有多少 | [lab01](../lab01/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10419414) |
 | 17 | 從 1 個訊號擴到 6 個, 綜合分數再測「AI 味」 | [lab01 結果](../lab01/results-v06b.md) ＋ [兩算法對照](../lab01/v06-vs-v06b.md) | 🚧 [草稿中](./drafts/day16-20/day17-composite-score.md) |
-| 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? (基於 V12 ＋ 附 Tampermonkey 即時掃描) | [lab01 V12](../lab01/results-v12.md) ＋ [瀏覽器 script](../lab01/v12-browser-ranker.user.js) ＋ jason3e7 翻面提問 | 🚧 [草稿中](./drafts/day16-20/day18-detecting-pure-human.md) |
+| 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? (基於 V12 ＋ 附 Tampermonkey 即時掃描) | [lab01 V12](../lab01/results-v12.md) ＋ [瀏覽器 script](../assets/browser-ranker.user.js) ＋ jason3e7 翻面提問 | 🚧 [草稿中](./drafts/day16-20/day18-detecting-pure-human.md) |
 | 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 🚧 [草稿中](./drafts/day16-20/day19-ai-watermark.md) |
 | 20 | AI 文風入侵: 五個記號一次講完 + 把味道壓回去的抗體 + 子系列小結 (Day 16-19) | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) ＋ 子系列回顧 | 📅 預計 |
 | 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 📅 預計 (暫排) |
@@ -107,7 +107,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 ## 變更歷程 — Changelog
 
-- **2026-10-02**: Day 18 (翻面問題) 從草稿骨架寫成完整草稿, 技術基礎換成 lab01 V12 (9 signal ＋ 權重微調, 全體 density 69.66); 新增 Tampermonkey script `lab01/v12-browser-ranker.user.js` 當文末 payoff (瀏覽網頁即時看 N_sum / density). 保留 jason3e7 翻面提問為主軸, 收尾「零命中推不出人寫」的認識論論點
+- **2026-10-02**: Day 18 (翻面問題) 從草稿骨架寫成完整草稿, 技術基礎換成 lab01 V12 (9 signal ＋ 權重微調, 全體 density 69.66); 新增 Tampermonkey script (固定放 `05-notes/assets/browser-ranker.user.js`) 當文末 payoff (瀏覽網頁即時看 N_sum / density). 保留 jason3e7 翻面提問為主軸, 收尾「零命中推不出人寫」的認識論論點
 - **2026-10-01 (傍晚)**: Day 21-24, 26-28 全部 📅 預計 (暫排) — 承接「文風測量 + 浮水印」子系列後進入「Claude Code 落地四連 (Day 21-24: 權限 / goal+hooks / workflow / HTB) + 風險面三連 (Day 26-28: 選模型實測 / 無審查 / 自主滲透)」. 🔄 全清零 (所有 slot 都有題目了). 候補題目池剩: 把對話紀錄變成筆記本、怎麼把 AI 能力變成自己的、ClickFix 實測、behavior-design 綜合、驗證疲勞. Day 17-24 候選 section 移除 (已失效)
 - **2026-10-01 (下午)**: Day 20 合併原 Day 27「AI 文風入侵: 五個記號 + 把味道壓回去的抗體」+「子系列小結 (Day 16-19)」, 兩個主題相關就一次講; Day 27 slot 空出變 🔄 待想; Day 19 draft 寫完 (🚧 草稿中)
 - **2026-10-01**: Day 16 已發布 (10419414); Day 17 lab01 第二篇「V06B 綜合分數」draft 寫完; Day 18-20 排定「文風測量 + 浮水印」子系列 (Day 18 lab01 收尾, Day 19 浮水印 (ai-content-watermark), Day 20 子系列小結); Day 28 原「浮水印」題目前移到 Day 19, 原 slot 待想
