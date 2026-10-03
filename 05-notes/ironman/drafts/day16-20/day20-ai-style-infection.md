@@ -26,7 +26,7 @@ status: draft
 
 ---
 
-## 文化入侵 (一代一代被污染) — The Cultural Invasion
+## 文化入侵 — The Cultural Invasion
 
 為什麼寫這篇, 體感先放這:
 
