@@ -37,12 +37,14 @@ text{font-family:"Noto Sans CJK TC",sans-serif}
       </linearGradient>
     </defs>
 
-    <!-- 隧道外殼: 連接三個橢圓的上下緣, 形成漸窄的 funnel -->
-    <polygon points="155,30 528,46 900,74 900,122 528,150 155,166"
-             fill="url(#tunnelFill)" stroke="#e8a13c33" stroke-width="2"/>
-    <!-- 強化上下兩條邊緣線 -->
-    <path d="M 155,30 L 528,46 L 900,74" fill="none" stroke="#e8a13c55" stroke-width="2"/>
-    <path d="M 155,166 L 528,150 L 900,122" fill="none" stroke="#e8a13c55" stroke-width="2"/>
+    <!-- 隧道外殼: 曲線版, 向內收斂的 funnel 感 -->
+    <path d="M 155,30 Q 528,70 900,74 L 900,122 Q 528,126 155,166 Z"
+          fill="url(#tunnelFill)" stroke="#e8a13c33" stroke-width="2"/>
+    <!-- 強化上下兩條邊緣曲線 -->
+    <path d="M 155,30 Q 528,70 900,74"
+          fill="none" stroke="#e8a13c88" stroke-width="3"/>
+    <path d="M 155,166 Q 528,126 900,122"
+          fill="none" stroke="#e8a13c88" stroke-width="3"/>
 
     <!-- Phase 1: AI 之前 (大橢圓, 淡色) -->
     <text x="155" y="20" fill="#8b93a5" font-size="17" text-anchor="middle">AI 之前</text>
@@ -50,8 +52,9 @@ text{font-family:"Noto Sans CJK TC",sans-serif}
     <text x="155" y="185" fill="#a8aebd" font-size="18" text-anchor="middle">各種寫法</text>
 
     <!-- Phase 2: AI 之中 (highlighted 金色, 中等大小 + 我們在這 marker) -->
+    <!-- ry 從 52 → 40 讓橢圓邊剛好落在曲線上, 不被曲線穿過 -->
     <text x="528" y="20" fill="#e8a13c" font-size="17" text-anchor="middle" font-weight="700">AI 之中</text>
-    <ellipse cx="528" cy="98" rx="30" ry="52" fill="#14161f" stroke="#e8a13c" stroke-width="5"/>
+    <ellipse cx="528" cy="98" rx="30" ry="40" fill="#14161f" stroke="#e8a13c" stroke-width="5"/>
     <circle cx="528" cy="98" r="8" fill="#e8a13c"/>
     <text x="528" y="185" fill="#e8a13c" font-size="19" text-anchor="middle" font-weight="900">我們在這</text>
 
