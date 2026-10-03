@@ -10,16 +10,17 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 19](./day19-ai-watermark.md) 講官方浮水印不是鐵證. 這篇換個角度, 不問「怎麼辨識 AI」, 問「它正在怎麼變成預設」. 原本中文寫作沒有統一腔調, AI 來了以後一點一點被污染; 下一代一開始就看到 AI 文體, 會當作本來就是這樣. 時間拉長, 本來的多樣性融進一種聲音 — 這就是**文化入侵**.
+> [Day 19](./day19-ai-watermark.md) 講官方浮水印不是鐵證. 這篇換個角度, 不問「怎麼辨識 AI」, 問「它正在怎麼變成預設」. 原本中文寫作沒有統一腔調, AI 來了以後一點一點被污染; 下一代一開始就看到 AI 文體, 會當作本來就是這樣. 時間拉長, 本來的多樣性融進一種聲音 — 這不是對未來的推測, 是**現在進行式**的**文化入侵**. 下探一層的擔憂: 如果 AI 統治了語言, 就幾乎等於統治了思考.
 
 > **TL;DR (EN):** Imagine Chinese tech writing before AI: wildly varied voices, no "standard" tone. After AI: writing structures, tone, and style all get polluted bit by bit — not by anyone's intent, just because so many people now use AI (or imitate it) that the default drifts. The next generation reads mostly AI-flavored prose and treats it as the baseline; over time the pre-AI diversity blends into a single voice. Clockwise rotation on clocks is a smaller precedent (northern hemisphere sundials cast shadows that way, enough people saw it, became default), but AI pulls off the same thing in years rather than millennia. This is a cultural invasion by convention, not by force — and this generation of writers is quietly living through the drift.
 
 ```markdown
 # AI 文化入侵
-* 文化入侵 (一代一代被污染)
+* 文化入侵 (現在進行式, 不是未來推測)
   * 失語症 體感 (jason3e7)
   * 無 AI → AI 混入 → 下一代 default
   * 約定俗成是機制 (時鐘例子: 對初始條件敏感)
+  * 更深的擔憂 (統治語言 ≈ 統治思考)
 * 我的重點
 ```
 
@@ -42,7 +43,7 @@ status: draft
 這句話把三個時期攤開:
 
 1. **AI 之前**: 文章有各種寫法, 每個作者的語氣彼此不同, 沒有統一的「標準腔」
-2. **AI 之中**: 一點一點被污染 — 用 AI 寫的、模仿 AI 寫的、下意識跟著 AI 腔的, 混進整個寫作圈
+2. **AI 之中 (就是現在, 不是未來)**: 一點一點被污染 — 用 AI 寫的、模仿 AI 寫的、下意識跟著 AI 腔的, 混進整個寫作圈. 這不是對未來的推測, 寫這篇的當下就在發生
 3. **AI 之後**: 下一代把 AI 文體當 default, 原本的多樣性沒人記得, 慢慢**融合成一種聲音**
 
 這不是誰故意的 — 是**約定俗成**在加速. 用時鐘當小例子最直白.
@@ -59,13 +60,26 @@ status: draft
 
 **時鐘花了幾千年完成這次約定俗成. AI 這次用幾年**. 規模一樣、速度兩個數量級的差距. 這就是「文化入侵」用詞比「約定俗成」強的理由 — 不是壞, 只是**又大又快又全面**.
 
+### 更深的擔憂: 統治語言 ≈ 統治思考
+
+> 如果 AI 真的統治了人類的語言, 拿走了人類溝通的方式, 是不是就能統治人類?
+> — jason3e7
+
+這個擔憂有歷史回聲. Orwell 的《1984》設計了「新語」(Newspeak), 刻意刪減詞彙, 目標是**讓某些思考無法被說出來** — 當詞不存在, 概念也不存在, 異議就不會發生. Sapir-Whorf 假說 (語言相對論) 進一步主張, 一個人能想到的範圍, 受他會用的語言限制. Wittgenstein 更直接: 「**我的語言的界限, 就是我的世界的界限**」.
+
+AI 版本的這條邏輯是: 如果整個中文圈都寫 AI 腔、用 AI 的句型結構、聽 AI 選的字 — 下一代**連想別的講法都想不到**. 不是沒選擇, 是**沒看過其他選擇**. 這跟公開審查不同, 更隱蔽也更徹底: 不用禁止什麼, 只要**預先定義什麼能被想**.
+
+寫到這聽起來像陰謀論, 但這篇**不是要讀者悲觀, 是要警覺**. 看得見正在發生的事, 跟事後才發現, 本質不同.
+
 ---
 
 ## 我的重點 — Takeaways
 
+- **這是現在進行式, 不是未來推測**. AI 文體正在變成預設, 寫這篇的當下就在發生
 - **文化入侵不是對錯問題, 是數量問題**. 多數方向變預設, 少數方向變成「需要特別解釋」. 時鐘花幾千年, AI 用幾年
 - **想守住自己的語言要主動擋**. 「寫自然一點」這種模糊指令沒用, 要具體列 Don't ([我寫了一份 anti-convention guide](../../../../skills/jason3e7-writing-voice.md), 可以當起點改成你自己的)
 - **這代人正在記錄入侵前的 baseline**. 現在這個時間點 — AI 已經大規模滲入、但多樣性還沒完全被洗平 — 寫下來的文字之後要對照 10 年、20 年的 corpus, 才看得出入侵的速度跟幅度. 這代人剛好站在歷史切片上
+- **最深的擔憂**: 統治語言幾乎等於統治思考 (Orwell 新語 / Wittgenstein 的 language limits). AI 不用公開審查, 只要讓某種腔調變成**唯一聽過的**, 其他講法就不會被想到
 
 ---
 
