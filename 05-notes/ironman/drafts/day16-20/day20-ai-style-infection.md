@@ -1,69 +1,82 @@
 ---
-title: "AI 101 - 鐵人賽 Day 20: AI 文風入侵, 五個記號 + 抗體 + 子系列小結"
-tags: [ai, 鐵人賽, ironman, 文風, 文化入侵, 子系列, 草稿]
+title: "AI 101 - 鐵人賽 Day 20: AI 文化入侵, 五個記號 + 抗體 + 子系列小結"
+tags: [ai, 鐵人賽, ironman, 文化入侵, 文風, 約定俗成, 子系列, 草稿]
 created: 2026-10-03
 status: draft
 ---
 
-# Day 20｜AI 文風入侵, 五個記號 + 抗體 + 子系列小結 — AI Writing Style as Cultural Convention
+# Day 20｜AI 文化入侵: 一代一代被污染 — AI's Quiet Cultural Takeover
 
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 16](./day16-ai-fingerprint-scan.md)-[Day 19](./day19-ai-watermark.md) 把 AI 寫作的痕跡量化到最細, 這篇反過來講**為什麼它會變成預設**. 時鐘的分針順時針轉, 不是因為「順時針」比較對, 是因為日晷在北半球剛好這樣轉, 數量多了變成約定俗成. AI 文風現在正做同一件事. 用五個記號 + 一組抗體收尾子系列.
+> [Day 16](./day16-ai-fingerprint-scan.md)-[Day 19](./day19-ai-watermark.md) 把 AI 寫作的痕跡量化到最細, 這篇反過來講**它正在怎麼變成預設**. 原本中文寫作沒有統一腔調, AI 來了以後一點一點被污染; 下一代一開始就看到 AI 文體, 會當作本來就是這樣. 時間拉長, 本來的多樣性融進一種聲音 — 這就是**文化入侵**. 用五個記號收尾子系列, 再給一組抗體擋住.
 
-> **TL;DR (EN):** Clock hands rotate clockwise not because clockwise is "correct" but because sundials in the Northern Hemisphere happened to cast shadows that way, and once enough people saw it, it became default. AI writing style is doing the same thing to Chinese tech prose: em dashes, 「不是 X 而是 Y」 dichotomy, 「最容易...的」 teaching tone, markdown-heavy formatting, and ｜ as a title separator are becoming defaults because enough people (and models) use them, not because they are better. This closes the Day 16-19 sub-series: Day 16 single signal, Day 17 composite, Day 18 flip side (cannot prove pure-human), Day 19 watermark (not proof). Day 20 completes the arc: measurement is one half, the other half is noticing that convention itself has been infected. The antidote is active — jason3e7's voice guide is my personal anti-convention manual, intentionally avoiding each tell. Not because the convention is wrong, but because being default means losing choice.
+> **TL;DR (EN):** Imagine Chinese tech writing before AI: wildly varied voices, no "standard" tone. After AI: writing structures, tone, and style all get polluted bit by bit — not by anyone's intent, just because so many people now use AI (or imitate it) that the default drifts. The next generation reads mostly AI-flavored prose and treats it as the baseline; over time the pre-AI diversity blends into a single voice. This is a cultural invasion by convention, not by force — clockwise rotation on clocks is a smaller precedent (northern hemisphere sundials cast shadows that way, enough people saw it, became default), but AI pulls off the same thing in years rather than millennia. This closes the Day 16-19 sub-series by naming the mechanism: five tells (em-dash, 「不是 X 而是 Y」, 「最容易...的」, markdown pile, ｜ as title separator) plus an antidote (jason3e7's voice guide actively avoiding each one). Not because the convention is wrong, but because "default" means losing choice — and this generation of scanners is quietly recording what the baseline looked like before the drift completed.
 
 ```markdown
-# AI 文風入侵: 五個記號 + 抗體 + 小結
-* 時鐘的隱喻 (convention 是數量贏的, 不是對錯)
-* 五個記號
+# AI 文化入侵: 五個記號 + 抗體 + 小結
+* 文化入侵 (一代一代被污染)
+  * 失語症 體感 (jason3e7)
+  * 無 AI → AI 混入 → 下一代 default
+  * 約定俗成是機制 (時鐘順時針是個小例子)
+* 五個記號 (入侵進行中的痕跡)
   * ——
   * 不是 X 而是 Y
   * 最容易...的
   * 排版堆料
   * 標題 ｜
 * 抗體 (jason3e7 voice guide 的 Do/Don't)
-* 子系列小結
-  * Day 16 單指紋
-  * Day 17 綜合分數
-  * Day 18 翻面問題
-  * Day 19 浮水印
-  * Day 20 (本篇) 文化入侵
+* 子系列小結 (Day 16-20)
 * 我的重點
   * 保留自己風格要主動
   * 單一記號不是證據, 密集 + 無擔當才是
+  * 這代人在記錄入侵前的 baseline
 ```
 
 ---
 
-## 為什麼講這個 — Why This Matters
+## AI 文化入侵 — The Cultural Invasion
 
-原話 (jason3e7):
+為什麼寫這篇, 體感先放這:
 
 > 我覺得寫到第 20 天, 跟 AI 的合作讓我快得到失語症了.
+> — jason3e7
 
----
+下面是在試圖拆解它.
 
-## 時鐘順時針, 只是約定俗成 — Clockwise, Only a Convention
+### 一代一代被污染
+
+> 試想原本的都沒有 AI 產生文章的時候, 直到 AI 能被使用之後, 文章結構和說話態度和方式, 就一點一點被污染了, 當我們的下一代, 一開始就看到大多是 AI 文體和內容時, 就會當作本來就是這樣, 時間再拉長來看, 未來就會交融在一次, 某種程度來說, 文化入侵了.
+> — jason3e7
+
+這句話把三個時期攤開:
+
+1. **AI 之前**: 文章有各種寫法, 每個作者的語氣彼此不同, 沒有統一的「標準腔」
+2. **AI 之中**: 一點一點被污染 — 用 AI 寫的、模仿 AI 寫的、下意識跟著 AI 腔的, 混進整個寫作圈
+3. **AI 之後**: 下一代把 AI 文體當 default, 原本的多樣性沒人記得, 慢慢**融合成一種聲音**
+
+這不是誰故意的 — 是**約定俗成**在加速. 用時鐘當小例子最直白.
+
+### 怎麼變成預設: 時鐘順時針是個小例子
 
 時鐘的分針為什麼順時針轉? **不是因為「順時針」比較對, 是約定俗成**.
 
 日晷是最早的計時器, 立一根棒子, 太陽曬出影子, 影子轉一圈就是一天. 日晷發源在**北半球**, 太陽從東邊升、南邊過、西邊落, 影子的方向從西 → 北 → 東, 這方向被人記成「順時針」. 北半球的人造機械鐘時, 自然延續了這個方向 (詳見 [關鍵評論網 — 時鐘順時針的起源](https://www.thenewslens.com/article/111804)).
 
-如果人類文明發源在南半球, 日晷影子會反過來轉, 我們現在的手錶可能全部都是逆時針. 沒有誰對誰錯, 只是**早到 + 數量多, 久了變預設**.
+如果人類文明發源在南半球, 日晷影子會反過來轉, 現在的手錶可能全部都是逆時針. 沒有誰對誰錯, 只是**早到 + 數量多, 久了變預設**.
 
-這就是**約定俗成**的核心: 一個本來可以是另一個樣子的選擇, 因為先來的人這樣做、後來的人跟著做, 數量累積到一個臨界點, 整個系統就把它當成「正確」. 要反過來不是不行, 但要**主動**擋 — 不然就被預設拖著走.
+**時鐘花了幾千年完成這次約定俗成. AI 這次用幾年**. 規模一樣、速度兩個數量級的差距. 這就是「文化入侵」用詞比「約定俗成」強的理由 — 不是壞, 只是**又大又快又全面**.
 
-AI 文風現在正在做同一件事.
-
-[Day 16](./day16-ai-fingerprint-scan.md) 到 [Day 18](./day18-detecting-pure-human.md) 掃出來的那些 pattern — 破折號、對立句、「最容易...的」教學腔、排版堆料、標題 ｜ 分隔 — 原本中文寫作沒有統一寫法. 現在**越來越多人在模仿 AI 的腔**, 甚至不是用 AI 寫, 只是看多了, 腦袋自動學起來. 這就是 convention 的擴散過程: 多數方向變預設, 少數方向變成「需要特別解釋」.
+[Day 16](./day16-ai-fingerprint-scan.md) 到 [Day 18](./day18-detecting-pure-human.md) 掃出來的 pattern — 破折號、對立句、「最容易...的」教學腔、排版堆料、標題 ｜ 分隔 — 原本中文寫作沒有統一寫法. 現在越來越多人在模仿 AI 的腔, 甚至不是用 AI 寫, 只是看多了, 腦袋自動學起來. 這就是**入侵進行中**.
 
 這篇做兩件事: **一次把五個記號講完**, 再給一組**抗體** — 想保留自己的寫法, 不能靠「寫自然一點」這種模糊指令, 要主動擋.
 
 ---
 
 ## 五個記號一次講完 — The Five Tells
+
+下面五個記號是入侵進行中的痕跡. **單一出現不是證據, 密集組合 + 沒有擔當的判斷才是**.
 
 ### 1. `——` (雙破折號)
 
@@ -101,7 +114,7 @@ AI 愛用對立句, 因為對立感**乾淨、有力、聽起來果斷**. 一句
 - blockquote 擺觀點
 - emoji 散滿全文
 
-AI 愛這樣排, 因為訓練資料大多是 markdown. **人寫久了也會模仿** — 你看別人這樣排版版面好看, 自己也學. 這就是 convention 擴散的過程.
+AI 愛這樣排, 因為訓練資料大多是 markdown. **人寫久了也會模仿** — 你看別人這樣排版版面好看, 自己也學. 這就是入侵擴散的過程.
 
 ### 5. 標題用 `｜` 當分隔符
 
@@ -137,7 +150,7 @@ AI 愛這樣排, 因為訓練資料大多是 markdown. **人寫久了也會模�
 - **不用「不只是 X, 而是 Y」對立句**
 - **不加沒必要的譬喻**: 譬喻要能幫理解, 不是文采裝飾
 
-這組規則**不是因為 convention 本身錯**, 是因為「變成預設」等於失去選擇. 我想自己決定要不要用, 不是讓訓練資料替我決定.
+這組規則**不是因為 convention 本身錯**, 是因為「變成預設」等於**失去選擇**. 我想自己決定要不要用, 不是讓訓練資料替我決定.
 
 ---
 
@@ -149,14 +162,14 @@ AI 愛這樣排, 因為訓練資料大多是 markdown. **人寫久了也會模�
 | 17 | 從 1 個訊號擴到 6 個 | 怎麼綜合排版訊號 | lab01 V06B (B_total × N_sum) |
 | 18 | 翻面問題: 哪些文章是純手寫 | 能不能證明「沒碰 AI」 | lab01 V12 (9 signal 合併) ＋ Tampermonkey |
 | 19 | 浮水印怎麼運作, 為什麼不是鐵證 | 官方標記能證明嗎 | Claude 嵌入式浮水印 ＋ C2PA |
-| 20 | AI 文風入侵 (本篇) | 這些 pattern 怎麼變成 convention | 五個記號 ＋ voice guide 抗體 |
+| 20 | AI 文化入侵 (本篇) | 這些 pattern 怎麼變成 convention | 五個記號 ＋ voice guide 抗體 |
 
 這五天其實在繞一個問題: **「這段字是 AI 寫的嗎」這個問題本身能不能回答**.
 
 **答案是不能**, 但可以回答兩個相關問題:
 
 1. **某段字有幾個 AI tell 命中?** 可以. lab01 V12 給你數字.
-2. **某篇文章風格有沒有被 convention 入侵?** 可以. 看它踩了幾個記號.
+2. **某篇文章風格有沒有被入侵?** 可以. 看它踩了幾個記號.
 
 至於「這段字是 AI 寫的嗎」本身, 浮水印不能回答 (查到 ≠ AI 寫, 沒查到 ≠ 人寫), 共現訊號也不能回答 (ChatGPT 組 em-dash 幾乎 0, 但那不代表他們沒用 AI). 這個問題在**認識論上就是不可解**的 (至少以目前的工具).
 
@@ -164,10 +177,11 @@ AI 愛這樣排, 因為訓練資料大多是 markdown. **人寫久了也會模�
 
 ## 我的重點 — Takeaways
 
-- **convention 不是對錯問題, 是數量問題**. 時鐘往反方向轉的人, 不是錯, 只是變少數
+- **文化入侵不是對錯問題, 是數量問題**. AI 文體變成預設, 其他寫法就要特別解釋
 - **想保留自己的風格要主動擋**, 「寫自然一點」這種模糊指令沒用, 要具體列 Don't
 - **五個記號不是 AI 專屬**, 人寫久了也學起來. 真正的訊號是**成群出現 + 沒有具體擔當的判斷**
-- **「這段字是不是 AI 寫的」這個問題不可解**. 可解的是「這段字有幾個 AI tell 命中」, 跟「這篇風格有沒有被 convention 入侵」. 這兩個都是量化問題, 答得清楚
+- **這代人在記錄入侵前的 baseline**: lab01 V12 掃出來的 2026 corpus, 之後要對照 10 年、20 年的數字, 才看得出入侵的速度跟幅度. 現在這個時間點很值得留一份
+- **「這段字是不是 AI 寫的」這個問題不可解**. 可解的是「這段字有幾個 AI tell 命中」, 跟「這篇風格有沒有被入侵」. 這兩個都是量化問題, 答得清楚
 - **這組 lab (Day 16-20) 真正的收穫, 是知道工具的邊界在哪**. 做出來的 ranker 很好用, 但要知道**它不是判決器, 是放大鏡**
 
 下一組會換個主題: Day 21 開始聊**實作面** — 權限、`/goal`、hooks、workflow、HTB 靶機實測. 從「文風觀察」拉回「怎麼用 Claude Code 做事」.
@@ -182,5 +196,5 @@ AI 愛這樣排, 因為訓練資料大多是 markdown. **人寫久了也會模�
 - [Day 19: 浮水印怎麼運作, 為什麼不能當證據](./day19-ai-watermark.md)
 - [AI 的文風與語氣: 五個記號的詳細拆解](../../../../02-advanced/writing-style/ai-writing-style-tells.md)
 - [jason3e7-writing-voice skill: 本篇講的「抗體」原始版](../../../../skills/jason3e7-writing-voice.md)
-- [為什麼時鐘順時針轉 (Wikipedia: Clockwise)](https://en.wikipedia.org/wiki/Clockwise#Origin_of_the_convention)
 - [時鐘順時針的起源 — 關鍵評論網](https://www.thenewslens.com/article/111804)
+- [為什麼時鐘順時針轉 (Wikipedia: Clockwise)](https://en.wikipedia.org/wiki/Clockwise#Origin_of_the_convention)
