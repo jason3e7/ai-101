@@ -22,10 +22,8 @@ status: draft
   * 約定俗成是機制 (時鐘例子: 對初始條件敏感)
   * 更深的擔憂 (統治語言 ≈ 統治思考)
   * 不只是文字 (美感也在入侵, 饒河夜市觀察)
+* 研究跟概念
 * 我的重點
-* 延伸 (實證 + 相關概念)
-  * 支持研究: Padmakumar / Doshi / Shumailov
-  * 拓展概念: QWERTY / Boroditsky / 語言帝國主義
 ```
 
 ---
@@ -86,6 +84,19 @@ AI 版本的這條邏輯是: 如果整個中文圈都寫 AI 腔、用 AI 的句�
 
 ---
 
+## 研究跟概念 — Research & Concepts
+
+上面講的是體感 + 哲學擔憂. 下面六條是撐著這些論點的研究跟延伸概念, 想深挖再往下.
+
+- **Padmakumar & He (ICLR 2024)** [Does writing with language models reduce content diversity?](https://arxiv.org/abs/2309.05196) — 隨機分組實驗: LLM 組輸出詞彙多樣性低、語意相似度高. 直接量化證「AI 把寫作磨平」. 對應**第 2 時期**
+- **Doshi & Hauser (Science Advances 2024)** [Generative AI enhances individual creativity but reduces the collective diversity of novel content](https://www.science.org/doi/10.1126/sciadv.adn5290) — **單人**用 AI 創造力變高, **一群人**用同一 AI 寫出的作品**集體變得更像**. 個人進步, 集體退化. 打中文化入侵核心
+- **Shumailov et al. (Nature 2024)** [The Curse of Recursion](https://arxiv.org/abs/2305.17493) — 用 AI 產出資料訓練下一代 AI 會發生 "model collapse" (分布變窄). **人類端一樣適用** — 讀 AI 文章長大的下一代寫作會收斂. 對應**第 3 時期**
+- **Path dependence** (Paul David 1985, "Clio and the Economics of QWERTY") — QWERTY 鍵盤跟時鐘同款的鎖入機制學名: 一次隨機的起點鎖住整個產業幾十年到幾千年. 參考 [Wikipedia](https://en.wikipedia.org/wiki/Path_dependence)
+- **Lera Boroditsky — 當代實驗語言學** — Sapir-Whorf 強版 (語言決定思考) 的溫和版: 語言**塑形思考的傾向**. 她的 [TED talk: How language shapes the way we think](https://www.ted.com/talks/lera_boroditsky_how_language_shapes_the_way_we_think) 是最快的入口. 本篇「統治語言 ≈ 統治思考」走的是這個溫和版
+- **Linguistic Imperialism** (Phillipson 1992) — 不是用槍逼人學某語言, 而是透過商業、教育、娛樂讓某語言變成「成功的」, 其他相對下降. AI 腔的擴散同一結構: 不逼你寫, 只讓**用 AI 寫比較快**. 參考 [Wikipedia](https://en.wikipedia.org/wiki/Linguistic_imperialism)
+
+---
+
 ## 我的重點 — Takeaways
 
 - **這是現在進行式, 不是未來推測**. AI 文體正在變成預設, 寫這篇的當下就在發生
@@ -93,28 +104,6 @@ AI 版本的這條邏輯是: 如果整個中文圈都寫 AI 腔、用 AI 的句�
 - **想守住自己的語言要主動擋**. 「寫自然一點」這種模糊指令沒用, 要具體列 Don't ([我寫了一份 anti-convention guide](../../../../skills/jason3e7-writing-voice.md), 可以當起點改成你自己的)
 - **這代人正在記錄入侵前的 baseline**. 現在這個時間點 — AI 已經大規模滲入、但多樣性還沒完全被洗平 — 寫下來的文字之後要對照 10 年、20 年的 corpus, 才看得出入侵的速度跟幅度. 這代人剛好站在歷史切片上
 - **最深的擔憂**: 統治語言幾乎等於統治思考 (Orwell 新語 / Wittgenstein 的 language limits). AI 不用公開審查, 只要讓某種腔調變成**唯一聽過的**, 其他講法就不會被想到
-
----
-
-## 延伸: 實證 + 相關概念 — Further Reading
-
-本文是體感 + 哲學擔憂為主的 essay. 下面兩塊是後補的脈絡 — 給論點的實證支持, 跟能把概念接出去的其他框架. 想深挖再往下.
-
-### 支持這個說法的研究 — Supporting Research
-
-2024 年起累積的實證指向同一方向:
-
-- **Padmakumar & He (ICLR 2024)** — [Does writing with language models reduce content diversity?](https://arxiv.org/abs/2309.05196). 隨機分組實驗: LLM 組輸出詞彙多樣性低、語意相似度高. 直接量化證「AI 把寫作磨平」. 對應本篇**第 2 時期**「AI 之中, 一點一點被污染」
-- **Doshi & Hauser (Science Advances 2024)** — [Generative AI enhances individual creativity but reduces the collective diversity of novel content](https://www.science.org/doi/10.1126/sciadv.adn5290). **單人**用 AI 創造力變高, **一群人**用同一 AI 寫出的作品**集體變得更像**. 個人進步, 集體退化. 打中「文化入侵」概念核心
-- **Shumailov et al. (Nature 2024)** — [The Curse of Recursion](https://arxiv.org/abs/2305.17493). AI 用 AI 產出的資料訓練會發生 "model collapse" (分布變窄). **人類端一樣適用** — 讀 AI 文章長大的下一代寫作會收斂. 對應本篇**第 3 時期**的學術化版
-
-### 拓展的概念 — Related Frameworks
-
-把時鐘跟 Orwell 以外的同款鎖入 / 語言控制框架接出去:
-
-- **QWERTY + path dependence** (Paul David 1985, "Clio and the Economics of QWERTY") — 1870 年代機械打字機排版鎖住全球電腦鍵盤. 跟時鐘同款: 一次隨機的起點鎖住整個產業幾十年. 經濟學文獻叫 "path dependence". 參考 [Wikipedia: Path dependence](https://en.wikipedia.org/wiki/Path_dependence)
-- **Lera Boroditsky — 當代實驗語言學** — Sapir-Whorf 強版 (語言決定思考) 的溫和版: 語言不決定思考, 但**塑形思考的傾向**. 她的 [TED talk: How language shapes the way we think](https://www.ted.com/talks/lera_boroditsky_how_language_shapes_the_way_we_think) 是最快的入口. 本篇「統治語言 ≈ 統治思考」走的是這個溫和版
-- **Linguistic Imperialism** (Phillipson 1992) — 不是用槍逼人學某語言, 而是透過商業、教育、娛樂讓某語言變成「成功的」, 其他語言地位相對下降. AI 腔的擴散同一結構: 不逼你寫, 只讓**用 AI 寫比較快**. 參考 [Wikipedia: Linguistic imperialism](https://en.wikipedia.org/wiki/Linguistic_imperialism)
 
 ---
 
