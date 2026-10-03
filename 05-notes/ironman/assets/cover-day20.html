@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:70px;font-weight:900;line-height:1.18;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:10px;margin-top:10px}
+.axis{height:30px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 20</span></div>
+  <div>
+    <h1>AI 文化入侵<br><em>現在進行式</em></h1>
+    <div class="sub">原本中文寫作有各種寫法, 慢慢融合成一種聲音</div>
+  </div>
+  <div class="chartwrap">
+  <div class="axis"></div>
+  <svg width="1056" height="196" viewBox="0 0 1056 196">
+    <!-- 連接線: 3 相之間的視覺流 -->
+    <line x1="245" y1="98" x2="470" y2="98" stroke="#3a4150" stroke-width="2" stroke-dasharray="4 6"/>
+    <line x1="586" y1="98" x2="820" y2="98" stroke="#3a4150" stroke-width="2" stroke-dasharray="4 6"/>
+
+    <!-- Phase 1: AI 之前 (大橢圓, 淡色) -->
+    <text x="155" y="20" fill="#8b93a5" font-size="17" text-anchor="middle">AI 之前</text>
+    <ellipse cx="155" cy="98" rx="45" ry="68" fill="none" stroke="#e8a13c66" stroke-width="4"/>
+    <text x="155" y="185" fill="#a8aebd" font-size="18" text-anchor="middle">各種寫法</text>
+
+    <!-- Phase 2: AI 之中 (highlighted 金色, 中等大小 + 我們在這 marker) -->
+    <text x="528" y="20" fill="#e8a13c" font-size="17" text-anchor="middle" font-weight="700">AI 之中</text>
+    <ellipse cx="528" cy="98" rx="30" ry="52" fill="none" stroke="#e8a13c" stroke-width="5"/>
+    <circle cx="528" cy="98" r="8" fill="#e8a13c"/>
+    <text x="528" y="185" fill="#e8a13c" font-size="19" text-anchor="middle" font-weight="900">我們在這</text>
+
+    <!-- Phase 3: AI 之後 (小橢圓, 淡色) -->
+    <text x="900" y="20" fill="#8b93a5" font-size="17" text-anchor="middle">AI 之後</text>
+    <ellipse cx="900" cy="98" rx="14" ry="24" fill="none" stroke="#8b93a5" stroke-width="3"/>
+    <text x="900" y="185" fill="#a8aebd" font-size="18" text-anchor="middle">一種聲音</text>
+
+    <!-- 右側說明 (縱軸意義) -->
+    <text x="1046" y="98" fill="#5a6275" font-size="13" text-anchor="end" transform="rotate(-90 1046 98)">文風多樣性</text>
+  </svg>
+  </div>
+  <div class="foot">時鐘花幾千年完成一次約定俗成　|　AI 用幾年把中文寫作 default 洗一輪</div>
+</div></body></html>
