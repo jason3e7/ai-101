@@ -7,50 +7,56 @@ body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
   background-size:48px 48px}
 .glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
   background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
-.wrap{position:relative;padding:56px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
 .top{display:flex;align-items:center;gap:16px}
 .mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
 .bar{width:2px;height:24px;background:#ffffff2e}
 .day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
-h1{font-size:64px;font-weight:900;line-height:1.08;letter-spacing:.005em}
+h1{font-size:70px;font-weight:900;line-height:1.18;letter-spacing:.01em}
 h1 em{font-style:normal;color:#e8a13c}
-.chartwrap{margin-bottom:4px;margin-top:4px}
-.foot{font-size:17px;color:#767d8d;letter-spacing:.03em}
+.sub{margin-top:14px;font-size:24px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:10px;margin-top:10px}
+.axis{height:30px}
+.foot{font-size:20px;color:#767d8d;letter-spacing:.05em}
 text{font-family:"Noto Sans CJK TC",sans-serif}
 </style></head><body>
 <div class="grid"></div><div class="glow"></div>
 <div class="wrap">
   <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 19</span></div>
   <div>
-    <h1>浮水印怎麼運作,<br>為什麼<em>不能當證據</em></h1>
+    <h1>浮水印不是鐵證<br><em>一次改寫就塌</em></h1>
+    <div class="sub">查到跟沒查到, 都不是判決 · 統計指紋撐不過一次 paraphrase</div>
   </div>
   <div class="chartwrap">
-  <svg width="1056" height="290" viewBox="0 0 1056 290">
-    <!-- Column headers -->
-    <text x="20" y="22" fill="#9aa0b0" font-size="14" letter-spacing=".1em" font-weight="700">查到浮水印</text>
-    <text x="556" y="22" fill="#9aa0b0" font-size="14" letter-spacing=".1em" font-weight="700">沒查到浮水印</text>
+  <div class="axis"></div>
+  <svg width="1056" height="220" viewBox="0 0 1056 220">
+    <!-- 可信門檻虛線 (10%) -->
+    <line x1="0" y1="167" x2="1056" y2="167" stroke="#5a6275" stroke-width="2" stroke-dasharray="9 8"/>
+    <text x="0" y="159" fill="#8b93a5" font-size="18">可信偵測門檻 ~10%</text>
 
-    <!-- Vertical divider -->
-    <line x1="528" y1="36" x2="528" y2="148" stroke="#ffffff20" stroke-width="1"/>
+    <!-- 衰退曲線: pass 0 full → pass 1 crash → pass 2/3 flat -->
+    <path d="M120,24 C 180,24 220,30 260,80 C 290,120 310,160 350,183 L 1000,187"
+          fill="none" stroke="#e8a13c" stroke-width="5" stroke-linecap="round"/>
 
-    <!-- Big ≠ claim -->
-    <text x="20" y="68" fill="#e8a13c" font-size="30" font-weight="900">≠ AI 寫的</text>
-    <text x="556" y="68" fill="#ff7a4d" font-size="30" font-weight="900">≠ 人寫的</text>
+    <!-- Pass 0: 原始 Claude 輸出 100% (big gold dot) -->
+    <circle cx="120" cy="24" r="11" fill="#14161f" stroke="#e8a13c" stroke-width="5"/>
+    <text x="120" y="12" fill="#e8a13c" font-size="19" text-anchor="middle" font-weight="700">100%</text>
+    <text x="120" y="196" fill="#a8aebd" font-size="18" text-anchor="middle">原始</text>
 
-    <!-- Supporting text -->
-    <text x="20" y="105" fill="#a8aebd" font-size="17">可能只是拿 Claude 校對、翻譯、</text>
-    <text x="20" y="130" fill="#a8aebd" font-size="17">改格式, 原作者仍是人</text>
-    <text x="556" y="105" fill="#a8aebd" font-size="17">可能是舊模型、被改寫過、太短、</text>
-    <text x="556" y="130" fill="#a8aebd" font-size="17">metadata 被剝除</text>
+    <!-- Pass 1: 一次 paraphrase 剩 2% (red crash dot) -->
+    <circle cx="350" cy="183" r="10" fill="#ff7a4d"/>
+    <text x="370" y="150" fill="#ff7a4d" font-size="26" font-weight="900">剩 2%</text>
+    <text x="370" y="175" fill="#a8aebd" font-size="18">98% 浮水印訊號消失</text>
+    <text x="350" y="196" fill="#ff7a4d" font-size="18" text-anchor="middle" font-weight="700">改寫 ×1</text>
 
-    <!-- Full horizontal divider -->
-    <line x1="0" y1="172" x2="1056" y2="172" stroke="#ffffff20" stroke-width="1"/>
+    <!-- Pass 2 -->
+    <circle cx="650" cy="187" r="5" fill="#5a6275"/>
+    <text x="650" y="196" fill="#6b7080" font-size="17" text-anchor="middle">改寫 ×2</text>
 
-    <!-- 98% callout -->
-    <text x="528" y="208" fill="#9aa0b0" font-size="15" text-anchor="middle" letter-spacing=".1em">更脆弱的是</text>
-    <text x="528" y="252" fill="#ff7a4d" font-size="36" font-weight="900" text-anchor="middle">單次 paraphrase 移除 98% 浮水印</text>
-    <text x="528" y="278" fill="#767d8d" font-size="13" text-anchor="middle">arXiv 2508.20228 · Google SynthID 實測</text>
+    <!-- Pass 3 -->
+    <circle cx="950" cy="187" r="5" fill="#5a6275"/>
+    <text x="950" y="196" fill="#6b7080" font-size="17" text-anchor="middle">改寫 ×3</text>
   </svg>
   </div>
-  <div class="foot">EU AI Act Article 50 (2026-08-02 生效) 推這一波 · 廠商被監管逼的, 不是良心發現</div>
+  <div class="foot">縱軸: 浮水印訊號強度　|　資料: arXiv 2508.20228, Google SynthID 實測</div>
 </div></body></html>
