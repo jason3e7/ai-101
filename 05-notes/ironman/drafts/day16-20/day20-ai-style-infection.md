@@ -37,6 +37,14 @@ status: draft
 
 ---
 
+## 為什麼講這個 — Why This Matters
+
+原話 (jason3e7):
+
+> 我覺得寫到第 20 天, 跟 AI 的合作讓我快得到失語症了.
+
+---
+
 ## 時鐘往反方向轉的人, 不是錯 — The Clock Metaphor
 
 為什麼時鐘的分針順時針轉?
