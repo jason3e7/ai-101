@@ -12,12 +12,14 @@ tags: [refactor, note-management, information-architecture, structure]
 
 **不要跳過 plan 直接動手改**。兩階段：
 
-1. **先寫 refactor 結構計劃書**：列出現況盤點 + 建議 after 結構 + 具體搬動 + 風險 + 執行順序，送用戶審。
-2. **用戶核准後才執行**：用戶明說「照這份做」「OK」「GO」或等效答覆，才動 `git mv` / Write / Edit。核准前連試水溫改一個檔都不行。
+1. **先寫 refactor 結構計劃書**：寫成一份 `.md` 檔（例：`REFACTOR-PLAN.md` 放在被重構的資料夾裡，或 `05-notes/refactor-plans/yyyymmdd-xxx.md`），**commit + push**，送用戶審。計劃書本身也要照 ai-101 的自動 commit 規則落 git。
+2. **用戶核准後才執行**：用戶明說「照這份做」「OK」「GO」或等效答覆，才動 `git mv` / Write / Edit。核准前連試水溫改一個檔都不行。execute 另外切 commit，跟 plan commit 分開。
 
 計劃書寫到使用者可以**只讀計劃書**就看懂會變成怎樣，不用自己再想一次。
 
 > **為什麼要先 plan**：重構常跨多檔，一旦開始動 `git mv` 跟同步相對連結，中途改方向成本高。寫計劃書時被用戶 push back 的成本遠低於做到一半才發現方向錯。
+>
+> **為什麼 plan 要 commit**：萬一用戶離線、session 中斷、或要跨機器審，plan 必須在 repo 裡找得到。chat 裡的 plan 消失得太快。
 
 ## 計劃書格式 — Plan Template
 
@@ -50,8 +52,9 @@ tags: [refactor, note-management, information-architecture, structure]
 ### 5. 執行順序 — Order
 
 - 哪個動作先做（通常是 `git mv`），哪個後做（更新索引）
-- 分幾個 commit，每個 commit 收什麼
+- 分幾個 commit，每個 commit 收什麼。**plan 本身一個 commit, execute 另外切 commit**（通常執行階段還會再切成 2-3 個：搬檔 → 更新連結 → 更新索引）
 - 讓用戶看得出中斷點在哪，萬一要暫停不會卡在半完成狀態
+- 計劃書寫完先 commit + push, 等用戶核准後, 執行階段的 commit 再陸續上
 
 ## 核心原則 — The Rule
 
