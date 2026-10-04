@@ -1,0 +1,144 @@
+---
+title: "AI 101 - 鐵人賽 Day 21: 回到主場 — 程式的產出, 好驗多了"
+tags: [ai, 鐵人賽, ironman, 驗證, 程式, 可驗證性, 轉場, 草稿]
+created: 2026-10-04
+status: draft
+---
+
+# Day 21｜回到可驗證的主場 — Back to Verifiable Ground
+
+[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+
+> [!NOTE]
+> 過去十天 (Day 11-20) 花了很多力氣, 都在跟一個難題纏鬥: **AI 的文字產出很難驗.** 怎麼知道答案對? 怎麼看出是不是 AI 寫的? 浮水印能當證據嗎? ⋯⋯ 繞了一圈, 結論幾乎都是「沒有乾淨的判准」. 這篇是個轉場: 接下來幾天回到**比較好驗的主場 —— 程式的產出.** 程式有個文字沒有的東西: 你可以**跑跑看**. 這篇講為什麼這件事讓一切變簡單, 以及它的邊界在哪。
+
+> **TL;DR (EN):** The last ten days (Day 11-20) fought one hard problem: AI's **text** output is hard to verify — you can't prove an answer is right, can't reliably tell if it's AI-written, and watermarks aren't evidence. This post pivots back to friendlier ground: **code**. Code has something prose doesn't — an *oracle*. You can compile it, run it, test it, diff it, type-check it; wrong code mostly announces itself (a red test, an exception), while wrong prose just sits there looking fine. That makes verification cheap, objective, automatable, and repeatable. The catch: a green build means "the checks I wrote passed", not "it's correct" — tests show the presence of bugs, never their absence, and "it runs" isn't "it does the right thing". That gap is exactly what the next few days are about.
+
+```markdown
+# 文字難驗, 程式好驗: 回到有判准的主場
+* 過去十天在搏鬥什麼
+    * Day 11-15 怎麼驗 AI 答案、怎麼不被鈍化
+    * Day 16-20 連「是不是 AI 寫的」都驗不準
+    * 共同點: 文字沒有客觀判准
+* 程式不一樣: 有 oracle
+    * 能編譯、能跑、能測、能 diff
+    * 錯誤會自己冒出來
+    * 快、客觀、可自動化、可重現
+* 可驗證光譜
+    * 文字: 要人讀、主觀、慢
+    * 程式: 有判准、可自動、秒級回饋
+* 綠燈不等於對
+    * 測試只驗你想到的 case
+    * 能跑 ≠ 做對的東西
+    * 安全與效能不會自己變紅
+* 接下來幾天
+    * 把可驗證的終點交給 AI
+    * 管它能動哪、守住紅線
+```
+
+---
+
+## 過去十天在跟什麼搏鬥 — The Hard-to-Verify Detour
+
+先收個尾。Day 11 到 Day 20, 表面上換了很多題目, 骨子裡都在問同一件事: **AI 給的東西, 我怎麼知道對不對、真不真?**
+
+- **Day 11-15** 是「驗證與判斷力」線: 怎麼驗 AI 的答案 (Day 11)、怎麼把長輸出收整成人驗得動的形狀 (Day 12)、驗久了人會鈍化 (Day 13)、AI 拉開的知識落差 (Day 14)、怎麼反過來用 AI 拓展自己 (Day 15)。
+- **Day 16-20** 更狠, 直接去驗「這到底是不是 AI 寫的」: 掃全屆鐵人賽量 AI 味 (Day 16-17)、翻面問能不能認出純手寫 (Day 18)、浮水印能不能當證據 (Day 19)、AI 文體正在變成預設 (Day 20)。
+
+十天下來, 答案幾乎是同一句: **文字沒有乾淨的判准。** 一段話對不對, 要人讀、要查證、要主觀判斷; 是不是 AI 寫的, 頂多給你機率、給不了鐵證。難怪會累 —— 這正是 Day 13 講的驗證疲勞的根源。
+
+原話 (jason3e7):
+
+> 過去十天花了很多時間, 探討了比較難驗證的文字產出; 接下來要回到比較容易驗證的主場 —— 程式的產出。
+
+---
+
+## 回到主場: 程式可以「跑跑看」 — Back on Home Turf
+
+程式跟文字最大的差別, 一句話: **程式有 oracle (判准)。**
+
+Oracle 是驗證的行話, 指「一個能告訴你答案對不對的東西」。文字幾乎沒有 oracle —— 沒有「編譯器」會告訴你這段話寫錯了。但程式一大堆:
+
+- **編譯器 / 型別檢查**: 拼錯、型別不合, 直接不給過
+- **執行**: 跑一下就知道會不會爆、輸出對不對
+- **測試**: 寫好的 test 自動判對錯, 紅燈就是錯
+- **diff / linter / 靜態分析**: 跟預期比、照規則掃
+
+關鍵在這句: **錯的程式大多會自己冒出來, 錯的文字只會靜靜躺著。** 一個 exception、一條紅色的 CI, 是程式在對你喊「這裡不對」; 一段邏輯怪怪的文字不會喊, 它看起來一樣通順。
+
+這帶來四個文字給不了的好處:
+
+- **客觀**: 對就是對, 不用吵「我覺得」
+- **快**: 幾秒內知道結果, 不用讀完再思考
+- **可自動化**: CI 幫你跑一千次, 不用人每次重讀
+- **可重現**: 同樣 input 同樣結果, 驗證本身也能被驗證
+
+對「驗 AI 產出」這件事, 這是天大的好消息。前十天人是唯一的 bottleneck; 回到程式, 機器可以幫你擋掉一大半。
+
+---
+
+## 可驗證光譜: 文字 vs 程式 — The Verifiability Spectrum
+
+驗證難不難, 不是是非題, 是一條光譜。把文字跟程式擺一起看最清楚:
+
+| 面向 | 文字產出 | 程式產出 |
+|:---|:---|:---|
+| 有沒有客觀判准 (oracle) | 幾乎沒有, 靠人讀 | 有: 編譯、執行、測試 |
+| 錯了會不會自己冒出來 | 不會, 靜靜躺著 | 大多會: 報錯、紅燈 |
+| 能不能自動化 | 很難 | 可以, CI 一鍵跑 |
+| 回饋多快 | 慢 (要讀、要查) | 快 (秒級) |
+| 可不可重現 | 每次人讀結果可能不同 | 同 input 同結果 |
+| 能不能切小塊各別驗 | 難, 對錯是整體的 | 可以, 一個函式一個測試 |
+
+> [!NOTE]
+> 不是說程式「一定好驗」、文字「一定沒救」。有些程式超難驗 (並行、分散式、浮點數、UI), 有些文字有明確事實可查 (數字、日期、引用來源)。重點是**平均而言程式靠光譜「好驗」那端近得多** —— 而且它好驗的理由 (有 oracle、錯誤會自曝) 剛好是文字最缺的。
+
+---
+
+## 綠燈不等於對 — Green Doesn't Mean Correct
+
+回到主場不代表從此輕鬆。程式的 oracle 很強, 但有邊界, 不認清這點會踩更大的坑 —— 因為它給你一種「有在驗」的安全感。
+
+> Program testing can be used to show the presence of bugs, but never to show their absence.
+> — Edsger W. Dijkstra
+
+這句話是整段的核心。幾個具體的陷阱:
+
+- **測試只驗你想到的 case。** 你沒想到的那個 edge case, 照樣安靜地爆。綠燈的意思是「我寫的那些檢查過了」, 不是「全對」。
+- **能編譯、能跑 ≠ 做對的東西。** 這是驗證 (verification, 把東西做對) 跟確認 (validation, 做對的東西) 的差別。AI 很會把一個**錯的需求**實作得又乾淨又能跑。
+- **有些錯不會讓燈變紅。** 安全漏洞、效能退化、資料外洩, 常常測試全綠照樣存在 —— 因為沒人寫測試去抓它。
+- **AI 會「幫你」讓燈變綠。** 叫它修到測試過, 它可能改測試、而不是改程式。oracle 被它繞過去了。
+
+所以主場不是「不用驗了」, 是「**驗得動了, 但要補上機器驗不到的那幾關**」: 你想要的終點是什麼、哪裡是不能踩的紅線、誰來看 AI 到底動了什麼。
+
+---
+
+## 接下來幾天 — What's Next
+
+既然站回了可驗證的地面, 接下來就來談**怎麼在這塊地面上好好地驅動 AI 寫程式** —— 特別是補上「能跑」這個 oracle 蓋不到的那幾關:
+
+- **給 AI 一個可驗證的終點**: 把目標寫成機器檢查得了的樣子, 它自己就知道有沒有交差
+- **用 hook 守住紅線**: 把「不准做的事」變成會自動攔截的關卡, 不靠它自律
+- **管它能動到哪裡**: 權限模式決定 AI 能碰哪些檔案、能不能真的執行
+- **當目標被綁架時**: 看一個 AI 照著指令跑、卻跑歪的實例
+
+一句話總結這個轉場: **前十天我們學會「文字很難驗, 要認清極限」; 接下來十天學「程式好驗, 要善用這個優勢, 也別被綠燈騙了」。**
+
+---
+
+## 我的重點 — Takeaways
+
+1. **文字難驗, 是因為它沒有 oracle。** 前十天繞不出去的那個結, 根源就是這個 —— 沒有客觀判准, 人就是唯一的 bottleneck。
+2. **程式好驗, 是因為它有 oracle。** 能編譯、能跑、能測, 錯誤會自己冒出來; 客觀、快、可自動化、可重現 —— 這四點文字一個都給不了。
+3. **好驗不等於免驗。** 綠燈只代表「我寫的檢查過了」, 不代表「對」。測試證明不了沒有 bug, 「能跑」也不等於「做對的東西」。
+4. **接下來要補的, 正是機器驗不到的那幾關**: 可驗證的終點、守紅線的 hook、能動範圍的權限。
+
+---
+
+## Sources
+
+- [AI 產出怎麼驗](../../../../02-advanced/limits-and-verification/verifying-ai-output.md) — 前十天那條驗證線的方法論底本
+- [AI 用久了會鈍化](../../../../02-advanced/limits-and-verification/ai-atrophy.md) — 為什麼「人當 bottleneck」會累、會鈍 (驗證疲勞)
+- [先收整再展開, 人才驗得動](../../../../02-advanced/limits-and-verification/converge-before-verify.md) — 把難驗的長輸出變得驗得動的手法
+- [E. W. Dijkstra, "The Humble Programmer" (1972) — "testing shows the presence, not the absence of bugs"](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html)
+- [Verification vs Validation — 把東西做對 vs 做對的東西 (Barry Boehm)](https://en.wikipedia.org/wiki/Software_verification_and_validation)
