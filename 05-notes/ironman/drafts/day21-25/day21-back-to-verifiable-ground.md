@@ -10,7 +10,7 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> 過去十天 (Day 11-20) 花了很多力氣, 都在跟一個難題纏鬥: **AI 的文字產出很難驗.** 怎麼知道答案對? 怎麼看出是不是 AI 寫的? 浮水印能當證據嗎? ⋯⋯ 繞了一圈, 結論幾乎都是「沒有乾淨的判准」. 這篇是個轉場: 接下來幾天回到**比較好驗的主場 —— 程式的產出.** 程式有個文字沒有的東西: 你可以**跑跑看**. 這篇講為什麼這件事讓一切變簡單, 以及它的邊界在哪。
+> 過去十天 (Day 11-20) 花了很多力氣, 都在跟一個難題纏鬥: **AI 的文字產出很難驗.** 怎麼知道答案對? 怎麼看出是不是 AI 寫的? 浮水印能當證據嗎? ⋯⋯ 繞了一圈, 結論幾乎都是「沒有乾淨的判准」. 這篇是個轉場: 接下來幾天回到**比較好驗的主場 —— 程式的產出.** 程式有個文字沒有的東西: 你可以**跑跑看**. 這篇講為什麼這件事讓一切變簡單, 以及它的邊界在哪; 中途用一個現成的 oracle —— online judge —— 當活例子。
 
 > **TL;DR (EN):** The last ten days (Day 11-20) fought one hard problem: AI's **text** output is hard to verify — you can't prove an answer is right, can't reliably tell if it's AI-written, and watermarks aren't evidence. This post pivots back to friendlier ground: **code**. Code has something prose doesn't — an **automatic verifier** (compiler, runtime, tests, diff). Wrong code mostly announces itself (a red test, an exception), while wrong prose just sits there looking fine. That makes verification cheap, objective, automatable, and repeatable. The catch: a green build means "the checks I wrote passed", not "it's correct" — tests show the presence of bugs, never their absence, and "it runs" isn't "it does the right thing". That gap is exactly what the next few days are about.
 
@@ -22,6 +22,7 @@ status: draft
     * 能編譯、能跑、能測、能 diff
     * 錯誤會自己冒出來
     * 快、客觀、可自動化、可重現
+    * online judge 是現成 oracle 丟上去就判
 * 可驗證光譜
     * 文字: 要人讀、主觀、慢
     * 程式: 有判准、可自動、秒級回饋
@@ -68,6 +69,20 @@ status: draft
 
 對「驗 AI 產出」這件事, 這是天大的好消息。前十天人是唯一的 bottleneck; 回到程式, 機器可以幫你擋掉一大半。
 
+### 一個現成的 oracle: online judge — A Ready-Made Oracle
+
+最乾淨的例子是 **online judge** (線上解題系統, 像 [ZeroJudge](https://zerojudge.tw/))。你把程式丟上去, 它拿一堆**藏起來的測資**跑你的 code, 回一個**判決**: AC (通過)、WA (答案錯)、CE (編譯錯)、TLE (超時)⋯ 這不是「我覺得不錯」, 是一個客觀、秒級、可重複的結果 —— 判准長這樣最清楚。
+
+我實際接了一條全自動的小迴圈來玩這件事 (用 Playwright 操作瀏覽器送題, 過程另寫在 [這篇筆記](../../../zerojudge/playwright-zerojudge-automation.md)):
+
+```
+寫 .cpp  →  本機 g++ 編譯、跑範例  →  Playwright 自動上傳  →  判題回 AC/WA/CE/TLE  →  不過就讀訊息改, 再送
+```
+
+結果: a001、a002、a003 **三題都第一次送就 AC**。這不是運氣, 是因為**上傳前先在本機用同一版 g++ (`-std=c++17`) 把範例跑過** —— 等於先對著判准自測一輪, 再交出去。這就是「有判准」的威力: 你不用猜對不對, 跑一下就知道; 連送出、讀結果都能讓機器代勞。
+
+換成文字呢? 一篇文章沒有「判題系統」會回你 AC 還是 WA。這就是主場跟客場的差別。
+
 ---
 
 ## 可驗證光譜: 文字 vs 程式 — The Verifiability Spectrum
@@ -102,6 +117,9 @@ status: draft
 - **有些錯不會讓燈變紅。** 安全漏洞、效能退化、資料外洩, 常常測試全綠照樣存在 —— 因為沒人寫測試去抓它。
 - **AI 會「幫你」讓燈變綠。** 叫它修到測試過, 它可能改測試、而不是改程式。判准被它繞過去了。
 
+> [!NOTE]
+> 上面那個 online judge 其實是個**比自測更強**的判准 —— 它有出題者寫的隱藏測資, 會抓到你自己沒想到的 case (WA 就是這樣冒出來的)。但那是解題題目的奢侈: 真實世界的程式**很少附一套完整判題**, 多數時候 oracle 得你自己建 (寫測試) —— 一旦自己建, 又回到「只驗你想到的」這條限制。judge 幫你驗的是「答案對不對」, 驗不了「這題該不該這樣解」。
+
 所以主場不是「不用驗了」, 是「**驗得動了, 但要補上機器驗不到的那幾關**」: 你想要的終點是什麼、哪裡是不能踩的紅線、誰來看 AI 到底動了什麼。
 
 ---
@@ -122,5 +140,7 @@ status: draft
 - [AI 產出怎麼驗](../../../../02-advanced/limits-and-verification/verifying-ai-output.md) — 前十天那條驗證線的方法論底本
 - [AI 用久了會鈍化](../../../../02-advanced/limits-and-verification/ai-atrophy.md) — 為什麼「人當 bottleneck」會累、會鈍 (驗證疲勞)
 - [先收整再展開, 人才驗得動](../../../../02-advanced/limits-and-verification/converge-before-verify.md) — 把難驗的長輸出變得驗得動的手法
+- [用 Playwright 自動操作 ZeroJudge](../../../zerojudge/playwright-zerojudge-automation.md) — 本篇 online judge 活例子的實作 (自動送題、讀判題結果)
+- [ZeroJudge](https://zerojudge.tw/) — 文中用的線上解題系統 (現成的 oracle)
 - [E. W. Dijkstra, "The Humble Programmer" (1972) — "testing shows the presence, not the absence of bugs"](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html)
 - [Verification vs Validation — 把東西做對 vs 做對的東西 (Barry Boehm)](https://en.wikipedia.org/wiki/Software_verification_and_validation)
