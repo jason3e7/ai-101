@@ -6,6 +6,7 @@
 |:---|:---|:---|:---|
 | [a001](https://zerojudge.tw/ShowProblem?problemid=a001) | 哈囉 | CPP | AC (1ms, 3.6MB) |
 | [a002](https://zerojudge.tw/ShowProblem?problemid=a002) | 簡易加法 | CPP | AC (1ms, 3.5MB) |
+| [a003](https://zerojudge.tw/ShowProblem?problemid=a003) | 兩光法師占卜術 | CPP | AC (2ms, 3.5MB) |
 
 編譯與測試:
 
