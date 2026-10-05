@@ -11,6 +11,7 @@
 | [a005](https://zerojudge.tw/ShowProblem?problemid=a005) | Eva 的回家作業 | CPP | AC (1ms, 3.6MB) |
 | [a006](https://zerojudge.tw/ShowProblem?problemid=a006) | 一元二次方程式 | CPP | AC (1ms, 3.6MB) |
 | [a009](https://zerojudge.tw/ShowProblem?problemid=a009) | 解碼器 (凱薩密碼) | CPP | AC (2ms, 3.5MB) |
+| [a010](https://zerojudge.tw/ShowProblem?problemid=a010) | 因數分解 | CPP | AC (1ms, 3.6MB) |
 
 編譯與測試:
 
