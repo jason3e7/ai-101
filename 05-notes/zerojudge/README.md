@@ -10,6 +10,7 @@
 | [a004](https://zerojudge.tw/ShowProblem?problemid=a004) | 文文的求婚 (閏年) | CPP | AC (4ms, 3.5MB) |
 | [a005](https://zerojudge.tw/ShowProblem?problemid=a005) | Eva 的回家作業 | CPP | AC (1ms, 3.6MB) |
 | [a006](https://zerojudge.tw/ShowProblem?problemid=a006) | 一元二次方程式 | CPP | AC (1ms, 3.6MB) |
+| [a009](https://zerojudge.tw/ShowProblem?problemid=a009) | 解碼器 (凱薩密碼) | CPP | AC (2ms, 3.5MB) |
 
 編譯與測試:
 
