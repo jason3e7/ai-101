@@ -5,6 +5,7 @@
 | 題號 | 題名 | 語言 | 結果 |
 |:---|:---|:---|:---|
 | [a001](https://zerojudge.tw/ShowProblem?problemid=a001) | 哈囉 | CPP | AC (1ms, 3.6MB) |
+| [a002](https://zerojudge.tw/ShowProblem?problemid=a002) | 簡易加法 | CPP | AC (1ms, 3.5MB) |
 
 編譯與測試:
 
