@@ -36,7 +36,7 @@ title : [Day 21] 回到好驗證的主場: 文字難驗, 程式好驗
 
 最乾淨的例子是 **online judge** (線上解題系統, 像 [ZeroJudge](https://zerojudge.tw/))。你把程式丟上去, 它拿一堆**藏起來的測資**跑你的 code, 回一個**判決**: AC (通過)、WA (答案錯)、CE (編譯錯)、TLE (超時)⋯ 這不是「我覺得不錯」, 是一個客觀、秒級、可重複的結果 —— 判准長這樣最清楚。
 
-我實際接了一條全自動的小迴圈來玩這件事 (用 Playwright 操作瀏覽器送題, 過程另寫在 [GitHub 上的筆記](https://github.com/jason3e7/ai-101/blob/master/05-notes/zerojudge/playwright-zerojudge-automation.md)):
+我實際接了一條全自動的小迴圈來玩這件事 (用 Playwright 操作瀏覽器送題):
 
 ```
 寫 .cpp  →  本機 g++ 編譯、跑範例  →  Playwright 自動上傳  →  判題回 AC/WA/CE/TLE  →  不過就讀訊息改, 再送
@@ -73,7 +73,7 @@ title : [Day 21] 回到好驗證的主場: 文字難驗, 程式好驗
 - [Day 11: AI 給的答案, 你怎麼知道是對的](https://ithelp.ithome.com.tw/articles/10417119) — 前十天那條驗證線的方法論底本
 - [Day 12: 為了方便人類驗證而生的兩個 skill](https://ithelp.ithome.com.tw/articles/10417425) — 把難驗的長輸出變得驗得動的手法
 - [Day 13: AI 用久了會鈍化](https://ithelp.ithome.com.tw/articles/10417978) — 為什麼「人當 bottleneck」會累、會鈍 (驗證疲勞)
-- [用 Playwright 自動操作 ZeroJudge (GitHub)](https://github.com/jason3e7/ai-101/blob/master/05-notes/zerojudge/playwright-zerojudge-automation.md) — 本篇 online judge 活例子的實作 (自動送題、讀判題結果)
 - [ZeroJudge](https://zerojudge.tw/) — 文中用的線上解題系統 (現成的判准)
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp) — 讓 AI 用 MCP 操作瀏覽器 (自動送題那段用的工具)
 - [E. W. Dijkstra, "The Humble Programmer" (1972)](https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html) — "testing shows the presence, not the absence of bugs"
 - [Verification vs Validation (Wikipedia)](https://en.wikipedia.org/wiki/Software_verification_and_validation) — 把東西做對 vs 做對的東西
