@@ -12,3 +12,7 @@
 g++ -O2 -std=c++17 -o a001 a001.cpp
 echo "world" | ./a001   # -> hello, world
 ```
+
+## 相關筆記
+
+- [用 Playwright 自動操作 ZeroJudge (送出答案的坑)](./playwright-zerojudge-automation.md)
