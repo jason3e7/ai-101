@@ -12,3 +12,4 @@
 | [b599](https://zerojudge.tw/ShowProblem?problemid=b599) | Graph Construction (度數序列) | CPP | 樣例過, 未驗證 |
 | [b591](https://zerojudge.tw/ShowProblem?problemid=b591) | 最小容量造船問題 | CPP | 樣例過, 未驗證 |
 | [b588](https://zerojudge.tw/ShowProblem?problemid=b588) | 撿石頭遊戲 (博弈 DP) | CPP | 樣例過, 未驗證 |
+| [b589](https://zerojudge.tw/ShowProblem?problemid=b589) | 超級馬拉松賽 (DP) | CPP | 樣例過, 未驗證 |
