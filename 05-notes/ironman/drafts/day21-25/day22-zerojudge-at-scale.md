@@ -12,6 +12,8 @@ status: draft
 > [!NOTE]
 > [Day 21](./day21-back-to-verifiable-ground.md) 用 3 題 (a001-a003) 示範「有判准, AI 就能自己判有沒有做對」. 這篇擴到 78 題, 分佈在 ZeroJudge 的三個題庫 (基礎 42 / 競賽 16 / UVa 20). 規則很簡單: **除了登入, 人只下 prompt, 完全不介入解題**. 看看 agentic coding + 判准這套在真實規模下 pass rate 多少、哪種題會卡.
 
+> **寫在前面** (jason3e7): 原本想解更多題、再寫一輪比較完整的統整, 但這週 token 已經到頂了. 這篇先是**現階段的 snapshot**, 不是最終版; 下一輪會調整測試方式 (開 2-pass 讀 WA 訊息再送、擴到更難的題庫、或換不同模型跑同一題), 之後再回來補一次更完整的對比.
+
 > **TL;DR (EN):** Day 21 proved "with a judge, AI can self-check" using 3 trivial problems. This post scales to 78: 42 beginner, 16 contest, 20 UVa. Rule: human only logs in; everything else — read problem page, write .cpp, local g++ test, submit via Playwright MCP, read verdict, retry on fail — Claude does unattended. **Overall AC rate: 96.2% (75/78 attempted, 91.5% if counting 4 skipped)**. All UVa 20/20 passed; 3 failures are exactly the "green doesn't mean correct" scenario from Day 21: local samples passed, hidden test cases didn't. 4 skipped problems were AI's own call ("problem statement unclear" or "I can't solve this") — unexpectedly useful behavior: not forcing a wrong answer beats a confident wrong one. Caveat: ZeroJudge is an unusually clean verifier (hidden test cases from the author); most real work has no such ground truth, which is why Day 23 moves on to hooks.
 
 ```markdown
