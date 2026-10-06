@@ -20,6 +20,7 @@
 | [a022](https://zerojudge.tw/ShowProblem?problemid=a022) | 迴文 | CPP | 本機測過, 待上傳 |
 | [a024](https://zerojudge.tw/ShowProblem?problemid=a024) | 最大公因數 (GCD) | CPP | 本機測過, 待上傳 |
 | [a034](https://zerojudge.tw/ShowProblem?problemid=a034) | 二進位制轉換 | CPP | 本機測過, 待上傳 |
+| [a038](https://zerojudge.tw/ShowProblem?problemid=a038) | 數字翻轉 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
