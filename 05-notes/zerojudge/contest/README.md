@@ -10,3 +10,4 @@
 | [m930](https://zerojudge.tw/ShowProblem?problemid=m930) | 正方型池塘水深問題 | - | 跳過 (題意不明, 樣例對不上) |
 | [s016](https://zerojudge.tw/ShowProblem?problemid=s016) | 樹上有隻毛毛蟲 (Caterpillar) | CPP | 樣例過, 未驗證 |
 | [b599](https://zerojudge.tw/ShowProblem?problemid=b599) | Graph Construction (度數序列) | CPP | 樣例過, 未驗證 |
+| [b591](https://zerojudge.tw/ShowProblem?problemid=b591) | 最小容量造船問題 | CPP | 樣例過, 未驗證 |
