@@ -15,3 +15,4 @@
 | [d087](https://zerojudge.tw/ShowProblem?problemid=d087) | 107 | The Cat in the Hat | CPP | 樣例過, 未驗證 |
 | [d206](https://zerojudge.tw/ShowProblem?problemid=d206) | 108 | Maximum Sum | CPP | 樣例過, 未驗證 |
 | [a676](https://zerojudge.tw/ShowProblem?problemid=a676) | 111 | History Grading | CPP | 樣例過, 未驗證 |
+| [a671](https://zerojudge.tw/ShowProblem?problemid=a671) | 113 | Power of Cryptography | CPP | 樣例過, 未驗證 |
