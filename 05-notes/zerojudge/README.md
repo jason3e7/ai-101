@@ -34,6 +34,7 @@
 | [a121](https://zerojudge.tw/ShowProblem?problemid=a121) | 質數又來囉 | CPP | 本機測過, 待上傳 |
 | [a147](https://zerojudge.tw/ShowProblem?problemid=a147) | Print it all | CPP | 本機測過, 待上傳 |
 | [a148](https://zerojudge.tw/ShowProblem?problemid=a148) | You Cannot Pass?! | CPP | 本機測過, 待上傳 |
+| [a149](https://zerojudge.tw/ShowProblem?problemid=a149) | 乘乘樂 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
