@@ -36,6 +36,7 @@
 | [a148](https://zerojudge.tw/ShowProblem?problemid=a148) | You Cannot Pass?! | CPP | 本機測過, 待上傳 |
 | [a149](https://zerojudge.tw/ShowProblem?problemid=a149) | 乘乘樂 | CPP | 本機測過, 待上傳 |
 | [a215](https://zerojudge.tw/ShowProblem?problemid=a215) | 明明愛數數 | CPP | 本機測過, 待上傳 |
+| [a216](https://zerojudge.tw/ShowProblem?problemid=a216) | 數數愛明明 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
