@@ -23,3 +23,6 @@
 | [b672](https://zerojudge.tw/ShowProblem?problemid=b672) | A Special Automobile Race (Jump Game) | CPP | 樣例過, 未驗證 |
 | [b673](https://zerojudge.tw/ShowProblem?problemid=b673) | How Big Is It (圓裝箱) | CPP | 樣例過, 未驗證 |
 | [b674](https://zerojudge.tw/ShowProblem?problemid=b674) | Is It A Tree (有向邊判樹) | CPP | 樣例過, 未驗證 |
+| [a554](https://zerojudge.tw/ShowProblem?problemid=a554) | NCPC SHA-4 (hash 反推) | CPP | 樣例過, 未驗證 |
+| [b590](https://zerojudge.tw/ShowProblem?problemid=b590) | 單位分數分解 | - | 跳過 (樣例對不上, 模型未定) |
+| [i236](https://zerojudge.tw/ShowProblem?problemid=i236) | 邊緣人 (NPSC2020) | - | 跳過 (難, 除數分塊數論) |
