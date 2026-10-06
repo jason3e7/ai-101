@@ -25,3 +25,4 @@
 | [c220](https://zerojudge.tw/ShowProblem?problemid=c220) | 129 | Krypton Factor | CPP | 樣例過, 未驗證 |
 | [c083](https://zerojudge.tw/ShowProblem?problemid=c083) | 130 | Roman Roulette | CPP | 樣例過, 未驗證 |
 | [c103](https://zerojudge.tw/ShowProblem?problemid=c103) | 131 | The Psychic Poker Player | CPP | 樣例過, 未驗證 |
+| [d129](https://zerojudge.tw/ShowProblem?problemid=d129) | 136 | Ugly Numbers | CPP | 樣例過, 未驗證 |
