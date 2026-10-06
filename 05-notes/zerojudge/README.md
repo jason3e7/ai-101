@@ -33,6 +33,7 @@
 | [a104](https://zerojudge.tw/ShowProblem?problemid=a104) | 排序 | CPP | 本機測過, 待上傳 |
 | [a121](https://zerojudge.tw/ShowProblem?problemid=a121) | 質數又來囉 | CPP | 本機測過, 待上傳 |
 | [a147](https://zerojudge.tw/ShowProblem?problemid=a147) | Print it all | CPP | 本機測過, 待上傳 |
+| [a148](https://zerojudge.tw/ShowProblem?problemid=a148) | You Cannot Pass?! | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
