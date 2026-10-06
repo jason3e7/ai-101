@@ -22,3 +22,4 @@
 | [c101](https://zerojudge.tw/ShowProblem?problemid=c101) | 122 | Trees on the level | CPP | 樣例過, 未驗證 |
 | [d088](https://zerojudge.tw/ShowProblem?problemid=d088) | 127 | "Accordian" Patience | CPP | 樣例過, 未驗證 |
 | [c102](https://zerojudge.tw/ShowProblem?problemid=c102) | 128 | Software CRC | CPP | 樣例過, 未驗證 |
+| [c220](https://zerojudge.tw/ShowProblem?problemid=c220) | 129 | Krypton Factor | CPP | 樣例過, 未驗證 |
