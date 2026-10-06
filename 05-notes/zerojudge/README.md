@@ -32,6 +32,7 @@
 | [a095](https://zerojudge.tw/ShowProblem?problemid=a095) | 麥哲倫的陰謀 | CPP | 本機測過, 待上傳 |
 | [a104](https://zerojudge.tw/ShowProblem?problemid=a104) | 排序 | CPP | 本機測過, 待上傳 |
 | [a121](https://zerojudge.tw/ShowProblem?problemid=a121) | 質數又來囉 | CPP | 本機測過, 待上傳 |
+| [a147](https://zerojudge.tw/ShowProblem?problemid=a147) | Print it all | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
