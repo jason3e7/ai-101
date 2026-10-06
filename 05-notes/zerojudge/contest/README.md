@@ -19,3 +19,5 @@
 | [b596](https://zerojudge.tw/ShowProblem?problemid=b596) | Less is better (凸包頂點數) | CPP | 樣例過, 未驗證 |
 | [b586](https://zerojudge.tw/ShowProblem?problemid=b586) | 文章壓縮 (Move-to-Front) | CPP | 樣例過, 未驗證 |
 | [b598](https://zerojudge.tw/ShowProblem?problemid=b598) | Minimize the Number of Coins (DP) | CPP | 樣例過, 未驗證 |
+| [b579](https://zerojudge.tw/ShowProblem?problemid=b579) | 恢復分數 | - | 跳過 (難, 整數線性系統) |
+| [b672](https://zerojudge.tw/ShowProblem?problemid=b672) | A Special Automobile Race (Jump Game) | CPP | 樣例過, 未驗證 |
