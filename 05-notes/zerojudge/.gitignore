@@ -1,4 +1,10 @@
-# 編譯後的執行檔不進 git
-a001
+# 只收原始碼與筆記, 編譯後的執行檔不進 git
 *.out
 *.exe
+# 各題庫資料夾裡本機編譯出的無副檔名執行檔 (如 basic/a001, contest/b588)
+basic/a*
+contest/[a-z]*
+uva/[a-z]*
+# 但原始碼與 README 一定要收回來
+!**/*.cpp
+!**/*.md
