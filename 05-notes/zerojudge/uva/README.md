@@ -12,3 +12,4 @@
 | [d424](https://zerojudge.tw/ShowProblem?problemid=d424) | 105 | The Skyline Problem | CPP | 樣例過, 未驗證 |
 | [c098](https://zerojudge.tw/ShowProblem?problemid=c098) | 106 | Fermat vs. Pythagoras | CPP | 樣例過, 未驗證 |
 | [a247](https://zerojudge.tw/ShowProblem?problemid=a247) | 106 | Fermat vs. Pythagoras (同上, 另一入口) | CPP | 樣例過, 未驗證 |
+| [d087](https://zerojudge.tw/ShowProblem?problemid=d087) | 107 | The Cat in the Hat | CPP | 樣例過, 未驗證 |
