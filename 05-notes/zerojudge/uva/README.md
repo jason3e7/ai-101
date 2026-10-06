@@ -10,3 +10,4 @@
 | [c073](https://zerojudge.tw/ShowProblem?problemid=c073) | 101 | The Blocks Problem | CPP | 樣例過, 未驗證 |
 | [c081](https://zerojudge.tw/ShowProblem?problemid=c081) | 102 | Ecological Bin Packing | CPP | 樣例過, 未驗證 |
 | [d424](https://zerojudge.tw/ShowProblem?problemid=d424) | 105 | The Skyline Problem | CPP | 樣例過, 未驗證 |
+| [c098](https://zerojudge.tw/ShowProblem?problemid=c098) | 106 | Fermat vs. Pythagoras | CPP | 樣例過, 未驗證 |
