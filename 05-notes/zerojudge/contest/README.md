@@ -7,3 +7,5 @@
 | 題號 | 題名 | 語言 | 狀態 |
 |:---|:---|:---|:---|
 | [c500](https://zerojudge.tw/ShowProblem?problemid=c500) | AEWE-645的傷害 | CPP | 樣例過, 未驗證 |
+| [m930](https://zerojudge.tw/ShowProblem?problemid=m930) | 正方型池塘水深問題 | - | 跳過 (題意不明, 樣例對不上) |
+| [s016](https://zerojudge.tw/ShowProblem?problemid=s016) | 樹上有隻毛毛蟲 (Caterpillar) | CPP | 樣例過, 未驗證 |
