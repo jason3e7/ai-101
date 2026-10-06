@@ -17,6 +17,7 @@
 | [a017](https://zerojudge.tw/ShowProblem?problemid=a017) | 五則運算 (運算式) | CPP | 本機測過, 待上傳 |
 | [a020](https://zerojudge.tw/ShowProblem?problemid=a020) | 身分證檢驗 | CPP | 本機測過, 待上傳 |
 | [a021](https://zerojudge.tw/ShowProblem?problemid=a021) | 大數運算 | CPP | 本機測過, 待上傳 |
+| [a022](https://zerojudge.tw/ShowProblem?problemid=a022) | 迴文 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
