@@ -34,7 +34,7 @@ status: draft
 
 ## 為什麼擴大 — Why Scale Up
 
-[Day 21](./day21-back-to-verifiable-ground.md) 用 3 題證明 "AI 有判准就能自判". 但 3 題太少, 可能是運氣. 這篇擴到 82 題 (實際攻 78 題 + 跳過 4 題), 想一次回答三件事:
+[Day 21](./day21-back-to-verifiable-ground.md) 用 3 題證明 "AI 有判准就能自判". 但 3 題太少, 可能是運氣. 這篇擴到 82 題 (實際答 78 題 + 跳過 4 題), 想一次回答三件事:
 
 1. **AI + 判准的 agentic loop 到底能走多遠?** 整體通過率是什麼量級
 2. **失敗卡在哪?** 是題目難, 還是判准本身的限制 (回應 Day 21 的「綠燈不等於對」)
@@ -50,11 +50,14 @@ status: draft
 題號清單 (prompt 給 AI 唯一一次)
   ↓
 AI 讀題網頁 → 寫 .cpp → g++ 本機測樣例
+  ↓ (本機樣例不過: 自己改, 回上一步)
+  ↓ (本機樣例過了)
+Playwright MCP 自動送 → 讀 AC/WA/CE/TLE → 記錄結果
   ↓
-通過樣例 → Playwright MCP 自動送 → 讀 AC/WA/CE/TLE
-  ↓
-AC: 下一題    │    不過: 讀訊息改 → 回上一步
+下一題 (不論判題結果, 不重試)
 ```
+
+**重點**: 這是**一次性 loop**, 不是「不過就再改再送」的多輪 loop. 本機樣例可以反覆改到過, 但**一旦送到 ZeroJudge 判題**, 不論回什麼 (AC/WA/NA/CE), 記錄下來就下一題. 下面的 pass rate 都是**單次送出**的結果, 如果開放重試這個數字會更高.
 
 這條迴圈的三個關鍵:
 
@@ -78,7 +81,7 @@ AC: 下一題    │    不過: 讀訊息改 → 回上一步
 
 ## 結果 — The Numbers
 
-| 題庫 | 攻擊 | AC | 待修 | 跳過 | 題目感 |
+| 題庫 | 答題 | AC | 待修 | 跳過 | 題目感 |
 |:---|---:|---:|---:|---:|:---|
 | [基礎](../../../zerojudge/basic/README.md) | 42 | 40 | 2 | 0 | 哈囉、閏年、羅馬數字、GCD、迴文、二進位、排序、小字串處理 |
 | [競賽](../../../zerojudge/contest/README.md) | 16 | 15 | 1 | 4 | 博弈 DP、剝殼最大子集、凸包頂點、Move-to-Front、Jump Game |
@@ -106,6 +109,8 @@ AC: 下一題    │    不過: 讀訊息改 → 回上一步
 
 共通點: **AI 本機樣例全綠, 以為自己對了**. 但 ZeroJudge 有出題者寫的**隱藏測資**, 抓到 AI 沒想到的 edge case. 這正是 [Day 21](./day21-back-to-verifiable-ground.md) 「綠燈不等於對」的具體顯現 — 本機樣例過 ≠ 判題全過. 判准越強, 這類失敗越能被精準捕捉.
 
+這 3 題之所以停在失敗, 是因為這次是**單次送出**的 loop (見 [測試方法](#測試方法--the-loop)): 判題一回 WA/NA 就記錄下來, 不給 AI 看判題訊息再改一輪. 如果開一個「WA 回去讀訊息、改、再送」的二輪 loop, 這 3 題有機會被救回來 — 那會是另一個實驗.
+
 ### 跳過 (4 題) — AI 自己止損
 
 - [`m930`](https://zerojudge.tw/ShowProblem?problemid=m930) 正方型池塘水深 — 題意不明, 樣例對不上
@@ -124,7 +129,6 @@ AC: 下一題    │    不過: 讀訊息改 → 回上一步
 - **AC 96%** 的前提是「**有乾淨 ground truth**」. ZeroJudge 是異常強的判准 (出題者寫的隱藏測資), 一般真實專案的測試幾乎沒這麼完整
 - **失敗全是「樣例過但隱藏資沒過」** — [Day 21](./day21-back-to-verifiable-ground.md) 的綠燈 ≠ 對, 這 3 題是直接的實證. 當你自己寫測試時, 你就是出題者, 想不到的 case 就測不到
 - **跳過 4 題是意外的好 feature**: AI 遇到「讀不懂」或「做不出來」會主動止損, 比硬產一個錯答案乾淨. 這個行為對應 [Day 13](https://ithelp.ithome.com.tw/articles/10417978) 講的「願意說不知道」
-- **判准越強, AI 越可用** — 這也是為什麼下一篇要講: **判准不夠強的時候怎麼辦**. 答案是 hook 跟權限 (Day 23)
 
 ---
 
@@ -132,7 +136,4 @@ AC: 下一題    │    不過: 讀訊息改 → 回上一步
 
 - [Day 21: 回到好驗證的主場](https://ithelp.ithome.com.tw/articles/10421407) — 這系列的鋪陳篇 (概念: 有判准就能自判)
 - [ZeroJudge](https://zerojudge.tw/) — 文中用的線上解題系統
-- [批次上傳 67 題遇到的坑與解法](../../../zerojudge/batch-upload-lessons.md) — Playwright MCP 自動化的實作踩坑
-- [用 Playwright 自動操作 ZeroJudge](../../../zerojudge/playwright-zerojudge-automation.md) — 單題送出的三個坑
-- [zerojudge/](../../../zerojudge/README.md) — 完整題目清單跟結果 (basic/contest/uva 三頁)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp) — 讓 AI 用 MCP 操作瀏覽器
