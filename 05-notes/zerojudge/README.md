@@ -42,6 +42,7 @@
 | [a229](https://zerojudge.tw/ShowProblem?problemid=a229) | 括號匹配問題 | CPP | 本機測過, 待上傳 |
 | [a244](https://zerojudge.tw/ShowProblem?problemid=a244) | 新手訓練 ~ for + if | CPP | 本機測過, 待上傳 |
 | [a248](https://zerojudge.tw/ShowProblem?problemid=a248) | 新手訓練 ~ 陣列應用 (精準除法) | CPP | 本機測過, 待上傳 |
+| [a263](https://zerojudge.tw/ShowProblem?problemid=a263) | 日期差幾天 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
