@@ -11,3 +11,4 @@
 | [s016](https://zerojudge.tw/ShowProblem?problemid=s016) | 樹上有隻毛毛蟲 (Caterpillar) | CPP | 樣例過, 未驗證 |
 | [b599](https://zerojudge.tw/ShowProblem?problemid=b599) | Graph Construction (度數序列) | CPP | 樣例過, 未驗證 |
 | [b591](https://zerojudge.tw/ShowProblem?problemid=b591) | 最小容量造船問題 | CPP | 樣例過, 未驗證 |
+| [b588](https://zerojudge.tw/ShowProblem?problemid=b588) | 撿石頭遊戲 (博弈 DP) | CPP | 樣例過, 未驗證 |
