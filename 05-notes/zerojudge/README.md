@@ -26,6 +26,7 @@
 | [a044](https://zerojudge.tw/ShowProblem?problemid=a044) | 空間切割 | CPP | 本機測過, 待上傳 |
 | [a053](https://zerojudge.tw/ShowProblem?problemid=a053) | Sagit's 計分程式 | CPP | 本機測過, 待上傳 |
 | [a054](https://zerojudge.tw/ShowProblem?problemid=a054) | 電話客服中心 | CPP | 本機測過, 待上傳 |
+| [a058](https://zerojudge.tw/ShowProblem?problemid=a058) | MOD3 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
