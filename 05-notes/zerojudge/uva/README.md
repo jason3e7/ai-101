@@ -8,3 +8,4 @@
 |:---|:---|:---|:---|:---|
 | [c039](https://zerojudge.tw/ShowProblem?problemid=c039) | 100 | The 3n+1 problem | CPP | 樣例過, 未驗證 |
 | [c073](https://zerojudge.tw/ShowProblem?problemid=c073) | 101 | The Blocks Problem | CPP | 樣例過, 未驗證 |
+| [c081](https://zerojudge.tw/ShowProblem?problemid=c081) | 102 | Ecological Bin Packing | CPP | 樣例過, 未驗證 |
