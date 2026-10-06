@@ -30,6 +30,7 @@
 | [a059](https://zerojudge.tw/ShowProblem?problemid=a059) | 完全平方和 | CPP | 本機測過, 待上傳 |
 | [a065](https://zerojudge.tw/ShowProblem?problemid=a065) | 提款卡密碼 | CPP | 本機測過, 待上傳 |
 | [a095](https://zerojudge.tw/ShowProblem?problemid=a095) | 麥哲倫的陰謀 | CPP | 本機測過, 待上傳 |
+| [a104](https://zerojudge.tw/ShowProblem?problemid=a104) | 排序 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
