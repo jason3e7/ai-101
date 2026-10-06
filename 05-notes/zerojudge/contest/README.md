@@ -21,3 +21,4 @@
 | [b598](https://zerojudge.tw/ShowProblem?problemid=b598) | Minimize the Number of Coins (DP) | CPP | 樣例過, 未驗證 |
 | [b579](https://zerojudge.tw/ShowProblem?problemid=b579) | 恢復分數 | - | 跳過 (難, 整數線性系統) |
 | [b672](https://zerojudge.tw/ShowProblem?problemid=b672) | A Special Automobile Race (Jump Game) | CPP | 樣例過, 未驗證 |
+| [b673](https://zerojudge.tw/ShowProblem?problemid=b673) | How Big Is It (圓裝箱) | CPP | 樣例過, 未驗證 |
