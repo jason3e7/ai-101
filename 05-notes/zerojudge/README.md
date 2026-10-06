@@ -24,6 +24,7 @@
 | [a040](https://zerojudge.tw/ShowProblem?problemid=a040) | 阿姆斯壯數 | CPP | 本機測過, 待上傳 |
 | [a042](https://zerojudge.tw/ShowProblem?problemid=a042) | 平面圓形切割 | CPP | 本機測過, 待上傳 |
 | [a044](https://zerojudge.tw/ShowProblem?problemid=a044) | 空間切割 | CPP | 本機測過, 待上傳 |
+| [a053](https://zerojudge.tw/ShowProblem?problemid=a053) | Sagit's 計分程式 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
