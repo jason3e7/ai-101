@@ -22,6 +22,7 @@
 | [a034](https://zerojudge.tw/ShowProblem?problemid=a034) | 二進位制轉換 | CPP | 本機測過, 待上傳 |
 | [a038](https://zerojudge.tw/ShowProblem?problemid=a038) | 數字翻轉 | CPP | 本機測過, 待上傳 |
 | [a040](https://zerojudge.tw/ShowProblem?problemid=a040) | 阿姆斯壯數 | CPP | 本機測過, 待上傳 |
+| [a042](https://zerojudge.tw/ShowProblem?problemid=a042) | 平面圓形切割 | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
