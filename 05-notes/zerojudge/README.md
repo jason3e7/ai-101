@@ -40,6 +40,7 @@
 | [a224](https://zerojudge.tw/ShowProblem?problemid=a224) | 明明愛明明 | CPP | 本機測過, 待上傳 |
 | [a225](https://zerojudge.tw/ShowProblem?problemid=a225) | 明明愛排列 | CPP | 本機測過, 待上傳 |
 | [a229](https://zerojudge.tw/ShowProblem?problemid=a229) | 括號匹配問題 | CPP | 本機測過, 待上傳 |
+| [a244](https://zerojudge.tw/ShowProblem?problemid=a244) | 新手訓練 ~ for + if | CPP | 本機測過, 待上傳 |
 
 編譯與測試:
 
