@@ -15,3 +15,4 @@
 | [b589](https://zerojudge.tw/ShowProblem?problemid=b589) | 超級馬拉松賽 (DP) | CPP | 樣例過, 未驗證 |
 | [b585](https://zerojudge.tw/ShowProblem?problemid=b585) | 來開派對唷 (剝殼最大子集) | CPP | 樣例過, 未驗證 |
 | [b584](https://zerojudge.tw/ShowProblem?problemid=b584) | 過橋問題 (手電筒) | CPP | 樣例過, 未驗證 |
+| [b597](https://zerojudge.tw/ShowProblem?problemid=b597) | Stickst (Sticks DFS) | CPP | 樣例過, 未驗證 |
