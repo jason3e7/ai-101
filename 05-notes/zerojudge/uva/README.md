@@ -7,3 +7,4 @@
 | 題號 | UVa | 題名 | 語言 | 狀態 |
 |:---|:---|:---|:---|:---|
 | [c039](https://zerojudge.tw/ShowProblem?problemid=c039) | 100 | The 3n+1 problem | CPP | 樣例過, 未驗證 |
+| [c073](https://zerojudge.tw/ShowProblem?problemid=c073) | 101 | The Blocks Problem | CPP | 樣例過, 未驗證 |
