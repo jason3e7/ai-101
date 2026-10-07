@@ -31,7 +31,7 @@
 | [a058](https://zerojudge.tw/ShowProblem?problemid=a058) | MOD3 | CPP | AC |
 | [a059](https://zerojudge.tw/ShowProblem?problemid=a059) | 完全平方和 | CPP | AC |
 | [a065](https://zerojudge.tw/ShowProblem?problemid=a065) | 提款卡密碼 | CPP | AC |
-| [a095](https://zerojudge.tw/ShowProblem?problemid=a095) | 麥哲倫的陰謀 | CPP | NA 50% (待修) |
+| [a095](https://zerojudge.tw/ShowProblem?problemid=a095) | 麥哲倫的陰謀 | CPP | AC |
 | [a104](https://zerojudge.tw/ShowProblem?problemid=a104) | 排序 | CPP | AC |
 | [a121](https://zerojudge.tw/ShowProblem?problemid=a121) | 質數又來囉 | CPP | AC |
 | [a147](https://zerojudge.tw/ShowProblem?problemid=a147) | Print it all | CPP | AC |
