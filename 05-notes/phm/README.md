@@ -17,14 +17,15 @@
 | Crypto | 16 | 0 | 0 |
 | Forensic | 2 | 0 | 0 |
 | Programming | 1 | 0 | 0 |
-| Lucky | 1 | 0 | 0 |
-| **合計** | **101** | **1** | **10** |
+| Lucky | 1 | 1 | 110 |
+| **合計** | **101** | **2** | **120** |
 
 ## 已解題目 — Solved
 
 | 類別 | 題名 | 分數 | Writeup |
 |:---|:---|---:|:---|
 | Misc | flag | 10 | [misc/flag.md](misc/flag.md) |
+| Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 
 ## 送 flag 流程 — Flag Submission
 
