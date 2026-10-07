@@ -5,14 +5,14 @@ created: 2026-10-08
 status: draft
 ---
 
-# Day 23｜ZeroJudge 收尾: 按主題各挑一題, 看 AI 的 ceiling 跟「救回」能力 — Topics × Difficulty × Retries
+# Day 23｜ZeroJudge 收尾: 按主題各挑一題, 看 AI 的上限跟「救回」能力 — Topics × Difficulty × Retries
 
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 22](./day22-zerojudge-at-scale.md) 掃 78 題 96.2% AC 是「廣度」, 但那批題分佈在 ZeroJudge 前幾頁, 主題有偏食. 這篇換「深度」: 用 [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) 的 14 個主題分類當 index, **每主題各挑一題** + 另外**從 ★ 到 ★★★★★ 各挑一題**做難度階梯, 總共 19 題再跑一次. 另外補一段 Day 22 當時卡住的題後來怎麼多輪 AC 救回來, 把「單次送出的 pass rate 低估了 ceiling」這件事講清楚.
+> [Day 22](./day22-zerojudge-at-scale.md) 掃 78 題 96.2% AC 是「廣度」, 但那批題分佈在 ZeroJudge 前幾頁, 主題有偏食. 這篇換「深度」: 用 [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) 的 14 個主題分類當 index, **每主題各挑一題** + 另外**從 ★ 到 ★★★★★ 各挑一題**做難度階梯, 總共 19 題再跑一次. 另外補一段 Day 22 當時卡住的題後來怎麼多輪 AC 救回來, 把「單次送出的 pass rate 低估了上限」這件事講清楚.
 
-> **寫在前面** (jason3e7): 這是 ZeroJudge 三部曲的收尾 (Day 21 概念 → Day 22 規模 → Day 23 深度 + 救援). 下一輪離開 OJ 這種奢侈 oracle, 走到判准不好做的場.
+> **寫在前面** (jason3e7): 這是 ZeroJudge 三部曲的收尾 (Day 21 概念 → Day 22 規模 → Day 23 深度 + 救援). 下一輪離開 OJ 這種理想的判准, 進入判准難建的場.
 
 > **TL;DR (EN):** Day 22 scaled breadth with narrow topics. Day 23 scales depth two ways: (1) one problem per CPE26 topic category (14 topics, covering input/string/datetime/arithmetic/factors/base/2D-grid/simulation/brute-force/combinatorics/sorting/set/stack-queue), (2) one problem per NSYSU star rating (★ to ★★★★★, 5 problems) for a difficulty ladder. All 19 single-pass AC, including UVa 10330 (★★★★★ node-capacity max flow — AI applied the split-node trick) and UVa 147 (★★★★ change-counting DP). Also documents problems from prior rounds that *did* AC once the single-pass rule was relaxed — the agent still runs itself end-to-end, I just allow multiple rounds. Takeaway: single-pass pass rate underreports the ceiling; the real value of a judge is the specific failure signal (WA/TLE/MLE), not the pass/fail bit.
 
@@ -117,7 +117,7 @@ Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:
 AI 自己想到拆點, 寫出 Edmonds-Karp, 本機樣例過, 送判一次 AC.
 
 > [!NOTE]
-> 一個合理解釋: 拆點 + max flow 是教科書 pattern, 在訓練資料裡大量出現. AI 不是「推理出」這個技巧, 更接近「認出題型後取出配方」. 這跟 [Day 03 的 LLM 限制分類](https://ithelp.ithome.com.tw/articles/10412787) 說的一致 — **它強在 pattern recognition, 弱在真正新的推理**. OJ 題幾乎全在 pattern 範圍內, 所以 AI 的 ceiling 看起來特別高.
+> 一個合理解釋: 拆點 + max flow 是教科書 pattern, 在訓練資料裡大量出現. AI 不是「推理出」這個技巧, 更接近「認出題型後取出配方」. 這跟 [Day 03 的 LLM 限制分類](https://ithelp.ithome.com.tw/articles/10412787) 說的一致 — **它強在 pattern recognition, 弱在真正新的推理**. OJ 題幾乎全在 pattern 範圍內, 所以 AI 的上限看起來特別高.
 
 ### UVa 147 Dollars (★★★★) — 找零方案數 DP
 
@@ -135,7 +135,7 @@ AI 用 map 存節點 + 旗標偵測重複/缺漏, 一次 AC.
 
 ## 不是一次過的: 舊帳救回來 — Multi-Round AC
 
-單輪送出的 pass rate 低估 ceiling. 把規則從「單次送出就記錄」放寬成「允許多輪」, 其他完全不變 — **一樣是 agent 自己送、自己讀 verdict、自己改、再送**, 我只指定題目, 沒餵訊息、沒提示方向. 多題就能爬回來.
+單輪送出的 pass rate 低估上限. 把規則從「單次送出就記錄」放寬成「允許多輪」, 其他完全不變 — **一樣是 agent 自己送、自己讀 verdict、自己改、再送**, 我只指定題目, 沒餵訊息、沒提示方向. 多題就能爬回來.
 
 分兩種救援型態 — **正確性類** (邏輯 / 邊界 / 範圍條件錯) 跟 **效能約束類** (時間 / 記憶體超限).
 
@@ -164,20 +164,8 @@ AI 用 map 存節點 + 旗標偵測重複/缺漏, 一次 AC.
 兩種救援合起來看, pattern 一致:
 
 - **樣例全綠不代表對** — 可能是邊界沒蓋到 (a095)、範圍條件漏讀 (a215)、放棄太早 (b590)、效能不夠 (s142/s794/s796)
-- **單輪送出的 pass rate 低估 ceiling** — 只是把規則從「一次就定生死」改成「允許多輪」, agent 自己讀 WA/TLE/MLE 訊息就能爬回來, 不需要人提示
-- **判准不是只分「過 / 不過」**, 是**失敗時給具體 signal 讓 agent 自己 refactor** — 這才是 OJ 這類 oracle 真正有價值的地方
-
-### 救援後的總帳
-
-| 範圍 | AC 數 | AC 率 |
-|:---|---:|---:|
-| Day 22 單次送出 (78 題) | 75 / 78 | 96.2% |
-| Day 22 + A 類二輪救援 (a095 / a215 / b590) | 77 / 78 | 98.7% (剩 c500) |
-| 加 ORIGINAL B 類效能救援 (s142 / s794 / s796) | 全部 AC | 100% |
-| 加 Day 23 新 19 題 | 全部 AC | 100% |
-
-> [!NOTE]
-> c500 不列入「AI 救援」, 因為那題是我偷看作者解題報告才解開的, 嚴格說不算 AI 自己搞定.
+- **單輪送出的 pass rate 低估上限** — 只是把規則從「一次就定生死」改成「允許多輪」, agent 自己讀 WA/TLE/MLE 訊息就能爬回來, 不需要人提示
+- **判准不是只分「過 / 不過」**, 是**失敗時給具體 signal 讓 agent 自己 refactor** — 這才是 OJ 這類 判准 真正有價值的地方
 
 ### a095 — 邊界條件被忽略
 
@@ -191,30 +179,30 @@ Day 22 的解法沒處理 `M == N` (全部都是紅帽) 這個 edge case. 允許
 
 Day 22 agent 自己讀題後說「樣例對不上, 解題模型未定」就跳過了. 允許多輪後它重新讀題, 改以 **DFS 枚舉分母 + 剪枝** 的做法重寫, AC.
 
-> [!NOTE]
-> **c500 (AEWE-645 的傷害)** 這題也是 Day 22 卡住的題, 後來補 AC, 但**我偷看了作者解題報告**才搞懂判題用的分佈模型跟物理最佳解不同 (坑在這條判題規則公開樣例都測不出差). 嚴格說這題**不算 AI 自己解的**, 所以不計入上表. 詳細 writeup 另外放在 [contest/README.md](../../../zerojudge/contest/README.md). 教訓倒是通用的: **強 oracle 也有盲區, 當盲區剛好蓋住公開樣例時, 自測全綠也會 WA** — 這呼應 [Day 21 「綠燈不等於對」](https://ithelp.ithome.com.tw/articles/10421407).
+### c500 — 我偷看答案的那題 (誠實交代)
 
-### 救援後的總帳
+c500 (AEWE-645 的傷害) 也是 Day 22 卡住的題, 單次送出 NA 0%. 開放多輪後 agent 自己試了幾版還是 NA 0% — **本機樣例全綠, 判題只回「NA 0%」沒給具體 WA 訊息** (這題有 4 個 subtask, 全掛), agent 幾次 refactor 都卡在同一個分數上下, 顯然撞牆了.
 
-把 4 題二輪 AC 併回去:
+這時候**我介入了**: 去 Google 找到作者寫的解題報告讀了一遍, 才搞懂坑在哪.
 
-| 範圍 | AC 數 | AC 率 |
-|:---|---:|---:|
-| Day 22 單次送出 | 75 / 78 | 96.2% |
-| Day 22 + 二輪救援 (本篇) | 78 / 78 | **100%** (剩下的 3 跳過也補到 AC) |
-| Day 22 + 二輪 + Day 23 新 19 題 | 97 / 97 | 100% |
+- 題意表面是: n 個座位排一直線, 兔吉在第 m 格; k 隻滑鼠彼此至少間隔 f 格, 位置 > m 的那隻才造成 `d·t` 傷害 (t = 離 m 的距離)
+- **判題用的分佈模型**是「從第 1 格起、每 f 格放一隻」(位置 1, 1+f, 1+2f, ..., 1+(k-1)·f), 不是「找物理最佳的最壞分佈」; 位置 ≤ m 的免計傷害, **包含剛好落在 m 的那隻也算 0**
+- 關鍵盲區: 兩個模型**只在 `m ≡ 1 (mod f)` 時結果才會不同**. 兩組公開樣例剛好一組 f=3 沒碰撞、一組 f=1 但 k 太小沒越過 m, 都測不出差
 
-**單輪 pass rate 系統性低估 AI 的 ceiling**. 判准不只用來「過或不過」, 更關鍵的是**失敗時提供錯的具體 signal**, AI 就能自己或靠一句提示爬回來.
+把這個「判題用的分佈模型」告訴 agent, 它一次 refactor (左側數量用 `⌊(m-1)/f⌋+1`, 右側位置直接 `1+(Lcnt+j)·f`), AC. 完整 writeup 在 [contest/README.md](../../../zerojudge/contest/README.md).
+
+> [!IMPORTANT]
+> 這題嚴格說**不算 AI 自己解的** — 關鍵一步是我讀作者解題報告. 寫在這裡是因為教訓太值得: **強判准也有盲區, 當盲區剛好蓋住公開樣例時, 自測全綠也會 WA**. agent 自己 brute 對拍只會「跟自己同一個錯誤模型」互相證明對, 要跳出同溫層得找一個**跟題目來源獨立**的參照 (這裡是作者的解題報告). 這呼應 [Day 21 「綠燈不等於對」](https://ithelp.ithome.com.tw/articles/10421407) — 判准越強, 盲區可能越細.
 
 ---
 
 ## 我的收斂 — Takeaways
 
-- **AI ceiling 在「有 oracle + 題型經典」場很高**: 五星 max flow 拆點 + 四星找零 DP 一次 AC, 不是運氣
-- **ceiling 強烈依賴 pattern density**: ZeroJudge 多數題在訓練資料出現過, pass rate 看起來特別好看. 換成沒 pattern 的新題, 這個 ceiling 會塌多少, 這系列到此還沒碰
-- **單輪 pass rate 低估 ceiling**: 開二輪 loop (WA/TLE/MLE 回饋) 全部救回. 判准最關鍵的不是「過或不過」, 是**失敗時提供具體 signal 讓 AI 自己改**
-- **救援有兩種型態**: (A) 正確性 — 邊界 / 判題模型 / overflow, 一句 WA 訊息多半能救; (B) 效能 — TLE/MLE 的 oracle 盲區, 本機樣例完全看不出, 要靠判題給的 TLE/MLE 信號強制換演算法
-- **c500 的教訓**: 強 oracle 也有盲區. 當盲區蓋住公開樣例, 自測全綠也會 WA — 要獨立 reference 才跳得出來
+- **AI 上限在「有判准 + 題型經典」場很高**: 五星 max flow 拆點 + 四星找零 DP 一次 AC, 不是運氣
+- **上限強烈依賴 pattern density**: ZeroJudge 多數題在訓練資料出現過, pass rate 看起來特別好看. 換成沒 pattern 的新題, 這個上限會塌多少, 這系列到此還沒碰
+- **單輪 pass rate 低估上限**: 開二輪 loop (WA/TLE/MLE 回饋) 全部救回. 判准最關鍵的不是「過或不過」, 是**失敗時提供具體 signal 讓 AI 自己改**
+- **救援有兩種型態**: (A) 正確性 — 邊界 / 判題模型 / overflow, 一句 WA 訊息多半能救; (B) 效能 — TLE/MLE 的判准盲區, 本機樣例完全看不出, 要靠判題給的 TLE/MLE 信號強制換演算法
+- **c500 的教訓**: 強判准也有盲區. 當盲區蓋住公開樣例, 自測全綠也會 WA — 要獨立 reference 才跳得出來
 - **ZeroJudge 三部曲到此收尾**: Day 21 (概念) → Day 22 (規模) → Day 23 (深度 + 救援). 下一輪離開 OJ, 看判准難建的場怎麼辦
 
 ---
