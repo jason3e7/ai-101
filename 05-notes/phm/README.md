@@ -10,21 +10,23 @@
 
 | 類別 | 總題數 | 已解 | 分數 |
 |:---|---:|---:|---:|
-| Misc | 14 | 1 | 10 |
+| Misc | 14 | 2 | 60 |
 | Web | 26 | 0 | 0 |
 | Pwn | 24 | 0 | 0 |
 | Reversing | 17 | 0 | 0 |
-| Crypto | 16 | 0 | 0 |
+| Crypto | 16 | 1 | 10 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 0 | 0 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **4** | **240** |
+| **合計** | **101** | **6** | **300** |
 
 ## 已解題目 — Solved
 
 | 類別 | 題名 | 分數 | Writeup |
 |:---|:---|---:|:---|
 | Misc | flag | 10 | [misc/flag.md](misc/flag.md) |
+| Misc | corgi can fly | 50 | [misc/corgi-can-fly.md](misc/corgi-can-fly.md) |
+| Crypto | easy | 10 | [crypto/easy.md](crypto/easy.md) |
 | Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 | Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
 | Forensic | this is a pen | 80 | [forensic/this-is-a-pen.md](forensic/this-is-a-pen.md) |
