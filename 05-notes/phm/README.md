@@ -10,7 +10,7 @@
 
 | 類別 | 總題數 | 已解 | 分數 |
 |:---|---:|---:|---:|
-| Misc | 14 | 2 | 60 |
+| Misc | 14 | 4 | 160 |
 | Web | 26 | 0 | 0 |
 | Pwn | 24 | 0 | 0 |
 | Reversing | 17 | 0 | 0 |
@@ -18,7 +18,7 @@
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 0 | 0 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **6** | **300** |
+| **合計** | **101** | **8** | **400** |
 
 ## 已解題目 — Solved
 
@@ -26,10 +26,19 @@
 |:---|:---|---:|:---|
 | Misc | flag | 10 | [misc/flag.md](misc/flag.md) |
 | Misc | corgi can fly | 50 | [misc/corgi-can-fly.md](misc/corgi-can-fly.md) |
+| Misc | television | 50 | [misc/television.md](misc/television.md) |
+| Misc | encoder | 50 | [misc/encoder.md](misc/encoder.md) |
 | Crypto | easy | 10 | [crypto/easy.md](crypto/easy.md) |
 | Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 | Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
 | Forensic | this is a pen | 80 | [forensic/this-is-a-pen.md](forensic/this-is-a-pen.md) |
+
+## 卡住未解 — Pending
+
+| 類別 | 題名 | 分數 | Writeup |
+|:---|:---|---:|:---|
+| Misc | meow | 50 | [misc/meow.md](misc/meow.md) — ZIP in PNG, 加密 ZIP 密碼未找到 (rockyou 全掃 + Pusheen 相關猜測都 miss) |
+| Misc | where is flag | 50 | [misc/where-is-flag.md](misc/where-is-flag.md) — 665K 文字塞滿假 FLAG{...}, 已過濾 noise 篩出 3 個 candidate 但 server 都 reject, 真 flag 可能不是 FLAG{...} 格式或有未發現的 regex 線索 |
 
 ## 送 flag 流程 — Flag Submission
 
