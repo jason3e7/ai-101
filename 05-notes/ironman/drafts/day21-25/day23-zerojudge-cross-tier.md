@@ -1,6 +1,6 @@
 ---
 title: "AI 101 - 鐵人賽 Day 23: ZeroJudge 收尾, 跨主題各挑一題 + 多輪 AC 的題怎麼救回來"
-tags: [ai, 鐵人賽, ironman, zerojudge, 判准, agentic, 實測, 草稿]
+tags: [ai, 鐵人賽, ironman, zerojudge, 判斷標準, agentic, 實測, 草稿]
 created: 2026-10-08
 status: draft
 ---
@@ -12,7 +12,7 @@ status: draft
 > [!NOTE]
 > [Day 22](./day22-zerojudge-at-scale.md) 掃 78 題 96.2% AC 是「廣度」, 但那批題分佈在 ZeroJudge 前幾頁, 主題有偏食. 這篇換「深度」: 用 [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) 的 14 個主題分類當 index, **每主題各挑一題** + 另外**從 ★ 到 ★★★★★ 各挑一題**做難度階梯, 總共 19 題再跑一次. 另外補一段 Day 22 當時卡住的題後來怎麼多輪 AC 救回來, 把「單次送出的 pass rate 低估了上限」這件事講清楚.
 
-> **寫在前面** (jason3e7): 這是 ZeroJudge 三部曲的收尾 (Day 21 概念 → Day 22 規模 → Day 23 深度 + 救援). 下一輪離開 OJ 這種理想的判准, 進入判准難建的場.
+> **寫在前面** (jason3e7): 這是 ZeroJudge 三部曲的收尾 (Day 21 概念 → Day 22 規模 → Day 23 深度 + 救援). 下一輪離開 OJ 這種理想的判斷標準, 進入判斷標準難建的場.
 
 > **TL;DR (EN):** Day 22 scaled breadth with narrow topics. Day 23 scales depth two ways: (1) one problem per CPE26 topic category (14 topics, covering input/string/datetime/arithmetic/factors/base/2D-grid/simulation/brute-force/combinatorics/sorting/set/stack-queue), (2) one problem per NSYSU star rating (★ to ★★★★★, 5 problems) for a difficulty ladder. All 19 single-pass AC, including UVa 10330 (★★★★★ node-capacity max flow — AI applied the split-node trick) and UVa 147 (★★★★ change-counting DP). Also documents problems from prior rounds that *did* AC once the single-pass rule was relaxed — the agent still runs itself end-to-end, I just allow multiple rounds. Takeaway: single-pass pass rate underreports the ceiling; the real value of a judge is the specific failure signal (WA/TLE/MLE), not the pass/fail bit.
 
@@ -159,13 +159,13 @@ AI 用 map 存節點 + 旗標偵測重複/缺漏, 一次 AC.
 
 這 3 題都是**本機樣例看不出來, 送判題才知道效能不夠**. 判題在這裡扮演兩個角色: (1) 給出 TLE/MLE 的明確信號 (2) 強制 agent 跳出「樣例過了就以為對」的錯覺.
 
-### 共通點: 判准的真正價值是「失敗時給具體 signal」
+### 共通點: 判斷標準的真正價值是「失敗時給具體 signal」
 
 兩種救援合起來看, pattern 一致:
 
 - **樣例全綠不代表對** — 可能是邊界沒蓋到 (a095)、範圍條件漏讀 (a215)、放棄太早 (b590)、效能不夠 (s142/s794/s796)
 - **單輪送出的 pass rate 低估上限** — 只是把規則從「一次就定生死」改成「允許多輪」, agent 自己讀 WA/TLE/MLE 訊息就能爬回來, 不需要人提示
-- **判准不是只分「過 / 不過」**, 是**失敗時給具體 signal 讓 agent 自己 refactor** — 這才是 OJ 這類 判准 真正有價值的地方
+- **判斷標準不是只分「過 / 不過」**, 是**失敗時給具體 signal 讓 agent 自己 refactor** — 這才是 OJ 這類 判斷標準 真正有價值的地方
 
 ### a095 — 邊界條件被忽略
 
@@ -192,24 +192,24 @@ c500 (AEWE-645 的傷害) 也是 Day 22 卡住的題, 單次送出 NA 0%. 開放
 把這個「判題用的分佈模型」告訴 agent, 它一次 refactor (左側數量用 `⌊(m-1)/f⌋+1`, 右側位置直接 `1+(Lcnt+j)·f`), AC. 完整 writeup 在 [contest/README.md](../../../zerojudge/contest/README.md).
 
 > [!IMPORTANT]
-> 這題嚴格說**不算 AI 自己解的** — 關鍵一步是我讀作者解題報告. 寫在這裡是因為教訓太值得: **強判准也有盲區, 當盲區剛好蓋住公開樣例時, 自測全綠也會 WA**. agent 自己 brute 對拍只會「跟自己同一個錯誤模型」互相證明對, 要跳出同溫層得找一個**跟題目來源獨立**的參照 (這裡是作者的解題報告). 這呼應 [Day 21 「綠燈不等於對」](https://ithelp.ithome.com.tw/articles/10421407) — 判准越強, 盲區可能越細.
+> 這題嚴格說**不算 AI 自己解的** — 關鍵一步是我讀作者解題報告. 寫在這裡是因為教訓太值得: **強判斷標準也有盲區, 當盲區剛好蓋住公開樣例時, 自測全綠也會 WA**. agent 自己 brute 對拍只會「跟自己同一個錯誤模型」互相證明對, 要跳出同溫層得找一個**跟題目來源獨立**的參照 (這裡是作者的解題報告). 這呼應 [Day 21 「綠燈不等於對」](https://ithelp.ithome.com.tw/articles/10421407) — 判斷標準越強, 盲區可能越細.
 
 ---
 
 ## 我的收斂 — Takeaways
 
-- **AI 上限在「有判准 + 題型經典」場很高**: 五星 max flow 拆點 + 四星找零 DP 一次 AC, 不是運氣
+- **AI 上限在「有判斷標準 + 題型經典」場很高**: 五星 max flow 拆點 + 四星找零 DP 一次 AC, 不是運氣
 - **上限強烈依賴 pattern density**: ZeroJudge 多數題在訓練資料出現過, pass rate 看起來特別好看. 換成沒 pattern 的新題, 這個上限會塌多少, 這系列到此還沒碰
-- **單輪 pass rate 低估上限**: 開二輪 loop (WA/TLE/MLE 回饋) 全部救回. 判准最關鍵的不是「過或不過」, 是**失敗時提供具體 signal 讓 AI 自己改**
-- **救援有兩種型態**: (A) 正確性 — 邊界 / 判題模型 / overflow, 一句 WA 訊息多半能救; (B) 效能 — TLE/MLE 的判准盲區, 本機樣例完全看不出, 要靠判題給的 TLE/MLE 信號強制換演算法
-- **c500 的教訓**: 強判准也有盲區. 當盲區蓋住公開樣例, 自測全綠也會 WA — 要獨立 reference 才跳得出來
-- **ZeroJudge 三部曲到此收尾**: Day 21 (概念) → Day 22 (規模) → Day 23 (深度 + 救援). 下一輪離開 OJ, 看判准難建的場怎麼辦
+- **單輪 pass rate 低估上限**: 開二輪 loop (WA/TLE/MLE 回饋) 全部救回. 判斷標準最關鍵的不是「過或不過」, 是**失敗時提供具體 signal 讓 AI 自己改**
+- **救援有兩種型態**: (A) 正確性 — 邊界 / 判題模型 / overflow, 一句 WA 訊息多半能救; (B) 效能 — TLE/MLE 的判斷標準盲區, 本機樣例完全看不出, 要靠判題給的 TLE/MLE 信號強制換演算法
+- **c500 的教訓**: 強判斷標準也有盲區. 當盲區蓋住公開樣例, 自測全綠也會 WA — 要獨立 reference 才跳得出來
+- **ZeroJudge 三部曲到此收尾**: Day 21 (概念) → Day 22 (規模) → Day 23 (深度 + 救援). 下一輪離開 OJ, 看判斷標準難建的場怎麼辦
 
 ---
 
 ## Sources
 
-- [Day 21: 回到好驗證的主場](https://ithelp.ithome.com.tw/articles/10421407) — 判准概念鋪陳
+- [Day 21: 回到好驗證的主場](https://ithelp.ithome.com.tw/articles/10421407) — 判斷標準概念鋪陳
 - [Day 22: 掃 ZeroJudge 78 題](https://ithelp.ithome.com.tw/articles/10421768) — 規模化 pass rate
 - [ZeroJudge selected/ 19 題解答](../../../zerojudge/selected/README.md) — 本篇全部 cpp 原始碼
 - [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) — 本篇按主題選題的 index
