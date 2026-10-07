@@ -4,20 +4,20 @@
 
 [ZeroJudge](https://zerojudge.tw/) [TOI 題庫](https://zerojudge.tw/Problems?tabid=TOI) 第一頁的解題（多為 WC / USACO / TOI 練習賽改編，難度偏高）。
 
-> ⚠️ **本批先「本機測過樣例、未上傳判題」**（依指示先不送 ZeroJudge）。狀態標「樣例過, 未送」，之後再上傳。
+> ✅ **已上傳 ZeroJudge 判題（2026-10-07）**：多數 AC；未過者在狀態欄標註並待修。
 
 | 題號 | 題名 | 語言 | 狀態 |
 |:---|:---|:---|:---|
-| [e294](https://zerojudge.tw/ShowProblem?problemid=e294) | 小崴的新發現 (完全奇數) | CPP | 樣例過, 未送 |
-| [e283](https://zerojudge.tw/ShowProblem?problemid=e283) | 小崴的特殊編碼 (解碼) | CPP | 樣例過, 未送 |
-| [d445](https://zerojudge.tw/ShowProblem?problemid=d445) | 分堆大考驗 (等和分割計數) | CPP | 樣例過, 未送 |
-| [d904](https://zerojudge.tw/ShowProblem?problemid=d904) | 換零錢 (最少硬幣) | CPP | 樣例過, 未送 |
-| [h664](https://zerojudge.tw/ShowProblem?problemid=h664) | 河內塔 (第 S 步圓盤) | CPP | 樣例過, 未送 |
-| [a055](https://zerojudge.tw/ShowProblem?problemid=a055) | Lost Cows (還原排列) | CPP | 樣例過, 未送 |
-| [d609](https://zerojudge.tw/ShowProblem?problemid=d609) | Necklace (項鍊收珠) | CPP | 樣例過, 未送 |
-| [d203](https://zerojudge.tw/ShowProblem?problemid=d203) | 加法減法的奧妙 (枚舉運算) | CPP | 樣例過, 未送 |
-| [h663](https://zerojudge.tw/ShowProblem?problemid=h663) | 士兵排列 (bitmask DP) | CPP | 樣例過, 未送 |
-| [h040](https://zerojudge.tw/ShowProblem?problemid=h040) | 釣魚 (二分搜) | CPP | 樣例過, 未送 |
+| [e294](https://zerojudge.tw/ShowProblem?problemid=e294) | 小崴的新發現 (完全奇數) | CPP | AC |
+| [e283](https://zerojudge.tw/ShowProblem?problemid=e283) | 小崴的特殊編碼 (解碼) | CPP | AC |
+| [d445](https://zerojudge.tw/ShowProblem?problemid=d445) | 分堆大考驗 (等和分割計數) | CPP | AC |
+| [d904](https://zerojudge.tw/ShowProblem?problemid=d904) | 換零錢 (最少硬幣) | CPP | AC |
+| [h664](https://zerojudge.tw/ShowProblem?problemid=h664) | 河內塔 (第 S 步圓盤) | CPP | AC |
+| [a055](https://zerojudge.tw/ShowProblem?problemid=a055) | Lost Cows (還原排列) | CPP | AC |
+| [d609](https://zerojudge.tw/ShowProblem?problemid=d609) | Necklace (項鍊收珠) | CPP | AC |
+| [d203](https://zerojudge.tw/ShowProblem?problemid=d203) | 加法減法的奧妙 (枚舉運算) | CPP | AC |
+| [h663](https://zerojudge.tw/ShowProblem?problemid=h663) | 士兵排列 (bitmask DP) | CPP | AC |
+| [h040](https://zerojudge.tw/ShowProblem?problemid=h040) | 釣魚 (二分搜) | CPP | AC |
 | [e331](https://zerojudge.tw/ShowProblem?problemid=e331) | 保全公司的危險加給 | - | 跳過 (站上無題敘與樣例) |
 | [a426](https://zerojudge.tw/ShowProblem?problemid=a426) | WC2012 记忆中的水杉树 | - | 跳過 (外部連結題, 無內文) |
 | [a019](https://zerojudge.tw/ShowProblem?problemid=a019) | WC2011 拼点游戏 | - | 跳過 (外部連結題, 無內文) |
