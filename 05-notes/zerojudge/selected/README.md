@@ -14,6 +14,11 @@
 | [c007](https://zerojudge.tw/ShowProblem?problemid=c007) | TeX Quotes (UVa 272) | CPP | AC |
 | [e208](https://zerojudge.tw/ShowProblem?problemid=e208) | Run-length Decoding | CPP | AC |
 | [j056](https://zerojudge.tw/ShowProblem?problemid=j056) | Mirror Clock (UVa 11650) | CPP | AC |
+| [a518](https://zerojudge.tw/ShowProblem?problemid=a518) | Zapping 循環頻道 (UVa 12468) | CPP | AC |
+| [d120](https://zerojudge.tw/ShowProblem?problemid=d120) | 相異質因數個數 (UVa 10699) | CPP | AC |
+| [d379](https://zerojudge.tw/ShowProblem?problemid=d379) | Hex 相加減→二/十進位 (UVa 446) | CPP | AC |
+| [c015](https://zerojudge.tw/ShowProblem?problemid=c015) | Reverse and Add (UVa 10018) | CPP | AC |
+| [e605](https://zerojudge.tw/ShowProblem?problemid=e605) | Minesweeper (UVa 10189) | CPP | AC |
 
 編譯與測試:
 
