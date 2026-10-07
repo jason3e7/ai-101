@@ -17,7 +17,7 @@
 | [s794](https://zerojudge.tw/ShowProblem?problemid=s794) | 1A2B (枚舉反推) | CPP | TLE (待修) |
 | [s800](https://zerojudge.tw/ShowProblem?problemid=s800) | 貝殼商店 (整數線性系統) | - | 跳過 (Diophantine, 偏難) |
 | [s797](https://zerojudge.tw/ShowProblem?problemid=s797) | 菇菇栽培 (分段 DP) | - | 跳過 (DP 最佳化, 偏難) |
-| [s796](https://zerojudge.tw/ShowProblem?problemid=s796) | 蜂蜜工廠 (DSU 排程) | CPP | NA 25% (待修) |
+| [s796](https://zerojudge.tw/ShowProblem?problemid=s796) | 蜂蜜工廠 (DSU 排程) | CPP | AC |
 | [s450](https://zerojudge.tw/ShowProblem?problemid=s450) | Cosmic Barrier (幾何) | - | 跳過 (旋轉線最佳化, 偏難) |
 | [s109](https://zerojudge.tw/ShowProblem?problemid=s109) | Strange Tree Path (帶修改) | - | 跳過 (樹上帶修改查詢, 偏難) |
 | [m448](https://zerojudge.tw/ShowProblem?problemid=m448) | n 顆星星 | CPP | AC |
