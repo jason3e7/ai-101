@@ -1,11 +1,11 @@
 ---
-title: "AI 101 - 鐵人賽 Day 23: ZeroJudge 收尾, 跨主題各挑一題 + 多輪 AC 的題怎麼救回來"
+title: "AI 101 - 鐵人賽 Day 23: ZeroJudge 進階測試, 按主題挑題 + 自動多輪直到 AC"
 tags: [ai, 鐵人賽, ironman, zerojudge, 判斷標準, agentic, 實測, 草稿]
 created: 2026-10-08
 status: draft
 ---
 
-# Day 23｜ZeroJudge 收尾: 按主題各挑一題, 看 AI 的上限跟「救回」能力 — Topics × Difficulty × Retries
+# Day 23｜ZeroJudge 進階測試: 按主題各挑一題, 看 AI 的上限跟自動多輪的能力 — Topics × Difficulty × Auto-Retry
 
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
@@ -17,18 +17,18 @@ status: draft
 > **TL;DR (EN):** Day 22 scaled breadth with narrow topics. Day 23 scales depth two ways: (1) one problem per CPE26 topic category (14 topics, covering input/string/datetime/arithmetic/factors/base/2D-grid/simulation/brute-force/combinatorics/sorting/set/stack-queue), (2) one problem per NSYSU star rating (★ to ★★★★★, 5 problems) for a difficulty ladder. All 19 single-pass AC, including UVa 10330 (★★★★★ node-capacity max flow — AI applied the split-node trick) and UVa 147 (★★★★ change-counting DP). Also documents problems from prior rounds that *did* AC once the single-pass rule was relaxed — the agent still runs itself end-to-end, I just allow multiple rounds. Takeaway: single-pass pass rate underreports the ceiling; the real value of a judge is the specific failure signal (WA/TLE/MLE), not the pass/fail bit.
 
 ```markdown
-# ZeroJudge 收尾: 按 CPE26 主題挑 + 補 5 題超綱, 另外救回 4 題舊帳
-* 為什麼再測一次 (Day 22 主題有偏食)
+# ZeroJudge 進階: 按 CPE26 主題挑 + 補 5 題超綱, 另外完成 4 題舊題多輪
+* 進階測試測什麼
 * 選題
   * CPE26 14 主題各挑一題 (主題覆蓋)
   * 外加 1 到 5 星各一題 (難度階梯)
   * 總共 19 題
 * 結果 (19 題全一次 AC)
-* 三題硬菜拆解
+* 三難題拆解
   * 10330 Max Flow 拆點
   * 147 Dollars DP
   * 122 Tree 建構
-* 多輪 AC 救回 (舊帳)
+* 自動多輪直到 AC
   * 規則放寬成「允許多輪」, 其他不變
   * A 類: 正確性 (a095 / a215 / b590)
   * B 類: 效能 (s142 MLE, s794 TLE, s796 TLE)
@@ -37,7 +37,7 @@ status: draft
 
 ---
 
-## 為什麼再測一次 — Why Scale Depth, Not Just Breadth
+## 進階測試測什麼 — What This Advanced Round Tests
 
 Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:
 
@@ -106,7 +106,7 @@ Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:
 
 ---
 
-## 三題硬菜 — The Three Harder Ones
+## 三難題拆解 — Three Hard Problems Walked Through
 
 ### UVa 10330 Power Transmission (★★★★★) — 節點容量 Max Flow
 
@@ -133,7 +133,7 @@ AI 用 map 存節點 + 旗標偵測重複/缺漏, 一次 AC.
 
 ---
 
-## 不是一次過的: 舊帳救回來 — Multi-Round AC
+## 自動多輪直到 AC — Agent Retries Until AC
 
 單輪送出的 pass rate 低估上限. 把規則從「單次送出就記錄」放寬成「允許多輪」, 其他完全不變 — **一樣是 agent 自己送、自己讀 verdict、自己改、再送**, 我只指定題目, 沒餵訊息、沒提示方向. 多題就能爬回來.
 
