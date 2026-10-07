@@ -55,9 +55,12 @@ meow/t39.1997-6/p296x100/10173502_279586372215628_1950740854_n.png  48543 bytes 
 ### 2. 短密碼 bruteforce
 
 ```bash
-fcrackzip -b -c 'a1' -l 5-5 -u meow.zip  # ~24s, no
-fcrackzip -b -c 'a1' -l 6-6 -u meow.zip  # kill 掉, 太慢
+fcrackzip -b -c 'a1' -l 5-5 -u meow.zip  # 60M combos, 24s, no
+fcrackzip -b -c 'a1' -l 6-6 -u meow.zip  # 2.2B combos, 4m26s, no
+fcrackzip -b -c 'a'  -l 7-7 -u meow.zip  # 8B combos, 55m26s, no
 ```
+
+結論: 密碼不是 ≤7 char 的純小寫英數. 可能是 8+ char, 或含大寫 / 符號.
 
 ### 3. 已知明文攻擊 (bkcrack)
 
