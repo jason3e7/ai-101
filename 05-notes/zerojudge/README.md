@@ -9,7 +9,7 @@
 | 資料夾 | 題庫 | 進度 |
 |:---|:---|:---|
 | [basic/](basic/README.md) | 基礎題庫 (第 1–2 頁) | 42 題全 AC |
-| [contest/](contest/README.md) | 競賽題庫 (第 1 頁) | 15 AC、1 待修、4 跳過 |
+| [contest/](contest/README.md) | 競賽題庫 (第 1 頁) | 16 AC、4 跳過 |
 | [uva/](uva/README.md) | UVa 題庫 (第 1 頁) | 20 題全 AC |
 | [toi/](toi/README.md) | TOI 題庫 (第 1 頁) | 11 題全 AC、9 跳過 |
 | [original/](original/README.md) | ORIGINAL 題庫 (第 1 頁) | 11 AC、9 跳過 |
