@@ -25,6 +25,6 @@
 | [s111](https://zerojudge.tw/ShowProblem?problemid=s111) | Bitonic Path (雙調環路) | CPP | AC |
 | [s110](https://zerojudge.tw/ShowProblem?problemid=s110) | Quality Tree Starshine (質數路徑積) | - | 跳過 (樹上相異質數積, 偏難) |
 | [m880](https://zerojudge.tw/ShowProblem?problemid=m880) | 撲克牌-抽鬼牌 (模擬) | CPP | AC |
-| [s142](https://zerojudge.tw/ShowProblem?problemid=s142) | 最大正方形 (DP) | CPP | NA 0% (待修) |
+| [s142](https://zerojudge.tw/ShowProblem?problemid=s142) | 最大正方形 (DP) | CPP | AC |
 | [s140](https://zerojudge.tw/ShowProblem?problemid=s140) | 排隊買飲料 (二分搜) | CPP | AC |
 | [r302](https://zerojudge.tw/ShowProblem?problemid=r302) | 河谷守護者 | - | 跳過 (站上無文字題敘) |

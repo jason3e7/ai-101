@@ -12,7 +12,7 @@
 | [contest/](contest/README.md) | 競賽題庫 (第 1 頁) | 15 AC、1 待修、4 跳過 |
 | [uva/](uva/README.md) | UVa 題庫 (第 1 頁) | 20 題全 AC |
 | [toi/](toi/README.md) | TOI 題庫 (第 1 頁) | 11 題全 AC、9 跳過 |
-| [original/](original/README.md) | ORIGINAL 題庫 (第 1 頁) | 8 AC、3 待修、9 跳過 |
+| [original/](original/README.md) | ORIGINAL 題庫 (第 1 頁) | 9 AC、2 待修、9 跳過 |
 
 每個資料夾一個 `README.md` 作該題庫的解題對照表（題號、題名、語言、判題結果）。
 
