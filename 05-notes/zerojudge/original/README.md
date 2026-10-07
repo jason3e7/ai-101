@@ -14,7 +14,7 @@
 | [s799](https://zerojudge.tw/ShowProblem?problemid=s799) | 星際航線 (降邊最小化最長路徑) | - | 跳過 (路徑交集, 偏難) |
 | [b870](https://zerojudge.tw/ShowProblem?problemid=b870) | Wickerbottom (二分搜距離) | CPP | AC |
 | [s801](https://zerojudge.tw/ShowProblem?problemid=s801) | 糖果禮盒 (多連塊擺放) | - | 跳過 (構造/搜尋, 偏難) |
-| [s794](https://zerojudge.tw/ShowProblem?problemid=s794) | 1A2B (枚舉反推) | CPP | TLE (待修) |
+| [s794](https://zerojudge.tw/ShowProblem?problemid=s794) | 1A2B (枚舉反推) | CPP | AC |
 | [s800](https://zerojudge.tw/ShowProblem?problemid=s800) | 貝殼商店 (整數線性系統) | - | 跳過 (Diophantine, 偏難) |
 | [s797](https://zerojudge.tw/ShowProblem?problemid=s797) | 菇菇栽培 (分段 DP) | - | 跳過 (DP 最佳化, 偏難) |
 | [s796](https://zerojudge.tw/ShowProblem?problemid=s796) | 蜂蜜工廠 (DSU 排程) | CPP | AC |
