@@ -10,26 +10,27 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 22](./day22-zerojudge-at-scale.md) 掃 78 題 96.2% AC 是「廣度」, 但那批題分佈在 ZeroJudge 前幾頁, 主題有偏食. 這篇換「深度」: 用 [MCU CPE26 題目選集](../../../zerojudge/mcu-cpe26-problem-set.md) 的 14 個主題分類當 index, **每主題各挑一題 + 外加 5 題超綱硬菜**, 總共 19 題再跑一次. 另外補一段 Day 22 當時卡住的 4 題後來怎麼多輪 AC 救回來, 把「單次送出的 pass rate 低估了 ceiling」這件事講清楚.
+> [Day 22](./day22-zerojudge-at-scale.md) 掃 78 題 96.2% AC 是「廣度」, 但那批題分佈在 ZeroJudge 前幾頁, 主題有偏食. 這篇換「深度」: 用 [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) 的 14 個主題分類當 index, **每主題各挑一題** + 另外**從 ★ 到 ★★★★★ 各挑一題**做難度階梯, 總共 19 題再跑一次. 另外補一段 Day 22 當時卡住的題後來怎麼多輪 AC 救回來, 把「單次送出的 pass rate 低估了 ceiling」這件事講清楚.
 
 > **寫在前面** (jason3e7): 這是 ZeroJudge 三部曲的收尾 (Day 21 概念 → Day 22 規模 → Day 23 深度 + 救援). 下一輪離開 OJ 這種奢侈 oracle, 走到判准不好做的場.
 
-> **TL;DR (EN):** Day 22 scaled breadth with narrow topics. Day 23 scales depth: picked 14 problems one per CPE26 topic category (input/string/datetime/arithmetic/factors/base/2D-grid/simulation/brute-force/combinatorics/sorting/set/stack-queue) + 5 harder off-topic (max flow, DP, tree, extra simulation). All 19 single-pass AC, including UVa 10330 (★★★★★ node-capacity max flow — AI applied the split-node trick) and UVa 147 (★★★★ change-counting DP). Also documents 4 problems from Day 22's fail/skip set that *did* AC on a later round once the human intervened minimally (feed back the WA message, read the author's solution writeup) — single-pass numbers underreport the ceiling.
+> **TL;DR (EN):** Day 22 scaled breadth with narrow topics. Day 23 scales depth two ways: (1) one problem per CPE26 topic category (14 topics, covering input/string/datetime/arithmetic/factors/base/2D-grid/simulation/brute-force/combinatorics/sorting/set/stack-queue), (2) one problem per NSYSU star rating (★ to ★★★★★, 5 problems) for a difficulty ladder. All 19 single-pass AC, including UVa 10330 (★★★★★ node-capacity max flow — AI applied the split-node trick) and UVa 147 (★★★★ change-counting DP). Also documents problems from prior rounds that *did* AC once the single-pass rule was relaxed — the agent still runs itself end-to-end, I just allow multiple rounds. Takeaway: single-pass pass rate underreports the ceiling; the real value of a judge is the specific failure signal (WA/TLE/MLE), not the pass/fail bit.
 
 ```markdown
 # ZeroJudge 收尾: 按 CPE26 主題挑 + 補 5 題超綱, 另外救回 4 題舊帳
 * 為什麼再測一次 (Day 22 主題有偏食)
 * 選題
-  * CPE26 14 主題各挑一題
-  * 外加 5 題硬菜 (DP / Max Flow / 樹)
-  * 19 題 = 14 覆蓋 + 5 超綱
+  * CPE26 14 主題各挑一題 (主題覆蓋)
+  * 外加 1 到 5 星各一題 (難度階梯)
+  * 總共 19 題
 * 結果 (19 題全一次 AC)
 * 三題硬菜拆解
   * 10330 Max Flow 拆點
   * 147 Dollars DP
   * 122 Tree 建構
 * 多輪 AC 救回 (舊帳)
-  * A 類: 正確性 (a095 / a215 / c500 / b590)
+  * 規則放寬成「允許多輪」, 其他不變
+  * A 類: 正確性 (a095 / a215 / b590)
   * B 類: 效能 (s142 MLE, s794 TLE, s796 TLE)
 * 收斂
 ```
@@ -43,10 +44,10 @@ Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:
 1. **主題有偏食** — 78 題多是 ZeroJudge 第 1-2 頁, 題庫 convention 偏入門, 題型集中在哈囉、閏年、迴文、GCD 這類
 2. **真的硬題幾乎沒出現** — 跳過的 4 題、失敗的 3 題都還落在「中等」區間, 教科書等級 (max flow / DP) 的題一題都沒碰到
 
-這篇換個抽樣法, 用上一輪新建的 [MCU CPE26 題目選集](../../../zerojudge/mcu-cpe26-problem-set.md) 當 index — 這 56 題是 MCU 為 2027 起 CPE 檢定分 14 個主題各 4 題挑的題庫, **主題覆蓋面是現成的**. 做法:
+這篇換個抽樣法, 用 [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) 當 index — 這 56 題是 MCU 為 2027 起 CPE 檢定分 14 個主題各 4 題挑的題庫, **主題覆蓋面是現成的**. 做法:
 
 - **每主題挑 1 題** → 14 題覆蓋 CPE26 的全部主題分類
-- **外加 5 題「CPE26 不收但更難」的題** → 補 NSYSU ★★★ 以上、CPE26 選集沒有的方向 (DP、max flow、樹)
+- **外加 5 題: 刻意從 NSYSU ★ 到 ★★★★★ 各挑一題** → 看難度階梯對解題成功率跟手感的影響
 
 共 **19 題**, 全部已存到 [`zerojudge/selected/`](../../../zerojudge/selected/README.md) 一題一檔.
 
@@ -59,7 +60,7 @@ Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:
 | CPE26 主題 | ZeroJudge | UVa | 題名 | NSYSU |
 |:---|:---|---:|:---|:---|
 | 輸入格式 | [c007](https://zerojudge.tw/ShowProblem?problemid=c007) | 272 | TeX Quotes | ★ |
-| 字串字元 | [e208](https://zerojudge.tw/ShowProblem?problemid=e208) | — | Run-length Decoding (ZJ 原生) | — |
+| 字串字元 | [e208](https://zerojudge.tw/ShowProblem?problemid=e208) | 11541 | Decoding (Run-length) | ★ |
 | 日期時間 | [j056](https://zerojudge.tw/ShowProblem?problemid=j056) | 11650 | Mirror Clock | ★ |
 | 算子運算 | [a518](https://zerojudge.tw/ShowProblem?problemid=a518) | 12468 | Zapping | ★ |
 | 質因倍數 | [d120](https://zerojudge.tw/ShowProblem?problemid=d120) | 10699 | Count the factors | ★ |
@@ -73,17 +74,19 @@ Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:
 | 集合映對 | [e706](https://zerojudge.tw/ShowProblem?problemid=e706) | 12820 | Cool Word | ★ |
 | 堆疊佇列 | [e155](https://zerojudge.tw/ShowProblem?problemid=e155) | 10935 | Throwing Cards Away | ★ |
 
-### 5 題「CPE26 不收但更有鑑別度」的硬菜
+### 5 題: NSYSU ★ 到 ★★★★★ 各一題做難度對照
 
-| ZeroJudge | UVa | 題名 | NSYSU | 補的方向 |
+另外 5 題不是為了覆蓋主題, 是**刻意從 NSYSU 1 星到 5 星各挑一題**, 看難度階梯對 AI 解題成功率跟手感的影響:
+
+| ZeroJudge | UVa | 題名 | NSYSU | 題型 |
 |:---|---:|:---|:---|:---|
-| [d760](https://zerojudge.tw/ShowProblem?problemid=d760) | 10330 | Power Transmission | ★★★★★ | 節點容量 max flow |
-| [d397](https://zerojudge.tw/ShowProblem?problemid=d397) | 147 | Dollars 找零方法數 | ★★★★ | DP |
+| [a536](https://zerojudge.tw/ShowProblem?problemid=a536) | 11689 | 收集空瓶換汽水 | ★ | 規則模擬 |
+| [e592](https://zerojudge.tw/ShowProblem?problemid=e592) | 10142 | Australian Voting | ★★ | 多輪淘汰模擬 |
 | [c101](https://zerojudge.tw/ShowProblem?problemid=c101) | 122 | Trees on the level | ★★★ | 二元樹建構 + BFS |
-| [a536](https://zerojudge.tw/ShowProblem?problemid=a536) | 11689 | 收集空瓶換汽水 | ★ | 多一題規則模擬當對照 |
-| [e592](https://zerojudge.tw/ShowProblem?problemid=e592) | 10142 | Australian Voting | ★★ | 多輪淘汰的規則模擬 |
+| [d397](https://zerojudge.tw/ShowProblem?problemid=d397) | 147 | Dollars 找零方法數 | ★★★★ | DP |
+| [d760](https://zerojudge.tw/ShowProblem?problemid=d760) | 10330 | Power Transmission | ★★★★★ | 節點容量 max flow |
 
-**難度分佈**: NSYSU 評分的 15 題裡 ★ 10 題 / ★★ 2 題 / ★★★ 1 題 / ★★★★ 1 題 / ★★★★★ 1 題; 另外 4 題 NSYSU 沒收 (2023+ 新題或 ZJ 原生題).
+**難度分佈**: NSYSU 評分的 16 題裡 ★ 11 題 / ★★ 2 題 / ★★★ 1 題 / ★★★★ 1 題 / ★★★★★ 1 題; 另外 3 題 NSYSU 沒收 (皆 2023+ 新題).
 
 送題規則跟 Day 22 完全一樣: 本機 g++ 跑樣例 → Playwright MCP 送判題 → **單次送出, 不重試**.
 
@@ -132,20 +135,21 @@ AI 用 map 存節點 + 旗標偵測重複/缺漏, 一次 AC.
 
 ## 不是一次過的: 舊帳救回來 — Multi-Round AC
 
-單輪送出的 pass rate 低估 ceiling. 開「WA/TLE/MLE 訊息餵回去」或「人提示一句」的二輪 loop, 多題能爬回來. 分兩種救援型態 — **正確性類** (邏輯 / 邊界 / 判題模型錯) 跟 **效能約束類** (時間 / 記憶體超限).
+單輪送出的 pass rate 低估 ceiling. 把規則從「單次送出就記錄」放寬成「允許多輪」, 其他完全不變 — **一樣是 agent 自己送、自己讀 verdict、自己改、再送**, 我只指定題目, 沒餵訊息、沒提示方向. 多題就能爬回來.
 
-### A. 正確性類: 邏輯 / 邊界 / 判題模型 (基礎 + 競賽題庫)
+分兩種救援型態 — **正確性類** (邏輯 / 邊界 / 範圍條件錯) 跟 **效能約束類** (時間 / 記憶體超限).
 
-| 題號 | 當時 | 幾輪 AC | 關鍵 fix |
-|:---|:---|:---|:---|
-| [a095](https://zerojudge.tw/ShowProblem?problemid=a095) 麥哲倫的陰謀 | Day 22 NA 50% | **2 輪** | special-case `M == N` (全紅帽無白帽) |
-| [a215](https://zerojudge.tw/ShowProblem?problemid=a215) 明明愛數數 | Day 22 WA line 7 | **2 輪** | n/m 可為負數 + `__int128` 防 overflow |
-| [c500](https://zerojudge.tw/ShowProblem?problemid=c500) AEWE-645 的傷害 | Day 22 NA 0% | **3 輪 (靠作者解題報告)** | 判題模型跟物理最佳解不同 |
-| [b590](https://zerojudge.tw/ShowProblem?problemid=b590) 單位分數分解 | Day 22 原本跳過 | **1 次重試** | DFS 搜尋 + 剪枝框架 |
+### A. 正確性類: 邏輯 / 邊界 / 範圍 (基礎題庫)
+
+| 題號 | 當時 | 關鍵 fix |
+|:---|:---|:---|
+| [a095](https://zerojudge.tw/ShowProblem?problemid=a095) 麥哲倫的陰謀 | Day 22 NA 50% | special-case `M == N` (全紅帽無白帽) |
+| [a215](https://zerojudge.tw/ShowProblem?problemid=a215) 明明愛數數 | Day 22 WA line 7 | n/m 可為負數 + `__int128` 防 overflow |
+| [b590](https://zerojudge.tw/ShowProblem?problemid=b590) 單位分數分解 | Day 22 原本跳過 | 允許多輪後, agent 改用 DFS + 剪枝重寫 |
 
 ### B. 效能約束類: TLE / MLE (ORIGINAL 題庫校內原創題)
 
-這幾題一開始**邏輯都對、樣例也過**, 但判題直接甩 **TLE** 或 **MLE** — 效能約束是另一種「公開樣例看不見」的盲區. 救援的方式不是改邏輯, 是**換資料結構 / 換演算法 / 換 IO**.
+這幾題一開始**邏輯都對、樣例也過**, 但判題直接甩 **TLE** 或 **MLE** — 效能約束是另一種「公開樣例看不見」的盲區. 救援的方式不是改邏輯, 是**換資料結構 / 換演算法 / 換 IO**. 跟 A 類一樣, 多輪完全是 agent 自己送判題、讀 TLE/MLE 訊息、自己 refactor.
 
 | 題號 | 當時 | 關鍵 fix | 加速 |
 |:---|:---|:---|:---|
@@ -153,50 +157,42 @@ AI 用 map 存節點 + 旗標偵測重複/缺漏, 一次 AC.
 | [s794](https://zerojudge.tw/ShowProblem?problemid=s794) 1A2B | TLE | 關鍵觀察: 猜測各 (A,B) 桶的大小**只取決於數字重數結構**, 用小查表 O(1) 查, 只對「最小桶」的提示建完整 bucket | 單輪 O(N²) → O(表) |
 | [s796](https://zerojudge.tw/ShowProblem?problemid=s796) 蜂蜜工廠 | TLE | Matroid 貪心 + **線段樹** 加速區間可達查詢, 鏈式左移/右移快路徑先試, Kuhn's 二分圖匹配當 fallback | 多個 O(N²) 操作各降 log 階 |
 
-這 3 題都是**本機樣例看不出來, 送判題才知道效能不夠**. 判題在這裡扮演兩個角色: (1) 給出 TLE/MLE 的明確信號 (2) 強制 AI 跳出「樣例過了就以為對」的錯覺.
+這 3 題都是**本機樣例看不出來, 送判題才知道效能不夠**. 判題在這裡扮演兩個角色: (1) 給出 TLE/MLE 的明確信號 (2) 強制 agent 跳出「樣例過了就以為對」的錯覺.
 
 ### 共通點: 判准的真正價值是「失敗時給具體 signal」
 
 兩種救援合起來看, pattern 一致:
 
-- **樣例全綠不代表對** — 可能是邊界沒蓋到 (a095)、資料範圍漏讀 (a215)、判題模型不同 (c500)、效能不夠 (s142/s794/s796)
-- **單輪送出的 pass rate 低估 ceiling** — 一個「WA/TLE/MLE + 錯誤訊息」丟回 AI, 它多半能自己改; 真的卡住的 (c500, b590) 一句方向性提示就救回來
-- **判准不是只分「過 / 不過」**, 是**失敗時給具體 signal 讓 AI 自己爬** — 這才是 OJ 這類 oracle 真正有價值的地方
+- **樣例全綠不代表對** — 可能是邊界沒蓋到 (a095)、範圍條件漏讀 (a215)、放棄太早 (b590)、效能不夠 (s142/s794/s796)
+- **單輪送出的 pass rate 低估 ceiling** — 只是把規則從「一次就定生死」改成「允許多輪」, agent 自己讀 WA/TLE/MLE 訊息就能爬回來, 不需要人提示
+- **判准不是只分「過 / 不過」**, 是**失敗時給具體 signal 讓 agent 自己 refactor** — 這才是 OJ 這類 oracle 真正有價值的地方
 
 ### 救援後的總帳
 
 | 範圍 | AC 數 | AC 率 |
 |:---|---:|---:|
 | Day 22 單次送出 (78 題) | 75 / 78 | 96.2% |
-| Day 22 + A 類二輪救援 | 78 / 78 | 100% |
-| 加 ORIGINAL B 類效能救援 (s142/s794/s796) | 全部 AC | 100% |
+| Day 22 + A 類二輪救援 (a095 / a215 / b590) | 77 / 78 | 98.7% (剩 c500) |
+| 加 ORIGINAL B 類效能救援 (s142 / s794 / s796) | 全部 AC | 100% |
 | 加 Day 23 新 19 題 | 全部 AC | 100% |
+
+> [!NOTE]
+> c500 不列入「AI 救援」, 因為那題是我偷看作者解題報告才解開的, 嚴格說不算 AI 自己搞定.
 
 ### a095 — 邊界條件被忽略
 
-Day 22 的解法沒處理 `M == N` (全部都是紅帽) 這個 edge case. 把 WA 訊息給 AI 看, 它馬上發現「如果沒有白帽就不用等那一天」, 修正為 `(M == N ? M : M+1)` 一次 AC. 這類 **"主邏輯對, 邊界錯"** 的 WA, 開二輪 loop 最好修.
+Day 22 的解法沒處理 `M == N` (全部都是紅帽) 這個 edge case. 允許多輪後, agent 從 NA 50% 的訊息自己回推, 修成 `(M == N ? M : M+1)` AC. **主邏輯對、邊界錯**的 WA, 開二輪 loop 最好修.
 
 ### a215 — 題目條件被忽略 + 數值 overflow
 
-兩個獨立問題疊在一起: (1) 題目說 n, m 可以是負數, 但 AI 一開始的 while 條件沒處理「`n > m` 時至少數一個」(2) 累加可能 overflow long long. 把 WA 訊息 + 「仔細看範圍條件」一句提示給它, 第二輪就改成 `do-while` + `__int128`, AC.
-
-### c500 — 判題模型跟物理最佳解不一樣 (3 輪才通)
-
-這題是整系列最有啟發的一題. **公開範例全綠, 判題 NA 0%**, 樣例都測不出差.
-
-坑在**判題用的模型跟物理最佳解不是同一個**:
-- 題目描述讓人以為滑鼠位置是「用物理 argmin 算」的最壞分佈
-- 但判題腳本實際上是**「從第 1 格起每 f 格放一隻」固定模型** (位置 1, 1+f, 1+2f...), 位置 ≤ m 的免計傷害 (包含剛好落在 m 的也算 0)
-- 兩個做法**只在 `m ≡ 1 (mod f)` 時結果不同**, 兩組公開範例剛好都不滿足這條件, 所以本機怎麼測都綠
-
-AI 自己撞牆兩輪都在改實作沒用. 第三輪我把**作者的解題報告貼進 context**, 它立刻看出來「原來判題用這個模型」, 修 `⌊(m-1)/f⌋+1` 當左側數量, AC.
-
-> [!IMPORTANT]
-> 這題的教訓: **公開範例全綠 + WA, 要先懷疑「對判題模型的理解」而不是實作**. AI 自己 brute 對拍只會「跟自己同一個錯誤模型」互相證明對 — 需要一個**獨立來源** (作者解題報告 / 題目來源的 reference solution) 才能跳出同溫層. 這呼應 [Day 21 「綠燈不等於對」](https://ithelp.ithome.com.tw/articles/10421407) — 強的 oracle 也會有盲區, 當盲區剛好蓋住公開樣例, 自測就無效了.
+兩個獨立問題疊在一起: (1) 題目說 n, m 可以是負數, agent 一開始的 while 條件沒處理「`n > m` 時至少數一個」; (2) 累加可能 overflow long long. 多輪後 agent 自己讀 WA line:7 的訊息, 回頭檢查題目範圍條件, 改成 `do-while` + `__int128` AC.
 
 ### b590 — Day 22 原本放棄的題
 
-Day 22 AI 自己讀題後說「樣例對不上, 解題模型未定」就跳過了. 事後我讀題意後給 AI 一個明確的「用 DFS 分母非遞減」提示, 它立刻寫出來一次 AC. **一個「原本放棄」的題, 一句話的方向就能救回**.
+Day 22 agent 自己讀題後說「樣例對不上, 解題模型未定」就跳過了. 允許多輪後它重新讀題, 改以 **DFS 枚舉分母 + 剪枝** 的做法重寫, AC.
+
+> [!NOTE]
+> **c500 (AEWE-645 的傷害)** 這題也是 Day 22 卡住的題, 後來補 AC, 但**我偷看了作者解題報告**才搞懂判題用的分佈模型跟物理最佳解不同 (坑在這條判題規則公開樣例都測不出差). 嚴格說這題**不算 AI 自己解的**, 所以不計入上表. 詳細 writeup 另外放在 [contest/README.md](../../../zerojudge/contest/README.md). 教訓倒是通用的: **強 oracle 也有盲區, 當盲區剛好蓋住公開樣例時, 自測全綠也會 WA** — 這呼應 [Day 21 「綠燈不等於對」](https://ithelp.ithome.com.tw/articles/10421407).
 
 ### 救援後的總帳
 
@@ -228,7 +224,7 @@ Day 22 AI 自己讀題後說「樣例對不上, 解題模型未定」就跳過�
 - [Day 21: 回到好驗證的主場](https://ithelp.ithome.com.tw/articles/10421407) — 判准概念鋪陳
 - [Day 22: 掃 ZeroJudge 78 題](https://ithelp.ithome.com.tw/articles/10421768) — 規模化 pass rate
 - [ZeroJudge selected/ 19 題解答](../../../zerojudge/selected/README.md) — 本篇全部 cpp 原始碼
-- [MCU CPE26 題目選集](../../../zerojudge/mcu-cpe26-problem-set.md) — 本篇按主題選題的 index
+- [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) — 本篇按主題選題的 index
 - [NSYSU 進階程式設計 UVa 星等](../../../zerojudge/nsysu-uva-ratings.md) — 難度標籤來源
 - [ZeroJudge 競賽題庫 (含 c500 補 AC 筆記)](../../../zerojudge/contest/README.md) — c500 判題模型案例詳細 writeup
 - [ZeroJudge](https://zerojudge.tw/) — 線上解題
