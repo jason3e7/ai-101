@@ -37,7 +37,7 @@
 | [a147](https://zerojudge.tw/ShowProblem?problemid=a147) | Print it all | CPP | AC |
 | [a148](https://zerojudge.tw/ShowProblem?problemid=a148) | You Cannot Pass?! | CPP | AC |
 | [a149](https://zerojudge.tw/ShowProblem?problemid=a149) | 乘乘樂 | CPP | AC |
-| [a215](https://zerojudge.tw/ShowProblem?problemid=a215) | 明明愛數數 | CPP | WA line:7 (待修) |
+| [a215](https://zerojudge.tw/ShowProblem?problemid=a215) | 明明愛數數 | CPP | AC |
 | [a216](https://zerojudge.tw/ShowProblem?problemid=a216) | 數數愛明明 | CPP | AC |
 | [a224](https://zerojudge.tw/ShowProblem?problemid=a224) | 明明愛明明 | CPP | AC |
 | [a225](https://zerojudge.tw/ShowProblem?problemid=a225) | 明明愛排列 | CPP | AC |
