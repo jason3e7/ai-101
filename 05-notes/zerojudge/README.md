@@ -24,3 +24,4 @@
 - [批次上傳 67 題遇到的坑與解法](batch-upload-lessons.md) — 一次送大量題目時的瀏覽器自動化經驗（登入狀態、送出冷卻、判題結果對齊）
 - [幸運貓 UVa 選題 (KSHS, 2007–2010)](luckycat-uva-selection.md) — 高雄高中早年維護的 UVa 選題頁, archive.org 快照留存 32 題 (難度 ★ + tag + 提示), 可當下一輪 UVa 的題庫來源
 - [中山資工 UVa 星等評分 (NSYSU, 1065 題)](nsysu-uva-ratings.md) — NSYSU 進階程式設計的覆蓋式評分, ★ 1–5 分級, 2011-2022 CPE 試題一併收入; raw 資料在 [nsysu-uva-ratings.csv](nsysu-uva-ratings.csv)
+- [MCU CPE26 題目選集 (56 題)](mcu-cpe26-problem-set.md) — 銘傳大學主辦的 CPE 檢定 2027 起官方題庫, 14 主題 x 4 題, 已跟 NSYSU 評分對照 (分佈偏易: ★ 25 / ★★ 12 / ★★★ 1)
