@@ -28,11 +28,9 @@ status: draft
   * 10330 Max Flow 拆點
   * 147 Dollars DP
   * 122 Tree 建構
-* 多輪 AC 救回 (舊帳 4 題)
-  * a095 edge case
-  * a215 負數 + overflow
-  * c500 判題模型不同
-  * b590 原本放棄
+* 多輪 AC 救回 (舊帳)
+  * A 類: 正確性 (a095 / a215 / c500 / b590)
+  * B 類: 效能 (s142 MLE, s794 TLE, s796 TLE)
 * 收斂
 ```
 
@@ -132,16 +130,47 @@ AI 用 map 存節點 + 旗標偵測重複/缺漏, 一次 AC.
 
 ---
 
-## 不是一次過的: 4 題舊帳怎麼救回來 — Multi-Round AC
+## 不是一次過的: 舊帳救回來 — Multi-Round AC
 
-Day 22 單輪送出留下 3 題 WA (a095 / a215 / c500) + 4 題跳過; 後來開了「WA 訊息餵回去、或人提示一下」的二輪 loop, **其中 4 題成功 AC**. 這段把 Day 22 的 96.2% 低估的 ceiling 補回來.
+單輪送出的 pass rate 低估 ceiling. 開「WA/TLE/MLE 訊息餵回去」或「人提示一句」的二輪 loop, 多題能爬回來. 分兩種救援型態 — **正確性類** (邏輯 / 邊界 / 判題模型錯) 跟 **效能約束類** (時間 / 記憶體超限).
 
-| 題號 | Day 22 當時 | 幾輪 AC | 關鍵 fix |
+### A. 正確性類: 邏輯 / 邊界 / 判題模型 (基礎 + 競賽題庫)
+
+| 題號 | 當時 | 幾輪 AC | 關鍵 fix |
 |:---|:---|:---|:---|
-| [a095](https://zerojudge.tw/ShowProblem?problemid=a095) 麥哲倫的陰謀 | NA 50% | **2 輪** | special-case `M == N` (全紅帽無白帽) |
-| [a215](https://zerojudge.tw/ShowProblem?problemid=a215) 明明愛數數 | WA line 7 | **2 輪** | n/m 可為負數 + `__int128` 防 overflow |
-| [c500](https://zerojudge.tw/ShowProblem?problemid=c500) AEWE-645 的傷害 | NA 0% | **3 輪 (靠作者解題報告)** | 判題模型跟物理最佳解不同 |
-| [b590](https://zerojudge.tw/ShowProblem?problemid=b590) 單位分數分解 | 原本跳過 | **1 次重試** | DFS 搜尋 + 剪枝框架 |
+| [a095](https://zerojudge.tw/ShowProblem?problemid=a095) 麥哲倫的陰謀 | Day 22 NA 50% | **2 輪** | special-case `M == N` (全紅帽無白帽) |
+| [a215](https://zerojudge.tw/ShowProblem?problemid=a215) 明明愛數數 | Day 22 WA line 7 | **2 輪** | n/m 可為負數 + `__int128` 防 overflow |
+| [c500](https://zerojudge.tw/ShowProblem?problemid=c500) AEWE-645 的傷害 | Day 22 NA 0% | **3 輪 (靠作者解題報告)** | 判題模型跟物理最佳解不同 |
+| [b590](https://zerojudge.tw/ShowProblem?problemid=b590) 單位分數分解 | Day 22 原本跳過 | **1 次重試** | DFS 搜尋 + 剪枝框架 |
+
+### B. 效能約束類: TLE / MLE (ORIGINAL 題庫校內原創題)
+
+這幾題一開始**邏輯都對、樣例也過**, 但判題直接甩 **TLE** 或 **MLE** — 效能約束是另一種「公開樣例看不見」的盲區. 救援的方式不是改邏輯, 是**換資料結構 / 換演算法 / 換 IO**.
+
+| 題號 | 當時 | 關鍵 fix | 加速 |
+|:---|:---|:---|:---|
+| [s142](https://zerojudge.tw/ShowProblem?problemid=s142) 最大正方形 | MLE (10MB 限制) | 2D dp → **滾動 1D dp**, 邊讀邊算, 不存整個矩陣 | 空間 O(nm) → O(m) |
+| [s794](https://zerojudge.tw/ShowProblem?problemid=s794) 1A2B | TLE | 關鍵觀察: 猜測各 (A,B) 桶的大小**只取決於數字重數結構**, 用小查表 O(1) 查, 只對「最小桶」的提示建完整 bucket | 單輪 O(N²) → O(表) |
+| [s796](https://zerojudge.tw/ShowProblem?problemid=s796) 蜂蜜工廠 | TLE | Matroid 貪心 + **線段樹** 加速區間可達查詢, 鏈式左移/右移快路徑先試, Kuhn's 二分圖匹配當 fallback | 多個 O(N²) 操作各降 log 階 |
+
+這 3 題都是**本機樣例看不出來, 送判題才知道效能不夠**. 判題在這裡扮演兩個角色: (1) 給出 TLE/MLE 的明確信號 (2) 強制 AI 跳出「樣例過了就以為對」的錯覺.
+
+### 共通點: 判准的真正價值是「失敗時給具體 signal」
+
+兩種救援合起來看, pattern 一致:
+
+- **樣例全綠不代表對** — 可能是邊界沒蓋到 (a095)、資料範圍漏讀 (a215)、判題模型不同 (c500)、效能不夠 (s142/s794/s796)
+- **單輪送出的 pass rate 低估 ceiling** — 一個「WA/TLE/MLE + 錯誤訊息」丟回 AI, 它多半能自己改; 真的卡住的 (c500, b590) 一句方向性提示就救回來
+- **判准不是只分「過 / 不過」**, 是**失敗時給具體 signal 讓 AI 自己爬** — 這才是 OJ 這類 oracle 真正有價值的地方
+
+### 救援後的總帳
+
+| 範圍 | AC 數 | AC 率 |
+|:---|---:|---:|
+| Day 22 單次送出 (78 題) | 75 / 78 | 96.2% |
+| Day 22 + A 類二輪救援 | 78 / 78 | 100% |
+| 加 ORIGINAL B 類效能救援 (s142/s794/s796) | 全部 AC | 100% |
+| 加 Day 23 新 19 題 | 全部 AC | 100% |
 
 ### a095 — 邊界條件被忽略
 
@@ -187,7 +216,8 @@ Day 22 AI 自己讀題後說「樣例對不上, 解題模型未定」就跳過�
 
 - **AI ceiling 在「有 oracle + 題型經典」場很高**: 五星 max flow 拆點 + 四星找零 DP 一次 AC, 不是運氣
 - **ceiling 強烈依賴 pattern density**: ZeroJudge 多數題在訓練資料出現過, pass rate 看起來特別好看. 換成沒 pattern 的新題, 這個 ceiling 會塌多少, 這系列到此還沒碰
-- **單輪 pass rate 低估 ceiling**: 開二輪 loop (WA 回饋) 把 Day 22 剩的 3 題全救回, 跳過的 4 題補 1. 判准最關鍵的不是「過或不過」, 是**失敗時提供具體 signal 讓 AI 自己改**
+- **單輪 pass rate 低估 ceiling**: 開二輪 loop (WA/TLE/MLE 回饋) 全部救回. 判准最關鍵的不是「過或不過」, 是**失敗時提供具體 signal 讓 AI 自己改**
+- **救援有兩種型態**: (A) 正確性 — 邊界 / 判題模型 / overflow, 一句 WA 訊息多半能救; (B) 效能 — TLE/MLE 的 oracle 盲區, 本機樣例完全看不出, 要靠判題給的 TLE/MLE 信號強制換演算法
 - **c500 的教訓**: 強 oracle 也有盲區. 當盲區蓋住公開樣例, 自測全綠也會 WA — 要獨立 reference 才跳得出來
 - **ZeroJudge 三部曲到此收尾**: Day 21 (概念) → Day 22 (規模) → Day 23 (深度 + 救援). 下一輪離開 OJ, 看判准難建的場怎麼辦
 
