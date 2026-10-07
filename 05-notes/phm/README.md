@@ -15,10 +15,10 @@
 | Pwn | 24 | 0 | 0 |
 | Reversing | 17 | 0 | 0 |
 | Crypto | 16 | 0 | 0 |
-| Forensic | 2 | 0 | 0 |
+| Forensic | 2 | 2 | 120 |
 | Programming | 1 | 0 | 0 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **2** | **120** |
+| **合計** | **101** | **4** | **240** |
 
 ## 已解題目 — Solved
 
@@ -26,6 +26,8 @@
 |:---|:---|---:|:---|
 | Misc | flag | 10 | [misc/flag.md](misc/flag.md) |
 | Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
+| Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
+| Forensic | this is a pen | 80 | [forensic/this-is-a-pen.md](forensic/this-is-a-pen.md) |
 
 ## 送 flag 流程 — Flag Submission
 
