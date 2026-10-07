@@ -13,6 +13,7 @@
 | [uva/](uva/README.md) | UVa 題庫 (第 1 頁) | 20 題全 AC |
 | [toi/](toi/README.md) | TOI 題庫 (第 1 頁) | 11 題全 AC、9 跳過 |
 | [original/](original/README.md) | ORIGINAL 題庫 (第 1 頁) | 11 AC、9 跳過 |
+| [selected/](selected/README.md) | 自選練習 (跨題庫) | 19 題全 AC |
 
 每個資料夾一個 `README.md` 作該題庫的解題對照表（題號、題名、語言、判題結果）。
 

@@ -19,6 +19,12 @@
 | [d379](https://zerojudge.tw/ShowProblem?problemid=d379) | Hex 相加減→二/十進位 (UVa 446) | CPP | AC |
 | [c015](https://zerojudge.tw/ShowProblem?problemid=c015) | Reverse and Add (UVa 10018) | CPP | AC |
 | [e605](https://zerojudge.tw/ShowProblem?problemid=e605) | Minesweeper (UVa 10189) | CPP | AC |
+| [d094](https://zerojudge.tw/ShowProblem?problemid=d094) | Point in Figures (UVa 478) | CPP | AC |
+| [d096](https://zerojudge.tw/ShowProblem?problemid=d096) | Joana and the Odd Numbers (UVa 913) | CPP | AC |
+| [c061](https://zerojudge.tw/ShowProblem?problemid=c061) | Binomial C(n,m) (UVa 530) | CPP | AC |
+| [a539](https://zerojudge.tw/ShowProblem?problemid=a539) | Bubble Sort 交換次數=逆序數 (UVa 10327) | CPP | AC |
+| [e706](https://zerojudge.tw/ShowProblem?problemid=e706) | Cool Word | CPP | AC |
+| [e155](https://zerojudge.tw/ShowProblem?problemid=e155) | Throwing Cards Away (UVa 10935) | CPP | AC |
 
 編譯與測試:
 
