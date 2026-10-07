@@ -118,6 +118,49 @@ https://zerojudge.tw/ShowProblem?problemid=u<題號>
 
 ---
 
+## 跟 NSYSU 評分對照 — Cross-Reference with NSYSU Ratings
+
+把這 32 題跟 [NSYSU 1065 題清單](nsysu-uva-ratings.md) 做交集, **16 題** 兩邊都有評分 (剛好幸運貓的一半). 下表照 NSYSU 評分排序 (覆蓋更廣, 當 primary), 括號列出兩邊的分歧:
+
+| NSYSU | 幸運貓 | 題號 | 題名 | 一致? |
+|:---|:---|---:|:---|:---|
+| ★ | ★ | 11661 | Burger Time | ✅ |
+| ★ | ★ | 11689 | Soda Surpler | ✅ |
+| ★ | ★★ | 10469 | To Carry or not to Carry | NSYSU 認為更簡單 |
+| ★★ | ★★ | 10142 | Australian Voting | ✅ |
+| ★★ | ★★ | 10625 | GNU = GNU's Not Unix | ✅ |
+| ★★ | ★★★ | 10858 | Unique Factorization | NSYSU 認為更簡單 |
+| ★★★ | ★★★★ | 908 | Re-connecting Computer Sites | NSYSU 認為更簡單 |
+| ★★★ | ★★★ | 10342 | Always Late | ✅ |
+| ★★★ | ★★★ | 11084 | Anagram Division | ✅ |
+| ★★★★ | ★★★ | 166 | Making Change | NSYSU 認為更難 |
+| ★★★★ | ★★★★ | 10253 | Series-Parallel Networks | ✅ |
+| ★★★★ | ★★★ | 10254 | The Priest Mathematician | NSYSU 認為更難 |
+| ★★★★ | ★★★ | 10627 | Infinite Race | NSYSU 認為更難 |
+| ★★★★ | ★★★★ | 11023 | Multisets and Sequences | ✅ |
+| ★★★★ | ★★★ | 11085 | Back to the 8-Queens | NSYSU 認為更難 |
+| ★★★★★ | ★★★ | 11081 | Strings | NSYSU 認為難非常多 |
+
+**觀察**:
+
+- **16/32 落在交集** (50%), 幸運貓另一半 NSYSU 沒收 (多是 2007 以前更早的 UVa 題)
+- **8 題兩邊完全一致**, 8 題有 1 顆星差距; 最大落差是 **11081 Strings** (NSYSU ★★★★★ vs 幸運貓 ★★★, 差 2 顆星)
+- 幸運貓唯一的 ★★★★★ (10829 L-Gap Substrings) **NSYSU 沒收**, 所以交集裡找不到兩邊都 5 ★的題
+
+### 每星級候選 — Candidates per Star
+
+挑「每星級一題, 兩邊都評過」(以 NSYSU 計) 的候選池:
+
+| 星級 (NSYSU) | 候選題 | 備註 |
+|:---|:---|:---|
+| ★ | 11661 Burger Time · 11689 Soda Surpler · 10469 To Carry or not to Carry | 前兩題雙方皆評 ★, 共識最強 |
+| ★★ | 10142 Australian Voting · 10625 GNU=GNU's Not Unix · 10858 Unique Factorization | 前兩題雙方皆評 ★★ |
+| ★★★ | 908 Re-connecting Computer Sites · 10342 Always Late · 11084 Anagram Division | 10342 / 11084 雙方皆評 ★★★ |
+| ★★★★ | 166 · 10253 · 10254 · 10627 · 11023 · 11085 | 10253 / 11023 雙方皆評 ★★★★ |
+| ★★★★★ | **11081 Strings** (唯一) | 只有這題被 NSYSU 評到 ★★★★★ 又同時在幸運貓裡; 幸運貓評 ★★★, NSYSU 評 ★★★★★ |
+
+---
+
 ## Sources
 
 - [幸運貓 UVa 選題 (archive.org 2011-02-24 快照)](https://web.archive.org/web/20110224190331/http://luckycat.kshs.kh.edu.tw/select.asp) — 本文題單的原始來源
