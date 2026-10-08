@@ -14,11 +14,20 @@
 | [3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Longest Substring Without Repeating Characters | Med | AC |
 | [5](https://leetcode.com/problems/longest-palindromic-substring/) | Longest Palindromic Substring | Med | AC |
 | [11](https://leetcode.com/problems/container-with-most-water/) | Container With Most Water | Med | AC |
+| [15](https://leetcode.com/problems/3sum/) | 3Sum | Med | AC |
+| [19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Remove Nth Node From End of List | Med | AC |
+| [20](https://leetcode.com/problems/valid-parentheses/) | Valid Parentheses | Easy | AC |
+| [21](https://leetcode.com/problems/merge-two-sorted-lists/) | Merge Two Sorted Lists | Easy | AC |
+| [23](https://leetcode.com/problems/merge-k-sorted-lists/) | Merge k Sorted Lists | Hard | AC |
 | [128](https://leetcode.com/problems/longest-consecutive-sequence/) | Longest Consecutive Sequence | Med | AC |
 | [133](https://leetcode.com/problems/clone-graph/) | Clone Graph | Med | AC |
+| [139](https://leetcode.com/problems/word-break/) | Word Break | Med | AC |
+| [141](https://leetcode.com/problems/linked-list-cycle/) | Linked List Cycle | Easy | AC |
+| [143](https://leetcode.com/problems/reorder-list/) | Reorder List | Med | AC |
+| [268](https://leetcode.com/problems/missing-number/) | Missing Number | Easy | AC |
 | [647](https://leetcode.com/problems/palindromic-substrings/) | Palindromic Substrings | Med | AC |
 
-**進度**: 7 / 75
+**進度**: 16 / 75
 
 編譯與本機測試:
 
