@@ -21,6 +21,14 @@
 | [23](https://leetcode.com/problems/merge-k-sorted-lists/) | Merge k Sorted Lists | Hard | AC |
 | [33](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Search in Rotated Sorted Array | Med | AC |
 | [39](https://leetcode.com/problems/combination-sum/) | Combination Sum | Med | AC |
+| [48](https://leetcode.com/problems/rotate-image/) | Rotate Image | Med | AC |
+| [49](https://leetcode.com/problems/group-anagrams/) | Group Anagrams | Med | AC |
+| [53](https://leetcode.com/problems/maximum-subarray/) | Maximum Subarray | Med | AC |
+| [54](https://leetcode.com/problems/spiral-matrix/) | Spiral Matrix | Med | AC |
+| [55](https://leetcode.com/problems/jump-game/) | Jump Game | Med | AC |
+| [56](https://leetcode.com/problems/merge-intervals/) | Merge Intervals | Med | AC |
+| [57](https://leetcode.com/problems/insert-interval/) | Insert Interval | Med | AC |
+| [62](https://leetcode.com/problems/unique-paths/) | Unique Paths | Med | AC |
 | [128](https://leetcode.com/problems/longest-consecutive-sequence/) | Longest Consecutive Sequence | Med | AC |
 | [133](https://leetcode.com/problems/clone-graph/) | Clone Graph | Med | AC |
 | [139](https://leetcode.com/problems/word-break/) | Word Break | Med | AC |
@@ -31,11 +39,14 @@
 | [268](https://leetcode.com/problems/missing-number/) | Missing Number | Easy | AC |
 | [295](https://leetcode.com/problems/find-median-from-data-stream/) | Find Median from Data Stream | Hard | AC |
 | [297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Serialize and Deserialize Binary Tree | Hard | AC |
+| [300](https://leetcode.com/problems/longest-increasing-subsequence/) | Longest Increasing Subsequence | Med | AC |
 | [417](https://leetcode.com/problems/pacific-atlantic-water-flow/) | Pacific Atlantic Water Flow | Med | AC |
 | [424](https://leetcode.com/problems/longest-repeating-character-replacement/) | Longest Repeating Character Replacement | Med | AC |
+| [435](https://leetcode.com/problems/non-overlapping-intervals/) | Non-overlapping Intervals | Med | AC |
+| [572](https://leetcode.com/problems/subtree-of-another-tree/) | Subtree of Another Tree | Easy | AC |
 | [647](https://leetcode.com/problems/palindromic-substrings/) | Palindromic Substrings | Med | AC |
 
-**進度**: 24 / 75
+**進度**: 32 / 75
 
 編譯與本機測試:
 
