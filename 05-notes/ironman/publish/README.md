@@ -79,3 +79,5 @@ iThome 編輯器採 Markdown 並明示「請勿使用 HTML Code」，而且**不
 | 20 | <https://ithelp.ithome.com.tw/articles/10420569> |
 | 21 | <https://ithelp.ithome.com.tw/articles/10421407> |
 | 22 | <https://ithelp.ithome.com.tw/articles/10421768> |
+| 23 | <https://ithelp.ithome.com.tw/articles/10422105> |
+| 24 | <https://ithelp.ithome.com.tw/articles/10422485> |
