@@ -88,6 +88,30 @@
 
 **進度**: 69 / 75 AC + 6 題 PREMIUM 鎖住無法送判 (但 .cpp 寫在本地) = **75/75 寫完**
 
+## LeetCode-75 (官方 study plan) 進度
+
+LC-75 跟 Blind 75 有 **10 題重疊** (Container, Product, Reverse Linked List, Max Depth, House Robber, Unique Paths, LCS, Counting Bits, Trie, Non-overlapping Intervals), 其餘 65 題在補.
+
+### LC-75 新增 AC
+
+| 題號 | 題名 | 難度 | 結果 |
+|---:|:---|:---|:---|
+| [151](https://leetcode.com/problems/reverse-words-in-a-string/) | Reverse Words in a String | Med | AC |
+| [283](https://leetcode.com/problems/move-zeroes/) | Move Zeroes | Easy | AC |
+| [334](https://leetcode.com/problems/increasing-triplet-subsequence/) | Increasing Triplet Subsequence | Med | AC |
+| [345](https://leetcode.com/problems/reverse-vowels-of-a-string/) | Reverse Vowels of a String | Easy | AC |
+| [392](https://leetcode.com/problems/is-subsequence/) | Is Subsequence | Easy | AC |
+| [443](https://leetcode.com/problems/string-compression/) | String Compression | Med | AC |
+| [605](https://leetcode.com/problems/can-place-flowers/) | Can Place Flowers | Easy | AC |
+| [643](https://leetcode.com/problems/maximum-average-subarray-i/) | Maximum Average Subarray I | Easy | AC |
+| [1071](https://leetcode.com/problems/greatest-common-divisor-of-strings/) | Greatest Common Divisor of Strings | Easy | AC |
+| [1431](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/) | Kids With the Greatest Number of Candies | Easy | AC |
+| [1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | Maximum Number of Vowels in a Substring | Med | AC |
+| [1679](https://leetcode.com/problems/max-number-of-k-sum-pairs/) | Max Number of K-Sum Pairs | Med | AC |
+| [1768](https://leetcode.com/problems/merge-strings-alternately/) | Merge Strings Alternately | Easy | AC |
+
+**LC-75 進度**: 10 (重疊) + 13 (新 AC) = **23 / 75**
+
 編譯與本機測試:
 
 ```bash
