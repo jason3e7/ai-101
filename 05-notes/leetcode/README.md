@@ -109,8 +109,24 @@ LC-75 跟 Blind 75 有 **10 題重疊** (Container, Product, Reverse Linked List
 | [1456](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | Maximum Number of Vowels in a Substring | Med | AC |
 | [1679](https://leetcode.com/problems/max-number-of-k-sum-pairs/) | Max Number of K-Sum Pairs | Med | AC |
 | [1768](https://leetcode.com/problems/merge-strings-alternately/) | Merge Strings Alternately | Easy | AC |
+| [328](https://leetcode.com/problems/odd-even-linked-list/) | Odd Even Linked List | Med | AC |
+| [394](https://leetcode.com/problems/decode-string/) | Decode String | Med | AC |
+| [649](https://leetcode.com/problems/dota2-senate/) | Dota2 Senate | Med | AC |
+| [724](https://leetcode.com/problems/find-pivot-index/) | Find Pivot Index | Easy | AC |
+| [735](https://leetcode.com/problems/asteroid-collision/) | Asteroid Collision | Med | AC |
+| [933](https://leetcode.com/problems/number-of-recent-calls/) | Number of Recent Calls | Easy | AC |
+| [1004](https://leetcode.com/problems/max-consecutive-ones-iii/) | Max Consecutive Ones III | Med | AC |
+| [1207](https://leetcode.com/problems/unique-number-of-occurrences/) | Unique Number of Occurrences | Easy | AC |
+| [1493](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | Longest Subarray of 1s After Deleting One | Med | AC |
+| [1657](https://leetcode.com/problems/determine-if-two-strings-are-close/) | Determine if Two Strings Are Close | Med | AC |
+| [1732](https://leetcode.com/problems/find-the-highest-altitude/) | Find the Highest Altitude | Easy | AC |
+| [2095](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/) | Delete the Middle Node of a Linked List | Med | AC |
+| [2130](https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/) | Maximum Twin Sum of a Linked List | Med | AC |
+| [2215](https://leetcode.com/problems/find-the-difference-of-two-arrays/) | Find the Difference of Two Arrays | Easy | AC |
+| [2352](https://leetcode.com/problems/equal-row-and-column-pairs/) | Equal Row and Column Pairs | Med | AC |
+| [2390](https://leetcode.com/problems/removing-stars-from-a-string/) | Removing Stars From a String | Med | AC |
 
-**LC-75 進度**: 10 (重疊) + 13 (新 AC) = **23 / 75**
+**LC-75 進度**: 10 (重疊) + 29 (新 AC) = **39 / 75**
 
 編譯與本機測試:
 
