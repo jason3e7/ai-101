@@ -49,7 +49,7 @@ status: draft
 
 1. **覆蓋面廣** — 陣列 / 字串 / 連結串列 / 二叉樹 / 圖 / DP / 位元 / 堆 / Trie 都有, 八大類題型全覆蓋到
 2. **訓練資料裡的 pattern density 爆表** — 這 75 題在 StackOverflow / 教學部落格 / GitHub 題解 repo 出現過**無數次**, 幾乎是 LLM 刷題能力的「上限場」. 這裡的 pass rate 塌下來, 其他地方就不用期待了
-3. **題目分級剛好** — 15 Easy / 50 Med / 10 Hard 的分佈, 能一次測三個難度段
+3. **題目分級剛好** — 19 Easy / 49 Med / 7 Hard 的分佈, 能一次測三個難度段
 
 對照 Day 22-23 的 ZeroJudge, 兩邊都是 OJ 題, 差別在「英文題幹 + 美式演算法傳統」vs「中文題幹 + 台灣 OJ convention」, 中英文題庫的手感差異也能順便測一下.
 
@@ -156,7 +156,7 @@ document.querySelector('button[data-e2e-locator="console-submit-button"]').click
 
 ### 幾題 Hard 的手感
 
-Blind 75 有 10 題 Hard, 挑三題講:
+Blind 75 有 7 題 Hard (另 1 題 269 Alien Dictionary 鎖在 PREMIUM), 挑三題講:
 
 **#297 Serialize and Deserialize Binary Tree** — 需要設計自己的序列化格式. Claude 選 BFS + `#` 代表 null, 用逗號分隔. 分析完直接寫, 一次 AC. 這題在 StackOverflow / LeetCode 題解 repo 的解法極為一致, 幾乎變公版.
 
@@ -172,7 +172,7 @@ Hard 題幾乎沒有卡住的, pattern density 高到讓刷題變批量作業.
 
 **一、經典題 pattern 直出.** Two Sum / Valid Parentheses / Merge Two Sorted Lists 這類題, agent 從讀題到提交 AC 大約**半分鐘**. 連想都不太想 — 題幹讀完 pattern 就認出來了.
 
-**二、Hard 不卡.** 10 Hard 全部一次 AC, 沒有一題需要我介入. 這跟 [Day 23 的 ★★★★★ UVa 10330 max flow 一次 AC](./day23-zerojudge-cross-tier.md#uva-10330-power-transmission--節點容量-max-flow) 是同一件事: **AI 在 OJ 上強, 不是因為它會推理, 是因為題目剛好全在它的 pattern 範圍裡**.
+**二、Hard 不卡.** 6 題可送判題的 Hard (加鎖住的 Alien Dictionary 本地解共 7 題) 全部一次 AC, 沒有一題需要我介入. 這跟 [Day 23 的 ★★★★★ UVa 10330 max flow 一次 AC](./day23-zerojudge-cross-tier.md#uva-10330-power-transmission--節點容量-max-flow) 是同一件事: **AI 在 OJ 上強, 不是因為它會推理, 是因為題目剛好全在它的 pattern 範圍裡**.
 
 **三、批次吃掉 30 題不喘.** 整個 Blind 75, 從開始到 commit 到 repo, 大概兩個 session (約 3-4 小時). 一題平均 5-7 分鐘含送判題延遲. 比起我自己手刷快一個量級 — 不是因為我思考比較慢, 是「切頁面 → 讀題 → 寫 → 編 → 送 → 讀 verdict → 存檔 → 下一題」這個流程 agent 一次吃完, 中間沒 context switch 的 overhead.
 
@@ -195,7 +195,7 @@ Hard 題幾乎沒有卡住的, pattern density 高到讓刷題變批量作業.
 ## 我的收斂 — Takeaways
 
 - **Blind 75 不是測難度, 是測 pattern density 的上限**: 75 題全寫完 (69 AC + 6 PREMIUM 本地解), 加 LC-75 的 65 新題全 AC, 說到底就是「訓練資料裡出現幾千次的題目, LLM 幾乎零摩擦吃掉」. 這個結果**不代表** AI 真能推理, 只代表這批題剛好在它舒適圈裡
-- **Hard 不等於難**: Blind 75 的 10 Hard 全一次過, 因為它們全是教科書 pattern (BFS序列化 / 雙 heap / Trie 回收). 真正「難」的題不在 OJ 上, 在 Day 23 的 c500 那種「公開樣例剛好蓋住判題模型盲區」的情境裡
+- **Hard 不等於難**: Blind 75 的 7 Hard 全一次過, 因為它們全是教科書 pattern (BFS序列化 / 雙 heap / Trie 回收). 真正「難」的題不在 OJ 上, 在 Day 23 的 c500 那種「公開樣例剛好蓋住判題模型盲區」的情境裡
 - **判斷標準有無差很多**: 69 題有 LeetCode 判題, 全掛看得見; 6 題 PREMIUM 鎖住只能本地測, 本機綠不代表對 — [Day 21 的「綠燈不等於對」](./day21-back-to-verifiable-ground.md) 在這裡又驗證一次
 - **人在管基建, agent 在解題**: 登入 / session / 平台風控 / submit race 這些**跟題目無關的環境層**還是我的事. 這條分工在接下來的 Day 25 CTF 實戰會更明顯 — CTF 比 LeetCode 又多了「要主動找 attack surface」這一層
 - **ZeroJudge 到 LeetCode 的對照**: 中文 OJ / 英文 OJ, 兩邊 pass rate 都在 95% 以上. 這是**判斷標準明確 + 題型經典**兩個條件疊加的結果, 下一篇 (Day 25) 進 CTF, 判斷標準變成「拿到 flag」, 題型從沒看過, 看它還撐得住多少
