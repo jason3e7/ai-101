@@ -32,6 +32,10 @@
 | [70](https://leetcode.com/problems/climbing-stairs/) | Climbing Stairs | Easy | AC |
 | [73](https://leetcode.com/problems/set-matrix-zeroes/) | Set Matrix Zeroes | Med | AC |
 | [76](https://leetcode.com/problems/minimum-window-substring/) | Minimum Window Substring | Hard | AC |
+| [79](https://leetcode.com/problems/word-search/) | Word Search | Med | AC |
+| [91](https://leetcode.com/problems/decode-ways/) | Decode Ways | Med | AC |
+| [98](https://leetcode.com/problems/validate-binary-search-tree/) | Validate Binary Search Tree | Med | AC |
+| [100](https://leetcode.com/problems/same-tree/) | Same Tree | Easy | AC |
 | [128](https://leetcode.com/problems/longest-consecutive-sequence/) | Longest Consecutive Sequence | Med | AC |
 | [133](https://leetcode.com/problems/clone-graph/) | Clone Graph | Med | AC |
 | [139](https://leetcode.com/problems/word-break/) | Word Break | Med | AC |
@@ -44,18 +48,28 @@
 | [198](https://leetcode.com/problems/house-robber/) | House Robber | Med | AC |
 | [200](https://leetcode.com/problems/number-of-islands/) | Number of Islands | Med | AC |
 | [206](https://leetcode.com/problems/reverse-linked-list/) | Reverse Linked List | Easy | AC |
+| [207](https://leetcode.com/problems/course-schedule/) | Course Schedule | Med | AC |
+| [208](https://leetcode.com/problems/implement-trie-prefix-tree/) | Implement Trie (Prefix Tree) | Med | AC |
+| [211](https://leetcode.com/problems/design-add-and-search-words-data-structure/) | Design Add and Search Words Data Structure | Med | AC |
+| [212](https://leetcode.com/problems/word-search-ii/) | Word Search II | Hard | AC |
+| [213](https://leetcode.com/problems/house-robber-ii/) | House Robber II | Med | AC |
+| [217](https://leetcode.com/problems/contains-duplicate/) | Contains Duplicate | Easy | AC |
+| [226](https://leetcode.com/problems/invert-binary-tree/) | Invert Binary Tree | Easy | AC |
 | [268](https://leetcode.com/problems/missing-number/) | Missing Number | Easy | AC |
 | [295](https://leetcode.com/problems/find-median-from-data-stream/) | Find Median from Data Stream | Hard | AC |
 | [297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Serialize and Deserialize Binary Tree | Hard | AC |
 | [300](https://leetcode.com/problems/longest-increasing-subsequence/) | Longest Increasing Subsequence | Med | AC |
 | [322](https://leetcode.com/problems/coin-change/) | Coin Change | Med | AC |
+| [338](https://leetcode.com/problems/counting-bits/) | Counting Bits | Easy | AC |
+| [347](https://leetcode.com/problems/top-k-frequent-elements/) | Top K Frequent Elements | Med | AC |
 | [417](https://leetcode.com/problems/pacific-atlantic-water-flow/) | Pacific Atlantic Water Flow | Med | AC |
 | [424](https://leetcode.com/problems/longest-repeating-character-replacement/) | Longest Repeating Character Replacement | Med | AC |
 | [435](https://leetcode.com/problems/non-overlapping-intervals/) | Non-overlapping Intervals | Med | AC |
 | [572](https://leetcode.com/problems/subtree-of-another-tree/) | Subtree of Another Tree | Easy | AC |
 | [647](https://leetcode.com/problems/palindromic-substrings/) | Palindromic Substrings | Med | AC |
+| [1143](https://leetcode.com/problems/longest-common-subsequence/) | Longest Common Subsequence | Med | AC |
 
-**進度**: 44 / 75
+**進度**: 58 / 75
 
 編譯與本機測試:
 
