@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:62px;font-weight:900;line-height:1.16;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:23px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:6px;margin-top:6px}
+.foot{font-size:19px;color:#767d8d;letter-spacing:.04em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 25</span></div>
+  <div>
+    <h1>再加碼 <em>LC-75 + NC150</em>, <em>129 題</em>只掉 1</h1>
+    <div class="sub">放大 2.7 倍, 鎖死 Day 24 的 pattern density 結論</div>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="210" viewBox="0 0 1056 210">
+    <!-- 左半: 三套清單新題 bars -->
+    <text x="0" y="22" fill="#8b93a5" font-size="16" font-weight="700">三套 study plan 新題送判結果</text>
+
+    <text x="0" y="56" fill="#a8aebd" font-size="17" font-weight="700">Blind 75</text>
+    <rect x="130" y="42" width="240" height="20" rx="4" fill="#5b617033"/>
+    <rect x="130" y="42" width="240" height="20" rx="4" fill="#e8a13ca0"/>
+    <text x="388" y="57" fill="#f2f0ea" font-size="14">69 題送判 (Day 24 已講)</text>
+    <rect x="618" y="42" width="68" height="20" rx="4" fill="#2b8a3e"/>
+    <text x="652" y="57" fill="#eafff0" font-size="13" font-weight="900" text-anchor="middle">69/69</text>
+
+    <text x="0" y="86" fill="#a8aebd" font-size="17" font-weight="700">LC-75</text>
+    <rect x="130" y="72" width="240" height="20" rx="4" fill="#5b617033"/>
+    <rect x="130" y="72" width="240" height="20" rx="4" fill="#e8a13cb0"/>
+    <text x="388" y="87" fill="#f2f0ea" font-size="14">65 新題 (官方 study plan)</text>
+    <rect x="618" y="72" width="68" height="20" rx="4" fill="#2b8a3e"/>
+    <text x="652" y="87" fill="#eafff0" font-size="13" font-weight="900" text-anchor="middle">65/65</text>
+
+    <text x="0" y="116" fill="#e8a13c" font-size="17" font-weight="900">NC150</text>
+    <rect x="130" y="102" width="240" height="20" rx="4" fill="#5b617033"/>
+    <rect x="130" y="102" width="240" height="20" rx="4" fill="#e8a13c"/>
+    <text x="388" y="117" fill="#e8a13c" font-size="14" font-weight="700">64 新題 (教科書演算法)</text>
+    <rect x="618" y="102" width="68" height="20" rx="4" fill="#2b8a3e" stroke="#40c057" stroke-width="2"/>
+    <text x="652" y="117" fill="#eafff0" font-size="13" font-weight="900" text-anchor="middle">63/64</text>
+
+    <text x="0" y="146" fill="#a8aebd" font-size="17" font-weight="700">WA</text>
+    <rect x="130" y="132" width="240" height="20" rx="4" fill="#5b617033"/>
+    <rect x="130" y="132" width="40" height="20" rx="4" fill="#c92a2a"/>
+    <text x="388" y="147" fill="#ffa8a8" font-size="14">#50 Pow(x, n) FP 精度不夠</text>
+    <rect x="618" y="132" width="68" height="20" rx="4" fill="#5b6170" stroke="#767d8d" stroke-width="1"/>
+    <text x="652" y="147" fill="#d8dae2" font-size="13" font-weight="900" text-anchor="middle">救援</text>
+
+    <text x="0" y="178" fill="#767d8d" font-size="13">(換 std::pow 單步到位 — 不是推理錯, 是數值錯)</text>
+
+    <!-- Divider -->
+    <line x1="720" y1="0" x2="720" y2="200" stroke="#5b617033" stroke-width="1"/>
+
+    <!-- 右半: hero -->
+    <text x="888" y="38" fill="#8b93a5" font-size="18" text-anchor="middle">新題一次 AC 率</text>
+    <text x="888" y="118" fill="#e8a13c" font-size="80" font-weight="900" text-anchor="middle">99.2%</text>
+    <text x="888" y="150" fill="#8b93a5" font-size="16" text-anchor="middle">128 / 129 題</text>
+    <text x="888" y="186" fill="#8b93a5" font-size="14" text-anchor="middle">(+ 1 新 PREMIUM 本地解)</text>
+  </svg>
+  </div>
+</div></body></html>
