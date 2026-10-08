@@ -116,13 +116,14 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 | **轉·脈絡** | 12–13 | Context → Harness（Loop 已提前到 Day 6） | [context](../../02-advanced/engineering/context-engineering.md)、[harness](../../02-advanced/engineering/harness-engineering.md)，需補實測 |
 | **轉·目標與成本** | 14–18 | 選模型省錢 → 權限 → `/goal` → 強制力 Hook → workflow × goal | [model-cost](../../01-fundamentals/models/model-cost-comparison.md)、[permissions](../../01-fundamentals/claude-code/permissions.md)、[goal](../../01-fundamentals/claude-code/goal.md) 等 |
 | **轉·驗證與擴展** | 19–23 | 六種驗算法 → 獨立驗算 → **HTB 目標綁架實測** → 拓展視野五手段 → 知識金字塔 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md)、[htb/](../htb/htb-abducted-goal-case.md)、[knowledge-barriers](../essays/ai-and-knowledge-barriers.md) |
-| **合** | 24 | AI 可能會取代什麼，目前不會取代什麼 | ✅ 已完成（Stanford Canaries、Anthropic Economic Index） |
-| | 25–26 | 浮水印與辨識 → 自架本地 LLM | [watermark](../../01-fundamentals/ai-content-watermark.md)、✅ [ollama](../../04-local-llm/ollama-guide.md) |
-| | 27–29 | 無審查模型的代價 → agent 自主滲透 → ClickFix 實測 | [uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md)、[pentest](../../03-tools/security/autonomous-pentest-tools-comparison.md)、06 的 ClickFix |
-| | 30 | 三十天蒸餾：跟著 AI 持續成長（含「新瓶裝舊酒」的誠實評估） | 新寫 |
+| **合·實戰與收尾** | 24 | LeetCode 實戰：用 Claude Code 刷題 | [leetcode/](../leetcode/)（lc75 進度） |
+| | 25 | CTF 實戰：解 ctf.hackme.quest | [phm/](../phm/README.md) |
+| | 26–28 | 待定（候選見 [titles.md 候補池](./titles.md#候補題目池--backlog)） | HTB 綁架 / AI 取代什麼 / 選模型實測 / 無審查 / 自主滲透 / 自架本地 LLM |
+| | 29 | 小結（實戰子系列回顧） | 新寫 |
+| | 30 | 總結：三十天蒸餾，跟著 AI 持續成長 | 新寫 |
 
 > [!NOTE]
-> 這張表只看段落配比；**逐篇標題、素材與完成狀態以 [titles.md](./titles.md) 為準**，那份會隨寫作進度更新。
+> 這張表只看段落配比；**逐篇標題、素材與完成狀態以 [titles.md](./titles.md) 為準**，那份會隨寫作進度更新。Day 24-30 已於 2026-10-08 重排（見 titles.md 變更歷程）。
 
 素材盤點：01–05 共約 30 篇原創筆記，多數 600–2500 中文字，可直接改寫成參賽文章。
 

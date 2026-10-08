@@ -9,9 +9,9 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 三十篇的**現況板**. 已發布 15 篇 (Day 1-15), draft 3 篇 (Day 16、25、29), 其餘待寫或待重排. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
+> 三十篇的**現況板**. 已發布 16 篇 (Day 1-16), 草稿中 3 篇 (Day 17-19), Day 20-23 預計, Day 24-25 排定兩篇大型實戰 (刷題、CTF), Day 26-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
 
-> **TL;DR (EN):** Thirty working titles for the Claude AI group. Fifteen published as of 2026-09-29 (Day 1-15); the middle stretch (Day 17-24) is being re-planned because four originally-planned slots (Day 20/21/23/24) got pulled forward into Days 11/14/15, and Day 26 was vacated when Day 16 absorbed the same lab-scan topic.
+> **TL;DR (EN):** Thirty working titles for the Claude AI group. Sixteen published (Day 1-16), three in draft (Day 17-19). The finale was re-planned on 2026-10-08: Day 24-25 become two hands-on pieces (LeetCode grind, then a CTF run on ctf.hackme.quest), Day 26-28 are left open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
 
 ---
 
@@ -76,7 +76,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 14 | AI 抹平的是中產, 頂層反而變貴 | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10418241) |
 | 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10418980) |
 
-### 轉·實測與量化 (Day 16-24)
+### 轉·實測與量化 (Day 16-23)
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
@@ -88,25 +88,29 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 📅 預計 (暫排) |
 | 22 | `/goal` + Hook: 給 AI 能驗證的終點, 用 hook 守住 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 📅 預計 (暫排) |
 | 23 | Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 📅 預計 (暫排) |
-| 24 | HTB 靶機實測: Claude Code 的目標怎麼被綁架 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 📅 預計 (暫排) |
 
-### 合: 已經在發生的事，怎麼接 (Day 25-30)
+### 合: 實戰與收尾 (Day 24-30)
+
+> [!NOTE]
+> jason3e7 於 2026-10-08 重排 Day 24-30: 前面全是「講＋小實測」, 收尾改成兩篇**大型實戰**(刷題、CTF) ＋ 三個待定 ＋ 小結/總結. 原本排在這段的題目(HTB、AI 取代什麼、選模型實測、無審查、自主滲透、自架本地 LLM)退回 [候補題目池](#候補題目池--backlog), 其中兩篇已有 draft, 可優先補進 Day 26-28.
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 25 | AI 可能會取代什麼, 目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ [已完成](./drafts/day21-25/day25-what-ai-replaces.md) |
-| 26 | 選模型 × 實測: 同一題 Opus / Sonnet / Haiku 各跑一次 | [model-cost-comparison](../../01-fundamentals/models/model-cost-comparison.md) ＋ 新實測 | 📅 預計 (暫排, 要跑) |
-| 27 | 拿掉「拒絕」的真正代價: 無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 📅 預計 (暫排) |
-| 28 | AI 已經會自己打靶: 自主滲透工具現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 📅 預計 (暫排) |
-| 29 | 自架本地 LLM：什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ [已完成](./drafts/day26-30/day27-self-hosted-llm.md) |
-| 30 | 三十天蒸餾：如果只能留下幾條心法 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 新寫 |
+| 24 | LeetCode 實戰: 用 Claude Code 刷題, 它幫到哪、哪裡得自己來 | [leetcode/](../leetcode/) (lc75 進度) | 📅 預計 |
+| 25 | CTF 實戰: 帶 Claude Code 解 ctf.hackme.quest (Please Hack Me) | [phm/](../phm/README.md) | 📅 預計 |
+| 26 | 待定 | — | 🔄 待定 (候選見 backlog) |
+| 27 | 待定 | — | 🔄 待定 (候選見 backlog) |
+| 28 | 待定 | — | 🔄 待定 (候選見 backlog) |
+| 29 | 小結 (實戰子系列回顧, 範圍待定) | — | 📅 預計 |
+| 30 | 總結: 三十天蒸餾, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
 
-**盤點**: 🚀 已發布 16 篇 (Day 1-16) · ✅ 已完成 draft 2 篇 (Day 25、29) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 8 篇 (Day 20、21-24、26-28, 其中 Day 21-24 + 26-28 標「暫排」待確認) · 未動工 1 篇 (Day 30). **🔄 已清零** (所有 slot 都有主題了, 等實際動筆再微調).
+**盤點**: 🚀 已發布 16 篇 (Day 1-16) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 8 篇 (Day 20-25、29、30) · 🔄 待定 3 篇 (Day 26-28). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-08**: jason3e7 重排 Day 24-30. Day 24 = LeetCode 實戰 ([leetcode/](../leetcode/), lc75 進度), Day 25 = CTF 實戰 ([phm/](../phm/README.md), ctf.hackme.quest), Day 26-28 = 🔄 待定, Day 29 = 小結, Day 30 = 總結 (維持「跟著 AI 持續成長」方向). 原 Day 24-29 的六個題目 (HTB 綁架 / AI 取代什麼[有 draft] / 選模型實測 / 無審查模型 / 自主滲透 / 自架本地 LLM[有 draft]) 退回候補池, 可優先補 Day 26-28. 段落標題: 原「轉·實測與量化 (Day 16-24)」縮成 Day 16-23;「合」改名「實戰與收尾 (Day 24-30)」
 - **2026-10-02**: Day 18 (翻面問題) 從草稿骨架寫成完整草稿, 技術基礎換成 lab01 V12 (9 signal ＋ 權重微調, 全體 density 69.66); 新增 Tampermonkey script (固定放 `05-notes/assets/browser-ranker.user.js`) 當文末 payoff (瀏覽網頁即時看 N_sum / density). 保留 jason3e7 翻面提問為主軸, 收尾「零命中推不出人寫」的認識論論點
 - **2026-10-01 (傍晚)**: Day 21-24, 26-28 全部 📅 預計 (暫排) — 承接「文風測量 + 浮水印」子系列後進入「Claude Code 落地四連 (Day 21-24: 權限 / goal+hooks / workflow / HTB) + 風險面三連 (Day 26-28: 選模型實測 / 無審查 / 自主滲透)」. 🔄 全清零 (所有 slot 都有題目了). 候補題目池剩: 把對話紀錄變成筆記本、怎麼把 AI 能力變成自己的、ClickFix 實測、behavior-design 綜合、驗證疲勞. Day 17-24 候選 section 移除 (已失效)
 - **2026-10-01 (下午)**: Day 20 合併原 Day 27「AI 文風入侵: 五個記號 + 把味道壓回去的抗體」+「子系列小結 (Day 16-19)」, 兩個主題相關就一次講; Day 27 slot 空出變 🔄 待想; Day 19 draft 寫完 (🚧 草稿中)
@@ -129,6 +133,12 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 親手測 ClickFix: AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記 (自己的截圖) | 原 Day 29 被新 Day 05 擠出. 發文時要沿用防禦式寫法 |
 | Claude Code 四層行為系統: goal + sub-agent + skill + hook | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | Day 22-23 已把 goal / hooks / workflow 拆開講, 這份是綜合示範, 之後可當 Day 24 的替代 |
 | 驗證疲勞: 什麼時候該關掉驗證 | 待研究 | 觀念篇, 跟 Day 13 鈍化成姊妹作 |
+| AI 可能會取代什麼, 目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ **已有 draft** ([day25-what-ai-replaces](./drafts/day21-25/day25-what-ai-replaces.md)); 2026-10-08 從 Day 25 退出, 可補 Day 26-28 |
+| 自架本地 LLM: 什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ **已有 draft** ([day27-self-hosted-llm](./drafts/day26-30/day27-self-hosted-llm.md)); 2026-10-08 從 Day 29 退出, 可補 Day 26-28 |
+| HTB 靶機實測: Claude Code 的目標怎麼被綁架 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 2026-10-08 從 Day 24 退出; repo 最長的三篇, 全場獨有 |
+| 選模型 × 實測: 同一題 Opus / Sonnet / Haiku 各跑一次 | [model-cost-comparison](../../01-fundamentals/models/model-cost-comparison.md) ＋ 新實測 | 2026-10-08 從 Day 26 退出 (要跑) |
+| 拿掉「拒絕」的真正代價: 無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 2026-10-08 從 Day 27 退出 |
+| AI 已經會自己打靶: 自主滲透工具現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 2026-10-08 從 Day 28 退出 |
 
 ---
 
