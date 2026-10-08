@@ -141,8 +141,28 @@ LC-75 跟 Blind 75 有 **10 題重疊** (Container, Product, Reverse Linked List
 | [1448](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | Count Good Nodes in Binary Tree | Med | AC |
 | [1466](https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | Reorder Routes | Med | AC |
 | [1926](https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/) | Nearest Exit from Entrance in Maze | Med | AC |
+| [17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Letter Combinations of a Phone Number | Med | AC |
+| [72](https://leetcode.com/problems/edit-distance/) | Edit Distance | Med | AC |
+| [136](https://leetcode.com/problems/single-number/) | Single Number | Easy | AC |
+| [162](https://leetcode.com/problems/find-peak-element/) | Find Peak Element | Med | AC |
+| [216](https://leetcode.com/problems/combination-sum-iii/) | Combination Sum III | Med | AC |
+| [374](https://leetcode.com/problems/guess-number-higher-or-lower/) | Guess Number Higher or Lower | Easy | AC |
+| [452](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/) | Minimum Number of Arrows to Burst Balloons | Med | AC |
+| [714](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) | Best Time to Buy and Sell Stock with Fee | Med | AC |
+| [739](https://leetcode.com/problems/daily-temperatures/) | Daily Temperatures | Med | AC |
+| [746](https://leetcode.com/problems/min-cost-climbing-stairs/) | Min Cost Climbing Stairs | Easy | AC |
+| [790](https://leetcode.com/problems/domino-and-tromino-tiling/) | Domino and Tromino Tiling | Med | AC |
+| [875](https://leetcode.com/problems/koko-eating-bananas/) | Koko Eating Bananas | Med | AC |
+| [901](https://leetcode.com/problems/online-stock-span/) | Online Stock Span | Med | AC |
+| [1137](https://leetcode.com/problems/n-th-tribonacci-number/) | N-th Tribonacci Number | Easy | AC |
+| [1268](https://leetcode.com/problems/search-suggestions-system/) | Search Suggestions System | Med | AC |
+| [1318](https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/) | Minimum Flips to Make a OR b Equal to c | Med | AC |
+| [2300](https://leetcode.com/problems/successful-pairs-of-spells-and-potions/) | Successful Pairs of Spells and Potions | Med | AC |
+| [2336](https://leetcode.com/problems/smallest-number-in-infinite-set/) | Smallest Number in Infinite Set | Med | AC |
+| [2462](https://leetcode.com/problems/total-cost-to-hire-k-workers/) | Total Cost to Hire K Workers | Med | AC |
+| [2542](https://leetcode.com/problems/maximum-subsequence-score/) | Maximum Subsequence Score | Med | AC |
 
-**LC-75 進度**: 10 (重疊) + 45 (新 AC) = **55 / 75**
+**LC-75 進度**: 10 (重疊) + 65 (新 AC) = **75 / 75** 全完成
 
 編譯與本機測試:
 
