@@ -125,8 +125,24 @@ LC-75 跟 Blind 75 有 **10 題重疊** (Container, Product, Reverse Linked List
 | [2215](https://leetcode.com/problems/find-the-difference-of-two-arrays/) | Find the Difference of Two Arrays | Easy | AC |
 | [2352](https://leetcode.com/problems/equal-row-and-column-pairs/) | Equal Row and Column Pairs | Med | AC |
 | [2390](https://leetcode.com/problems/removing-stars-from-a-string/) | Removing Stars From a String | Med | AC |
+| [199](https://leetcode.com/problems/binary-tree-right-side-view/) | Binary Tree Right Side View | Med | AC |
+| [215](https://leetcode.com/problems/kth-largest-element-in-an-array/) | Kth Largest Element in an Array | Med | AC |
+| [236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) | LCA of Binary Tree | Med | AC |
+| [399](https://leetcode.com/problems/evaluate-division/) | Evaluate Division | Med | AC |
+| [437](https://leetcode.com/problems/path-sum-iii/) | Path Sum III | Med | AC |
+| [450](https://leetcode.com/problems/delete-node-in-a-bst/) | Delete Node in a BST | Med | AC |
+| [547](https://leetcode.com/problems/number-of-provinces/) | Number of Provinces | Med | AC |
+| [700](https://leetcode.com/problems/search-in-a-binary-search-tree/) | Search in a Binary Search Tree | Easy | AC |
+| [841](https://leetcode.com/problems/keys-and-rooms/) | Keys and Rooms | Med | AC |
+| [872](https://leetcode.com/problems/leaf-similar-trees/) | Leaf-Similar Trees | Easy | AC |
+| [994](https://leetcode.com/problems/rotting-oranges/) | Rotting Oranges | Med | AC |
+| [1161](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/) | Maximum Level Sum of a Binary Tree | Med | AC |
+| [1372](https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/) | Longest ZigZag Path in a Binary Tree | Med | AC |
+| [1448](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | Count Good Nodes in Binary Tree | Med | AC |
+| [1466](https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/) | Reorder Routes | Med | AC |
+| [1926](https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/) | Nearest Exit from Entrance in Maze | Med | AC |
 
-**LC-75 進度**: 10 (重疊) + 29 (新 AC) = **39 / 75**
+**LC-75 進度**: 10 (重疊) + 45 (新 AC) = **55 / 75**
 
 編譯與本機測試:
 
