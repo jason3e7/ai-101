@@ -36,6 +36,12 @@
 | [91](https://leetcode.com/problems/decode-ways/) | Decode Ways | Med | AC |
 | [98](https://leetcode.com/problems/validate-binary-search-tree/) | Validate Binary Search Tree | Med | AC |
 | [100](https://leetcode.com/problems/same-tree/) | Same Tree | Easy | AC |
+| [102](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Binary Tree Level Order Traversal | Med | AC |
+| [104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Maximum Depth of Binary Tree | Easy | AC |
+| [105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | Construct Binary Tree from Preorder and Inorder | Med | AC |
+| [121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Best Time to Buy and Sell Stock | Easy | AC |
+| [124](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | Binary Tree Maximum Path Sum | Hard | AC |
+| [125](https://leetcode.com/problems/valid-palindrome/) | Valid Palindrome | Easy | AC |
 | [128](https://leetcode.com/problems/longest-consecutive-sequence/) | Longest Consecutive Sequence | Med | AC |
 | [133](https://leetcode.com/problems/clone-graph/) | Clone Graph | Med | AC |
 | [139](https://leetcode.com/problems/word-break/) | Word Break | Med | AC |
@@ -55,13 +61,24 @@
 | [213](https://leetcode.com/problems/house-robber-ii/) | House Robber II | Med | AC |
 | [217](https://leetcode.com/problems/contains-duplicate/) | Contains Duplicate | Easy | AC |
 | [226](https://leetcode.com/problems/invert-binary-tree/) | Invert Binary Tree | Easy | AC |
+| [230](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | Kth Smallest Element in a BST | Med | AC |
+| [235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | LCA of a Binary Search Tree | Med | AC |
+| [238](https://leetcode.com/problems/product-of-array-except-self/) | Product of Array Except Self | Med | AC |
+| [242](https://leetcode.com/problems/valid-anagram/) | Valid Anagram | Easy | AC |
+| 252 | Meeting Rooms (PREMIUM) | Easy | 本地解未送判 |
+| 253 | Meeting Rooms II (PREMIUM) | Med | 本地解未送判 |
+| 261 | Graph Valid Tree (PREMIUM) | Med | 本地解未送判 |
 | [268](https://leetcode.com/problems/missing-number/) | Missing Number | Easy | AC |
+| 269 | Alien Dictionary (PREMIUM) | Hard | 本地解未送判 |
+| 271 | Encode and Decode Strings (PREMIUM) | Med | 本地解未送判 |
 | [295](https://leetcode.com/problems/find-median-from-data-stream/) | Find Median from Data Stream | Hard | AC |
 | [297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Serialize and Deserialize Binary Tree | Hard | AC |
 | [300](https://leetcode.com/problems/longest-increasing-subsequence/) | Longest Increasing Subsequence | Med | AC |
+| 323 | Number of Connected Components (PREMIUM) | Med | 本地解未送判 |
 | [322](https://leetcode.com/problems/coin-change/) | Coin Change | Med | AC |
 | [338](https://leetcode.com/problems/counting-bits/) | Counting Bits | Easy | AC |
 | [347](https://leetcode.com/problems/top-k-frequent-elements/) | Top K Frequent Elements | Med | AC |
+| [371](https://leetcode.com/problems/sum-of-two-integers/) | Sum of Two Integers | Med | AC |
 | [417](https://leetcode.com/problems/pacific-atlantic-water-flow/) | Pacific Atlantic Water Flow | Med | AC |
 | [424](https://leetcode.com/problems/longest-repeating-character-replacement/) | Longest Repeating Character Replacement | Med | AC |
 | [435](https://leetcode.com/problems/non-overlapping-intervals/) | Non-overlapping Intervals | Med | AC |
@@ -69,7 +86,7 @@
 | [647](https://leetcode.com/problems/palindromic-substrings/) | Palindromic Substrings | Med | AC |
 | [1143](https://leetcode.com/problems/longest-common-subsequence/) | Longest Common Subsequence | Med | AC |
 
-**進度**: 58 / 75
+**進度**: 69 / 75 AC + 6 題 PREMIUM 鎖住無法送判 (但 .cpp 寫在本地) = **75/75 寫完**
 
 編譯與本機測試:
 
