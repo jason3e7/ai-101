@@ -19,15 +19,23 @@
 | [20](https://leetcode.com/problems/valid-parentheses/) | Valid Parentheses | Easy | AC |
 | [21](https://leetcode.com/problems/merge-two-sorted-lists/) | Merge Two Sorted Lists | Easy | AC |
 | [23](https://leetcode.com/problems/merge-k-sorted-lists/) | Merge k Sorted Lists | Hard | AC |
+| [33](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Search in Rotated Sorted Array | Med | AC |
+| [39](https://leetcode.com/problems/combination-sum/) | Combination Sum | Med | AC |
 | [128](https://leetcode.com/problems/longest-consecutive-sequence/) | Longest Consecutive Sequence | Med | AC |
 | [133](https://leetcode.com/problems/clone-graph/) | Clone Graph | Med | AC |
 | [139](https://leetcode.com/problems/word-break/) | Word Break | Med | AC |
 | [141](https://leetcode.com/problems/linked-list-cycle/) | Linked List Cycle | Easy | AC |
 | [143](https://leetcode.com/problems/reorder-list/) | Reorder List | Med | AC |
+| [152](https://leetcode.com/problems/maximum-product-subarray/) | Maximum Product Subarray | Med | AC |
+| [153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Find Minimum in Rotated Sorted Array | Med | AC |
 | [268](https://leetcode.com/problems/missing-number/) | Missing Number | Easy | AC |
+| [295](https://leetcode.com/problems/find-median-from-data-stream/) | Find Median from Data Stream | Hard | AC |
+| [297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Serialize and Deserialize Binary Tree | Hard | AC |
+| [417](https://leetcode.com/problems/pacific-atlantic-water-flow/) | Pacific Atlantic Water Flow | Med | AC |
+| [424](https://leetcode.com/problems/longest-repeating-character-replacement/) | Longest Repeating Character Replacement | Med | AC |
 | [647](https://leetcode.com/problems/palindromic-substrings/) | Palindromic Substrings | Med | AC |
 
-**進度**: 16 / 75
+**進度**: 24 / 75
 
 編譯與本機測試:
 
