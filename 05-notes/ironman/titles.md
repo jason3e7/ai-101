@@ -96,7 +96,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 24 | LeetCode 實戰: 用 Claude Code 刷題, 它幫到哪、哪裡得自己來 | [leetcode/](../leetcode/) (Blind 75 + LC-75) | 🚧 [草稿中](./drafts/day21-25/day24-leetcode-blind75.md) |
+| 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚧 [草稿中](./drafts/day21-25/day24-leetcode-blind75.md) |
 | 25 | CTF 實戰: 帶 Claude Code 解 ctf.hackme.quest (Please Hack Me) | [phm/](../phm/README.md) | 📅 預計 |
 | 26 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 27 | 待定 | — | 🔄 待定 (候選見 backlog) |
