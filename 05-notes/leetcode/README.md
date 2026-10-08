@@ -164,6 +164,84 @@ LC-75 跟 Blind 75 有 **10 題重疊** (Container, Product, Reverse Linked List
 
 **LC-75 進度**: 10 (重疊) + 65 (新 AC) = **75 / 75** 全完成
 
+## NeetCode 150 進度
+
+[NeetCode 150](https://leetcode.com/problem-list/plakya4j/) 跟前兩套合計重疊 79 題, 這一輪新增 **64 AC + 7 PREMIUM 本地解 = 71 題寫完**.
+
+### NC150 新增 AC
+
+| 題號 | 題名 | 難度 | 結果 |
+|---:|:---|:---|:---|
+| [2](https://leetcode.com/problems/add-two-numbers/) | Add Two Numbers | Med | AC |
+| [4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Median of Two Sorted Arrays | Hard | AC |
+| [7](https://leetcode.com/problems/reverse-integer/) | Reverse Integer | Med | AC |
+| [10](https://leetcode.com/problems/regular-expression-matching/) | Regular Expression Matching | Hard | AC |
+| [22](https://leetcode.com/problems/generate-parentheses/) | Generate Parentheses | Med | AC |
+| [25](https://leetcode.com/problems/reverse-nodes-in-k-group/) | Reverse Nodes in k-Group | Hard | AC |
+| [36](https://leetcode.com/problems/valid-sudoku/) | Valid Sudoku | Med | AC |
+| [40](https://leetcode.com/problems/combination-sum-ii/) | Combination Sum II | Med | AC |
+| [42](https://leetcode.com/problems/trapping-rain-water/) | Trapping Rain Water | Hard | AC |
+| [43](https://leetcode.com/problems/multiply-strings/) | Multiply Strings | Med | AC |
+| [45](https://leetcode.com/problems/jump-game-ii/) | Jump Game II | Med | AC |
+| [46](https://leetcode.com/problems/permutations/) | Permutations | Med | AC |
+| [50](https://leetcode.com/problems/powx-n/) | Pow(x, n) | Med | AC |
+| [51](https://leetcode.com/problems/n-queens/) | N-Queens | Hard | AC |
+| [66](https://leetcode.com/problems/plus-one/) | Plus One | Easy | AC |
+| [72](https://leetcode.com/problems/edit-distance/) | Edit Distance (已於 LC-75 AC) | Med | AC |
+| [74](https://leetcode.com/problems/search-a-2d-matrix/) | Search a 2D Matrix | Med | AC |
+| [78](https://leetcode.com/problems/subsets/) | Subsets | Med | AC |
+| [84](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Largest Rectangle in Histogram | Hard | AC |
+| [90](https://leetcode.com/problems/subsets-ii/) | Subsets II | Med | AC |
+| [97](https://leetcode.com/problems/interleaving-string/) | Interleaving String | Med | AC |
+| [110](https://leetcode.com/problems/balanced-binary-tree/) | Balanced Binary Tree | Easy | AC |
+| [115](https://leetcode.com/problems/distinct-subsequences/) | Distinct Subsequences | Hard | AC |
+| [127](https://leetcode.com/problems/word-ladder/) | Word Ladder | Hard | AC |
+| [130](https://leetcode.com/problems/surrounded-regions/) | Surrounded Regions | Med | AC |
+| [131](https://leetcode.com/problems/palindrome-partitioning/) | Palindrome Partitioning | Med | AC |
+| [134](https://leetcode.com/problems/gas-station/) | Gas Station | Med | AC |
+| [138](https://leetcode.com/problems/copy-list-with-random-pointer/) | Copy List with Random Pointer | Med | AC |
+| [146](https://leetcode.com/problems/lru-cache/) | LRU Cache | Med | AC |
+| [150](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | Evaluate Reverse Polish Notation | Med | AC |
+| [155](https://leetcode.com/problems/min-stack/) | Min Stack | Med | AC |
+| [167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Two Sum II | Med | AC |
+| [202](https://leetcode.com/problems/happy-number/) | Happy Number | Easy | AC |
+| [210](https://leetcode.com/problems/course-schedule-ii/) | Course Schedule II | Med | AC |
+| [239](https://leetcode.com/problems/sliding-window-maximum/) | Sliding Window Maximum | Hard | AC |
+| 286 | Walls and Gates (PREMIUM) | Med | 本地解未送判 |
+| [287](https://leetcode.com/problems/find-the-duplicate-number/) | Find the Duplicate Number | Med | AC |
+| [309](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | Best Time to Buy and Sell Stock with Cooldown | Med | AC |
+| [312](https://leetcode.com/problems/burst-balloons/) | Burst Balloons | Hard | AC |
+| [329](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/) | Longest Increasing Path in a Matrix | Hard | AC |
+| [332](https://leetcode.com/problems/reconstruct-itinerary/) | Reconstruct Itinerary | Hard | AC |
+| [355](https://leetcode.com/problems/design-twitter/) | Design Twitter | Med | AC |
+| [416](https://leetcode.com/problems/partition-equal-subset-sum/) | Partition Equal Subset Sum | Med | AC |
+| [494](https://leetcode.com/problems/target-sum/) | Target Sum | Med | AC |
+| [518](https://leetcode.com/problems/coin-change-ii/) | Coin Change II | Med | AC |
+| [543](https://leetcode.com/problems/diameter-of-binary-tree/) | Diameter of Binary Tree | Easy | AC |
+| [567](https://leetcode.com/problems/permutation-in-string/) | Permutation in String | Med | AC |
+| [621](https://leetcode.com/problems/task-scheduler/) | Task Scheduler | Med | AC |
+| [678](https://leetcode.com/problems/valid-parenthesis-string/) | Valid Parenthesis String | Med | AC |
+| [684](https://leetcode.com/problems/redundant-connection/) | Redundant Connection | Med | AC |
+| [695](https://leetcode.com/problems/max-area-of-island/) | Max Area of Island | Med | AC |
+| [703](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Kth Largest Element in a Stream | Easy | AC |
+| [704](https://leetcode.com/problems/binary-search/) | Binary Search | Easy | AC |
+| [743](https://leetcode.com/problems/network-delay-time/) | Network Delay Time | Med | AC |
+| [763](https://leetcode.com/problems/partition-labels/) | Partition Labels | Med | AC |
+| [778](https://leetcode.com/problems/swim-in-rising-water/) | Swim in Rising Water | Hard | AC |
+| [787](https://leetcode.com/problems/cheapest-flights-within-k-stops/) | Cheapest Flights Within K Stops | Med | AC |
+| [846](https://leetcode.com/problems/hand-of-straights/) | Hand of Straights | Med | AC |
+| [853](https://leetcode.com/problems/car-fleet/) | Car Fleet | Med | AC |
+| [973](https://leetcode.com/problems/k-closest-points-to-origin/) | K Closest Points to Origin | Med | AC |
+| [981](https://leetcode.com/problems/time-based-key-value-store/) | Time Based Key-Value Store | Med | AC |
+| [1046](https://leetcode.com/problems/last-stone-weight/) | Last Stone Weight | Easy | AC |
+| [1584](https://leetcode.com/problems/min-cost-to-connect-all-points/) | Min Cost to Connect All Points | Med | AC |
+| [1851](https://leetcode.com/problems/minimum-interval-to-include-each-query/) | Minimum Interval to Include Each Query | Hard | AC |
+| [1899](https://leetcode.com/problems/merge-triplets-to-form-target-triplet/) | Merge Triplets to Form Target Triplet | Med | AC |
+| [2013](https://leetcode.com/problems/detect-squares/) | Detect Squares | Med | AC |
+
+**NC150 進度**: 79 (前兩套重疊) + 64 (新 AC) + 7 PREMIUM 本地解 = **150 / 150** 全完成
+(PREMIUM 共 7: 252/253/261/269/271/323 已於 Blind 75 本地解, 新增 286 Walls and Gates)
+
 編譯與本機測試:
 
 ```bash
