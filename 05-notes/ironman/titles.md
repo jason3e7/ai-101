@@ -97,7 +97,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚧 [草稿中](./drafts/day21-25/day24-leetcode-blind75.md) |
-| 25 | Blind 75 不夠, 再加碼 LeetCode LC-75 + NC150 | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚧 [草稿中](./drafts/day21-25/day25-leetcode-lc75-nc150.md) |
+| 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚧 [草稿中](./drafts/day21-25/day25-leetcode-lc75-nc150.md) |
 | 26 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 27 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 28 | 待定 | — | 🔄 待定 (候選見 backlog) |

@@ -1,11 +1,11 @@
 ---
-title: "AI 101 - 鐵人賽 Day 25: Blind 75 不夠, 再加碼 LeetCode LC-75 + NC150"
+title: "AI 101 - 鐵人賽 Day 25: 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC"
 tags: [ai, 鐵人賽, ironman, leetcode, lc75, neetcode150, 判斷標準, agentic, 實測, 草稿]
 created: 2026-10-09
 status: draft
 ---
 
-# Day 25｜Blind 75 不夠, 再加碼 LeetCode LC-75 + NC150 — Scaling the Pattern-Density Test Further
+# Day 25｜擴大測試 LeetCode LC-75 + NC150, 129 題全 AC — Scaling the Pattern-Density Test Further
 
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
