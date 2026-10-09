@@ -44,6 +44,8 @@
 | Misc | where is flag | 50 | [misc/where-is-flag.md](misc/where-is-flag.md) — 665K 文字塞滿假 FLAG{...}, 已過濾 noise 篩出 3 個 candidate 但 server 都 reject, 真 flag 可能不是 FLAG{...} 格式或有未發現的 regex 線索 |
 | Misc | otaku | 90 | [misc/otaku.md](misc/otaku.md) — 4 張動漫角色圖, 3 張找到 troll flag (FAKE/F14G/OOPS), Miku 應該藏真 flag 但 LSB/bit plane/zsteg 都沒找到 |
 | Misc | buzzing | 100 | [misc/buzzing.md](misc/buzzing.md) — BMP header 說謊 (真實 640×400 + BI_BITFIELDS 0x41 mask), 看到作者 overlay 訊息但不含 FLAG{}, 真 flag 位置不明 |
+| Misc | BZBZ | 50 | [misc/bzbz.md](misc/bzbz.md) — 山寨 bilibili 登入頁, `login.php` 無條件 alert「You must be a employee from bilibili!」, 試遍 credentials / headers / cookies / IP / 洩漏 appkey 都沒 bypass |
+| Misc | zipfile | 100 | [misc/zipfile.md](misc/zipfile.md) — 999 層單 entry 遞迴 + 1000 層 552 entries, 每個 entry filename 編 ELF+1022 bits, inner data 多份複製暗示「XOR THESE FILES」, 試了多種 XOR 組合但沒解出 FLAG |
 
 ## 送 flag 流程 — Flag Submission
 
