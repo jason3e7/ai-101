@@ -10,7 +10,7 @@
 
 | 類別 | 總題數 | 已解 | 分數 |
 |:---|---:|---:|---:|
-| Misc | 14 | 4 | 160 |
+| Misc | 14 | 7 | 370 |
 | Web | 26 | 0 | 0 |
 | Pwn | 24 | 0 | 0 |
 | Reversing | 17 | 0 | 0 |
@@ -18,7 +18,7 @@
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 0 | 0 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **8** | **400** |
+| **合計** | **101** | **11** | **610** |
 
 ## 已解題目 — Solved
 
@@ -28,6 +28,9 @@
 | Misc | corgi can fly | 50 | [misc/corgi-can-fly.md](misc/corgi-can-fly.md) |
 | Misc | television | 50 | [misc/television.md](misc/television.md) |
 | Misc | encoder | 50 | [misc/encoder.md](misc/encoder.md) |
+| Misc | pusheen.txt | 40 | [misc/pusheen-txt.md](misc/pusheen-txt.md) |
+| Misc | big | 70 | [misc/big.md](misc/big.md) |
+| Misc | drvtry vpfr | 100 | [misc/drvtry-vpfr.md](misc/drvtry-vpfr.md) |
 | Crypto | easy | 10 | [crypto/easy.md](crypto/easy.md) |
 | Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 | Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
@@ -39,6 +42,8 @@
 |:---|:---|---:|:---|
 | Misc | meow | 50 | [misc/meow.md](misc/meow.md) — ZIP in PNG, 加密 ZIP 密碼未找到 (rockyou 全掃 + Pusheen 相關猜測都 miss) |
 | Misc | where is flag | 50 | [misc/where-is-flag.md](misc/where-is-flag.md) — 665K 文字塞滿假 FLAG{...}, 已過濾 noise 篩出 3 個 candidate 但 server 都 reject, 真 flag 可能不是 FLAG{...} 格式或有未發現的 regex 線索 |
+| Misc | otaku | 90 | [misc/otaku.md](misc/otaku.md) — 4 張動漫角色圖, 3 張找到 troll flag (FAKE/F14G/OOPS), Miku 應該藏真 flag 但 LSB/bit plane/zsteg 都沒找到 |
+| Misc | buzzing | 100 | [misc/buzzing.md](misc/buzzing.md) — BMP header 說謊 (真實 640×400 + BI_BITFIELDS 0x41 mask), 看到作者 overlay 訊息但不含 FLAG{}, 真 flag 位置不明 |
 
 ## 送 flag 流程 — Flag Submission
 
