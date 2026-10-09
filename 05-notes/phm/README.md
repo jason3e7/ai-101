@@ -14,11 +14,11 @@
 | Web | 26 | 0 | 0 |
 | Pwn | 24 | 0 | 0 |
 | Reversing | 17 | 0 | 0 |
-| Crypto | 16 | 1 | 10 |
+| Crypto | 16 | 8 | 370 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 0 | 0 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **11** | **610** |
+| **合計** | **101** | **18** | **970** |
 
 ## 已解題目 — Solved
 
@@ -32,6 +32,13 @@
 | Misc | big | 70 | [misc/big.md](misc/big.md) |
 | Misc | drvtry vpfr | 100 | [misc/drvtry-vpfr.md](misc/drvtry-vpfr.md) |
 | Crypto | easy | 10 | [crypto/easy.md](crypto/easy.md) |
+| Crypto | r u kidding | 20 | [crypto/r-u-kidding.md](crypto/r-u-kidding.md) |
+| Crypto | not hard | 50 | [crypto/not-hard.md](crypto/not-hard.md) |
+| Crypto | classic cipher 1 | 50 | [crypto/classic-cipher-1.md](crypto/classic-cipher-1.md) |
+| Crypto | classic cipher 2 | 50 | [crypto/classic-cipher-2.md](crypto/classic-cipher-2.md) |
+| Crypto | easy AES | 60 | [crypto/easy-aes.md](crypto/easy-aes.md) |
+| Crypto | one time padding | 60 | [crypto/one-time-padding.md](crypto/one-time-padding.md) |
+| Crypto | shuffle | 70 | [crypto/shuffle.md](crypto/shuffle.md) |
 | Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 | Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
 | Forensic | this is a pen | 80 | [forensic/this-is-a-pen.md](forensic/this-is-a-pen.md) |
