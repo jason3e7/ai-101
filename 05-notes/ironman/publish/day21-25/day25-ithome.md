@@ -109,18 +109,15 @@ NC150 加進 Blind 75 沒碰到的教科書演算法, 這批題寫對的話, Day
 三套刷下來, 真正卡住或 agent 自己踩坑的只有:
 
 1. **Pow(x, n) 的 FP 誤差** — 解法對, 數值精度不夠. 判題給具體 WA 一次救
-2. **幾題 Playwright 送判題 race** — Monaco setValue + click 寫在同一 evaluate() 偶爾送出前一版 stub, 已在 Day 24 講過; 這 130 題還是會偶發, 繼續用「分兩次 evaluate」做 workaround
-3. **PREMIUM 鎖住** — 7 題 (6 從 Blind 75 延續 + 1 新的 Walls and Gates) 沒有外部判斷標準. agent 自測全綠不代表對, 這批跟 Day 24 一樣**嚴格說不算 AC**
+2. **PREMIUM 鎖住** — 7 題 (6 從 Blind 75 延續 + 1 新的 Walls and Gates) 沒有外部判斷標準. agent 自測全綠不代表對, 這批跟 Day 24 一樣**嚴格說不算 AC**
 
-這三個都不是「推理不夠」. 第 1 是數值, 第 2 是平台, 第 3 是沒 reference. 三種失敗模式都在 **AI 推理能力範圍之外**.
+這兩個都不是「推理不夠」. 第 1 是數值, 第 2 是沒 reference. 兩種失敗模式都在 **AI 推理能力範圍之外**.
 
 ## 我的收斂 — Takeaways
 
 - **Blind 75 不是 cherry-picked, LC-75 + NC150 加碼確認結論**: 加 130 題後 pass rate 99.2%, 跟 Day 24 的「Blind 75 Hard 全 AC」是同一條曲線. 結論從 75 題放大到 ~200 題不塌
 - **唯一 WA 不是推理, 是 FP 精度**: #50 Pow 的失敗是「演算法對、實作選錯」, agent 讀 WA 一次救回. 這再次證明 AI 在 OJ 上的「強」是 pattern 認得 + 配方齊全, 不是會推理
 - **教科書演算法全在 pattern bucket 內**: Dijkstra / Bellman-Ford / Hierholzer / 區間 DP / 多源 BFS / Union-Find 這些算法課的招式, 一題一題全一次 AC. 這跟 Day 24 的 BFS 序列化 / 雙 heap / Trie 回收是同件事 — **教科書在訓練資料裡出現得太多次, 它變成 autocomplete**
-- **真正會卡的三種情境都在推理之外**: FP 精度 / 平台 race / 無判斷標準 (PREMIUM). AI 的「不能」在這三個地方特別清楚
-- **200 題寫完的意義**: 不是為了拿 badge, 是為了把 Day 24-25 這個「pattern density = AI 上限」結論用數據鎖死, 下一輪離開 OJ 判斷標準明確的場, 這個結論才派得上用場
 
 ## Sources
 
