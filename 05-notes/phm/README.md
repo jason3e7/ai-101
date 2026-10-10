@@ -14,11 +14,11 @@
 | Web | 26 | 0 | 0 |
 | Pwn | 24 | 0 | 0 |
 | Reversing | 17 | 0 | 0 |
-| Crypto | 16 | 8 | 370 |
+| Crypto | 16 | 12 | 1000 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 0 | 0 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **18** | **970** |
+| **合計** | **101** | **22** | **1600** |
 
 ## 已解題目 — Solved
 
@@ -39,6 +39,10 @@
 | Crypto | easy AES | 60 | [crypto/easy-aes.md](crypto/easy-aes.md) |
 | Crypto | one time padding | 60 | [crypto/one-time-padding.md](crypto/one-time-padding.md) |
 | Crypto | shuffle | 70 | [crypto/shuffle.md](crypto/shuffle.md) |
+| Crypto | xor | 90 | [crypto/xor.md](crypto/xor.md) |
+| Crypto | emoji | 120 | [crypto/emoji.md](crypto/emoji.md) |
+| Crypto | multilayer | 150 | [crypto/multilayer.md](crypto/multilayer.md) |
+| Crypto | ffa | 270 | [crypto/ffa.md](crypto/ffa.md) |
 | Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 | Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
 | Forensic | this is a pen | 80 | [forensic/this-is-a-pen.md](forensic/this-is-a-pen.md) |
@@ -53,6 +57,7 @@
 | Misc | buzzing | 100 | [misc/buzzing.md](misc/buzzing.md) — BMP header 說謊 (真實 640×400 + BI_BITFIELDS 0x41 mask), 看到作者 overlay 訊息但不含 FLAG{}, 真 flag 位置不明 |
 | Misc | BZBZ | 50 | [misc/bzbz.md](misc/bzbz.md) — 山寨 bilibili 登入頁, `login.php` 無條件 alert「You must be a employee from bilibili!」, 試遍 credentials / headers / cookies / IP / 洩漏 appkey 都沒 bypass |
 | Misc | zipfile | 100 | [misc/zipfile.md](misc/zipfile.md) — 999 層單 entry 遞迴 + 1000 層 552 entries, 每個 entry filename 編 ELF+1022 bits, inner data 多份複製暗示「XOR THESE FILES」, 試了多種 XOR 組合但沒解出 FLAG |
+| Crypto | slowcipher | 200 | [crypto/slowcipher.md](crypto/slowcipher.md) — 逆向 ELF 做 LCG + 密碼混合, 寫 fast C 版 (log-N closed-form) 把每 byte 的 N 次 LCG 壓到 O(log N), rockyou 1M + anime/Accel World 關鍵字都沒 hit, password 還沒猜中 |
 
 ## 送 flag 流程 — Flag Submission
 
