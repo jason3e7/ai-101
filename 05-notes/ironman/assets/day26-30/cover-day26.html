@@ -1,0 +1,90 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:62px;font-weight:900;line-height:1.16;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:23px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:6px;margin-top:6px}
+.foot{font-size:19px;color:#767d8d;letter-spacing:.04em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 26</span></div>
+  <div>
+    <h1>用 Claude Code 刷 CTF —<br><em>Please Hack Me 27 / 101</em></h1>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="220" viewBox="0 0 1056 220">
+    <!-- 左半: 八大類 solved / total bars -->
+    <text x="0" y="22" fill="#8b93a5" font-size="16" font-weight="700">八大類刷題分布</text>
+
+    <!-- Crypto 12/16 -->
+    <text x="0" y="56" fill="#e8a13c" font-size="15" font-weight="900">Crypto</text>
+    <rect x="110" y="44" width="260" height="18" rx="3" fill="#5b617033"/>
+    <rect x="110" y="44" width="195" height="18" rx="3" fill="#e8a13c"/>
+    <text x="378" y="58" fill="#e8a13c" font-size="13" font-weight="700">12 / 16</text>
+
+    <!-- Misc 7/14 -->
+    <text x="0" y="80" fill="#a8aebd" font-size="15" font-weight="700">Misc</text>
+    <rect x="110" y="68" width="260" height="18" rx="3" fill="#5b617033"/>
+    <rect x="110" y="68" width="130" height="18" rx="3" fill="#e8a13cb0"/>
+    <text x="378" y="82" fill="#f2f0ea" font-size="13">7 / 14</text>
+
+    <!-- Forensic 2/2 -->
+    <text x="0" y="104" fill="#a8aebd" font-size="15" font-weight="700">Forensic</text>
+    <rect x="110" y="92" width="260" height="18" rx="3" fill="#5b617033"/>
+    <rect x="110" y="92" width="260" height="18" rx="3" fill="#e8a13cb0"/>
+    <text x="378" y="106" fill="#f2f0ea" font-size="13">2 / 2</text>
+
+    <!-- Web 2/26 -->
+    <text x="0" y="128" fill="#a8aebd" font-size="15" font-weight="700">Web</text>
+    <rect x="110" y="116" width="260" height="18" rx="3" fill="#5b617033"/>
+    <rect x="110" y="116" width="20" height="18" rx="3" fill="#e8a13cb0"/>
+    <text x="378" y="130" fill="#f2f0ea" font-size="13">2 / 26</text>
+
+    <!-- Reversing 1/17 -->
+    <text x="0" y="152" fill="#a8aebd" font-size="15" font-weight="700">Reversing</text>
+    <rect x="110" y="140" width="260" height="18" rx="3" fill="#5b617033"/>
+    <rect x="110" y="140" width="15" height="18" rx="3" fill="#e8a13cb0"/>
+    <text x="378" y="154" fill="#f2f0ea" font-size="13">1 / 17</text>
+
+    <!-- Pwn 1/24 -->
+    <text x="0" y="176" fill="#a8aebd" font-size="15" font-weight="700">Pwn</text>
+    <rect x="110" y="164" width="260" height="18" rx="3" fill="#5b617033"/>
+    <rect x="110" y="164" width="11" height="18" rx="3" fill="#e8a13cb0"/>
+    <text x="378" y="178" fill="#f2f0ea" font-size="13">1 / 24</text>
+
+    <!-- Programming + Lucky 一題一行 -->
+    <text x="0" y="200" fill="#767d8d" font-size="13">Programming 1/1 · Lucky 1/1</text>
+
+    <!-- Divider -->
+    <line x1="500" y1="0" x2="500" y2="210" stroke="#5b617033" stroke-width="1"/>
+
+    <!-- 右半: hero 分數 -->
+    <text x="778" y="34" fill="#8b93a5" font-size="18" text-anchor="middle">總分</text>
+    <text x="778" y="124" fill="#e8a13c" font-size="86" font-weight="900" text-anchor="middle">1720</text>
+    <text x="778" y="154" fill="#8b93a5" font-size="16" text-anchor="middle">pts (滿分 ~ 6000)</text>
+    <text x="778" y="188" fill="#767d8d" font-size="13" text-anchor="middle">pass rate 26.7%</text>
+
+    <!-- 右半: 對照 LeetCode 198 100% -->
+    <text x="968" y="34" fill="#8b93a5" font-size="14" text-anchor="middle">Day 24-25</text>
+    <text x="968" y="56" fill="#8b93a5" font-size="14" text-anchor="middle">LeetCode</text>
+    <text x="968" y="106" fill="#2b8a3e" font-size="38" font-weight="900" text-anchor="middle">100%</text>
+    <text x="968" y="128" fill="#8b93a5" font-size="12" text-anchor="middle">198 / 198</text>
+    <text x="968" y="162" fill="#767d8d" font-size="11" text-anchor="middle">pattern density 爆表</text>
+    <text x="968" y="178" fill="#767d8d" font-size="11" text-anchor="middle">vs CTF 每題新梗</text>
+  </svg>
+  </div>
+</div></body></html>
