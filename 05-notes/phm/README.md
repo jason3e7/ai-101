@@ -6,6 +6,9 @@
 
 每題一個 `.md` writeup, 按類別分子資料夾.
 
+> [!TIP]
+> 連線操作共用: [nc-usage.md](nc-usage.md) — PHM 的 Pwn / Misc 題幾乎都 `nc host port`, 常用模式跟我踩過的坑都寫在那.
+
 ## 解題進度 — Progress
 
 | 類別 | 總題數 | 已解 | 分數 |
