@@ -1,11 +1,11 @@
 ---
-title: "AI 101 - 鐵人賽 Day 26: 用 Claude Code 刷 CTF — Please Hack Me 27 題"
+title: "AI 101 - 鐵人賽 Day 26: 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況"
 tags: [ai, 鐵人賽, ironman, ctf, phm, reversing, crypto, pwn, web, 實測, 草稿]
 created: 2026-10-10
 status: draft
 ---
 
-# Day 26｜用 Claude Code 刷 CTF — Please Hack Me 27 題 — Agentic CTF Solving
+# Day 26｜用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 — Agentic CTF Solving
 
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
@@ -14,7 +14,7 @@ status: draft
 
 > **寫在前面** (jason3e7): CTF 跟一般程式題結構差很多, 每題都是作者臨時發明的新梗, 想看 agent 在這條線上的實際手感.
 
-> **TL;DR (EN):** Agent-driven run on PleaseHackMe CTF. **27 / 101 solved, 1720 pts** across Misc (7), Web (2), Pwn (1), Reversing (1), Crypto (12), Forensic (2), Programming (1), Lucky (1). Easy-to-medium categories dominate — classical crypto (XOR / Caesar / Vigenère / substitution / RSA) and small reversing fall quickly; harder challenges that require specific inside jokes (SlowCipher's password, Misc #7 "slow" past the 15s cap) hit a wall. Claude Code excels at code-is-the-attack problems (fast programming, RSA plaintext LUT, timing attacks); it's noticeably weaker when the solve depends on cultural trivia (Accel World references, PHP leak lore) that the training data doesn't bind tightly.
+> **TL;DR (EN):** Agent-driven run on PleaseHackMe CTF, snapshot of current progress: **1720 pts banked** across all 8 categories (Misc, Web, Pwn, Reversing, Crypto, Forensic, Programming, Lucky). Not every challenge was attempted — several categories only have 1-2 problems tried as a sampler, so these aren't completion-rate numbers. What stands out: classical crypto (XOR / Caesar / Vigenère / substitution / RSA) and small reversing fall quickly; harder challenges that require specific inside jokes (SlowCipher's password, Misc #7 "slow" past the 15s cap) hit a wall. Claude Code excels at code-is-the-attack problems (fast programming, RSA plaintext LUT, timing attacks); it's noticeably weaker when the solve depends on cultural trivia (Accel World references, PHP leak lore) that the training data doesn't bind tightly.
 
 ```markdown
 # 用 Claude Code 刷 CTF — PleaseHackMe
@@ -25,9 +25,9 @@ status: draft
 * 流程
   * Playwright MCP 讀題 + 送 flag
   * curl + Python / C / Node 做破解
-* 結果
-  * 27 / 101 AC 1720 pts
-  * Crypto 吃最多 (12 / 16)
+* 目前的測試狀況
+  * 1720 pts 分布 8 類
+  * Crypto 吃最深 (12 題)
 * 每類一題典型手感
   * Misc drvtry (QWERTY shift)
   * Web homepage (DevTools %c QR)
@@ -76,23 +76,22 @@ Playwright MCP 送 flag
 
 ---
 
-## 結果 — The Numbers
+## 目前的測試狀況 — Progress Snapshot
 
-一天內送出去 AC 的: **27 / 101 = 26.7%, 總分 1720 pts (滿分約 6000)**. 分類如下:
+**總分 1720 pts, 8 類全部有進度**. 要先講清楚: 這**不是** pass rate — Crypto 跟 Misc 刷得比較深 (各 10+ 題), 其他類別只挑 1-2 題試水溫, 不代表 agent 做不出其他的, 只是今天沒時間全刷.
 
-| 類別 | 題數 | 已解 | 分數 | pass rate |
-|:---|---:|---:|---:|---:|
-| Misc | 14 | 7 | 370 | 50% |
-| Crypto | 16 | 12 | 1000 | 75% |
-| Forensic | 2 | 2 | 120 | 100% |
-| Web | 26 | 2 | 30 | 7.7% |
-| Pwn | 24 | 1 | 10 | 4.2% |
-| Reversing | 17 | 1 | 40 | 5.9% |
-| Programming | 1 | 1 | 40 | 100% |
-| Lucky | 1 | 1 | 110 | 100% |
-| **合計** | 101 | 27 | 1720 | 26.7% |
+| 類別 | 已拿分數 | 試過幾題 |
+|:---|---:|---:|
+| Crypto | 1000 | 12 |
+| Misc | 370 | 7 |
+| Forensic | 120 | 2 |
+| Lucky | 110 | 1 |
+| Programming | 40 | 1 |
+| Reversing | 40 | 1 |
+| Web | 30 | 2 |
+| Pwn | 10 | 1 |
 
-**吃最多分的是 Crypto** (1000 pts, 75% pass rate), 其他類別我只挑了 1-2 題試水溫, 不代表 agent 做不出來, 只是**今天時間沒夠全刷**.
+**Crypto 吃最深** (1000 pts), 所以下面「典型手感」挑了 ffa 當 Crypto 代表. 其他類別就是 1 題 sampler, 看 agent 第一次碰那類題的手感.
 
 ---
 
@@ -200,7 +199,7 @@ FLAG{2_SLOW_I_ → B
 
 ## AI 幫到哪 — Where Claude Pulled Weight
 
-把全部 27 題排一排, agent 真正「省掉人工」的地方:
+把目前解過的題目排一排, agent 真正「省掉人工」的地方:
 
 | 類別 | 省了什麼 |
 |:---|:---|
@@ -214,7 +213,7 @@ FLAG{2_SLOW_I_ → B
 
 ## 哪裡得自己來 — What AI Can't Do (Yet)
 
-CTF 的 27% 不是因為「題目難」, 是因為**題目的解法本身要臨時發明**. 具體哪些 agent 不行:
+CTF 卡住的題目不是因為「題目難」, 是因為**題目的解法本身要臨時發明**. 具體哪些 agent 不行:
 
 1. **文化梗 / inside joke** — Misc #7 slow 的「2_SLOW_I_B...」要人用英文語感補; Crypto #96 slowcipher 的 password 可能是某個特定 Accel World 名詞. 這些**不在訓練資料的強關聯裡**, agent 窮舉能力有限
 2. **Server-side 硬性限制** — timing attack 的 15 秒上限、brute force 要跑幾小時, 這類**壓根不是演算法問題**的卡點, agent 沒辦法繞
@@ -230,7 +229,7 @@ CTF 的 27% 不是因為「題目難」, 是因為**題目的解法本身要臨�
 | **有條件地吃** | 一次性新規則題 (LCG / aaencode / BMP header 說謊) — 看一眼看懂就吃, 看不懂窮舉就卡 |
 | **真的卡住** | 文化梗 (password 要是特定 anime 名詞)、server-side cap (timing 攻擊的 15 秒上限) |
 
-**吃到 1720 pts / 27 題大概就是這類題庫對 agent 的中段水位** — 低分熱身到中分難度 (10-150 pts) 幾乎都掉得下來, 高分題 (200+) 開始有卡. 剩下 74 題沒試不是不會, 是今天時間不夠跑完全部 category.
+目前這批 1720 pts 大概就是「跑一天」能看到的水位: 低分熱身到中分難度 (10-150 pts) 幾乎都掉得下來, 高分題 (200+) 開始有卡. 剩下的題沒試不是不會, 是今天時間不夠跑完全部 category.
 
 接下來 Day 27-28 待排, 候選有 HTB 綁架目標、模型選擇實測、AI 取代什麼、自架本地 LLM. Day 29 回頭把實戰子系列一起小結, Day 30 收尾 **「跟著 AI 持續成長」** 這條線.
 
