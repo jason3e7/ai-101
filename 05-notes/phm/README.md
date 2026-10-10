@@ -16,12 +16,12 @@
 | Misc | 14 | 7 | 370 |
 | Web | 26 | 2 | 30 |
 | Pwn | 24 | 1 | 10 |
-| Reversing | 17 | 0 | 0 |
+| Reversing | 17 | 1 | 40 |
 | Crypto | 16 | 12 | 1000 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 0 | 0 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **25** | **1640** |
+| **合計** | **101** | **26** | **1680** |
 
 ## 已解題目 — Solved
 
@@ -49,6 +49,7 @@
 | Pwn | catflag | 10 | [pwn/catflag.md](pwn/catflag.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
+| Reversing | helloworld | 40 | [reversing/helloworld.md](reversing/helloworld.md) |
 | Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 | Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
 | Forensic | this is a pen | 80 | [forensic/this-is-a-pen.md](forensic/this-is-a-pen.md) |
