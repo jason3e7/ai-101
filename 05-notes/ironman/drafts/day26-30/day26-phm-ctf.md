@@ -1,16 +1,16 @@
 ---
-title: "AI 101 - 鐵人賽 Day 25: 用 Claude Code 刷 CTF — Please Hack Me 27 題"
+title: "AI 101 - 鐵人賽 Day 26: 用 Claude Code 刷 CTF — Please Hack Me 27 題"
 tags: [ai, 鐵人賽, ironman, ctf, phm, reversing, crypto, pwn, web, 實測, 草稿]
 created: 2026-10-10
 status: draft
 ---
 
-# Day 25｜用 Claude Code 刷 CTF — Please Hack Me 27 題 — Agentic CTF Solving
+# Day 26｜用 Claude Code 刷 CTF — Please Hack Me 27 題 — Agentic CTF Solving
 
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 24](./day24-leetcode-blind75.md) LeetCode Blind 75 的實驗結論是「訓練資料見過 = pattern 命中率近天花板」, 69 AC + 6 PREMIUM 本地解. 這篇換場, 把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 看在這種「每題一個新梗」的場合, agent 自己刷能走到哪.
+> [Day 24](../day21-25/day24-leetcode-blind75.md) LeetCode Blind 75 加 [Day 25](../day21-25/day25-leetcode-lc75-nc150.md) LC-75 + NC150 的實驗結論是「訓練資料見過 = pattern 命中率近天花板」, 兩篇合計 198 題 134 AC + 64 本地解. 這篇換場, 把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 看在這種「每題一個新梗」的場合, agent 自己刷能走到哪.
 
 > **寫在前面** (jason3e7): CTF 跟 LeetCode 最大的差異是**題目沒有 pattern density 可以靠**. 每題都是作者臨時發明的新梗, 判例少, 要靠 agent 真的「想」而不是「拼湊看過的模板」. 這篇就是想看這條線上 Claude Code 的手感.
 
@@ -217,9 +217,9 @@ FLAG{2_SLOW_I_ → B
 | **agent 弱項** | 幾乎沒有 | 文化梗 + server-side 卡點 |
 | **人補哪裡** | 本機 harness 寫得乾淨 | 猜 flag 的文字意圖 |
 
-**Day 24 跟 Day 25 這對是整個系列最直接的對照**: 同一個 agent, 同一天, 一邊是「訓練資料爆表」的 LeetCode, 一邊是「作者臨時想的 101 題」. pass rate 92% 對 27% 的差距, 大概就是「pattern 密度」這條軸真正能量化的落差.
+**Day 24-25 的 LeetCode 跟這篇的 CTF 是整個系列最直接的對照**: 同一個 agent, 幾天內刷完, 一邊是「訓練資料爆表」的 LeetCode (198 題合計 pass rate ~99%), 一邊是「作者臨時想的 101 題」(27%). 這個差距大概就是「pattern 密度」這條軸真正能量化的落差.
 
-接下來 Day 26-28 待排, 候選有 HTB 綁架目標、模型選擇實測、AI 取代什麼. Day 29 回頭把實戰子系列 (Day 24-25 加之後排的) 一起小結, Day 30 收尾 **「跟著 AI 持續成長」** 這條線.
+接下來 Day 27-28 待排, 候選有 HTB 綁架目標、模型選擇實測、AI 取代什麼、自架本地 LLM. Day 29 回頭把實戰子系列 (Day 24-26 加之後排的) 一起小結, Day 30 收尾 **「跟著 AI 持續成長」** 這條線.
 
 ---
 
@@ -228,4 +228,5 @@ FLAG{2_SLOW_I_ → B
 - [Please Hack Me CTF](https://ctf.hackme.quest/) — Inndy 維護的 CTF 練習站
 - [05-notes/phm/README.md](../../../phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup
 - [05-notes/phm/nc-usage.md](../../../phm/nc-usage.md) — 這次整理的 nc 共用筆記 (sleep + echo + timeout 模式)
-- [Day 24 LeetCode Blind 75](./day24-leetcode-blind75.md) — 這篇的直接對照組
+- [Day 24 LeetCode Blind 75](../day21-25/day24-leetcode-blind75.md) — 這篇的直接對照組 (基礎)
+- [Day 25 LC-75 + NC150](../day21-25/day25-leetcode-lc75-nc150.md) — 這篇的直接對照組 (放大版)

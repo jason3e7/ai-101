@@ -9,9 +9,9 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 三十篇的**現況板**. 已發布 16 篇 (Day 1-16), 草稿中 3 篇 (Day 17-19), Day 20-23 預計, Day 24-25 排定兩篇大型實戰 (刷題、CTF), Day 26-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
+> 三十篇的**現況板**. 已發布 16 篇 (Day 1-16), 草稿中 4 篇 (Day 17-19、26), Day 20-23 預計, Day 24-26 排定三篇大型實戰 (Blind 75、LC-75+NC150、PHM CTF), Day 27-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
 
-> **TL;DR (EN):** Thirty working titles for the Claude AI group. Sixteen published (Day 1-16), three in draft (Day 17-19). The finale was re-planned on 2026-10-08: Day 24-25 become two hands-on pieces (LeetCode grind, then a CTF run on ctf.hackme.quest), Day 26-28 are left open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
+> **TL;DR (EN):** Thirty working titles for the Claude AI group. Sixteen published (Day 1-16), four in draft (Day 17-19 and Day 26). The finale was re-planned 2026-10-08 and extended 2026-10-10: Day 24-26 become three hands-on pieces (Blind 75, LC-75+NC150, then a CTF run on ctf.hackme.quest), Day 27-28 are left open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
 
 ---
 
@@ -92,24 +92,25 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 ### 合: 實戰與收尾 (Day 24-30)
 
 > [!NOTE]
-> jason3e7 於 2026-10-08 重排 Day 24-30: 前面全是「講＋小實測」, 收尾改成兩篇**大型實戰**(刷題、CTF) ＋ 三個待定 ＋ 小結/總結. 原本排在這段的題目(HTB、AI 取代什麼、選模型實測、無審查、自主滲透、自架本地 LLM)退回 [候補題目池](#候補題目池--backlog), 其中兩篇已有 draft, 可優先補進 Day 26-28.
+> jason3e7 於 2026-10-08 重排 Day 24-30: 前面全是「講＋小實測」, 收尾改成**大型實戰系列** (Day 24-26 刷 LeetCode + CTF) ＋ 兩個待定 ＋ 小結/總結. 原本排在這段的題目(HTB、AI 取代什麼、選模型實測、無審查、自主滲透、自架本地 LLM)退回 [候補題目池](#候補題目池--backlog), 其中兩篇已有 draft, 可優先補進 Day 27-28.
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚧 [草稿中](./drafts/day21-25/day24-leetcode-blind75.md) |
 | 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚧 [草稿中](./drafts/day21-25/day25-leetcode-lc75-nc150.md) |
-| 26 | 待定 | — | 🔄 待定 (候選見 backlog) |
+| 26 | 用 Claude Code 刷 CTF — Please Hack Me 27 題 | [phm/](../phm/README.md) | 🚧 [草稿中](./drafts/day26-30/day26-phm-ctf.md) |
 | 27 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 28 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 29 | 小結 (實戰子系列回顧, 範圍待定) | — | 📅 預計 |
 | 30 | 總結: 三十天蒸餾, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
 
-**盤點**: 🚀 已發布 16 篇 (Day 1-16) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 8 篇 (Day 20-25、29、30) · 🔄 待定 3 篇 (Day 26-28). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
+**盤點**: 🚀 已發布 16 篇 (Day 1-16) · 🚧 草稿中 4 篇 (Day 17、18、19、26) · 📅 預計 8 篇 (Day 20-25、29、30) · 🔄 待定 2 篇 (Day 27-28). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-10**: Day 26 draft 寫好 — 把 2026-10-09 退回候補池的「CTF 實戰 (phm)」重新裝回 Day 26 (實戰子系列擴成三篇: Day 24-25 LeetCode + Day 26 CTF). PHM 進度 27/101 = 1720 pts, pass rate 26.7% 直接對照 LeetCode 兩篇合計 99%+, 量化 pattern density 的落差. 剩 Day 27-28 待排 (候補池還有 HTB 綁架 / AI 取代什麼 / 選模型實測 / 無審查 / 自主滲透 / 自架本地 LLM, 其中 2 篇有 draft).
 - **2026-10-09**: Day 25 從「CTF 實戰 (phm)」改為「Blind 75 不夠, 再加碼 LC-75 + NC150」, 承接 Day 24 做放大版實驗 (129 新題 + 1 新 PREMIUM, pass rate 99.2%, 唯一 WA 是 Pow(x,n) FP 精度). CTF 實戰題退回候補池.
 - **2026-10-08**: jason3e7 重排 Day 24-30. Day 24 = LeetCode 實戰 ([leetcode/](../leetcode/), lc75 進度), Day 25 = CTF 實戰 ([phm/](../phm/README.md), ctf.hackme.quest), Day 26-28 = 🔄 待定, Day 29 = 小結, Day 30 = 總結 (維持「跟著 AI 持續成長」方向). 原 Day 24-29 的六個題目 (HTB 綁架 / AI 取代什麼[有 draft] / 選模型實測 / 無審查模型 / 自主滲透 / 自架本地 LLM[有 draft]) 退回候補池, 可優先補 Day 26-28. 段落標題: 原「轉·實測與量化 (Day 16-24)」縮成 Day 16-23;「合」改名「實戰與收尾 (Day 24-30)」
 - **2026-10-02**: Day 18 (翻面問題) 從草稿骨架寫成完整草稿, 技術基礎換成 lab01 V12 (9 signal ＋ 權重微調, 全體 density 69.66); 新增 Tampermonkey script (固定放 `05-notes/assets/browser-ranker.user.js`) 當文末 payoff (瀏覽網頁即時看 N_sum / density). 保留 jason3e7 翻面提問為主軸, 收尾「零命中推不出人寫」的認識論論點
@@ -137,7 +138,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | AI 可能會取代什麼, 目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ **已有 draft** ([day25-what-ai-replaces](./drafts/day21-25/day25-what-ai-replaces.md)); 2026-10-08 從 Day 25 退出, 可補 Day 26-28 |
 | 自架本地 LLM: 什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ **已有 draft** ([day27-self-hosted-llm](./drafts/day26-30/day27-self-hosted-llm.md)); 2026-10-08 從 Day 29 退出, 可補 Day 26-28 |
 | HTB 靶機實測: Claude Code 的目標怎麼被綁架 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 2026-10-08 從 Day 24 退出; repo 最長的三篇, 全場獨有 |
-| CTF 實戰: 帶 Claude Code 解 ctf.hackme.quest (Please Hack Me) | [phm/](../phm/README.md) | 2026-10-09 從 Day 25 退出, 可補 Day 26-28 |
+| ~~CTF 實戰: 帶 Claude Code 解 ctf.hackme.quest (Please Hack Me)~~ | [phm/](../phm/README.md) | 2026-10-09 從 Day 25 退出; **2026-10-10 補回 Day 26** |
 | 選模型 × 實測: 同一題 Opus / Sonnet / Haiku 各跑一次 | [model-cost-comparison](../../01-fundamentals/models/model-cost-comparison.md) ＋ 新實測 | 2026-10-08 從 Day 26 退出 (要跑) |
 | 拿掉「拒絕」的真正代價: 無審查模型實測 | [qwen3-6-27b-uncensored](../../04-local-llm/qwen3-6-27b-uncensored.md) | 2026-10-08 從 Day 27 退出 |
 | AI 已經會自己打靶: 自主滲透工具現況 | [autonomous-pentest-tools-comparison](../../03-tools/security/autonomous-pentest-tools-comparison.md) | 2026-10-08 從 Day 28 退出 |
