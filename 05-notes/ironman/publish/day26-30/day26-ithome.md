@@ -1,20 +1,10 @@
----
-title: "AI 101 - 鐵人賽 Day 26: 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況"
-tags: [ai, 鐵人賽, ironman, ctf, phm, reversing, crypto, pwn, web, 實測, 草稿]
-created: 2026-10-10
-status: draft
----
+title : [Day 26] 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況
 
-# Day 26｜用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 — Agentic CTF Solving
-
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
-
-> [!NOTE]
 > 這篇把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 單純想試試看在這種題型上 agent 自己刷能走到哪.
 
-> **寫在前面** (jason3e7): CTF 跟一般程式題結構差很多, 每題都是作者臨時發明的新梗, 想看 agent 在這條線上的實際手感.
+寫在前面 (jason3e7):
 
-> **TL;DR (EN):** Agent-driven run on PleaseHackMe CTF, snapshot of current progress: **1720 pts banked** across all 8 categories (Misc, Web, Pwn, Reversing, Crypto, Forensic, Programming, Lucky). Not every challenge was attempted — several categories only have 1-2 problems tried as a sampler, so these aren't completion-rate numbers. What stands out: classical crypto (XOR / Caesar / Vigenère / substitution / RSA) and small reversing fall quickly; harder challenges that require specific inside jokes (SlowCipher's password, Misc #7 "slow" past the 15s cap) hit a wall. Claude Code excels at code-is-the-attack problems (fast programming, RSA plaintext LUT, timing attacks); it's noticeably weaker when the solve depends on cultural trivia (Accel World references, PHP leak lore) that the training data doesn't bind tightly.
+> CTF 跟一般程式題結構差很多, 每題都是作者臨時發明的新梗, 想看 agent 在這條線上的實際手感.
 
 ```markdown
 # 用 Claude Code 刷 CTF — PleaseHackMe
@@ -43,8 +33,6 @@ status: draft
   * 文化梗 + server cap 要人補
 ```
 
----
-
 ## 為什麼挑 PHM — Why Please Hack Me
 
 [Please Hack Me](https://ctf.hackme.quest/) (下簡稱 PHM) 是台灣作者 [Inndy](https://www.inndy.tw/) 多年維護的 CTF 練習站, 2016-2021 期間陸陸續續上了 **101 題**, 分八類: Misc 14 / Web 26 / Pwn 24 / Reversing 17 / Crypto 16 / Forensic 2 / Programming 1 / Lucky 1. 挑它的三個理由:
@@ -53,8 +41,6 @@ status: draft
 2. **分數分佈夠細** — 10 分熱身到 270 分硬題全有, 可以量化「容易 / 中等 / 卡住」各佔多少
 
 同一個 agent, 同一天刷, 看哪些題型 AI 幫得上, 哪些得人補.
-
----
 
 ## 流程 — The Loop
 
@@ -74,8 +60,6 @@ Playwright MCP 送 flag
 重新讀 scoreboard, 看分數 +N 確認 AC
 ```
 
----
-
 ## 目前的測試狀況 — Progress Snapshot
 
 **總分 1720 pts, 8 類全部有進度**. 要先講清楚: 這**不是** pass rate — Crypto 跟 Misc 刷得比較深 (各 10+ 題), 其他類別只挑 1-2 題試水溫, 不代表 agent 做不出其他的, 只是今天沒時間全刷.
@@ -92,8 +76,6 @@ Playwright MCP 送 flag
 | Pwn | 10 | 1 |
 
 **Crypto 吃最深** (1000 pts), 所以下面「典型手感」挑了 ffa 當 Crypto 代表. 其他類別就是 1 題 sampler, 看 agent 第一次碰那類題的手感.
-
----
 
 ## 幾題典型手感 — One Per Category
 
@@ -130,7 +112,7 @@ Pwn 分類最低分題, 沒有真的 pwn (buffer overflow / ROP), 考**看懂題
 
 32-bit ELF, agent 跑 `objdump -M intel -d` 看 main:
 
-```asm
+```
 cmp eax, 0x12b9b0a1    ; 跟 scanf 讀到的數比
 jne .wrong             ; 錯 → "Try Hard."
 ; 對 → XOR 29-byte buffer 低 8 bits (0xa1), printf flag
@@ -161,8 +143,6 @@ server 連來: `Send 'Yes I know' to start`. 開始後連丟 10000 條四則運�
 - C 的 `/` **往 0 截斷**, Python `//` 是往下取整, 負數會差 1 → 自己實作 `ctrunc_div`
 
 Agent 直接寫 socket + regex 版本 (不用 nc subprocess 避 buffer 問題). 1.3 秒跑完. flag: `FLAG{Wow, you are really fast! SfpNi7yYEP0BDXDN}`.
-
----
 
 ## 兩題卡住的: AI 的死角 — Where It Hits a Wall
 
@@ -195,8 +175,6 @@ FLAG{2_SLOW_I_ → B
 
 → **AI 的死角: 加速計算是強項 (fast decoder 寫得出來), 但 password 空間在哪, 要人給 hint.**
 
----
-
 ## AI 幫到哪 — Where Claude Pulled Weight
 
 把目前解過的題目排一排, agent 真正「省掉人工」的地方:
@@ -209,8 +187,6 @@ FLAG{2_SLOW_I_ → B
 | **Socket + regex 的互動服務** | fast / timing attack 這類「每秒 1000+ 次 round trip」的題目, Python socket + threading 直接刷 |
 | **工具陷阱繞開** | nc stdin 關閉行為、32-bit libc 缺失、HTML 透明文字、QR 反極性, 這類「踩過一次」的坑 agent 很快累積 |
 
----
-
 ## 哪裡得自己來 — What AI Can't Do (Yet)
 
 CTF 卡住的題目不是因為「題目難」, 是因為**題目的解法本身要臨時發明**. 具體哪些 agent 不行:
@@ -218,8 +194,6 @@ CTF 卡住的題目不是因為「題目難」, 是因為**題目的解法本身
 1. **文化梗 / inside joke** — Misc #7 slow 的「2_SLOW_I_B...」要人用英文語感補; Crypto #96 slowcipher 的 password 可能是某個特定 Accel World 名詞. 這些**不在訓練資料的強關聯裡**, agent 窮舉能力有限
 2. **Server-side 硬性限制** — timing attack 的 15 秒上限、brute force 要跑幾小時, 這類**壓根不是演算法問題**的卡點, agent 沒辦法繞
 3. **多步工具組合的直覺** — Pwn 題的 ROP chain 要在 pwntools 裡接起來, 這類**跨工具的手感**, 現有 agent 還不夠
-
----
 
 ## 收斂 — Takeaways
 
@@ -231,9 +205,6 @@ CTF 卡住的題目不是因為「題目難」, 是因為**題目的解法本身
 
 目前這批 1720 pts 大概就是「跑一天」能看到的水位: 低分熱身到中分難度 (10-150 pts) 幾乎都掉得下來, 高分題 (200+) 開始有卡. 剩下的題沒試不是不會, 是今天時間不夠跑完全部 category.
 
----
-
 ## Sources
 
 - [Please Hack Me CTF](https://ctf.hackme.quest/) — Inndy 維護的 CTF 練習站
-- [05-notes/phm/README.md](../../../phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup
