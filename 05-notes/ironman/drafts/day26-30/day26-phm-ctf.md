@@ -10,9 +10,9 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 24](../day21-25/day24-leetcode-blind75.md) LeetCode Blind 75 加 [Day 25](../day21-25/day25-leetcode-lc75-nc150.md) LC-75 + NC150 的實驗結論是「訓練資料見過 = pattern 命中率近天花板」, 兩篇合計 198 題 134 AC + 64 本地解. 這篇換場, 把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 看在這種「每題一個新梗」的場合, agent 自己刷能走到哪.
+> [Day 24](../day21-25/day24-leetcode-blind75.md) LeetCode Blind 75 加 [Day 25](../day21-25/day25-leetcode-lc75-nc150.md) LC-75 + NC150 兩篇合計 198 題送判全 AC. 這篇換場, 把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 單純想試試看在這種題型上 agent 自己刷能走到哪.
 
-> **寫在前面** (jason3e7): CTF 跟 LeetCode 最大的差異是**題目沒有 pattern density 可以靠**. 每題都是作者臨時發明的新梗, 判例少, 要靠 agent 真的「想」而不是「拼湊看過的模板」. 這篇就是想看這條線上 Claude Code 的手感.
+> **寫在前面** (jason3e7): 這篇不是對照組, 是另一組實驗 — CTF 跟 LeetCode 的題目結構差很多, 想看 agent 在這條線上的實際手感.
 
 > **TL;DR (EN):** Agent-driven run on PleaseHackMe CTF. **27 / 101 solved, 1720 pts** across Misc (7), Web (2), Pwn (1), Reversing (1), Crypto (12), Forensic (2), Programming (1), Lucky (1). Easy-to-medium categories dominate — classical crypto (XOR / Caesar / Vigenère / substitution / RSA) and small reversing fall quickly; harder challenges that require specific inside jokes (SlowCipher's password, Misc #7 "slow" past the 15s cap) hit a wall. Claude Code excels at code-is-the-attack problems (fast programming, RSA plaintext LUT, timing attacks); it's noticeably weaker when the solve depends on cultural trivia (Accel World references, PHP leak lore) that the training data doesn't bind tightly.
 
@@ -23,23 +23,24 @@ status: draft
   * 題型全 8 類
   * 作者 Inndy 風格一致
 * 流程
-  * 瀏覽器開題 Playwright MCP
-  * nc / curl / 下載 binary
-  * 寫 Python / C 做破解
-  * fetch POST 送 flag
+  * Playwright MCP 讀題 + 送 flag
+  * curl + Python / C / Node 做破解
 * 結果
   * 27 / 101 AC 1720 pts
   * Crypto 吃最多 (12 / 16)
-  * Pwn / Web / Reversing / Programming 各 1
-* AI 幫到哪
-  * 經典密碼學一次到底
-  * objdump 讀 asm 快
-  * socket + regex 刷互動服務
-* 哪裡得自己來
-  * 文字梗要人補 (burstlinker)
-  * server-side cap 無法繞
-  * nc stdin 行為踩坑
-* 收斂
+* 每類一題典型手感
+  * Misc drvtry (QWERTY shift)
+  * Web homepage (DevTools %c QR)
+  * Pwn catflag (whitelist)
+  * Reversing helloworld (π × 10^8)
+  * Crypto ffa (linear system + extEuclidean)
+  * Programming fast (socket + regex)
+* 兩題卡住
+  * Misc slow (server 15 秒 cap)
+  * Crypto slowcipher (fast decoder OK 但 password 猜不到)
+* 對比 LeetCode
+  * LC 100% vs CTF 27%
+  * 差距 = pattern density
 ```
 
 ---
@@ -49,8 +50,7 @@ status: draft
 [Please Hack Me](https://ctf.hackme.quest/) (下簡稱 PHM) 是台灣作者 [Inndy](https://www.inndy.tw/) 多年維護的 CTF 練習站, 2016-2021 期間陸陸續續上了 **101 題**, 分八類: Misc 14 / Web 26 / Pwn 24 / Reversing 17 / Crypto 16 / Forensic 2 / Programming 1 / Lucky 1. 挑它的三個理由:
 
 1. **題型覆蓋全光譜** — Pwn 二進位漏洞、Web client-side 編碼、Crypto 從古典到 RSA、Reversing 讀 x86 asm、Forensic 檔案層分析, 一個站打完等於走完 CTF 入門路徑
-2. **對照 LeetCode 的「反面」** — LeetCode 吃訓練資料的 pattern density, CTF 吃**臨時發明的梗**. 兩者 agent 表現差多少, 這篇就是對照組
-3. **分數分佈夠細** — 10 分熱身到 270 分硬題全有, 可以量化「容易 / 中等 / 卡住」各佔多少
+2. **分數分佈夠細** — 10 分熱身到 270 分硬題全有, 可以量化「容易 / 中等 / 卡住」各佔多少
 
 同一個 agent, 同一天刷, 看哪些題型 AI 幫得上, 哪些得人補.
 
@@ -69,17 +69,10 @@ Claude 判斷題型 + 寫 Python / C / Node 做破解
   ↓
 算出 flag 字串
   ↓
-Playwright MCP 走 fetch POST /scoreboard/?capture=the_flag
-  (name=json3e74101&flag=FLAG{...})
+Playwright MCP 送 flag
   ↓
 重新讀 scoreboard, 看分數 +N 確認 AC
 ```
-
-Playwright MCP 用來做兩件事: **登入 session** (手動一次後 agent 直接 fetch 就能帶 cookie 送 flag) + **讀 server-rendered scoreboard** (JS 渲染 flag 題描述, curl 看不到). 其他全部 Python/C/Node 做.
-
-### 共用工具筆記
-
-這天搞完 catflag (Pwn #58) 之後有感 `nc` 的坑太多, 直接整理成 [05-notes/phm/nc-usage.md](../../../phm/nc-usage.md), 之後每次連 service 題直接套 `(sleep 7; echo payload) | timeout 15 nc host port` 這組 snippet. 下次 agent 不用再踩 `exit 143` SIGTERM 或 `< /dev/null` server 立刻斷的坑.
 
 ---
 
@@ -103,7 +96,48 @@ Playwright MCP 用來做兩件事: **登入 session** (手動一次後 agent 直
 
 ---
 
-## 幾題典型手感 — Four Representative Solves
+## 幾題典型手感 — One Per Category
+
+每類挑一題講, 不是最難的, 是能看出 agent 吃哪種題吃得最乾淨的.
+
+### Misc #12 drvtry vpfr (100 pts) — 題目名字就是解法線索
+
+題目: `G:SH}Djogy <u Lrunpstf Smf Yu[omh Dp,ryjomh|`, 標題 `drvtry vpfr`. Agent 第一眼就看出 `drvtry → secret` (每個字母在 QWERTY 鍵盤往右挪一格打出來, 反過來往左挪就還原). 寫 10 行 Python 處理大小寫 + 符號 (`}` 要還原成 `{`, `[` 還原成 `p`), 整段解出來:
+
+```
+FLAG{Shift My Keyboard And Typing Something}
+```
+
+這類「標題即線索」的 Misc 題, agent 一旦認出 pattern 就幾秒解完.
+
+### Web #18 homepage (20 pts) — DevTools 的 `%c` 魔法
+
+主頁有個 `cute.js` 用 **aaencode** (日文顏文字 JS 混淆) 包了一段 `console.log("%c██...", "css styles...")`. `%c` 是**瀏覽器 console.log 的 CSS 格式化魔法**, 每個 `%c` 對應下一個參數的樣式字串. 作者用這招在 DevTools console 畫一張 **29x29 QR Code** (白格 fff / 深灰格 333).
+
+Agent 在 Node 攔截 `console.log` 把兩陣列 (text + colors) 拉下來, Python + pyzbar 掃. 關鍵小細節: **反極性 + 加 100px border** 才認得出 QR. flag: `FLAG{Oh, You found me!!!!!! Yeeeeeeee.}`.
+
+### Pwn #58 catflag (10 pts) — restricted shell 的 whitelist 繞不過, 題目就是要你照字面做
+
+連進 server, 5 秒 countdown 之後開一個 shell. 送 `/bin/cat flag` → `Invalid command`. 送 `cat flag` → 直接吐 flag. 作者用字面比對 whitelist, 題目名字就是答案:
+
+```bash
+(sleep 7; echo "cat flag") | timeout 15 nc ctf.hackme.quest 7709
+# -> FLAG{cat flag? dog flag!}
+```
+
+Pwn 分類最低分題, 沒有真的 pwn (buffer overflow / ROP), 考**看懂題目的 whitelist**.
+
+### Reversing #41 helloworld (40 pts) — magic number 是 π × 10^8 的彩蛋
+
+32-bit ELF, agent 跑 `objdump -M intel -d` 看 main:
+
+```asm
+cmp eax, 0x12b9b0a1    ; 跟 scanf 讀到的數比
+jne .wrong             ; 錯 → "Try Hard."
+; 對 → XOR 29-byte buffer 低 8 bits (0xa1), printf flag
+```
+
+Magic number `0x12b9b0a1` = **314159265** = π × 10^8. Agent 直接看出這梗, 輸 314159265 進去, buffer XOR 0xa1 解開 `"PI is not a rational number."`. flag: `FLAG{PI is not a rational number.}`.
 
 ### Crypto #97 ffa (270 pts) — 15 行 Python 吃掉 finite field
 
@@ -120,17 +154,6 @@ q = pow(flag, b, M)
 
 agent 一看就認出來: 三條線性方程 3 未知, mod m 下直接解 `a, b, c`. 再用 **extended Euclidean** 找 `u*a + v*b = 1` → `flag = p^u * q^v mod M`. 不用 factor n. 15 行 Python 搞定, flag: `FLAG{Math is simple, right? OwO}`. 這類「題目名字就是解法」的題, agent 直接吃.
 
-### Crypto #95 multilayer (150 pts) — 4 層加密各吃各的弱點
-
-四層: `substitution → *17 mod 251 → LCG XOR → RSA chain + base64`. Agent 逐層逆:
-
-1. **Layer 4 RSA**: `e=24-bit prime, plaintext 是 4 bytes hex chars (16^4 = 65536 種)`. 直接**預計算 lookup**, 不 factor n 繞開
-2. **Layer 3 LCG**: `(key mod 256)` 只有 256 種, 窮舉 + 檢查結果落在合法 byte set
-3. **Layer 2**: 17 mod 251 的乘法逆元 = 192
-4. **Layer 1**: substitution + 已知 FLAG{...}\n 格式. SHA256 比對 + 猜 pangram **「A QUICK BROWN FOX JUMPS OVER THE LAZY DOG」** 配字長 pattern 命中
-
-Agent 看一眼就知道「這題不是要你 factor RSA, 是要你發現 plaintext space 只有 65536 種」. 每層抓錯的弱點是 agent 的強項.
-
 ### Programming #98 fast (40 pts) — socket + regex 1.3 秒解 10000 題
 
 server 連來: `Send 'Yes I know' to start`. 開始後連丟 10000 條四則運算要你回答. 兩個坑都是 **C-style int 細節**:
@@ -139,12 +162,6 @@ server 連來: `Send 'Yes I know' to start`. 開始後連丟 10000 條四則運�
 - C 的 `/` **往 0 截斷**, Python `//` 是往下取整, 負數會差 1 → 自己實作 `ctrunc_div`
 
 Agent 直接寫 socket + regex 版本 (不用 nc subprocess 避 buffer 問題). 1.3 秒跑完. flag: `FLAG{Wow, you are really fast! SfpNi7yYEP0BDXDN}`.
-
-### Web #18 homepage (20 pts) — DevTools 的 `%c` 魔法
-
-主頁有個 `cute.js` 用 **aaencode** (日文顏文字 JS 混淆) 包了一段 `console.log("%c██...", "css styles...")`. `%c` 是**瀏覽器 console.log 的 CSS 格式化魔法**, 每個 `%c` 對應下一個參數的樣式字串. 作者用這招在 DevTools console 畫一張 **29x29 QR Code** (白格 fff / 深灰格 333).
-
-Agent 在 Node 攔截 `console.log` 把兩陣列 (text + colors) 拉下來, Python + pyzbar 掃. 關鍵小細節: **反極性 + 加 100px border** 才認得出 QR. flag: `FLAG{Oh, You found me!!!!!! Yeeeeeeee.}`.
 
 ---
 
@@ -203,21 +220,23 @@ FLAG{2_SLOW_I_ → B
 2. **Server-side 硬性限制** — timing attack 的 15 秒上限、brute force 要跑幾小時, 這類**壓根不是演算法問題**的卡點, agent 沒辦法繞
 3. **多步工具組合的直覺** — Pwn 題的 ROP chain 要在 pwntools 裡接起來, 這類**跨工具的手感**, 現有 agent 還不夠
 
-寫完這篇才意識到: Day 24 LeetCode 的 69/75 跟這篇的 27/101, **兩個數字差距的本質不是 agent 能力, 是題目能不能從訓練資料回答**. Blind 75 是**最密集的 pattern bucket**, CTF 是**每題新梗**. 落差正好量化了這條線.
+把兩邊的數字擺一起會發現: Day 24-25 LeetCode 的 198 送判題全 AC 跟這篇的 27/101, **差距的本質不是 agent 能力, 是題目能不能從訓練資料回答**. LeetCode 是**最密集的 pattern bucket**, CTF 是**每題新梗**. 兩個數字擺在一起順便量化了這條線.
 
 ---
 
 ## 收斂 — Takeaways
 
-| | LeetCode Blind 75 | PHM CTF 101 |
+LeetCode 三套合計把能送判的全算進去 (PREMIUM 鎖住無法上傳的那幾題不算), 總共 **198 題送判 198 AC = 100%**. PHM 這邊 27 / 101 = 26.7%.
+
+| | LeetCode (Blind 75 + LC-75 + NC150) | PHM CTF |
 |:---|:---|:---|
 | **題型** | 標準演算法, 最大 pattern density | 作者臨時梗, 每題新規則 |
-| **pass rate** | 92% (69/75 AC) | 27% (27/101) |
-| **agent 強項** | 直接套模板 | 逐層拆弱點 + 寫 fast decoder |
+| **pass rate (送判題)** | 100% (198 / 198 AC, 7 PREMIUM 不算) | 26.7% (27 / 101) |
+| **agent 強項** | 直接套模板, Hard 不卡 | 逐層拆弱點 + 寫 fast decoder |
 | **agent 弱項** | 幾乎沒有 | 文化梗 + server-side 卡點 |
-| **人補哪裡** | 本機 harness 寫得乾淨 | 猜 flag 的文字意圖 |
+| **人補哪裡** | 本機 harness + PREMIUM 鎖住要本地判斷 | 猜 flag 的文字意圖 |
 
-**Day 24-25 的 LeetCode 跟這篇的 CTF 是整個系列最直接的對照**: 同一個 agent, 幾天內刷完, 一邊是「訓練資料爆表」的 LeetCode (198 題合計 pass rate ~99%), 一邊是「作者臨時想的 101 題」(27%). 這個差距大概就是「pattern 密度」這條軸真正能量化的落差.
+同一個 agent, 幾天內刷完 LeetCode 198 題 100% 跟 PHM 101 題 27%. 不是刻意的 A/B 實驗, 但數字擺一起還是能看出「pattern 密度」這條軸對 agent 影響多大.
 
 接下來 Day 27-28 待排, 候選有 HTB 綁架目標、模型選擇實測、AI 取代什麼、自架本地 LLM. Day 29 回頭把實戰子系列 (Day 24-26 加之後排的) 一起小結, Day 30 收尾 **「跟著 AI 持續成長」** 這條線.
 
@@ -227,6 +246,5 @@ FLAG{2_SLOW_I_ → B
 
 - [Please Hack Me CTF](https://ctf.hackme.quest/) — Inndy 維護的 CTF 練習站
 - [05-notes/phm/README.md](../../../phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup
-- [05-notes/phm/nc-usage.md](../../../phm/nc-usage.md) — 這次整理的 nc 共用筆記 (sleep + echo + timeout 模式)
 - [Day 24 LeetCode Blind 75](../day21-25/day24-leetcode-blind75.md) — 這篇的直接對照組 (基礎)
 - [Day 25 LC-75 + NC150](../day21-25/day25-leetcode-lc75-nc150.md) — 這篇的直接對照組 (放大版)
