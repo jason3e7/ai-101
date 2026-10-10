@@ -10,9 +10,9 @@ status: draft
 [← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
 
 > [!NOTE]
-> [Day 24](../day21-25/day24-leetcode-blind75.md) LeetCode Blind 75 加 [Day 25](../day21-25/day25-leetcode-lc75-nc150.md) LC-75 + NC150 兩篇合計 198 題送判全 AC. 這篇換場, 把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 單純想試試看在這種題型上 agent 自己刷能走到哪.
+> 這篇把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 單純想試試看在這種題型上 agent 自己刷能走到哪.
 
-> **寫在前面** (jason3e7): 這篇不是對照組, 是另一組實驗 — CTF 跟 LeetCode 的題目結構差很多, 想看 agent 在這條線上的實際手感.
+> **寫在前面** (jason3e7): CTF 跟一般程式題結構差很多, 每題都是作者臨時發明的新梗, 想看 agent 在這條線上的實際手感.
 
 > **TL;DR (EN):** Agent-driven run on PleaseHackMe CTF. **27 / 101 solved, 1720 pts** across Misc (7), Web (2), Pwn (1), Reversing (1), Crypto (12), Forensic (2), Programming (1), Lucky (1). Easy-to-medium categories dominate — classical crypto (XOR / Caesar / Vigenère / substitution / RSA) and small reversing fall quickly; harder challenges that require specific inside jokes (SlowCipher's password, Misc #7 "slow" past the 15s cap) hit a wall. Claude Code excels at code-is-the-attack problems (fast programming, RSA plaintext LUT, timing attacks); it's noticeably weaker when the solve depends on cultural trivia (Accel World references, PHP leak lore) that the training data doesn't bind tightly.
 
@@ -38,9 +38,9 @@ status: draft
 * 兩題卡住
   * Misc slow (server 15 秒 cap)
   * Crypto slowcipher (fast decoder OK 但 password 猜不到)
-* 對比 LeetCode
-  * LC 100% vs CTF 27%
-  * 差距 = pattern density
+* 收斂
+  * 經典密碼 / Reversing 常見梗 agent 吃爆
+  * 文化梗 + server cap 要人補
 ```
 
 ---
@@ -58,7 +58,7 @@ status: draft
 
 ## 流程 — The Loop
 
-PHM 不像 LeetCode 有統一提交 API, 每題解法 payload 格式都不同. 共用的 agentic loop:
+PHM 沒有統一提交 API, 每題解法 payload 格式都不同. 共用的 agentic loop:
 
 ```
 Playwright MCP 瀏覽器開題頁, 讀題 + 下載附件
@@ -214,31 +214,25 @@ FLAG{2_SLOW_I_ → B
 
 ## 哪裡得自己來 — What AI Can't Do (Yet)
 
-對比 LeetCode 的近 100% pass rate, CTF 的 27% 不是因為「題目難」, 是因為**題目的解法本身要臨時發明**. 具體哪些 agent 不行:
+CTF 的 27% 不是因為「題目難」, 是因為**題目的解法本身要臨時發明**. 具體哪些 agent 不行:
 
 1. **文化梗 / inside joke** — Misc #7 slow 的「2_SLOW_I_B...」要人用英文語感補; Crypto #96 slowcipher 的 password 可能是某個特定 Accel World 名詞. 這些**不在訓練資料的強關聯裡**, agent 窮舉能力有限
 2. **Server-side 硬性限制** — timing attack 的 15 秒上限、brute force 要跑幾小時, 這類**壓根不是演算法問題**的卡點, agent 沒辦法繞
 3. **多步工具組合的直覺** — Pwn 題的 ROP chain 要在 pwntools 裡接起來, 這類**跨工具的手感**, 現有 agent 還不夠
 
-把兩邊的數字擺一起會發現: Day 24-25 LeetCode 的 198 送判題全 AC 跟這篇的 27/101, **差距的本質不是 agent 能力, 是題目能不能從訓練資料回答**. LeetCode 是**最密集的 pattern bucket**, CTF 是**每題新梗**. 兩個數字擺在一起順便量化了這條線.
-
 ---
 
 ## 收斂 — Takeaways
 
-LeetCode 三套合計把能送判的全算進去 (PREMIUM 鎖住無法上傳的那幾題不算), 總共 **198 題送判 198 AC = 100%**. PHM 這邊 27 / 101 = 26.7%.
+| | agent 表現 |
+|:---|:---|
+| **吃最乾淨** | 經典密碼學 (Caesar / Vigenère / substitution / RSA 的 chain) + Reversing 常見梗 + socket 互動服務 |
+| **有條件地吃** | 一次性新規則題 (LCG / aaencode / BMP header 說謊) — 看一眼看懂就吃, 看不懂窮舉就卡 |
+| **真的卡住** | 文化梗 (password 要是特定 anime 名詞)、server-side cap (timing 攻擊的 15 秒上限) |
 
-| | LeetCode (Blind 75 + LC-75 + NC150) | PHM CTF |
-|:---|:---|:---|
-| **題型** | 標準演算法, 最大 pattern density | 作者臨時梗, 每題新規則 |
-| **pass rate (送判題)** | 100% (198 / 198 AC, 7 PREMIUM 不算) | 26.7% (27 / 101) |
-| **agent 強項** | 直接套模板, Hard 不卡 | 逐層拆弱點 + 寫 fast decoder |
-| **agent 弱項** | 幾乎沒有 | 文化梗 + server-side 卡點 |
-| **人補哪裡** | 本機 harness + PREMIUM 鎖住要本地判斷 | 猜 flag 的文字意圖 |
+**吃到 1720 pts / 27 題大概就是這類題庫對 agent 的中段水位** — 低分熱身到中分難度 (10-150 pts) 幾乎都掉得下來, 高分題 (200+) 開始有卡. 剩下 74 題沒試不是不會, 是今天時間不夠跑完全部 category.
 
-同一個 agent, 幾天內刷完 LeetCode 198 題 100% 跟 PHM 101 題 27%. 不是刻意的 A/B 實驗, 但數字擺一起還是能看出「pattern 密度」這條軸對 agent 影響多大.
-
-接下來 Day 27-28 待排, 候選有 HTB 綁架目標、模型選擇實測、AI 取代什麼、自架本地 LLM. Day 29 回頭把實戰子系列 (Day 24-26 加之後排的) 一起小結, Day 30 收尾 **「跟著 AI 持續成長」** 這條線.
+接下來 Day 27-28 待排, 候選有 HTB 綁架目標、模型選擇實測、AI 取代什麼、自架本地 LLM. Day 29 回頭把實戰子系列一起小結, Day 30 收尾 **「跟著 AI 持續成長」** 這條線.
 
 ---
 
@@ -246,5 +240,3 @@ LeetCode 三套合計把能送判的全算進去 (PREMIUM 鎖住無法上傳的�
 
 - [Please Hack Me CTF](https://ctf.hackme.quest/) — Inndy 維護的 CTF 練習站
 - [05-notes/phm/README.md](../../../phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup
-- [Day 24 LeetCode Blind 75](../day21-25/day24-leetcode-blind75.md) — 這篇的直接對照組 (基礎)
-- [Day 25 LC-75 + NC150](../day21-25/day25-leetcode-lc75-nc150.md) — 這篇的直接對照組 (放大版)
