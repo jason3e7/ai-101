@@ -59,6 +59,7 @@
 
 | 類別 | 題名 | 分數 | Writeup |
 |:---|:---|---:|:---|
+| Misc | slow | 70 | [misc/slow.md](misc/slow.md) — timing attack 推到 `FLAG{2_SLOW_I_B`, server cap 15 秒讓後續字盲掉 |
 | Misc | meow | 50 | [misc/meow.md](misc/meow.md) — ZIP in PNG, 加密 ZIP 密碼未找到 (rockyou 全掃 + Pusheen 相關猜測都 miss) |
 | Misc | where is flag | 50 | [misc/where-is-flag.md](misc/where-is-flag.md) — 665K 文字塞滿假 FLAG{...}, 已過濾 noise 篩出 3 個 candidate 但 server 都 reject, 真 flag 可能不是 FLAG{...} 格式或有未發現的 regex 線索 |
 | Misc | otaku | 90 | [misc/otaku.md](misc/otaku.md) — 4 張動漫角色圖, 3 張找到 troll flag (FAKE/F14G/OOPS), Miku 應該藏真 flag 但 LSB/bit plane/zsteg 都沒找到 |
