@@ -9,9 +9,9 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 三十篇的**現況板**. 已發布 16 篇 (Day 1-16), 草稿中 4 篇 (Day 17-19、26), Day 20-23 預計, Day 24-26 排定三篇大型實戰 (Blind 75、LC-75+NC150、PHM CTF), Day 27-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
+> 三十篇的**現況板**. 已發布 18 篇 (Day 1-16、25、26), 草稿中 3 篇 (Day 17-19), Day 20-24 預計, Day 25-26 已發 (LC-75+NC150、PHM CTF), Day 27-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
 
-> **TL;DR (EN):** Thirty working titles for the Claude AI group. Sixteen published (Day 1-16), four in draft (Day 17-19 and Day 26). The finale was re-planned 2026-10-08 and extended 2026-10-10: Day 24-26 become three hands-on pieces (Blind 75, LC-75+NC150, then a CTF run on ctf.hackme.quest), Day 27-28 are left open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
+> **TL;DR (EN):** Thirty working titles for the Claude AI group. Eighteen published (Day 1-16, 25, 26), three in draft (Day 17-19). The finale was re-planned 2026-10-08 and extended 2026-10-10: Day 24-26 become three hands-on pieces (Blind 75, LC-75+NC150, then a CTF run on ctf.hackme.quest), Day 27-28 are left open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
 
 ---
 
@@ -97,19 +97,20 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚧 [草稿中](./drafts/day21-25/day24-leetcode-blind75.md) |
-| 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚧 [草稿中](./drafts/day21-25/day25-leetcode-lc75-nc150.md) |
-| 26 | 用 Claude Code 刷 CTF — Please Hack Me 27 題 | [phm/](../phm/README.md) | 🚧 [草稿中](./drafts/day26-30/day26-phm-ctf.md) |
+| 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422778) |
+| 26 | 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 | [phm/](../phm/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423071) |
 | 27 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 28 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 29 | 小結 (實戰子系列回顧, 範圍待定) | — | 📅 預計 |
 | 30 | 總結: 三十天蒸餾, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
 
-**盤點**: 🚀 已發布 16 篇 (Day 1-16) · 🚧 草稿中 4 篇 (Day 17、18、19、26) · 📅 預計 8 篇 (Day 20-25、29、30) · 🔄 待定 2 篇 (Day 27-28). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
+**盤點**: 🚀 已發布 18 篇 (Day 1-16、25、26) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 7 篇 (Day 20-24、29、30) · 🔄 待定 2 篇 (Day 27-28). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-10 (晚)**: Day 25 (LC-75 + NC150) 發布 → [10422778](https://ithelp.ithome.com.tw/articles/10422778); Day 26 (PHM CTF) 發布 → [10423071](https://ithelp.ithome.com.tw/articles/10423071). 已發布 16 → 18 篇, Day 26 標題從「27 題」改成「目前的測試狀況」(因為沒刷完 101 題, pass rate 不是有意義的數字).
 - **2026-10-10**: Day 26 draft 寫好 — 把 2026-10-09 退回候補池的「CTF 實戰 (phm)」重新裝回 Day 26 (實戰子系列擴成三篇: Day 24-25 LeetCode + Day 26 CTF). PHM 進度 27/101 = 1720 pts, pass rate 26.7% 直接對照 LeetCode 兩篇合計 99%+, 量化 pattern density 的落差. 剩 Day 27-28 待排 (候補池還有 HTB 綁架 / AI 取代什麼 / 選模型實測 / 無審查 / 自主滲透 / 自架本地 LLM, 其中 2 篇有 draft).
 - **2026-10-09**: Day 25 從「CTF 實戰 (phm)」改為「Blind 75 不夠, 再加碼 LC-75 + NC150」, 承接 Day 24 做放大版實驗 (129 新題 + 1 新 PREMIUM, pass rate 99.2%, 唯一 WA 是 Pow(x,n) FP 精度). CTF 實戰題退回候補池.
 - **2026-10-08**: jason3e7 重排 Day 24-30. Day 24 = LeetCode 實戰 ([leetcode/](../leetcode/), lc75 進度), Day 25 = CTF 實戰 ([phm/](../phm/README.md), ctf.hackme.quest), Day 26-28 = 🔄 待定, Day 29 = 小結, Day 30 = 總結 (維持「跟著 AI 持續成長」方向). 原 Day 24-29 的六個題目 (HTB 綁架 / AI 取代什麼[有 draft] / 選模型實測 / 無審查模型 / 自主滲透 / 自架本地 LLM[有 draft]) 退回候補池, 可優先補 Day 26-28. 段落標題: 原「轉·實測與量化 (Day 16-24)」縮成 Day 16-23;「合」改名「實戰與收尾 (Day 24-30)」
