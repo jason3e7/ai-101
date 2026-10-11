@@ -17,11 +17,11 @@
 | Web | 26 | 6 | 250 |
 | Pwn | 24 | 1 | 10 |
 | Reversing | 17 | 10 | 1030 |
-| Crypto | 16 | 12 | 1000 |
+| Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **40** | **3120** |
+| **合計** | **101** | **43** | **3320** |
 
 ## 已解題目 — Solved
 
@@ -46,6 +46,9 @@
 | Crypto | emoji | 120 | [crypto/emoji.md](crypto/emoji.md) |
 | Crypto | multilayer | 150 | [crypto/multilayer.md](crypto/multilayer.md) |
 | Crypto | ffa | 270 | [crypto/ffa.md](crypto/ffa.md) |
+| Crypto | login as admin 2 | 50 | [crypto/login-as-admin-2.md](crypto/login-as-admin-2.md) |
+| Crypto | passcode | 70 | [crypto/passcode.md](crypto/passcode.md) |
+| Crypto | login as admin 5 | 80 | [crypto/login-as-admin-5.md](crypto/login-as-admin-5.md) |
 | Pwn | catflag | 10 | [pwn/catflag.md](pwn/catflag.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
