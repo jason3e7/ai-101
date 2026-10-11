@@ -15,13 +15,13 @@
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
 | Web | 26 | 20 | 1370 |
-| Pwn | 24 | 8 | 510 |
+| Pwn | 24 | 9 | 610 |
 | Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **64** | **4940** |
+| **合計** | **101** | **65** | **5040** |
 
 ## 已解題目 — Solved
 
@@ -57,6 +57,7 @@
 | Pwn | toooomuch-2 | 100 | [pwn/toooomuch-2.md](pwn/toooomuch-2.md) |
 | Pwn | echo | 50 | [pwn/echo.md](pwn/echo.md) |
 | Pwn | echo2 | 100 | [pwn/echo2.md](pwn/echo2.md) |
+| Pwn | smashthestack | 100 | [pwn/smashthestack.md](pwn/smashthestack.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
@@ -108,7 +109,7 @@
 | Web | xssme / xssrf leak / xssrf redis | 100 + 150 + 200 | [web/xssrf-pending-38-40.md](web/xssrf-pending-38-40.md) — Corgi mail XSS 題, bkcrack 已解出 backup.zip 拿到 config.php 洩漏 redis port, `<details ontoggle>` 可觸發 XSS, 但 content filter 擋 parens 寫不出能 exfil 的 payload |
 | Crypto | slowcipher | 200 | [crypto/slowcipher.md](crypto/slowcipher.md) — 逆向 ELF 做 LCG + 密碼混合, 寫 fast C 版 (log-N closed-form) 把每 byte 的 N 次 LCG 壓到 O(log N), rockyou 1M + anime/Accel World 關鍵字都沒 hit, password 還沒猜中 |
 | Reversing | #51-57 | 1420 | [reversing/pending-51-57.md](reversing/pending-51-57.md) — 7 題硬 reversing (packed PE / M/o/Vfuscator / VM / sha256 preimage / maze / termvis / rc87cipher), 每題需要特定 VM 或商業套殼的深度 reverse |
-| Pwn | #67-81 | 2510 | [pwn/pending-67-81.md](pwn/pending-67-81.md) — 15 題 binary exploit (smashthestack / onepunch / rsbo / leave_msg / notepad / petbook / tictactoe / bytebucket 等), 單題工時 30 min 起跳, CP 值最高的是 tictactoe-1 / smashthestack / rsbo |
+| Pwn | #68-81 | 2410 | [pwn/pending-67-81.md](pwn/pending-67-81.md) — 14 題 binary exploit (onepunch / rsbo / leave_msg / notepad / petbook / tictactoe / bytebucket 等), 單題工時 30 min 起跳 (#67 smashthestack 已解) |
 
 ## 送 flag 流程 — Flag Submission
 
