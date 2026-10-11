@@ -101,23 +101,9 @@ Config.php 洩漏 redis internal port, 就是 xssrf-redis 那題要打的服務.
 
 ## 卡點長什麼樣 — The Walls
 
-Day 26 列了兩類死因 (文化梗、server cap), 這次刷再加上一類.
+[Day 26](https://ithelp.ithome.com.tw/articles/10423071) 列了兩類死因 (**文化梗 / trivia** — 像 slowcipher 的 password 要是特定 anime 名詞; **server-side 硬性限制** — 像 Misc slow 的 15 秒 cap), 這次刷再加上一類.
 
-### 死因一: 文化梗 / trivia (舊)
-
-同樣的題還是在:
-
-- **Misc #7 slow**: timing attack 推到 `FLAG{2_SLOW_I_B`, server 15 秒上限 noise 蓋過 signal, 剩下靠英文語感猜. agent 試 950 多種組合都沒中.
-- **Crypto #96 slowcipher**: fast decoder 寫出來了, password 還是在 rockyou 14M + Accel World 字典外.
-- **Web #34-35 wordpress**: md5 密碼不在 rockyou, 線索要從 WP source code / 題目 context 挖出來, agent 刷遍上下文字沒 hit.
-
-這幾題的共通點: **解法是「猜對一個字串」**, 這個字串不在模型訓練資料的強關聯裡, 窮舉空間比我願意等的時間長.
-
-### 死因二: Server-side 硬性限制 (舊)
-
-Misc #7 的 15 秒 cap 就是這類. Agent 可以把 side-channel 的 signal 推到極限, 但 server 給你的 noise floor 是 server 的事.
-
-### 死因三 (新加入): Claude Code 的 cyber safeguard
+### Claude Code 的 cyber safeguard (新加入)
 
 寫 Web #38-40 xssrf 的 exfil payload 到一半, Claude Code 回:
 
