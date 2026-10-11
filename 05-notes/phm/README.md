@@ -14,14 +14,14 @@
 | 類別 | 總題數 | 已解 | 分數 |
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
-| Web | 26 | 16 | 950 |
+| Web | 26 | 19 | 1300 |
 | Pwn | 24 | 1 | 10 |
 | Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **53** | **4020** |
+| **合計** | **101** | **56** | **4370** |
 
 ## 已解題目 — Solved
 
@@ -66,6 +66,9 @@
 | Web | login as admin 7 | 90 | [web/login-as-admin-7.md](web/login-as-admin-7.md) |
 | Web | login as admin 8 | 110 | [web/login-as-admin-8.md](web/login-as-admin-8.md) |
 | Web | login as admin 8.1 | 110 | [web/login-as-admin-8.1.md](web/login-as-admin-8.1.md) |
+| Web | dafuq-manager 1 | 50 | [web/dafuq-manager-1.md](web/dafuq-manager-1.md) |
+| Web | dafuq-manager 2 | 100 | [web/dafuq-manager-2.md](web/dafuq-manager-2.md) |
+| Web | dafuq-manager 3 | 200 | [web/dafuq-manager-3.md](web/dafuq-manager-3.md) |
 | Reversing | helloworld | 40 | [reversing/helloworld.md](reversing/helloworld.md) |
 | Reversing | simple | 90 | [reversing/simple.md](reversing/simple.md) |
 | Reversing | passthis | 80 | [reversing/passthis.md](reversing/passthis.md) |
@@ -92,6 +95,7 @@
 | Misc | buzzing | 100 | [misc/buzzing.md](misc/buzzing.md) — BMP header 說謊 (真實 640×400 + BI_BITFIELDS 0x41 mask), 看到作者 overlay 訊息但不含 FLAG{}, 真 flag 位置不明 |
 | Misc | BZBZ | 50 | [misc/bzbz.md](misc/bzbz.md) — 山寨 bilibili 登入頁, `login.php` 無條件 alert「You must be a employee from bilibili!」, 試遍 credentials / headers / cookies / IP / 洩漏 appkey 都沒 bypass |
 | Misc | zipfile | 100 | [misc/zipfile.md](misc/zipfile.md) — 999 層單 entry 遞迴 + 1000 層 552 entries, 每個 entry filename 編 ELF+1022 bits, inner data 多份複製暗示「XOR THESE FILES」, 試了多種 XOR 組合但沒解出 FLAG |
+| Web | wordpress 1 / 2 | 100 + 100 | [web/wordpress-pending-34-35.md](web/wordpress-pending-34-35.md) — 題目禁止爆破, md5(密碼) = `5ada11fd...` 在 rockyou 14M 都不中, context 相關字也沒 hit, password 線索尚未找到 |
 | Crypto | slowcipher | 200 | [crypto/slowcipher.md](crypto/slowcipher.md) — 逆向 ELF 做 LCG + 密碼混合, 寫 fast C 版 (log-N closed-form) 把每 byte 的 N 次 LCG 壓到 O(log N), rockyou 1M + anime/Accel World 關鍵字都沒 hit, password 還沒猜中 |
 | Reversing | #51-57 | 1420 | [reversing/pending-51-57.md](reversing/pending-51-57.md) — 7 題硬 reversing (packed PE / M/o/Vfuscator / VM / sha256 preimage / maze / termvis / rc87cipher), 每題需要特定 VM 或商業套殼的深度 reverse |
 
