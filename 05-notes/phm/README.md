@@ -14,14 +14,14 @@
 | 類別 | 總題數 | 已解 | 分數 |
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
-| Web | 26 | 2 | 30 |
+| Web | 26 | 4 | 130 |
 | Pwn | 24 | 1 | 10 |
 | Reversing | 17 | 10 | 1030 |
 | Crypto | 16 | 12 | 1000 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **36** | **2900** |
+| **合計** | **101** | **38** | **3000** |
 
 ## 已解題目 — Solved
 
@@ -49,6 +49,8 @@
 | Pwn | catflag | 10 | [pwn/catflag.md](pwn/catflag.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
+| Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
+| Web | LFI | 60 | [web/lfi.md](web/lfi.md) |
 | Reversing | helloworld | 40 | [reversing/helloworld.md](reversing/helloworld.md) |
 | Reversing | simple | 90 | [reversing/simple.md](reversing/simple.md) |
 | Reversing | passthis | 80 | [reversing/passthis.md](reversing/passthis.md) |
