@@ -17,8 +17,6 @@ title : [Day 27] 用 Claude Code 刷 CTF — 六類全部碰過, 剩下的卡點
   * Web 的混淆 webshell (sha512 XOR 自己可算)
   * Web 的 bkcrack known-plaintext
 * 卡點長什麼樣
-  * 文化梗 (slowcipher password)
-  * server-side cap (slow 的 15 秒)
   * 新加入: cyber safeguard
 * 下一題為什麼不打
   * Pwn #67-81 都是 shellcode / heap, CP 太低
