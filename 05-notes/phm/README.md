@@ -14,14 +14,14 @@
 | 類別 | 總題數 | 已解 | 分數 |
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
-| Web | 26 | 6 | 250 |
+| Web | 26 | 16 | 950 |
 | Pwn | 24 | 1 | 10 |
-| Reversing | 17 | 10 | 1030 |
+| Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **43** | **3320** |
+| **合計** | **101** | **53** | **4020** |
 
 ## 已解題目 — Solved
 
@@ -56,6 +56,16 @@
 | Web | LFI | 60 | [web/lfi.md](web/lfi.md) |
 | Web | ping | 90 | [web/ping.md](web/ping.md) |
 | Web | scoreboard | 30 | [web/scoreboard.md](web/scoreboard.md) |
+| Web | login as admin 0 | 20 | [web/login-as-admin-0.md](web/login-as-admin-0.md) |
+| Web | login as admin 0.1 | 30 | [web/login-as-admin-0.1.md](web/login-as-admin-0.1.md) |
+| Web | login as admin 1 | 50 | [web/login-as-admin-1.md](web/login-as-admin-1.md) |
+| Web | login as admin 1.2 | 60 | [web/login-as-admin-1.2.md](web/login-as-admin-1.2.md) |
+| Web | login as admin 3 | 70 | [web/login-as-admin-3.md](web/login-as-admin-3.md) |
+| Web | login as admin 4 | 70 | [web/login-as-admin-4.md](web/login-as-admin-4.md) |
+| Web | login as admin 6 | 90 | [web/login-as-admin-6.md](web/login-as-admin-6.md) |
+| Web | login as admin 7 | 90 | [web/login-as-admin-7.md](web/login-as-admin-7.md) |
+| Web | login as admin 8 | 110 | [web/login-as-admin-8.md](web/login-as-admin-8.md) |
+| Web | login as admin 8.1 | 110 | [web/login-as-admin-8.1.md](web/login-as-admin-8.1.md) |
 | Reversing | helloworld | 40 | [reversing/helloworld.md](reversing/helloworld.md) |
 | Reversing | simple | 90 | [reversing/simple.md](reversing/simple.md) |
 | Reversing | passthis | 80 | [reversing/passthis.md](reversing/passthis.md) |
