@@ -51,7 +51,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 - 🔄 **待重排** — 位置或內容未定 (候選見 [Day 17-24 候選](#day-17-24-候選--candidates-for-re-slotting))
 - 未標 — 尚未動工
 
-### 承: 基礎與定位 (Day 1-8)
+### 承: 原理與工程 (Day 1-10)
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
@@ -63,39 +63,34 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 06 | Prompt Engineering：哪些技巧真的有效，哪些只是傳說 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md)＋新研究 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10414480) |
 | 07 | Context Engineering：prompt 只是它看到的 5% | [context-engineering](../../02-advanced/engineering/context-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415067) |
 | 08 | Harness Engineering：你已經在用只是不知道 | [harness-engineering](../../02-advanced/engineering/harness-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10415590) |
+| 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/engineering/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
+| 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/engineering/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
 
-### 轉·工程與判斷力 (Day 9-15)
+### 轉: 判斷力與實測 (Day 11-20)
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 09 | Loop Engineering：你不再是提示 AI 的那個人 | [loop-engineering](../../02-advanced/engineering/loop-engineering.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416150) |
-| 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/engineering/prompt-engineering-evolution.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10416410) |
 | 11 | AI 給的答案, 你怎麼知道是對的 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) ＋ [verifying-ai-output](../../02-advanced/limits-and-verification/verifying-ai-output.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417119) |
 | 12 | 為了方便人類驗證而生的兩個 skill：condense / expand-mindmap | [mindmap-skills-design](../design-and-guides/mindmap-skills-design.md) ＋ [skills/](../../skills/) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417425) |
 | 13 | AI 用久了會鈍化: 兩種鈍, 五招破 | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10417978) |
 | 14 | AI 抹平的是中產, 頂層反而變貴 | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10418241) |
 | 15 | 用 AI 拓展自己: 5 個手段主動破舒適圈 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10418980) |
-
-### 轉·實測與量化 (Day 16-23)
-
-| Day | 標題 | 素材 | 狀態 |
-|:---|:---|:---|:---|
 | 16 | 掃當屆所有文章, 量一次「AI 味」有多少 | [lab01](../lab01/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10419414) |
 | 17 | 從 1 個訊號擴到 6 個, 綜合分數再測「AI 味」 | [lab01 結果](../lab01/results-v06b.md) ＋ [兩算法對照](../lab01/v06-vs-v06b.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10419809) |
 | 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? (基於 V12 ＋ 附 Tampermonkey 即時掃描) | [lab01 V12](../lab01/results-v12.md) ＋ [瀏覽器 script](../assets/browser-ranker.user.js) ＋ jason3e7 翻面提問 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10420151) |
 | 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10420451) |
 | 20 | AI 文風入侵: 五個記號一次講完 + 把味道壓回去的抗體 + 子系列小結 (Day 16-19) | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) ＋ 子系列回顧 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10420569) |
-| 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421407) |
-| 22 | `/goal` + Hook: 給 AI 能驗證的終點, 用 hook 守住 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421768) |
-| 23 | Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422105) |
 
-### 合: 實戰與收尾 (Day 24-30)
+### 合: 落地、實戰與收尾 (Day 21-30)
 
 > [!NOTE]
 > jason3e7 於 2026-10-08 重排 Day 24-30: 前面全是「講＋小實測」, 收尾改成**大型實戰系列** (Day 24-26 刷 LeetCode + CTF) ＋ 兩個待定 ＋ 小結/總結. 原本排在這段的題目(HTB、AI 取代什麼、選模型實測、無審查、自主滲透、自架本地 LLM)退回 [候補題目池](#候補題目池--backlog), 其中兩篇已有 draft, 可優先補進 Day 27-28.
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
+| 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421407) |
+| 22 | `/goal` + Hook: 給 AI 能驗證的終點, 用 hook 守住 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421768) |
+| 23 | Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422105) |
 | 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422485) |
 | 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422778) |
 | 26 | 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 | [phm/](../phm/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423071) |
