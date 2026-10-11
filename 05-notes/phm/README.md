@@ -15,13 +15,13 @@
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
 | Web | 26 | 19 | 1300 |
-| Pwn | 24 | 1 | 10 |
+| Pwn | 24 | 2 | 60 |
 | Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **56** | **4370** |
+| **合計** | **101** | **57** | **4420** |
 
 ## 已解題目 — Solved
 
@@ -50,6 +50,7 @@
 | Crypto | passcode | 70 | [crypto/passcode.md](crypto/passcode.md) |
 | Crypto | login as admin 5 | 80 | [crypto/login-as-admin-5.md](crypto/login-as-admin-5.md) |
 | Pwn | catflag | 10 | [pwn/catflag.md](pwn/catflag.md) |
+| Pwn | homework | 50 | [pwn/homework.md](pwn/homework.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
