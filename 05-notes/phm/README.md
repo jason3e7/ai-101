@@ -15,13 +15,13 @@
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
 | Web | 26 | 19 | 1300 |
-| Pwn | 24 | 2 | 60 |
+| Pwn | 24 | 6 | 360 |
 | Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **57** | **4420** |
+| **合計** | **101** | **61** | **4720** |
 
 ## 已解題目 — Solved
 
@@ -51,6 +51,10 @@
 | Crypto | login as admin 5 | 80 | [crypto/login-as-admin-5.md](crypto/login-as-admin-5.md) |
 | Pwn | catflag | 10 | [pwn/catflag.md](pwn/catflag.md) |
 | Pwn | homework | 50 | [pwn/homework.md](pwn/homework.md) |
+| Pwn | ROP | 50 | [pwn/rop.md](pwn/rop.md) |
+| Pwn | ROP2 | 100 | [pwn/rop2.md](pwn/rop2.md) |
+| Pwn | toooomuch | 50 | [pwn/toooomuch.md](pwn/toooomuch.md) |
+| Pwn | toooomuch-2 | 100 | [pwn/toooomuch-2.md](pwn/toooomuch-2.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
