@@ -23,55 +23,56 @@ text{font-family:"Noto Sans CJK TC",sans-serif}
 <div class="wrap">
   <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 27</span></div>
   <div>
-    <h1>把 PHM 多推一段 —<br><em>六類全部碰過, 剩下的卡點長什麼樣</em></h1>
+    <h1>用 Claude Code 刷 CTF —<br><em>六類全部碰過, 剩下的卡點長什麼樣</em></h1>
   </div>
   <div class="chartwrap">
   <svg width="1056" height="240" viewBox="0 0 1056 240">
-    <!-- 左半: Day 26 → 現在的分數對照 -->
-    <text x="0" y="22" fill="#8b93a5" font-size="16" font-weight="700">Day 26 → 現在 (分數)</text>
+    <!-- 左半: Day 26 → 現在的題目數對照 (15px / 題) -->
+    <text x="0" y="22" fill="#8b93a5" font-size="16" font-weight="700">Day 26 → 現在 (已解題數)</text>
 
-    <!-- Web -->
+    <!-- Web: 2 → 20 -->
     <text x="0" y="52" fill="#e8a13c" font-size="14" font-weight="900">Web</text>
     <rect x="110" y="42" width="300" height="14" rx="2" fill="#5b617033"/>
-    <rect x="110" y="42" width="6" height="14" rx="2" fill="#5b6170"/>
-    <rect x="110" y="42" width="83" height="14" rx="2" fill="#e8a13c"/>
-    <text x="420" y="54" fill="#e8a13c" font-size="12" font-weight="700">30 → 1370 pts</text>
+    <rect x="110" y="42" width="30" height="14" rx="2" fill="#5b6170"/>
+    <rect x="140" y="42" width="270" height="14" rx="2" fill="#e8a13c"/>
+    <text x="420" y="54" fill="#e8a13c" font-size="12" font-weight="700">2 → 20 題 (+18)</text>
 
-    <!-- Reversing -->
-    <text x="0" y="76" fill="#e8a13c" font-size="14" font-weight="900">Reversing</text>
+    <!-- Crypto: 12 → 15 -->
+    <text x="0" y="76" fill="#a8aebd" font-size="14" font-weight="700">Crypto</text>
     <rect x="110" y="66" width="300" height="14" rx="2" fill="#5b617033"/>
-    <rect x="110" y="66" width="9" height="14" rx="2" fill="#5b6170"/>
-    <rect x="110" y="66" width="74" height="14" rx="2" fill="#e8a13c"/>
-    <text x="420" y="78" fill="#e8a13c" font-size="12" font-weight="700">40 → 1220 pts</text>
+    <rect x="110" y="66" width="180" height="14" rx="2" fill="#5b6170"/>
+    <rect x="290" y="66" width="45" height="14" rx="2" fill="#e8a13cb0"/>
+    <text x="420" y="78" fill="#f2f0ea" font-size="12">12 → 15 題 (+3)</text>
 
-    <!-- Crypto -->
-    <text x="0" y="100" fill="#a8aebd" font-size="14" font-weight="700">Crypto</text>
+    <!-- Reversing: 1 → 10 -->
+    <text x="0" y="100" fill="#e8a13c" font-size="14" font-weight="900">Reversing</text>
     <rect x="110" y="90" width="300" height="14" rx="2" fill="#5b617033"/>
-    <rect x="110" y="90" width="240" height="14" rx="2" fill="#5b6170"/>
-    <rect x="110" y="90" width="48" height="14" rx="2" fill="#e8a13cb0"/>
-    <text x="420" y="102" fill="#f2f0ea" font-size="12">1000 → 1200 pts</text>
+    <rect x="110" y="90" width="15" height="14" rx="2" fill="#5b6170"/>
+    <rect x="125" y="90" width="135" height="14" rx="2" fill="#e8a13c"/>
+    <text x="420" y="102" fill="#e8a13c" font-size="12" font-weight="700">1 → 10 題 (+9)</text>
 
-    <!-- Pwn -->
+    <!-- Pwn: 1 → 8 -->
     <text x="0" y="124" fill="#e8a13c" font-size="14" font-weight="900">Pwn</text>
     <rect x="110" y="114" width="300" height="14" rx="2" fill="#5b617033"/>
-    <rect x="110" y="114" width="2" height="14" rx="2" fill="#5b6170"/>
-    <rect x="110" y="114" width="31" height="14" rx="2" fill="#e8a13c"/>
-    <text x="420" y="126" fill="#e8a13c" font-size="12" font-weight="700">10 → 510 pts</text>
+    <rect x="110" y="114" width="15" height="14" rx="2" fill="#5b6170"/>
+    <rect x="125" y="114" width="105" height="14" rx="2" fill="#e8a13c"/>
+    <text x="420" y="126" fill="#e8a13c" font-size="12" font-weight="700">1 → 8 題 (+7)</text>
 
-    <!-- Misc -->
+    <!-- Misc: 7 → 7 -->
     <text x="0" y="148" fill="#a8aebd" font-size="14" font-weight="700">Misc</text>
     <rect x="110" y="138" width="300" height="14" rx="2" fill="#5b617033"/>
-    <rect x="110" y="138" width="88" height="14" rx="2" fill="#5b6170"/>
-    <text x="420" y="150" fill="#f2f0ea" font-size="12">370 pts (同 Day 26)</text>
+    <rect x="110" y="138" width="105" height="14" rx="2" fill="#5b6170"/>
+    <text x="420" y="150" fill="#f2f0ea" font-size="12">7 題 (同 Day 26)</text>
 
-    <!-- Forensic / Programming / Lucky 併一行 -->
-    <text x="0" y="178" fill="#767d8d" font-size="12">Forensic 120 · Lucky 110 · Programming 40 pts (持平)</text>
+    <!-- Forensic / Programming / Lucky -->
+    <text x="0" y="178" fill="#767d8d" font-size="12">Forensic 2 · Programming 1 · Lucky 1 題 (持平)</text>
 
     <!-- 圖例 -->
-    <text x="0" y="212" fill="#767d8d" font-size="11">■ Day 26</text>
+    <text x="0" y="212" fill="#767d8d" font-size="11">Day 26</text>
     <rect x="54" y="204" width="12" height="10" rx="1" fill="#5b6170"/>
-    <text x="78" y="212" fill="#767d8d" font-size="11">■ 新增</text>
-    <rect x="136" y="204" width="12" height="10" rx="1" fill="#e8a13c"/>
+    <text x="78" y="212" fill="#767d8d" font-size="11">新增</text>
+    <rect x="118" y="204" width="12" height="10" rx="1" fill="#e8a13c"/>
+    <text x="150" y="212" fill="#767d8d" font-size="11">· 15 px / 題</text>
 
     <!-- Divider -->
     <line x1="540" y1="0" x2="540" y2="220" stroke="#5b617033" stroke-width="1"/>
@@ -80,7 +81,7 @@ text{font-family:"Noto Sans CJK TC",sans-serif}
     <text x="820" y="34" fill="#8b93a5" font-size="18" text-anchor="middle">總分</text>
     <text x="820" y="124" fill="#e8a13c" font-size="92" font-weight="900" text-anchor="middle">4940</text>
     <text x="820" y="152" fill="#8b93a5" font-size="16" text-anchor="middle">pts · 64 題</text>
-    <text x="820" y="186" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">除 Pwn / Web 外</text>
+    <text x="820" y="186" fill="#f2f0ea" font-size="20" font-weight="700" text-anchor="middle">除 Pwn / Web 難題外</text>
     <text x="820" y="212" fill="#e8a13c" font-size="18" font-weight="900" text-anchor="middle">六類全部碰過</text>
   </svg>
   </div>
