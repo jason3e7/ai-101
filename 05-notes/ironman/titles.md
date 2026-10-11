@@ -94,17 +94,18 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422485) |
 | 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422778) |
 | 26 | 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 | [phm/](../phm/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423071) |
-| 27 | 待定 | — | 🔄 待定 (候選見 backlog) |
+| 27 | 用 Claude Code 刷 CTF — 六類全部碰過, 剩下的卡點長什麼樣 | [phm/](../phm/README.md) + [essays/claude-code-cyber-safeguard](../essays/claude-code-cyber-safeguard.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423456) |
 | 28 | 待定 | — | 🔄 待定 (候選見 backlog) |
 | 29 | 小結 (實戰子系列回顧, 範圍待定) | — | 📅 預計 |
 | 30 | 總結: 三十天蒸餾, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
 
-**盤點**: 🚀 已發布 26 篇 (Day 1-26) · 🔄 待定 2 篇 (Day 27-28) · 📅 預計 2 篇 (Day 29、30). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
+**盤點**: 🚀 已發布 27 篇 (Day 1-27) · 🔄 待定 1 篇 (Day 28) · 📅 預計 2 篇 (Day 29、30). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-11 (晚)**: Day 27 (PHM 多推一段 + cyber safeguard) 發布 → [10423456](https://ithelp.ithome.com.tw/articles/10423456). 承接 Day 26 的 PHM: 1720 → 4940 pts, Pwn/Web 以外六類全部碰過; 新加入第四類死因 (Claude Code cyber-related safeguards 擋攻擊鏈). 已發布 26 → 27 篇, 剩 Day 28 待定.
 - **2026-10-11**: 跟 [publish/README.md](./publish/README.md) 對齊狀態 — Day 17-24 其實早已陸續發布 (publish/ 有 iThome 連結, 但本檔一直停在 🚧/📅), 這次把 Day 17-24 全部補標 🚀 已發布並接上連結; 反向把 Day 25 (10422778)、Day 26 (10423071) 補進 publish/README 的已發布表. 結論: Day 1-26 全部上線, Day 27-28 待定, Day 29-30 小結/總結. (Day 17-24 標題沿用本檔原排的規劃標題, 若與站上實際標題有出入再修)
 - **2026-10-10 (晚)**: Day 25 (LC-75 + NC150) 發布 → [10422778](https://ithelp.ithome.com.tw/articles/10422778); Day 26 (PHM CTF) 發布 → [10423071](https://ithelp.ithome.com.tw/articles/10423071). 已發布 16 → 18 篇, Day 26 標題從「27 題」改成「目前的測試狀況」(因為沒刷完 101 題, pass rate 不是有意義的數字).
 - **2026-10-10**: Day 26 draft 寫好 — 把 2026-10-09 退回候補池的「CTF 實戰 (phm)」重新裝回 Day 26 (實戰子系列擴成三篇: Day 24-25 LeetCode + Day 26 CTF). PHM 進度 27/101 = 1720 pts, pass rate 26.7% 直接對照 LeetCode 兩篇合計 99%+, 量化 pattern density 的落差. 剩 Day 27-28 待排 (候補池還有 HTB 綁架 / AI 取代什麼 / 選模型實測 / 無審查 / 自主滲透 / 自架本地 LLM, 其中 2 篇有 draft).
