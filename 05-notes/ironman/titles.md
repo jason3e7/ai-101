@@ -9,9 +9,9 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 三十篇的**現況板**. 已發布 18 篇 (Day 1-16、25、26), 草稿中 3 篇 (Day 17-19), Day 20-24 預計, Day 25-26 已發 (LC-75+NC150、PHM CTF), Day 27-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
+> 三十篇的**現況板**. 已發布 26 篇 (Day 1-26), Day 27-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
 
-> **TL;DR (EN):** Thirty working titles for the Claude AI group. Eighteen published (Day 1-16, 25, 26), three in draft (Day 17-19). The finale was re-planned 2026-10-08 and extended 2026-10-10: Day 24-26 become three hands-on pieces (Blind 75, LC-75+NC150, then a CTF run on ctf.hackme.quest), Day 27-28 are left open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
+> **TL;DR (EN):** Thirty working titles for the Claude AI group. Twenty-six published (Day 1-26). The finale was re-planned 2026-10-08 and extended 2026-10-10: Day 24-26 are three hands-on pieces (Blind 75, LC-75+NC150, then a CTF run on ctf.hackme.quest), Day 27-28 are still open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
 
 ---
 
@@ -81,13 +81,13 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
 | 16 | 掃當屆所有文章, 量一次「AI 味」有多少 | [lab01](../lab01/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10419414) |
-| 17 | 從 1 個訊號擴到 6 個, 綜合分數再測「AI 味」 | [lab01 結果](../lab01/results-v06b.md) ＋ [兩算法對照](../lab01/v06-vs-v06b.md) | 🚧 [草稿中](./drafts/day16-20/day17-composite-score.md) |
-| 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? (基於 V12 ＋ 附 Tampermonkey 即時掃描) | [lab01 V12](../lab01/results-v12.md) ＋ [瀏覽器 script](../assets/browser-ranker.user.js) ＋ jason3e7 翻面提問 | 🚧 [草稿中](./drafts/day16-20/day18-detecting-pure-human.md) |
-| 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 🚧 [草稿中](./drafts/day16-20/day19-ai-watermark.md) |
-| 20 | AI 文風入侵: 五個記號一次講完 + 把味道壓回去的抗體 + 子系列小結 (Day 16-19) | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) ＋ 子系列回顧 | 📅 預計 |
-| 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 📅 預計 (暫排) |
-| 22 | `/goal` + Hook: 給 AI 能驗證的終點, 用 hook 守住 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 📅 預計 (暫排) |
-| 23 | Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 📅 預計 (暫排) |
+| 17 | 從 1 個訊號擴到 6 個, 綜合分數再測「AI 味」 | [lab01 結果](../lab01/results-v06b.md) ＋ [兩算法對照](../lab01/v06-vs-v06b.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10419809) |
+| 18 | 翻面問題: 哪些文章是純手寫, 完全沒碰 AI 的? (基於 V12 ＋ 附 Tampermonkey 即時掃描) | [lab01 V12](../lab01/results-v12.md) ＋ [瀏覽器 script](../assets/browser-ranker.user.js) ＋ jason3e7 翻面提問 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10420151) |
+| 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10420451) |
+| 20 | AI 文風入侵: 五個記號一次講完 + 把味道壓回去的抗體 + 子系列小結 (Day 16-19) | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7 手筆改寫版](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) ＋ [pgplay-writeup-style-guide](../design-and-guides/pgplay-writeup-style-guide.md) ＋ 子系列回顧 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10420569) |
+| 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421407) |
+| 22 | `/goal` + Hook: 給 AI 能驗證的終點, 用 hook 守住 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421768) |
+| 23 | Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422105) |
 
 ### 合: 實戰與收尾 (Day 24-30)
 
@@ -96,7 +96,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚧 [草稿中](./drafts/day21-25/day24-leetcode-blind75.md) |
+| 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422485) |
 | 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422778) |
 | 26 | 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 | [phm/](../phm/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423071) |
 | 27 | 待定 | — | 🔄 待定 (候選見 backlog) |
@@ -104,12 +104,13 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 29 | 小結 (實戰子系列回顧, 範圍待定) | — | 📅 預計 |
 | 30 | 總結: 三十天蒸餾, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
 
-**盤點**: 🚀 已發布 18 篇 (Day 1-16、25、26) · 🚧 草稿中 3 篇 (Day 17、18、19) · 📅 預計 7 篇 (Day 20-24、29、30) · 🔄 待定 2 篇 (Day 27-28). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
+**盤點**: 🚀 已發布 26 篇 (Day 1-26) · 🔄 待定 2 篇 (Day 27-28) · 📅 預計 2 篇 (Day 29、30). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-11**: 跟 [publish/README.md](./publish/README.md) 對齊狀態 — Day 17-24 其實早已陸續發布 (publish/ 有 iThome 連結, 但本檔一直停在 🚧/📅), 這次把 Day 17-24 全部補標 🚀 已發布並接上連結; 反向把 Day 25 (10422778)、Day 26 (10423071) 補進 publish/README 的已發布表. 結論: Day 1-26 全部上線, Day 27-28 待定, Day 29-30 小結/總結. (Day 17-24 標題沿用本檔原排的規劃標題, 若與站上實際標題有出入再修)
 - **2026-10-10 (晚)**: Day 25 (LC-75 + NC150) 發布 → [10422778](https://ithelp.ithome.com.tw/articles/10422778); Day 26 (PHM CTF) 發布 → [10423071](https://ithelp.ithome.com.tw/articles/10423071). 已發布 16 → 18 篇, Day 26 標題從「27 題」改成「目前的測試狀況」(因為沒刷完 101 題, pass rate 不是有意義的數字).
 - **2026-10-10**: Day 26 draft 寫好 — 把 2026-10-09 退回候補池的「CTF 實戰 (phm)」重新裝回 Day 26 (實戰子系列擴成三篇: Day 24-25 LeetCode + Day 26 CTF). PHM 進度 27/101 = 1720 pts, pass rate 26.7% 直接對照 LeetCode 兩篇合計 99%+, 量化 pattern density 的落差. 剩 Day 27-28 待排 (候補池還有 HTB 綁架 / AI 取代什麼 / 選模型實測 / 無審查 / 自主滲透 / 自架本地 LLM, 其中 2 篇有 draft).
 - **2026-10-09**: Day 25 從「CTF 實戰 (phm)」改為「Blind 75 不夠, 再加碼 LC-75 + NC150」, 承接 Day 24 做放大版實驗 (129 新題 + 1 新 PREMIUM, pass rate 99.2%, 唯一 WA 是 Pow(x,n) FP 精度). CTF 實戰題退回候補池.
