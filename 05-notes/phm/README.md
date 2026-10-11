@@ -14,14 +14,14 @@
 | 類別 | 總題數 | 已解 | 分數 |
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
-| Web | 26 | 19 | 1300 |
+| Web | 26 | 20 | 1370 |
 | Pwn | 24 | 8 | 510 |
 | Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **63** | **4870** |
+| **合計** | **101** | **64** | **4940** |
 
 ## 已解題目 — Solved
 
@@ -76,6 +76,7 @@
 | Web | dafuq-manager 1 | 50 | [web/dafuq-manager-1.md](web/dafuq-manager-1.md) |
 | Web | dafuq-manager 2 | 100 | [web/dafuq-manager-2.md](web/dafuq-manager-2.md) |
 | Web | dafuq-manager 3 | 200 | [web/dafuq-manager-3.md](web/dafuq-manager-3.md) |
+| Web | webshell | 70 | [web/webshell.md](web/webshell.md) |
 | Reversing | helloworld | 40 | [reversing/helloworld.md](reversing/helloworld.md) |
 | Reversing | simple | 90 | [reversing/simple.md](reversing/simple.md) |
 | Reversing | passthis | 80 | [reversing/passthis.md](reversing/passthis.md) |
@@ -103,6 +104,8 @@
 | Misc | BZBZ | 50 | [misc/bzbz.md](misc/bzbz.md) — 山寨 bilibili 登入頁, `login.php` 無條件 alert「You must be a employee from bilibili!」, 試遍 credentials / headers / cookies / IP / 洩漏 appkey 都沒 bypass |
 | Misc | zipfile | 100 | [misc/zipfile.md](misc/zipfile.md) — 999 層單 entry 遞迴 + 1000 層 552 entries, 每個 entry filename 編 ELF+1022 bits, inner data 多份複製暗示「XOR THESE FILES」, 試了多種 XOR 組合但沒解出 FLAG |
 | Web | wordpress 1 / 2 | 100 + 100 | [web/wordpress-pending-34-35.md](web/wordpress-pending-34-35.md) — 題目禁止爆破, md5(密碼) = `5ada11fd...` 在 rockyou 14M 都不中, context 相關字也沒 hit, password 線索尚未找到 |
+| Web | command-executor | 100 | [web/command-executor-pending-37.md](web/command-executor-pending-37.md) — flag 在 `/flag` (mode 400, flag user), setuid `/flag-reader` 要 exec. cmd 白名單只有 ls/env, ls 用 escapeshellarg 包起, 繞不過 |
+| Web | xssme / xssrf leak / xssrf redis | 100 + 150 + 200 | [web/xssrf-pending-38-40.md](web/xssrf-pending-38-40.md) — Corgi mail XSS 題, bkcrack 已解出 backup.zip 拿到 config.php 洩漏 redis port, `<details ontoggle>` 可觸發 XSS, 但 content filter 擋 parens 寫不出能 exfil 的 payload |
 | Crypto | slowcipher | 200 | [crypto/slowcipher.md](crypto/slowcipher.md) — 逆向 ELF 做 LCG + 密碼混合, 寫 fast C 版 (log-N closed-form) 把每 byte 的 N 次 LCG 壓到 O(log N), rockyou 1M + anime/Accel World 關鍵字都沒 hit, password 還沒猜中 |
 | Reversing | #51-57 | 1420 | [reversing/pending-51-57.md](reversing/pending-51-57.md) — 7 題硬 reversing (packed PE / M/o/Vfuscator / VM / sha256 preimage / maze / termvis / rc87cipher), 每題需要特定 VM 或商業套殼的深度 reverse |
 
