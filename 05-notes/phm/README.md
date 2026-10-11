@@ -15,13 +15,13 @@
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
 | Web | 26 | 19 | 1300 |
-| Pwn | 24 | 6 | 360 |
+| Pwn | 24 | 8 | 510 |
 | Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **61** | **4720** |
+| **合計** | **101** | **63** | **4870** |
 
 ## 已解題目 — Solved
 
@@ -55,6 +55,8 @@
 | Pwn | ROP2 | 100 | [pwn/rop2.md](pwn/rop2.md) |
 | Pwn | toooomuch | 50 | [pwn/toooomuch.md](pwn/toooomuch.md) |
 | Pwn | toooomuch-2 | 100 | [pwn/toooomuch-2.md](pwn/toooomuch-2.md) |
+| Pwn | echo | 50 | [pwn/echo.md](pwn/echo.md) |
+| Pwn | echo2 | 100 | [pwn/echo2.md](pwn/echo2.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
