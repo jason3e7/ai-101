@@ -15,13 +15,13 @@
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
 | Web | 26 | 20 | 1370 |
-| Pwn | 24 | 10 | 660 |
+| Pwn | 24 | 11 | 860 |
 | Reversing | 17 | 10 | 1220 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **66** | **5090** |
+| **合計** | **101** | **67** | **5290** |
 
 ## 已解題目 — Solved
 
@@ -58,6 +58,7 @@
 | Pwn | echo | 50 | [pwn/echo.md](pwn/echo.md) |
 | Pwn | echo2 | 100 | [pwn/echo2.md](pwn/echo2.md) |
 | Pwn | smashthestack | 100 | [pwn/smashthestack.md](pwn/smashthestack.md) |
+| Pwn | leave_msg | 200 | [pwn/leave_msg.md](pwn/leave_msg.md) |
 | Pwn | tictactoe-1 | 50 | [pwn/tictactoe-1.md](pwn/tictactoe-1.md) |
 | Pwn | stack | 200 | [pwn/stack.md](pwn/stack.md) |
 | Pwn | very_overflow | 200 | [pwn/very-overflow.md](pwn/very-overflow.md) |
@@ -121,7 +122,6 @@
 | Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 客製 RC4 變體 (KSA 跟 PRGA 都非標準), 已會用 gdb catchpoint 控 IV, 卡在 PRGA 深度反組譯 + 不知 40 字元密碼 |
 | Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — 1-byte 任意寫 + 無 leak, `_()` init 時把 .text 轉 RWX, 試了 GOT 改寫 / cmp 改 imm / `_()` syscall # 改 execve 都卡在 ASLR 無 libc base |
 | Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
-| Pwn | leave_msg | 200 | [pwn/leave-msg-pending.md](pwn/leave-msg-pending.md) — 留言板 heap/stack exploit |
 | Pwn | notepad | 200 | [pwn/notepad-pending.md](pwn/notepad-pending.md) — note-based heap exploit |
 | Pwn | petbook | 200 | [pwn/petbook-pending.md](pwn/petbook-pending.md) — heap UAF (pet struct) |
 | Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 可能 FSB / 簡單 BOF |
