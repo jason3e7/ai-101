@@ -60,6 +60,7 @@
 | Pwn | smashthestack | 100 | [pwn/smashthestack.md](pwn/smashthestack.md) |
 | Pwn | tictactoe-1 | 50 | [pwn/tictactoe-1.md](pwn/tictactoe-1.md) |
 | Pwn | stack | 200 | [pwn/stack.md](pwn/stack.md) |
+| Pwn | very_overflow | 200 | [pwn/very-overflow.md](pwn/very-overflow.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
@@ -121,7 +122,6 @@
 | Pwn | raas | 160 | [pwn/raas-pending.md](pwn/raas-pending.md) — 多輪 ret2libc |
 | Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
 | Pwn | leave_msg | 200 | [pwn/leave-msg-pending.md](pwn/leave-msg-pending.md) — 留言板 heap/stack exploit |
-| Pwn | very_overflow | 200 | [pwn/very-overflow-pending.md](pwn/very-overflow-pending.md) — 有 Source Code 的 overflow 題 |
 | Pwn | notepad | 200 | [pwn/notepad-pending.md](pwn/notepad-pending.md) — note-based heap exploit |
 | Pwn | petbook | 200 | [pwn/petbook-pending.md](pwn/petbook-pending.md) — heap UAF (pet struct) |
 | Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 可能 FSB / 簡單 BOF |
