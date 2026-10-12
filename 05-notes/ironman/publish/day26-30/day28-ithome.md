@@ -148,14 +148,14 @@ system(escapeshellarg($cmd));                          // 整段用 escapeshella
 
 ### PWN 剩最多 — 題型 + 高分集中
 
-剩的 27 題分佈不均:
+剩的 28 題分佈不均:
 
 | 類別 | 剩下 | 平均分 | 典型卡點 |
 |:---|---:|---:|:---|
 | **Pwn** | **16** | **~190** | 牆二 (libc 版本) / 牆三 (強模型未試) |
 | Reversing | 7 | ~230 | 牆三 (packed PE / M/o/Vfuscator / VM) |
-| Misc | 2 | ~75 | 牆一 (md5) / 牆四 (where is flag) |
-| Web | 2 | ~130 | 牆四 (xssme safeguard) / command-executor |
+| Web | 3 | ~130 | 牆四 (xssme / xssrf 系列 safeguard) + command-executor |
+| Misc | 2 | ~75 | 牆一 (md5) / where is flag (regex 正解不明) |
 
 Pwn 自然剩最多, 因為:
 
