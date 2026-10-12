@@ -15,13 +15,13 @@
 |:---|---:|---:|---:|
 | Misc | 14 | 7 | 370 |
 | Web | 26 | 20 | 1370 |
-| Pwn | 24 | 11 | 860 |
-| Reversing | 17 | 10 | 1220 |
+| Pwn | 24 | 14 | 1420 |
+| Reversing | 17 | 13 | 1890 |
 | Crypto | 16 | 15 | 1200 |
 | Forensic | 2 | 2 | 120 |
 | Programming | 1 | 1 | 40 |
 | Lucky | 1 | 1 | 110 |
-| **合計** | **101** | **67** | **5290** |
+| **合計** | **101** | **73** | **6520** |
 
 ## 已解題目 — Solved
 
@@ -34,38 +34,6 @@
 | Misc | pusheen.txt | 40 | [misc/pusheen-txt.md](misc/pusheen-txt.md) |
 | Misc | big | 70 | [misc/big.md](misc/big.md) |
 | Misc | drvtry vpfr | 100 | [misc/drvtry-vpfr.md](misc/drvtry-vpfr.md) |
-| Crypto | easy | 10 | [crypto/easy.md](crypto/easy.md) |
-| Crypto | r u kidding | 20 | [crypto/r-u-kidding.md](crypto/r-u-kidding.md) |
-| Crypto | not hard | 50 | [crypto/not-hard.md](crypto/not-hard.md) |
-| Crypto | classic cipher 1 | 50 | [crypto/classic-cipher-1.md](crypto/classic-cipher-1.md) |
-| Crypto | classic cipher 2 | 50 | [crypto/classic-cipher-2.md](crypto/classic-cipher-2.md) |
-| Crypto | easy AES | 60 | [crypto/easy-aes.md](crypto/easy-aes.md) |
-| Crypto | one time padding | 60 | [crypto/one-time-padding.md](crypto/one-time-padding.md) |
-| Crypto | shuffle | 70 | [crypto/shuffle.md](crypto/shuffle.md) |
-| Crypto | xor | 90 | [crypto/xor.md](crypto/xor.md) |
-| Crypto | emoji | 120 | [crypto/emoji.md](crypto/emoji.md) |
-| Crypto | multilayer | 150 | [crypto/multilayer.md](crypto/multilayer.md) |
-| Crypto | ffa | 270 | [crypto/ffa.md](crypto/ffa.md) |
-| Crypto | login as admin 2 | 50 | [crypto/login-as-admin-2.md](crypto/login-as-admin-2.md) |
-| Crypto | passcode | 70 | [crypto/passcode.md](crypto/passcode.md) |
-| Crypto | login as admin 5 | 80 | [crypto/login-as-admin-5.md](crypto/login-as-admin-5.md) |
-| Pwn | catflag | 10 | [pwn/catflag.md](pwn/catflag.md) |
-| Pwn | homework | 50 | [pwn/homework.md](pwn/homework.md) |
-| Pwn | ROP | 50 | [pwn/rop.md](pwn/rop.md) |
-| Pwn | ROP2 | 100 | [pwn/rop2.md](pwn/rop2.md) |
-| Pwn | toooomuch | 50 | [pwn/toooomuch.md](pwn/toooomuch.md) |
-| Pwn | toooomuch-2 | 100 | [pwn/toooomuch-2.md](pwn/toooomuch-2.md) |
-| Pwn | echo | 50 | [pwn/echo.md](pwn/echo.md) |
-| Pwn | echo2 | 100 | [pwn/echo2.md](pwn/echo2.md) |
-| Pwn | smashthestack | 100 | [pwn/smashthestack.md](pwn/smashthestack.md) |
-| Pwn | leave_msg | 200 | [pwn/leave_msg.md](pwn/leave_msg.md) |
-| Pwn | tictactoe-1 | 50 | [pwn/tictactoe-1.md](pwn/tictactoe-1.md) |
-| Pwn | stack | 200 | [pwn/stack.md](pwn/stack.md) |
-| Pwn | very_overflow | 200 | [pwn/very-overflow.md](pwn/very-overflow.md) |
-| Pwn | raas | 160 | [pwn/raas.md](pwn/raas.md) |
-| Reversing | a-maze | 200 | [reversing/a-maze.md](reversing/a-maze.md) |
-| Reversing | termvis | 230 | [reversing/termvis.md](reversing/termvis.md) |
-| Reversing | esrever-mv | 240 | [reversing/esrever-mv.md](reversing/esrever-mv.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
@@ -86,6 +54,23 @@
 | Web | dafuq-manager 2 | 100 | [web/dafuq-manager-2.md](web/dafuq-manager-2.md) |
 | Web | dafuq-manager 3 | 200 | [web/dafuq-manager-3.md](web/dafuq-manager-3.md) |
 | Web | webshell | 70 | [web/webshell.md](web/webshell.md) |
+| Pwn | catflag | 10 | [pwn/catflag.md](pwn/catflag.md) |
+| Pwn | homework | 50 | [pwn/homework.md](pwn/homework.md) |
+| Pwn | ROP | 50 | [pwn/rop.md](pwn/rop.md) |
+| Pwn | ROP2 | 100 | [pwn/rop2.md](pwn/rop2.md) |
+| Pwn | toooomuch | 50 | [pwn/toooomuch.md](pwn/toooomuch.md) |
+| Pwn | toooomuch-2 | 100 | [pwn/toooomuch-2.md](pwn/toooomuch-2.md) |
+| Pwn | echo | 50 | [pwn/echo.md](pwn/echo.md) |
+| Pwn | echo2 | 100 | [pwn/echo2.md](pwn/echo2.md) |
+| Pwn | smashthestack | 100 | [pwn/smashthestack.md](pwn/smashthestack.md) |
+| Pwn | leave_msg | 200 | [pwn/leave_msg.md](pwn/leave_msg.md) |
+| Pwn | tictactoe-1 | 50 | [pwn/tictactoe-1.md](pwn/tictactoe-1.md) |
+| Pwn | stack | 200 | [pwn/stack.md](pwn/stack.md) |
+| Pwn | very_overflow | 200 | [pwn/very-overflow.md](pwn/very-overflow.md) |
+| Pwn | raas | 160 | [pwn/raas.md](pwn/raas.md) |
+| Reversing | a-maze | 200 | [reversing/a-maze.md](reversing/a-maze.md) |
+| Reversing | termvis | 230 | [reversing/termvis.md](reversing/termvis.md) |
+| Reversing | esrever-mv | 240 | [reversing/esrever-mv.md](reversing/esrever-mv.md) |
 | Reversing | helloworld | 40 | [reversing/helloworld.md](reversing/helloworld.md) |
 | Reversing | simple | 90 | [reversing/simple.md](reversing/simple.md) |
 | Reversing | passthis | 80 | [reversing/passthis.md](reversing/passthis.md) |
@@ -96,10 +81,25 @@
 | Reversing | bitx | 150 | [reversing/bitx.md](reversing/bitx.md) |
 | Reversing | 2018-rev | 150 | [reversing/2018-rev.md](reversing/2018-rev.md) |
 | Reversing | what-the-hell | 190 | [reversing/what-the-hell.md](reversing/what-the-hell.md) |
-| Programming | fast | 40 | [programming/fast.md](programming/fast.md) |
-| Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
+| Crypto | easy | 10 | [crypto/easy.md](crypto/easy.md) |
+| Crypto | r u kidding | 20 | [crypto/r-u-kidding.md](crypto/r-u-kidding.md) |
+| Crypto | not hard | 50 | [crypto/not-hard.md](crypto/not-hard.md) |
+| Crypto | classic cipher 1 | 50 | [crypto/classic-cipher-1.md](crypto/classic-cipher-1.md) |
+| Crypto | classic cipher 2 | 50 | [crypto/classic-cipher-2.md](crypto/classic-cipher-2.md) |
+| Crypto | easy AES | 60 | [crypto/easy-aes.md](crypto/easy-aes.md) |
+| Crypto | one time padding | 60 | [crypto/one-time-padding.md](crypto/one-time-padding.md) |
+| Crypto | shuffle | 70 | [crypto/shuffle.md](crypto/shuffle.md) |
+| Crypto | xor | 90 | [crypto/xor.md](crypto/xor.md) |
+| Crypto | emoji | 120 | [crypto/emoji.md](crypto/emoji.md) |
+| Crypto | multilayer | 150 | [crypto/multilayer.md](crypto/multilayer.md) |
+| Crypto | ffa | 270 | [crypto/ffa.md](crypto/ffa.md) |
+| Crypto | login as admin 2 | 50 | [crypto/login-as-admin-2.md](crypto/login-as-admin-2.md) |
+| Crypto | passcode | 70 | [crypto/passcode.md](crypto/passcode.md) |
+| Crypto | login as admin 5 | 80 | [crypto/login-as-admin-5.md](crypto/login-as-admin-5.md) |
 | Forensic | easy pdf | 40 | [forensic/easy-pdf.md](forensic/easy-pdf.md) |
 | Forensic | this is a pen | 80 | [forensic/this-is-a-pen.md](forensic/this-is-a-pen.md) |
+| Programming | fast | 40 | [programming/fast.md](programming/fast.md) |
+| Lucky | you-guess | 110 | [lucky/you-guess.md](lucky/you-guess.md) |
 
 ## 卡住未解 — Pending
 
@@ -127,6 +127,7 @@
 | Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 可能 FSB / 簡單 BOF |
 | Pwn | tictactoe-2 | 250 | [pwn/tictactoe-2-pending.md](pwn/tictactoe-2-pending.md) — 承 #78 OOB write 升級成 ACE |
 | Pwn | bytebucket / bytebucket-2 | 100 + 250 | [pwn/bytebucket-pending-80-81.md](pwn/bytebucket-pending-80-81.md) — 同 binary, bucket struct 已逆向 + 有號數越界索引漏洞已標, 卡在 heap leak (需 tcache 重疊) |
+| Pwn | echo3 | 200 | [pwn/echo3-pending.md](pwn/echo3-pending.md) — fmt string 但輸入在固定 global 非 stack, 無 system/無 ret, 缺 esp pivot gadget, 需多階段經 ebp 指標鏈 |
 
 ## 送 flag 流程 — Flag Submission
 
