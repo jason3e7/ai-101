@@ -123,7 +123,7 @@
 | Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — 1-byte 任意寫 + 無 leak, `_()` init 時把 .text 轉 RWX, 試了 GOT 改寫 / cmp 改 imm / `_()` syscall # 改 execve 都卡在 ASLR 無 libc base |
 | Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
 | Pwn | notepad | 200 | [pwn/notepad-pending.md](pwn/notepad-pending.md) — note struct 含 show/destroy 函式指標(open 可呼叫), 已全逆向; 無明顯 overflow/UAF, 需 glibc2.23 heap fengshui, 本機 2.35 測不了 |
-| Pwn | petbook | 200 | [pwn/petbook-pending.md](pwn/petbook-pending.md) — heap UAF (pet struct) |
+| Pwn | petbook | 200 | [pwn/petbook-pending.md](pwn/petbook-pending.md) — `edit_post` 的 `realloc(ptr, 0)` UAF + base64 dump 洩 heap + %s on freed unsorted bin chunk 洩 libc 都已拿到, 卡在最後 write primitive (fastbin dup 的 fake chunk size check) |
 | Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 兩個無界 gets heap overflow + dump 可控 size leak, 無 free → House of Force; 卡在本機 glibc 太新測不了 HoF, 伺服器 2.23 只能盲打 |
 | Pwn | tictactoe-2 | 250 | [pwn/tictactoe-2-pending.md](pwn/tictactoe-2-pending.md) — 承 #78 OOB write 升級成 ACE |
 | Pwn | bytebucket / bytebucket-2 | 100 + 250 | [pwn/bytebucket-pending-80-81.md](pwn/bytebucket-pending-80-81.md) — 同 binary, bucket struct 已逆向 + 有號數越界索引漏洞已標, 卡在 heap leak (需 tcache 重疊) |
