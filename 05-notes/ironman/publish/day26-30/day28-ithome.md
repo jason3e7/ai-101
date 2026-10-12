@@ -15,7 +15,7 @@ title : [Day 28] 用 Claude Code 刷 CTF — 進 Top 10, 剩下的題剛好是 A
   * 6620 pts / 74 solved
   * 歷史全站第 10
 * AI agent 的四面牆
-  * md5 不能上網查, 本機也爆不開
+  * md5 沒有上網查, 本機也爆不開
   * 沒環境測特定 libc 版本 (libc-2.23.so)
   * 更強模型還沒試過的硬題
   * 單獨題也會撞 cyber safeguards (xssme)
@@ -58,7 +58,7 @@ PHM 的 Rank 是**歷史全站累積**, 不是當月也不是當週. 10 名以�
 
 剩下 27 題全部跑過一輪之後, 卡住的原因不是題目「不會做」, 四面牆都是**外部條件缺一塊**:
 
-### 牆一: md5 不能上網查, 本機也爆不開
+### 牆一: md5 沒有上網查, 本機也爆不開
 
 Day 26 收尾講過 Crypto `slowcipher` 的 password 要是特定 anime 名詞, 這一輪同類還撞了幾題: `md5(x) = 已知 hash` 要反推 preimage. 觀察 agent 的行為:
 
