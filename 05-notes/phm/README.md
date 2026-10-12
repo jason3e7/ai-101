@@ -122,7 +122,7 @@
 | Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 客製 RC4 變體 (KSA 跟 PRGA 都非標準), 已會用 gdb catchpoint 控 IV, 卡在 PRGA 深度反組譯 + 不知 40 字元密碼 |
 | Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — 1-byte 任意寫 + 無 leak, `_()` init 時把 .text 轉 RWX, 試了 GOT 改寫 / cmp 改 imm / `_()` syscall # 改 execve 都卡在 ASLR 無 libc base |
 | Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
-| Pwn | notepad | 200 | [pwn/notepad-pending.md](pwn/notepad-pending.md) — note-based heap exploit |
+| Pwn | notepad | 200 | [pwn/notepad-pending.md](pwn/notepad-pending.md) — note struct 含 show/destroy 函式指標(open 可呼叫), 已全逆向; 無明顯 overflow/UAF, 需 glibc2.23 heap fengshui, 本機 2.35 測不了 |
 | Pwn | petbook | 200 | [pwn/petbook-pending.md](pwn/petbook-pending.md) — heap UAF (pet struct) |
 | Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 兩個無界 gets heap overflow + dump 可控 size leak, 無 free → House of Force; 卡在本機 glibc 太新測不了 HoF, 伺服器 2.23 只能盲打 |
 | Pwn | tictactoe-2 | 250 | [pwn/tictactoe-2-pending.md](pwn/tictactoe-2-pending.md) — 承 #78 OOB write 升級成 ACE |
