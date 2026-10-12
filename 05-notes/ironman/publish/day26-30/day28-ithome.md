@@ -1,20 +1,20 @@
-title : [Day 28] 用 Claude Code 刷 CTF — 進 Top 10, 卡住的題剛好畫出 script kid 的四面牆
+title : [Day 28] 用 Claude Code 刷 CTF — 進 Top 10, 剩下的題剛好是 AI agent 的四面牆
 
 > [Day 26](https://ithelp.ithome.com.tw/articles/10423071) 把 PHM 刷到 1720 pts, [Day 27](https://ithelp.ithome.com.tw/articles/10423456) 推到 4940 pts, 本篇是**最後一輪**: **6620 pts / 74 題 / 歷史全站 Rank 10**, 101 題每一題都獨自跑過一次. 剩下沒解的 27 題, 卡住的原因收斂成四種, 很適合當 CTF 子系列的收尾.
 
 寫在前面 (jason3e7):
 
-> 進 Top 10 當然爽, 但真正學到的是 agent + script kid 的能力邊界長什麼樣. 剩下沒解的題一題一題看, 四種「牆」浮出來, 每一面都不是「不會做」, 是外部條件缺一塊.
+> 進 Top 10 當然爽, 但真正學到的是 AI agent 的能力邊界長什麼樣. 剩下沒解的題一題一題看, 四種「牆」浮出來, 每一面都不是「不會做」, 是外部條件缺一塊.
 >
-> 本篇 "script kid" 指的是**無腦使用 AI 去解題, 不給 agent 任何關於 CTF 的額外提示** — 題目 URL 丟進去, 其他全交給 agent 自己判斷. 這跟傳統 "script kiddie" 的意思 (抄別人工具) 不太一樣, 這裡強調的是「使用者這端完全沒加 domain knowledge」.
+> 本篇講的 "AI agent" 情境是**無腦使用 AI 去解題, 不給 agent 任何關於 CTF 的額外提示** — 題目 URL 丟進去, 其他全交給 agent 自己判斷. 四面牆都是 agent 在這種「使用者這端完全沒加 domain knowledge」的情境下真的卡住的地方.
 
 ```markdown
-# 刷 CTF 進 Top 10, 剩下的題剛好是 script kid 的四面牆
+# 刷 CTF 進 Top 10, 剩下的題剛好是 AI agent 的四面牆
 * Rank 10 的紀念照
   * 101 題每一題都獨自跑過一次 (今天收尾)
   * 6620 pts / 74 solved
   * 歷史全站第 10
-* script kid 的四面牆
+* AI agent 的四面牆
   * md5 不能上網查, 本機也爆不開
   * 沒環境測特定 libc 版本 (libc-2.23.so)
   * 更強模型還沒試過的硬題
@@ -24,7 +24,7 @@ title : [Day 28] 用 Claude Code 刷 CTF — 進 Top 10, 卡住的題剛好畫�
   * command-executor (白名單繞不過去)
   * Pwn 剩最多 (題型多 + 高分集中)
 * 收斂
-  * agent + script kid 到 Top 10 可及
+  * AI agent 到 Top 10 可及
   * 卡點都落在能力環境 + 政策兩面
   * 再往上要人補一塊知識
 ```
@@ -54,7 +54,7 @@ PHM 的 Rank 是**歷史全站累積**, 不是當月也不是當週. 10 名以�
 
 這四題放一起看, 共通點是**題目架構一旦認得, 寫對應 primitive 的 code agent 很快**. 剩下沒解的, 剛好反過來.
 
-## script kid 的四面牆 — The Four Walls
+## AI agent 的四面牆 — The Four Walls
 
 剩下 27 題全部跑過一輪之後, 卡住的原因不是題目「不會做」, 四面牆都是**外部條件缺一塊**:
 
@@ -82,7 +82,7 @@ LD_PRELOAD=./libc-2.23.so ./tictactoe
 
 目前刷 PHM 用的是 **Opus 4.8**, 速度跟成本之間平衡好. 但有幾題 (`Pwn #69 raas` 類的 heap exploit chain、`Reversing #51 unpackme` 的 PE 殼) 吃深度 reversing 跟 heap 內部狀態的推理, 可能換更強 reasoning model (或多倍 token budget 跑 extended thinking) 跑同樣 context 會解掉.
 
-這條牆的性質跟前兩面不同: **理論上可以用 agent 解, 只是我還沒把 budget 丟下去跑**. 列進來是為了誠實交代 — 這 27 題裡**真的無解**跟**還沒試強模型**的要分清楚, 不能都歸類「script kid 吃不下」.
+這條牆的性質跟前兩面不同: **理論上可以用 agent 解, 只是我還沒把 budget 丟下去跑**. 列進來是為了誠實交代 — 這 27 題裡**真的無解**跟**還沒試強模型**的要分清楚, 不能都歸類「AI agent 吃不下」.
 
 ### 牆四: 單獨一題也會撞 cyber-related safeguards
 
@@ -181,7 +181,7 @@ Pwn 自然剩最多, 因為:
 - 牆三: 缺更強模型的 budget
 - 牆四: 缺繞政策的 session 設計
 
-**agent + script kid 的組合, 到 Top 10 可及; 再往上要人補一塊知識**. 這塊知識不一定是技術難度 — PHM Top 1 的 `4qwerty7` 解 100 題也是靠 CTF 社群累積的 trivia + 多年打靶的 libc 偏移手感, 都是 agent 在 training 時沒拿到的角料.
+**AI agent 無腦刷, 到 Top 10 可及; 再往上要人補一塊知識**. 這塊知識不一定是技術難度 — PHM Top 1 的 `4qwerty7` 解 100 題也是靠 CTF 社群累積的 trivia + 多年打靶的 libc 偏移手感, 都是 agent 在 training 時沒拿到的角料.
 
 這條分工線在 CTF 上最清楚, 因為:
 
