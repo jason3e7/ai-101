@@ -109,8 +109,24 @@
 | Web | command-executor | 100 | [web/command-executor-pending-37.md](web/command-executor-pending-37.md) — flag 在 `/flag` (mode 400, flag user), setuid `/flag-reader` 要 exec. cmd 白名單只有 ls/env, ls 用 escapeshellarg 包起, 繞不過 |
 | Web | xssme / xssrf leak / xssrf redis | 100 + 150 + 200 | [web/xssrf-pending-38-40.md](web/xssrf-pending-38-40.md) — Corgi mail XSS 題, bkcrack 已解出 backup.zip 拿到 config.php 洩漏 redis port, `<details ontoggle>` 可觸發 XSS, 但 content filter 擋 parens 寫不出能 exfil 的 payload |
 | Crypto | slowcipher | 200 | [crypto/slowcipher.md](crypto/slowcipher.md) — 逆向 ELF 做 LCG + 密碼混合, 寫 fast C 版 (log-N closed-form) 把每 byte 的 N 次 LCG 壓到 O(log N), rockyou 1M + anime/Accel World 關鍵字都沒 hit, password 還沒猜中 |
-| Reversing | #51-57 | 1420 | [reversing/pending-51-57.md](reversing/pending-51-57.md) — 7 題硬 reversing (packed PE / M/o/Vfuscator / VM / sha256 preimage / maze / termvis / rc87cipher), 每題需要特定 VM 或商業套殼的深度 reverse |
-| Pwn | #68-77, #79-81 | 2360 | [pwn/pending-67-81.md](pwn/pending-67-81.md) — 13 題 binary exploit (onepunch / rsbo / leave_msg / notepad / petbook / tictactoe-2 / bytebucket 等), 單題工時 30 min 起跳 (#67 smashthestack / #78 tictactoe-1 已解) |
+| Reversing | unpackme | 200 | [reversing/unpackme-pending.md](reversing/unpackme-pending.md) — PE32 UPX 改殼 (CTF0/1/2 + 剝 UPX! magic), Unicorn 已 unpack 出 CryptHashData CALG_MD5 檢查, 目標 MD5 `34af0d074b17f44d1bb939765b02776f` preimage 未找到 |
+| Reversing | mov | 200 | [reversing/mov-pending.md](reversing/mov-pending.md) — M/o/Vfuscator 編譯的 5.9MB, 需 demovfuscator 還原 |
+| Reversing | sha256sum | 100 | [reversing/sha256sum-pending.md](reversing/sha256sum-pending.md) — UPX+Enigma 雙殼, flag.txt 真 sha256 已確認, blackbox 不可能 (preimage) |
+| Reversing | a-maze | 200 | [reversing/a-maze-pending.md](reversing/a-maze-pending.md) — VM + 2MB 迷宮地圖, 需 BFS/DFS 編碼路徑 |
+| Reversing | esrever-mv | 240 | [reversing/esrever-mv-pending.md](reversing/esrever-mv-pending.md) — 849KB static ELF VM, 需還原 opcode handler table |
+| Reversing | termvis | 230 | [reversing/termvis-pending.md](reversing/termvis-pending.md) — ANSI escape 渲染 PNG, 需逆推繪製邏輯 |
+| Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 40 字元密碼 + rc87.enc 已知明文攻擊 |
+| Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — one-gadget RCE |
+| Pwn | raas | 160 | [pwn/raas-pending.md](pwn/raas-pending.md) — 多輪 ret2libc |
+| Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
+| Pwn | leave_msg | 200 | [pwn/leave-msg-pending.md](pwn/leave-msg-pending.md) — 留言板 heap/stack exploit |
+| Pwn | stack | 200 | [pwn/stack-pending.md](pwn/stack-pending.md) — 有 Source Code 的 C 作業題 |
+| Pwn | very_overflow | 200 | [pwn/very-overflow-pending.md](pwn/very-overflow-pending.md) — 有 Source Code 的 overflow 題 |
+| Pwn | notepad | 200 | [pwn/notepad-pending.md](pwn/notepad-pending.md) — note-based heap exploit |
+| Pwn | petbook | 200 | [pwn/petbook-pending.md](pwn/petbook-pending.md) — heap UAF (pet struct) |
+| Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 可能 FSB / 簡單 BOF |
+| Pwn | tictactoe-2 | 250 | [pwn/tictactoe-2-pending.md](pwn/tictactoe-2-pending.md) — 承 #78 OOB write 升級成 ACE |
+| Pwn | bytebucket / bytebucket-2 | 100 + 250 | [pwn/bytebucket-pending-80-81.md](pwn/bytebucket-pending-80-81.md) — 同 binary, bucket struct 已逆向 + 有號數越界索引漏洞已標, 卡在 heap leak (需 tcache 重疊) |
 
 ## 送 flag 流程 — Flag Submission
 
