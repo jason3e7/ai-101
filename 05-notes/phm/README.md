@@ -63,6 +63,7 @@
 | Pwn | very_overflow | 200 | [pwn/very-overflow.md](pwn/very-overflow.md) |
 | Reversing | a-maze | 200 | [reversing/a-maze.md](reversing/a-maze.md) |
 | Reversing | termvis | 230 | [reversing/termvis.md](reversing/termvis.md) |
+| Reversing | esrever-mv | 240 | [reversing/esrever-mv.md](reversing/esrever-mv.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
@@ -116,7 +117,6 @@
 | Reversing | unpackme | 200 | [reversing/unpackme-pending.md](reversing/unpackme-pending.md) — PE32 UPX 改殼 (CTF0/1/2 + 剝 UPX! magic), Unicorn 已 unpack 出 CryptHashData CALG_MD5 檢查, 目標 MD5 `34af0d074b17f44d1bb939765b02776f` preimage 未找到 |
 | Reversing | mov | 200 | [reversing/mov-pending.md](reversing/mov-pending.md) — M/o/Vfuscator 編譯的 5.9MB, 需 demovfuscator 還原 |
 | Reversing | sha256sum | 100 | [reversing/sha256sum-pending.md](reversing/sha256sum-pending.md) — UPX+Enigma 雙殼, flag.txt 真 sha256 已確認, blackbox 不可能 (preimage) |
-| Reversing | esrever-mv | 240 | [reversing/esrever-mv-pending.md](reversing/esrever-mv-pending.md) — 849KB static ELF VM, 需還原 opcode handler table |
 | Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 40 字元密碼 + rc87.enc 已知明文攻擊 |
 | Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — 1-byte 任意寫 + 無 leak, `_()` init 時把 .text 轉 RWX, 試了 GOT 改寫 / cmp 改 imm / `_()` syscall # 改 execve 都卡在 ASLR 無 libc base |
 | Pwn | raas | 160 | [pwn/raas-pending.md](pwn/raas-pending.md) — 多輪 ret2libc |
