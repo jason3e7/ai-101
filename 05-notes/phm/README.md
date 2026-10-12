@@ -124,7 +124,7 @@
 | Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
 | Pwn | notepad | 200 | [pwn/notepad-pending.md](pwn/notepad-pending.md) — note-based heap exploit |
 | Pwn | petbook | 200 | [pwn/petbook-pending.md](pwn/petbook-pending.md) — heap UAF (pet struct) |
-| Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 可能 FSB / 簡單 BOF |
+| Pwn | mailer | 150 | [pwn/mailer-pending.md](pwn/mailer-pending.md) — 兩個無界 gets heap overflow + dump 可控 size leak, 無 free → House of Force; 卡在本機 glibc 太新測不了 HoF, 伺服器 2.23 只能盲打 |
 | Pwn | tictactoe-2 | 250 | [pwn/tictactoe-2-pending.md](pwn/tictactoe-2-pending.md) — 承 #78 OOB write 升級成 ACE |
 | Pwn | bytebucket / bytebucket-2 | 100 + 250 | [pwn/bytebucket-pending-80-81.md](pwn/bytebucket-pending-80-81.md) — 同 binary, bucket struct 已逆向 + 有號數越界索引漏洞已標, 卡在 heap leak (需 tcache 重疊) |
 | Pwn | echo3 | 200 | [pwn/echo3-pending.md](pwn/echo3-pending.md) — fmt string 但輸入在固定 global 非 stack, 無 system/無 ret, 缺 esp pivot gadget, 需多階段經 ebp 指標鏈 |
