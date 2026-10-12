@@ -5,6 +5,8 @@ title : [Day 28] 用 Claude Code 刷 CTF — 進 Top 10, 卡住的題剛好畫�
 寫在前面 (jason3e7):
 
 > 進 Top 10 當然爽, 但真正學到的是 agent + script kid 的能力邊界長什麼樣. 剩下沒解的題一題一題看, 四種「牆」浮出來, 每一面都不是「不會做」, 是外部條件缺一塊.
+>
+> 本篇 "script kid" 指的是**無腦使用 AI 去解題, 不給 agent 任何關於 CTF 的額外提示** — 題目 URL 丟進去, 其他全交給 agent 自己判斷. 這跟傳統 "script kiddie" 的意思 (抄別人工具) 不太一樣, 這裡強調的是「使用者這端完全沒加 domain knowledge」.
 
 ```markdown
 # 刷 CTF 進 Top 10, 剩下的題剛好是 script kid 的四面牆
@@ -54,12 +56,12 @@ PHM 的 Rank 是**歷史全站累積**, 不是當月也不是當週. 10 名以�
 
 ### 牆一: md5 不能上網查, 本機也爆不開
 
-Day 26 收尾講過 Crypto `slowcipher` 的 password 要是特定 anime 名詞, 這一輪同類的還撞了幾題: `md5(x) = 已知 hash` 要反推 preimage. agent 的兩條路都走不通:
+Day 26 收尾講過 Crypto `slowcipher` 的 password 要是特定 anime 名詞, 這一輪同類還撞了幾題: `md5(x) = 已知 hash` 要反推 preimage. 觀察 agent 的行為:
 
-- **上網查**: 題目的 hash 不在 crackstation / md5decrypt 等線上彩虹表資料庫 (作者刻意選的), agent 連幾個 lookup 都返回 "not found"
-- **本機爆**: 字典檔 (rockyou、xato-net-10m) 跑完都沒中, 作者的 password 是**自己發明的字串**, 連字典擴充 (rockyou + rules、hashcat `-a 3` mask attack) 都要先猜 pattern 長什麼樣, 猜不中就是 CPU 燒半天沒結果
+- **沒有自己上網查**: agent 遇到 md5 hash **並沒有主動用 WebSearch / WebFetch 去 crackstation / md5decrypt 這類線上彩虹表資料庫查**. 可能是 safeguard 擋 (hash lookup 走到濫用邊界), 也可能是模型自己判斷「反正試了也不會中」直接跳過
+- **本機也破不開**: agent 用 Python 寫 brute force 跑 rockyou、常見密碼表, 跑完都沒中. 作者的 password 是**自己發明的字串**, 連字典擴充 (rockyou + rules、mask attack) 都要先猜 pattern 長什麼樣, 猜不中就是 CPU 燒半天沒結果
 
-這類死因在 PHM 只佔 2-3 題, 但擋得很徹底. agent 真的不會「用直覺猜一個作者會想到的詞」.
+這類死因在 PHM 只佔 2-3 題, 但擋得很徹底. agent 真的不會「用直覺猜一個作者會想到的詞」, 兩條路都走不通的時候就只能跳過.
 
 ### 牆二: 沒環境可以測特定 libc 版本
 
@@ -72,17 +74,9 @@ curl -O https://ctf.hackme.quest/static/libc-2.23.so
 LD_PRELOAD=./libc-2.23.so ./tictactoe
 ```
 
-問題在於:
-
-1. **PHM 很多題不給 libc** (或給的 libc 跟 server 上實際跑的不同), 要先 remote leak 出 libc 版本才能繼續寫 exploit
-2. **本地跟 remote 的 libc 位址偏移 (offset) 不一樣**, 本地 payload work remote 不 work 的情況很常見
-3. **agent 沒有「真的跑 server 端 binary」的環境**, 只能靠分析 + 遠端試
-
-結果就是像 tictactoe-2 這種「OOB write primitive 已確認, 卡在 1-byte write 升級到 shell」的題, 沒有本地 libc 測試環境, 猜 partial GOT overwrite 的 byte 2 得連遠端上千次 (ASLR brute force), 跑一跑就卡住.
-
 ### 牆三: 有些真的比較難的, 還沒有用更強的模型試過
 
-目前刷 PHM 用的是 **Sonnet 4.6**, 速度跟成本之間平衡好. 但有幾題 (`Pwn #69 raas` 類的 heap exploit chain、`Reversing #51 unpackme` 的 PE 殼) 吃深度 reversing 跟 heap 內部狀態的推理, 可能換 **Opus 4.7** (當前最強的 reasoning model) 跑同樣 context 會解掉.
+目前刷 PHM 用的是 **Opus 4.8**, 速度跟成本之間平衡好. 但有幾題 (`Pwn #69 raas` 類的 heap exploit chain、`Reversing #51 unpackme` 的 PE 殼) 吃深度 reversing 跟 heap 內部狀態的推理, 可能換更強 reasoning model (或多倍 token budget 跑 extended thinking) 跑同樣 context 會解掉.
 
 這條牆的性質跟前兩面不同: **理論上可以用 agent 解, 只是我還沒把 budget 丟下去跑**. 列進來是為了誠實交代 — 這 27 題裡**真的無解**跟**還沒試強模型**的要分清楚, 不能都歸類「script kid 吃不下」.
 
