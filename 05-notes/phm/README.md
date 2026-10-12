@@ -118,7 +118,7 @@
 | Reversing | esrever-mv | 240 | [reversing/esrever-mv-pending.md](reversing/esrever-mv-pending.md) — 849KB static ELF VM, 需還原 opcode handler table |
 | Reversing | termvis | 230 | [reversing/termvis-pending.md](reversing/termvis-pending.md) — ANSI escape 渲染 PNG, 需逆推繪製邏輯 |
 | Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 40 字元密碼 + rc87.enc 已知明文攻擊 |
-| Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — one-gadget RCE |
+| Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — 1-byte 任意寫 + 無 leak, `_()` init 時把 .text 轉 RWX, 試了 GOT 改寫 / cmp 改 imm / `_()` syscall # 改 execve 都卡在 ASLR 無 libc base |
 | Pwn | raas | 160 | [pwn/raas-pending.md](pwn/raas-pending.md) — 多輪 ret2libc |
 | Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
 | Pwn | leave_msg | 200 | [pwn/leave-msg-pending.md](pwn/leave-msg-pending.md) — 留言板 heap/stack exploit |
