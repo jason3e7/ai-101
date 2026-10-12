@@ -165,31 +165,9 @@ Pwn 自然剩最多, 因為:
 
 ## 收斂 — Takeaways
 
-把 Day 26-28 三篇講過的死因攤開, Day 28 的四面牆跟前面不是互斥, 是同一組 taxonomy 的另一個 cut:
+**AI agent 無腦刷, 到 Top 10 可及; 再往上要人補一塊知識**. 這塊知識不一定是技術難度.
 
-| 死因 | Day 26-27 說法 | Day 28 說法 |
-|:---|:---|:---|
-| 作者專門藏文化梗 | 「文化梗 / trivia」 | 牆一 (md5 爆不開) |
-| 本地測不出來 | 「server-side 硬性限制」 | 牆二 (libc 版本沒環境) |
-| 深度 reasoning | 沒細分 | 牆三 (強模型沒試) |
-| 政策擋 | 「cyber safeguard」 | 牆四 (單題也會撞) |
-
-四面牆的共通點是**都不是「不會做」, 是外部條件缺一塊**:
-
-- 牆一: 缺作者腦中的「這個 password 要是什麼詞」
-- 牆二: 缺 libc 版本的對應環境
-- 牆三: 缺更強模型的 budget
-- 牆四: 缺繞政策的 session 設計
-
-**AI agent 無腦刷, 到 Top 10 可及; 再往上要人補一塊知識**. 這塊知識不一定是技術難度 — PHM Top 1 的 `4qwerty7` 解 100 題也是靠 CTF 社群累積的 trivia + 多年打靶的 libc 偏移手感, 都是 agent 在 training 時沒拿到的角料.
-
-這條分工線在 CTF 上最清楚, 因為:
-
-- CTF 題**每題一個作者臨時發明的梗**, agent 的 pattern matching 吃不到 novelty 的那半
-- 一般工程題有大量相似解法在 training data, agent 會 pattern match 很舒服
-- CTF 把這個差距放大給你看, 等於是一面照妖鏡
-
-這也是為什麼 PHM 這條線在三十篇的收尾位置 — Day 24-25 的 LeetCode (99% AC) 顯示「訓練資料飽和的題型, agent 幾乎全能」; Day 26-28 的 CTF 顯示「訓練資料沒覆蓋的題型, agent 卡在哪”. 兩頭都量過了, 中間就是你每天工作遇到的題目的落點.
+Day 24-25 的 LeetCode (99% AC) 顯示「訓練資料飽和的題型, agent 幾乎全能」; Day 26-28 的 CTF 顯示「訓練資料沒覆蓋的題型, agent 卡在哪」. 兩頭都量過了, 中間可能就是你每天工作遇到的題目的落點.
 
 ## Sources
 
