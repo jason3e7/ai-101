@@ -117,7 +117,7 @@
 | Reversing | unpackme | 200 | [reversing/unpackme-pending.md](reversing/unpackme-pending.md) — PE32 UPX 改殼 (CTF0/1/2 + 剝 UPX! magic), Unicorn 已 unpack 出 CryptHashData CALG_MD5 檢查, 目標 MD5 `34af0d074b17f44d1bb939765b02776f` preimage 未找到 |
 | Reversing | mov | 200 | [reversing/mov-pending.md](reversing/mov-pending.md) — M/o/Vfuscator 編譯的 5.9MB, 需 demovfuscator 還原 |
 | Reversing | sha256sum | 100 | [reversing/sha256sum-pending.md](reversing/sha256sum-pending.md) — UPX+Enigma 雙殼, flag.txt 真 sha256 已確認, blackbox 不可能 (preimage) |
-| Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 40 字元密碼 + rc87.enc 已知明文攻擊 |
+| Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 客製 RC4 變體 (KSA 跟 PRGA 都非標準), 已會用 gdb catchpoint 控 IV, 卡在 PRGA 深度反組譯 + 不知 40 字元密碼 |
 | Pwn | onepunch | 160 | [pwn/onepunch-pending.md](pwn/onepunch-pending.md) — 1-byte 任意寫 + 無 leak, `_()` init 時把 .text 轉 RWX, 試了 GOT 改寫 / cmp 改 imm / `_()` syscall # 改 execve 都卡在 ASLR 無 libc base |
 | Pwn | raas | 160 | [pwn/raas-pending.md](pwn/raas-pending.md) — 多輪 ret2libc |
 | Pwn | rsbo / rsbo-2 | 120 + 170 | [pwn/rsbo-pending-70-71.md](pwn/rsbo-pending-70-71.md) — 同 binary (random shuffle BO + Fisher-Yates permutation oracle), ROP 料齊, 卡在 flag-seeded PRNG seed 還原 |
