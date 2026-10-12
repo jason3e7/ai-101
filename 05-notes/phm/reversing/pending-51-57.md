@@ -14,9 +14,31 @@
 
 ## 可能方向 (未試)
 
-### #51 unpackme (packed PE + Enigma)
-- 動態分析 (wine + API hook) 找 OEP, dump memory
-- Enigma Protector 的公開解包工具 (OllyDbg plugin)
+### #51 unpackme (modified UPX, 不是 Enigma)
+
+**實際不是 Enigma, 是改名過的 UPX**. Section 名稱被改成 `CTF0`/`CTF1`/`CTF2` (正常是 `UPX0`/`UPX1`), 另外 `UPX!` 魔術字跟 L_INFO 結構也被改掉, 導致 UPX 原生 `-d` 拒絕解包.
+
+**已做到的進度**:
+
+1. **識別**: PE32 32-bit, 3 sections, imports `CryptHashData`+`VirtualProtect`+`GetProcAddress`+`LoadLibraryA` → 明顯 UPX 樣式 + 自解包 unpacker
+2. **unicorn 跑 unpacker**: 寫了 Python+Unicorn script, 從 entry point `0x417830` emulate unpacker stub, 自動 map 缺的頁, dump CTF0 region
+3. **找到 password check**:
+   - CryptCreateHash with `CALG_MD5 (0x8003)` → MD5 hash
+   - CryptHashData 吃 user 輸入
+   - 跟一個 16-byte 常數比對 (`34af0d074b17f44d1bb939765b02776f`)
+   - match → 印 "Flag is <input>" (user 輸入**就是 flag**)
+   - mismatch → 印 "Wrong answer"
+4. **找到 troll flag**: 反轉 `}ysae oot s'ti ,galf ruoy ton si siht oN{GALF` = `FLAG{No this is not your flag, it's too easy}` (這是 "Flag is NOT" 分支印的假 flag)
+
+**卡住**: MD5 preimage of `34af0d074b17f44d1bb939765b02776f`
+- 不在 rockyou (14M)
+- 試遍 ~500 CTF-context 字串 (unpackme / UPX / HACKMECTF / FLAG{...} 格式等)
+- hashes.com / crackstation / md5decrypt 都沒結果 (hash DB 查不到)
+
+**可能方向**:
+- 密碼可能是**非英文字母**組合, 或**特定 CTF 社群梗**
+- 完成 unpacker emulation 直到 OEP, 看最終 unpacked `.text` 是否有更多 hint
+- 用 hashcat + 大字典 + rule
 
 ### #52 mov (M/o/Vfuscator)
 - The movfuscator 編譯的 code 可以被 **demovfuscator** 工具自動還原 (Chris Domas)
