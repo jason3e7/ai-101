@@ -9,8 +9,8 @@
 | 67 | smashthestack | 100 | 7717 | stack overflow + shellcode | 30-60 min |
 | 68 | onepunch | 160 | 7718 | one-gadget RCE, 題目有 Source Code 連結 | 30-60 min |
 | 69 | raas | 160 | 7719 | ret2libc / ret-as-a-service | 30+ min |
-| 70 | rsbo | 120 | 7706 | ROP, open+read syscall (Tips 給 ROP, open, read) | 30-60 min |
-| 71 | rsbo-2 | 170 | 7706 | 同 binary, 要 get shell, Tips: stack migration | 60+ min |
+| 70 | rsbo | 120 | 7706 | **已分析, 卡在 flag-seeded PRNG 預測** → [rsbo-pending-70-71.md](rsbo-pending-70-71.md) | 60+ min |
+| 71 | rsbo-2 | 170 | 7706 | 同 binary, get shell (stack migration) → [同上](rsbo-pending-70-71.md) | 90+ min |
 | 72 | leave_msg | 200 | 7715 | 題目: "I am on a vacation, leave the message for me" | 60+ min |
 | 73 | stack | 200 | 7716 | "my C programming homework" + Source Code | 60+ min |
 | 74 | very_overflow | 200 | 7705 | overflow 類, 有 Source Code | 60+ min |
