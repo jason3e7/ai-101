@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:54px;font-weight:900;line-height:1.16;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:23px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:6px;margin-top:6px}
+.foot{font-size:19px;color:#767d8d;letter-spacing:.04em}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 28</span></div>
+  <div>
+    <h1>用 Claude Code 刷 CTF —<br><em>進 Top 10, 剩下的題是 script kid 的四面牆</em></h1>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="240" viewBox="0 0 1056 240">
+    <!-- 左半: Rank 排行榜 top 10 (歷史全站), json3e74101 高亮在第 10 -->
+    <text x="0" y="22" fill="#8b93a5" font-size="16" font-weight="700">歷史全站 Rank Top 10</text>
+
+    <!-- Rank 1 -->
+    <text x="0" y="48" fill="#767d8d" font-size="13" font-weight="700">1</text>
+    <text x="24" y="48" fill="#a8aebd" font-size="13">4qwerty7</text>
+    <text x="320" y="48" fill="#a8aebd" font-size="13" text-anchor="end">10680 · 100 solved</text>
+
+    <!-- Rank 2 -->
+    <text x="0" y="66" fill="#767d8d" font-size="13" font-weight="700">2</text>
+    <text x="24" y="66" fill="#a8aebd" font-size="13">ddd</text>
+    <text x="320" y="66" fill="#a8aebd" font-size="13" text-anchor="end">10580 · 99 solved</text>
+
+    <!-- Rank 3 -->
+    <text x="0" y="84" fill="#767d8d" font-size="13" font-weight="700">3</text>
+    <text x="24" y="84" fill="#a8aebd" font-size="13">maple3142</text>
+    <text x="320" y="84" fill="#a8aebd" font-size="13" text-anchor="end">9110 · 89 solved</text>
+
+    <!-- Rank 4-9 (grouped line) -->
+    <text x="0" y="105" fill="#5b6170" font-size="12">4-9 · kira / miss_me / huding / ccctest / 4w4rD / M4xW4n9</text>
+
+    <!-- Divider before our row -->
+    <line x1="0" y1="118" x2="500" y2="118" stroke="#5b617033" stroke-width="1"/>
+
+    <!-- Rank 10: json3e74101 highlighted (our row) -->
+    <rect x="-4" y="124" width="508" height="26" rx="4" fill="#e8a13c22" stroke="#e8a13c" stroke-width="1.5"/>
+    <text x="4" y="142" fill="#e8a13c" font-size="15" font-weight="900">10</text>
+    <text x="28" y="142" fill="#f2f0ea" font-size="15" font-weight="900">json3e74101</text>
+    <text x="500" y="142" fill="#e8a13c" font-size="13" font-weight="900" text-anchor="end">6620 · 74 solved</text>
+
+    <!-- Foot note -->
+    <text x="0" y="174" fill="#767d8d" font-size="12">Day 26: 1720 pts → Day 27: 4940 pts → Day 28: 6620 pts (Rank 10)</text>
+    <text x="0" y="194" fill="#767d8d" font-size="11">* 排行榜為 ctf.hackme.quest 歷史全站累積, Top 1-9 為 2017-2025 期間長期 player</text>
+
+    <!-- Divider -->
+    <line x1="540" y1="0" x2="540" y2="220" stroke="#5b617033" stroke-width="1"/>
+
+    <!-- 右半: script kid 的四面牆 -->
+    <text x="820" y="28" fill="#8b93a5" font-size="16" font-weight="700" text-anchor="middle">script kid 的四面牆</text>
+
+    <!-- Wall 1: md5 -->
+    <rect x="580" y="46" width="480" height="36" rx="4" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="596" y="68" fill="#e8a13c" font-size="13" font-weight="900">1</text>
+    <text x="614" y="68" fill="#f2f0ea" font-size="13" font-weight="700">md5 — 不能上網查, 本機也爆不開</text>
+
+    <!-- Wall 2: libc -->
+    <rect x="580" y="90" width="480" height="36" rx="4" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="596" y="112" fill="#e8a13c" font-size="13" font-weight="900">2</text>
+    <text x="614" y="112" fill="#f2f0ea" font-size="13" font-weight="700">libc 版本 — 沒 libc-2.23 測試環境</text>
+
+    <!-- Wall 3: stronger model -->
+    <rect x="580" y="134" width="480" height="36" rx="4" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="596" y="156" fill="#e8a13c" font-size="13" font-weight="900">3</text>
+    <text x="614" y="156" fill="#f2f0ea" font-size="13" font-weight="700">強模型 — 硬題還沒用更強的試過</text>
+
+    <!-- Wall 4: safeguard -->
+    <rect x="580" y="178" width="480" height="36" rx="4" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="596" y="200" fill="#e8a13c" font-size="13" font-weight="900">4</text>
+    <text x="614" y="200" fill="#f2f0ea" font-size="13" font-weight="700">safeguard — 單獨題也會觸發政策擋</text>
+  </svg>
+  </div>
+</div></body></html>
