@@ -19,8 +19,8 @@
 | 77 | mailer | 150 | 7721 | 未知 | 60+ min |
 | 78 | tictactoe-1 | 50 | 7714 | 打贏 AI 就拿 flag, 不用 exploit, 但要寫 minimax 或試遍對局 | 15-30 min |
 | 79 | tictactoe-2 | 250 | 7714 | 同 binary 的 exploit 路線 ("Get a shell pls") | 60+ min |
-| 80 | bytebucket | 100 | 7722 | heap intro ("ever tried any heap-based challenge?") | 60+ min |
-| 81 | bytebucket-2 | 250 | 7722 | arbitrary code exec, heap ACE | 90+ min |
+| 80 | bytebucket | 100 | 7722 | **已逆向完成, 卡在 heap leak** → [bytebucket-pending-80-81.md](bytebucket-pending-80-81.md) | 90+ min |
+| 81 | bytebucket-2 | 250 | 7722 | arbitrary code exec, heap ACE → [同上](bytebucket-pending-80-81.md) | 90+ min |
 
 總分 2510, 合計工時估 15~20 小時.
 
