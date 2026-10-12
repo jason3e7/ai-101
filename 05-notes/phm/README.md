@@ -61,6 +61,7 @@
 | Pwn | tictactoe-1 | 50 | [pwn/tictactoe-1.md](pwn/tictactoe-1.md) |
 | Pwn | stack | 200 | [pwn/stack.md](pwn/stack.md) |
 | Pwn | very_overflow | 200 | [pwn/very-overflow.md](pwn/very-overflow.md) |
+| Reversing | a-maze | 200 | [reversing/a-maze.md](reversing/a-maze.md) |
 | Web | hide and seek | 10 | [web/hide-and-seek.md](web/hide-and-seek.md) |
 | Web | homepage | 20 | [web/homepage.md](web/homepage.md) |
 | Web | guestbook | 40 | [web/guestbook.md](web/guestbook.md) |
@@ -114,7 +115,6 @@
 | Reversing | unpackme | 200 | [reversing/unpackme-pending.md](reversing/unpackme-pending.md) — PE32 UPX 改殼 (CTF0/1/2 + 剝 UPX! magic), Unicorn 已 unpack 出 CryptHashData CALG_MD5 檢查, 目標 MD5 `34af0d074b17f44d1bb939765b02776f` preimage 未找到 |
 | Reversing | mov | 200 | [reversing/mov-pending.md](reversing/mov-pending.md) — M/o/Vfuscator 編譯的 5.9MB, 需 demovfuscator 還原 |
 | Reversing | sha256sum | 100 | [reversing/sha256sum-pending.md](reversing/sha256sum-pending.md) — UPX+Enigma 雙殼, flag.txt 真 sha256 已確認, blackbox 不可能 (preimage) |
-| Reversing | a-maze | 200 | [reversing/a-maze-pending.md](reversing/a-maze-pending.md) — VM + 2MB 迷宮地圖, 需 BFS/DFS 編碼路徑 |
 | Reversing | esrever-mv | 240 | [reversing/esrever-mv-pending.md](reversing/esrever-mv-pending.md) — 849KB static ELF VM, 需還原 opcode handler table |
 | Reversing | termvis | 230 | [reversing/termvis-pending.md](reversing/termvis-pending.md) — ANSI escape 渲染 PNG, 需逆推繪製邏輯 |
 | Reversing | rc87cipher | 500 | [reversing/rc87cipher-pending.md](reversing/rc87cipher-pending.md) — 40 字元密碼 + rc87.enc 已知明文攻擊 |
