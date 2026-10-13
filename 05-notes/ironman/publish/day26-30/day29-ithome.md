@@ -42,9 +42,24 @@ Claude Code 的 `/goal` 是內建 slash command, 把「目標 + 步驟 + 停止�
 | Phase 分段 | Recon (nmap sC-sV + web enum + ffuf) → Foothold (試 SQLi/SSTI/LFI/RCE/default creds, 記 attempts.txt) → Flag (`/home/*/` 找 local.txt, 存 flags.txt, STOP) |
 | 停止條件 | 拿到 flag 就 STOP, 不主動 privesc; 單一 goal 超過 7 小時就停 |
 
-另外有一份**跨任務**共用的 `CLAUDE.md` 放在 `~/htbLab/` 根目錄, Cap / Touch 跟後面會提到的 Management 都共用. `/goal` 是單次任務的 SOP, `CLAUDE.md` 是**agent 整場的紀律**:
+另外有一份**跨任務**共用的 `CLAUDE.md`, Cap / Touch 跟後面會提到的 Management 都用同一份. `/goal` 是單次任務的 SOP, `CLAUDE.md` 是**agent 整場的紀律**. 原文是英文, 下面是中文摘要 (完整原文見 [本 repo HTB note](https://github.com/jason3e7/ai-101/blob/master/05-notes/htb/cap-2026-10-13/cap-with-goal.md#%E5%85%B1%E7%94%A8%E7%9A%84-claudemd--shared-rules-across-all-htb-runs)):
 
 ```markdown
+## 環境 (Environment)
+- Ubuntu, pentest 工具可能沒裝, HTB VPN 走 tun0
+
+## 工具安裝規則 (Tool installation policy)
+- 缺哪個工具 agent 自己裝 (apt / pip3 / go install / 從 GitHub releases 載 binary)
+
+## Logging 規則
+- 工作目錄 ~/htb/machine-name/
+- 所有輸出 tee 到 ./recon/
+- 摘要寫 ./recon/notes.md, flag 寫 ./recon/flags.txt
+- 沒 capture 的指令不要跑
+
+## 停止條件 (Stop condition)
+- 讀到 local.txt → 寫 flags.txt → STOP, 不主動 privesc
+
 ## INTEGRITY RULES (CRITICAL)
 - 不准上網查這台靶機的 writeup / CVE PoC / 已公開解答
 - 一般技術語法 (sqlmap usage 之類) 可以查
