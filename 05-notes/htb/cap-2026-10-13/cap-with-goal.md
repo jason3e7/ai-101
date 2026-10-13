@@ -13,7 +13,8 @@
 # Claude /goal 無人跑 HTB Cap: 兩段式 goal + 嚴格 logging + 乾淨 context
 * 兩次 /goal, 兩個模型
   * foothold = Mythos 5.1 (6 分鐘)
-  * privesc = Opus 5 (1 分鐘)
+  * privesc Mythos 5.1 撞 safeguard 被擋
+  * 切 Opus 5 同 prompt 直接過 (1 分鐘)
 * goal prompt 的四段骨架
   * 目標 + 環境 + 工具自備清單
   * STRICT logging 規則 (tee 到 recon/)
@@ -88,7 +89,19 @@
 **關鍵設計**: 不接著原 session, 開新的, 原因:
 - Foothold session 的 context 已塞滿 recon 輸出 (nmap/ffuf/web_data 等), 繼續跑容易 recent bias (一直想 revisit 已跑過的)
 - 開新 session 直接告訴 agent「already have user shell」, 省掉重新 recon 的 token
-- 順便升級模型: Mythos 5.1 做 foothold 速度快, 提權需要更深推理 → 切 Opus 5
+
+**換模型是被迫的** — 原本想繼續用 Mythos 5.1, 第二個 `/goal` 一送出去就直接被擋:
+
+```
+API Error: Mythos 5.1's safeguards flagged this message.
+```
+
+跟 PHM CTF 遇到的 `cyber-related safeguards` 是同一條線 — Mythos 5.1 對「本機提權 / SUID / cron / 可寫路徑 / linpeas」這組關鍵字密度特別敏感. 這次沒拆 session, 直接整段 prompt 一次送 = 訊號密度過高 → 整個 turn 被 drop. 處理方式:
+
+1. `/model` 切 **Opus 5** — Opus 5 對同樣的 goal prompt 直接接受
+2. prompt 內容一字沒改, 證明是**模型的 safeguard 嚴格度差異**, 不是題目太敏感
+
+這條觀察跟 [Day 28 PHM CTF](https://ithelp.ithome.com.tw/articles/10423733) 的「牆四: 單獨題也會撞 safeguard」互相印證: safeguard 不是全模型一致, 不同模型有不同的「cyber 敏感度閾值」. 遇到擋就換一個再試, 比重寫 prompt 繞開有效.
 
 Privesc goal 骨架一樣四段, 但 Phase 內容換成本機列舉:
 1. `whoami/id/uname/sudo -l`
@@ -183,7 +196,8 @@ Agent 跑完 recon 階段共 29 個檔 (放在原 htbLab 目錄的 `recon_v02plu
 - **26 分鐘兩個 flag**: Easy 等級的靶機, agent 用對 prompt 比我手打還快. 不過 Cap 這台的四個 vuln 都是教科書等級, novel 梗不多, 這是為什麼跑得順
 - **分 session 的紀律**: 我一度想「反正拿到 user shell 了, 直接繼續跑 privesc goal」, 但分 session 的回報更好 — 每段 context 都是乾淨的 2 萬 token 以內, 沒有「agent 一直想 revisit 之前的某個 enum」
 - **非破壞性驗證的規範**: 提權 goal 寫明「驗證用 os.setuid(0) + os.system('id')」, agent 就不會真的噴 reverse shell / 改檔案. 這條規則對 Cap 這種共用靶機 (別人可能同時在刷) 很重要
-- **模型選擇**: foothold 階段 Mythos 5.1 跑得飛快 (web 列舉這類是「找 pattern」, 不太需要 reasoning); 提權階段需要「讀列舉輸出 → 推理哪條線最有希望」, Opus 5 的推理深度明顯派上用場 — 它在 SUID/cron 落空後**主動**跳到 getcap, 這一跳 Mythos 不一定做
+- **模型選擇**: 原本整場都想用 Mythos 5.1, 第二個 `/goal` 被 safeguard 擋才切 Opus 5. 事後覆核這個「被迫換」其實是賺的 — foothold 階段 Mythos 跑得飛快 (web 列舉「找 pattern」不太需要 reasoning), 提權需要「讀列舉輸出 → 推理哪條線最有希望」, Opus 5 的推理深度明顯派上用場: 它在 SUID/cron 落空後**主動**跳到 getcap, 這一跳 Mythos 不一定做
+- **safeguard 要當路況資訊看**: 碰到擋不要花時間「想辦法重寫 prompt 繞過」, 直接換模型試. 這跟 PHM Day 28 的觀察一致 — 同一個 prompt 不同模型敏感度不同, 政策是**模型個別屬性**而不是 Anthropic 統一牆
 - 跟 PHM CTF 的對照: PHM 卡在「作者刻意的 novelty 梗」, HTB Easy 卻幾乎沒有 — 兩邊都量過 agent 的能力邊界, HTB Medium/Hard 的靶機才是下一步真正要測的
 
 ---
