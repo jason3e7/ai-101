@@ -272,13 +272,8 @@ agent 每一步都用自己的視覺理解決定座標. Claude 讀 PNG 的能力
 
 這跟 Anthropic Computer Use beta 一樣, 只是用 1990 年代的 Linux 工具組出來. 不等 Anthropic 把 Computer Use 做成正式產品, agent 已經能自己架出同樣的能力.
 
-鐵人賽子系列 (Day 24-29) 想傳達的: AI 的能力邊界不是「它會什麼」, 是「我們願意把 workflow 設計到多工程化」. `/goal` 的四段骨架不是魔法, 是把人腦袋裡的 pentest SOP 寫下來給 agent 讀. Day 30 總結會把這條線拉完.
-
 ## Sources
 
-- [HTB Cap — 本 repo 完整案例](https://github.com/jason3e7/ai-101/blob/master/05-notes/htb/cap-2026-10-13/cap-with-goal.md)
-- [HTB Touch — 本 repo 完整案例 + 10 張 RDP 截圖](https://github.com/jason3e7/ai-101/blob/master/05-notes/htb/touch-2026-10-13/touch-with-goal.md)
-- [HTB Goal Prompt 設計指南 (本 repo)](https://github.com/jason3e7/ai-101/blob/master/05-notes/htb/htb-goal-prompt-guide.md)
 - [Day 28: PHM CTF — AI agent 的四面牆](https://ithelp.ithome.com.tw/articles/10423733) — safeguard 的另一面
 - [FreeRDP — `/sec:rdp` 文件](https://github.com/FreeRDP/FreeRDP/wiki/CommandLineInterface)
 - [xdotool](https://github.com/jordansissel/xdotool) — X11 鍵鼠自動化
