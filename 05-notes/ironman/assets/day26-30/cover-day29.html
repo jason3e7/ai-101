@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:48px 48px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
+.wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{display:flex;align-items:center;gap:16px}
+.mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
+.bar{width:2px;height:24px;background:#ffffff2e}
+.day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
+h1{font-size:52px;font-weight:900;line-height:1.16;letter-spacing:.01em}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:14px;font-size:23px;color:#a8aebd;letter-spacing:.03em}
+.chartwrap{margin-bottom:6px;margin-top:6px}
+text{font-family:"Noto Sans CJK TC",sans-serif}
+</style></head><body>
+<div class="grid"></div><div class="glow"></div>
+<div class="wrap">
+  <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 29</span></div>
+  <div>
+    <h1>從 CTF 換到 HTB — <em>用 /goal 一次打贏, 一次卡在 kiosk</em><br>卡住的那個, agent 自己架出 RDP 工具鏈</h1>
+  </div>
+  <div class="chartwrap">
+  <svg width="1056" height="240" viewBox="0 0 1056 240">
+    <!-- 左半: Cap case card -->
+    <text x="0" y="22" fill="#8b93a5" font-size="16" font-weight="700">案例一 · HTB Cap (Easy, 贏)</text>
+
+    <rect x="0" y="38" width="500" height="170" rx="6" fill="#1b1d28" stroke="#e8a13c" stroke-width="1.5"/>
+    <text x="20" y="68" fill="#e8a13c" font-size="18" font-weight="900">26 分鐘 · user + root</text>
+
+    <text x="20" y="98" fill="#a8aebd" font-size="13">1  Web /download/0 IDOR → 他人 pcap</text>
+    <text x="20" y="118" fill="#a8aebd" font-size="13">2  pcap 明文 FTP → nathan 帳密</text>
+    <text x="20" y="138" fill="#a8aebd" font-size="13">3  帳密重用 → SSH shell</text>
+    <text x="20" y="158" fill="#a8aebd" font-size="13">4  python3.8 cap_setuid → root</text>
+
+    <text x="20" y="188" fill="#767d8d" font-size="11">foothold Mythos 5.1 · privesc Opus 5 (safeguard 被迫切)</text>
+
+    <!-- Divider -->
+    <line x1="540" y1="0" x2="540" y2="220" stroke="#5b617033" stroke-width="1"/>
+
+    <!-- 右半: Touch case card -->
+    <text x="580" y="22" fill="#8b93a5" font-size="16" font-weight="700">案例二 · HTB Touch (卡在 kiosk)</text>
+
+    <rect x="580" y="38" width="476" height="170" rx="6" fill="#1b1d28" stroke="#5b6170" stroke-width="1" stroke-dasharray="4 3"/>
+    <text x="600" y="68" fill="#f2f0ea" font-size="18" font-weight="900">agent 自己架出 RDP pipeline</text>
+
+    <!-- Pipeline flow boxes -->
+    <rect x="600" y="86" width="88" height="30" rx="3" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="644" y="105" fill="#e8a13c" font-size="12" font-weight="700" text-anchor="middle">xfreerdp</text>
+
+    <text x="692" y="105" fill="#5b6170" font-size="14">→</text>
+
+    <rect x="708" y="86" width="68" height="30" rx="3" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="742" y="105" fill="#e8a13c" font-size="12" font-weight="700" text-anchor="middle">Xvfb</text>
+
+    <text x="780" y="105" fill="#5b6170" font-size="14">→</text>
+
+    <rect x="796" y="86" width="78" height="30" rx="3" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="835" y="105" fill="#e8a13c" font-size="12" font-weight="700" text-anchor="middle">import</text>
+
+    <text x="878" y="105" fill="#5b6170" font-size="14">→</text>
+
+    <rect x="894" y="86" width="88" height="30" rx="3" fill="#2a2d3b" stroke="#5b6170" stroke-width="1"/>
+    <text x="938" y="105" fill="#e8a13c" font-size="12" font-weight="700" text-anchor="middle">xdotool</text>
+
+    <!-- Loop description -->
+    <text x="600" y="140" fill="#a8aebd" font-size="13">連 RDP · 虛擬螢幕 · 截圖 · 送點擊</text>
+    <text x="600" y="160" fill="#a8aebd" font-size="13">agent 讀圖決定下一步座標</text>
+    <text x="600" y="180" fill="#767d8d" font-size="11">本質跟 Anthropic Computer Use 一樣,</text>
+    <text x="600" y="196" fill="#767d8d" font-size="11">用 1990s Linux 四個工具組出來</text>
+
+  </svg>
+  </div>
+</div></body></html>
