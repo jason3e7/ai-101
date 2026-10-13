@@ -40,7 +40,9 @@ Claude Code 的 `/goal` 是一條**內建 slash command**, 把一段「目標 + 
 3. **Phase 分段**: Recon (nmap sC-sV + web enum + ffuf) → Foothold (研究服務漏洞, 試 SQLi/SSTI/LFI/RCE/default creds, 記 attempts.txt) → Flag (`/home/*/` 找 local.txt, 存 flags.txt, STOP)
 4. **停止條件**: 拿到 flag 就 STOP, 不主動 privesc; 單一 goal 超過 7 小時就停
 
-這套跟 Day 26-28 的 PHM CTF 跑法差很多: PHM 的 Claude Code 偏「人指路, agent 跑單題」; `/goal` 是「人設方向, agent 跑整條鏈」. 下面兩個案例剛好看出這個差別.
+這套跟 Day 26-28 的 PHM CTF 跑法差很多: PHM 的 Claude Code 偏「人指定題目, agent 解題目」; `/goal` 是「人提供滲透測試方法論, agent 透過方法論在實務中找解答」. 下面兩個案例剛好看出這個差別.
+
+跟 Day 26-28 PHM 的另一個不一樣是**平台等級**: 從**小眾 → 公認平台**. PHM 是台灣 Inndy 個人維護的練習站, HTB 是全球 pentest 社群公認的訓練平台 (累積上百萬使用者 + Retired 的 writeup 可查). 這跟 LeetCode 子系列 (Day 24-25) 的路線一樣 — 從 zerojudge (台灣高中生競賽) 爬到 LeetCode (全球 FAANG 面試題庫). **先在小眾平台練手感, 再上公認平台驗證**, 這條線在資安跟演算法兩邊都成立.
 
 ## 案例一: Cap (easy, 26 分鐘, 教科書鏈)
 
@@ -74,14 +76,18 @@ Claude Code 的 `/goal` 是一條**內建 slash command**, 把一段「目標 + 
 
 Agent 看一眼 `/netstat` 洩漏 "web 以 uid 1001 跑 + 能綁 port 80", 心裡就知道 **getcap** 是提權第一個該查的 — 這跳跟教科書上寫的一樣, 不需要人提示.
 
-### 關鍵設計: 分 session 跑, 中間換模型
+### 關鍵設計: 分 session 跑, 中間換模型 (被迫)
 
 - Foothold 跑完 **STOP** (goal 本來就寫了「拿到 user.txt 就停」), 我手動看 `recon/notes.md` 跟 flag, 然後開新 session
-- 新 session: `/model opus-5` + 新 `/goal` (提權版 prompt, 不帶 Phase 1 的 recon 內容)
-- 好處: **context 乾淨, 沒 recent bias** (foothold session 的 context 已經塞滿 nmap/ffuf/web_data 輸出, 繼續跑 agent 容易一直想 revisit 已跑過的)
-- 另一個好處: 可以**用對速度 / 深度各自適合的模型** — Mythos 5.1 跑 web 列舉飛快, Opus 5 讀列舉輸出 → 推理哪條線最有希望
+- 新 session 本來還是想用 Mythos 5.1, 一送出第二個 `/goal` (提權版) 就被擋:
 
-這就是 `/goal` 跟自由 chat 的最大差別: **把紀律寫進 prompt**, 讓 agent 不會因為 context 疲勞或模型隨性而跑偏.
+  ```
+  API Error: Mythos 5.1's safeguards flagged this message.
+  ```
+
+- 處理方式: `/model opus-5`, prompt **一字沒改**, Opus 5 直接接受. **純粹就是 safeguard 擋人, 沒有其他原因** (不是為了「用更強模型推理」或「速度/深度配置」, 單純是 Mythos 5.1 看到提權關鍵字就拒跑)
+
+這也顯示 `/goal` 跟自由 chat 的差別: **把紀律寫進 prompt** 讓 agent 不會因為 context 疲勞或模型隨性而跑偏, 但也擋不住模型本身的 safeguard — 這條分工線 Day 28 已經講過.
 
 ## 案例二: Touch (未解, 但 agent 自己架出 RDP 工具鏈)
 
@@ -160,6 +166,32 @@ import -window root -display :99 recon/rdp_shots/s04.png
 
 **agent 每一步都用自己的視覺理解決定座標**. Claude 讀 PNG 的能力好到可以直接說「STAFF LOGIN 在右下角, 約座標 1197, 762」, 不用 OCR、不用 element inspector、不用寫 XPath. 這**本質跟 Anthropic Computer Use / OpenAI Operator 一樣**, 只是 agent 自己用 CLI 工具組出來, 不依賴任何商業產品.
 
+### 實際的截圖 (點擊前 / 點擊後)
+
+這段的截圖是 **agent 在 Claude Code 裡自己截自己看的**, 不是我截 agent 看的畫面. 挑兩對代表性的 before/after:
+
+**Pair 1 — Agent 看待機頁 → 決定點右下 STAFF LOGIN → 進到 Staff 認證失敗**
+
+![s01 — RDP 連進去的待機頁, agent 看到右下有 STAFF LOGIN 按鈕](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s01.png)
+
+Agent 在這張看到: 中央 "SELF CHECK-IN" + 底部 "STAFF LOGIN" 按鈕. 目標是進 Staff 介面 (權限較高), 所以決定點右下的 STAFF LOGIN. `xdotool mousemove 1197 762 click 1`.
+
+![s04 — 點 STAFF LOGIN 進去, 再試 SCAN BADGE, 得到 Invalid badge format 錯誤](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s04.png)
+
+幾輪點擊 (STAFF LOGIN → SCAN BADGE) 之後, agent 卡在這張: **Invalid badge format**. 跟 Web 的 `/login/badge` 端點回應一致. agent 試了 60+ 種 QR 內容格式 (JSON / base64 / JWT / `NX-xxxx` / GUID / MRZ 等) 都是這個錯誤. 這條後來撞 safeguard 停手.
+
+**Pair 2 — Agent 切另一條路, 走 Self Check-In 流程探索**
+
+![s05 — 回到待機頁, agent 換一條路, 點中央 Touch 開始 Self Check-In](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s05.png)
+
+Staff 介面卡住後, agent 自己決定試另一條: 點中央 "Touch screen to begin" 開始客人用的 Self Check-In 流程, 看能不能從裡面找 kiosk escape (檔案選擇器 / 列印對話框 / 超連結開新視窗 / Alt-Tab 等).
+
+![s06 — Self Check-In 的 LANGUAGE 選單, 20 國語言 + session timeout 01:56 倒數](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s06.png)
+
+進到 LANGUAGE 選單. 注意右下 **Session timeout 01:56** — kiosk 2 分鐘閒置就重設, agent 每輪都要在 2 分鐘內推進, 這對「截圖 → 看圖 → 送 click」的 loop 是個節奏壓力.
+
+這 10 張截圖連起來看, 等於是 agent 在 Windows kiosk 裡**自己走了一遍 UX**, 像一個不懂中文的用戶在機場自助報到機前面摸索.
+
 ### 為什麼卡住
 
 - Kiosk UI 的輸入欄位會彈**畫面上的虛擬鍵盤**, xdotool 送的實體鍵盤輸入不進欄位
@@ -167,24 +199,11 @@ import -window root -display :99 recon/rdp_shots/s04.png
 - Mythos 5.1 試到連續 60 次偽造 token 時, cyber safeguard 擋人
 - 切 Opus 5 要從頭重讀 context 太慢, 手動放棄
 
-這跟 Day 28 PHM 的[四面牆](https://ithelp.ithome.com.tw/articles/10423733)完全一致 — safeguard 不是全模型一致, 不同模型敏感度不同. 但這次我做了跟前兩案不一樣的決定: **放棄接 Opus 5**. 原因是這次 Mythos 只推到 30-40% 就被擋, Opus 5 要整段重跑, 等的時間可能大於自己接手手動幹.
-
-**新規則**: safeguard 擋人後, **先看題目推到多深**才決定要不要換模型. 推到 90% 換模型最賺 (Opus 5 收尾快), 推到 30% 換模型 = 整段重跑, 不如停手.
+這跟 Day 28 PHM 的[四面牆](https://ithelp.ithome.com.tw/articles/10423733)完全一致 — safeguard 不是全模型一致, 不同模型敏感度不同. 但這次我做了跟前兩案不一樣的決定: **放棄接 Opus 5**. 單純是等 Opus 5 載入 context 跟接續推理花了一段時間, 我手動按停. 這份 note 的 `recon/` 只有 Mythos 5.1 的紀錄, 就是因為放棄後沒截 Opus 5 的輸出.
 
 ## 收斂 — Takeaways
 
-兩個案例攤開, 可以看出 `/goal` 這個 workflow 的三個性質:
-
-| 性質 | Cap (贏) | Touch (卡) |
-|:---|:---|:---|
-| 把工程紀律寫進 prompt | ✅ phase 分段讓 agent 不混亂 | ✅ 同樣的骨架也 work |
-| agent 自己展開能力 | 看 netstat → 推 getcap | **自己架 RDP + Xvfb + xdotool + import pipeline** |
-| safeguard + 模型切換 | 分 session 中間換, 乾淨切 Opus 5 | 中段撞牆, Opus 5 續跑太慢放棄 |
-
-兩個觀察:
-
-1. **`/goal` 的紀律 = 可覆核**. tee 存檔 + Phase 分段 + 停止條件讓**事後能看懂 agent 做了什麼**. 這點對 pentest / debugging / 任何有風險的 agentic 任務都重要. 不是「跑完給答案」, 是「跑完有完整證據鏈」
-2. **真實攻擊面比 CTF novelty 梗對 agent 友善**. HTB (包括 Cap easy) 的漏洞都在真實軟體的 CVE / writeup 裡, agent training data 吃得下. PHM CTF 作者發明的 trivia 梗 agent 反而吃不下 (見 [Day 28 四面牆](https://ithelp.ithome.com.tw/articles/10423733)). 這條分工線 **對日常工作有啟示** — agent 做「用別人造的輪子組出解法」強, 做「自己想一個沒人想過的梗」弱
+一個觀察: **`/goal` 的紀律 = 可覆核**. tee 存檔 + Phase 分段 + 停止條件讓**事後能看懂 agent 做了什麼**. 這點對 pentest / debugging / 任何有風險的 agentic 任務都重要. 不是「跑完給答案」, 是「跑完有完整證據鏈」.
 
 ### Agent 展現的新能力 — 自己架 GUI pipeline
 
