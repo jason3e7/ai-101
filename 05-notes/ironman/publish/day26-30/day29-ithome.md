@@ -42,6 +42,18 @@ Claude Code 的 `/goal` 是內建 slash command, 把「目標 + 步驟 + 停止�
 | Phase 分段 | Recon (nmap sC-sV + web enum + ffuf) → Foothold (試 SQLi/SSTI/LFI/RCE/default creds, 記 attempts.txt) → Flag (`/home/*/` 找 local.txt, 存 flags.txt, STOP) |
 | 停止條件 | 拿到 flag 就 STOP, 不主動 privesc; 單一 goal 超過 7 小時就停 |
 
+另外有一份**跨任務**共用的 `CLAUDE.md` 放在 `~/htbLab/` 根目錄, Cap / Touch 跟後面會提到的 Management 都共用. `/goal` 是單次任務的 SOP, `CLAUDE.md` 是**agent 整場的紀律**:
+
+```markdown
+## INTEGRITY RULES (CRITICAL)
+- 不准上網查這台靶機的 writeup / CVE PoC / 已公開解答
+- 一般技術語法 (sqlmap usage 之類) 可以查
+- 不准 hydra / medusa 這類帳密爆破
+- 所有指令必須完全 non-interactive (不准 vim / python REPL / mysql 互動)
+```
+
+這幾條沒寫在 `/goal` prompt 裡, 但 Claude Code 會自動把 `CLAUDE.md` 讀進每次對話的 context, 整場 agent 的行為都受約束. **這才是「agent 自主刷題」跟「script kid 抄 writeup」真正的分野** — 不是靠 agent 聰明, 是靠使用者先把紀律寫成規則. 下面兩個案例會看到這份 CLAUDE.md 直接影響 agent 的解題路徑.
+
 跟 Day 26-28 PHM 的對照兩條:
 
 | 軸 | PHM (Day 26-28) | HTB `/goal` (本篇) |

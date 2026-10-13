@@ -46,6 +46,34 @@
 
 ---
 
+## 共用的 CLAUDE.md — Shared Rules Across All HTB Runs
+
+Cap / Touch / Management 這三場 HTB 都是在 `~/htbLab/` 下跑, 共用一份 `CLAUDE.md`. `/goal` 只負責**單次任務**的目標 + Phase + stop 條件, CLAUDE.md 負責**跨任務**的 agent 行為紀律. 重點摘要:
+
+```markdown
+## Tool installation policy
+缺哪個工具 agent 自己裝 (apt / pip3 / go install / GitHub releases)
+
+## Logging rules
+- 工作目錄: ~/htb/machine-name/
+- 所有輸出 tee 到 ./recon/
+- 摘要寫 ./recon/notes.md, flag 寫 ./recon/flags.txt
+- 沒 capture 的指令不要跑
+
+## Stop condition
+讀到 local.txt → 寫 flags.txt → STOP, 不要主動 privesc
+
+## INTEGRITY RULES (CRITICAL)
+- 不准上網查這台靶機的 writeup / CVE PoC / 已公開解答
+- 一般技術語法 (例如 "sqlmap usage") 可以查
+- 不准 hydra / medusa 這類帳密爆破
+- 所有指令必須完全 non-interactive (不准 vim / python REPL / mysql 互動)
+```
+
+Touch 這場更能看出 CLAUDE.md 的「tool installation policy」帶來的紅利: agent 遇到 kiosk 要操作時, 自己 `apt install xfreerdp2 xvfb xdotool imagemagick` 把 RDP 工具鏈裝起來. 這一步**沒有寫在 `/goal` 的 prompt 裡**, agent 自己判斷「缺工具就裝」是因為 CLAUDE.md 給了許可. 下面「Agentic RDP 工具鏈」那段能發生, 這份 CLAUDE.md 是前提條件.
+
+---
+
 ## 最有趣的部分 — Agentic RDP 工具鏈
 
 這台靶機逼 agent 進一個**全螢幕瀏覽器 kiosk**裡. 傳統 pentest 這段靠人操作 — 連 RDP、看到介面、滑鼠亂點找 bug. 但 `/goal` 是**命令列 agent**, 怎麼辦? 答案是**自己組一條 headless GUI 自動化 pipeline**:

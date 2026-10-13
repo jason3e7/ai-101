@@ -49,6 +49,34 @@
 
 ---
 
+## 共用的 CLAUDE.md — Shared Rules Across All HTB Runs
+
+Cap / Touch / Management 這三場 HTB 都是在 `~/htbLab/` 下跑, 共用一份 `CLAUDE.md`. `/goal` 只負責**單次任務**的目標 + Phase + stop 條件, CLAUDE.md 負責**跨任務**的 agent 行為紀律. 重點摘要:
+
+```markdown
+## Tool installation policy
+缺哪個工具 agent 自己裝 (apt / pip3 / go install / GitHub releases)
+
+## Logging rules
+- 工作目錄: ~/htb/machine-name/
+- 所有輸出 tee 到 ./recon/
+- 摘要寫 ./recon/notes.md, flag 寫 ./recon/flags.txt
+- 沒 capture 的指令不要跑
+
+## Stop condition
+讀到 local.txt → 寫 flags.txt → STOP, 不要主動 privesc
+
+## INTEGRITY RULES (CRITICAL)
+- 不准上網查這台靶機的 writeup / CVE PoC / 已公開解答
+- 一般技術語法 (例如 "sqlmap usage") 可以查
+- 不准 hydra / medusa 這類帳密爆破
+- 所有指令必須完全 non-interactive (不准 vim / python REPL / mysql 互動)
+```
+
+這份是為什麼 agent 不會上網 Google「HTB Cap writeup」、不會丟 hydra 到 SSH、不會卡在互動 shell. 這些行為沒有在 `/goal` 的 prompt 裡寫, 但因為 Claude Code 會自動把專案根目錄的 `CLAUDE.md` 讀進 context, 整場都受這份規則約束. **這才是「agent 自主刷題」 vs「script kid 用別人的工具」真正的分野** — 不是靠 agent 聰明, 是靠使用者先把紀律寫成規則.
+
+---
+
 ## Session 1 — Foothold `/goal`
 
 ### Prompt (截圖原文)
