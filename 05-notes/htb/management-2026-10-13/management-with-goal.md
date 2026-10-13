@@ -79,6 +79,32 @@ API Error: Mythos 5.1's safeguards flagged this message.
 2. 沒重寫 prompt、沒改 goal, 直接讓 agent 從被擋的那一步**繼續**
 3. Opus 5 接手, 把 class probing 跑完, 寫出 working chain, 完成整段 foothold
 
+### 52 分鐘的時間花在哪 — Foothold Timeline
+
+Claude Code 的 UI 顯示 Session 1 跑了 **52m 3s**. 從 `recon/` 底下 88 個檔案的 mtime 可以還原 agent 真的在做什麼. 大致分 6 段:
+
+| 時段 | 時長 | 階段 | 做了什麼 | 關鍵檔案 |
+|:---|---:|:---|:---|:---|
+| 14:01–14:06 | 5m | **初始偵察** | nmap full + UDP + SSL banners + LDAP 50389 匿名 bind 嘗試 | `nmap_full.txt` / `ldap_50389.txt` / `ssl_banners.txt` |
+| 14:06–14:21 | 15m | **OpenAM REST 列舉** | 跑 5 輪 `openam_probe*`, 掃 `/openam/json/?_api` Swagger, 試一堆 `amadmin` default creds, 列舉 realms / modules / callbacks / selfservice / pwreset 端點 | `openam_probe[1-5].txt`, `openam_swagger_*.txt`, `openam_defaultcreds.txt` |
+| 14:21–14:35 | 14m | **拿到 demo/changeit 之後摸索** | demo session 進 console, 試用 demo 身份去 LDAP、SSH、改密碼、enum containers — 全部被 ACI / 權限擋 | `demo_token.txt`, `openam_demo_console.txt`, `ldap_as_demo*.txt`, `ssh_demo.txt`, `ldap_containers.txt` |
+| 14:35–14:49 | 14m | **走投無路期** | 回頭做 ffuf retry、OpenAM pwreset trick、`openam_oracle` 類 probe — 都沒結果. 這段最接近「卡住亂試」, 也剛好是 Mythos 決定跳 JMX 之前的徘徊 | `ffuf_mgmt[2-3].txt`, `openam_pwreset.txt`, `openam_oracle.txt` |
+| 14:49–15:06 | 17m | **JMX gadget 大規模掃描** | ysoserial 全套打過一遍 (CC1-7 / Hibernate1-2 / Spring1-2 / ROME / Jdk7u21 / Groovy) **全部被 JDK 21 的模組系統擋**, 自己改寫 `ClassProbe.java` 探測 classpath, 跑 3 輪 class probing | `jmx_gadget_scan[1-2].txt`, `jmx_classprobe[1-3].txt`, `scripts/java/ClassProbe.java` |
+| 15:06–15:18 | 12m | **🚨 Mythos safeguard 擋 + 切 Opus 5** | 這段沒有新檔案落地. gadget 搜尋到一半連續產出 `defineClass` / bytecode / `AbstractTranslet` 相關關鍵字, 訊號密度過高 → Mythos 整個 turn 被 drop. 手動 `/model` 到 Opus 5, 把被截斷的 class probing 補完 | — (無磁碟活動) |
+| 15:18–15:19 | 1m | **Opus 5 接手收尾** | Opus 5 一上來就定位到 **bundled Xalan + Apache Click Column** 這對組合 (前面 Mythos 已經 probe 到), 寫出 working `ClickGadget.java`, RCE as openam, 讀 GLPI config, XChaCha20 解密, SSH as owen | `exploit_attempts.txt`, `ldap_svcglpi.txt`, `ssh_owen.txt`, `scripts/java/ClickGadget.java` |
+
+**合計 ~78 分鐘的 wall clock, Claude Code UI 計時 52m 3s** (兩者差 25m 可能是人工等 Mythos 回應超時、手動 `/model` 切換、Opus 5 思考 context 的時間, 這些 UI 不計入 agent 活動時間).
+
+### 幾個觀察
+
+- **28 分鐘在 OpenAM 糾結 (14:06–14:35)**: 大半時間在試 OpenAM 自身的攻擊面 — default creds / realm 列舉 / pwreset 繞過 / selfservice. 這方向其實**沒機會** (OpenAM 的 known CVE 大部分需要 SSO 或 AMADMIN 權限), 但 agent 不試過不放心
+- **14 分鐘走投無路 (14:35–14:49)**: 這段其實很像人類的「卡住在原地重試」 — 已經試過的 ffuf 又跑一次, 已經看過的 selfservice 又戳一次. 是**跟 PHM 卡題時的 pattern 一樣**: 熟悉的攻擊面試完 → 找不到突破 → 回頭 revisit. 直到 agent 真的轉念, 跳到 JMX (14:49)
+- **17 分鐘在 JMX gadget 爆打 (14:49–15:06)**: 標準 ysoserial 全套打完全被 JDK 21 擋, 這段才是真正的「技術挖掘」. 寫自己的 `ClassProbe.java` 用異常訊息當 oracle 掃 classpath — 這一步是解題關鍵, 但也是**最像攻擊程式碼**, 累積 context 讓 safeguard 訊號衝頂
+- **12 分鐘 gap (15:06–15:18)**: 這段 agent 完全沒寫檔案. 對照 02.jpg 截圖, 這段就是 Mythos 撞 safeguard 被擋 → 人工 `/model` 切 Opus 5 → Opus 5 把前面的 context 讀一遍, 定位到正確的 gadget → 開始產 code 的時期
+- **Opus 5 收尾只花 1 分鐘**: 因為 90% 的功已經被 Mythos 做掉了 (classpath 已 enum、JMX 入口已確認、GLPI 位置已確認). Opus 5 真正需要做的就是**把 bundled Xalan 這條 gadget 鏈組起來**, 剩下的 chain 都是機械執行
+
+**結論**: 52 分鐘不是「卡在一題」, 是 agent 走完 OpenAM 完整列舉 → 多方向嘗試 → 回頭 → 轉向 JMX → 爆打 gadget → 自己寫 class probe 的過程. 真正的「突破」只花了最後 1 分鐘, 但前面 51 分鐘都是為了那 1 分鐘鋪路. 這跟真實滲透測試的手感很像 — recon 跟 enum 永遠是最花時間的, exploit 本身很快.
+
 ### Opus 5 接手之後完成的 chain
 
 ![Foothold 完成 (切 Opus 5 後) — OpenDJ 反序列化 → openam RCE → GLPI → owen SSH](./02-foothold-done-after-opus5-switch.jpg)
