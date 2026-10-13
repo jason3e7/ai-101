@@ -166,33 +166,20 @@ Agent 透過 Web dashboard 拿到 Windows 帳號密碼 (`KioskUser / K!0sk2026#`
 
 這段是本篇最有價值的部分. agent 用 4 個 1990 年代的 Linux 標準套件 (`apt install xfreerdp2 xvfb xdotool imagemagick` 一行搞定) 組出 headless GUI 自動化 pipeline:
 
+```mermaid
+flowchart TB
+    subgraph CC["Claude Code agent (text-only CLI)"]
+        direction TB
+        A["xfreerdp /sec:rdp"] -->|連線 RDP| T["10.129.4.252:3389<br>KIOSK-042 Win"]
+        A -.->|畫面渲染到| X["Xvfb :99<br>虛擬螢幕"]
+        X --> I["ImageMagick import<br>截圖存 rdp_shots/s*.png"]
+        I -->|Read tool 讀回| V["Agent 看圖<br>決定座標/按鍵"]
+        V --> D["xdotool mousemove/click/key"]
+        D -.->|送 X11 事件到| X
+    end
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│  Claude Code agent (text-only CLI)                              │
-│                                                                 │
-│  ┌─────────┐  啟動 ┌──────────────┐  連線 ┌──────────────────┐  │
-│  │ Xvfb :99│◄─────│ xfreerdp     │─────►│ 10.129.4.252:3389│  │
-│  │ 虛擬螢幕│      │ /sec:rdp     │      │ KIOSK-042 Win    │  │
-│  └────┬────┘      └──────────────┘      └──────────────────┘  │
-│       │ RDP window 畫在 Xvfb                                    │
-│       ▼                                                         │
-│  ┌─────────┐  截圖  ┌──────────────┐                           │
-│  │ import  │─────► │ rdp_shots/   │                           │
-│  │ (IM)    │       │ s01.png ...  │                           │
-│  └─────────┘       └──────┬───────┘                           │
-│                           │ Read tool 讀回來                   │
-│                           ▼                                     │
-│                    ┌─────────────┐                              │
-│                    │ Agent 看圖  │  決定下一步座標 / 按鍵     │
-│                    └──────┬──────┘                              │
-│                           │                                     │
-│                           ▼                                     │
-│                    ┌─────────────┐  click / key                 │
-│                    │ xdotool     │─────► 送到 Xvfb :99          │
-│                    └─────────────┘      送到 xfreerdp 視窗      │
-│                                        → 透過 RDP 送到靶機     │
-└─────────────────────────────────────────────────────────────────┘
-```
+
+Loop 的本體是 **截圖 → agent 讀圖 → agent 送點擊**, 送出的點擊事件經由 Xvfb → xfreerdp window → RDP → 靶機, 下一輪的截圖反映動作結果.
 
 四個工具的職責:
 
