@@ -96,15 +96,16 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 26 | 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 | [phm/](../phm/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423071) |
 | 27 | 用 Claude Code 刷 CTF — 六類全部碰過, 剩下的卡點長什麼樣 | [phm/](../phm/README.md) + [essays/claude-code-cyber-safeguard](../essays/claude-code-cyber-safeguard.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423456) |
 | 28 | 用 Claude Code 刷 CTF — 進 Top 10, 剩下的題剛好是 AI agent 的四面牆 | [phm/](../phm/README.md) + Top 10 rank snapshot | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423733) |
-| 29 | 小結 (實戰子系列回顧, 範圍待定) | — | 📅 預計 |
+| 29 | 從 CTF 換到 HTB, 用 goal 測試了兩次, agent 還自己組出 RDP 工具鏈 | [htb/cap-2026-10-13/](../htb/cap-2026-10-13/cap-with-goal.md) + [htb/touch-2026-10-13/](../htb/touch-2026-10-13/touch-with-goal.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10424068) |
 | 30 | 總結: 三十天蒸餾, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
 
-**盤點**: 🚀 已發布 28 篇 (Day 1-28) · 📅 預計 2 篇 (Day 29、30). 合計 30. Day 29 小結、Day 30 總結範圍待定稿.
+**盤點**: 🚀 已發布 29 篇 (Day 1-29) · 📅 預計 1 篇 (Day 30). 合計 30. Day 30 總結範圍待定稿.
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-14**: Day 29 (HTB /goal 兩次測試 + agent 自己組 RDP 工具鏈) 發布 → [10424068](https://ithelp.ithome.com.tw/articles/10424068). 子系列從 CTF 跨到 HTB, 用一組 `/goal` 四段骨架 + 共用 `CLAUDE.md` INTEGRITY RULES 跑兩個同天案例: **Cap** (easy, 26 分鐘 user+root) + **Touch** (卡在 kiosk 逃逸, 但 agent 自己用 Xvfb + xfreerdp + xdotool + ImageMagick import 組出 agentic RDP pipeline). 已發布 28 → 29 篇, 剩 Day 30 總結.
 - **2026-10-13**: Day 28 (PHM CTF 最後一輪 — Top 10 / AI agent 的四面牆) 發布 → [10423733](https://ithelp.ithome.com.tw/articles/10423733). CTF 子系列收尾: 4940 → 6620 pts / 64 → 74 題 / **歷史全站 Rank 10**; 101 題每題獨自跑過一次, 剩 27 題收斂成四面牆 (md5 agent 沒上網查 / libc 版本沒環境 / 強模型未試 / 單題也會撞 cyber safeguard). 已發布 27 → 28 篇, 剩 Day 29 小結 / Day 30 總結.
 - **2026-10-11 (晚)**: Day 27 (PHM 多推一段 + cyber safeguard) 發布 → [10423456](https://ithelp.ithome.com.tw/articles/10423456). 承接 Day 26 的 PHM: 1720 → 4940 pts, Pwn/Web 以外六類全部碰過; 新加入第四類死因 (Claude Code cyber-related safeguards 擋攻擊鏈). 已發布 26 → 27 篇, 剩 Day 28 待定.
 - **2026-10-11**: 跟 [publish/README.md](./publish/README.md) 對齊狀態 — Day 17-24 其實早已陸續發布 (publish/ 有 iThome 連結, 但本檔一直停在 🚧/📅), 這次把 Day 17-24 全部補標 🚀 已發布並接上連結; 反向把 Day 25 (10422778)、Day 26 (10423071) 補進 publish/README 的已發布表. 結論: Day 1-26 全部上線, Day 27-28 待定, Day 29-30 小結/總結. (Day 17-24 標題沿用本檔原排的規劃標題, 若與站上實際標題有出入再修)
