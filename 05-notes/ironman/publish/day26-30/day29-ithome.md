@@ -1,4 +1,4 @@
-title : [Day 29] 從 CTF 換到 HTB — 用 `/goal` 一次打贏一次卡在 kiosk, agent 自己架出 RDP 工具鏈
+title : [Day 29] 從 CTF 換到 HTB, 用 goal 測試了兩次, agent 還自己組出 RDP 工具鏈
 
 > [Day 26-28](https://ithelp.ithome.com.tw/articles/10423733) 把 PHM CTF 刷到 Top 10, 本篇換場景: 從 CTF 換到 **HTB** (Hack The Box, 真實系統/網路設定的滲透靶機), 從手動 Claude Code 換成 `/goal` **一條指令跑整台**. 用兩個同一天 (2026-10-13) 跑的真實案例看 `/goal` 這個 workflow 的能跟不能: **Cap** (easy, 26 分鐘拿 user+root) 跟 **Touch** (未解, 卡在 kiosk 逃逸, **但 agent 自己架出 RDP 看圖點按鈕的工具鏈**).
 
