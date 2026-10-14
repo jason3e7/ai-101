@@ -8,49 +8,46 @@ title : [Day 30] 三十天心法總結, 跟著 AI 持續成長
 
 ```markdown
 # 三十天心法總結: 所有財寶都放在這了
-* 原理 + 四層工程 — Day 10 的圖收 Day 1, 6-9
-  * 猜下一個字 (Day 1)
-  * Prompt / Context / Harness / Loop (Day 6-9)
-  * 名字會變, 智慧是自己的 (Day 10)
-* (TODO: jason3e7 補下一段)
-* (TODO: jason3e7 補下一段)
+* 原理 — Day 10 的圖收 Day 1, 6-9
+  * 猜下一個字 → 四層工程演進
+* AI 現在能什麼, 不能什麼 — Day 2-4
+  * 跨過你的門檻 / 三種極限 / 兩種能力全景圖
+* 怎麼驗證 AI 產出, 人的瓶頸 — Day 11-15
+  * 答案真假 / 鈍化 / 中產被抹平
+* 不可逆的現在進行式 — Day 20 收 Day 16-19
+  * 掃 AI 味 → 浮水印 → 文風入侵
+* script kid 式盲打, 從程式到資安 — Day 21-29
+  * ZeroJudge / LeetCode / CTF / HTB
+  * AI 現在能取代到哪裡
+* 活到老, 用到老, 做中學 — 結論
 ```
 
 ---
 
-## 三十天蒸餾 — Thirty-Day Distillation
+## 原理 — The Through-Line (Day 10 收 Day 1 / 6-9)
 
-<!-- TODO: jason3e7 下半段的內容, 這塊先留白 -->
+<!-- TODO: 猜下一個字 → Prompt → Context → Harness → Loop → xxx Engineering. ≤ 120 字 -->
 
-### 從一句原理推出來的三十篇 — The Through-Line
+## AI 現在能什麼, 不能什麼 — The Capability Map (Day 2-4)
 
-(TODO: 從 Day 1 「它只是在猜下一個字」如何推出後面 29 天所有心法)
+<!-- TODO: 跨過門檻 / 三種極限 / 兩種能力全景圖. ≤ 120 字 -->
 
-### 哪些題目後來驗證了, 哪些還在推進 — What Validated vs What's Still Open
+## 怎麼驗證 AI 產出, 人的瓶頸 — Verification and the Human Bottleneck (Day 11-15)
 
-(TODO: Day 11 驗證 / Day 13 鈍化 / Day 16-20 文風測量 / Day 24-29 實戰, 哪些結論被實測坐實, 哪些還是待驗證)
+<!-- TODO: 答案真假怎麼知道 / 鈍化 / AI 抹平中產. ≤ 120 字 -->
 
-### 收斂到最後的 3 個核心習慣 — Three Habits That Stuck
+## AI 產出已是不可逆的現在進行式 — The Point of No Return (Day 20 收 Day 16-19)
 
-(TODO: 列 3 個這 30 天跑完真的留下來、每天在用的習慣, 不列湊數的)
+<!-- TODO: lab01 掃「AI 味」→ 浮水印不能當證據 → 文風入侵記號 → 不可逆. ≤ 120 字 -->
 
----
+## script kid 式盲打, 從程式到資安 — How Far Blind-Driving AI Goes (Day 21-29)
 
-## 跟著 AI 持續成長 — Growing With AI
+<!-- TODO: 刻意不理解不提示, ZeroJudge → LeetCode → CTF → HTB. 畫出 AI 現在能取代到哪裡. ≤ 120 字 -->
 
-<!-- TODO: jason3e7 這段是整個鐵人賽的收尾句, 要是人味, 不要是 agent 摘要 -->
+## 結論: 活到老, 用到老, 做中學 — The Core
 
-### 為什麼不是「追上 AI」, 是「跟著 AI 成長」 — Why "With" Not "After"
+<!-- TODO: 收尾句, 人味, 不是 agent 摘要. ≤ 120 字 -->
 
-(TODO: 「追上」隱含有終點, 「跟著」是陪跑. 這個詞的選擇)
-
-### 2026 底的現況, 跟一年前的差 — What Changed in One Year
-
-(TODO: 這一年 agentic 工程、模型能力、safeguard 政策的轉折點對照個人工作流程的變化)
-
-### 給一年後讀這篇的自己 — A Note to Myself, One Year From Now
-
-(TODO: 寫給 2027 的自己, 一年內哪三件事如果沒做要後悔)
 
 ---
 
