@@ -1,36 +1,5 @@
 title : [Day 29] 從 CTF 換到 HTB, 用 goal 測試了兩次, agent 還自己組出 RDP 工具鏈
 
-> [Day 26-28](https://ithelp.ithome.com.tw/articles/10423733) 把 PHM CTF 刷到 Top 10, 本篇換場景: 從 CTF 換到 **HTB** (Hack The Box, 真實系統/網路設定的滲透靶機), 從手動 Claude Code 換成 `/goal` **一條指令跑整台**. 用兩個同一天 (2026-10-13) 跑的真實案例看 `/goal` 這個 workflow 的能跟不能: **Cap** (easy, 26 分鐘拿 user+root) 跟 **Touch** (未解, 卡在 kiosk 逃逸, **但 agent 自己架出 RDP 看圖點按鈕的工具鏈**).
-
-寫在前面 (jason3e7):
-
-> `/goal` 跟 Day 26-28 的 PHM CTF 不一樣: PHM 題目是「爛字串裡挑 flag」, agent 跑完一題就結束; HTB 是「真實服務 + 真實憑證 + 真實提權鏈」, 一個 goal 要串 recon → foothold → privesc 整條. 從 CTF 換到 HTB 題目變大, 但 agent 的紀律 (phase 分段, tee 存檔, stop 條件) 反而更能展現價值.
->
-> Touch 這題沒解完, 但看到 agent 自己把 RDP + 虛擬螢幕 + 自動點擊 + 截圖這條管線組出來, 比有沒有拿到 flag 更值得記錄.
-
-```markdown
-# /goal 跑 HTB — 一贏一卡, 卡的那個 agent 自己架出 RDP 工具鏈
-* /goal 四段骨架
-  * Target + Environment + 工具自備
-  * STRICT logging (全部 tee 到 recon/)
-  * Phase 分段 (Recon / Foothold / Flag)
-  * 停止條件 + 7 小時硬停
-* 案例一 Cap (easy, 贏)
-  * 26 分鐘拿 user + root
-  * IDOR pcap → FTP → SSH → cap_setuid
-  * 分 session 跑 foothold / privesc
-  * 中間切 Opus 5 收尾
-* 案例二 Touch (卡)
-  * Web 進去, 拿到 KioskUser
-  * RDP 連得上, 但卡在 Windows kiosk
-  * agent 自己架 Xvfb + xfreerdp + xdotool + import
-  * safeguard 擋 + Opus 5 太慢放棄
-* 收斂
-  * /goal 把工程紀律寫進 prompt
-  * CTF 吃 pattern, HTB 吃真實服務
-  * 真實服務對 agent 比 CTF novelty 友善
-```
-
 ## `/goal` 是什麼 — The `/goal` Workflow
 
 Claude Code 的 `/goal` 是內建 slash command, 把「目標 + 步驟 + 停止條件」整段 prompt 送給 agent, agent 自己展開成多輪動作, 不用人每輪引導. 本篇兩個案例的 `/goal` 都用同一組四段骨架:

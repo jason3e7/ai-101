@@ -1,11 +1,5 @@
 title : [Day 23] ZeroJudge 進階測試: 按主題各挑一題, 看 AI 的上限跟自動多輪的能力
 
-> [Day 22](https://ithelp.ithome.com.tw/articles/10421768) 掃 78 題 96.2% AC 是「廣度」, 但那批題分佈在 ZeroJudge 前幾頁, 主題有偏食. 這篇換「深度」: 用 [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) 的 14 個主題分類當 index, **每主題各挑一題** + 另外**從 ★ 到 ★★★★★ 各挑一題**做難度階梯, 總共 19 題再跑一次. 另外補一段 Day 22 當時卡住的題後來怎麼多輪 AC 救回來, 把「單次送出的 pass rate 低估了上限」這件事講清楚.
-
-寫在前面 (jason3e7):
-
-> 這是 ZeroJudge 三部曲的收尾 (Day 21 概念 → Day 22 規模 → Day 23 深度 + 救援). 下一輪離開 OJ 這種理想的判斷標準, 進入判斷標準難建的場.
-
 ## 進階測試測什麼 — What This Advanced Round Tests
 
 Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:

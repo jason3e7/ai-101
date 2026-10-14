@@ -1,31 +1,5 @@
 title : [Day 27] 用 Claude Code 刷 CTF — 六類全部碰過, 剩下的卡點長什麼樣
 
-> [Day 26](https://ithelp.ithome.com.tw/articles/10423071) 跑完 PHM 1720 pts, 本篇是**接著跑一段**的紀錄: 現在 **4940 pts / 64 題**, 除了 Pwn / Web 剩下的難題外, Misc / Reversing / Crypto / Forensic / Programming / Lucky **每一類都至少碰過一次**. 這篇講新吃掉的題型模式, 跟撞到 Claude Code `cyber-related safeguards` 的那次意外.
-
-寫在前面 (jason3e7):
-
-> Day 26 收尾說「剩下的題沒試不是不會, 是今天時間不夠」, 這篇把那句驗完 — 確實有一批題是繼續跑就吃得掉, 另一批不管給多少時間都會卡在同一面牆, 牆上的字叫「訓練資料裡沒有這個梗」或「這段內容會觸發 safeguard」.
-
-```markdown
-# 用 Claude Code 刷 CTF
-* 進度跳到哪
-  * 1720 → 4940 pts
-  * 27 → 64 題
-  * 除 Pwn / Web 難題外六類全部碰過
-* 新吃掉的題型
-  * Web 的 PHP loose-compare 經典 (login as admin 系列)
-  * Web 的混淆 webshell (sha512 XOR 自己可算)
-  * Web 的 bkcrack known-plaintext
-* 卡點長什麼樣
-  * 新加入: cyber safeguard
-* 下一題為什麼不打
-  * Pwn #67-81 都是 shellcode / heap, CP 太低
-  * Web #38-40 xssrf 要寫 exfil payload, safeguard 風險高
-* 收斂
-  * 題型認得的, 看一眼就吃
-  * 題型認不得, 死因三類
-```
-
 ## 進度跳到哪 — The Numbers
 
 Day 26 時: **1720 pts, 27 題, 8 類全部有進度**. 繼續跑一段後:

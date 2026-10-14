@@ -1,34 +1,5 @@
 title : [Day 28] 用 Claude Code 刷 CTF — 進 Top 10, 剩下的題剛好是 AI agent 的四面牆
 
-> [Day 26](https://ithelp.ithome.com.tw/articles/10423071) 把 PHM 刷到 1720 pts, [Day 27](https://ithelp.ithome.com.tw/articles/10423456) 推到 4940 pts, 本篇是**最後一輪**: **6620 pts / 74 題 / 歷史全站 Rank 10**, 101 題每一題都獨自跑過一次. 剩下沒解的 27 題, 卡住的原因收斂成四種, 很適合當 CTF 子系列的收尾.
-
-寫在前面 (jason3e7):
-
-> 進 Top 10 當然爽, 但真正學到的是 AI agent 的能力邊界長什麼樣. 剩下沒解的題一題一題看, 四種「牆」浮出來, 每一面都不是「不會做」, 是外部條件缺一塊.
->
-> 本篇講的 "AI agent" 情境是**無腦使用 AI 去解題, 不給 agent 任何關於 CTF 的額外提示** — 題目 URL 丟進去, 其他全交給 agent 自己判斷. 四面牆都是 agent 在這種「使用者這端完全沒加 domain knowledge」的情境下真的卡住的地方.
-
-```markdown
-# 刷 CTF 進 Top 10, 剩下的題剛好是 AI agent 的四面牆
-* Rank 10 的紀念照
-  * 101 題每一題都獨自跑過一次 (今天收尾)
-  * 6620 pts / 74 solved
-  * 歷史全站第 10
-* AI agent 的四面牆
-  * md5 沒有上網查, 本機也爆不開
-  * 沒環境測特定 libc 版本 (libc-2.23.so)
-  * 更強模型還沒試過的硬題
-  * 單獨題也會撞 cyber safeguards (xssme)
-* 幾題意外沒解掉
-  * where is flag (regex 正解不明)
-  * command-executor (白名單繞不過去)
-  * Pwn 剩最多 (題型多 + 高分集中)
-* 收斂
-  * AI agent 到 Top 10 可及
-  * 卡點都落在能力環境 + 政策兩面
-  * 再往上要人補一塊知識
-```
-
 ## Rank 10 的紀念照 — Top 10 Snapshot
 
 ![PHM Rank Top 10 截圖, json3e74101 排在第 10 位 (6620 pts / 74 solved)](https://ithelp.ithome.com.tw/upload/images/day28-rank-top10.png)

@@ -1,11 +1,5 @@
 title : [Day 24] 用 Claude Code 全自動刷 LeetCode Blind 75
 
-> Day 21-23 的 ZeroJudge 三部曲是「廣度 + 深度 + 救援」, 題庫是台灣 OJ 的入門到五星. 這篇換 LeetCode, 挑 **Blind 75** 這份 FAANG 面試人人都刷過的清單, 看在**訓練資料見過最多次的題庫**上, agent 自己刷能走到哪. 流程跟 ZeroJudge 一致 — Claude 讀題、寫 `.cpp`、本機 g++ 跑範例、Playwright MCP 塞進 Monaco 編輯器送判題、讀 verdict. 我只負責登入.
-
-寫在前面 (jason3e7):
-
-> 這篇是純刷題的 side-by-side 觀察, 不是教程. 想看 AI 在高 pattern density 題庫 (LeetCode 經典題) 上的手感跟盲區.
-
 ## 為什麼挑 Blind 75 — Why Blind 75
 
 [Blind 75](https://leetcode.com/problem-list/oizxjoit/) 是 2020 年一個叫 Yangshun 的工程師在 Teamblind 匿名論壇整理的 75 題清單, 這幾年變成**最被刷爆的面試題庫**. 挑它的三個理由:

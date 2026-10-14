@@ -1,11 +1,5 @@
 title : [Day 25] 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC
 
-> [Day 24](https://ithelp.ithome.com.tw/articles/10422485) 用 Blind 75 測 LeetCode pattern density 的上限, 69 AC + 6 PREMIUM 本地解, Hard 7 題全一次 AC. 問題來了 — 75 題會不會剛好是**pattern 最厚**那區, 結論站不住? 這篇把實驗再加兩套: **[LC-75 官方 study plan](https://leetcode.com/studyplan/leetcode-75/)** (65 新題) 跟 **[NeetCode 150](https://leetcode.com/problem-list/plakya4j/)** (64 新題 + 1 新 PREMIUM), 總共再加 **130 題**, 看結論撐不撐得住.
-
-寫在前面 (jason3e7):
-
-> 這篇是 Day 24 的放大版實驗, 想看第一輪結論是不是運氣. 擴到三套、去重後 **134 題送判題 + 7 PREMIUM 本地解**, 結論沒改但有一個小意外: 唯一一次 WA 不是解法錯, 是浮點誤差.
-
 ## 為什麼要加碼 — Why Scale Up Again
 
 Day 24 的 75 題結論看起來乾淨: **AI 強是因為題目在 pattern 範圍, 不是因為它會推理**. 但有一個邏輯漏洞 — Blind 75 **本身就是** StackOverflow / 教學部落格 / GitHub 題解出現最多次的那 75 題, 它可能是 pattern 密度最厚的那一塊, 樣本偏差太大, 結論不能外推.

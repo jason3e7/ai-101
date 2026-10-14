@@ -66,6 +66,8 @@ created: 2026-09-16
 
 | 2026-09-16 | 01 | 三句記憶句由 jason3e7 重選；內容引用區塊只留一處加粗 | 新的三句連成「規模 → 誘因 → 態度」的線，比原本的三句更貼近全篇骨幹 | **未同步** |
 | 2026-10-13 | 29 | 內文兩處含 `HTB AIRWAYS` 的引號整段（「HTB AIRWAYS Self Check-In」／「HTB AIRWAYS - Self Check-In」）在線上**整段刪除**才通過送審；另外 ```mermaid flowchart 區塊也改成 ASCII box diagram（iThome 不渲染 mermaid）；`publish/` 已跟著同步，`drafts/` 保留原文 | 送出文章時 iThome 直接跳「禁止字元」錯誤擋下發布（原因不明，推測 `AIRWAYS` 連同 `HTB` 一起命中平台的關鍵字黑名單）；試過只改一兩個字母仍被擋，最後整段拿掉才送得出去 | **已同步 publish/**（repo drafts/ 保留原文） |
+| 2026-10-14 | 18/22/24/26/27/28/29 | 依 iThome 線上版把送審時臨時改字的差異補回 `publish/` (Day 18 預告段 + 註解, Day 22 兩處詞句, Day 24 破折號夾注, Day 26 「三個→兩個理由」, Day 27 時間表述, Day 28 一句精簡 + Sources, Day 29 AIRWAYS + mermaid) | 做例行對照發現多處「送審當下臨時改字沒回寫到 repo」, 統一補齊讓 `publish/` 恢復「跟線上一字不差」 | **已同步 publish/** |
+| 2026-10-14 | 22-29 | 刪除 `publish/` 檔開頭 (first `##` 之前) 的 prep metadata — TL;DR 引用、「寫在前面 (jason3e7):」區塊、```markdown mindmap code block | 這些是上稿前要手動剪掉的「編輯備忘」, 線上文章 body 本來就沒有; 之前 `publish/` 忘了剪, 這次統一清掉 | **已同步 publish/**（drafts/ 保留這些 metadata 供未來出版參考） |
 
 > [!NOTE]
 > 上面前兩列標「已同步」，是因為它們發生在賽期第一天、當天就改上去了。從這裡之後的 `[fixButNotPublish]` 項目，線上狀態一律是**未同步**。

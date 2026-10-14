@@ -1,38 +1,5 @@
 title : [Day 26] 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況
 
-> 這篇把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 單純想試試看在這種題型上 agent 自己刷能走到哪.
-
-寫在前面 (jason3e7):
-
-> CTF 跟一般程式題結構差很多, 每題都是作者臨時發明的新梗, 想看 agent 在這條線上的實際手感.
-
-```markdown
-# 用 Claude Code 刷 CTF — PleaseHackMe
-* 為什麼挑 PHM
-  * 老練習站 101 題
-  * 題型全 8 類
-  * 作者 Inndy 風格一致
-* 流程
-  * Playwright MCP 讀題 + 送 flag
-  * curl + Python / C / Node 做破解
-* 目前的測試狀況
-  * 1720 pts 分布 8 類
-  * Crypto 吃最深 (12 題)
-* 每類一題典型手感
-  * Misc drvtry (QWERTY shift)
-  * Web homepage (DevTools %c QR)
-  * Pwn catflag (whitelist)
-  * Reversing helloworld (π × 10^8)
-  * Crypto ffa (linear system + extEuclidean)
-  * Programming fast (socket + regex)
-* 兩題卡住
-  * Misc slow (server 15 秒 cap)
-  * Crypto slowcipher (fast decoder OK 但 password 猜不到)
-* 收斂
-  * 經典密碼 / Reversing 常見梗 agent 吃爆
-  * 文化梗 + server cap 要人補
-```
-
 ## 為什麼挑 PHM — Why Please Hack Me
 
 [Please Hack Me](https://ctf.hackme.quest/) (下簡稱 PHM) 是台灣作者 [Inndy](https://www.inndy.tw/) 多年維護的 CTF 練習站, 2016-2021 期間陸陸續續上了 **101 題**, 分八類: Misc 14 / Web 26 / Pwn 24 / Reversing 17 / Crypto 16 / Forensic 2 / Programming 1 / Lucky 1. 挑它的兩個理由:
