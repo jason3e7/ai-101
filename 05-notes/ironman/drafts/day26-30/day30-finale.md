@@ -30,7 +30,7 @@ AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個序列�
 
 ![Day 10 cover — xxx Engineering, 名字會變, 智慧是自己的](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day06-10/day10-cover.png)
 
-在原理不變的情況下, 「xxx」可能會一直迭代 (prompt → context → harness → loop → 下一個 ...), 但 **要給它什麼, 它才會對**, 是你自己的能力.
+在原理不變的情況下, 「xxx」可能會一直迭代 (prompt → context → harness → loop → 下一個 ...), 但 **要給它什麼, 它才會對**, 是你自己的智慧.
 
 ## AI 現在能什麼, 不能什麼 — The Capability Map (Day 02-05)
 
@@ -68,7 +68,9 @@ AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個序列�
 | 給依據 (citation) | 「每個斷言附可查證來源: 數字 / 引用 / 時間」 | 隨機抽一項回頭查, 特別是數字和人名 | attribution / RARR (Gao 2022); 長文變體 FActScore (Min 2023) |
 | 舉反例 (counterexample) | 「舉一個能推翻這結論的情境」 | 自己想一個「如果 X 不是這樣」的反例 | counterexample probing |
 | 極端 / 邊界 (edge case) | 「代入 0、極大值、負數、空集合會怎樣?」 | 用極端輸入代進去看它會不會崩 | adversarial / edge-case testing |
-| 獨立驗證 | **寫進 prompt 沒用** | 換問法、**換模型**、查權威來源, 對得起來才信 | cross-family judge / generative reasoning judges (2025 SOTA) |
+| 獨立驗證 | 寫進 prompt 沒用 | 換問法、***換模型***、查權威來源, 對得起來才信 | cross-family judge / generative reasoning judges (2025 SOTA) |
+
+* Human Bottleneck
 
 ![Day 13 cover — AI 用久了驗證會鈍化](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day11-15/day13-cover.png)
 
@@ -80,11 +82,11 @@ AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個序列�
 - Day 17: 新增 6 個訊號 + 權重, 再測一次.
 - Day 18: 加入中文檢查, 零命中的文章非常少. 另附一個 Tampermonkey script 讓你瀏覽任何網頁即時看 AI 味分數.
 
-Day 20 : **AI 文化入侵**, 如果未來出生的人, 最一開始讀的文字就有 AI 風格, 寫出來的東西也會有 AI 的風格, 而 AI 風格席捲世界是**不可逆的現在進行式**, 接下來人跟 AI 文風的界線會越來越模糊. (或許某程度也是一種統一)
+Day 20 : **AI 文化入侵**, 如果未來出生的人, 最一開始讀的文字就有 AI 風格, 當然寫出來的也會有 AI 的風格, 而 AI 風格的滲入是**不可逆的現在進行式**, 接下來人跟 AI 文風的界線會越來越模糊. (或許某程度來說也是一種統一)
 
 ## script kid 式盲打, 從程式到資安 — How Far Blind-Driving AI Goes (Day 21-29)
 
-Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **Day 21 轉場**: 回到好驗證的主場 —— 程式. 程式有一個文字沒有的東西: 你可以**跑跑看**. 編譯錯、runtime error、test fail、diff mismatch, 會有明確的結果知道對錯.
+Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **Day 21 轉場**: 回到好驗證的主場 —— 程式. 程式有一個文字沒有的東西: 你可以**跑跑看**. 編譯錯、runtime error、test fail、diff mismatch, 會有明確的結果知道對錯, 也可以提前寫 Test Case 讓 AI 自主 Loop.
 
 從 Day 21 開始, 刻意裝 **script kid**: **不理解、不提示, 題目直接丟給 AI 自己解**, 只做登入跟按送出. 看能走多遠.
 
@@ -93,21 +95,19 @@ Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **Day 21 轉場**:
 | ZeroJudge (Day 22-23) | 78 題 (基礎 42 + 競賽 16 + UVa 20) + 19 題進階 | **96.2% AC** (單次送出, 不重試) |
 | LeetCode (Day 24-25) | Blind 75 + LC-75 + NC150 共 134 題 | **99%+ AC**, 唯一 WA 是 `pow(x, n)` 的浮點誤差 |
 | PHM CTF (Day 26-28) | 101 題, 8 類 (Misc / Web / Pwn / Reversing / Crypto / Forensic / Programming / Lucky) | **74 題 / 6620 pts / 歷史全站 Rank 10** |
-| HTB (Day 29) | 兩台 (Cap easy, Touch kiosk) | Cap **26 分鐘拿 user + root**; Touch 卡在 kiosk, **但 agent 自己架 Xvfb + xfreerdp + xdotool + ImageMagick 做出 agentic RDP pipeline** |
+| HTB (Day 29) | 兩台 (Cap linux easy, Touch windows easy) | Cap **26 分鐘拿 user + root**; Touch 卡在 kiosk, **但 agent 自己架 Xvfb + xfreerdp + xdotool + ImageMagick 做出 agentic RDP pipeline** |
 
 這就是**今天 AI 能取代到的範圍**: 有明確判准 + 吃 pattern 的任務幾乎全都能做, 真實系統串接可以到 7 環 exploit chain. 卡住的不是能力, 是 safeguard.
 
 ## Takeaways: 活到老, 用到老, 用中學 — The Core
 
-收尾就一句: **活到老, 用到老, 用中學**. 這不是三件事, 是**同一件**: 一條連續動作, 中間不能停.
+AI 每隔幾個月就換一代 (Opus → Mythos → 下一個), 觀望永遠慢一拍. 要跟上, 唯一的方法就是**在使用的過程中學** — 不是先讀完手冊才用, 不是等有需要才碰, 不是看完教學影片才動手. 是日常把它拉進每一個任務裡, 用壞再換, 錯了會留下記憶. 讀十篇文章不如跑一次, 這 30 天本身就是示範: 每篇都是先跑才知道結論跟直覺差多少.
 
-AI 每隔幾個月換一代 (Opus → Mythos → 下一個), 等觀望永遠慢一拍. 要跟上, 唯一的方法就是**在使用的過程中學** — 不是先讀完手冊才用, 不是等有需要才碰, 不是看完教學影片才動手. 是日常把它拉進每一個任務裡, 用壞再換, 錯了會留下記憶. 讀十篇文章不如跑一次, 這 30 天本身就是示範: 每篇都是先跑才知道結論跟直覺差多少.
+不是**追上** AI, 是**跟著** AI 一起走. 「追上」隱含有終點, 「跟著」是陪跑. AI 這幾年會一直變, 跟著它跑, 你可能會一直在它後面一點點.
 
-沒有找到「用魔法打敗魔法」的辦法, 但找到了「**用魔法學習魔法**」的方法: 把你要的結果給 AI, 請它逆向出 prompt, 再用那個 prompt 去產生下一個迭代.
+我目前沒有找到 "用魔法打敗魔法" 的辦法, 但找到了 **用魔法學習魔法** 的方法: 可以把你要的結果(例如一張圖)給 AI, 請它逆向出 prompt, 再用那個 prompt 去產生下一個迭代.
 
-不是**追上** AI, 是**跟著** AI 一起走. 「追上」隱含有終點, 「跟著」是陪跑. AI 這幾年會一直變, 跟著它跑, 你會一直在它前面一點點 — 這一點點就是你的位置.
-
-到這篇為止, 財寶都在上面了. 剩下的是**你自己的手感** — 不是我能給你的, 是你跑一次就會長出來的那個東西.
+到這篇為止, 心法都在上面了. 剩下的是**你自己的實作** — 不是我能給你的, 是你每跑一次就會長一點出來的那個東西.
 
 ---
 
