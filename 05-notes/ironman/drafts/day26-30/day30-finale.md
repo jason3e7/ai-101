@@ -62,15 +62,16 @@ Day 6-9 的四層工程演進, Day 10 把它們串成一張對照表 (**同一�
 
 ## 怎麼驗證 AI 產出, 人的瓶頸 — Verification and the Human Bottleneck (Day 11-15)
 
-Day 1-10 的工具, 到 Day 11 都有一個共同前提: **你要能驗**. 不能驗的 AI 產出是負資產 — 看起來省時間, 其實是把除錯成本從現在挪到以後, 利息高.
+![Day 13 cover — AI 用久了驗證會鈍化](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day11-15/day13-cover.png)
 
-Day 11 把驗證拆成**六種驗算法** (跑一下、對一下、問回去、找反例、第二個 agent 獨立驗、人眼細看). 哪種題配哪招有固定公式, 不是憑直覺. Day 12 做了兩個 skill (`condense-mindmap` / `expand-mindmap`) — 根本動機是**為了讓人類可以快速驗**: 大段內容壓成一張圖, 人掃一眼就知道結構對不對.
-
-**但真的瓶頸不是驗, 是人會鈍化** (Day 13). 兩種鈍化、五招破的細節看 Day 13; 共同點是**不要讓 AI 幫你跳過成長的過程** — 練肌肉的動作省掉了, 肌肉就沒了.
-
-Day 14 把視角拉遠: **AI 抹平的是中產, 頂層反而更貴**. 寫 CRUD、拼接 API、整理資料這類中段技能, AI 一秒出來, 時薪會塌. 但能給 AI 任務、能驗產出、能把 AI 當放大鏡用的頂層技能, 需求反而更強. 中產會被兩頭夾.
-
-Day 15 收尾: 不想被夾, 得**主動用 5 個手段拓自己** — 讓 AI 當放大鏡, 不是拐杖. 具體 5 招詳見 Day 15, 核心一句就是「**別讓 AI 代你長大**」.
+| 手段 | 寫 prompt 時要求它 | 收到答案時自己做 | 學術對應 |
+|:---|:---|:---|:---|
+| **列步驟** (proof) ⚠️ | 「先列推理步驟再給結論, 不要跳」 | 檢查每一步之間有沒有跳、有沒有偷渡假設 | Chain-of-Thought (Wei 2022), 對推理模型已負收益 |
+| **列假設** | 「列出這結論依賴的假設」 | 看那些假設在你的實際情境是否成立 | — |
+| **給依據** (citation) | 「每個斷言附可查證來源: 數字 / 引用 / 時間」 | 隨機抽一項回頭查, 特別是數字和人名 | attribution / RARR (Gao 2022); 長文變體 FActScore (Min 2023) |
+| **舉反例** (counterexample) | 「舉一個能推翻這結論的情境」 | 自己想一個「如果 X 不是這樣」的反例 | counterexample probing |
+| **極端 / 邊界** (edge case) | 「代入 0、極大值、負數、空集合會怎樣?」 | 用極端輸入代進去看它會不會崩 | adversarial / edge-case testing |
+| **獨立驗算** ⭐ | ⚠️ 寫進 prompt 沒用 | **換問法、換模型、查權威來源, 對得起來才信** | cross-family judge / generative reasoning judges (2025 SOTA) |
 
 ## AI 產出已是不可逆的現在進行式 — The Point of No Return (Day 20 收 Day 16-19)
 
