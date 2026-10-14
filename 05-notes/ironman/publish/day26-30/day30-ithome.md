@@ -1,5 +1,9 @@
 title : [Day 30] 三十天心法總結, 跟著 AI 持續成長
 
+寫在前面 (jason3e7):
+
+> 如果 30 天的文章要看哪一篇, 就看這篇總結就好, 我把所有財寶都放在這了.
+
 ## 原理 — The Through-Line ([Day 01](https://ithelp.ithome.com.tw/articles/10411345), Day 06-10)
 
 AI 不是通靈, 它只是在猜下一個字 ([Day 01](https://ithelp.ithome.com.tw/articles/10411345)). 這句話是整個系列的核心 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部都從這一句延伸出來的.
@@ -60,11 +64,11 @@ AI 不是通靈, 它只是在猜下一個字 ([Day 01](https://ithelp.ithome.com
 
 [Day 20](https://ithelp.ithome.com.tw/articles/10420569): **AI 文化入侵**, 如果未來出生的人, 最一開始讀的文字就有 AI 風格, 當然寫出來的也會有 AI 的風格, 而 AI 風格的滲入是**不可逆的現在進行式**, 接下來人跟 AI 文風的界線會越來越模糊. (或許某程度來說也是一種統一)
 
-## script kid 式盲打, 從程式到資安 — How Far Blind-Driving AI Goes (Day 21-29)
+## Script Kid 式盲打, 從程式到資安 — How Far Blind-Driving AI Goes (Day 21-29)
 
 Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **[Day 21](https://ithelp.ithome.com.tw/articles/10421407) 轉場**: 回到好驗證的主場 —— 程式. 程式有一個文字沒有的東西: 你可以**跑跑看**. 編譯錯、runtime error、test fail、diff mismatch, 會有明確的結果知道對錯, 也可以提前寫 Test Case 讓 AI 自主 Loop.
 
-從 [Day 21](https://ithelp.ithome.com.tw/articles/10421407) 開始, 刻意裝 **script kid**: **不理解、不提示, 題目直接丟給 AI 自己解**, 只做登入跟按送出. 看能走多遠.
+從 Day 21 開始, 刻意裝 **Script Kid**: **不理解、不提示, 直接丟給 AI 自己解**, 只做登入讓 AI 自己讀題自己送答. 看能走多遠.
 
 | 階段 | 題庫 | 結果 |
 |:---|:---|:---|
@@ -75,7 +79,7 @@ Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **[Day 21](https:/
 
 這就是**今天 AI 能取代到的範圍**: 有明確判准 + 吃 pattern 的任務幾乎全都能做, 真實系統串接可以到 7 環 exploit chain. 卡住的不是能力, 是 safeguard.
 
-## Takeaways: 活到老, 用到老, 用中學 — The Core
+## Takeaways: 活到老, 用到老, 用中學
 
 AI 每隔幾個月就換一代 (Opus → Mythos → 下一個), 觀望永遠慢一拍. 要跟上, 唯一的方法就是**在使用的過程中學** — 不是先讀完手冊才用, 不是等有需要才碰, 不是看完教學影片才動手. 是日常把它拉進每一個任務裡, 用壞再試, 錯了會留下記憶. 讀十篇文章不如用一次, 這 30 天本身就是示範: 每篇都是先跑才知道結論跟想像中差多少.
 
@@ -92,4 +96,3 @@ AI 每隔幾個月就換一代 (Opus → Mythos → 下一個), 觀望永遠慢�
 - Day 11: AI 給的答案, 你怎麼知道是對的 — <https://ithelp.ithome.com.tw/articles/10417119>
 - Day 20: AI 文風入侵, 五個記號 + 抗體 + 子系列小結 — <https://ithelp.ithome.com.tw/articles/10420569>
 - Day 29: 從 CTF 換到 HTB, 用 goal 跑了兩次 — <https://ithelp.ithome.com.tw/articles/10424068>
-- 三十篇標題與素材對照 (本 repo) — <https://github.com/jason3e7/ai-101/blob/master/05-notes/ironman/titles.md>
