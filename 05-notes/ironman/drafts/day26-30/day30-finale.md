@@ -24,22 +24,17 @@ title : [Day 30] 三十天心法總結, 跟著 AI 持續成長
 
 ---
 
-## 原理 — The Through-Line (Day 10 收 Day 1 / 6-9)
+## 原理 — The Through-Line (Day 01, Day 06-10)
 
-AI 不是通靈, **它在猜下一個字** (Day 1). 這句話推出來的是整個序列的核心 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部從這一句推下來.
+AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個序列的核心 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部都從這一句延伸出來的.
 
-Day 6-9 的四層工程演進, Day 10 把它們串成一張對照表 (**同一件事的四種尺度, 每一代你雕的「單位」都往外退一格**):
+![Day 10 cover — xxx Engineering, 名字會變, 智慧是自己的](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day06-10/day10-cover.png)
 
-| 時代 | 何時浮現 | 你在雕的「單位」 | 你的身分 |
-|:---|:---|:---|:---|
-| **Prompt Engineering** (Day 6) | 2020–2023 | 一句話 | 下指令的人 |
-| **Context Engineering** (Day 7) | 2024–2025 | 一輪的完整輸入 | 佈置資訊的人 |
-| **Harness Engineering** (Day 8) | 2025–2026 | 那台跑每一輪的機器 | 配置系統的人 |
-| **Loop Engineering** (Day 9) | 2026 | 一個自動流程 | 設好目標、走人的人 |
+在原理不變的情況下, 「xxx」可能會一直迭代 (prompt → context → harness → loop → 下一個 ...), 但 **要給它什麼, 它才會對**, 是你自己的能力.
 
-一句話收尾: 「xxx」會一直換 (prompt → context → harness → loop → 下一個 ...), 但背後的直覺 —— 你知道「**要給它什麼它才能給對**」—— 是你自己的能力. 工具會停更, 這個直覺不會.
+## AI 現在能什麼, 不能什麼 — The Capability Map (Day 02-05)
 
-## AI 現在能什麼, 不能什麼 — The Capability Map (Day 2-4)
+* The Capability Map
 
 ```text
 　　收斂　＜ーーーーーーーーー　轉換　ーーーーーーーーー＞　發散
@@ -52,9 +47,11 @@ Day 6-9 的四層工程演進, Day 10 把它們串成一張對照表 (**同一�
 　　多加的就是錯　　　　　　　　最穩的一欄　　　　　　　　　亂想才是重點
 ```
 
+* Limits
+
 | 極限 | 類型 | 長什麼樣 | 你該做的 |
 |---|---|---|---|
-| 不會自己發現自己錯 | 結構性 | 「再檢查一次」→ 同一個錯講得更有信心 | 驗證一定要來自外部 |
+| 不會自己發現自己錯 | 結構性 | 「再檢查一次」→ 同一個錯講得更有信心 | 驗證要來自AI之外 |
 | 反過來問就不會 | 結構性 | 答得出作者，答不出他寫過哪些書 | 換方向問，當成廉價的驗證 |
 | 不會從對話中學會 | 結構性 | 新對話又用回你禁止過的寫法 | 用 `CLAUDE.md`、memory、RAG 補 |
 | 精確計算不可靠 | 結構性 | `4823 × 7591` 直接算會錯 | 叫它寫程式算，別叫它心算 |
@@ -62,32 +59,32 @@ Day 6-9 的四層工程演進, Day 10 把它們串成一張對照表 (**同一�
 
 ## 怎麼驗證 AI 產出, 人的瓶頸 — Verification and the Human Bottleneck (Day 11-15)
 
-![Day 13 cover — AI 用久了驗證會鈍化](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day11-15/day13-cover.png)
+* Verification
 
 | 手段 | 寫 prompt 時要求它 | 收到答案時自己做 | 學術對應 |
 |:---|:---|:---|:---|
-| **列步驟** (proof) ⚠️ | 「先列推理步驟再給結論, 不要跳」 | 檢查每一步之間有沒有跳、有沒有偷渡假設 | Chain-of-Thought (Wei 2022), 對推理模型已負收益 |
-| **列假設** | 「列出這結論依賴的假設」 | 看那些假設在你的實際情境是否成立 | — |
-| **給依據** (citation) | 「每個斷言附可查證來源: 數字 / 引用 / 時間」 | 隨機抽一項回頭查, 特別是數字和人名 | attribution / RARR (Gao 2022); 長文變體 FActScore (Min 2023) |
-| **舉反例** (counterexample) | 「舉一個能推翻這結論的情境」 | 自己想一個「如果 X 不是這樣」的反例 | counterexample probing |
-| **極端 / 邊界** (edge case) | 「代入 0、極大值、負數、空集合會怎樣?」 | 用極端輸入代進去看它會不會崩 | adversarial / edge-case testing |
-| **獨立驗算** ⭐ | ⚠️ 寫進 prompt 沒用 | **換問法、換模型、查權威來源, 對得起來才信** | cross-family judge / generative reasoning judges (2025 SOTA) |
+| 列步驟 (proof) | 「先列推理步驟再給結論, 不要跳」 | 檢查每一步之間有沒有跳、有沒有偷渡假設 | Chain-of-Thought (Wei 2022), 對推理模型已負收益, (但人類可能比較好驗證, 就算 AI 其實不是走這個路徑) |
+| 列假設 | 「列出這結論依賴的假設」 | 看那些假設在你的實際情境是否成立 | — |
+| 給依據 (citation) | 「每個斷言附可查證來源: 數字 / 引用 / 時間」 | 隨機抽一項回頭查, 特別是數字和人名 | attribution / RARR (Gao 2022); 長文變體 FActScore (Min 2023) |
+| 舉反例 (counterexample) | 「舉一個能推翻這結論的情境」 | 自己想一個「如果 X 不是這樣」的反例 | counterexample probing |
+| 極端 / 邊界 (edge case) | 「代入 0、極大值、負數、空集合會怎樣?」 | 用極端輸入代進去看它會不會崩 | adversarial / edge-case testing |
+| 獨立驗證 | **寫進 prompt 沒用** | 換問法、**換模型**、查權威來源, 對得起來才信 | cross-family judge / generative reasoning judges (2025 SOTA) |
 
-## AI 產出已是不可逆的現在進行式 — The Point of No Return (Day 20 收 Day 16-19)
+![Day 13 cover — AI 用久了驗證會鈍化](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day11-15/day13-cover.png)
 
-想知道 AI 已經滲進多深, 自己掃一次最準. Day 16-18 寫了 **lab01** 掃當屆鐵人賽 15,057 篇全文:
+## AI 滲入已是不可逆的現在進行式 — The Point of No Return (Day 16-20)
 
-- **Day 16**: 只用一個訊號 (全形破折號密度), 已經看得出全站 median 不低.
-- **Day 17**: 擴到 6 個訊號 + 權重, 綜合分數再測一次, 分布更乾淨.
-- **Day 18 (翻面)**: 問相反的問題 — **「哪些文章是純手寫的?」** 用 V12 (9 訊號 + 權重微調), 全體 density 69.66; 零命中 density 的文章幾乎沒有. 另附一個 Tampermonkey script 讓你瀏覽任何網頁即時看 AI 味分數.
+想知道 AI 已經滲進多深, 自己掃一次最準. Day 16-18 寫了程式檢視當屆鐵人賽 15,057 篇全文:
 
-Day 19 查另一條線: **浮水印能不能當證據?** Google SynthID、OpenAI 自家的統計標記, 技術上存在, 實務上**辨不出、擋不住**. 只要你把產出稍微改幾個字, 浮水印就斷了. 法院、人資、內容平台不能拿它當判定依據.
+- Day 16: 只用 `——`, 已經看得出全站數量還不少.
+- Day 17: 新增 6 個訊號 + 權重, 再測一次.
+- Day 18: 加入中文檢查, 零命中的文章非常少. 另附一個 Tampermonkey script 讓你瀏覽任何網頁即時看 AI 味分數.
 
-Day 20 把子系列收成一句: **AI 文風入侵, 五個記號你能看到, 但壓不回去**. 五個記號是結構性的 (bullet 風、過度 parallel、「不是 X 是 Y」、過度破折號、過度「其實」). 看得到不代表擋得住 — 下一代人讀的網路**就是這個樣子**, 他們對這些記號無感. 這不是風氣問題, 是**不可逆的現在進行式**: 回不去了, 接下來人跟 AI 文風的界線會越來越模糊.
+Day 20 : **AI 文化入侵**, 如果未來出生的人, 最一開始讀的文字就有 AI 風格, 寫出來的東西也會有 AI 的風格, 而 AI 風格席捲世界是**不可逆的現在進行式**, 接下來人跟 AI 文風的界線會越來越模糊. (或許某程度也是一種統一)
 
 ## script kid 式盲打, 從程式到資安 — How Far Blind-Driving AI Goes (Day 21-29)
 
-Day 1-20 都在打文字難驗的仗. **Day 21 轉場**: 回到好驗證的主場 —— 程式. 程式有一個文字沒有的東西: 你可以**跑跑看**. 編譯錯、runtime error、test fail、diff mismatch, 錯了會自己說. 這一轉, 整個實驗方法變了.
+Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **Day 21 轉場**: 回到好驗證的主場 —— 程式. 程式有一個文字沒有的東西: 你可以**跑跑看**. 編譯錯、runtime error、test fail、diff mismatch, 會有明確的結果知道對錯.
 
 從 Day 21 開始, 刻意裝 **script kid**: **不理解、不提示, 題目直接丟給 AI 自己解**, 只做登入跟按送出. 看能走多遠.
 
@@ -98,13 +95,7 @@ Day 1-20 都在打文字難驗的仗. **Day 21 轉場**: 回到好驗證的主�
 | PHM CTF (Day 26-28) | 101 題, 8 類 (Misc / Web / Pwn / Reversing / Crypto / Forensic / Programming / Lucky) | **74 題 / 6620 pts / 歷史全站 Rank 10** |
 | HTB (Day 29) | 兩台 (Cap easy, Touch kiosk) | Cap **26 分鐘拿 user + root**; Touch 卡在 kiosk, **但 agent 自己架 Xvfb + xfreerdp + xdotool + ImageMagick 做出 agentic RDP pipeline** |
 
-收斂:
-
-- **吃 pattern 的題 agent 吃爆**: 經典密碼、classic reverse、OJ 題、Blind 75 這種 FAANG 面試題庫, 看一眼就會.
-- **真實服務也串得起來**: HTB Cap 的「`cap_setuid` 讀 pcap 拿 FTP creds 轉 SSH」整條鏈 agent 自己串. 真實攻擊面對 agent 反而比 CTF 的 novelty 梗友善 — 真實系統有文件、有歷史 writeup, novelty 全是作者臨時發明.
-- **卡的是罕見 novelty + 政策禁區**: PHM 剩 27 題收斂成四面牆 (md5 agent 沒上網查、libc 版本沒環境、強模型未試、單題撞 cyber safeguard). HTB Touch 卡在 kiosk escape + safeguard.
-
-這就是**今天 AI 能取代到的範圍**: 有明確判准 + 吃 pattern 的任務幾乎全沒了, 真實系統串接可以到 7 環 CVE chain. 卡住的不是能力, 是 novelty 跟政策.
+這就是**今天 AI 能取代到的範圍**: 有明確判准 + 吃 pattern 的任務幾乎全都能做, 真實系統串接可以到 7 環 exploit chain. 卡住的不是能力, 是 safeguard.
 
 ## 結論: 活到老, 用到老, 用中學 — The Core
 
