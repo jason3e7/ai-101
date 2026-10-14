@@ -97,7 +97,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 27 | 用 Claude Code 刷 CTF — 六類全部碰過, 剩下的卡點長什麼樣 | [phm/](../phm/README.md) + [essays/claude-code-cyber-safeguard](../essays/claude-code-cyber-safeguard.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423456) |
 | 28 | 用 Claude Code 刷 CTF — 進 Top 10, 剩下的題剛好是 AI agent 的四面牆 | [phm/](../phm/README.md) + Top 10 rank snapshot | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423733) |
 | 29 | 從 CTF 換到 HTB, 用 goal 測試了兩次, agent 還自己組出 RDP 工具鏈 | [htb/cap-2026-10-13/](../htb/cap-2026-10-13/cap-with-goal.md) + [htb/touch-2026-10-13/](../htb/touch-2026-10-13/touch-with-goal.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10424068) |
-| 30 | 總結: 三十天蒸餾, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
+| 30 | 三十天心法總結, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
 
 **盤點**: 🚀 已發布 29 篇 (Day 1-29) · 📅 預計 1 篇 (Day 30). 合計 30. Day 30 總結範圍待定稿.
 
