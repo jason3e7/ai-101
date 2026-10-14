@@ -28,14 +28,16 @@ title : [Day 30] 三十天心法總結, 跟著 AI 持續成長
 
 AI 不是通靈, **它在猜下一個字** (Day 1). 這句話推出來的是整個序列的脊椎 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部從這一句推下來.
 
-Day 6-9 的四層工程演進, Day 10 把它們串成一張圖:
+Day 6-9 的四層工程演進, Day 10 把它們串成一張對照表 (**同一件事的四種尺度, 每一代你雕的「單位」都往外退一格**):
 
-- **Prompt Engineering (Day 6)**: 哪些技巧有實證支持, 哪些只是文青傳說. CoT / few-shot 真的有用, "please" / "take a deep breath" 這類在對照實驗下撐不住.
-- **Context Engineering (Day 7)**: 你丟進去的那串 prompt 只佔它看到的 5%, 另外 95% 是 CLAUDE.md、tool list、載入的檔案、agent-skill 自動裝進去的東西. 大多數「它怎麼突然變笨」的問題, 根因不在 prompt, 在 context.
-- **Harness Engineering (Day 8)**: Claude Code、ChatGPT、Cursor 這些你每天在用的工具, 本體不是模型, 是 harness — 把模型綁在軌道上的那套支架. 你早就在用, 只是沒人這樣稱呼它.
-- **Loop Engineering (Day 9)**: `/goal`、sub-agent、autonomous pentest — 不再是你一輪一輪餵, 是你給目標, agent 自己展開 N 輪動作. 這一步, 使用者從「提問者」變成「發包者」.
+| 時代 | 何時浮現 | 你在雕的「單位」 | 你的身分 |
+|:---|:---|:---|:---|
+| **Prompt Engineering** (Day 6) | 2020–2023 | 一句話 | 下指令的人 |
+| **Context Engineering** (Day 7) | 2024–2025 | 一輪的完整輸入 | 佈置資訊的人 |
+| **Harness Engineering** (Day 8) | 2025–2026 | 那台跑每一輪的機器 | 配置系統的人 |
+| **Loop Engineering** (Day 9) | 2026 | 一個自動流程 | 設好目標、走人的人 |
 
-Day 10 一句話收尾: 「xxx」會一直換 (prompt → context → harness → loop → 下一個 ...), 但背後的直覺 —— 你知道「**要給它什麼它才能給對**」—— 是你自己的能力. 工具會停更, 這個直覺不會.
+一句話收尾: 「xxx」會一直換 (prompt → context → harness → loop → 下一個 ...), 但背後的直覺 —— 你知道「**要給它什麼它才能給對**」—— 是你自己的能力. 工具會停更, 這個直覺不會.
 
 ## AI 現在能什麼, 不能什麼 — The Capability Map (Day 2-4)
 
