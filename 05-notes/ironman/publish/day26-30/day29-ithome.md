@@ -160,26 +160,39 @@ API Error: Mythos 5.1's safeguards flagged this message.
 
 ### 卡點: 進了 RDP, 但只有一個全螢幕瀏覽器
 
-Agent 透過 Web dashboard 拿到 Windows 帳號密碼 (`KioskUser / K!0sk2026#`). 這台靶機是 Windows Assigned Access + kiosk 模式, RDP 連進去不是桌面, 是個全螢幕的「HTB AIRWAYS Self Check-In」應用. 沒有工作列, 沒有開始鈕, 沒有 cmd. 傳統 pentest 這段靠人用滑鼠在 kiosk 畫面上找 bug, 但 `/goal` 是命令列 agent, 怎麼辦?
+Agent 透過 Web dashboard 拿到 Windows 帳號密碼 (`KioskUser / K!0sk2026#`). 這台靶機是 Windows Assigned Access + kiosk 模式, RDP 連進去不是桌面, 是個全螢幕的應用. 沒有工作列, 沒有開始鈕, 沒有 cmd. 傳統 pentest 這段靠人用滑鼠在 kiosk 畫面上找 bug, 但 `/goal` 是命令列 agent, 怎麼辦?
 
 ### `/goal` 自己架出來的 agentic RDP 工具鏈
 
 這段是本篇最有價值的部分. agent 用 4 個 1990 年代的 Linux 標準套件 (`apt install xfreerdp2 xvfb xdotool imagemagick` 一行搞定) 組出 headless GUI 自動化 pipeline:
 
-```mermaid
-flowchart TB
-    subgraph CC["Claude Code agent (text-only CLI)"]
-        direction TB
-        A["xfreerdp /sec:rdp"] -->|連線 RDP| T["10.129.4.252:3389<br>KIOSK-042 Win"]
-        A -.->|畫面渲染到| X["Xvfb :99<br>虛擬螢幕"]
-        X --> I["ImageMagick import<br>截圖存 rdp_shots/s*.png"]
-        I -->|Read tool 讀回| V["Agent 看圖<br>決定座標/按鍵"]
-        V --> D["xdotool mousemove/click/key"]
-        D -.->|送 X11 事件到| X
-    end
 ```
-
-Loop 的本體是 **截圖 → agent 讀圖 → agent 送點擊**, 送出的點擊事件經由 Xvfb → xfreerdp window → RDP → 靶機, 下一輪的截圖反映動作結果.
+┌─────────────────────────────────────────────────────────────────┐
+│  Claude Code agent (text-only CLI)                              │
+│                                                                 │
+│  ┌─────────┐  啟動 ┌──────────────┐  連線 ┌──────────────────┐   │
+│  │ Xvfb :99│◄─────│ xfreerdp     │─────►│ 10.129.4.252:3389│    │
+│  │ 虛擬螢幕 │      │ /sec:rdp     │      │ KIOSK-042 Win    │    │
+│  └────┬────┘      └──────────────┘      └──────────────────┘    │
+│       │ RDP window 畫在 Xvfb                                    │
+│       ▼                                                         │
+│  ┌─────────┐  截圖  ┌──────────────┐                            │
+│  │ import  │─────► │ rdp_shots/   │                             │
+│  │ (IM)    │       │ s01.png ...  │                             │
+│  └─────────┘       └──────┬───────┘                             │
+│                           │ Read tool 讀回來                    │
+│                           ▼                                     │
+│                    ┌─────────────┐                              │
+│                    │ Agent 看圖  │  決定下一步座標 / 按鍵         │
+│                    └──────┬──────┘                              │
+│                           │                                     │
+│                           ▼                                     │
+│                    ┌─────────────┐  click / key                 │
+│                    │ xdotool     │─────► 送到 Xvfb :99          │
+│                    └─────────────┘      送到 xfreerdp 視窗       │
+│                                        → 透過 RDP 送到靶機       │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 四個工具的職責:
 
@@ -218,7 +231,7 @@ agent 每一步都用自己的視覺理解決定座標. Claude 讀 PNG 的能力
 
 ![s01 — RDP 連進去的待機頁 "SELF CHECK-IN", 右下有 STAFF LOGIN 按鈕](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s01.png)
 
-這是 agent 連上 RDP 看到的第一張. kiosk 應用「HTB AIRWAYS - Self Check-In」全螢幕, 底部有 Terminal 4 / Gate B7 / Kiosk #042 的機位資訊. 中央大字「SELF CHECK-IN · Touch screen to begin」, 右下角一顆「STAFF LOGIN」按鈕. Agent 想拿 staff 權限 (預期權限較高), 送點擊到右下角座標.
+這是 agent 連上 RDP 看到的第一張. kiosk 應用全螢幕, 底部有 Terminal 4 / Gate B7 / Kiosk #042 的機位資訊. 中央大字「SELF CHECK-IN · Touch screen to begin」, 右下角一顆「STAFF LOGIN」按鈕. Agent 想拿 staff 權限 (預期權限較高), 送點擊到右下角座標.
 
 ![s02 — 進 Staff Authentication, 中間有 SCAN BADGE 按鈕](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s02.png)
 

@@ -168,11 +168,10 @@ Pwn 自然剩最多, 因為:
 
 **AI agent 無腦刷, 到 Top 10 可及; 再往上要人補一塊知識**. 這塊知識不一定是技術難度.
 
-Day 24-25 的 LeetCode (99% AC) 顯示「訓練資料飽和的題型, agent 幾乎全能」; Day 26-28 的 CTF 顯示「訓練資料沒覆蓋的題型, agent 卡在哪」. 兩頭都量過了, 中間可能就是你每天工作遇到的題目的落點.
+Day 24-25 的 LeetCode (99% AC) 顯示「訓練資料飽和的題型, agent 幾乎全能」; Day 26-28 的 CTF 顯示「訓練資料沒覆蓋的題型, agent 卡在哪」. 兩頭都量過了, 中間可能就是你每天工作的落點.
 
 ## Sources
 
 - [Please Hack Me CTF](https://ctf.hackme.quest/) — Inndy 維護的 CTF 練習站, 歷史全站排名
 - [Day 26: PHM CTF 第一輪](https://ithelp.ithome.com.tw/articles/10423071) — 八類全部碰過
 - [Day 27: PHM CTF 第二輪](https://ithelp.ithome.com.tw/articles/10423456) — 六類全解, 新 safeguard 死因
-- [PHM writeup 彙整 (本 repo)](https://github.com/jason3e7/ai-101/tree/master/05-notes/phm) — 74 題 writeup + 27 題 pending notes

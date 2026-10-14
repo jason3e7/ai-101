@@ -109,7 +109,7 @@ Hard 題幾乎沒有卡住的, pattern density 高到讓刷題變批量作業.
 
 **二、Hard 不卡.** 6 題可送判題的 Hard (加鎖住的 Alien Dictionary 本地解共 7 題) 全部一次 AC, 沒有一題需要我介入. 這跟 Day 23 的 ★★★★★ UVa 10330 max flow 一次 AC 是同一件事: **AI 在 OJ 上強, 不是因為它會推理, 是因為題目剛好全在它的 pattern 範圍裡**.
 
-**三、批次吃掉 30 題不喘.** 整個 Blind 75, 從開始到 commit 到 repo, 大概兩個 session (約 3-4 小時). 一題平均 5-7 分鐘含送判題延遲. 比起我自己手刷快一個量級 — 不是因為我思考比較慢, 是「切頁面 → 讀題 → 寫 → 編 → 送 → 讀 verdict → 存檔 → 下一題」這個流程 agent 一次吃完, 中間沒 context switch 的 overhead.
+**三、批次吃掉 30 題不喘.** 整個 Blind 75, 從開始到 commit 到 repo, 大概兩個 session (約 3-4 小時). 一題平均 5-7 分鐘含送判題延遲. 比起我自己手刷快一個量級, 「切頁面 → 讀題 → 寫 → 編 → 送 → 讀 verdict → 存檔 → 下一題」這個流程 agent 一次吃完, 中間沒 context switch 的 overhead.
 
 ## 哪裡得自己來 — Where I Still Carry
 

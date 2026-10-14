@@ -35,7 +35,7 @@ title : [Day 26] 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀�
 
 ## 為什麼挑 PHM — Why Please Hack Me
 
-[Please Hack Me](https://ctf.hackme.quest/) (下簡稱 PHM) 是台灣作者 [Inndy](https://www.inndy.tw/) 多年維護的 CTF 練習站, 2016-2021 期間陸陸續續上了 **101 題**, 分八類: Misc 14 / Web 26 / Pwn 24 / Reversing 17 / Crypto 16 / Forensic 2 / Programming 1 / Lucky 1. 挑它的三個理由:
+[Please Hack Me](https://ctf.hackme.quest/) (下簡稱 PHM) 是台灣作者 [Inndy](https://www.inndy.tw/) 多年維護的 CTF 練習站, 2016-2021 期間陸陸續續上了 **101 題**, 分八類: Misc 14 / Web 26 / Pwn 24 / Reversing 17 / Crypto 16 / Forensic 2 / Programming 1 / Lucky 1. 挑它的兩個理由:
 
 1. **題型覆蓋全光譜** — Pwn 二進位漏洞、Web client-side 編碼、Crypto 從古典到 RSA、Reversing 讀 x86 asm、Forensic 檔案層分析, 一個站打完等於走完 CTF 入門路徑
 2. **分數分佈夠細** — 10 分熱身到 270 分硬題全有, 可以量化「容易 / 中等 / 卡住」各佔多少
