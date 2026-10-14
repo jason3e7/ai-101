@@ -1,8 +1,8 @@
 title : [Day 30] 三十天心法總結, 跟著 AI 持續成長
 
-## 原理 — The Through-Line (Day 01, Day 06-10)
+## 原理 — The Through-Line ([Day 01](https://ithelp.ithome.com.tw/articles/10411345), Day 06-10)
 
-AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個系列的核心 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部都從這一句延伸出來的.
+AI 不是通靈, 它只是在猜下一個字 ([Day 01](https://ithelp.ithome.com.tw/articles/10411345)). 這句話是整個系列的核心 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部都從這一句延伸出來的.
 
 ![Day 10 cover — xxx Engineering, 名字會變, 智慧是自己的](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day06-10/day10-cover.png)
 
@@ -54,24 +54,24 @@ AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個系列�
 
 想知道 AI 已經滲進多深, 自己掃一次最準. Day 16-18 寫了程式檢視當屆鐵人賽 15,057 篇全文:
 
-- Day 16: 只用「——」, 已經看得出全站數量還不少.
-- Day 17: 新增 6 個訊號 + 權重, 再測一次.
-- Day 18: 加入中文檢查, 零命中的文章非常少. 另附一個 Tampermonkey script 讓你瀏覽任何網頁即時看 AI 味分數.
+- [Day 16](https://ithelp.ithome.com.tw/articles/10419414): 只用「——」, 已經看得出全站數量還不少.
+- [Day 17](https://ithelp.ithome.com.tw/articles/10419809): 新增 6 個訊號 + 權重, 再測一次.
+- [Day 18](https://ithelp.ithome.com.tw/articles/10420151): 加入中文檢查, 零命中的文章非常少. 另附一個 Tampermonkey script 讓你瀏覽任何網頁即時看 AI 味分數.
 
-Day 20: **AI 文化入侵**, 如果未來出生的人, 最一開始讀的文字就有 AI 風格, 當然寫出來的也會有 AI 的風格, 而 AI 風格的滲入是**不可逆的現在進行式**, 接下來人跟 AI 文風的界線會越來越模糊. (或許某程度來說也是一種統一)
+[Day 20](https://ithelp.ithome.com.tw/articles/10420569): **AI 文化入侵**, 如果未來出生的人, 最一開始讀的文字就有 AI 風格, 當然寫出來的也會有 AI 的風格, 而 AI 風格的滲入是**不可逆的現在進行式**, 接下來人跟 AI 文風的界線會越來越模糊. (或許某程度來說也是一種統一)
 
 ## script kid 式盲打, 從程式到資安 — How Far Blind-Driving AI Goes (Day 21-29)
 
-Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **Day 21 轉場**: 回到好驗證的主場 —— 程式. 程式有一個文字沒有的東西: 你可以**跑跑看**. 編譯錯、runtime error、test fail、diff mismatch, 會有明確的結果知道對錯, 也可以提前寫 Test Case 讓 AI 自主 Loop.
+Day 01-20 撰寫 ithome 鐵人賽都在打文字難驗的仗. **[Day 21](https://ithelp.ithome.com.tw/articles/10421407) 轉場**: 回到好驗證的主場 —— 程式. 程式有一個文字沒有的東西: 你可以**跑跑看**. 編譯錯、runtime error、test fail、diff mismatch, 會有明確的結果知道對錯, 也可以提前寫 Test Case 讓 AI 自主 Loop.
 
-從 Day 21 開始, 刻意裝 **script kid**: **不理解、不提示, 題目直接丟給 AI 自己解**, 只做登入跟按送出. 看能走多遠.
+從 [Day 21](https://ithelp.ithome.com.tw/articles/10421407) 開始, 刻意裝 **script kid**: **不理解、不提示, 題目直接丟給 AI 自己解**, 只做登入跟按送出. 看能走多遠.
 
 | 階段 | 題庫 | 結果 |
 |:---|:---|:---|
 | ZeroJudge (Day 22-23) | 78 題 (基礎 42 + 競賽 16 + UVa 20) + 19 題進階 | **96.2% AC** (單次送出, 不重試) |
 | LeetCode (Day 24-25) | Blind 75 + LC-75 + NC150 共 134 題 | **99%+ AC**, 唯一 WA 是 pow(x, n) 的浮點誤差 |
 | PHM CTF (Day 26-28) | 101 題, 8 類 (Misc / Web / Pwn / Reversing / Crypto / Forensic / Programming / Lucky) | **74 題 / 6620 pts / 歷史全站 Rank 10** |
-| HTB (Day 29) | 兩台 (Cap linux easy, Touch windows easy) | Cap **26 分鐘拿 user + root**; Touch 卡在 kiosk, **但 agent 自己架 Xvfb + xfreerdp + xdotool + ImageMagick 做出 agentic RDP pipeline** |
+| HTB ([Day 29](https://ithelp.ithome.com.tw/articles/10424068)) | 兩台 (Cap linux easy, Touch windows easy) | Cap **26 分鐘拿 user + root**; Touch 卡在 kiosk, **但 agent 自己架 Xvfb + xfreerdp + xdotool + ImageMagick 做出 agentic RDP pipeline** |
 
 這就是**今天 AI 能取代到的範圍**: 有明確判准 + 吃 pattern 的任務幾乎全都能做, 真實系統串接可以到 7 環 exploit chain. 卡住的不是能力, 是 safeguard.
 
