@@ -1,149 +1,60 @@
 <!doctype html><html><head><meta charset="utf-8"><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1200px;height:630px;font-family:"Noto Sans CJK TC",sans-serif;
-  background:linear-gradient(180deg,#0b1930 0%,#143352 55%,#1a4668 100%);
-  color:#f2f0ea;overflow:hidden;position:relative}
+  background:#14161f;color:#f2f0ea;overflow:hidden;position:relative}
 .grid{position:absolute;inset:0;
   background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
   background-size:48px 48px}
-.sun{position:absolute;width:900px;height:900px;right:-320px;top:-380px;border-radius:50%;
-  background:radial-gradient(circle,#e8a13c33 0%,#e8a13c12 36%,transparent 70%)}
-.sparkle{position:absolute;border-radius:50%;background:#fde8a8;box-shadow:0 0 8px #fde8a8aa}
-.sp1{width:4px;height:4px;left:860px;top:120px}
-.sp2{width:3px;height:3px;left:1030px;top:220px}
-.sp3{width:5px;height:5px;left:720px;top:60px}
-.sp4{width:3px;height:3px;left:950px;top:360px}
-.sp5{width:4px;height:4px;left:800px;top:420px}
-.sp6{width:3px;height:3px;left:1080px;top:480px}
+.glow{position:absolute;width:760px;height:760px;right:-230px;top:-300px;border-radius:50%;
+  background:radial-gradient(circle,#e8a13c26 0%,transparent 66%)}
 .wrap{position:relative;padding:62px 72px;height:100%;display:flex;flex-direction:column;justify-content:space-between;z-index:2}
 .top{display:flex;align-items:center;gap:16px}
 .mark{font-size:26px;font-weight:700;letter-spacing:.22em;color:#e8a13c}
 .bar{width:2px;height:24px;background:#ffffff2e}
 .day{font-size:21px;letter-spacing:.14em;color:#9aa0b0}
-.title-wrap{position:relative;z-index:3}
-h1{font-size:76px;font-weight:900;line-height:1.08;letter-spacing:.02em;
-  background:linear-gradient(180deg,#ffe9a8 0%,#e8a13c 55%,#b67821 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  text-shadow:0 2px 0 #00000030}
-h1 .accent{display:block;font-size:48px;font-weight:800;margin-top:14px;
-  background:linear-gradient(180deg,#f2f0ea 0%,#a8aebd 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.quote{margin-top:22px;font-size:22px;color:#c9d0dd;letter-spacing:.03em;font-style:italic;max-width:720px;line-height:1.5}
-.quote strong{color:#e8a13c;font-style:normal}
-.chest{position:absolute;right:68px;bottom:62px;z-index:1}
-text{font-family:"Noto Sans CJK TC",sans-serif}
+h1{font-size:66px;font-weight:900;line-height:1.1;letter-spacing:.02em;white-space:nowrap}
+h1 em{font-style:normal;color:#e8a13c}
+.sub{margin-top:18px;font-size:22px;color:#a8aebd;letter-spacing:.04em}
+.foot{font-size:22px;color:#767d8d;letter-spacing:.08em}
+.foot strong{color:#e8a13c;font-weight:900}
+
+.art{position:absolute;right:72px;top:170px;z-index:3;
+  font-family:"Noto Sans Mono CJK TC","DejaVu Sans Mono","Consolas",monospace;
+  font-size:30px;line-height:1.05;letter-spacing:0;color:#e8a13c;
+  white-space:pre;text-align:center}
+.art .hat{color:#e8c784;font-size:28px;line-height:1.05}
+.art .hat .band{color:#c8322a;font-weight:900}
+.art .chest .lid{color:#b67821}
+.art .chest .side{color:#8b5a2b}
+.art .chest .gold{color:#fde8a8;font-weight:900}
+.art .chest .coin{color:#ffd770;font-weight:900}
+.art .chest .lock{color:#f2f0ea;font-weight:900}
+.art .shine{color:#fde8a8aa;font-size:22px;margin-top:6px;letter-spacing:.4em}
 </style></head><body>
-<div class="grid"></div>
-<div class="sun"></div>
-<div class="sparkle sp1"></div>
-<div class="sparkle sp2"></div>
-<div class="sparkle sp3"></div>
-<div class="sparkle sp4"></div>
-<div class="sparkle sp5"></div>
-<div class="sparkle sp6"></div>
+<div class="grid"></div><div class="glow"></div>
 
-<!-- Treasure chest + straw hat SVG, bottom right -->
-<svg class="chest" width="440" height="360" viewBox="0 0 440 360">
-  <!-- Radial glow behind chest -->
-  <defs>
-    <radialGradient id="chestGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#fde8a8" stop-opacity="0.9"/>
-      <stop offset="40%" stop-color="#e8a13c" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#e8a13c" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#8b5a2b"/>
-      <stop offset="100%" stop-color="#5a3618"/>
-    </linearGradient>
-    <linearGradient id="woodLid" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#a06a35"/>
-      <stop offset="100%" stop-color="#6e4320"/>
-    </linearGradient>
-    <linearGradient id="goldPile" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffe9a8"/>
-      <stop offset="60%" stop-color="#e8a13c"/>
-      <stop offset="100%" stop-color="#b67821"/>
-    </linearGradient>
-    <radialGradient id="coinSheen" cx="30%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#fff6d4"/>
-      <stop offset="100%" stop-color="#e8a13c"/>
-    </radialGradient>
-  </defs>
+<div class="art">
+<span class="hat">     ╭─────╮
+    ╱<span class="band">▓▓▓▓▓▓▓</span>╲
+   ╭─────────╮
+   ╰─────────╯</span>
 
-  <circle cx="220" cy="180" r="200" fill="url(#chestGlow)"/>
-
-  <!-- Light rays from chest -->
-  <g stroke="#fde8a8" stroke-width="2" opacity="0.6">
-    <line x1="220" y1="180" x2="80" y2="40"/>
-    <line x1="220" y1="180" x2="220" y2="20"/>
-    <line x1="220" y1="180" x2="360" y2="40"/>
-    <line x1="220" y1="180" x2="420" y2="150"/>
-    <line x1="220" y1="180" x2="40" y2="150"/>
-  </g>
-
-  <!-- Chest base (box) -->
-  <rect x="80" y="200" width="280" height="130" rx="6" fill="url(#wood)" stroke="#3a2410" stroke-width="2"/>
-  <!-- Gold trim bands on base -->
-  <rect x="80" y="210" width="280" height="6" fill="#e8a13c"/>
-  <rect x="80" y="320" width="280" height="6" fill="#e8a13c"/>
-  <rect x="78" y="200" width="4" height="130" fill="#e8a13c"/>
-  <rect x="358" y="200" width="4" height="130" fill="#e8a13c"/>
-
-  <!-- Lock plate -->
-  <rect x="205" y="240" width="30" height="36" rx="3" fill="#b67821" stroke="#3a2410" stroke-width="1.5"/>
-  <circle cx="220" cy="258" r="3" fill="#3a2410"/>
-
-  <!-- Chest lid (open, tilted back) -->
-  <g transform="translate(220 200) rotate(-28) translate(-220 -200)">
-    <path d="M 80 200 Q 220 150 360 200 L 360 170 Q 220 110 80 170 Z" fill="url(#woodLid)" stroke="#3a2410" stroke-width="2"/>
-    <rect x="80" y="195" width="280" height="6" fill="#e8a13c"/>
-    <!-- Gold trim on top edge -->
-    <path d="M 80 170 Q 220 110 360 170" stroke="#e8a13c" stroke-width="3" fill="none"/>
-  </g>
-
-  <!-- Gold coins pile inside -->
-  <ellipse cx="220" cy="205" rx="130" ry="18" fill="url(#goldPile)"/>
-  <!-- Individual coin highlights -->
-  <circle cx="150" cy="200" r="14" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <circle cx="180" cy="196" r="12" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <circle cx="212" cy="192" r="15" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <circle cx="250" cy="196" r="13" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <circle cx="285" cy="200" r="14" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <!-- Spilling coins -->
-  <circle cx="110" cy="285" r="10" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <circle cx="130" cy="305" r="9" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <circle cx="320" cy="290" r="10" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-  <circle cx="335" cy="312" r="8" fill="url(#coinSheen)" stroke="#8b5a2b" stroke-width="1"/>
-
-  <!-- Jewel on top of pile -->
-  <polygon points="200,180 212,172 224,180 212,200" fill="#ff5a4a" stroke="#8b1a0a" stroke-width="1"/>
-  <polygon points="212,172 220,180 212,186 204,180" fill="#ff8a7a" opacity="0.8"/>
-
-  <!-- Straw hat on chest edge (left side), classic ONE PIECE style -->
-  <g transform="translate(85 155)">
-    <!-- Hat brim -->
-    <ellipse cx="0" cy="22" rx="56" ry="12" fill="#e8c784" stroke="#8b6a2b" stroke-width="2"/>
-    <!-- Hat crown -->
-    <ellipse cx="0" cy="10" rx="30" ry="18" fill="#f0d490" stroke="#8b6a2b" stroke-width="2"/>
-    <!-- Red ribbon -->
-    <rect x="-30" y="16" width="60" height="7" fill="#c8322a" stroke="#7a1810" stroke-width="1"/>
-    <path d="M -30 23 L -36 32 L -22 26 Z" fill="#c8322a" stroke="#7a1810" stroke-width="1"/>
-  </g>
-
-  <!-- Compass hint on bottom-right coins -->
-  <g transform="translate(305 275)">
-    <circle r="18" fill="#e8a13c" stroke="#8b5a2b" stroke-width="2"/>
-    <polygon points="0,-12 3,0 0,12 -3,0" fill="#c8322a"/>
-    <circle r="2.5" fill="#3a2410"/>
-  </g>
-</svg>
+<span class="chest"><span class="lid">   ╔═══════════╗
+  ╔╝ ★  ◆  ★  ╚╗</span>
+<span class="side">  ║ </span><span class="gold">● ●</span><span class="side"> </span><span class="lock">╔═╗</span><span class="side"> </span><span class="gold">● ●</span><span class="side"> ║
+  ║ </span><span class="coin">◉ ◉</span><span class="side"> </span><span class="lock">║◉║</span><span class="side"> </span><span class="coin">◉ ◉</span><span class="side"> ║
+  ║ </span><span class="gold">$ $ $</span><span class="side"> </span><span class="lock">╚═╝</span><span class="side"> </span><span class="gold">$ $</span><span class="side"> ║
+  ╚═════════════╝</span>
+<span class="shine">· ✦ · ✦ · ✦ ·</span>
+</span>
+</div>
 
 <div class="wrap">
   <div class="top"><span class="mark">AI 心法</span><span class="bar"></span><span class="day">Day 30 · Finale</span></div>
-  <div class="title-wrap">
-    <h1>所有財寶<br><span class="accent">都放在這了</span></h1>
-    <div class="quote">三十天心法總結, 跟著 AI 持續成長 — 活到老 · 用到老 · <strong>用中學</strong></div>
+  <div>
+    <h1>我把<em>所有財寶</em>都放在這了</h1>
+    <div class="sub">三十天心法總結, 跟著 AI 持續成長</div>
   </div>
-  <div></div>
+  <div class="foot">活到老 · 用到老 · <strong>用中學</strong></div>
 </div>
 </body></html>
