@@ -83,13 +83,13 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 「AI 發展史」是全網最廉價的內容，容易被讀成灌水；而且 Day 1–5 決定讀者要不要追下去。
 
-> 改法：**把「承先」拆散。** 每篇心法開頭兩三句交代它的來歷（Guilford 1956 的收斂／發散思考、Bloom 認知層次、2022 年的 ReAct、Ackoff 1989 的 DIKW 金字塔）。這本來就是這個 repo 的寫法，直接沿用。**實際做法**：承段收在 7 篇，Day 1 直接從「它只是在猜下一個字」這個原理切入，把全系列的地圖收進文末一張表。
+> 改法：**把「承先」拆散。** 每篇心法開頭兩三句交代它的來歷（Guilford 1956 的收斂／發散思考、Bloom 認知層次、2022 年的 ReAct、Ackoff 1989 的 DIKW 金字塔）。這本來就是這個 repo 的寫法，直接沿用。**實際做法**：承段最後落在 10 篇 (原規劃 7 篇, 寫作時把 Context/Harness/Loop 各給一篇、再補一篇 xxx Engineering 收尾)，Day 1 直接從「它只是在猜下一個字」這個原理切入。
 
 ### 二、每篇心法都要綁一個實測
 
 純觀念文對上「我做了一個會賺錢的 SaaS」，在「內容專業性、豐富性、深入性」這項會吃虧。
 
-> 改法：**心法是骨，實測是肉。** 最強的武器是 [HTB 目標綁架三案例](../htb/htb-abducted-goal-case.md) - Claude Code 在真實靶機上目標被綁架的完整記錄，全場沒有第二個人有，而且是 repo 裡最長的三篇（4573／2911／2638 中文字）。
+> 改法：**心法是骨，實測是肉。** 原本預期的最強武器是 [HTB 目標綁架三案例](../htb/htb-abducted-goal-case.md), 但實際落地時換成了**規模化的實戰子系列** (Day 22-23 ZeroJudge 掃 78+19 題、Day 24-25 LeetCode Blind 75+LC-75+NC150、Day 26-28 PHM CTF 刷到 Top 10、Day 29 HTB /goal 跑 Cap + Touch)。每一條都有明確數字 (pass rate / 分數 / 時間) 當判准，比單一綁架案例更能站住「心法 → 實測」的對應關係。
 
 ### 三、結尾不要預測未來
 
@@ -101,29 +101,34 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 ## 三十篇骨架 — The 30-Article Outline
 
-承 7 篇、轉 16 篇、合 7 篇。逐篇標題見 [三十篇標題與素材對照](./titles.md)。
+**實際落地為 承 10 / 轉 10 / 合 10 的對稱結構** (原規劃是 7+16+7, 寫作過程中段落邊界被推成等長). 逐篇標題、素材與完成狀態以 [三十篇標題與素材對照](./titles.md) 為準; 下表只列段落骨幹.
 
 | 段 | Day | 主題 | 素材 |
 |---|---|---|---|
-| **承** | 1 | 它只是在猜下一個字：LLM 的原理 | ✅ 已完成（新研究） |
-| | 2 | 不是它突然變強，是它跨過了你的門檻 | ✅ 已完成（METR、scaling laws、MCP） |
-| | 3 | 它做不到什麼：三種極限 | ✅ 已完成（自我修正、反轉詛咒、鋸齒狀前沿） |
-| | 4 | AI 能力全景圖：收斂／發散 × 認知層次 | ✅ [ai-capability-landscape](../../02-advanced/capabilities/ai-capability-landscape.md) |
-| | 5 | Prompt Engineering：哪些技巧真的有效 | ✅ 已完成（The Prompt Report、Wharton） |
-| | 6 | 先看終點：Loop Engineering | ✅ [loop-engineering](../../02-advanced/engineering/loop-engineering.md) |
-| | 7 | 六種能力的實戰配方 | [capabilities-playbook](../../02-advanced/capabilities/capabilities-playbook.md) |
-| **轉·提問** | 8–11 | 好 prompt 的特性 → XY Problem → MVP 模板 → 自我驗證 | [meta-prompting](../essays/meta-prompting.md)（拆四篇） |
-| **轉·脈絡** | 12–13 | Context → Harness（Loop 已提前到 Day 6） | [context](../../02-advanced/engineering/context-engineering.md)、[harness](../../02-advanced/engineering/harness-engineering.md)，需補實測 |
-| **轉·目標與成本** | 14–18 | 選模型省錢 → 權限 → `/goal` → 強制力 Hook → workflow × goal | [model-cost](../../01-fundamentals/models/model-cost-comparison.md)、[permissions](../../01-fundamentals/claude-code/permissions.md)、[goal](../../01-fundamentals/claude-code/goal.md) 等 |
-| **轉·驗證與擴展** | 19–23 | 六種驗算法 → 獨立驗算 → **HTB 目標綁架實測** → 拓展視野五手段 → 知識金字塔 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md)、[htb/](../htb/htb-abducted-goal-case.md)、[knowledge-barriers](../essays/ai-and-knowledge-barriers.md) |
-| **合·實戰與收尾** | 24 | LeetCode 實戰：用 Claude Code 刷題 | [leetcode/](../leetcode/)（lc75 進度） |
-| | 25 | CTF 實戰：解 ctf.hackme.quest | [phm/](../phm/README.md) |
-| | 26–28 | 待定（候選見 [titles.md 候補池](./titles.md#候補題目池--backlog)） | HTB 綁架 / AI 取代什麼 / 選模型實測 / 無審查 / 自主滲透 / 自架本地 LLM |
-| | 29 | 小結（實戰子系列回顧） | 新寫 |
-| | 30 | 總結：三十天蒸餾，跟著 AI 持續成長 | 新寫 |
+| **承·原理與工程** | 1 | 它只是在猜下一個字：LLM 的原理 | [core-concepts](../../01-fundamentals/core-concepts.md) ＋ 新研究 |
+| | 2 | 不是它突然變強，是它跨過了你的門檻 | METR / scaling laws / MCP 採用曲線 |
+| | 3 | 做不到的事分三類，最危險的那類你看不見 | [llm-limitations](../../02-advanced/limits-and-verification/llm-limitations.md) ＋ 實測 |
+| | 4-5 | 兩種能力一張全景圖 → AI 怎麼挑能力 | [ai-capability-landscape](../../02-advanced/capabilities/ai-capability-landscape.md) ＋ [how-ai-picks-capability](../../02-advanced/capabilities/how-ai-picks-capability.md) |
+| | 6 | Prompt Engineering：哪些技巧真的有效 | [tips-and-best-practices](../../01-fundamentals/tips-and-best-practices.md) ＋新研究 |
+| | 7-9 | Context / Harness / Loop Engineering 三連 | [context](../../02-advanced/engineering/context-engineering.md) · [harness](../../02-advanced/engineering/harness-engineering.md) · [loop](../../02-advanced/engineering/loop-engineering.md) |
+| | 10 | xxx Engineering: 名字會變, 智慧是自己的 | [prompt-engineering-evolution](../../02-advanced/engineering/prompt-engineering-evolution.md) |
+| **轉·判斷力與實測** | 11 | AI 給的答案怎麼知道是對的 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) ＋ [verifying-ai-output](../../02-advanced/limits-and-verification/verifying-ai-output.md) |
+| | 12 | 為人類驗證而生的兩個 skill: condense / expand-mindmap | [mindmap-skills-design](../design-and-guides/mindmap-skills-design.md) ＋ [skills/](../../skills/) |
+| | 13 | AI 用久會鈍化: 兩種鈍, 五招破 | [ai-atrophy](../../02-advanced/limits-and-verification/ai-atrophy.md) |
+| | 14 | AI 抹平的是中產, 頂層變貴 | [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) |
+| | 15 | 用 AI 拓展自己: 5 個手段 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) 線二 |
+| | 16-18 | lab01「量 AI 味」三連 (單訊號 → 多訊號 → 翻面問題 + Tampermonkey) | [lab01/](../lab01/README.md) |
+| | 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) |
+| | 20 | AI 文風入侵: 五個記號 + 抗體 + 子系列小結 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7-voice 改寫](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) |
+| **合·落地、實戰與收尾** | 21 | 回到好驗證的主場: 文字難驗, 程式好驗 | 轉場文 (3 題 ZeroJudge 示範) |
+| | 22-23 | ZeroJudge 掃 78 題 → 進階按主題各挑一題 | [zerojudge/](../zerojudge/README.md) ＋ [playwright-zerojudge-automation](../zerojudge/playwright-zerojudge-automation.md) |
+| | 24-25 | LeetCode Blind 75 → LC-75 + NC150 放大 | [leetcode/](../leetcode/) |
+| | 26-28 | PHM CTF 三連 (目前狀況 → 六類全碰 → Top 10 四面牆) | [phm/](../phm/README.md) ＋ [essays/claude-code-cyber-safeguard](../essays/claude-code-cyber-safeguard.md) |
+| | 29 | 從 CTF 換到 HTB, 用 `/goal` 跑兩次 (Cap + Touch) | [htb/cap-2026-10-13/](../htb/cap-2026-10-13/cap-with-goal.md) ＋ [htb/touch-2026-10-13/](../htb/touch-2026-10-13/touch-with-goal.md) |
+| | 30 | 三十天心法總結, 跟著 AI 持續成長 | 新寫 |
 
 > [!NOTE]
-> 這張表只看段落配比；**逐篇標題、素材與完成狀態以 [titles.md](./titles.md) 為準**，那份會隨寫作進度更新。Day 24-30 已於 2026-10-08 重排（見 titles.md 變更歷程）。
+> 這張表只看段落配比；**逐篇標題、素材與完成狀態以 [titles.md](./titles.md) 為準**。合段原規劃的「權限 / `/goal`+Hook / Workflow×Goal」在實際發文時被 ZeroJudge/LeetCode/CTF/HTB 這條實戰線取代, Claude Code 概念筆記仍留在 `01-fundamentals/claude-code/`, 本系列沒有獨立成篇。
 
 素材盤點：01–05 共約 30 篇原創筆記，多數 600–2500 中文字，可直接改寫成參賽文章。
 

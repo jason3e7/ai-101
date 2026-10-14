@@ -9,9 +9,9 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 三十篇的**現況板**. 已發布 26 篇 (Day 1-26), Day 27-28 待定, Day 29 小結、Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
+> 三十篇的**現況板**. 已發布 29 篇 (Day 1-29), 剩 Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
 
-> **TL;DR (EN):** Thirty working titles for the Claude AI group. Twenty-six published (Day 1-26). The finale was re-planned 2026-10-08 and extended 2026-10-10: Day 24-26 are three hands-on pieces (Blind 75, LC-75+NC150, then a CTF run on ctf.hackme.quest), Day 27-28 are still open, and Day 29/30 are a sub-series recap and the grand wrap-up. The six topics previously slotted at Day 24-29 (HTB hijack, what-AI-replaces, model-cost bench, uncensored model, autonomous pentest, self-hosted LLM) moved to the backlog; two already have drafts.
+> **TL;DR (EN):** Thirty working titles for the Claude AI group. Twenty-nine published (Day 1-29), only the Day 30 finale left. The "合" arc (Day 21-30) landed as: Day 21 pivots back to verifiable ground (code), Day 22-23 scale/deepen on ZeroJudge, Day 24-25 run LeetCode (Blind 75 then LC-75+NC150), Day 26-28 run PHM CTF (status → six-categories → Top 10 wrap), Day 29 switches to HTB with /goal, Day 30 wraps the thirty-day distillation.
 
 ---
 
@@ -48,7 +48,6 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 - ✅ **已完成** — draft 已寫, 未上稿
 - 🚧 **草稿中** — 有 draft, 未定稿
 - 📅 **預計** — 題目與素材已決定, 未動筆
-- 🔄 **待重排** — 位置或內容未定 (候選見 [Day 17-24 候選](#day-17-24-候選--candidates-for-re-slotting))
 - 未標 — 尚未動工
 
 ### 承: 原理與工程 (Day 1-10)
@@ -84,13 +83,13 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 ### 合: 落地、實戰與收尾 (Day 21-30)
 
 > [!NOTE]
-> jason3e7 於 2026-10-08 重排 Day 24-30: 前面全是「講＋小實測」, 收尾改成**大型實戰系列** (Day 24-26 刷 LeetCode + CTF) ＋ 兩個待定 ＋ 小結/總結. 原本排在這段的題目(HTB、AI 取代什麼、選模型實測、無審查、自主滲透、自架本地 LLM)退回 [候補題目池](#候補題目池--backlog), 其中兩篇已有 draft, 可優先補進 Day 27-28.
+> 這段最後長成「**從難驗轉回好驗 → 規模化實戰**」: Day 21 是轉場 (文字難驗 → 程式好驗), Day 22-23 用 ZeroJudge 做規模與深度測試, Day 24-25 用 LeetCode 複製, Day 26-28 CTF (ctf.hackme.quest), Day 29 跳到 HTB 用 `/goal`, Day 30 總結. 原本排在這段的「權限 / goal+hooks / workflow × goal」在 Day 21-23 slot 被 ZeroJudge/LeetCode 題材換掉 (概念筆記保留在 `01-fundamentals/claude-code/`, 本系列沒獨立成篇); 2026-10-08 退回候補的 6 題也都沒再上.
 
 | Day | 標題 | 素材 | 狀態 |
 |:---|:---|:---|:---|
-| 21 | 權限: AI 動到哪裡, 五種模式與紅線 | [permissions](../../01-fundamentals/claude-code/permissions.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421407) |
-| 22 | `/goal` + Hook: 給 AI 能驗證的終點, 用 hook 守住 | [goal](../../01-fundamentals/claude-code/goal.md) ＋ [goal-enforcement-hooks](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421768) |
-| 23 | Workflow × Goal: 讓它自己排隊、自己交差 | [workflow-goal-combo](../../01-fundamentals/claude-code/workflow-goal-combo.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422105) |
+| 21 | 回到好驗證的主場: 文字難驗, 程式好驗 | [ai-verify-then-expand](../essays/ai-verify-then-expand.md) ＋ 3 題 ZeroJudge 轉場示範 | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421407) |
+| 22 | 掃 ZeroJudge 78 題: 只下 prompt, AI 自己解到 AC | [zerojudge/](../zerojudge/README.md) + [playwright-zerojudge-automation](../zerojudge/playwright-zerojudge-automation.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10421768) |
+| 23 | ZeroJudge 進階測試: 按主題各挑一題, 看 AI 的上限跟自動多輪的能力 | [zerojudge/mcu-cpe26-problem-set](../zerojudge/mcu-cpe26-problem-set.md) + [luckycat-uva-selection](../zerojudge/luckycat-uva-selection.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422105) |
 | 24 | 用 Claude Code 全自動刷 LeetCode Blind 75 | [leetcode/](../leetcode/) (Blind 75) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422485) |
 | 25 | 擴大測試 LeetCode LC-75 + NC150, 129 題全 AC | [leetcode/](../leetcode/) (LC-75 + NC150) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10422778) |
 | 26 | 用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 | [phm/](../phm/README.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423071) |
@@ -105,6 +104,7 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 
 ## 變更歷程 — Changelog
 
+- **2026-10-14 (稍晚)**: 對照實際發布內容校正 Day 21-23 的標題與素材 — 本檔原本記的是舊規劃版 (權限 / `/goal`+Hook / Workflow×Goal), 但實際上 Day 21 發的是「回到好驗證的主場」轉場文, Day 22-23 是 ZeroJudge 掃全 + 進階兩篇. 原本排進去的 Claude Code 概念筆記 (`permissions`/`goal`/`goal-enforcement-hooks`/`workflow-goal-combo`) 本系列沒獨立成篇, 概念內容仍留在 `01-fundamentals/claude-code/`. 同時刪除候補池兩個未使用的 draft (day25-what-ai-replaces + day27-self-hosted-llm), 題目保留在池內備用.
 - **2026-10-14**: Day 29 (HTB /goal 兩次測試 + agent 自己組 RDP 工具鏈) 發布 → [10424068](https://ithelp.ithome.com.tw/articles/10424068). 子系列從 CTF 跨到 HTB, 用一組 `/goal` 四段骨架 + 共用 `CLAUDE.md` INTEGRITY RULES 跑兩個同天案例: **Cap** (easy, 26 分鐘 user+root) + **Touch** (卡在 kiosk 逃逸, 但 agent 自己用 Xvfb + xfreerdp + xdotool + ImageMagick import 組出 agentic RDP pipeline). 已發布 28 → 29 篇, 剩 Day 30 總結.
 - **2026-10-13**: Day 28 (PHM CTF 最後一輪 — Top 10 / AI agent 的四面牆) 發布 → [10423733](https://ithelp.ithome.com.tw/articles/10423733). CTF 子系列收尾: 4940 → 6620 pts / 64 → 74 題 / **歷史全站 Rank 10**; 101 題每題獨自跑過一次, 剩 27 題收斂成四面牆 (md5 agent 沒上網查 / libc 版本沒環境 / 強模型未試 / 單題也會撞 cyber safeguard). 已發布 27 → 28 篇, 剩 Day 29 小結 / Day 30 總結.
 - **2026-10-11 (晚)**: Day 27 (PHM 多推一段 + cyber safeguard) 發布 → [10423456](https://ithelp.ithome.com.tw/articles/10423456). 承接 Day 26 的 PHM: 1720 → 4940 pts, Pwn/Web 以外六類全部碰過; 新加入第四類死因 (Claude Code cyber-related safeguards 擋攻擊鏈). 已發布 26 → 27 篇, 剩 Day 28 待定.
@@ -135,8 +135,8 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 親手測 ClickFix: AI 分享頁怎麼被拿來騙人 | 06 的 ClickFix 筆記 (自己的截圖) | 原 Day 29 被新 Day 05 擠出. 發文時要沿用防禦式寫法 |
 | Claude Code 四層行為系統: goal + sub-agent + skill + hook | [behavior-design](../../01-fundamentals/claude-code/behavior-design.md) | Day 22-23 已把 goal / hooks / workflow 拆開講, 這份是綜合示範, 之後可當 Day 24 的替代 |
 | 驗證疲勞: 什麼時候該關掉驗證 | 待研究 | 觀念篇, 跟 Day 13 鈍化成姊妹作 |
-| AI 可能會取代什麼, 目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | ✅ **已有 draft** ([day25-what-ai-replaces](./drafts/day21-25/day25-what-ai-replaces.md)); 2026-10-08 從 Day 25 退出, 可補 Day 26-28 |
-| 自架本地 LLM: 什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | ✅ **已有 draft** ([day27-self-hosted-llm](./drafts/day26-30/day27-self-hosted-llm.md)); 2026-10-08 從 Day 29 退出, 可補 Day 26-28 |
+| AI 可能會取代什麼, 目前不會取代什麼 | Stanford Canaries ＋ Anthropic Economic Index ＋ [ai-and-knowledge-barriers](../essays/ai-and-knowledge-barriers.md) | 2026-10-08 從 Day 25 退出; draft 於 2026-10-14 刪除 (沒再上, 題目留著以後或許用得到) |
+| 自架本地 LLM: 什麼時候該把 AI 搬回自己機器上 | [ollama-guide](../../04-local-llm/ollama-guide.md)、[vllm](../../04-local-llm/vllm.md)、[pii-masking](../../03-tools/privacy/pii-masking.md) | 2026-10-08 從 Day 29 退出; draft 於 2026-10-14 刪除 (同上) |
 | HTB 靶機實測: Claude Code 的目標怎麼被綁架 | [htb/](../htb/htb-abducted-goal-case.md) 三案例 | 2026-10-08 從 Day 24 退出; repo 最長的三篇, 全場獨有 |
 | ~~CTF 實戰: 帶 Claude Code 解 ctf.hackme.quest (Please Hack Me)~~ | [phm/](../phm/README.md) | 2026-10-09 從 Day 25 退出; **2026-10-10 補回 Day 26** |
 | 選模型 × 實測: 同一題 Opus / Sonnet / Haiku 各跑一次 | [model-cost-comparison](../../01-fundamentals/models/model-cost-comparison.md) ＋ 新實測 | 2026-10-08 從 Day 26 退出 (要跑) |
