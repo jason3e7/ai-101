@@ -1,11 +1,12 @@
 ---
 title: AI 101 - Ironman 日期型目錄拆平 Refactor Plan
-tags: [refactor, structure, ironman, 計劃書, pending-approval]
+tags: [refactor, structure, ironman, 計劃書, executed]
 created: 2026-10-17
-status: pending-approval
+status: executed
+executed: 2026-10-17
 ---
 
-# Ironman 日期型目錄拆平 — Refactor Plan (2026-10-17)
+# Ironman 日期型目錄拆平 — Refactor Plan (2026-10-17) ✅ EXECUTED
 
 [← 回主頁](../../index.md)｜[三十篇標題](../ironman/titles.md)｜[參賽規劃](../ironman/plan.md)
 
@@ -139,8 +140,8 @@ assets/
 
 | 檔 | 要改的地方 |
 |---|---|
-| `05-notes/ironman/drafts/day26-30/day30-finale.md` (×2) | `assets/day06-10/day10-cover.png` → `assets/day10-cover.png`; `assets/day11-15/day13-cover.png` → `assets/day13-cover.png` |
-| `05-notes/ironman/publish/day26-30/day30-ithome.md` (×2) | 同上 |
+| `05-notes/ironman/drafts/day30-finale.md` (×2) | `assets/day06-10/day10-cover.png` → `assets/day10-cover.png`; `assets/day11-15/day13-cover.png` → `assets/day13-cover.png` |
+| `05-notes/ironman/publish/day30-ithome.md` (×2) | 同上 |
 | `05-notes/zerojudge/playwright-zerojudge-automation.md` (×2) | `drafts/day21-25/day21-...md` → `drafts/day21-...md` |
 | `05-notes/essays/drafting-with-origin-quotes.md` (×1) | `drafts/day16-20/day20-...md` → `drafts/day20-...md` |
 | `05-notes/ironman/lab01/v07-preview.md` (×1) | `publish/day01-15/day*-ithome.md` → `publish/day*-ithome.md` (這條本來就寫錯, 順便修) |
