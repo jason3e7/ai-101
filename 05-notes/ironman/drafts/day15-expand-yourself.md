@@ -7,7 +7,7 @@ status: draft
 
 # Day 15｜用 AI 拓展自己: 5 個手段主動破舒適圈 — Use AI to Expand Yourself
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > 前 4 天 ([Day 11](./day11-verify-ai-output.md) 到 [Day 14](./day14-squeezed-middle.md)) 一直在講「**小心**用 AI」: 驗證、防鈍化、頂層才值錢. 這篇 pivot 到反面: **怎麼放膽用 AI 但同時把判斷力練出來**. 給 5 個手段 (破舒適圈), 一個現實提醒 (AI 是放大器, 0 × AI = 0), 一個陷阱 (別讓 AI 變成新舒適圈).

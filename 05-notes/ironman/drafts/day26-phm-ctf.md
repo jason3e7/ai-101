@@ -7,7 +7,7 @@ status: draft
 
 # Day 26｜用 Claude Code 刷 CTF — Please Hack Me 目前的測試狀況 — Agentic CTF Solving
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > 這篇把題目從「答案是標準輸出」換成「答案是**藏在二進位檔案 / 加密 / 服務裡的字串**」. 標的: [Please Hack Me CTF](https://ctf.hackme.quest/) (作者 Inndy), 老 CTF 練習站, 101 題分 8 類. 單純想試試看在這種題型上 agent 自己刷能走到哪.

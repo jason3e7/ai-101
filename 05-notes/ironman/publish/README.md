@@ -4,7 +4,7 @@
 
 ## 資料夾結構 — Layout
 
-上稿版依天數每 5 天一組：`day01-05/`、`day06-10/` … `day26-30/`，檔名 `dayNN-ithome.md`。本 README 留在本層。`drafts/` 與 `assets/` 用同一套分組。
+上稿版 30 篇 `dayNN-ithome.md` **平放一層**，不分子資料夾（日期型目錄依 [refactor-note](../../../skills/refactor-note.md) 不套 ≤ 10 上限）。本 README 留在本層。`drafts/` 與 `assets/` 一樣平放。
 
 ## 兩者的差別
 

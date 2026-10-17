@@ -137,7 +137,7 @@ Anne Lamott 在 *[Bird by Bird](https://en.wikipedia.org/wiki/Bird_by_Bird)* 用
 ## 相關 — Related
 
 - [jason3e7-writing-voice skill](../../skills/jason3e7-writing-voice.md) — 把這套 anchor-first 做法編成 skill 的 Do/Don't 版
-- Day 20 iThome 鐵人賽草稿 — 本招的實戰示範 (開頭兩段原話 + 內文展開): `../ironman/drafts/day16-20/day20-ai-style-infection.md`
+- Day 20 iThome 鐵人賽草稿 — 本招的實戰示範 (開頭兩段原話 + 內文展開): `../ironman/drafts/day20-ai-style-infection.md`
 - [AI 的文風與語氣](../../02-advanced/writing-style/ai-writing-style-tells.md) — AI 磨平的具體症狀, 解釋為什麼需要錨點
 - [先驗證再拓展](./ai-verify-then-expand.md) — 跟 AI 協作的另一條基本原則
 

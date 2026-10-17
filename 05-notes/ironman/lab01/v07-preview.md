@@ -12,7 +12,7 @@ created: 2026-09-30
 
 ## 掃描條件
 
-- 範圍: `05-notes/ironman/publish/day01-15/day*-ithome.md` × 15 篇
+- 範圍: `05-notes/ironman/publish/day*-ithome.md` × 15 篇
 - 去除: code fence, inline code, HTML tag, markdown 語法, callout marker, hr, frontmatter
 - 中文字元: 21,567 字 (3,175 個中文字串塊)
 - n-gram 長度: 4–10 個中文字元

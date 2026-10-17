@@ -7,10 +7,10 @@ status: draft
 
 # Day 16｜掃當屆所有文章, 量一次「AI 味」有多少 — Scanning This Year's Ironman for the AI Fingerprint
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
-> 過去 15 天寫下來, 都是我自己在跟 AI 產出搏鬥時累積出來的心法 ([Day 11](../day11-15/day11-verify-ai-output.md) 到 [Day 15](../day11-15/day15-expand-yourself.md) 那段最直接寫成方法). 這篇把體感換成數字: 掃當屆 (2026) 鐵人賽已發布的公開文章, 用最粗最粗的機械指標 (雙破折號 `——` 密度) 量一次 AI 味, 給後續更細的 lab 一條基準線.
+> 過去 15 天寫下來, 都是我自己在跟 AI 產出搏鬥時累積出來的心法 ([Day 11](day11-verify-ai-output.md) 到 [Day 15](day15-expand-yourself.md) 那段最直接寫成方法). 這篇把體感換成數字: 掃當屆 (2026) 鐵人賽已發布的公開文章, 用最粗最粗的機械指標 (雙破折號 `——` 密度) 量一次 AI 味, 給後續更細的 lab 一條基準線.
 
 > **TL;DR (EN):** Scanned all 15,057 public articles across 814 series in the 2026 iThome Ironman contest for one mechanical AI-fingerprint signal: density of `——` (double em dash) per thousand characters, computed over the full article. Chinese writers almost never use it; Claude/Gemini love it. **Results:** 70% of articles have zero hits, overall density 0.86 per 1k. **Biggest surprise:** the ChatGPT & Codex track scores 0.11 per 1k, the lowest of all groups, likely because GPT-5.1 (Nov 2025) started honoring "no em-dash" custom instructions, killing this signal for GPT-based writers. Claude AI track leads at 1.78. Method + CSVs + full ranking in `lab01/`. Co-occurrence signal, not a verdict.
 

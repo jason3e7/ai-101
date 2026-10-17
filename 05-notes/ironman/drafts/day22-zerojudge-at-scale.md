@@ -7,7 +7,7 @@ status: draft
 
 # Day 22｜掃 ZeroJudge 78 題: 只下 prompt, AI 自己解到 AC — Scale-Testing AI Autonomous Solving
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 21](./day21-back-to-verifiable-ground.md) 用 3 題 (a001-a003) 示範「有判准, AI 就能自己判有沒有做對」. 這篇擴到 78 題, 分佈在 ZeroJudge 的三個題庫 (基礎 42 / 競賽 16 / UVa 20). 規則很簡單: **除了登入, 人只下 prompt, 完全不介入解題**. 看看 agentic coding + 判准這套在真實規模下 pass rate 多少、哪種題會卡.

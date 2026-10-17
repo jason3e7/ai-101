@@ -28,7 +28,7 @@ title : [Day 30] 三十天心法總結, 跟著 AI 持續成長
 
 AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個序列的核心 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部都從這一句延伸出來的.
 
-![Day 10 cover — xxx Engineering, 名字會變, 智慧是自己的](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day06-10/day10-cover.png)
+![Day 10 cover — xxx Engineering, 名字會變, 智慧是自己的](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day10-cover.png)
 
 在原理不變的情況下, 「xxx」可能會一直迭代 (prompt → context → harness → loop → 下一個 ...), 但 **要給它什麼, 它才會對**, 是你自己的智慧.
 
@@ -72,7 +72,7 @@ AI 不是通靈, 它只是在猜下一個字 (Day 01). 這句話是整個序列�
 
 * Human Bottleneck
 
-![Day 13 cover — AI 用久了驗證會鈍化](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day11-15/day13-cover.png)
+![Day 13 cover — AI 用久了驗證會鈍化](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/ironman/assets/day13-cover.png)
 
 ## AI 滲入已是不可逆的現在進行式 — The Point of No Return (Day 16-20)
 

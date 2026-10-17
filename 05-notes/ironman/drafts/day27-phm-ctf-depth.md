@@ -7,7 +7,7 @@ status: draft
 
 # Day 27｜把 PHM 多推一段 — 六類全部碰過, 剩下的卡點長什麼樣 — Pushing PHM Further
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 26](day26-phm-ctf.md) 跑完 PHM 1720 pts, 本篇是**接著跑一段**的紀錄: 現在 **4940 pts / 64 題**, 除了 Pwn 跟 Web 剩下深層題外, Misc / Reversing / Crypto / Forensic / Programming / Lucky **每一類都至少碰過一次**. 這篇講新吃掉的題型模式, 跟撞到 Claude Code `cyber-related safeguards` 的那次意外.

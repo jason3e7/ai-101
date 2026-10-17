@@ -7,7 +7,7 @@ status: draft
 
 # Day 18｜翻面問題 — 哪些文章是純手寫, 完全沒碰 AI 的? — Can We Detect Pure Human Writing?
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > 文風檢測三部曲收尾. [Day 16](./day16-ai-fingerprint-scan.md) 用單指紋 (`——`) 掃全屆, [Day 17](./day17-composite-score.md) 疊到 6 個訊號的綜合分數, 這 15 天我又把它養到 **9 個訊號 ＋ 權重微調**. 這篇拿這把最細的尺去問一個**翻面**的問題: 不問「誰像 AI」, 改問「誰是純手寫、完全沒碰 AI」. 結論先講: **這把尺答不出來** —— 而且為什麼答不出來, 比它答得出什麼更值得講. 文末附一個 Tampermonkey script, 讓你瀏覽任何網頁時即時看到 N_sum 與 density.

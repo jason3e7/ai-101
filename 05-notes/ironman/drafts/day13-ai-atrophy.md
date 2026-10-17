@@ -7,7 +7,7 @@ status: draft
 
 # Day 13｜AI 用久了驗證會鈍化 — Verification Fatigue and Cognitive Offloading
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 11](./day11-verify-ai-output.md) 教你六招驗證 AI 產出, [Day 12](./day12-mindmap-skills.md) 讓你用心智清單降低驗證成本. 前兩天在磨你的**工具**, 這篇討論**人的狀況**: 用 AI 用久了, 驗證會鈍化. 拆兩種鈍 (急性 rubber-stamping ＋ 慢性 cognitive offloading), 都有 2025 實證, 也給 5 招有靠山的破法.

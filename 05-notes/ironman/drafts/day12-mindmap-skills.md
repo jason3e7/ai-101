@@ -7,7 +7,7 @@ status: draft
 
 # Day 12｜為了方便人類驗證而生的兩個 skill — Two Skills Built for Human Verification
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 11](./day11-verify-ai-output.md) 的結論是: 你越讓 AI 自主, 你自己的驗證判斷就越是瓶頸. 那能不能讓 AI 的產出**本身就好驗一點**? 今天講我為此做的兩個 skill: condense-mindmap 和 expand-mindmap. 它們不是幫你「產得更多」, 是把產出換成**一眼掃得完的形狀**, 讓你驗得動.

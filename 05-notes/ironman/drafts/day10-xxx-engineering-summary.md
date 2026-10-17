@@ -7,7 +7,7 @@ status: draft
 
 # Day 10｜xxx Engineering 收整: 名字會變, 智慧是自己的
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > 這 4 天 (Day 06 到 09) 我一次丟了四個 xxx Engineering 給你: Prompt / Context / Harness / Loop. 這種文章寫多了, 有個公認副作用: 讀者開始焦慮「怎麼又冒新典範了, 我上個都還沒學會」. 今天不加新詞, 把這四代攤成一條歷史時間軸, 然後回答那個焦慮.
@@ -54,7 +54,7 @@ status: draft
 
 ## 別焦慮: 名字會變, 底層沒變 — Don't Panic
 
-**回到 [Day 01](../day01-05/day01-llm-is-statistics.md).** LLM 到今天還是在做同一件事: 看完前面所有 token, 猜下一個. 這件事從 GPT-3 (2020) 到 Opus 4.7 (2026) 沒變過.
+**回到 [Day 01](day01-llm-is-statistics.md).** LLM 到今天還是在做同一件事: 看完前面所有 token, 猜下一個. 這件事從 GPT-3 (2020) 到 Opus 4.7 (2026) 沒變過.
 
 所以四代 xxx Engineering 之間變的是什麼? **是你介入的槓桿位置.**
 

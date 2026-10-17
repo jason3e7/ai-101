@@ -7,7 +7,7 @@ status: draft
 
 # Day 17｜從 1 個訊號擴到 6 個, 綜合分數再測「AI 味」 — From One Signal to Six: A Composite Score
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 16](./day16-ai-fingerprint-scan.md) 只用一個訊號 (雙破折號 `——`) 掃出 15,057 篇, 發現 ChatGPT & Codex 組只 0.11 每千字, 這個指紋對 GPT 生態已經失效. 單一指標會被模型 upstream 壓掉, 這篇把指標疊到**綜合分數** (6 個 signal, 總量加權型, 公式 B 總和 × N 總和), 重跑一次排名, 看多指紋捕捉到的「AI 味」是什麼樣貌.

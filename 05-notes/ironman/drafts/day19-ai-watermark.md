@@ -7,7 +7,7 @@ status: draft
 
 # Day 19｜這段字是 AI 寫的嗎? 浮水印怎麼運作、為什麼不能當證據 — AI Watermarks: How They Work, Why They Aren't Proof
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 16](./day16-ai-fingerprint-scan.md)-[Day 18](./day18-detecting-pure-human.md) 掃鐵人賽文章用的是「共現訊號」(自己疊的粗偵測). 這篇講**官方做的正式標記** — Claude 從 2026-08-02 開始的文字浮水印 + C2PA metadata, 以及為什麼**查到跟沒查到都不是定論**. 加上一個關鍵數字: 單次 paraphrase 就能移除約 **98%** 的浮水印訊號.

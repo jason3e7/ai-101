@@ -7,7 +7,7 @@ status: draft
 
 # Day 25｜擴大測試 LeetCode LC-75 + NC150, 129 題全 AC — Scaling the Pattern-Density Test Further
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 24](./day24-leetcode-blind75.md) 用 Blind 75 測 LeetCode pattern density 的上限, 69 AC + 6 PREMIUM 本地解, Hard 7 題全一次 AC. 問題來了 — 75 題會不會剛好是**pattern 最厚**那區, 結論站不住? 這篇把實驗再加兩套: **[LC-75 官方 study plan](https://leetcode.com/studyplan/leetcode-75/)** (65 新題) 跟 **[NeetCode 150](https://leetcode.com/problem-list/plakya4j/)** (64 新題 + 1 新 PREMIUM), 總共再加 **130 題**, 看結論撐不撐得住.

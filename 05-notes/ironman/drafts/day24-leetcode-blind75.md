@@ -7,7 +7,7 @@ status: draft
 
 # Day 24｜用 Claude Code 全自動刷 LeetCode Blind 75 — Fully Autonomous Blind 75 With an Agent
 
-[← 回主頁](../../../../index.md)｜[參賽規劃](../../plan.md)｜[三十篇標題](../../titles.md)
+[← 回主頁](../../../index.md)｜[參賽規劃](../plan.md)｜[三十篇標題](../titles.md)
 
 > [!NOTE]
 > [Day 21-23](./day23-zerojudge-cross-tier.md) 的 ZeroJudge 三部曲是「廣度 + 深度 + 救援」, 題庫是台灣 OJ 的入門到五星. 這篇換 LeetCode, 挑 **Blind 75** 這份 FAANG 面試人人都刷過的清單, 看在**訓練資料見過最多次的題庫**上, agent 自己刷能走到哪. 流程跟 ZeroJudge 一致 — Claude 讀題、寫 `.cpp`、本機 g++ 跑範例、Playwright MCP 塞進 Monaco 編輯器送判題、讀 verdict. 我只負責登入.
