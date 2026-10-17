@@ -8,6 +8,6 @@
 |:---|:---|
 | 本層 | **當月**收錄、值得反覆查閱的外部觀點（`yyyymmdd_標題 — 作者.md`） |
 | [`reference/`](reference) | 當月的次要、時效性強、轉述性的觀點 |
-| [`archive/yyyymm/`](archive) | 過去月份，進入下個月後封月歸檔；月內若超過 10 篇，再依**日期範圍**分資料夾（如 `0513-0518/`） |
+| [`archive/yyyymm/`](archive) | 過去月份，進入下個月後封月歸檔；月內檔案**平放一層**，不再切週範圍（日期型目錄依 [refactor-note](../skills/refactor-note.md) 不套 ≤ 10 上限） |
 
 封月時，`reference/` 跟著進 `archive/yyyymm/reference/`，兩個軸（時間、重要性）都保留。規則見 [refactor-note](../skills/refactor-note.md)。
