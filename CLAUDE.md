@@ -172,11 +172,13 @@
 
 ## Git 操作 — Git Workflow
 
-Push 使用 deploy key：
+Push 直接 `git push` 即可：
 
 ```bash
-GIT_SSH_COMMAND="ssh -i ~/.ssh/ai-101-deploy" git push
+git push
 ```
+
+Remote 已設成 `git@github-ai101:jason3e7/ai-101.git`，`~/.ssh/config` 裡的 `Host github-ai101` 綁定 `~/.ssh/deploy_key`，所以不用再帶 `GIT_SSH_COMMAND`。如果換到新環境需重建，用 `git remote set-url origin git@github-ai101:jason3e7/ai-101.git` 並補 SSH host alias。
 
 Commit message 格式（需包含 Co-Authored-By）：
 
