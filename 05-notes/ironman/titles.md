@@ -9,9 +9,9 @@ created: 2026-08-31
 [← 回主頁](../../index.md)｜[參賽規劃](./plan.md)
 
 > [!NOTE]
-> 三十篇的**現況板**. 已發布 29 篇 (Day 1-29), 剩 Day 30 總結. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
+> 三十篇的**現況板**. **全部 30 篇已發布** (Day 1-30), 鐵人賽完賽. 每次排定或變更, 順手記在下方 [變更歷程](#變更歷程--changelog).
 
-> **TL;DR (EN):** Thirty working titles for the Claude AI group. Twenty-nine published (Day 1-29), only the Day 30 finale left. The "合" arc (Day 21-30) landed as: Day 21 pivots back to verifiable ground (code), Day 22-23 scale/deepen on ZeroJudge, Day 24-25 run LeetCode (Blind 75 then LC-75+NC150), Day 26-28 run PHM CTF (status → six-categories → Top 10 wrap), Day 29 switches to HTB with /goal, Day 30 wraps the thirty-day distillation.
+> **TL;DR (EN):** Thirty working titles for the Claude AI group. **All 30 published** — challenge complete. The "合" arc (Day 21-30) landed as: Day 21 pivots back to verifiable ground (code), Day 22-23 scale/deepen on ZeroJudge, Day 24-25 run LeetCode (Blind 75 then LC-75+NC150), Day 26-28 run PHM CTF (status → six-categories → Top 10 wrap), Day 29 switches to HTB with /goal, Day 30 wraps the thirty-day distillation.
 
 ---
 
@@ -96,14 +96,15 @@ AI 心法三十天：用 Claude Code 當實驗場，從提問、驗證到拓展�
 | 27 | 用 Claude Code 刷 CTF — 六類全部碰過, 剩下的卡點長什麼樣 | [phm/](../phm/README.md) + [essays/claude-code-cyber-safeguard](../essays/claude-code-cyber-safeguard.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423456) |
 | 28 | 用 Claude Code 刷 CTF — 進 Top 10, 剩下的題剛好是 AI agent 的四面牆 | [phm/](../phm/README.md) + Top 10 rank snapshot | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10423733) |
 | 29 | 從 CTF 換到 HTB, 用 goal 測試了兩次, agent 還自己組出 RDP 工具鏈 | [htb/cap-2026-10-13/](../htb/cap-2026-10-13/cap-with-goal.md) + [htb/touch-2026-10-13/](../htb/touch-2026-10-13/touch-with-goal.md) | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10424068) |
-| 30 | 三十天心法總結, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 📅 預計 |
+| 30 | 三十天心法總結, 跟著 AI 持續成長 | **方向：跟著 AI 持續成長**（jason3e7 指定） | 🚀 [已發布](https://ithelp.ithome.com.tw/articles/10424292) |
 
-**盤點**: 🚀 已發布 29 篇 (Day 1-29) · 📅 預計 1 篇 (Day 30). 合計 30. Day 30 總結範圍待定稿.
+**盤點**: 🚀 已發布 **30 篇** (Day 1-30). **完賽** 🎉
 
 ---
 
 ## 變更歷程 — Changelog
 
+- **2026-10-17**: Day 30 (三十天心法總結, 跟著 AI 持續成長) 發布 → [10424292](https://ithelp.ithome.com.tw/articles/10424292). **鐵人賽完賽**, Day 1-30 全部上線. 核心心法「活到老, 用到老, 用中學」收在 Takeaways. Cover 用 🪨 寶藏箱 emoji + 「我把所有財寶都放在這了」slogan.
 - **2026-10-14 (稍晚)**: 對照實際發布內容校正 Day 21-23 的標題與素材 — 本檔原本記的是舊規劃版 (權限 / `/goal`+Hook / Workflow×Goal), 但實際上 Day 21 發的是「回到好驗證的主場」轉場文, Day 22-23 是 ZeroJudge 掃全 + 進階兩篇. 原本排進去的 Claude Code 概念筆記 (`permissions`/`goal`/`goal-enforcement-hooks`/`workflow-goal-combo`) 本系列沒獨立成篇, 概念內容仍留在 `01-fundamentals/claude-code/`. 同時刪除候補池兩個未使用的 draft (day25-what-ai-replaces + day27-self-hosted-llm), 題目保留在池內備用.
 - **2026-10-14**: Day 29 (HTB /goal 兩次測試 + agent 自己組 RDP 工具鏈) 發布 → [10424068](https://ithelp.ithome.com.tw/articles/10424068). 子系列從 CTF 跨到 HTB, 用一組 `/goal` 四段骨架 + 共用 `CLAUDE.md` INTEGRITY RULES 跑兩個同天案例: **Cap** (easy, 26 分鐘 user+root) + **Touch** (卡在 kiosk 逃逸, 但 agent 自己用 Xvfb + xfreerdp + xdotool + ImageMagick import 組出 agentic RDP pipeline). 已發布 28 → 29 篇, 剩 Day 30 總結.
 - **2026-10-13**: Day 28 (PHM CTF 最後一輪 — Top 10 / AI agent 的四面牆) 發布 → [10423733](https://ithelp.ithome.com.tw/articles/10423733). CTF 子系列收尾: 4940 → 6620 pts / 64 → 74 題 / **歷史全站 Rank 10**; 101 題每題獨自跑過一次, 剩 27 題收斂成四面牆 (md5 agent 沒上網查 / libc 版本沒環境 / 強模型未試 / 單題也會撞 cyber safeguard). 已發布 27 → 28 篇, 剩 Day 29 小結 / Day 30 總結.
