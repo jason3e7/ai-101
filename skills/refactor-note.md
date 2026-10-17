@@ -1,6 +1,6 @@
 ---
 name: refactor-note
-description: 重構筆記或資料夾結構時：先寫 refactor 結構計劃書給用戶核准，核准後才動手。核心原則是注意力上限（任一層級 ≤ 10，理想 7）
+description: 重構筆記或資料夾結構時：先寫 refactor 結構計劃書給用戶核准，核准後才動手。核心原則是注意力上限（任一層級 ≤ 10，理想 7；日期型目錄例外，無上限）
 tags: [refactor, note-management, information-architecture, structure]
 ---
 
@@ -67,6 +67,16 @@ tags: [refactor, note-management, information-architecture, structure]
 - **一篇筆記裡同一層的小標 / 清單項** ≤ 10
 
 > **7 是比較合理的目標數字，10 是硬上限。**
+
+### 例外：日期型目錄不套上限 — Date-Based Exemption
+
+**檔名或路徑含明確日期單位的目錄，不套 ≤ 10 限制。** 日期本身就是天然分組（線性排序 + 時間索引），不需要再切子資料夾。例如：
+
+- `dayNN` 系列（鐵人賽 `drafts/day01-...md ... day30-...md` 30 篇平放一層）
+- `yyyymm` 月份歸檔（`06-external/archive/yyyymm/` 一個月放幾十篇）
+- `yyyymmdd_` 前綴的事件/案例筆記（`htb/cap-2026-10-13/` 這類日期+事件命名）
+
+這條覆寫上面三條 ≤ 10 中與「資料夾裡的東西總數」有關的那條——日期是本來就不會混淆的 index，分子資料夾反而阻礙閱讀。但第一層資料夾數量跟筆記內小標數量仍受 ≤ 10 約束。
 
 ## 怎麼套用 — How to Apply
 

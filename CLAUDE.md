@@ -141,7 +141,7 @@
   - `experiments/` → 實測與實驗記錄
   - `essays/` → 自己的論述與方法
   - `design-and-guides/` → 設計稿與寫作指南
-  - `ironman/` → 鐵人賽（`drafts/`、`publish/`、`assets/` 每 5 天一組）
+  - `ironman/` → 鐵人賽（`drafts/`、`publish/`、`assets/` 下的 `dayNN-slug.md` 平放一層，不分子資料夾——日期型目錄不套 `refactor-note` 的 ≤ 10 上限）
   - `htb/` → HTB 靶機案例
 - `06-external/` → 外部文章、貼文、研究的收錄
   - 本層只放**當月**；`reference/` → 當月次要、時效性強、轉述性的觀點
@@ -149,6 +149,8 @@
 - `skills/` → Claude Code Skill（工作模式與判斷邏輯）
 
 > 子資料夾依 `refactor-note` 原則建立（單層 ≤ 10、理想 7）。放筆記前先看該層是否已接近上限。
+>
+> **例外：日期型目錄不套 ≤ 10 上限。** 檔名或路徑含明確日期單位（`dayNN`、`yyyymm`、`yyyymmdd_` 等），日期本身就是天然分組，單一層放多少檔都沒差。例如 `06-external/archive/yyyymm/` 的月份目錄、`ironman/drafts/` 下 30 篇 `dayNN-slug.md`，都平放一層不再分子資料夾。
 
 ### 索引與遷移狀態
 
