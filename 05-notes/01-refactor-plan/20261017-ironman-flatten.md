@@ -7,7 +7,7 @@ status: pending-approval
 
 # Ironman 日期型目錄拆平 — Refactor Plan (2026-10-17)
 
-[← 回主頁](../../index.md)｜[三十篇標題](./titles.md)｜[參賽規劃](./plan.md)
+[← 回主頁](../../index.md)｜[三十篇標題](../ironman/titles.md)｜[參賽規劃](../ironman/plan.md)
 
 > [!NOTE]
 > 依據 2026-10-17 更新的 [refactor-note](../../skills/refactor-note.md) 規則「**日期型目錄不套 ≤ 10 上限**」, 把 `ironman/drafts/`、`ironman/publish/`、`ironman/assets/` 底下的 5 天分組子資料夾 (`day01-05/` ... `day26-30/`) 全部拆平, 讓 30 篇 `dayNN-*` 檔案平放一層. 本份是計劃書, **等用戶核准後才執行**.
@@ -182,7 +182,7 @@ assets/
 **4 個 commit**, 按順序:
 
 ### Commit 1 — 計劃書 (就是本份)
-- `05-notes/ironman/REFACTOR-PLAN-20261017-flatten.md`
+- `05-notes/01-refactor-plan/20261017-ironman-flatten.md`
 - 內容: 本文件
 - 推上去等用戶審
 
