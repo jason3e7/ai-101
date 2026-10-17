@@ -4,7 +4,7 @@ title : [Day 30] 三十天心法總結, 跟著 AI 持續成長
 
 > 如果 30 天的文章要看哪一篇, 就看這篇總結就好, 我把所有財寶都放在這了.
 
-## 原理 — The Through-Line ([Day 01](https://ithelp.ithome.com.tw/articles/10411345), Day 06-10)
+## 原理 — The Through-Line (Day 01, Day 06-10)
 
 AI 不是通靈, 它只是在猜下一個字 ([Day 01](https://ithelp.ithome.com.tw/articles/10411345)). 這句話是整個系列的核心 — 它會的事、它不會的事、怎麼餵它、怎麼驗它、怎麼讓它自己跑, 全部都從這一句延伸出來的.
 
