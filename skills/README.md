@@ -15,18 +15,18 @@ created: 2026-09-26
 
 | Skill | 做什麼 | 格式 |
 |:---|:---|:---|
-| [condense-mindmap](./condense-mindmap/SKILL.md) | 一堆資料 → 濃縮成 markdown 巢狀清單心智圖（收斂、忠實度優先，每節點可追回原文） | SKILL.md（英） |
-| [expand-mindmap](./expand-mindmap/SKILL.md) | 一點種子 → 研究後放大成心智圖（發散，推測節點用 `(?)` 標記） | SKILL.md（英） |
-| [refactor-note](./refactor-note.md) | 重構筆記或資料夾時套「注意力上限」：每層 ≤ 7、硬上限 10，超過就分組（日期型目錄例外，無上限） | 輕量（中） |
-| [curate-notes](./curate-notes.md) | 判斷一篇外部筆記該放 `06-external/` 根目錄還是 `reference/` 子夾 | 輕量（中） |
-| [working-style](./working-style.md) | jason3e7 在本庫的工作模式與協作偏好，供新 session 快速對齊 | 輕量（中） |
-| [jason3e7-writing-voice](./jason3e7-writing-voice.md) | jason3e7 個人文風約束 (半形標點、動詞開頭、無破折號、無 AI 冗詞). 寫任何要用 jason3e7 名義發表的內容時套用. 只管文風不管結構 | 輕量（中） |
+| [condense-mindmap](condense-mindmap/SKILL.md) | 一堆資料 → 濃縮成 markdown 巢狀清單心智圖（收斂、忠實度優先，每節點可追回原文） | SKILL.md（英） |
+| [expand-mindmap](expand-mindmap/SKILL.md) | 一點種子 → 研究後放大成心智圖（發散，推測節點用 `(?)` 標記） | SKILL.md（英） |
+| [refactor-note](refactor-note.md) | 重構筆記或資料夾時套「注意力上限」：每層 ≤ 7、硬上限 10，超過就分組（日期型目錄例外，無上限） | 輕量（中） |
+| [curate-notes](curate-notes.md) | 判斷一篇外部筆記該放 `06-external/` 根目錄還是 `reference/` 子夾 | 輕量（中） |
+| [working-style](working-style.md) | jason3e7 在本庫的工作模式與協作偏好，供新 session 快速對齊 | 輕量（中） |
+| [jason3e7-writing-voice](jason3e7-writing-voice.md) | jason3e7 個人文風約束 (半形標點、動詞開頭、無破折號、無 AI 冗詞). 寫任何要用 jason3e7 名義發表的內容時套用. 只管文風不管結構 | 輕量（中） |
 
 ## 未啟用 — Draft
 
 | Skill | 做什麼 | 狀態 |
 |:---|:---|:---|
-| [note-lifecycle](./tmp/note-lifecycle.md) | 判斷一篇筆記何時該刪、刪前的替代方案 | 草稿，放 `tmp/`，待啟用決定 |
+| [note-lifecycle](tmp/note-lifecycle.md) | 判斷一篇筆記何時該刪、刪前的替代方案 | 草稿，放 `tmp/`，待啟用決定 |
 
 ## 兩種格式 — Two Formats
 

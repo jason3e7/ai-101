@@ -10,7 +10,7 @@
 1. **清楚概念** — 理解「這是什麼、為什麼重要」
 2. **快速上手** — 能立刻照著做，不需要再查其他資料
 
-📖 完整索引與學習路徑請見 [**index.md**](./index.md)
+📖 完整索引與學習路徑請見 [**index.md**](index.md)
 
 ---
 
@@ -18,14 +18,14 @@
 
 | 分類 | 內容 | 篇數 |
 |:---|:---|---:|
-| [**01 基礎概念 / Fundamentals**](./01-fundamentals) | 核心概念、實用技巧、Agent Skills；子分類 `claude-code/`、`api/`、`models/` | 15 |
-| [**02 進階觀念 / Advanced**](./02-advanced) | 四個主題：`engineering/`（Prompt → Context → Harness → Loop）、`capabilities/`（能力全景圖、執行手冊）、`limits-and-verification/`（LLM 極限、驗證）、`writing-style/`（AI 文風） | 17 |
-| [**03 AI 工具 / Tools**](./03-tools) | 可安裝的工具筆記；子分類 `security/`、`agents-platforms/`、`privacy/` | 15 |
-| [**04 本地 LLM / Local LLM**](./04-local-llm) | Ollama、vLLM、Gemma、輕量模型選型、無審查模型 | 5 |
-| [**05 個人筆記 / Notes**](./05-notes) | 實測（`experiments/`）、論述（`essays/`）、設計稿（`design-and-guides/`）、HTB 案例 | 16 |
-| [**iThome 鐵人賽 2026**](./05-notes/ironman) | 「AI 心法三十天」的規劃、草稿與上稿版 | 13 篇已發布 |
-| [**06 外部觀點 / External**](./06-external) | 外部文章、貼文、研究的整理；過去月份收在 `archive/yyyymm/` | 76 |
-| [**Skills**](./skills) | 給 Claude 用的可重複工作流程：心智清單（濃縮／放大）、筆記重構、文風 | 6 |
+| [**01 基礎概念 / Fundamentals**](01-fundamentals) | 核心概念、實用技巧、Agent Skills；子分類 `claude-code/`、`api/`、`models/` | 15 |
+| [**02 進階觀念 / Advanced**](02-advanced) | 四個主題：`engineering/`（Prompt → Context → Harness → Loop）、`capabilities/`（能力全景圖、執行手冊）、`limits-and-verification/`（LLM 極限、驗證）、`writing-style/`（AI 文風） | 17 |
+| [**03 AI 工具 / Tools**](03-tools) | 可安裝的工具筆記；子分類 `security/`、`agents-platforms/`、`privacy/` | 15 |
+| [**04 本地 LLM / Local LLM**](04-local-llm) | Ollama、vLLM、Gemma、輕量模型選型、無審查模型 | 5 |
+| [**05 個人筆記 / Notes**](05-notes) | 實測（`experiments/`）、論述（`essays/`）、設計稿（`design-and-guides/`）、HTB 案例 | 16 |
+| [**iThome 鐵人賽 2026**](05-notes/02-project/2026ironman) | 「AI 心法三十天」的規劃、草稿與上稿版 | 13 篇已發布 |
+| [**06 外部觀點 / External**](06-external) | 外部文章、貼文、研究的整理；過去月份收在 `archive/yyyymm/` | 76 |
+| [**Skills**](skills) | 給 Claude 用的可重複工作流程：心智清單（濃縮／放大）、筆記重構、文風 | 6 |
 
 ---
 
@@ -57,10 +57,10 @@ Claude Code · Prompt Engineering · Context Engineering · Harness Engineering 
 - **繁體中文**為主，技術名詞首次出現附英文原文；標題採中英雙語（L2），文字要「老嫗能解」
 - 檔名／資料夾用英文 kebab-case；callout 用 GitHub 原生 alert 語法
 - 每份筆記結構：是什麼 → **心智清單** → 安裝 → 基本使用 → 進階 → 常見問題 → Sources
-- 每一層的項目數不超過 10、理想 7，超過就分組（見 [refactor-note](./skills/refactor-note.md)）
+- 每一層的項目數不超過 10、理想 7，超過就分組（見 [refactor-note](skills/refactor-note.md)）
 - 有做 web research 的筆記一定附 **Sources** 區塊
 
-詳見 [CLAUDE.md](./CLAUDE.md)。
+詳見 [CLAUDE.md](CLAUDE.md)。
 
 ---
 

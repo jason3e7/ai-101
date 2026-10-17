@@ -48,7 +48,7 @@
 - 不加粗體標籤（根節點本身就是「看全篇」那句）
 - code block 內是字面文字，別用行內程式碼語法（例如寫 `(?)` 而非 `` `(?)` ``）
 
-**產生方式（用哪個 skill）**：詳細判斷邏輯見 [`skills/working-style.md`](./skills/working-style.md) 的「心智清單: skill 選擇」段。簡版：材料已足要收斂 → `condense-mindmap`；材料少要生成 → `expand-mindmap`。判斷不出來看字數（≤ 500 字 expand、> 500 字 condense）。
+**產生方式（用哪個 skill）**：詳細判斷邏輯見 [`skills/working-style.md`](skills/working-style.md) 的「心智清單: skill 選擇」段。簡版：材料已足要收斂 → `condense-mindmap`；材料少要生成 → `expand-mindmap`。判斷不出來看字數（≤ 500 字 expand、> 500 字 condense）。
 
 ### 語言：中英雙讀者友善（Bilingual, L2）＋老嫗能解
 

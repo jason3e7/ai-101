@@ -45,7 +45,7 @@
 | 總耗時 | 約 26 分鐘 (10:40 → 11:06 CST) |
 | 結果 | user + root flag 全拿 |
 
-![HTB Cap solved — jason3e7, 450 XP](./05-htb-cap-solved.jpg)
+![HTB Cap solved — jason3e7, 450 XP](05-htb-cap-solved.jpg)
 
 ---
 
@@ -94,7 +94,7 @@ Do not escalate privileges until next session
 
 ### Prompt (截圖原文)
 
-![/goal foothold prompt — Mythos 5.1](./01-goal-foothold-prompt.jpg)
+![/goal foothold prompt — Mythos 5.1](01-goal-foothold-prompt.jpg)
 
 四段式骨架:
 
@@ -106,7 +106,7 @@ Do not escalate privileges until next session
 
 ### Agent 跑完的輸出
 
-![Foothold 完成 — IDOR → 0.pcap → nathan credentials → SSH shell](./02-foothold-done.jpg)
+![Foothold 完成 — IDOR → 0.pcap → nathan credentials → SSH shell](02-foothold-done.jpg)
 
 6 個關鍵動作, 全部 agent 自己判斷:
 
@@ -125,7 +125,7 @@ Do not escalate privileges until next session
 
 ### 切模型 + 新 goal
 
-![/model → Opus 5 + /goal 提權 prompt](./03-model-opus5-goal-privesc.jpg)
+![/model → Opus 5 + /goal 提權 prompt](03-model-opus5-goal-privesc.jpg)
 
 **關鍵設計**: 不接著原 session, 開新的, 原因:
 - Foothold session 的 context 已塞滿 recon 輸出 (nmap/ffuf/web_data 等), 繼續跑容易 recent bias (一直想 revisit 已跑過的)
@@ -153,7 +153,7 @@ Privesc goal 骨架一樣四段, 但 Phase 內容換成本機列舉:
 
 ### Agent 跑完的輸出
 
-![Privesc 完成 — python3.8 cap_setuid → root](./04-privesc-done.jpg)
+![Privesc 完成 — python3.8 cap_setuid → root](04-privesc-done.jpg)
 
 提權的推理鏈 (全部 agent 自己走):
 

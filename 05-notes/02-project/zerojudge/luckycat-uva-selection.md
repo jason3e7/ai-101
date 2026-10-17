@@ -1,6 +1,6 @@
 # 幸運貓 UVa 選題 — Luckycat UVa Picks (KSHS, 2007–2010)
 
-[← 回 ZeroJudge Index](./README.md)
+[← 回 ZeroJudge Index](README.md)
 
 > [!NOTE]
 > 「幸運貓」是 **高雄高中 (KSHS)** 當年維護的 UVa 選題頁 (`luckycat.kshs.kh.edu.tw/select.asp`), 替高中生挑了一批有梗、tag 清楚、難度分佈平均的 UVa 題. 原站已離線, 下面這份題單是從 [Wayback Machine 2011-02-24 快照](https://web.archive.org/web/20110224190331/http://luckycat.kshs.kh.edu.tw/select.asp) 抓的, 收 2007/4 – 2010/10 之間 **32 題**, 之後要挑下一輪 UVa 來丟 ZeroJudge 時可以直接按圖索驥.

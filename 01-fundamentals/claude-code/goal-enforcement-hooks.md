@@ -366,8 +366,8 @@ if __name__ == "__main__":
 
 ## 相關筆記 — Related
 
-- [AI 101 - Claude Code goal](./goal.md) — `/goal` 完整說明（包含第三方 jthack/claude-goal skill）
-- [AI 101 - Claude Code 行為結構設計](./behavior-design.md) — Hook 設定格式的 Hello World 入門
+- [AI 101 - Claude Code goal](goal.md) — `/goal` 完整說明（包含第三方 jthack/claude-goal skill）
+- [AI 101 - Claude Code 行為結構設計](behavior-design.md) — Hook 設定格式的 Hello World 入門
 
 ## Sources
 

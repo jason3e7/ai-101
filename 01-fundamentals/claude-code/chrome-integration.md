@@ -259,8 +259,8 @@ Claude Code CLI 的登入帳號和 Chrome extension 的帳號必須相同，不�
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](./ecosystem.md) — Skills、Hooks、MCP、Plugins、Subagents 的關係
-- [AI 101 - Claude Code 行為結構設計](./behavior-design.md) — Hook 等行為結構設計入門
+- [AI 101 - Claude Code 生態系](ecosystem.md) — Skills、Hooks、MCP、Plugins、Subagents 的關係
+- [AI 101 - Claude Code 行為結構設計](behavior-design.md) — Hook 等行為結構設計入門
 
 ## Sources
 

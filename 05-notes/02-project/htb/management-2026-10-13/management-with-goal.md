@@ -46,7 +46,7 @@
 | 總耗時 | 約 57 分鐘 (foothold 52m + privesc 5m) |
 | 結果 | user + root flag 全拿 |
 
-![HTB Management solved — jason3e7, 585 XP, Insane](./04-htb-management-solved.jpg)
+![HTB Management solved — jason3e7, 585 XP, Insane](04-htb-management-solved.jpg)
 
 ---
 
@@ -95,7 +95,7 @@ Do not escalate privileges until next session
 
 ### Prompt (開場用 Mythos 5.1)
 
-![/model Mythos 5.1 + /goal — Phase 1 recon prompt](./01-goal-foothold-mythos.jpg)
+![/model Mythos 5.1 + /goal — Phase 1 recon prompt](01-goal-foothold-mythos.jpg)
 
 prompt 骨架跟 [Cap 案例](../cap-2026-10-13/cap-with-goal.md) 完全一樣 (Target + Environment 工具自備清單 + STRICT logging + Phase 1/2/3 + 7 小時硬停). 不改模板, 只換 target IP, 這點很重要 — 下面會看到相同 prompt 在不同模型敏感度差異多大.
 
@@ -148,7 +148,7 @@ Claude Code 的 UI 顯示 Session 1 跑了 **52m 3s**. 從 `recon/` 底下 88 �
 
 ### Opus 5 接手之後完成的 chain
 
-![Foothold 完成 (切 Opus 5 後) — OpenDJ 反序列化 → openam RCE → GLPI → owen SSH](./02-foothold-done-after-opus5-switch.jpg)
+![Foothold 完成 (切 Opus 5 後) — OpenDJ 反序列化 → openam RCE → GLPI → owen SSH](02-foothold-done-after-opus5-switch.jpg)
 
 從 agent 自己做的 5 步摘要:
 
@@ -173,7 +173,7 @@ Claude Code 的 UI 顯示 Session 1 跑了 **52m 3s**. 從 `recon/` 底下 88 �
 
 ### Agent 跑完的輸出
 
-![Privesc done — rdiff-backup sudo wildcard → root key → ssh root](./03-privesc-done.jpg)
+![Privesc done — rdiff-backup sudo wildcard → root key → ssh root](03-privesc-done.jpg)
 
 5 步 (全部 agent 自己走):
 

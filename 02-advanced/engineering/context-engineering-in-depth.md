@@ -9,7 +9,7 @@ created: 2026-09-21
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> Prompt Engineering 早就不夠了. 2025 年 6 月, Tobi Lütke (Shopify CEO) 和 Andrej Karpathy 幾乎同時把「Context Engineering」推到公眾視野, 到 2026 年 Anthropic 官方 engineering blog 發〈Effective context engineering for AI agents〉, 這門學科正式站穩. 這篇跟 [Context Engineering (Claude Code 使用者角度)](./context-engineering.md) 那篇不同: 換一個角度, 拆**這門學科的 9 個組成、4 種操作、3 個核心原理**. 主要參考 ihower 的中文入門 + Anthropic engineering blog + LangChain 的實作觀察.
+> Prompt Engineering 早就不夠了. 2025 年 6 月, Tobi Lütke (Shopify CEO) 和 Andrej Karpathy 幾乎同時把「Context Engineering」推到公眾視野, 到 2026 年 Anthropic 官方 engineering blog 發〈Effective context engineering for AI agents〉, 這門學科正式站穩. 這篇跟 [Context Engineering (Claude Code 使用者角度)](context-engineering.md) 那篇不同: 換一個角度, 拆**這門學科的 9 個組成、4 種操作、3 個核心原理**. 主要參考 ihower 的中文入門 + Anthropic engineering blog + LangChain 的實作觀察.
 
 > **TL;DR (EN):** Context Engineering is the discipline of dynamically assembling the smallest possible set of high-signal tokens the model needs for the next step. Coined publicly by Tobi Lütke and Karpathy in mid-2025, mainstream by 2026, it replaces "Prompt Engineering" as the load-bearing skill in serious LLM apps. Break it down into nine components (system prompt, user input, short/long-term memory, RAG, tools, tool responses, structured output, workflow state), four operations (write, select, compress, isolate — Lance Martin), and three architectural constraints (finite attention budget, n² context rot, distraction). Practical takeaway: don't preload; retrieve just-in-time; compact aggressively; delegate messy exploration to sub-agents; never optimize a prompt when the real problem is that the model is looking at the wrong thing.
 
@@ -74,7 +74,7 @@ Lance Martin (LangChain) 整理的動作分類, 現在被廣泛引用. 這四個
 
 **三、Distraction.** 模型看到不相關的東西, 會被引導往不相關的方向去. 這比「看不到」還糟, 因為它會**自信地**答錯.
 
-所以 Context Engineering 的核心不是「塞更多」, 是「塞剛好」. 這跟姊妹篇 [Context Engineering (Claude Code 使用者角度)](./context-engineering.md) 講的「不要把所有 MCP 都裝上」是同一件事的兩個講法.
+所以 Context Engineering 的核心不是「塞更多」, 是「塞剛好」. 這跟姊妹篇 [Context Engineering (Claude Code 使用者角度)](context-engineering.md) 講的「不要把所有 MCP 都裝上」是同一件事的兩個講法.
 
 > [!WARNING]
 > **「窗越大越好塞更多」是 2023 年的直覺.** 早期上下文窗小, 大家在爭誰能塞更多; 現在窗夠大了 (200k+), 但**能不能用好塞進去的東西**才是瓶頸. 200k 窗塞到 180k, 效能通常比塞 30k 差, 不是好.
@@ -88,7 +88,7 @@ Harrison Chase 把失敗歸兩類 (missing context, poor formatting), Anthropic 
 | 失敗 | 症狀 | 對策 |
 |:---|:---|:---|
 | **Missing context** | 模型答錯, 因為根本沒看到關鍵資訊 | 檢查 RAG 有沒有漏檢、tool 有沒有被呼叫 |
-| **Poor formatting** | 資訊都在 context 裡但模型抓不到 | 加 XML 標籤或明確標題分區; 見 [Day 06](../../05-notes/ironman/drafts/day06-prompt-engineering.md) 的通用範本 |
+| **Poor formatting** | 資訊都在 context 裡但模型抓不到 | 加 XML 標籤或明確標題分區; 見 [Day 06](../../05-notes/02-project/2026ironman/drafts/day06-prompt-engineering.md) 的通用範本 |
 | **Context rot** | 對話越長答案越糊 | Compaction (階段性摘要)、note-taking (寫檔案)、sub-agent 隔離 |
 | **Tool overload** | 工具太多, 模型選錯或該用的沒用 | 收斂到最相關的 3 到 5 個; MCP 分開安裝 |
 | **Preloading everything** | 每輪都吃掉一半 window 在載無關資料 | Just-in-time retrieval: 只給 identifier, 需要時才 load |
@@ -100,10 +100,10 @@ Anthropic 那篇有一條很反直覺的實作建議: **「Do the simplest thing
 
 ## 相關筆記 — Related
 
-- [Context Engineering (Claude Code 使用者角度)](./context-engineering.md), 常駐/按需/工具/隔離 四層, CLAUDE.md/Skills/Hooks/Subagents 的分工
-- [Harness Engineering](./harness-engineering.md), 70% AI 效能來自外層框架, Context Engineering 是其中一環
-- [Loop Engineering](./loop-engineering.md), 從單輪擴大到多輪, Context 就變成跨輪的變數
-- [Day 06 Prompt Engineering](../../05-notes/ironman/drafts/day06-prompt-engineering.md), Prompt 只是 Context 的第 2 塊
+- [Context Engineering (Claude Code 使用者角度)](context-engineering.md), 常駐/按需/工具/隔離 四層, CLAUDE.md/Skills/Hooks/Subagents 的分工
+- [Harness Engineering](harness-engineering.md), 70% AI 效能來自外層框架, Context Engineering 是其中一環
+- [Loop Engineering](loop-engineering.md), 從單輪擴大到多輪, Context 就變成跨輪的變數
+- [Day 06 Prompt Engineering](../../05-notes/02-project/2026ironman/drafts/day06-prompt-engineering.md), Prompt 只是 Context 的第 2 塊
 - [Claude 顯示 thinking 是什麼機制](../capabilities/how-claude-shows-thinking.md), thinking blocks 也計入 context window
 
 ## Sources

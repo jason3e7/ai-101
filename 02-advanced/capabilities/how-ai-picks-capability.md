@@ -176,7 +176,7 @@ MoE 的 router 是**逐 token** 運作的 - 同一句話裡，不同的字可能
 
 ## 回頭檢驗那兩條等式 — Are Those Equations Real?
 
-[AI 能力全景圖](./ai-capability-landscape.md)裡有兩條拆解：
+[AI 能力全景圖](ai-capability-landscape.md)裡有兩條拆解：
 
 ```
 分析 ＝ 抽取（低階收斂）→ 統整（高階收斂）→ 評估（高階收斂）
@@ -220,7 +220,7 @@ MoE 的 router 是**逐 token** 運作的 - 同一句話裡，不同的字可能
 
 ## 相關筆記
 
-- [AI 101 - AI 能力全景圖](./ai-capability-landscape.md) - 這篇檢驗的那兩條等式的出處
+- [AI 101 - AI 能力全景圖](ai-capability-landscape.md) - 這篇檢驗的那兩條等式的出處
 - [AI 101 - LLM 的極限](../limits-and-verification/llm-limitations.md) - 為什麼驗證必須來自外部
 - [AI 101 - Context Engineering](../engineering/context-engineering.md) - 既然任務是從語境推論的，餵什麼就決定推成什麼
 - [AI 101 - 核心概念](../../01-fundamentals/core-concepts.md) - Agent、RAG、幻覺等基礎詞彙

@@ -194,8 +194,8 @@ Project Settings 優先於 User Settings。若還有 `settings.local.json`，它
 
 ## 相關筆記
 
-- [AI 101 - Claude Code 生態系](./ecosystem.md) — Skills、Hooks、MCP 的關係
-- [AI 101 - Claude Code goal 強制力 Hook](./goal-enforcement-hooks.md) — 用 Hook 在權限之外再加一層行為控制
+- [AI 101 - Claude Code 生態系](ecosystem.md) — Skills、Hooks、MCP 的關係
+- [AI 101 - Claude Code goal 強制力 Hook](goal-enforcement-hooks.md) — 用 Hook 在權限之外再加一層行為控制
 
 ## Sources
 

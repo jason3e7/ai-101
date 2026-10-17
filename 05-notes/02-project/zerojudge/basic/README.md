@@ -56,4 +56,4 @@ echo "world" | ./a001   # -> hello, world
 
 ## 相關筆記
 
-- [用 Playwright 自動操作 ZeroJudge (送出答案的坑)](./playwright-zerojudge-automation.md)
+- [用 Playwright 自動操作 ZeroJudge (送出答案的坑)](playwright-zerojudge-automation.md)

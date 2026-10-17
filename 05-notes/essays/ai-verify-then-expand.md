@@ -97,7 +97,7 @@ updated: 2026-07-12
 
 兩條線在這裡接起來：
 
-**拓展 = 把自己丟進不熟的領域**（要賺錢、要成長，就得進新地方）。而**新領域正是你最不會判斷對錯的地方**——你在那裡是新手。KB 裡的 BCG 研究說得很清楚：AI 出錯的前沿，**新手掉 19 分，能識破瑕疵的專家反而勝**（見 [知識壁壘那篇](./ai-and-knowledge-barriers.md)）。
+**拓展 = 把自己丟進不熟的領域**（要賺錢、要成長，就得進新地方）。而**新領域正是你最不會判斷對錯的地方**——你在那裡是新手。KB 裡的 BCG 研究說得很清楚：AI 出錯的前沿，**新手掉 19 分，能識破瑕疵的專家反而勝**（見 [知識壁壘那篇](ai-and-knowledge-barriers.md)）。
 
 所以**驗證不是拓展的對立面，是它的安全繩**：
 
@@ -113,8 +113,8 @@ updated: 2026-07-12
 
 ## 相關筆記 — Related
 
-- [AI 打破知識壁壘：被夾殺的知識中產](./ai-and-knowledge-barriers.md) —— 為什麼判斷力與拓展力變成關鍵
-- [用 Prompt 生成好 Prompt](./meta-prompting.md) —— 線一「寫 prompt 端」的具體實作（5 要素 = 列假設 + 列步驟 + 給依據）
+- [AI 打破知識壁壘：被夾殺的知識中產](ai-and-knowledge-barriers.md) —— 為什麼判斷力與拓展力變成關鍵
+- [用 Prompt 生成好 Prompt](meta-prompting.md) —— 線一「寫 prompt 端」的具體實作（5 要素 = 列假設 + 列步驟 + 給依據）
 - [AI 能力全景圖](../../02-advanced/capabilities/ai-capability-landscape.md) —— 忠實度梯度：幻覺是 bug（線一）還是 feature（線二）
 
 ## Sources

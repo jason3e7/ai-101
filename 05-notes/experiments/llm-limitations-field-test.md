@@ -41,7 +41,7 @@ created: 2026-09-17
 | 河內塔 N=7 | 可能開始崩 | ✅ 127 步全對 | **偷偷執行程式** |
 | 河內塔 N=10 | 應該崩掉 | ✅ 1023 步全對 | **偷偷執行程式** |
 
-河內塔的步驟我用 [`hanoi_check.py`](../ironman/tools/hanoi_check.py) 逐步驗過，三份原始輸出都在 `assets/llm-limits-test/`：
+河內塔的步驟我用 [`hanoi_check.py`](../02-project/2026ironman/tools/hanoi_check.py) 逐步驗過，三份原始輸出都在 `assets/llm-limits-test/`：
 
 ```
 N = 5    最少步數 31    它給了 31 步    步驟合法 是    有沒有解開 有
@@ -153,7 +153,7 @@ N=10，一樣執行程式，1023 步全對：
 
 ## 原始檔案 — Raw Artifacts
 
-全部放在 [`assets/llm-limits-test/`](../assets/llm-limits-test/)：
+全部放在 [`assets/llm-limits-test/`](../assets/llm-limits-test)：
 
 | 檔案 | 內容 |
 |---|---|
@@ -165,13 +165,13 @@ N=10，一樣執行程式，1023 步全對：
 | `hanoi-n5-moves.txt` / `n7` / `n10` | 完整移動序列，可直接餵給驗證腳本 |
 
 ```bash
-python3 05-notes/ironman/tools/hanoi_check.py 10 < 05-notes/assets/llm-limits-test/hanoi/hanoi-n10-moves.txt
+python3 05-notes/02-project/2026ironman/tools/hanoi_check.py 10 < 05-notes/assets/llm-limits-test/hanoi/hanoi-n10-moves.txt
 ```
 
 ## 相關筆記 — Related
 
-- [LLM 極限實測（二）](./llm-limitations-field-test-2.md) —— 把工具**真的**關掉之後再測一次，結論有變
-- [LLM 極限實測（三）](./llm-limitations-field-test-3.md) —— 換模型比較：第一個真正的算術錯誤，以及河內塔的真實邊界
+- [LLM 極限實測（二）](llm-limitations-field-test-2.md) —— 把工具**真的**關掉之後再測一次，結論有變
+- [LLM 極限實測（三）](llm-limitations-field-test-3.md) —— 換模型比較：第一個真正的算術錯誤，以及河內塔的真實邊界
 - [LLM 的極限](../../02-advanced/limits-and-verification/llm-limitations.md) —— 這次實測的理論來源
 - [先驗證，再用它突破自己](../essays/ai-verify-then-expand.md) —— 獨立驗算為什麼最強
 - [AI 能力全景圖](../../02-advanced/capabilities/ai-capability-landscape.md) —— 哪些任務該擔心幻覺

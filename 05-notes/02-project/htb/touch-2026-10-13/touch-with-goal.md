@@ -172,8 +172,8 @@ agent 每一步都用自己的視覺理解 (Claude 讀 PNG) 決定下一個座�
 | rdp-s06 | **語言選單** (20 國語言 + session timeout 01:56) | 挑 English |
 | rdp-s07-10 | LOOKUP → DOCUMENTS → SEATS → BAGGAGE 的 kiosk flow | 試點每一個欄位, 看能不能 escape |
 
-![RDP kiosk 待機頁](./rdp-s01.png)
-![語言選單 (20 國, 右下 session timeout)](./rdp-s06.png)
+![RDP kiosk 待機頁](rdp-s01.png)
+![語言選單 (20 國, 右下 session timeout)](rdp-s06.png)
 
 ### 卡在哪 — xdotool 鍵盤輸入失效
 

@@ -1,6 +1,6 @@
 # MCU CPE26 題目選集 — 2027 起 CPE 考試題庫 (MCU, 2026-10 版)
 
-[← 回 ZeroJudge Index](./README.md)
+[← 回 ZeroJudge Index](README.md)
 
 > [!NOTE]
 > **CPE** (Collegiate Programming Examination, 大學程式能力檢定) 是銘傳大學 (MCU) 主辦的全國性程式檢定. **CPE26 選集** 是 2027 年起每場 CPE 考試會從中「勾選一題」的官方題庫 — **56 題**, 分 14 個主題各 4 題, 全部對應到 UVa Online Judge 題號, 每題都有解答影片. 這篇筆記把題單抄回來, 並對照 [NSYSU 1065 題星等](nsysu-uva-ratings.md) 標好難度.

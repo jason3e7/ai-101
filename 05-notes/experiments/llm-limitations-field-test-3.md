@@ -9,7 +9,7 @@ created: 2026-09-17
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> [第一輪](./llm-limitations-field-test.md) 工具沒關乾淨、[第二輪](./llm-limitations-field-test-2.md) 關乾淨但只測一個模型。這一輪同樣零工具，把 **Sonnet 5** 和 **Haiku 4.5** 放在一起比。結果終於出現**真正的算術錯誤**，也終於找到**河內塔的邊界**。而第二輪那個「假裝自己有工具」的怪現象，這次在另外兩個模型身上又出現了一次。
+> [第一輪](llm-limitations-field-test.md) 工具沒關乾淨、[第二輪](llm-limitations-field-test-2.md) 關乾淨但只測一個模型。這一輪同樣零工具，把 **Sonnet 5** 和 **Haiku 4.5** 放在一起比。結果終於出現**真正的算術錯誤**，也終於找到**河內塔的邊界**。而第二輪那個「假裝自己有工具」的怪現象，這次在另外兩個模型身上又出現了一次。
 
 > **TL;DR (EN):** Same zero-tool setup, two more models. Haiku 4.5 got 17^13 wrong by 173 million — the first genuine arithmetic failure across three rounds. It also declined the 10-digit multiplication as beyond it, while confidently botching the exponent: its self-knowledge is as jagged as its capability. Sonnet 5 cleared Hanoi at N=7 and N=9 but broke at N=10, spending 31k thinking tokens to produce a single sentence announcing a script it had no way to run. Haiku hallucinated a full `<function_calls>` block with Python source. Three models, one failure mode.
 
@@ -76,7 +76,7 @@ Haiku  9904578206305937
 
 ### Haiku 的 N=9：只有步數是對的
 
-這份有留下原始輸出，餵給 [`hanoi_check.py`](../ironman/tools/hanoi_check.py) 之後：
+這份有留下原始輸出，餵給 [`hanoi_check.py`](../02-project/2026ironman/tools/hanoi_check.py) 之後：
 
 ```
 N = 9
@@ -177,7 +177,7 @@ Haiku 在難題上誠實拒絕、在簡單題上自信答錯。所以「它有�
 
 ## 原始檔案 — Raw Artifacts
 
-全部在 [`assets/llm-limits-test-r3/`](../assets/llm-limits-test-r3/)，題目與指令在 [`round2-prompts.md`](../assets/llm-limits-test/arithmetic-and-reversal/round2-prompts.md)。
+全部在 [`assets/llm-limits-test-r3/`](../assets/llm-limits-test-r3)，題目與指令在 [`round2-prompts.md`](../assets/llm-limits-test/arithmetic-and-reversal/round2-prompts.md)。
 
 | 檔案 | 內容 |
 |---|---|
@@ -192,6 +192,6 @@ Haiku 在難題上誠實拒絕、在簡單題上自信答錯。所以「它有�
 
 ## 相關筆記 — Related
 
-- [LLM 極限實測（一）](./llm-limitations-field-test.md) —— 工具沒關乾淨，它偷偷繞過去
-- [LLM 極限實測（二）](./llm-limitations-field-test-2.md) —— 關乾淨後，它假裝自己有工具
+- [LLM 極限實測（一）](llm-limitations-field-test.md) —— 工具沒關乾淨，它偷偷繞過去
+- [LLM 極限實測（二）](llm-limitations-field-test-2.md) —— 關乾淨後，它假裝自己有工具
 - [LLM 的極限](../../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源

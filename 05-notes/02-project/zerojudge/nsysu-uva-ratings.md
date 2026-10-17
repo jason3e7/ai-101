@@ -1,6 +1,6 @@
 # 中山資工 UVa 星等評分 — NSYSU Advanced Programming UVa Ratings
 
-[← 回 ZeroJudge Index](./README.md)
+[← 回 ZeroJudge Index](README.md)
 
 > [!NOTE]
 > 國立中山大學 (NSYSU) 資工系「進階程式設計」(`par.cse.nsysu.edu.tw/~advprog/`) 替 UVa 題目評了 **★–★★★★★** 五個等級, 2011/05/25 ~ 2022/12/13 期間還吃進了歷屆 **CPE** (大學程式能力檢定) 試題. 原頁已離線, 這篇從 [Wayback Machine 2024-11-02 快照](https://web.archive.org/web/20241102135335/https://par.cse.nsysu.edu.tw/~advprog/star.php) 抄回來, **1065 題**, 下 batch 解題時可以照星等挑難度.
@@ -81,7 +81,7 @@ NSYSU 這份清單原本掛在 **進階程式設計** (Advanced Programming) 課
 
 全部 1065 題的 `(題號, 星等)` 存成 CSV, 方便 grep / 做 batch 自動化 input:
 
-[`nsysu-uva-ratings.csv`](./nsysu-uva-ratings.csv) · 格式: `problem_id,stars`
+[`nsysu-uva-ratings.csv`](nsysu-uva-ratings.csv) · 格式: `problem_id,stars`
 
 常用查詢範例:
 

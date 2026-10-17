@@ -288,7 +288,7 @@ vllm serve ~/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/
 | **Windows** | ✅ | 需用 Docker |
 
 > [!tip] 選哪個？
-> 個人開發 → [Ollama](./ollama-guide.md)（更簡單）
+> 個人開發 → [Ollama](ollama-guide.md)（更簡單）
 > 對外提供 API、需要高吞吐量 → vLLM
 
 ---
@@ -330,6 +330,6 @@ vllm serve ~/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/
 
 ## 相關筆記
 
-- [AI 101 - Ollama 指令教學](./ollama-guide.md) — 更簡單的本地模型方案
-- [AI 101 - 輕量模型推薦](./lightweight-models.md) — 選哪個模型跑在 vLLM 上
+- [AI 101 - Ollama 指令教學](ollama-guide.md) — 更簡單的本地模型方案
+- [AI 101 - 輕量模型推薦](lightweight-models.md) — 選哪個模型跑在 vLLM 上
 - [AI 101 - 模型費用與效果比較](../01-fundamentals/models/model-cost-comparison.md) — 本地 vs 雲端成本分析

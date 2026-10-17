@@ -127,8 +127,8 @@ ollama run huihui_ai/Qwen3.6-abliterated:27b
 
 ## 相關筆記 — Related
 
-- [輕量模型推薦](./lightweight-models.md) —— 依 VRAM 分級選型
-- [Ollama 指令教學](./ollama-guide.md) —— 安裝與管理
+- [輕量模型推薦](lightweight-models.md) —— 依 VRAM 分級選型
+- [Ollama 指令教學](ollama-guide.md) —— 安裝與管理
 - [AI 生成內容怎麼標記與辨識](../01-fundamentals/ai-content-watermark.md) —— 本地模型不會帶官方浮水印
 
 ## Sources

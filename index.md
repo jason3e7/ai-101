@@ -30,12 +30,12 @@ updated: 2026-07-04
 
 | 我想⋯ | 建議閱讀順序 |
 |---|---|
-| **理解基本名詞** | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) → [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) |
-| **開始用 Claude Code** | [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) → [AI 101 - Claude Code 生態系](./01-fundamentals/claude-code/ecosystem.md) → [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) |
-| **學 2026 最關鍵技能** | [AI 101 - Context Engineering](./02-advanced/engineering/context-engineering.md) → [AI 101 - Harness Engineering](./02-advanced/engineering/harness-engineering.md) |
-| **跑本地模型（離線、隱私）** | [AI 101 - Ollama 指令教學](./04-local-llm/ollama-guide.md) → [AI 101 - 輕量模型推薦](./04-local-llm/lightweight-models.md) → [AI 101 - Gemma 4 本地模型](./04-local-llm/gemma-4-local-model.md) |
-| **架自己的 AI Agent** | [AI 101 - OpenClaw](./03-tools/agents-platforms/openclaw.md) 或 [AI 101 - Hermes Agent](./03-tools/agents-platforms/hermes-agent.md) |
-| **挑最划算的 AI 模型** | [AI 101 - 模型費用與效果比較](./01-fundamentals/models/model-cost-comparison.md) |
+| **理解基本名詞** | [AI 101 - 核心概念](01-fundamentals/core-concepts.md) → [AI 101 - 實用技巧與最佳實踐](01-fundamentals/tips-and-best-practices.md) |
+| **開始用 Claude Code** | [AI 101 - 核心概念](01-fundamentals/core-concepts.md) → [AI 101 - Claude Code 生態系](01-fundamentals/claude-code/ecosystem.md) → [AI 101 - 實用技巧與最佳實踐](01-fundamentals/tips-and-best-practices.md) |
+| **學 2026 最關鍵技能** | [AI 101 - Context Engineering](02-advanced/engineering/context-engineering.md) → [AI 101 - Harness Engineering](02-advanced/engineering/harness-engineering.md) |
+| **跑本地模型（離線、隱私）** | [AI 101 - Ollama 指令教學](04-local-llm/ollama-guide.md) → [AI 101 - 輕量模型推薦](04-local-llm/lightweight-models.md) → [AI 101 - Gemma 4 本地模型](04-local-llm/gemma-4-local-model.md) |
+| **架自己的 AI Agent** | [AI 101 - OpenClaw](03-tools/agents-platforms/openclaw.md) 或 [AI 101 - Hermes Agent](03-tools/agents-platforms/hermes-agent.md) |
+| **挑最划算的 AI 模型** | [AI 101 - 模型費用與效果比較](01-fundamentals/models/model-cost-comparison.md) |
 
 ---
 
@@ -45,26 +45,26 @@ updated: 2026-07-04
 
 | 筆記 | 你會學到 |
 |---|---|
-| [AI 101 - 核心概念](./01-fundamentals/core-concepts.md) | Agent、LLM、RAG、幻覺、MCP、Subagents 等基礎詞彙 |
-| [AI 101 - 實用技巧與最佳實踐](./01-fundamentals/tips-and-best-practices.md) | 提升效率的具體方法與工作流 |
-| [AI 101 - Agent Skills 是什麼](./01-fundamentals/agent-skills.md) | 跨平台的 SKILL.md 格式：兩個必填欄位、漸進式揭露、為何 description 決定一切；附怎麼寫一個 |
-| [AI 101 - 模型費用與效果比較](./01-fundamentals/models/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
-| [AI 101 - AI 模型名稱怎麼唸](./01-fundamentals/models/model-name-pronunciation.md) | Claude 家族與開源模型的正確發音，附中文近似音、常見錯誤與 YouTube 示範 |
-| [AI 101 - AI 生成內容怎麼標記與辨識](./01-fundamentals/ai-content-watermark.md) | Claude 的文字浮水印與 C2PA 檔案簽章、三條技術路線、為何「查到」與「沒查到」都不是定論 |
-| [AI 101 - v1 chat completions curl Cheatsheet](./01-fundamentals/api/chat-completions-curl-cheatsheet.md) | 業界通用 LLM API 格式的 curl 完全指南：streaming、tool use、vision、JSON mode、各大供應商切換 |
-| [AI 101 - OpenAI API 完整端點速查](./01-fundamentals/api/openai-api-endpoints.md) | `/v1/chat/completions` 之外的所有重要端點：Embeddings、Batch（省 50%）、Whisper、TTS、Images、Moderations、Responses API |
+| [AI 101 - 核心概念](01-fundamentals/core-concepts.md) | Agent、LLM、RAG、幻覺、MCP、Subagents 等基礎詞彙 |
+| [AI 101 - 實用技巧與最佳實踐](01-fundamentals/tips-and-best-practices.md) | 提升效率的具體方法與工作流 |
+| [AI 101 - Agent Skills 是什麼](01-fundamentals/agent-skills.md) | 跨平台的 SKILL.md 格式：兩個必填欄位、漸進式揭露、為何 description 決定一切；附怎麼寫一個 |
+| [AI 101 - 模型費用與效果比較](01-fundamentals/models/model-cost-comparison.md) | 各家模型定價、benchmark、如何挑到 CP 值最高的 |
+| [AI 101 - AI 模型名稱怎麼唸](01-fundamentals/models/model-name-pronunciation.md) | Claude 家族與開源模型的正確發音，附中文近似音、常見錯誤與 YouTube 示範 |
+| [AI 101 - AI 生成內容怎麼標記與辨識](01-fundamentals/ai-content-watermark.md) | Claude 的文字浮水印與 C2PA 檔案簽章、三條技術路線、為何「查到」與「沒查到」都不是定論 |
+| [AI 101 - v1 chat completions curl Cheatsheet](01-fundamentals/api/chat-completions-curl-cheatsheet.md) | 業界通用 LLM API 格式的 curl 完全指南：streaming、tool use、vision、JSON mode、各大供應商切換 |
+| [AI 101 - OpenAI API 完整端點速查](01-fundamentals/api/openai-api-endpoints.md) | `/v1/chat/completions` 之外的所有重要端點：Embeddings、Batch（省 50%）、Whisper、TTS、Images、Moderations、Responses API |
 
 ### Claude Code — `claude-code/`
 
 | 筆記 | 你會學到 |
 |---|---|
-| [AI 101 - Claude Code 生態系](./01-fundamentals/claude-code/ecosystem.md) | Skills、Hooks、MCP、Plugins、Subagents 的關係與差異 |
-| [AI 101 - Claude Code goal](./01-fundamentals/claude-code/goal.md) | `/goal` 設定完成條件讓 Claude 自動執行到達成，無人值守的關鍵功能 |
-| [AI 101 - Claude Code 行為結構設計](./01-fundamentals/claude-code/behavior-design.md) | `/goal`、Sub-agents、Skills、Hooks 四層設計 AI 行為，含 Hello World 範例與驗證步驟 |
-| [AI 101 - Claude Code goal 強制力 Hook](./01-fundamentals/claude-code/goal-enforcement-hooks.md) | Stop / PreToolUse / PreCompact / PostToolUse 四種 hook 讓 `/goal` 不達標不停手 |
-| [AI 101 - Claude Code Workflow × goal 混用](./01-fundamentals/claude-code/workflow-goal-combo.md) | Dynamic Workflows（廣度）和 `/goal`（深度）怎麼組合，五種實用 pattern 與陷阱 |
-| [AI 101 - Claude Code chrome 瀏覽器整合](./01-fundamentals/claude-code/chrome-integration.md) | `--chrome` 讓 Claude 直接控制瀏覽器（截圖、點擊、填表、讀 console），安裝、排查與完整工具清單 |
-| [AI 101 - Claude Code 權限模式與設定層級](./01-fundamentals/claude-code/permissions.md) | 五種權限模式（Plan / Default / Accept edits / Auto / Don't ask）風險對照，四層設定誰蓋過誰，企業 policy 為何改不動 |
+| [AI 101 - Claude Code 生態系](01-fundamentals/claude-code/ecosystem.md) | Skills、Hooks、MCP、Plugins、Subagents 的關係與差異 |
+| [AI 101 - Claude Code goal](01-fundamentals/claude-code/goal.md) | `/goal` 設定完成條件讓 Claude 自動執行到達成，無人值守的關鍵功能 |
+| [AI 101 - Claude Code 行為結構設計](01-fundamentals/claude-code/behavior-design.md) | `/goal`、Sub-agents、Skills、Hooks 四層設計 AI 行為，含 Hello World 範例與驗證步驟 |
+| [AI 101 - Claude Code goal 強制力 Hook](01-fundamentals/claude-code/goal-enforcement-hooks.md) | Stop / PreToolUse / PreCompact / PostToolUse 四種 hook 讓 `/goal` 不達標不停手 |
+| [AI 101 - Claude Code Workflow × goal 混用](01-fundamentals/claude-code/workflow-goal-combo.md) | Dynamic Workflows（廣度）和 `/goal`（深度）怎麼組合，五種實用 pattern 與陷阱 |
+| [AI 101 - Claude Code chrome 瀏覽器整合](01-fundamentals/claude-code/chrome-integration.md) | `--chrome` 讓 Claude 直接控制瀏覽器（截圖、點擊、填表、讀 console），安裝、排查與完整工具清單 |
+| [AI 101 - Claude Code 權限模式與設定層級](01-fundamentals/claude-code/permissions.md) | 五種權限模式（Plan / Default / Accept edits / Auto / Don't ask）風險對照，四層設定誰蓋過誰，企業 policy 為何改不動 |
 
 ---
 
@@ -74,25 +74,25 @@ updated: 2026-07-04
 
 | 筆記 | 你會學到 |
 |---|---|
-| [AI 101 - AI 能力全景圖](./02-advanced/capabilities/ai-capability-landscape.md) | 用「資訊流向 × 認知深度」兩軸把 AI 能力攤成一張圖，看出忠實度梯度與自己的使用盲區 |
-| [AI 101 - 六種能力執行手冊](./02-advanced/capabilities/capabilities-playbook.md) | 摘要／解釋／發想／重構／分析／規劃，各給「最省 token」與「最有成效」兩套打法；含 2026-09 現行模型選型與 effort 參數 |
-| [AI 101 - Context Engineering](./02-advanced/engineering/context-engineering.md) | 2026 最重要的技能：Prompt 只是 5%，Context 才是 95% |
-| [AI 101 - Context Engineering 進階](./02-advanced/engineering/context-engineering-in-depth.md) | 9 個組成、4 種操作 (write/select/compress/isolate)、3 個原理; 參考 ihower ＋ Anthropic ＋ LangChain |
-| [AI 101 - Harness Engineering](./02-advanced/engineering/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
-| [AI 101 - Loop Engineering](./02-advanced/engineering/loop-engineering.md) | 設計「會自己提示 agent 的迴圈」：觸發、可驗證目標、上下文、停止規則；Prompt→Context→Harness→Loop 的下一棒 |
-| [AI 101 - 從 Prompt 到 Graph：五個時代](./02-advanced/engineering/prompt-engineering-evolution.md) | Prompt→Context→Harness→Loop→Graph 的技術演進時間軸與精確日期；主線是「控制單位一直往外退」，五代疊加而非取代（另含 Flow 平行血脈與 RAG/Memory/Evals 切面）|
-| [AI 101 - AI 怎麼知道該用哪種能力](./02-advanced/capabilities/how-ai-picks-capability.md) | 以 Opus 5 為基準拆成八層：五層訓練時長好、三層每次請求自動跑；標明哪幾層動得了，以及對 prompt 的四條推論 |
-| [AI 101 - 情境推任務會在哪裡失手](./02-advanced/capabilities/limits-of-capability-from-context.md) | 承接上一篇：第 1 層那個「從情境推任務」的推論有六種失手模式——長 context 衰退 (NoLiMa 32K 掉 50%+) / 示範飽和 / 順序敏感 / task vector 的 rank-one 極限 / 情境劫持 / underspecified silent failure；每種附 2024-2026 證據與工程補救 |
-| [AI 101 - 情境擴到感測與市場, 推任務還撐得住嗎](./02-advanced/capabilities/capability-from-dynamic-signals.md) | 把 Layer 1 套到自動車感測 / 股市這類動態實體訊號, 會撞上四面物理牆：本體落差 (sequence ≠ world model, Flux game 10% invalid)、混沌牆 (Lyapunov horizon)、分佈牆 (VLA 新 geometry 掉 40%)、時間一致性牆 (√horizon decay)、加股市特有的效率市場牆 (Lopez-Lira 1-2 天 drift)；配 RT-2 / π0.5 / Lopez-Lira 2023-2026 證據 |
-| [AI 101 - Claude 顯示 thinking 是什麼機制](./02-advanced/capabilities/how-claude-shows-thinking.md) | 你看到的 Thinking 是**摘要模型**的產出不是原文；signature 才是加密的完整推理；4.7+ `budget_tokens` 已 400，改用 adaptive ＋ effort |
-| [AI 101 - 先收整再展開，人才驗得動](./02-advanced/limits-and-verification/converge-before-verify.md) | 事後全文驗貴，因為人是 bottleneck。兩個手法都用 markdown list 當中間層讓「人」驗得動：**濃縮再驗**（大→小，AI 幫你 preprocess）＋ **從收整衍生**（小→大，list 當 checklist 對照長文）。兩個接起來就是一個 pipeline |
-| [AI 101 - AI 產出怎麼驗](./02-advanced/limits-and-verification/verifying-ai-output.md) | 4 年學術方法一堆，2024 後大半被推翻或被 reasoning 模型內化。攤開主流方法（Self-Consistency、CoVe、Self-Refine、RARR、FActScore、LLM-as-Judge、CAI、PRM）＋ 5 個負向結果（self-correction 循環、CoT 負收益、overconfidence）＋ 人的因素（automation bias、jagged frontier）＋ 產業框架（NIST / OWASP / RSP）。日常真正用得上剩 3 招：外部證據、跨模型獨立驗算、原子事實分解 |
-| [AI 101 - AI 用久了會鈍化](./02-advanced/limits-and-verification/ai-atrophy.md) | AI 讓你變快也讓你**測得到地**變鈍。**急性**：驗證疲勞 / 蓋章化（NCT07328815 RCT 72 名醫師 rubber-stamp、Radiology 2023 mammography 4.89× bias、Copilot 接受率半年 28.9%→34%）。**慢性**：判斷力生鏽 / 認知外包（MIT EEG 55% 神經連結下降、Microsoft/CMU 319 人 survey、Cleverly SSRN 框架）。5 個有實證的破法：ensemble 警示、XAI、pre-commit、brain-only 間隔、對抗性自測 |
-| [AI 101 - AI 的文風與語氣](./02-advanced/writing-style/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
-| [AI 101 - 全民抓 AI 文](./02-advanced/writing-style/ai-writing-tells-discourse.md) | 2025–2026 社群把破折號、「不是…而是」、「」引號當成抓鬼鐵證的現象；為什麼幾乎都會冤枉人（經濟學人 120 萬字調查：破折號不可靠、真正破綻是標點太少）、清單為何一直在變（軍備競賽）、以及「與其抓鬼不如調教」的另一派 |
-| [AI 101 - LLM 的極限](./02-advanced/limits-and-verification/llm-limitations.md) | 三類做不到：結構性（原理決定）、暫時（下一代會補）、鋸齒狀（看不見邊界）；為什麼鋸齒狀最危險 |
-| [AI 101 - ML 演算法精要](./02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |
-| [AI 101 - Subagent 使用與計費](./02-advanced/engineering/subagent-usage-and-billing.md) | Orchestrator 模式、並行 subagent、API 計費結構與省錢策略 |
+| [AI 101 - AI 能力全景圖](02-advanced/capabilities/ai-capability-landscape.md) | 用「資訊流向 × 認知深度」兩軸把 AI 能力攤成一張圖，看出忠實度梯度與自己的使用盲區 |
+| [AI 101 - 六種能力執行手冊](02-advanced/capabilities/capabilities-playbook.md) | 摘要／解釋／發想／重構／分析／規劃，各給「最省 token」與「最有成效」兩套打法；含 2026-09 現行模型選型與 effort 參數 |
+| [AI 101 - Context Engineering](02-advanced/engineering/context-engineering.md) | 2026 最重要的技能：Prompt 只是 5%，Context 才是 95% |
+| [AI 101 - Context Engineering 進階](02-advanced/engineering/context-engineering-in-depth.md) | 9 個組成、4 種操作 (write/select/compress/isolate)、3 個原理; 參考 ihower ＋ Anthropic ＋ LangChain |
+| [AI 101 - Harness Engineering](02-advanced/engineering/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
+| [AI 101 - Loop Engineering](02-advanced/engineering/loop-engineering.md) | 設計「會自己提示 agent 的迴圈」：觸發、可驗證目標、上下文、停止規則；Prompt→Context→Harness→Loop 的下一棒 |
+| [AI 101 - 從 Prompt 到 Graph：五個時代](02-advanced/engineering/prompt-engineering-evolution.md) | Prompt→Context→Harness→Loop→Graph 的技術演進時間軸與精確日期；主線是「控制單位一直往外退」，五代疊加而非取代（另含 Flow 平行血脈與 RAG/Memory/Evals 切面）|
+| [AI 101 - AI 怎麼知道該用哪種能力](02-advanced/capabilities/how-ai-picks-capability.md) | 以 Opus 5 為基準拆成八層：五層訓練時長好、三層每次請求自動跑；標明哪幾層動得了，以及對 prompt 的四條推論 |
+| [AI 101 - 情境推任務會在哪裡失手](02-advanced/capabilities/limits-of-capability-from-context.md) | 承接上一篇：第 1 層那個「從情境推任務」的推論有六種失手模式——長 context 衰退 (NoLiMa 32K 掉 50%+) / 示範飽和 / 順序敏感 / task vector 的 rank-one 極限 / 情境劫持 / underspecified silent failure；每種附 2024-2026 證據與工程補救 |
+| [AI 101 - 情境擴到感測與市場, 推任務還撐得住嗎](02-advanced/capabilities/capability-from-dynamic-signals.md) | 把 Layer 1 套到自動車感測 / 股市這類動態實體訊號, 會撞上四面物理牆：本體落差 (sequence ≠ world model, Flux game 10% invalid)、混沌牆 (Lyapunov horizon)、分佈牆 (VLA 新 geometry 掉 40%)、時間一致性牆 (√horizon decay)、加股市特有的效率市場牆 (Lopez-Lira 1-2 天 drift)；配 RT-2 / π0.5 / Lopez-Lira 2023-2026 證據 |
+| [AI 101 - Claude 顯示 thinking 是什麼機制](02-advanced/capabilities/how-claude-shows-thinking.md) | 你看到的 Thinking 是**摘要模型**的產出不是原文；signature 才是加密的完整推理；4.7+ `budget_tokens` 已 400，改用 adaptive ＋ effort |
+| [AI 101 - 先收整再展開，人才驗得動](02-advanced/limits-and-verification/converge-before-verify.md) | 事後全文驗貴，因為人是 bottleneck。兩個手法都用 markdown list 當中間層讓「人」驗得動：**濃縮再驗**（大→小，AI 幫你 preprocess）＋ **從收整衍生**（小→大，list 當 checklist 對照長文）。兩個接起來就是一個 pipeline |
+| [AI 101 - AI 產出怎麼驗](02-advanced/limits-and-verification/verifying-ai-output.md) | 4 年學術方法一堆，2024 後大半被推翻或被 reasoning 模型內化。攤開主流方法（Self-Consistency、CoVe、Self-Refine、RARR、FActScore、LLM-as-Judge、CAI、PRM）＋ 5 個負向結果（self-correction 循環、CoT 負收益、overconfidence）＋ 人的因素（automation bias、jagged frontier）＋ 產業框架（NIST / OWASP / RSP）。日常真正用得上剩 3 招：外部證據、跨模型獨立驗算、原子事實分解 |
+| [AI 101 - AI 用久了會鈍化](02-advanced/limits-and-verification/ai-atrophy.md) | AI 讓你變快也讓你**測得到地**變鈍。**急性**：驗證疲勞 / 蓋章化（NCT07328815 RCT 72 名醫師 rubber-stamp、Radiology 2023 mammography 4.89× bias、Copilot 接受率半年 28.9%→34%）。**慢性**：判斷力生鏽 / 認知外包（MIT EEG 55% 神經連結下降、Microsoft/CMU 319 人 survey、Cleverly SSRN 框架）。5 個有實證的破法：ensemble 警示、XAI、pre-commit、brain-only 間隔、對抗性自測 |
+| [AI 101 - AI 的文風與語氣](02-advanced/writing-style/ai-writing-style-tells.md) | 破折號、三段式、對立句等常見文風習慣的成因（markdown 洩漏 ＋ RLHF）與量化證據；Claude 的破折號一點名就能壓到近乎歸零，附可複製的抑制寫法 |
+| [AI 101 - 全民抓 AI 文](02-advanced/writing-style/ai-writing-tells-discourse.md) | 2025–2026 社群把破折號、「不是…而是」、「」引號當成抓鬼鐵證的現象；為什麼幾乎都會冤枉人（經濟學人 120 萬字調查：破折號不可靠、真正破綻是標點太少）、清單為何一直在變（軍備競賽）、以及「與其抓鬼不如調教」的另一派 |
+| [AI 101 - LLM 的極限](02-advanced/limits-and-verification/llm-limitations.md) | 三類做不到：結構性（原理決定）、暫時（下一代會補）、鋸齒狀（看不見邊界）；為什麼鋸齒狀最危險 |
+| [AI 101 - ML 演算法精要](02-advanced/ml-algorithms-essentials.md) | Isolation Forest、Random Forest、XGBoost、PELT、LSTM、HMM 核心觀念與程式碼 |
+| [AI 101 - Subagent 使用與計費](02-advanced/engineering/subagent-usage-and-billing.md) | Orchestrator 模式、並行 subagent、API 計費結構與省錢策略 |
 
 ---
 
@@ -104,31 +104,31 @@ updated: 2026-07-04
 
 | 工具 | 特色 |
 |---|---|
-| [AI 101 - Mistral AI](./03-tools/agents-platforms/mistral-ai.md) | 法國開源 AI 平台，MoE 架構、Apache 2.0、雲端 + 自架皆支援 |
-| [AI 101 - OpenClaw](./03-tools/agents-platforms/openclaw.md) | 自架式 AI 閘道器，串接 LINE/Discord/Slack 等通訊平台 |
-| [AI 101 - Hermes Agent](./03-tools/agents-platforms/hermes-agent.md) | 開源個人 AI 助理，持久記憶 + 自我進化 Skills |
+| [AI 101 - Mistral AI](03-tools/agents-platforms/mistral-ai.md) | 法國開源 AI 平台，MoE 架構、Apache 2.0、雲端 + 自架皆支援 |
+| [AI 101 - OpenClaw](03-tools/agents-platforms/openclaw.md) | 自架式 AI 閘道器，串接 LINE/Discord/Slack 等通訊平台 |
+| [AI 101 - Hermes Agent](03-tools/agents-platforms/hermes-agent.md) | 開源個人 AI 助理，持久記憶 + 自我進化 Skills |
 
 ### Claude Code 擴充 / 周邊 — Extensions
 
 | 工具 | 特色 |
 |---|---|
-| [AI 101 - 女媧 Nuwa Skill](./03-tools/nuwa-skill.md) | 蒸餾公眾人物思維框架的 Skill |
-| [AI 101 - Better Agent Terminal](./03-tools/better-agent-terminal.md) | 整合終端機 + Claude Agent + 開發工具的 Electron 桌面應用 |
-| [AI 101 - PII Masking（隱私遮蔽）](./03-tools/privacy/pii-masking.md) | ai4privacy 套件：自動偵測並遮蔽個人資料（50+ 類別、送 LLM 前過濾）|
-| [AI 101 - OpenAI Privacy Filter](./03-tools/privacy/openai-privacy-filter.md) | OpenAI 官方開源 PII 模型，本地執行，F1 97%，128K context，Apache 2.0 |
-| [AI 101 - Claude × Godot 遊戲開發](./03-tools/claude-godot-gamedev.md) | 用 Claude Code + MCP + GUT 開發 Godot 遊戲並自動化測試 |
-| [AI 101 - JT Live Whisper（即時語音轉錄）](./03-tools/jt-live-whisper.md) | 本地即時語音轉錄、翻譯、講者辨識、會議摘要，完全不上雲 |
-| [AI 101 - OpenCode.ai](./03-tools/opencode-ai.md) | Claude Code 的開源替代，支援 75+ 模型，可接 Ollama 完全免費 |
+| [AI 101 - 女媧 Nuwa Skill](03-tools/nuwa-skill.md) | 蒸餾公眾人物思維框架的 Skill |
+| [AI 101 - Better Agent Terminal](03-tools/better-agent-terminal.md) | 整合終端機 + Claude Agent + 開發工具的 Electron 桌面應用 |
+| [AI 101 - PII Masking（隱私遮蔽）](03-tools/privacy/pii-masking.md) | ai4privacy 套件：自動偵測並遮蔽個人資料（50+ 類別、送 LLM 前過濾）|
+| [AI 101 - OpenAI Privacy Filter](03-tools/privacy/openai-privacy-filter.md) | OpenAI 官方開源 PII 模型，本地執行，F1 97%，128K context，Apache 2.0 |
+| [AI 101 - Claude × Godot 遊戲開發](03-tools/claude-godot-gamedev.md) | 用 Claude Code + MCP + GUT 開發 Godot 遊戲並自動化測試 |
+| [AI 101 - JT Live Whisper（即時語音轉錄）](03-tools/jt-live-whisper.md) | 本地即時語音轉錄、翻譯、講者辨識、會議摘要，完全不上雲 |
+| [AI 101 - OpenCode.ai](03-tools/opencode-ai.md) | Claude Code 的開源替代，支援 75+ 模型，可接 Ollama 完全免費 |
 
 ### AI 資安工具 — `security/`
 
 | 工具 | 特色 |
 |---|---|
-| [AI 101 - BoxPwnr](./03-tools/security/boxpwnr.md) | AI 自動化 CTF/HTB 解題框架，Docker + 多 LLM，支援 15+ 平台、進度中斷續跑 |
-| [AI 101 - AI 自主滲透測試工具比較](./03-tools/security/autonomous-pentest-tools-comparison.md) | BoxPwnr / PentestGPT / CTF-Agent / FlagForge 比較，含哪些工具 Claude Max 可用 |
-| [AI 101 - Pentest Swarm AI](./03-tools/security/pentest-swarm-ai.md) | 群體智慧架構的自主滲透測試平台，Go + Claude API，AGPL-3.0 |
-| [AI 101 - HexStrike AI](./03-tools/security/hexstrike-ai.md) | MCP Server 橋接 150+ 資安工具，讓 Claude / GPT 直接執行滲透測試 |
-| [AI 101 - Viper](./03-tools/security/viper.md) | 開源紅隊 C2 框架，內建 LLM Agent，Cobalt Strike 免費替代方案 |
+| [AI 101 - BoxPwnr](03-tools/security/boxpwnr.md) | AI 自動化 CTF/HTB 解題框架，Docker + 多 LLM，支援 15+ 平台、進度中斷續跑 |
+| [AI 101 - AI 自主滲透測試工具比較](03-tools/security/autonomous-pentest-tools-comparison.md) | BoxPwnr / PentestGPT / CTF-Agent / FlagForge 比較，含哪些工具 Claude Max 可用 |
+| [AI 101 - Pentest Swarm AI](03-tools/security/pentest-swarm-ai.md) | 群體智慧架構的自主滲透測試平台，Go + Claude API，AGPL-3.0 |
+| [AI 101 - HexStrike AI](03-tools/security/hexstrike-ai.md) | MCP Server 橋接 150+ 資安工具，讓 Claude / GPT 直接執行滲透測試 |
+| [AI 101 - Viper](03-tools/security/viper.md) | 開源紅隊 C2 框架，內建 LLM Agent，Cobalt Strike 免費替代方案 |
 
 ---
 
@@ -138,11 +138,11 @@ updated: 2026-07-04
 
 | 筆記 | 你會學到 |
 |---|---|
-| [AI 101 - Ollama 指令教學](./04-local-llm/ollama-guide.md) | 一行裝好、管理模型、開區網存取 |
-| [AI 101 - 輕量模型推薦](./04-local-llm/lightweight-models.md) | 8GB / 16GB / 32GB VRAM 分級選型 |
-| [AI 101 - Gemma 4 本地模型](./04-local-llm/gemma-4-local-model.md) | Google 最新開源模型，接 OpenClaw / Hermes 完全離線 |
-| [AI 101 - vLLM](./04-local-llm/vllm.md) | 高吞吐量推論伺服器，OpenAI 相容 API，比 HF Transformers 快 14–24x |
-| [AI 101 - Qwen3.6 27B 原版 vs Uncensored](./04-local-llm/qwen3-6-27b-uncensored.md) | abliteration 是什麼、拿掉拒絕的真正代價（能力掉分 ＋ 判斷傾向偏移） |
+| [AI 101 - Ollama 指令教學](04-local-llm/ollama-guide.md) | 一行裝好、管理模型、開區網存取 |
+| [AI 101 - 輕量模型推薦](04-local-llm/lightweight-models.md) | 8GB / 16GB / 32GB VRAM 分級選型 |
+| [AI 101 - Gemma 4 本地模型](04-local-llm/gemma-4-local-model.md) | Google 最新開源模型，接 OpenClaw / Hermes 完全離線 |
+| [AI 101 - vLLM](04-local-llm/vllm.md) | 高吞吐量推論伺服器，OpenAI 相容 API，比 HF Transformers 快 14–24x |
+| [AI 101 - Qwen3.6 27B 原版 vs Uncensored](04-local-llm/qwen3-6-27b-uncensored.md) | abliteration 是什麼、拿掉拒絕的真正代價（能力掉分 ＋ 判斷傾向偏移） |
 
 **建議順序：** 先把 Ollama 裝好 → 挑一個適合你硬體的模型 → 需要對外提供 API 再看 vLLM。
 

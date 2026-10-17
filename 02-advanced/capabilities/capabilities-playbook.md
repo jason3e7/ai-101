@@ -10,7 +10,7 @@ updated: 2026-09-18
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> 承接 [AI 能力全景圖](./ai-capability-landscape.md)，這篇把六種高頻能力 - **摘要、解釋、發想、重構筆記**，加上兩個**複合能力****分析**與**規劃** - 各給兩套打法：**① 最省 token**、**② 最有成效**。每種都附模型選型與可直接複製的 prompt。
+> 承接 [AI 能力全景圖](ai-capability-landscape.md)，這篇把六種高頻能力 - **摘要、解釋、發想、重構筆記**，加上兩個**複合能力****分析**與**規劃** - 各給兩套打法：**① 最省 token**、**② 最有成效**。每種都附模型選型與可直接複製的 prompt。
 
 > **TL;DR (EN):** Six common capabilities, each with a cheapest-token and a highest-quality execution mode, plus model selection and copy-paste prompts. Two things changed in 2026: `temperature` now returns a 400 error on Opus 4.7 and later - the `effort` parameter replaced it - and the default recommendation moved from Sonnet to Opus 5. Analysis and planning are composites: their value comes from splitting them into separately verifiable stages.
 
@@ -266,7 +266,7 @@ updated: 2026-09-18
 
 ### 5. 分析 Analysis
 
-**定位**：複合能力。依 [全景圖](./ai-capability-landscape.md)的拆法是**抽取（低階收斂）→ 統整（高階收斂）→ 評估（高階收斂）**，整體偏收斂、高階、忠實度高。
+**定位**：複合能力。依 [全景圖](ai-capability-landscape.md)的拆法是**抽取（低階收斂）→ 統整（高階收斂）→ 評估（高階收斂）**，整體偏收斂、高階、忠實度高。
 
 > [!IMPORTANT]
 > **這是複合能力，所以最大的風險跟前四種不同：** 丟一句「幫我分析一下」，它得自己決定要不要抽取、要不要評估 - 而你連它走了哪條路都不知道。
@@ -313,7 +313,7 @@ updated: 2026-09-18
 ```
 
 > [!WARNING]
-> **它說「我先抽取了以下要點」不構成它真的這樣做了的證據。** 研究顯示模型對自己步驟的描述，承認率通常低於 20%。要確認它有沒有做某一步 - **看產出對不對，不要看它說它做了什麼**（見 [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md)）。
+> **它說「我先抽取了以下要點」不構成它真的這樣做了的證據。** 研究顯示模型對自己步驟的描述，承認率通常低於 20%。要確認它有沒有做某一步 - **看產出對不對，不要看它說它做了什麼**（見 [AI 怎麼知道該用哪種能力](how-ai-picks-capability.md)）。
 
 ---
 
@@ -374,7 +374,7 @@ updated: 2026-09-18
 ```
 
 > [!TIP]
-> 為什麼一定要分兩次：**發散和收斂在同一次呼叫裡會互相污染。** 模型知道最後要交出一份可執行計畫，就會在發想階段先自我審查掉不好執行的點子 - 於是你永遠看不到那個最有意思的選項。中間插入人的挑選，也剛好是[全景圖](./ai-capability-landscape.md)說的「收斂評估是另一個能力」。
+> 為什麼一定要分兩次：**發散和收斂在同一次呼叫裡會互相污染。** 模型知道最後要交出一份可執行計畫，就會在發想階段先自我審查掉不好執行的點子 - 於是你永遠看不到那個最有意思的選項。中間插入人的挑選，也剛好是[全景圖](ai-capability-landscape.md)說的「收斂評估是另一個能力」。
 
 ---
 
@@ -396,8 +396,8 @@ updated: 2026-09-18
 
 ## 相關筆記 — Related
 
-- [AI 能力全景圖](./ai-capability-landscape.md) - 這六種能力的座標與理論依據
-- [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) - 為什麼「給範例」比「給形容詞」有效
+- [AI 能力全景圖](ai-capability-landscape.md) - 這六種能力的座標與理論依據
+- [AI 怎麼知道該用哪種能力](how-ai-picks-capability.md) - 為什麼「給範例」比「給形容詞」有效
 - [模型費用與效果比較](../../01-fundamentals/models/model-cost-comparison.md) - 各模型定價與 benchmark
 - [Context Engineering](../engineering/context-engineering.md) - 餵對資訊本身就是最大的省 token 槓桿
 

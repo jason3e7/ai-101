@@ -326,7 +326,7 @@ model:    qwen3:4b
 
 ## 相關筆記
 
-- [AI 101 - Gemma 4 本地模型](./gemma-4-local-model.md) — Gemma 4 系列完整說明
-- [AI 101 - Ollama 指令教學](./ollama-guide.md) — Ollama 操作指令
+- [AI 101 - Gemma 4 本地模型](gemma-4-local-model.md) — Gemma 4 系列完整說明
+- [AI 101 - Ollama 指令教學](ollama-guide.md) — Ollama 操作指令
 - [AI 101 - OpenClaw](../03-tools/agents-platforms/openclaw.md) — 接上 OpenClaw
 - [AI 101 - Hermes Agent](../03-tools/agents-platforms/hermes-agent.md) — 接上 Hermes Agent

@@ -9,7 +9,7 @@ created: 2026-09-17
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> [第一輪](./llm-limitations-field-test.md) 的結論是「它不是突破了極限，是繞過去了」- 但那次工具沒關乾淨。這一輪把工具**完全移除**再測一次。結果：**精確計算四題全過**；反轉詛咒**看模型而定**；而且出現一個理論筆記裡沒有的失敗模式 - **工具被拿掉之後，它假裝自己還有工具。**
+> [第一輪](llm-limitations-field-test.md) 的結論是「它不是突破了極限，是繞過去了」- 但那次工具沒關乾淨。這一輪把工具**完全移除**再測一次。結果：**精確計算四題全過**；反轉詛咒**看模型而定**；而且出現一個理論筆記裡沒有的失敗模式 - **工具被拿掉之後，它假裝自己還有工具。**
 
 > **TL;DR (EN):** With every tool removed and verified at zero, arithmetic held up completely — including a trap designed to expose over-trust in casting-out-nines, which the model saw through and generalised. The reversal curse turned out to be model-dependent: Fable 5.1 knew the fact, Sonnet 5 fabricated two different wrong answers on two runs, and on arXiv IDs the ranking flipped. The most surprising result: with tools removed, Fable 5.1 hallucinated an entire tool call and made up the API response.
 
@@ -158,7 +158,7 @@ Sonnet 5 在 arXiv 那題主動說「我不確定」，在 Pfeiffer 那題卻連
 
 ## 原始檔案 — Raw Artifacts
 
-全部在 [`assets/llm-limits-test-r2/`](../assets/llm-limits-test-r2/)，題目與指令在 [`round2-prompts.md`](../assets/llm-limits-test/arithmetic-and-reversal/round2-prompts.md)。
+全部在 [`assets/llm-limits-test-r2/`](../assets/llm-limits-test-r2)，題目與指令在 [`round2-prompts.md`](../assets/llm-limits-test/arithmetic-and-reversal/round2-prompts.md)。
 
 | 檔案 | 內容 |
 |---|---|
@@ -169,7 +169,7 @@ Sonnet 5 在 arXiv 那題主動說「我不確定」，在 Pfeiffer 那題卻連
 
 ## 相關筆記 — Related
 
-- [LLM 極限實測（一）](./llm-limitations-field-test.md) —— 工具沒關乾淨的那一輪
-- [LLM 極限實測（三）](./llm-limitations-field-test-3.md) —— 同樣零工具，換 Sonnet 5 與 Haiku 4.5 再比一次
+- [LLM 極限實測（一）](llm-limitations-field-test.md) —— 工具沒關乾淨的那一輪
+- [LLM 極限實測（三）](llm-limitations-field-test-3.md) —— 同樣零工具，換 Sonnet 5 與 Haiku 4.5 再比一次
 - [LLM 的極限](../../02-advanced/limits-and-verification/llm-limitations.md) —— 理論來源
 - [先驗證，再用它突破自己](../essays/ai-verify-then-expand.md) —— 獨立驗算

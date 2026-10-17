@@ -9,7 +9,7 @@ created: 2026-10-14
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> 姊妹篇 [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) 的 Layer 1 說「從情境推任務座標」. 但那是**文字情境**. 如果情境換成**動態實體訊號** — 自動車感測 → 下一步要怎麼開、新聞 + 買賣量 → 股市下一步怎麼走 — 這套推論還撐得住嗎? 短答: **撐到物理牆為止**. 這篇把四面牆拆出來, 配 2024-2026 的實證數字, 再回頭看兩個具體場景 (自動車 VLA + 股市 LLM) 的現況與極限.
+> 姊妹篇 [AI 怎麼知道該用哪種能力](how-ai-picks-capability.md) 的 Layer 1 說「從情境推任務座標」. 但那是**文字情境**. 如果情境換成**動態實體訊號** — 自動車感測 → 下一步要怎麼開、新聞 + 買賣量 → 股市下一步怎麼走 — 這套推論還撐得住嗎? 短答: **撐到物理牆為止**. 這篇把四面牆拆出來, 配 2024-2026 的實證數字, 再回頭看兩個具體場景 (自動車 VLA + 股市 LLM) 的現況與極限.
 
 > **TL;DR (EN):** Layer 1 (context → task) assumes the context is text. Swap it for sensor streams or market signals and you hit four walls. (1) **Ontology wall** — sequence models learn P(x|context), not P(s'|s,a). Flux game: LLMs produce ~10% invalid moves vs RL's 0%. (2) **Chaos wall** — error grows exponentially at the system's Lyapunov rate; no scaling fixes this. (3) **Distribution wall** — VLA models drop ~40% on novel geometries; illumination shifts can make them color-blind. (4) **Temporal consistency** — fidelity decays like √(horizon); long-horizon tasks drift. For markets add a fifth: **efficient-markets wall** — Lopez-Lira finds GPT-4 beats sentiment baselines but only ~1-2 trading days of drift. π0.5 generalizes to new homes but still reopens drawers it just closed. The common root: pure sequence models always emit an answer; in dynamic contexts the answer silently decouples from the environment. Fix is outside the model: tight-loop verification, short horizons + fast replan, ensembles, don't deploy open-loop.
 
@@ -169,7 +169,7 @@ Alejandro Lopez-Lira & Yuehua Tang (UF, 2023 → 2025 revised) 的 《Can ChatGP
 
 ## 4. 共同根跟工程手段 — Common Root and Playbook
 
-把四面牆加兩個 case 串起來, **共同根**跟姊妹篇 [情境推任務的 6 種失手](./limits-of-capability-from-context.md) 一樣: **Layer 1 的任務推論, 永遠會輸出一個答案, 但在動態實體情境下, 這個答案會跟現實悄悄脫鉤而模型不自覺**.
+把四面牆加兩個 case 串起來, **共同根**跟姊妹篇 [情境推任務的 6 種失手](limits-of-capability-from-context.md) 一樣: **Layer 1 的任務推論, 永遠會輸出一個答案, 但在動態實體情境下, 這個答案會跟現實悄悄脫鉤而模型不自覺**.
 
 文字情境裡這個脫鉤可以人工 review 抓到; 動態情境裡**沒有人在每一步 review**, 脫鉤會累積.
 
@@ -190,8 +190,8 @@ Alejandro Lopez-Lira & Yuehua Tang (UF, 2023 → 2025 revised) 的 《Can ChatGP
 
 ## 相關筆記
 
-- [AI 101 - AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) — 這篇的前提, Layer 1 的 8 層機制
-- [AI 101 - 情境推任務會在哪裡失手](./limits-of-capability-from-context.md) — 文字情境下 Layer 1 的 6 種極限 (姊妹篇, 不同切面)
+- [AI 101 - AI 怎麼知道該用哪種能力](how-ai-picks-capability.md) — 這篇的前提, Layer 1 的 8 層機制
+- [AI 101 - 情境推任務會在哪裡失手](limits-of-capability-from-context.md) — 文字情境下 Layer 1 的 6 種極限 (姊妹篇, 不同切面)
 - [AI 101 - LLM 的極限](../limits-and-verification/llm-limitations.md) — 鋸齒狀前沿等結構性極限
 - [AI 101 - AI 產出怎麼驗](../limits-and-verification/verifying-ai-output.md) — Outside-loop verification 的具體做法
 

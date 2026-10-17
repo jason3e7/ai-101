@@ -213,9 +213,9 @@ Flow 其實是 harness／loop 那套「別一次問完，讓它跑一個結構�
 ## 相關筆記 — Related
 
 - [AI 怎麼知道該用哪種能力](../capabilities/how-ai-picks-capability.md) - Prompt 那一代最核心的機制：它從你的話裡推論任務
-- [Context Engineering](./context-engineering.md) - 第二時代的主題，餵什麼比怎麼問更重要
-- [Harness Engineering](./harness-engineering.md) - 第三時代：模型動不了，但外面那層可以
-- [Loop Engineering](./loop-engineering.md) - 第四時代：設計會自己 prompt agent 的迴圈
+- [Context Engineering](context-engineering.md) - 第二時代的主題，餵什麼比怎麼問更重要
+- [Harness Engineering](harness-engineering.md) - 第三時代：模型動不了，但外面那層可以
+- [Loop Engineering](loop-engineering.md) - 第四時代：設計會自己 prompt agent 的迴圈
 - [六種能力執行手冊](../capabilities/capabilities-playbook.md) - 第一、二代的實戰打法
 
 ## Sources

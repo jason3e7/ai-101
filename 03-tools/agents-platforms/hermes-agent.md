@@ -192,6 +192,6 @@ ollama create gemma4-hermes -f ~/Modelfile.gemma4
 ## 相關筆記
 
 - [AI 101 - 核心概念](../../01-fundamentals/core-concepts.md) — Agent 概念說明
-- [AI 101 - OpenClaw](./openclaw.md) — 類似定位的 AI Gateway 比較
+- [AI 101 - OpenClaw](openclaw.md) — 類似定位的 AI Gateway 比較
 - [AI 101 - Claude Code 生態系](../../01-fundamentals/claude-code/ecosystem.md) — Skills / Memory 概念對照
 - [AI 101 - Gemma 4 本地模型](../../04-local-llm/gemma-4-local-model.md) — 本地模型完整設定指南

@@ -53,8 +53,8 @@ ai-101/
 每篇 note 都在**引言（開頭 callout ＋ TL;DR）和文章本體之間**放一張心智清單。用哪個 skill，**依這兩步判斷（第一步優先）**：
 
 1. **先看實際材料（優先）**：這篇 note 手上真正要處理的材料多不多？
-   * **材料已足、要收斂** → [condense-mindmap](./condense-mindmap/SKILL.md)（濃縮，每節點可追回來源）。例：全文已寫完、已抓回一整篇外部文章、給了一疊筆記。
-   * **材料很少、要生成** → [expand-mindmap](./expand-mindmap/SKILL.md)（研究後放大，推測節點標 `(?)`）。例：只有一個主題、一個問題當種子。
+   * **材料已足、要收斂** → [condense-mindmap](condense-mindmap/SKILL.md)（濃縮，每節點可追回來源）。例：全文已寫完、已抓回一整篇外部文章、給了一疊筆記。
+   * **材料很少、要生成** → [expand-mindmap](expand-mindmap/SKILL.md)（研究後放大，推測節點標 `(?)`）。例：只有一個主題、一個問題當種子。
 2. **判斷不出來時，才看 prompt 輸入量**：這次 prompt 給進來的內容 **≤ 500 字用 expand-mindmap，> 500 字用 condense-mindmap**。
 
 （換句話說：字數只是「拿不準時的預設值」，真正的依據是這篇實際在收斂還是發散。）
@@ -85,7 +85,7 @@ created: yyyy-mm-dd
 > 原文：[連結文字](url)
 > **一句話：** 這篇在說什麼
 
-（心智清單：夾在這裡，引言和主體之間。模式二的實際材料是抓回的文章內容，不是那幾個 URL，所以固定用 [condense-mindmap](./condense-mindmap/SKILL.md) 濃縮全文，不套 500 字判斷。）
+（心智清單：夾在這裡，引言和主體之間。模式二的實際材料是抓回的文章內容，不是那幾個 URL，所以固定用 [condense-mindmap](condense-mindmap/SKILL.md) 濃縮全文，不套 500 字判斷。）
 
 （主體內容）
 

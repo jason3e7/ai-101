@@ -9,7 +9,7 @@ created: 2026-10-02
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> 2025 年底開始，中文社群流行一種「抓鬼」遊戲：看到破折號 `——`、「不是⋯而是⋯」、「」引號、`｜` 分隔號，就斷定「這是 AI 寫的」。這篇不講破折號**為什麼**出現（那在 [AI 的文風與語氣](./ai-writing-style-tells.md) 裡），而是講這場社群現象本身：這些「鐵證」靠不靠得住、為什麼清單一直在變、以及另一派人「與其抓鬼不如調教」的說法。
+> 2025 年底開始，中文社群流行一種「抓鬼」遊戲：看到破折號 `——`、「不是⋯而是⋯」、「」引號、`｜` 分隔號，就斷定「這是 AI 寫的」。這篇不講破折號**為什麼**出現（那在 [AI 的文風與語氣](ai-writing-style-tells.md) 裡），而是講這場社群現象本身：這些「鐵證」靠不靠得住、為什麼清單一直在變、以及另一派人「與其抓鬼不如調教」的說法。
 
 > **TL;DR (EN):** Since late 2025 Chinese-language social media has turned AI-writing tells into a gotcha game - point at an em dash or a "not X, but Y" and call it AI. The problem: these signals produce constant false positives. The Economist compared 55,940 sentences / 1.2M words and found the em dash is **not** reliable (only Claude exceeds the human rate; ChatGPT now uses fewer than humans); the real statistical tell is **too little** punctuation, not too much. The accused tells keep shifting ("not X but Y" has already dropped to #2), because it is an arms race: both the models and the spotters adapt. Meanwhile a counter-camp argues the tells are just bad prompting, not proof of anything. The honest takeaway is the same as everywhere else in this repo: one symbol is never evidence; the real signal is hollow, accountability-free content, not a punctuation mark.
 
@@ -69,7 +69,7 @@ created: 2026-10-02
 >
 > 換句話說，大家盯著「多出來的破折號」抓，而機器真正露餡的地方，是**少掉的那些逗號和分號**。
 
-這跟這個 repo 自己的實測也對得起來：lab01 把 2026 iThome 鐵人賽約 929 個系列、1.5 萬篇文章全抓下來算破折號密度，結論一樣是「破折號密度只是排序訊號，不是判決」（見 [lab01 的 results](../../05-notes/ironman/lab01/results.md)）。**單一符號永遠抓不了人。**
+這跟這個 repo 自己的實測也對得起來：lab01 把 2026 iThome 鐵人賽約 929 個系列、1.5 萬篇文章全抓下來算破折號密度，結論一樣是「破折號密度只是排序訊號，不是判決」（見 [lab01 的 results](../../05-notes/02-project/2026ironman/lab01/results.md)）。**單一符號永遠抓不了人。**
 
 ---
 
@@ -106,7 +106,7 @@ created: 2026-10-02
 
 1. **單一符號不是證據，是提示。** 看到一個破折號、一句「不是⋯而是」，頂多讓你多留意，不能定罪。要看就看**密度**（一堆習慣擠在一起）加上**有沒有具體、會讓作者擔責任的內容**。空洞 ＋ 沒擔當，才是真訊號；符號不是。
 2. **別信任何「一招秒判」。** 清單會過期（「不是⋯而是」已經退到第二），而且最會做統計的經濟學人說破折號根本不可靠、真正的破綻是標點太少。賣你「一眼識破」的，通常比被抓的 AI 文還不可靠。
-3. **健康的回應不是裝人，是放真東西。** 與其加錯字、改掉自己原本的句型去躲偵測，不如把 AI 幫你起的稿，補進只有你寫得出來的東西：具體的人、事、數字、在地的經驗、你願意具名負責的判斷。這也正是「怎麼壓 AI 味」那篇的結論 - [點名具體習慣 ＋ 給替代](./ai-writing-style-tells.md#怎麼壓下去點名--給替代--how-to-suppress-them)，而不是對它喊「寫自然一點」。
+3. **健康的回應不是裝人，是放真東西。** 與其加錯字、改掉自己原本的句型去躲偵測，不如把 AI 幫你起的稿，補進只有你寫得出來的東西：具體的人、事、數字、在地的經驗、你願意具名負責的判斷。這也正是「怎麼壓 AI 味」那篇的結論 - [點名具體習慣 ＋ 給替代](ai-writing-style-tells.md#怎麼壓下去點名--給替代--how-to-suppress-them)，而不是對它喊「寫自然一點」。
 
 > [!TIP]
 > 一句話記：**抓鬼抓的是符號，但鬼從來不在符號裡。** 一篇文章像不像人，看的是裡面有沒有「人」 - 具體的經驗和敢下的判斷 - 不是它用了哪個標點。
@@ -115,9 +115,9 @@ created: 2026-10-02
 
 ## 相關筆記 — Related
 
-- [AI 的文風與語氣](./ai-writing-style-tells.md) - 破折號**為什麼**出現、怎麼從 prompt 端壓下去（這篇的機制面）
+- [AI 的文風與語氣](ai-writing-style-tells.md) - 破折號**為什麼**出現、怎麼從 prompt 端壓下去（這篇的機制面）
 - [AI 生成內容怎麼標記與辨識](../../01-fundamentals/ai-content-watermark.md) - 為什麼連官方浮水印都不能當定論，何況一個符號
-- [lab01：AI 文風檢測基準線](../../05-notes/ironman/lab01/README.md) - 這個 repo 自己把全站鐵人賽文章抓下來算破折號密度的實測
+- [lab01：AI 文風檢測基準線](../../05-notes/02-project/2026ironman/lab01/README.md) - 這個 repo 自己把全站鐵人賽文章抓下來算破折號密度的實測
 
 ## Sources
 

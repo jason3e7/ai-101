@@ -73,7 +73,7 @@ Skill 省 context 的關鍵，是**分三層載入**，不是一次全丟進去�
 而且它正在變成**跨廠商**的共通格式 - 已經有獨立的 spec（agentskills.io），OpenAI 與 Microsoft 的 agent 框架也各自跟進。所以學這套格式的投資，不會綁死在一家。
 
 > [!NOTE]
-> Agent Skills 由 Anthropic 在 **2025-10-16** 正式提出。在這之前，「skill」在 Claude Code 裡比較像「可呼叫的 `/指令`」（見 [Claude Code 生態系](./claude-code/ecosystem.md)）；SKILL.md 把它標準化成一個跨平台、可攜帶的檔案格式。
+> Agent Skills 由 Anthropic 在 **2025-10-16** 正式提出。在這之前，「skill」在 Claude Code 裡比較像「可呼叫的 `/指令`」（見 [Claude Code 生態系](claude-code/ecosystem.md)）；SKILL.md 把它標準化成一個跨平台、可攜帶的檔案格式。
 
 ---
 
@@ -87,14 +87,14 @@ Skill 省 context 的關鍵，是**分三層載入**，不是一次全丟進去�
 4. **一個 skill 只做一件事** - 範圍越清楚，description 越好寫，越容易在對的時機被叫到。範圍太雜，AI 反而不知道何時該用。
 
 > [!TIP]
-> 這個 repo 自己的 [`skills/`](../skills/) 資料夾就是活例子（[refactor-note](../skills/refactor-note.md)、[curate-notes](../skills/curate-notes.md)）。它們用的是輕量版：同樣的 `name` ＋ `description` frontmatter，本體是判斷準則與流程。想寫新的，照著抄一個最快。
+> 這個 repo 自己的 [`skills/`](../skills) 資料夾就是活例子（[refactor-note](../skills/refactor-note.md)、[curate-notes](../skills/curate-notes.md)）。它們用的是輕量版：同樣的 `name` ＋ `description` frontmatter，本體是判斷準則與流程。想寫新的，照著抄一個最快。
 
 ---
 
 ## 常見問題 — FAQ
 
 **Q：skill 跟 prompt、跟 MCP、跟 plugin 差在哪？**
-skill 是**存起來、可重複叫用的一套做法**（行為層）；prompt 是你當下打的話；MCP 是接外部工具與資料的**連線**；plugin 是把 skill／hook／MCP 打包起來的**發佈單位**。四者的關係見 [Claude Code 生態系](./claude-code/ecosystem.md)。
+skill 是**存起來、可重複叫用的一套做法**（行為層）；prompt 是你當下打的話；MCP 是接外部工具與資料的**連線**；plugin 是把 skill／hook／MCP 打包起來的**發佈單位**。四者的關係見 [Claude Code 生態系](claude-code/ecosystem.md)。
 
 **Q：一定要會寫程式嗎？**
 不用。最基本的 skill 就是一個 markdown 檔，全是自然語言說明。要跑腳本才需要放程式碼（第三層參考檔）。
@@ -109,7 +109,7 @@ skill 是**存起來、可重複叫用的一套做法**（行為層）；prompt 
 
 ## 相關筆記 — Related
 
-- [Claude Code 生態系](./claude-code/ecosystem.md) - skill／hook／MCP／plugin 四者的關係
+- [Claude Code 生態系](claude-code/ecosystem.md) - skill／hook／MCP／plugin 四者的關係
 - [兩個心智圖 skill 的設計筆記](../05-notes/design-and-guides/mindmap-skills-design.md) - 一個實際在設計中的 skill 案例
 - [refactor-note skill](../skills/refactor-note.md) - repo 自己的 skill 範例，可直接照抄格式
 

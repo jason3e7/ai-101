@@ -9,7 +9,7 @@ created: 2026-10-14
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> 姊妹篇 [AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) 解釋了第 1 層怎麼從情境裡「推」出任務座標。這篇是接棒: **那個推論, 什麼時候會失手?** 把 2024-2026 的研究結論收攏成六種極限 — 情境太長、示範太多、順序敏感、任務太「鋸齒」、情境被劫持、情境留白. 每一種都附證據, 每一種都有對應的工程手段.
+> 姊妹篇 [AI 怎麼知道該用哪種能力](how-ai-picks-capability.md) 解釋了第 1 層怎麼從情境裡「推」出任務座標。這篇是接棒: **那個推論, 什麼時候會失手?** 把 2024-2026 的研究結論收攏成六種極限 — 情境太長、示範太多、順序敏感、任務太「鋸齒」、情境被劫持、情境留白. 每一種都附證據, 每一種都有對應的工程手段.
 
 > **TL;DR (EN):** Context-based task inference (Layer 1 in the sister note) has six documented failure modes. (1) **Long context decay** — NoLiMa shows 11/13 "128K-ready" models drop to ≤50% baseline at 32K; attention falls apart faster than the token budget suggests. (2) **Many-shot saturation** — some tasks degrade past a certain shot count. (3) **Order sensitivity** — the same demos in a different order can swing accuracy wildly. (4) **Task vector rank-one ceiling** — bijection-type tasks are provably unsolvable by the single-vector representation. (5) **Context hijacking** — models can't reliably separate information from instructions. (6) **Silent failure under underspecification** — rather than ask, models pick the training-distribution mode and go. Fixes: put the signal early, trim distractors, randomize demo order and ensemble, call multiple times for high-rank mappings, treat agent-ingested content as untrusted, force-list assumptions.
 
@@ -180,7 +180,7 @@ before producing output.
 
 ## 相關筆記
 
-- [AI 101 - AI 怎麼知道該用哪種能力](./how-ai-picks-capability.md) — 這篇的前提, 情境推任務的 8 層機制
+- [AI 101 - AI 怎麼知道該用哪種能力](how-ai-picks-capability.md) — 這篇的前提, 情境推任務的 8 層機制
 - [AI 101 - LLM 的極限](../limits-and-verification/llm-limitations.md) — 結構性、暫時、鋸齒狀三類做不到
 - [AI 101 - Context Engineering](../engineering/context-engineering.md) — 怎麼佈置 context, 跟這篇互為正反面
 - [AI 101 - AI 產出怎麼驗](../limits-and-verification/verifying-ai-output.md) — 不確定度要從外部補的具體做法

@@ -8,7 +8,7 @@ executed: 2026-10-17
 
 # Ironman 日期型目錄拆平 — Refactor Plan (2026-10-17) ✅ EXECUTED
 
-[← 回主頁](../../index.md)｜[三十篇標題](../ironman/titles.md)｜[參賽規劃](../ironman/plan.md)
+[← 回主頁](../../index.md)｜[三十篇標題](../02-project/2026ironman/titles.md)｜[參賽規劃](../02-project/2026ironman/plan.md)
 
 > [!NOTE]
 > 依據 2026-10-17 更新的 [refactor-note](../../skills/refactor-note.md) 規則「**日期型目錄不套 ≤ 10 上限**」, 把 `ironman/drafts/`、`ironman/publish/`、`ironman/assets/` 底下的 5 天分組子資料夾 (`day01-05/` ... `day26-30/`) 全部拆平, 讓 30 篇 `dayNN-*` 檔案平放一層. 本份是計劃書, **等用戶核准後才執行**.
@@ -140,11 +140,11 @@ assets/
 
 | 檔 | 要改的地方 |
 |---|---|
-| `05-notes/ironman/drafts/day30-finale.md` (×2) | `assets/day06-10/day10-cover.png` → `assets/day10-cover.png`; `assets/day11-15/day13-cover.png` → `assets/day13-cover.png` |
-| `05-notes/ironman/publish/day30-ithome.md` (×2) | 同上 |
+| `05-notes/02-project/2026ironman/drafts/day30-finale.md` (×2) | `assets/day06-10/day10-cover.png` → `assets/day10-cover.png`; `assets/day11-15/day13-cover.png` → `assets/day13-cover.png` |
+| `05-notes/02-project/2026ironman/publish/day30-ithome.md` (×2) | 同上 |
 | `05-notes/02-project/zerojudge/playwright-zerojudge-automation.md` (×2) | `drafts/day21-25/day21-...md` → `drafts/day21-...md` |
 | `05-notes/essays/drafting-with-origin-quotes.md` (×1) | `drafts/day16-20/day20-...md` → `drafts/day20-...md` |
-| `05-notes/ironman/lab01/v07-preview.md` (×1) | `publish/day01-15/day*-ithome.md` → `publish/day*-ithome.md` (這條本來就寫錯, 順便修) |
+| `05-notes/02-project/2026ironman/lab01/v07-preview.md` (×1) | `publish/day01-15/day*-ithome.md` → `publish/day*-ithome.md` (這條本來就寫錯, 順便修) |
 | `02-advanced/engineering/context-engineering-in-depth.md` (×2) | `drafts/day06-10/day06-...md`, `day07-...md` → `drafts/day06-...md`, `drafts/day07-...md` |
 | `02-advanced/engineering/harness-engineering.md` (×1) | `drafts/day06-10/day07-...md` → `drafts/day07-...md` |
 | `02-advanced/limits-and-verification/converge-before-verify.md` (×3) | `drafts/day06-10/day06, day09` → `drafts/day06, day09` |
@@ -161,11 +161,11 @@ assets/
 
 - **raw.githubusercontent.com 圖片 URL**: Day 30 draft/publish 用 `raw.githubusercontent.com/.../assets/day06-10/day10-cover.png` 這類路徑. 搬完後路徑中間層消失, 要同步改. GitHub raw URL 跟 iThome 線上文章用的 upload URL 無關, 不影響已發布內容.
 
-- **Obsidian 內部連結**: 不預期有 `[[wiki-link]]` 指向 ironman 檔 (CLAUDE.md 禁用). 執行前仍 `grep -rn "\[\[" 05-notes/ironman/` 確認一次.
+- **Obsidian 內部連結**: 不預期有 `[[wiki-link]]` 指向 ironman 檔 (CLAUDE.md 禁用). 執行前仍 `grep -rn "\[\[" 05-notes/02-project/2026ironman/` 確認一次.
 
 - **外部連結 (blog / tweet / email)**: 若有人把 GitHub 連結分享過, 連結會壞. 不可控, 忍受代價. (iThome 文章用自己上傳的圖, 不受影響.)
 
-- **CI / Playwright 腳本**: `lab01/`, `tools/` 下的 Python 可能用相對路徑讀 drafts. 執行前 `grep -rn "day[0-9][0-9]-[0-9][0-9]" 05-notes/ironman/{lab01,tools}/ 2>/dev/null` 掃一遍.
+- **CI / Playwright 腳本**: `lab01/`, `tools/` 下的 Python 可能用相對路徑讀 drafts. 執行前 `grep -rn "day[0-9][0-9]-[0-9][0-9]" 05-notes/02-project/2026ironman/{lab01,tools}/ 2>/dev/null` 掃一遍.
 
 - **`publish/README.md` 跟 `assets/README.md` 的 Layout 描述**: 要同步改成「平放一層」. 不改會跟實際結構衝突, 讀者困惑.
 

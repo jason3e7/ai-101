@@ -19,7 +19,7 @@ created: 2026-07-21
 
 這是一條清楚的演進線，KB 前面幾篇剛好排成順序：
 
-**Prompt（怎麼問）→ [Context](./context-engineering.md)（餵什麼資料）→ [Harness](./harness-engineering.md)（外層框架）→ Loop（自主迴圈）**
+**Prompt（怎麼問）→ [Context](context-engineering.md)（餵什麼資料）→ [Harness](harness-engineering.md)（外層框架）→ Loop（自主迴圈）**
 
 每一棒的槓桿都往「離模型更遠、離系統更近」移動。到了 Loop 這一棒：**你不再是「提示 agent 的人」，而是「設計那個提示 agent 的系統的人」。**
 
@@ -103,7 +103,7 @@ Claude Code 內建了迴圈工程的關鍵零件：
 
 - act → observe → decide → repeat 的迴圈，就是 2022 年的 **ReAct**
 - `/goal`、`/loop`、sub-agent、worktree、skills、MCP —— 全是現成工具
-- 上下文管理、外層框架 —— 就是 [Context](./context-engineering.md) 和 [Harness Engineering](./harness-engineering.md)
+- 上下文管理、外層框架 —— 就是 [Context](context-engineering.md) 和 [Harness Engineering](harness-engineering.md)
 
 沒有新演算法、新模型能力、新原語。那它到底新在哪？只有兩件事：
 
@@ -117,7 +117,7 @@ Claude Code 內建了迴圈工程的關鍵零件：
 
 ## 相關筆記 — Related
 
-- [Context Engineering](./context-engineering.md)、[Harness Engineering](./harness-engineering.md) —— 演進線的前兩棒
+- [Context Engineering](context-engineering.md)、[Harness Engineering](harness-engineering.md) —— 演進線的前兩棒
 - [Claude Code goal](../../01-fundamentals/claude-code/goal.md)、[goal 強制力 Hook](../../01-fundamentals/claude-code/goal-enforcement-hooks.md) —— 迴圈的「可驗證目標」與「護欄」
 - [Subagent 使用與計費](subagent-usage-and-billing.md) —— 寫者／驗者分工
 - [先驗證，再用它突破自己](../../05-notes/essays/ai-verify-then-expand.md) —— 迴圈裡「驗證」為什麼是關鍵
