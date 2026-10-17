@@ -182,7 +182,7 @@ assets/
 **4 個 commit**, 按順序:
 
 ### Commit 1 — 計劃書 (就是本份)
-- `05-notes/01-refactor-plan/20261017-ironman-flatten.md`
+- `05-notes/01-refactorPlan/20261017-ironman-flatten.md`
 - 內容: 本文件
 - 推上去等用戶審
 
