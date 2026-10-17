@@ -59,7 +59,7 @@ Day 26 時: **1720 pts, 27 題, 8 類全部有進度**. 一週繼續跑一段後
 
 **4940 pts / 64 題解掉, 剩下 37 題都至少開過題目看過卡點**. 這次有兩個不一樣的狀況:
 
-1. Pwn 跟 Web 的「碰過」是**掃過一輪, 寫下評估**(為什麼不打), 不是真的攻. 例如 Pwn #67-81 是 15 題 binary exploit, 單題工時 30 min 起跳, [存成 pending note](../../../phm/pwn/pending-67-81.md) 之後再回來
+1. Pwn 跟 Web 的「碰過」是**掃過一輪, 寫下評估**(為什麼不打), 不是真的攻. 例如 Pwn #67-81 是 15 題 binary exploit, 單題工時 30 min 起跳, [存成 pending note](../../02-project/phm/pwn/pending-67-81.md) 之後再回來
 2. 其他六類的「碰過」是**真的試過**: 解掉就寫 writeup, 卡住就寫 pending 筆記記下猜測跟試過的方向
 
 ---
@@ -164,10 +164,10 @@ bkcrack 破 ZIP → 讀 config → 發現 Redis internal port →
 
 | 分類 | 剩幾題 | 不打的原因 |
 |:---|---:|:---|
-| **Pwn #66-81** | 16 | binary exploit (shellcode / ROP / heap), 單題工時 30 min 起跳. 另外 shellcode/ROP chain 的生成最容易撞 safeguard, ROI 低. 詳見 [pending-67-81](../../../phm/pwn/pending-67-81.md) |
-| **Web #38-40 xssrf** | 3 | 已經被擋過一次, 需要拆成多個 session 慢慢推. 詳見 [xssrf-pending-38-40](../../../phm/web/xssrf-pending-38-40.md) |
+| **Pwn #66-81** | 16 | binary exploit (shellcode / ROP / heap), 單題工時 30 min 起跳. 另外 shellcode/ROP chain 的生成最容易撞 safeguard, ROI 低. 詳見 [pending-67-81](../../02-project/phm/pwn/pending-67-81.md) |
+| **Web #38-40 xssrf** | 3 | 已經被擋過一次, 需要拆成多個 session 慢慢推. 詳見 [xssrf-pending-38-40](../../02-project/phm/web/xssrf-pending-38-40.md) |
 | **Web #37 command-executor** | 1 | ls 用 `escapeshellarg` 包住, cmd 白名單只有 ls/env, 嘗試一輪都繞不過 |
-| **Reversing #51-57** | 7 | packed PE / M/o/Vfuscator / VM / sha256 preimage / maze / termvis / rc87cipher, 每題都要特定 VM 或商業套殼的深度 reverse. 詳見 [pending-51-57](../../../phm/reversing/pending-51-57.md) |
+| **Reversing #51-57** | 7 | packed PE / M/o/Vfuscator / VM / sha256 preimage / maze / termvis / rc87cipher, 每題都要特定 VM 或商業套殼的深度 reverse. 詳見 [pending-51-57](../../02-project/phm/reversing/pending-51-57.md) |
 | **Misc 剩 7 題** | 7 | 都是文化梗類, 延續 Day 26 死因一 |
 | **Crypto slowcipher** | 1 | 延續 Day 26 死因一 |
 
@@ -193,6 +193,6 @@ Day 26 說「吃掉」跟「卡住」分三類, 這次驗證完多出一條:
 ## Sources
 
 - [Please Hack Me CTF](https://ctf.hackme.quest/) — Inndy 維護的 CTF 練習站
-- [05-notes/phm/README.md](../../../phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup
+- [05-notes/02-project/phm/README.md](../../02-project/phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup
 - [essays/claude-code-cyber-safeguard.md](../../essays/claude-code-cyber-safeguard.md) — 撞到 Claude Code cyber safeguard 的推測跟繞法
 - [Day 26: PHM CTF 第一輪](day26-phm-ctf.md) — 本篇的前情提要

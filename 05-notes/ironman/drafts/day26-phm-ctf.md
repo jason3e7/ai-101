@@ -236,4 +236,4 @@ CTF 卡住的題目不是因為「題目難」, 是因為**題目的解法本身
 ## Sources
 
 - [Please Hack Me CTF](https://ctf.hackme.quest/) — Inndy 維護的 CTF 練習站
-- [05-notes/phm/README.md](../../../phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup
+- [05-notes/02-project/phm/README.md](../../02-project/phm/README.md) — 這次刷 CTF 的解題進度與各題 writeup

@@ -49,7 +49,7 @@ Day 22 掃 78 題 96.2% AC 看起來強, 但有兩個合理質疑:
 - **每主題挑 1 題** → 14 題覆蓋 CPE26 的全部主題分類
 - **外加 5 題: 刻意從 NSYSU ★ 到 ★★★★★ 各挑一題** → 看難度階梯對解題成功率跟手感的影響
 
-共 **19 題**, 全部已存到 [`zerojudge/selected/`](../../../zerojudge/selected/README.md) 一題一檔.
+共 **19 題**, 全部已存到 [`zerojudge/selected/`](../../02-project/zerojudge/selected/README.md) 一題一檔.
 
 ---
 
@@ -189,7 +189,7 @@ c500 (AEWE-645 的傷害) 也是 Day 22 卡住的題, 單次送出 NA 0%. 開放
 - **判題用的分佈模型**是「從第 1 格起、每 f 格放一隻」(位置 1, 1+f, 1+2f, ..., 1+(k-1)·f), 不是「找物理最佳的最壞分佈」; 位置 ≤ m 的免計傷害, **包含剛好落在 m 的那隻也算 0**
 - 關鍵盲區: 兩個模型**只在 `m ≡ 1 (mod f)` 時結果才會不同**. 兩組公開樣例剛好一組 f=3 沒碰撞、一組 f=1 但 k 太小沒越過 m, 都測不出差
 
-把這個「判題用的分佈模型」告訴 agent, 它一次 refactor (左側數量用 `⌊(m-1)/f⌋+1`, 右側位置直接 `1+(Lcnt+j)·f`), AC. 完整 writeup 在 [contest/README.md](../../../zerojudge/contest/README.md).
+把這個「判題用的分佈模型」告訴 agent, 它一次 refactor (左側數量用 `⌊(m-1)/f⌋+1`, 右側位置直接 `1+(Lcnt+j)·f`), AC. 完整 writeup 在 [contest/README.md](../../02-project/zerojudge/contest/README.md).
 
 > [!IMPORTANT]
 > 這題嚴格說**不算 AI 自己解的** — 關鍵一步是我讀作者解題報告. 寫在這裡是因為教訓太值得: **強判斷標準也有盲區, 當盲區剛好蓋住公開樣例時, 自測全綠也會 WA**. agent 自己 brute 對拍只會「跟自己同一個錯誤模型」互相證明對, 要跳出同溫層得找一個**跟題目來源獨立**的參照 (這裡是作者的解題報告). 這呼應 [Day 21 「綠燈不等於對」](https://ithelp.ithome.com.tw/articles/10421407) — 判斷標準越強, 盲區可能越細.
@@ -211,9 +211,9 @@ c500 (AEWE-645 的傷害) 也是 Day 22 卡住的題, 單次送出 NA 0%. 開放
 
 - [Day 21: 回到好驗證的主場](https://ithelp.ithome.com.tw/articles/10421407) — 判斷標準概念鋪陳
 - [Day 22: 掃 ZeroJudge 78 題](https://ithelp.ithome.com.tw/articles/10421768) — 規模化 pass rate
-- [ZeroJudge selected/ 19 題解答](../../../zerojudge/selected/README.md) — 本篇全部 cpp 原始碼
+- [ZeroJudge selected/ 19 題解答](../../02-project/zerojudge/selected/README.md) — 本篇全部 cpp 原始碼
 - [MCU CPE26 題目選集](https://cpe.mcu.edu.tw/cpelist.php) — 本篇按主題選題的 index
-- [NSYSU 進階程式設計 UVa 星等](../../../zerojudge/nsysu-uva-ratings.md) — 難度標籤來源
-- [ZeroJudge 競賽題庫 (含 c500 補 AC 筆記)](../../../zerojudge/contest/README.md) — c500 判題模型案例詳細 writeup
+- [NSYSU 進階程式設計 UVa 星等](../../02-project/zerojudge/nsysu-uva-ratings.md) — 難度標籤來源
+- [ZeroJudge 競賽題庫 (含 c500 補 AC 筆記)](../../02-project/zerojudge/contest/README.md) — c500 判題模型案例詳細 writeup
 - [ZeroJudge](https://zerojudge.tw/) — 線上解題
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp) — 自動送判題

@@ -173,7 +173,7 @@ Hard 題幾乎沒有卡住的, pattern density 高到讓刷題變批量作業.
 ## Sources
 
 - [Blind 75 清單 (LeetCode)](https://leetcode.com/problem-list/oizxjoit/) — 本篇刷的 75 題
-- [leetcode/ 全部解答](../../../leetcode/README.md) — 本篇所有 cpp 原始碼與進度表
+- [leetcode/ 全部解答](../../02-project/leetcode/README.md) — 本篇所有 cpp 原始碼與進度表
 - [Day 21: 回到好驗證的主場](https://ithelp.ithome.com.tw/articles/10421407) — 判斷標準概念鋪陳
 - [Day 22: 掃 ZeroJudge 78 題](https://ithelp.ithome.com.tw/articles/10421768) — 規模化 pass rate (中文 OJ)
 - [Day 23: ZeroJudge 進階測試](./day23-zerojudge-cross-tier.md) — 主題覆蓋 + 難度階梯 + 多輪救援

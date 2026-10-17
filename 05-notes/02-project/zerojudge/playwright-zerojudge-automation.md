@@ -9,7 +9,7 @@ created: 2026-10-05
 [← 回主頁](../../index.md)
 
 > [!NOTE]
-> 把「AI 寫的程式 → 丟上 online judge 判題」這條線接起來, 中間的上傳步驟可以用 Playwright 自動化。這篇記的是 [ZeroJudge](https://zerojudge.tw/) 的實作, **重點在送出答案那一段** —— 因為它有三個會讓你卡住、但一旦知道就很簡單的坑。這也呼應 [Day 21 那篇](../ironman/drafts/day21-back-to-verifiable-ground.md): online judge 就是一個標準的 oracle, 程式的對錯它幫你判, 不用人讀。
+> 把「AI 寫的程式 → 丟上 online judge 判題」這條線接起來, 中間的上傳步驟可以用 Playwright 自動化。這篇記的是 [ZeroJudge](https://zerojudge.tw/) 的實作, **重點在送出答案那一段** —— 因為它有三個會讓你卡住、但一旦知道就很簡單的坑。這也呼應 [Day 21 那篇](../../ironman/drafts/day21-back-to-verifiable-ground.md): online judge 就是一個標準的 oracle, 程式的對錯它幫你判, 不用人讀。
 
 > **TL;DR (EN):** To automate submitting code to ZeroJudge with Playwright, three things trip you up, all in the submit step: (1) the submit form loads via **AJAX** after you open the modal — wait for the textarea before touching it; (2) setting the code box with `textarea.value = code` in JS **does not register** — the submit handler never sees it, you must use Playwright's native `fill()` (real input); (3) clicking submit fires a `confirm()` dialog that Playwright **auto-dismisses by default**, cancelling the submission — override `window.confirm` to return true first. After submit it **redirects to `/Submissions`**; read the verdict there (AC / WA / CE / TLE…), not inline. Always test locally with the matching compiler (`g++ -std=c++17`) before uploading.
 
@@ -174,4 +174,4 @@ const top = await page.evaluate(() =>
 - [ZeroJudge](https://zerojudge.tw/) — 高中生程式解題系統 (本篇的目標站)
 - [a001 題目頁](https://zerojudge.tw/ShowProblem?problemid=a001) — 範例題, 含各評分結果代碼說明
 - [Playwright — Auto-waiting / Dialogs](https://playwright.dev/docs/dialogs) — 預設自動 dismiss 對話框的官方說明
-- [Day 21: 回到可驗證的主場](../ironman/drafts/day21-back-to-verifiable-ground.md) — 為什麼 online judge 是個好 oracle
+- [Day 21: 回到可驗證的主場](../../ironman/drafts/day21-back-to-verifiable-ground.md) — 為什麼 online judge 是個好 oracle

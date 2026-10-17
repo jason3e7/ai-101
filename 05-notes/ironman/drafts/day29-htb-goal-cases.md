@@ -66,25 +66,25 @@ Claude Code 的 `/goal` 是內建 slash command, 把「目標 + 步驟 + 停止�
 
 送出去的 prompt 是四段骨架 (Target+Environment / STRICT logging / Phase Recon→Foothold→Flag / 停止條件):
 
-![Cap foothold /goal — 四段 prompt](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/cap-2026-10-13/01-goal-foothold-prompt.jpg)
+![Cap foothold /goal — 四段 prompt](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/cap-2026-10-13/01-goal-foothold-prompt.jpg)
 
 Mythos 5.1 自己把 Phase 1-3 跑完, 中間經過 nmap / ffuf / 讀 pcap / 試 SSH, 結尾按 goal 的規則**停止**不主動提權:
 
-![Cap foothold 完成 — IDOR → pcap → nathan SSH → user.txt](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/cap-2026-10-13/02-foothold-done.jpg)
+![Cap foothold 完成 — IDOR → pcap → nathan SSH → user.txt](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/cap-2026-10-13/02-foothold-done.jpg)
 
 ### 第二個 `/goal` — privesc
 
 開新 session, 準備照原模型續跑, 一送出 prompt 就被擋. 切 Opus 5 繼續:
 
-![切 Opus 5 + 新 /goal — 本機列舉找提權向量](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/cap-2026-10-13/03-model-opus5-goal-privesc.jpg)
+![切 Opus 5 + 新 /goal — 本機列舉找提權向量](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/cap-2026-10-13/03-model-opus5-goal-privesc.jpg)
 
 Opus 5 跑完本機列舉, 發現 `/usr/bin/python3.8 = cap_setuid+eip`, 一行 `os.setuid(0)` 拿到 root:
 
-![Privesc 完成 — python3.8 cap_setuid → root.txt](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/cap-2026-10-13/04-privesc-done.jpg)
+![Privesc 完成 — python3.8 cap_setuid → root.txt](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/cap-2026-10-13/04-privesc-done.jpg)
 
 HTB 平台顯示 Cap 已完成, 全程 26 分鐘:
 
-![HTB Cap solved — jason3e7, 450 XP](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/cap-2026-10-13/05-htb-cap-solved.jpg)
+![HTB Cap solved — jason3e7, 450 XP](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/cap-2026-10-13/05-htb-cap-solved.jpg)
 
 ### 攻擊鏈 (agent 自己走)
 
@@ -205,25 +205,25 @@ agent 每一步都用自己的視覺理解決定座標. Claude 讀 PNG 的能力
 
 **路徑一: 待機頁 → STAFF LOGIN → Staff Authentication → SCAN BADGE → Invalid badge format**
 
-![s01 — RDP 連進去的待機頁 "SELF CHECK-IN", 右下有 STAFF LOGIN 按鈕](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s01.png)
+![s01 — RDP 連進去的待機頁 "SELF CHECK-IN", 右下有 STAFF LOGIN 按鈕](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/touch-2026-10-13/rdp-s01.png)
 
 這是 agent 連上 RDP 看到的第一張. kiosk 應用「HTB AIRWAYS - Self Check-In」全螢幕, 底部有 Terminal 4 / Gate B7 / Kiosk #042 的機位資訊. 中央大字「SELF CHECK-IN · Touch screen to begin」, 右下角一顆「STAFF LOGIN」按鈕. Agent 想拿 staff 權限 (預期權限較高), 送點擊到右下角座標.
 
-![s02 — 進 Staff Authentication, 中間有 SCAN BADGE 按鈕](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s02.png)
+![s02 — 進 Staff Authentication, 中間有 SCAN BADGE 按鈕](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/touch-2026-10-13/rdp-s02.png)
 
 點了右下角之後進到 Staff Authentication 畫面, 中間一個橘色徽章 icon, 下面寫「Place your staff badge face-down on the scanner」, 一顆綠色 SCAN BADGE 按鈕. Agent 下一步點 SCAN BADGE.
 
-![s03 — Invalid badge format, 唯一能做的就是 TRY AGAIN 或 Back](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s03.png)
+![s03 — Invalid badge format, 唯一能做的就是 TRY AGAIN 或 Back](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/touch-2026-10-13/rdp-s03.png)
 
 點了 SCAN BADGE 後畫面變紅色警示: **Invalid badge format**. 這跟 Web 的 `/login/badge` 端點回應一致, 代表 kiosk 上掃 badge 跟 Web 走同一條後端. 試了 60+ 種 QR 格式 (JSON / base64 / JWT / `NX-xxxx` / GUID / MRZ 等) 都是這個錯誤. 這條後來撞 safeguard 停手.
 
 **路徑二: 待機頁點任意位置 → Self Check-In 流程 → LANGUAGE → LOOKUP**
 
-![s06 — LANGUAGE 選單, 20 國語言, 右下有 session timeout 倒數](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s06.png)
+![s06 — LANGUAGE 選單, 20 國語言, 右下有 session timeout 倒數](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/touch-2026-10-13/rdp-s06.png)
 
 從 s01 待機頁點**幾乎任意位置** (不是右下 STAFF LOGIN) 就會進到 LANGUAGE 選單, 20 國語言排成格子. 右下 **Session timeout 01:56**, 2 分鐘閒置就重設, agent 的「截圖 → 看圖 → 送 click」loop 有節奏壓力. 選 LANGUAGE 進下一步.
 
-![s08 — LOOKUP 的 Find Your Booking, 4 種認證方式 (BOOKING REF / PASSPORT / FREQUENT FLYER / E-TICKET)](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/htb/touch-2026-10-13/rdp-s08.png)
+![s08 — LOOKUP 的 Find Your Booking, 4 種認證方式 (BOOKING REF / PASSPORT / FREQUENT FLYER / E-TICKET)](https://raw.githubusercontent.com/jason3e7/ai-101/master/05-notes/02-project/htb/touch-2026-10-13/rdp-s08.png)
 
 選完語言進 LOOKUP 階段. Find Your Booking 有 4 種認證方式切 tab, 預設是 BOOKING REF (需要 ABC123 格式訂位代號 + Last Name). agent 想從輸入欄位找 kiosk escape (檔案選擇器 / 列印對話框 / Alt-Tab / 超連結開新視窗), 但輸入欄位一點就彈畫面上的虛擬鍵盤, `xdotool` 送的實體鍵盤進不去, 這條也斷了.
 
@@ -252,9 +252,9 @@ agent 每一步都用自己的視覺理解決定座標. Claude 讀 PNG 的能力
 
 ## Sources
 
-- [HTB Cap — 本 repo 完整案例](https://github.com/jason3e7/ai-101/blob/master/05-notes/htb/cap-2026-10-13/cap-with-goal.md)
-- [HTB Touch — 本 repo 完整案例 + 10 張 RDP 截圖](https://github.com/jason3e7/ai-101/blob/master/05-notes/htb/touch-2026-10-13/touch-with-goal.md)
-- [HTB Goal Prompt 設計指南 (本 repo)](https://github.com/jason3e7/ai-101/blob/master/05-notes/htb/htb-goal-prompt-guide.md)
+- [HTB Cap — 本 repo 完整案例](https://github.com/jason3e7/ai-101/blob/master/05-notes/02-project/htb/cap-2026-10-13/cap-with-goal.md)
+- [HTB Touch — 本 repo 完整案例 + 10 張 RDP 截圖](https://github.com/jason3e7/ai-101/blob/master/05-notes/02-project/htb/touch-2026-10-13/touch-with-goal.md)
+- [HTB Goal Prompt 設計指南 (本 repo)](https://github.com/jason3e7/ai-101/blob/master/05-notes/02-project/htb/htb-goal-prompt-guide.md)
 - [Day 28: PHM CTF — AI agent 的四面牆](https://ithelp.ithome.com.tw/articles/10423733) — safeguard 的另一面
 - [FreeRDP — `/sec:rdp` 文件](https://github.com/FreeRDP/FreeRDP/wiki/CommandLineInterface)
 - [xdotool](https://github.com/jordansissel/xdotool) — X11 鍵鼠自動化

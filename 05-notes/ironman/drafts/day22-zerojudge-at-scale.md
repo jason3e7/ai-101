@@ -64,7 +64,7 @@ Playwright MCP 自動送 → 讀 AC/WA/CE/TLE → 記錄結果
 這條迴圈的三個關鍵:
 
 - **本機先過樣例再送**: 送出去前先在本機用同一版編譯器跑過範例, 等於先過一道內建的驗證. 省掉大量「送上去才發現 CE」的無效 round-trip.
-- **MCP 送判題全自動**: Playwright MCP 做 navigate + 貼碼 + 送出 + 等判題結果. 細節踩坑見 [批次上傳 67 題遇到的坑](../../../zerojudge/batch-upload-lessons.md), 這裡不展開.
+- **MCP 送判題全自動**: Playwright MCP 做 navigate + 貼碼 + 送出 + 等判題結果. 細節踩坑見 [批次上傳 67 題遇到的坑](../../02-project/zerojudge/batch-upload-lessons.md), 這裡不展開.
 - **人**: 登入是手動的 (session cookie 到期要重新登), 其他沒有介入. 連「這題看起來不對, 你再想想」都沒說.
 
 ### Token / 時間規模
@@ -85,9 +85,9 @@ Playwright MCP 自動送 → 讀 AC/WA/CE/TLE → 記錄結果
 
 | 題庫 | 答題 | AC | 待修 | 跳過 | 題目感 |
 |:---|---:|---:|---:|---:|:---|
-| [基礎](../../../zerojudge/basic/README.md) | 42 | 40 | 2 | 0 | 哈囉、閏年、羅馬數字、GCD、迴文、二進位、排序、小字串處理 |
-| [競賽](../../../zerojudge/contest/README.md) | 16 | 15 | 1 | 4 | 博弈 DP、剝殼最大子集、凸包頂點、Move-to-Front、Jump Game |
-| [UVa](../../../zerojudge/uva/README.md) | 20 | 20 | 0 | 0 | 3n+1、Blocks、Skyline、Trees on the level、Accordian Patience、Krypton Factor |
+| [基礎](../../02-project/zerojudge/basic/README.md) | 42 | 40 | 2 | 0 | 哈囉、閏年、羅馬數字、GCD、迴文、二進位、排序、小字串處理 |
+| [競賽](../../02-project/zerojudge/contest/README.md) | 16 | 15 | 1 | 4 | 博弈 DP、剝殼最大子集、凸包頂點、Move-to-Front、Jump Game |
+| [UVa](../../02-project/zerojudge/uva/README.md) | 20 | 20 | 0 | 0 | 3n+1、Blocks、Skyline、Trees on the level、Accordian Patience、Krypton Factor |
 | **合計** | **78** | **75** | **3** | **4** | — |
 
 - **整體 AC 率 75 / 78 = 96.2%** (不計跳過的)

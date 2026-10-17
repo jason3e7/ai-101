@@ -165,7 +165,7 @@ NC150 加進 Blind 75 沒碰到的教科書演算法, 這批題寫對的話, Day
 - **唯一 WA 不是推理, 是 FP 精度**: #50 Pow 的失敗是「演算法對、實作選錯」, agent 讀 WA 一次救回. 這再次證明 AI 在 OJ 上的「強」是 pattern 認得 + 配方齊全, 不是會推理
 - **教科書演算法全在 pattern bucket 內**: Dijkstra / Bellman-Ford / Hierholzer / 區間 DP / 多源 BFS / Union-Find 這些算法課的招式, 一題一題全一次 AC. 這跟 Day 24 的 BFS 序列化 / 雙 heap / Trie 回收是同件事 — **教科書在訓練資料裡出現得太多次, 它變成 autocomplete**
 - **真正會卡的三種情境都在推理之外**: FP 精度 / 平台 race / 無判斷標準 (PREMIUM). AI 的「不能」在這三個地方特別清楚
-- **200 題寫完的意義**: 這份 repo 的 [leetcode/](../../../leetcode/) 現在是 **134 送判 AC + 7 PREMIUM 本地解 = 141 題 .cpp**, 加上三套 study plan 的進度表. 不是為了拿 badge, 是為了把 Day 24-25 這個「pattern density = AI 上限」結論用數據鎖死, 下一輪離開 OJ 判斷標準明確的場, 這個結論才派得上用場
+- **200 題寫完的意義**: 這份 repo 的 [leetcode/](../../02-project/leetcode/) 現在是 **134 送判 AC + 7 PREMIUM 本地解 = 141 題 .cpp**, 加上三套 study plan 的進度表. 不是為了拿 badge, 是為了把 Day 24-25 這個「pattern density = AI 上限」結論用數據鎖死, 下一輪離開 OJ 判斷標準明確的場, 這個結論才派得上用場
 
 ---
 
@@ -173,7 +173,7 @@ NC150 加進 Blind 75 沒碰到的教科書演算法, 這批題寫對的話, Day
 
 - [LC-75 官方 study plan (LeetCode)](https://leetcode.com/studyplan/leetcode-75/) — 加碼的第一套
 - [NeetCode 150 清單 (LeetCode)](https://leetcode.com/problem-list/plakya4j/) — 加碼的第二套
-- [leetcode/ 全部解答](../../../leetcode/README.md) — 本篇所有 cpp 原始碼與進度表
+- [leetcode/ 全部解答](../../02-project/leetcode/README.md) — 本篇所有 cpp 原始碼與進度表
 - [Day 21: 回到好驗證的主場](https://ithelp.ithome.com.tw/articles/10421407) — 判斷標準概念鋪陳
 - [Day 23: ZeroJudge 進階測試](./day23-zerojudge-cross-tier.md) — 中文 OJ 同一條觀察
 - [Day 24: 用 Claude Code 全自動刷 LeetCode Blind 75](./day24-leetcode-blind75.md) — 本篇的前作

@@ -142,7 +142,7 @@ assets/
 |---|---|
 | `05-notes/ironman/drafts/day30-finale.md` (×2) | `assets/day06-10/day10-cover.png` → `assets/day10-cover.png`; `assets/day11-15/day13-cover.png` → `assets/day13-cover.png` |
 | `05-notes/ironman/publish/day30-ithome.md` (×2) | 同上 |
-| `05-notes/zerojudge/playwright-zerojudge-automation.md` (×2) | `drafts/day21-25/day21-...md` → `drafts/day21-...md` |
+| `05-notes/02-project/zerojudge/playwright-zerojudge-automation.md` (×2) | `drafts/day21-25/day21-...md` → `drafts/day21-...md` |
 | `05-notes/essays/drafting-with-origin-quotes.md` (×1) | `drafts/day16-20/day20-...md` → `drafts/day20-...md` |
 | `05-notes/ironman/lab01/v07-preview.md` (×1) | `publish/day01-15/day*-ithome.md` → `publish/day*-ithome.md` (這條本來就寫錯, 順便修) |
 | `02-advanced/engineering/context-engineering-in-depth.md` (×2) | `drafts/day06-10/day06-...md`, `day07-...md` → `drafts/day06-...md`, `drafts/day07-...md` |

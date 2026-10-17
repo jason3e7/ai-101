@@ -89,7 +89,7 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 
 純觀念文對上「我做了一個會賺錢的 SaaS」，在「內容專業性、豐富性、深入性」這項會吃虧。
 
-> 改法：**心法是骨，實測是肉。** 原本預期的最強武器是 [HTB 目標綁架三案例](../htb/htb-abducted-goal-case.md), 但實際落地時換成了**規模化的實戰子系列** (Day 22-23 ZeroJudge 掃 78+19 題、Day 24-25 LeetCode Blind 75+LC-75+NC150、Day 26-28 PHM CTF 刷到 Top 10、Day 29 HTB /goal 跑 Cap + Touch)。每一條都有明確數字 (pass rate / 分數 / 時間) 當判准，比單一綁架案例更能站住「心法 → 實測」的對應關係。
+> 改法：**心法是骨，實測是肉。** 原本預期的最強武器是 [HTB 目標綁架三案例](../02-project/htb/htb-abducted-goal-case.md), 但實際落地時換成了**規模化的實戰子系列** (Day 22-23 ZeroJudge 掃 78+19 題、Day 24-25 LeetCode Blind 75+LC-75+NC150、Day 26-28 PHM CTF 刷到 Top 10、Day 29 HTB /goal 跑 Cap + Touch)。每一條都有明確數字 (pass rate / 分數 / 時間) 當判准，比單一綁架案例更能站住「心法 → 實測」的對應關係。
 
 ### 三、結尾不要預測未來
 
@@ -121,10 +121,10 @@ jason3e7 的原案是「基礎與歷史 → 心法 → 未來」。方向對，�
 | | 19 | 這段字是 AI 寫的嗎? 浮水印怎麼運作 | [ai-content-watermark](../../01-fundamentals/ai-content-watermark.md) |
 | | 20 | AI 文風入侵: 五個記號 + 抗體 + 子系列小結 | [ai-writing-style-tells](../../02-advanced/writing-style/ai-writing-style-tells.md) ＋ [jason3e7-voice 改寫](../../02-advanced/writing-style/ai-writing-style-tells-jason3e7-voice.md) |
 | **合·落地、實戰與收尾** | 21 | 回到好驗證的主場: 文字難驗, 程式好驗 | 轉場文 (3 題 ZeroJudge 示範) |
-| | 22-23 | ZeroJudge 掃 78 題 → 進階按主題各挑一題 | [zerojudge/](../zerojudge/README.md) ＋ [playwright-zerojudge-automation](../zerojudge/playwright-zerojudge-automation.md) |
-| | 24-25 | LeetCode Blind 75 → LC-75 + NC150 放大 | [leetcode/](../leetcode/) |
-| | 26-28 | PHM CTF 三連 (目前狀況 → 六類全碰 → Top 10 四面牆) | [phm/](../phm/README.md) ＋ [essays/claude-code-cyber-safeguard](../essays/claude-code-cyber-safeguard.md) |
-| | 29 | 從 CTF 換到 HTB, 用 `/goal` 跑兩次 (Cap + Touch) | [htb/cap-2026-10-13/](../htb/cap-2026-10-13/cap-with-goal.md) ＋ [htb/touch-2026-10-13/](../htb/touch-2026-10-13/touch-with-goal.md) |
+| | 22-23 | ZeroJudge 掃 78 題 → 進階按主題各挑一題 | [zerojudge/](../02-project/zerojudge/README.md) ＋ [playwright-zerojudge-automation](../02-project/zerojudge/playwright-zerojudge-automation.md) |
+| | 24-25 | LeetCode Blind 75 → LC-75 + NC150 放大 | [leetcode/](../02-project/leetcode/) |
+| | 26-28 | PHM CTF 三連 (目前狀況 → 六類全碰 → Top 10 四面牆) | [phm/](../02-project/phm/README.md) ＋ [essays/claude-code-cyber-safeguard](../essays/claude-code-cyber-safeguard.md) |
+| | 29 | 從 CTF 換到 HTB, 用 `/goal` 跑兩次 (Cap + Touch) | [htb/cap-2026-10-13/](../02-project/htb/cap-2026-10-13/cap-with-goal.md) ＋ [htb/touch-2026-10-13/](../02-project/htb/touch-2026-10-13/touch-with-goal.md) |
 | | 30 | 三十天心法總結, 跟著 AI 持續成長 | 新寫 |
 
 > [!NOTE]
