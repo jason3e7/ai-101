@@ -76,6 +76,7 @@ updated: 2026-07-04
 |---|---|
 | [AI 101 - AI 能力全景圖](02-advanced/capabilities/ai-capability-landscape.md) | 用「資訊流向 × 認知深度」兩軸把 AI 能力攤成一張圖，看出忠實度梯度與自己的使用盲區 |
 | [AI 101 - 六種能力執行手冊](02-advanced/capabilities/capabilities-playbook.md) | 摘要／解釋／發想／重構／分析／規劃，各給「最省 token」與「最有成效」兩套打法；含 2026-09 現行模型選型與 effort 參數 |
+| [AI 101 - 模型升級階梯](02-advanced/capabilities/model-escalation-ladder.md) | 行政人式 satisficing 選型：先用便宜檔位、設可驗門檻、不過才往上換。Claude 實務四檔（Haiku/Sonnet/Opus/Fable）＋ `/model`、`/fast`、effort／adaptive thinking、subagent 指定模型；升級順序（加 effort → 補 context → 換模型 → opusplan）與重試上限；何時該直接跳頂 |
 | [AI 101 - Context Engineering](02-advanced/engineering/context-engineering.md) | 2026 最重要的技能：Prompt 只是 5%，Context 才是 95% |
 | [AI 101 - Context Engineering 進階](02-advanced/engineering/context-engineering-in-depth.md) | 9 個組成、4 種操作 (write/select/compress/isolate)、3 個原理; 參考 ihower ＋ Anthropic ＋ LangChain |
 | [AI 101 - Harness Engineering](02-advanced/engineering/harness-engineering.md) | 70% 的 AI 效能來自外層框架而不是模型本身 |
