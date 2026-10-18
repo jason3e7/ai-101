@@ -111,6 +111,9 @@
 /model default    # 清掉覆寫, 回帳號預設
 ```
 
+> [!NOTE]
+> **實測（jason3e7, 2026-10-19）**：在本機原生 Claude Code 用 `/model` 切換後，session 回報目前模型為 **Claude Opus 5.5**（model ID `claude-opus-5-5`，knowledge cutoff 2026-06）—— 從原本的 Opus 4.8 成功切上去，確認**原生 `/model` 切換生效**。對照前面 claudecodeui 那次（走 REST API、session 跑 Sonnet 4.6），兩條切換路徑現在都各自驗證過了。
+
 **加速而非降級 `/fast`**：Fast mode 用的仍是 **Opus**、只是輸出更快，**不是**偷偷換成小模型。要「又強又快」時用它，不要誤以為它在省模型。
 
 **加深思考（先於換模型）**：很多時候便宜模型不是不行，是**想得不夠深**。先把 effort 調高，常常比換模型更省：
