@@ -161,6 +161,40 @@ Claude Code 2026-02 推出 **Remote Control**（本地 session 跑 `/remote-cont
 > [!TIP]
 > 跟升級階梯的關係：Remote Control 不改變選型，但會改變**你願意切多頻繁**。手機按一下 `/model opus` 比回電腦順，所以升級成本變低，容易過度升級。設定門檻這一條還是要守，不要因為「反正手機一按就好」就直接跳頂。
 
+### claudecodeui — 第三方 Web UI 切模型 — Third-Party UI Model Switching
+
+jason3e7 試用 [claudecodeui](https://github.com/siteboon/claudecodeui) 後確認：**當前 session 跑的是 `claude-sonnet-4-6`（Sonnet 4.6）**。
+
+claudecodeui 是一個開源（AGPL-3.0）自架 Web UI，把 Claude Code、Cursor CLI、OpenAI Codex 統一在同一個介面。切模型的方式跟原生 Remote Control 根本不同——**它不靠 `/model` slash command，而是走自己的 REST API**：
+
+```
+POST /api/providers/claude/sessions/:sessionId/active-model
+{ "model": "opus" }
+```
+
+所以原生 Remote Control 的三個坑（picker 遠端跑不起來、externally-triggered session slash command fall through、版本要 ≥ 2.1.202）**在 claudecodeui 裡全部消失**——UI 裡有個 dropdown，點就換，不需要打指令，不需要回終端。
+
+**claudecodeui 支援的 Claude model 別名**（跟 `/model` 的別名相同）：
+
+| 別名 | 說明 |
+|:---|:---|
+| `default` | 帳號推薦預設 |
+| `best` | Fable 5 或最新 Opus |
+| `fable` | Fable 5，最頂 |
+| `sonnet` | 日常主力 |
+| `sonnet[1m]` | Sonnet + 1M context |
+| `opus` | 複雜推理 |
+| `opus[1m]` | Opus + 1M context |
+| `haiku` | 快速省錢 |
+| `opusplan` | Opus 規劃 + Sonnet 執行 |
+
+effort 支援：`low / medium / high / xhigh / max / ultracode`（Haiku 不支援 effort 欄位）。
+
+**已知限制**：Claude Code 的 `getSupportedModels()` 在 claudecodeui 裡被停用（呼叫會產生多餘 session），所以 claudecodeui 用**硬編碼 catalog**，不動態偵測你帳號能用的模型。如果帳號沒有 Fable，選了也無法用——要自己確認訂閱權限。
+
+> [!TIP]
+> claudecodeui 切模型比原生 Remote Control 順（純 UI 操作、無 picker / slash command 問題），但它是自架工具，要自己管更新與資安。若只是想遠端切模型，原生 Remote Control + `/model <name>` 已夠，不一定要架 claudecodeui。
+
 ## 門檻與升級順序 — The Bar and the Climb
 
 **門檻要「可跑可驗」，不能靠感覺。** 這是整套的關鍵——門檻定得鬆，等於沒有階梯，你只是在對便宜模型的錯誤蓋橡皮章。好的門檻是機器能判、你一眼能信的東西：
@@ -208,3 +242,4 @@ Claude Code 2026-02 推出 **Remote Control**（本地 session 跑 `/remote-cont
 - Approve Claude Code permission requests remotely — DEV Community — <https://dev.to/dan_288d398451d57/approve-claude-code-permission-requests-remotely-3bgm>
 - [BUG] Slash commands fall through as prompts in externally-triggered remote execution (web) sessions — GitHub Issue #68402 — <https://github.com/anthropics/claude-code/issues/68402>
 - Slash Commands on Claude Code iOS: Essential Smart Guide (2026-09) — <https://www.progressiverobot.com/2026/09/04/claude-code-ios-slash-commands/>
+- claudecodeui — Open-source Web UI for Claude Code (siteboon, AGPL-3.0) — <https://github.com/siteboon/claudecodeui>
