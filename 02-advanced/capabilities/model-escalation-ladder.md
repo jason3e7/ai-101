@@ -53,13 +53,48 @@
 
 | 檔位 | 模型 | 適合 | 心法 |
 |:---|:---|:---|:---|
-| 1 | **Haiku 4.5** | 機械活：分類、抽取、改字、搜檔、格式轉換、subagent 的廣度掃描 | 判准清楚、吃 pattern 的事，先丟它 |
+| 1 | **Haiku 5.5** | 機械活：分類、抽取、改字、搜檔、格式轉換、subagent 的廣度掃描 | 判准清楚、吃 pattern 的事，先丟它 |
 | 2 | **Sonnet 5.5** | 日常主力：一般 coding、改 bug、寫筆記、多數 agent 回合 | 90% 的事的預設檔 |
 | 3 | **Opus 5.5** | 難題：複雜重構、架構決策、難 debug、長鏈推理 | Sonnet 連試兩次沒過才上 |
 | 4 | **Fable 5.1** | 前沿：最硬的推理、長時程 agent、別人都卡住的題 | 真的卡住、且值得那個成本才動 |
 
 > [!NOTE]
 > 絕對價格會一直變，這裡只記**相對順序**（Haiku < Sonnet < Opus < Fable，愈強愈貴愈慢），選型時搭 [模型費用與效果比較](../../01-fundamentals/models/model-cost-comparison.md) 看當下數字。能力面的「哪種任務該用多強」另見 [AI 怎麼知道該用哪種能力](how-ai-picks-capability.md) 與 [六種能力執行手冊](capabilities-playbook.md)。
+
+### 為什麼表格鎖在 5.5，不留 5.0 或 4.8 — Why Pin to 5.5
+
+常見問題：「我手上還能用 Opus 5.0 跟 4.8，為什麼要跟著換 5.5？」
+
+**短答**：5.5 對 5.0 是**全面 Pareto 升級**（又便宜又強又快），升級階梯的「踩低檔」精神，到 5.5 正好是最低檔；繼續用 5.0 等於自願多付錢、拿舊能力。
+
+**Opus 5.5 vs 5.0**（2026-09-22 發布，只隔 5.0 兩個月）：
+
+| 指標 | Opus 5.0 | Opus 5.5 | 差距 |
+|:---|---:|---:|:---|
+| 輸入 token 單價 | $5 / M | **$4 / M** | **−20%** |
+| 輸出 token 單價 | $25 / M | **$20 / M** | **−20%** |
+| Prompt cache 讀取 | $0.50 / M | **$0.20 / M** | **−60%** |
+| Terminal-Bench 4.0（agentic coding） | 52.3% | **66.4%** | **+14.1pp** |
+| SWE-bench Pro | 基準 | **+10.7 分** | — |
+| OSWorld 2.0（computer use） | 74.0% | **81.8%** | **+7.8pp** |
+| 輸出速度 | 基準 | **+30%** | — |
+
+加上 adaptive thinking **預設 effort 從 high 降到 medium**，單次 call 的 raw token 用量再降 **25–40%**。等於同一題：**更便宜、更快、分數更高**，這是罕見的全面 Pareto 升級。
+
+**什麼時候用舊版（5.0 / 4.8）還是有理由**：
+
+- **Reproducibility**：跟 2026 上半年的 benchmark／既有實測對照時，換版本就不是對照組了
+- **Prompt / harness 已為舊版調校**：既有的 effort 設定、CLAUDE.md、hook 都針對 4.x 或 5.0 試過，換 5.5 要重跑一輪校正（特別是 default effort 改了，以前「夠深」的題現在想得淺）
+- **邊界行為差**：refusal、tone、safeguard 觸發點，不同版本不同；壓過的 edge case 換版本可能再冒出
+- **審計 / 合規**：鎖版本是審計要求，升版要走流程
+
+**現狀（2026-10）**：
+
+- **5.5 系列全線齊了**：Opus 5.5（2026-09-22）＋ Sonnet 5.5 ＋ Haiku 5.5（2026-10-07）＋ Fable 5.1
+- **5.0 / 4.8 仍可用**：Anthropic 承諾退役前 60 天公告，Opus 5.0 / 4.8 的 tentative retirement 都在 2027
+- **預設該用新**：升級階梯的精神是「踩在最便宜檔位」，既然 5.5 比 5.0 又便宜又強，新預設就該是 5.5
+
+> **一句話**：不是「不能用 5.0 / 4.8」，是「用 5.0 / 4.8 當預設沒好處」。要麼為了可重現性鎖舊版，要麼直接用 5.5。
 
 ## 怎麼換 — The Levers in Claude Code
 
@@ -135,3 +170,7 @@ CLAUDE_CODE_EFFORT_LEVEL=max
 - Claude Code Model configuration（`/model`、別名、opusplan）— <https://code.claude.com/docs/en/model-config>
 - Opus 4.7: The Five Effort Levels in Claude Code Explained — <https://anthonymaio.substack.com/p/opus-47-the-five-effort-levels-in>
 - Effort, Thinking, and How Claude Opus 4.7 Changed the Rules — <https://www.ibuildwith.ai/blog/effort-thinking-opus-4-7-changed-the-rules/>
+- Introducing Claude Opus 5.5 (Anthropic, 2026-09-22) — <https://www.anthropic.com/claude-opus-5-5>
+- Claude Opus 5.5 Benchmarks Explained (Vellum) — <https://www.vellum.ai/blog/claude-opus-5-5-benchmarks-explained>
+- Claude Opus 5.5: Benchmarks, Pricing, vs Fable 5.1 (ComputingForGeeks) — <https://computingforgeeks.com/claude-opus-5-5-released-features-benchmarks/>
+- Model deprecations — Claude Platform Docs — <https://platform.claude.com/docs/en/about-claude/model-deprecations>
