@@ -132,6 +132,22 @@ CLAUDE_CODE_EFFORT_LEVEL=max
 
 **讓 subagent 踩低檔**：把廣度、機械的活丟給 Haiku／Sonnet 的 subagent，主線留強模型。開 subagent 時指定 `model`（細節與計費見 [Subagent 使用與計費](../engineering/subagent-usage-and-billing.md)）。這是「主貴、僕便宜」的省法。
 
+### Remote Control（Web / 手機操作）會遇到的坑 — Remote Control Caveats
+
+Claude Code 2026-02 推出 **Remote Control**（在本地 session 跑 `/remote-control`，就能從 claude.ai 或手機 app 控制同一 session）。好處是出門、通勤時也能看 agent 進度、按許可、下新指令。但有幾個踩過的坑先提醒：
+
+- **不是「換 UI」而是「代為按鈕」**：Remote Control 只是把本地 session 的畫面 stream 到 web／手機，**真正跑的還是本地那台**。本地關掉 = 遠端也斷。
+- **還是要有人按允許** — 這是 jason3e7 踩過的坑：
+  - 預設所有需要許可的 tool call（檔案寫入、bash、MCP 工具）都要人按，**不管你在哪個介面按**。差別只是 web 版可以在手機上按，不用回到終端
+  - **但有一些模式只能在本地終端設**：`--dangerously-skip-permissions`（跳過全部許可）**在 Remote Control 下無效**，手機／web 介面也**選不到** Bypass permissions 模式
+  - 手機／web 能選的只有 Manual / Accept edits / Plan / Auto 四種，**Bypass 無法遠端開**
+  - 想要「真的無人值守」只有兩條路：啟動 session 前先在本地開 `--dangerously-skip-permissions`（高風險），或預先把常用 tool 寫進 `.claude/settings.local.json` 的 allowed list（每個 repo 一次設好）
+- **訂閱限制**：Remote Control 僅 Pro / Max 可用，Team / Enterprise 目前還沒有
+- **設備信任**：公司通常會開 Trusted Devices，裝置要先驗證才能進 Remote Control session，光登入帳號不夠
+
+> [!TIP]
+> 跟升級階梯的關係：Remote Control 不會改變選型，但會改變**你願意用多貴的檔位**。手機上按一個鍵換 `/model opus` 比在筆電上順，所以升級成本變低，容易過度升級。設定門檻這一條還是要守，不要因為「反正手機一按就好」就跳過便宜檔位。
+
 ## 門檻與升級順序 — The Bar and the Climb
 
 **門檻要「可跑可驗」，不能靠感覺。** 這是整套的關鍵——門檻定得鬆，等於沒有階梯，你只是在對便宜模型的錯誤蓋橡皮章。好的門檻是機器能判、你一眼能信的東西：
@@ -174,3 +190,6 @@ CLAUDE_CODE_EFFORT_LEVEL=max
 - Claude Opus 5.5 Benchmarks Explained (Vellum) — <https://www.vellum.ai/blog/claude-opus-5-5-benchmarks-explained>
 - Claude Opus 5.5: Benchmarks, Pricing, vs Fable 5.1 (ComputingForGeeks) — <https://computingforgeeks.com/claude-opus-5-5-released-features-benchmarks/>
 - Model deprecations — Claude Platform Docs — <https://platform.claude.com/docs/en/about-claude/model-deprecations>
+- Continue local sessions from any device with Remote Control — Claude Code Docs — <https://code.claude.com/docs/en/remote-control>
+- Claude Code on mobile — Claude Code Docs — <https://code.claude.com/docs/en/mobile>
+- Approve Claude Code permission requests remotely — DEV Community — <https://dev.to/dan_288d398451d57/approve-claude-code-permission-requests-remotely-3bgm>
