@@ -132,21 +132,34 @@ CLAUDE_CODE_EFFORT_LEVEL=max
 
 **讓 subagent 踩低檔**：把廣度、機械的活丟給 Haiku／Sonnet 的 subagent，主線留強模型。開 subagent 時指定 `model`（細節與計費見 [Subagent 使用與計費](../engineering/subagent-usage-and-billing.md)）。這是「主貴、僕便宜」的省法。
 
-### Remote Control（Web / 手機操作）會遇到的坑 — Remote Control Caveats
+### Remote Control（Web / 手機）切 `/model` 會遇到的坑 — Switching Models Remotely
 
-Claude Code 2026-02 推出 **Remote Control**（在本地 session 跑 `/remote-control`，就能從 claude.ai 或手機 app 控制同一 session）。好處是出門、通勤時也能看 agent 進度、按許可、下新指令。但有幾個踩過的坑先提醒：
+Claude Code 2026-02 推出 **Remote Control**（本地 session 跑 `/remote-control` 或 `/rc`，從 claude.ai / 手機 app 控制同一個 session）。本質是把本地 session **stream 到 web / 手機**，真正跑的還是本地那台。好處是出門也能看 agent 進度、下新指令、切模型。
 
-- **不是「換 UI」而是「代為按鈕」**：Remote Control 只是把本地 session 的畫面 stream 到 web／手機，**真正跑的還是本地那台**。本地關掉 = 遠端也斷。
-- **還是要有人按允許** — 這是 jason3e7 踩過的坑：
-  - 預設所有需要許可的 tool call（檔案寫入、bash、MCP 工具）都要人按，**不管你在哪個介面按**。差別只是 web 版可以在手機上按，不用回到終端
-  - **但有一些模式只能在本地終端設**：`--dangerously-skip-permissions`（跳過全部許可）**在 Remote Control 下無效**，手機／web 介面也**選不到** Bypass permissions 模式
-  - 手機／web 能選的只有 Manual / Accept edits / Plan / Auto 四種，**Bypass 無法遠端開**
-  - 想要「真的無人值守」只有兩條路：啟動 session 前先在本地開 `--dangerously-skip-permissions`（高風險），或預先把常用 tool 寫進 `.claude/settings.local.json` 的 allowed list（每個 repo 一次設好）
-- **訂閱限制**：Remote Control 僅 Pro / Max 可用，Team / Enterprise 目前還沒有
-- **設備信任**：公司通常會開 Trusted Devices，裝置要先驗證才能進 Remote Control session，光登入帳號不夠
+**但切 `/model` 這件事，遠端跟本地有三種行為差異**：
+
+| 情境 | web / 手機行為 |
+|:---|:---|
+| **`/model opus`（帶模型名）** | 直接套用，不需回終端。但要 Claude Code **2.1.202 以上**（2026-08 之後的版本），之前的版本遠端打 `/model <name>` 會當普通訊息送給模型。 |
+| **`/model`（不帶參數）** | 本地會跳出互動 picker 讓你選。**picker 遠端跑不起來** —— 要回原本終端按方向鍵選。這是 jason3e7 踩的那個坑。 |
+| **外部觸發的 remote execution session**（非 `/rc` 的那種） | 已知 bug (issue #68402)：所有 slash command 都當普通訊息 fall through，`/model`、`/compact`、`/clear` 都失效。 |
+
+**實務處理**：
+
+- **遠端切模型永遠帶名字**：`/model haiku`、`/model sonnet`、`/model opus`、`/model fable`、`/model opusplan`、`/model default`
+- **別用 `/model` 單打開 picker**：遠端 session 這樣做會卡住，要起身走回電腦前
+- **版本要新**：舊版 (< 2.1.202) 的 Claude Code，遠端打 `/model opus` 會變成「跟 AI 說 '/model opus'」，不會真的切
+
+**其他遠端限制順便一次講**：
+
+- **一個 session 只能一個遠端 viewer**：兩支手機同時看同一個 session 不行
+- **本地終端要保持開著 + 連線**：本地關掉或網路斷 10 分鐘以上，遠端就斷
+- **picker 類指令都只能本地**：`/mcp`、`/plugin`、`/resume`、`/rewind` 跟 `/model`（不帶參數）一樣，都開 picker、都只能本地按
+- **Bypass permissions 模式不能遠端開**：手機 / web 只能選 Manual / Accept edits / Plan / Auto 四種，要跳過許可必須本地啟動時先設
+- **訂閱 / 設備**：Remote Control 僅 Pro / Max 可用；公司通常開 Trusted Devices，要先驗證設備
 
 > [!TIP]
-> 跟升級階梯的關係：Remote Control 不會改變選型，但會改變**你願意用多貴的檔位**。手機上按一個鍵換 `/model opus` 比在筆電上順，所以升級成本變低，容易過度升級。設定門檻這一條還是要守，不要因為「反正手機一按就好」就跳過便宜檔位。
+> 跟升級階梯的關係：Remote Control 不改變選型，但會改變**你願意切多頻繁**。手機按一下 `/model opus` 比回電腦順，所以升級成本變低，容易過度升級。設定門檻這一條還是要守，不要因為「反正手機一按就好」就直接跳頂。
 
 ## 門檻與升級順序 — The Bar and the Climb
 
@@ -193,3 +206,5 @@ Claude Code 2026-02 推出 **Remote Control**（在本地 session 跑 `/remote-c
 - Continue local sessions from any device with Remote Control — Claude Code Docs — <https://code.claude.com/docs/en/remote-control>
 - Claude Code on mobile — Claude Code Docs — <https://code.claude.com/docs/en/mobile>
 - Approve Claude Code permission requests remotely — DEV Community — <https://dev.to/dan_288d398451d57/approve-claude-code-permission-requests-remotely-3bgm>
+- [BUG] Slash commands fall through as prompts in externally-triggered remote execution (web) sessions — GitHub Issue #68402 — <https://github.com/anthropics/claude-code/issues/68402>
+- Slash Commands on Claude Code iOS: Essential Smart Guide (2026-09) — <https://www.progressiverobot.com/2026/09/04/claude-code-ios-slash-commands/>
