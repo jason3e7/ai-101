@@ -78,7 +78,7 @@ def _generate_response(self, prompt, max_tokens=None):
 
 1. **取樣參數要拿掉。** 原碼有 `temperature=0.2, top_p=0.7` —— 現行的 `claude-opus-5-5` / `claude-sonnet-5-5` 傳這些會 **400 拒絕**; 不傳即可, 或用 `claude-haiku-4-5` (它仍吃 `temperature`)。
 2. **成本 + 隱私。** 本地 Ollama 的賣點是「零 API 成本、資料不出本機」; 換 Claude = 每次計費 + 資料上雲。若每檔股票、盤中每分鐘都叫, 帳單很有感。
-
+（可以用外部免費的llm 例如groq）
 > **jason3e7 的建議**: 不要整個拔掉 Ollama, 而是**加一個 `LLM_PROVIDER=ollama|claude` 開關** —— 日常／盤中高頻用本地小模型, **只有盤後那份「深度會診」** (輸出長、一天一次、品質要求高) 切 Claude, 最划算也不太犧牲隱私。模型選型的「先便宜、過門檻再升級」心法見 [模型升級階梯](../02-advanced/capabilities/model-escalation-ladder.md)。
 
 ### 路線 A: 拔掉 LLM — 幾乎無痛
